@@ -5,10 +5,21 @@
 # Created 11/30/2019
 #--------------------------------------------------
 
+# --- PROJECT INFOS ---
 PROJECTNAME = stm32tctst
-MCUTYPE = cortex-m3
-BINFOLDER = ./bin
+PLATFORM    = STM32F103
+MCUTYPE     = cortex-m3
+BINFOLDER   = ./bin
 
+# --- VERSION ---
+VERSION_MAJOR = 1
+VERSION_MINOR = 0
+
+# --- BUILD NUMBER ---
+BUILD_NUM_FILE = ./buildnum.dat
+include ./buildnumber.mk
+
+# --- COMPILER DEFINITIONS ---
 CPREFIX = arm-none-eabi-
 CC      = $(CPREFIX)gcc
 CPPC    = $(CC)
@@ -18,7 +29,11 @@ GDBTUI  = $(CPREFIX)gdbtui
 CSIZE   = $(CPREFIX)size
 
 # --- C/CPP DEFINES ---
-CDEFS =
+CDEFS = 
+
+# --- SOURCECODE MODULES ---
+include ./lib/stm32f1_hal/lib_stm32f1_hal.mk
+include ./core/module_core.mk
 
 # --- OPTIMISATION LEVEL FLAGS ---
 OPTIM = -Os
@@ -27,56 +42,57 @@ OPTIM = -Os
 COMPDEFS = $(CDEFS) -DRUN_FROM_FLASH=1
 
 MCUFLAGS = -mcpu=$(MCUTYPE)
-CCFLAGS = $(MCUFLAGS) $(OPTIM) -g -gdwarf-2 -mthumb -fomit-frame-pointer -Wall -fverbose-asm -Wa,-ahlms=$(<:.c=.lst) $(COMPDEFS)
+CFLAGS = $(MCUFLAGS) $(OPTIM) -g -gdwarf-2 -mthumb -fomit-frame-pointer -Wall -fverbose-asm -Wa,-ahlms=$(<:.c=.lst) $(COMPDEFS)
 CPPFLAGS = $(MCUFLAGS) $(OPTIM) -g -gdwarf-2 -mthumb -fomit-frame-pointer -Wall -fverbose-asm -Wa,-ahlms=$(<:.cpp=.lst) $(COMPDEFS)
 ASMFLAGS = $(MCUFLAGS) -g -gdwarf-2 -mthumb -Wa,-amhls=$(<:.s=.lst)
 
 # --- INCLUDE DIRECTORIES ---
-INC = ./inc
+INC = 
 
 # --- SOURCE FILES ---
 CSRC = 
+ASMSRC = 
+CPPSRC = 
 
-ASMSRC =
-
-CPPSRC = ./src/main.cpp
-CPPSRC += ./src/sys_isr.cpp
-CPPSRC += ./src/sys_gpio.cpp
-
-
+# --- LINKER SETTINGS ---
 LDFLAGS =
 LIBS =
 
+# --- DEFINE COMPILATION OBJECTS
 OBJ = $(ASMSRC:.s=.o) $(CSRC:.c=.o) $(CPPSRC:.cpp=.o)
-
-# --- FILE COMPILATION PROCEDURES ---
-
-%o: %c
-	$(CC) -c $(CCFLAGS) -I . $(INC) $< -o $(BINFOLDER)/$@
-
-%o: %s
-	$(ASM) -c $(ASMFLAGS) $< -o $(BINFOLDER)/$@
-
-%o: %cpp
-	$(CPPC) -c $(CPPFLAGS) -I $(INC) $< -o $(BINFOLDER)/$@
-
-
-%elf: $(OBJ)
-	$(CC) $(OBJ) $(LDFLAGS) $(LIBS) -o $(BINFOLDER)/$@
-
-%hex: $elf
-	$(OBJCP) -O ihex $(BINFOLDER)/$< $(BINFOLDER)/$@
-
-%bin: $elf
-	$(OBJCP) -O binary -S $(BINFOLDER)/$< $(BINFOLDER)/$@
 
 # --- MAKEFILE TARGETS ---
 
-all: $(OBJS) $(PROJECTNAME).elf $(PROJECTNAME).hex $(PROJECTNAME).bin
-	$(CSIZE) $(PORJECTNAME).elf
+all: $(OBJ) $(PROJECTNAME).elf $(PROJECTNAME).hex $(PROJECTNAME).bin
+	$(CSIZE) $(PROJECTNAME).elf
 
+.PHONY: clean
 clean:
 	rm -rf $(BINFOLDER)/*.o
 	rm -rf $(BINFOLDER)/*.elf
 	rm -rf $(BINFOLDER)/*.bin
 	rm -rf $(BINFOLDER)/*.hex
+
+# --- FILE COMPILATION PROCEDURES ---
+
+%o: %c
+	@$(CC) -c $(CFLAGS) $(INC) $< -o $(BINFOLDER)/$@
+
+%o: %s
+	@$(ASM) -c $(ASMFLAGS) $< -o $(BINFOLDER)/$@
+
+%o: %cpp
+	@$(CPPC) -c $(CPPFLAGS) $(INC) $< -o $(BINFOLDER)/$@
+
+
+%elf: $(OBJ)
+	@$(CC) $(OBJ) $(LDFLAGS) $(LIBS) -o $(BINFOLDER)/$@
+
+%hex: %elf
+	@$(OBJCP) -O ihex $(BINFOLDER)/$< $(BINFOLDER)/$@
+
+%bin: %elf
+	@$(OBJCP) -O binary -S $(BINFOLDER)/$< $(BINFOLDER)/$@
+
+$(BINFOLDER):
+	mkdir $(BINFOLDER)
