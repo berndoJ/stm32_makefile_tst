@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccLEOtsc.s 			page 1
+ARM GAS  /tmp/ccXXwgMY.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -18,9 +18,9 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
   15              	@ GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
   16              	@ options passed:  -I ./inc -I ./inc/Legacy -I ../cmsisstm32f1xx/inc
   17              	@ -I ../cmsiscore/inc -imultilib thumb/v7-m -D__USES_INITFINI__
-  18              	@ -D STM32F103x6 -D RUN_FROM_FLASH=1 -D __c src/stm32f1xx_ll_usb.c
-  19              	@ -mcpu=cortex-m3 -mthumb -auxbase-strip bin/stm32f1xx_ll_usb.o -g
-  20              	@ -gdwarf-2 -Os -Wall -fomit-frame-pointer -fverbose-asm
+  18              	@ -D STM32F103x6 -D RUN_FROM_FLASH=1 src/stm32f1xx_ll_usb.c -mcpu=cortex-m3
+  19              	@ -mthumb -auxbase-strip bin/stm32f1xx_ll_usb.o -g -gdwarf-2 -Os -Wall
+  20              	@ -fomit-frame-pointer -fverbose-asm
   21              	@ options enabled:  -faggressive-loop-optimizations -falign-jumps
   22              	@ -falign-labels -falign-loops -fauto-inc-dec -fbranch-count-reg
   23              	@ -fcaller-saves -fchkp-check-incomplete-type -fchkp-check-read
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
   55              	@ -ftree-copy-prop -ftree-cselim -ftree-dce -ftree-dominator-opts
   56              	@ -ftree-dse -ftree-forwprop -ftree-fre -ftree-loop-if-convert
   57              	@ -ftree-loop-im -ftree-loop-ivcanon -ftree-loop-optimize
-ARM GAS  /tmp/ccLEOtsc.s 			page 2
+ARM GAS  /tmp/ccXXwgMY.s 			page 2
 
 
   58              	@ -ftree-parallelize-loops= -ftree-phiprop -ftree-pre -ftree-pta
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
   34:src/stm32f1xx_ll_usb.c ****   * License. You may obtain a copy of the License at:
   35:src/stm32f1xx_ll_usb.c ****   *                        opensource.org/licenses/BSD-3-Clause
   36:src/stm32f1xx_ll_usb.c ****   *
-ARM GAS  /tmp/ccLEOtsc.s 			page 3
+ARM GAS  /tmp/ccXXwgMY.s 			page 3
 
 
   37:src/stm32f1xx_ll_usb.c ****   ******************************************************************************
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
   91:src/stm32f1xx_ll_usb.c ****     USBx->GUSBCFG &= ~(USB_OTG_GUSBCFG_TSDPS | USB_OTG_GUSBCFG_ULPIFSLS | USB_OTG_GUSBCFG_PHYSEL);
   92:src/stm32f1xx_ll_usb.c **** 
   93:src/stm32f1xx_ll_usb.c ****     /* Select vbus source */
-ARM GAS  /tmp/ccLEOtsc.s 			page 4
+ARM GAS  /tmp/ccXXwgMY.s 			page 4
 
 
   94:src/stm32f1xx_ll_usb.c ****     USBx->GUSBCFG &= ~(USB_OTG_GUSBCFG_ULPIEVBUSD | USB_OTG_GUSBCFG_ULPIEVBUSI);
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  148:src/stm32f1xx_ll_usb.c ****       UsbTrd = 0xDU;
  149:src/stm32f1xx_ll_usb.c ****     }
  150:src/stm32f1xx_ll_usb.c ****     else if ((hclk >= 17200000U) && (hclk < 18500000U))
-ARM GAS  /tmp/ccLEOtsc.s 			page 5
+ARM GAS  /tmp/ccXXwgMY.s 			page 5
 
 
  151:src/stm32f1xx_ll_usb.c ****     {
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  205:src/stm32f1xx_ll_usb.c ****   USBx->GAHBCFG |= USB_OTG_GAHBCFG_GINT;
  206:src/stm32f1xx_ll_usb.c ****   return HAL_OK;
  207:src/stm32f1xx_ll_usb.c **** }
-ARM GAS  /tmp/ccLEOtsc.s 			page 6
+ARM GAS  /tmp/ccXXwgMY.s 			page 6
 
 
  208:src/stm32f1xx_ll_usb.c **** 
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  262:src/stm32f1xx_ll_usb.c ****   HAL_StatusTypeDef ret = HAL_OK;
  263:src/stm32f1xx_ll_usb.c ****   uint32_t USBx_BASE = (uint32_t)USBx;
  264:src/stm32f1xx_ll_usb.c ****   uint32_t i;
-ARM GAS  /tmp/ccLEOtsc.s 			page 7
+ARM GAS  /tmp/ccXXwgMY.s 			page 7
 
 
  265:src/stm32f1xx_ll_usb.c **** 
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  319:src/stm32f1xx_ll_usb.c ****   }
  320:src/stm32f1xx_ll_usb.c **** 
  321:src/stm32f1xx_ll_usb.c ****   for (i = 0U; i < cfg.dev_endpoints; i++)
-ARM GAS  /tmp/ccLEOtsc.s 			page 8
+ARM GAS  /tmp/ccXXwgMY.s 			page 8
 
 
  322:src/stm32f1xx_ll_usb.c ****   {
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  376:src/stm32f1xx_ll_usb.c ****   * @param  num  FIFO number
  377:src/stm32f1xx_ll_usb.c ****   *         This parameter can be a value from 1 to 15
  378:src/stm32f1xx_ll_usb.c ****             15 means Flush all Tx FIFOs
-ARM GAS  /tmp/ccLEOtsc.s 			page 9
+ARM GAS  /tmp/ccXXwgMY.s 			page 9
 
 
  379:src/stm32f1xx_ll_usb.c ****   * @retval HAL status
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  433:src/stm32f1xx_ll_usb.c ****   uint32_t USBx_BASE = (uint32_t)USBx;
  434:src/stm32f1xx_ll_usb.c **** 
  435:src/stm32f1xx_ll_usb.c ****   USBx_DEVICE->DCFG |= speed;
-ARM GAS  /tmp/ccLEOtsc.s 			page 10
+ARM GAS  /tmp/ccXXwgMY.s 			page 10
 
 
  436:src/stm32f1xx_ll_usb.c ****   return HAL_OK;
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  490:src/stm32f1xx_ll_usb.c ****     USBx_DEVICE->DAINTMSK |= USB_OTG_DAINTMSK_OEPM & ((uint32_t)(1UL << (ep->num & EP_ADDR_MSK)) <<
  491:src/stm32f1xx_ll_usb.c **** 
  492:src/stm32f1xx_ll_usb.c ****     if (((USBx_OUTEP(epnum)->DOEPCTL) & USB_OTG_DOEPCTL_USBAEP) == 0U)
-ARM GAS  /tmp/ccLEOtsc.s 			page 11
+ARM GAS  /tmp/ccXXwgMY.s 			page 11
 
 
  493:src/stm32f1xx_ll_usb.c ****     {
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  547:src/stm32f1xx_ll_usb.c ****   */
  548:src/stm32f1xx_ll_usb.c **** HAL_StatusTypeDef USB_DeactivateEndpoint(USB_OTG_GlobalTypeDef *USBx, USB_OTG_EPTypeDef *ep)
  549:src/stm32f1xx_ll_usb.c **** {
-ARM GAS  /tmp/ccLEOtsc.s 			page 12
+ARM GAS  /tmp/ccXXwgMY.s 			page 12
 
 
  550:src/stm32f1xx_ll_usb.c ****   uint32_t USBx_BASE = (uint32_t)USBx;
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  604:src/stm32f1xx_ll_usb.c ****   * @brief  USB_EPStartXfer : setup and starts a transfer over an EP
  605:src/stm32f1xx_ll_usb.c ****   * @param  USBx  Selected device
  606:src/stm32f1xx_ll_usb.c ****   * @param  ep pointer to endpoint structure
-ARM GAS  /tmp/ccLEOtsc.s 			page 13
+ARM GAS  /tmp/ccXXwgMY.s 			page 13
 
 
  607:src/stm32f1xx_ll_usb.c ****   * @retval HAL status
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  661:src/stm32f1xx_ll_usb.c ****       {
  662:src/stm32f1xx_ll_usb.c ****         USBx_INEP(epnum)->DIEPCTL |= USB_OTG_DIEPCTL_SD0PID_SEVNFRM;
  663:src/stm32f1xx_ll_usb.c ****       }
-ARM GAS  /tmp/ccLEOtsc.s 			page 14
+ARM GAS  /tmp/ccXXwgMY.s 			page 14
 
 
  664:src/stm32f1xx_ll_usb.c **** 
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  718:src/stm32f1xx_ll_usb.c ****   /* IN endpoint */
  719:src/stm32f1xx_ll_usb.c ****   if (ep->is_in == 1U)
  720:src/stm32f1xx_ll_usb.c ****   {
-ARM GAS  /tmp/ccLEOtsc.s 			page 15
+ARM GAS  /tmp/ccXXwgMY.s 			page 15
 
 
  721:src/stm32f1xx_ll_usb.c ****     /* Zero Length Packet? */
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  775:src/stm32f1xx_ll_usb.c **** 
  776:src/stm32f1xx_ll_usb.c ****   return HAL_OK;
  777:src/stm32f1xx_ll_usb.c **** }
-ARM GAS  /tmp/ccLEOtsc.s 			page 16
+ARM GAS  /tmp/ccXXwgMY.s 			page 16
 
 
  778:src/stm32f1xx_ll_usb.c **** 
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  832:src/stm32f1xx_ll_usb.c ****   */
  833:src/stm32f1xx_ll_usb.c **** HAL_StatusTypeDef USB_EPSetStall(USB_OTG_GlobalTypeDef *USBx, USB_OTG_EPTypeDef *ep)
  834:src/stm32f1xx_ll_usb.c **** {
-ARM GAS  /tmp/ccLEOtsc.s 			page 17
+ARM GAS  /tmp/ccXXwgMY.s 			page 17
 
 
  835:src/stm32f1xx_ll_usb.c ****   uint32_t USBx_BASE = (uint32_t)USBx;
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  889:src/stm32f1xx_ll_usb.c ****   * @brief  USB_StopDevice : Stop the usb device mode
  890:src/stm32f1xx_ll_usb.c ****   * @param  USBx  Selected device
  891:src/stm32f1xx_ll_usb.c ****   * @retval HAL status
-ARM GAS  /tmp/ccLEOtsc.s 			page 18
+ARM GAS  /tmp/ccXXwgMY.s 			page 18
 
 
  892:src/stm32f1xx_ll_usb.c ****   */
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  946:src/stm32f1xx_ll_usb.c ****   * @param  USBx  Selected device
  947:src/stm32f1xx_ll_usb.c ****   * @retval HAL status
  948:src/stm32f1xx_ll_usb.c ****   */
-ARM GAS  /tmp/ccLEOtsc.s 			page 19
+ARM GAS  /tmp/ccXXwgMY.s 			page 19
 
 
  949:src/stm32f1xx_ll_usb.c **** HAL_StatusTypeDef  USB_DevConnect(USB_OTG_GlobalTypeDef *USBx)
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
 1003:src/stm32f1xx_ll_usb.c **** }
 1004:src/stm32f1xx_ll_usb.c **** 
 1005:src/stm32f1xx_ll_usb.c **** /**
-ARM GAS  /tmp/ccLEOtsc.s 			page 20
+ARM GAS  /tmp/ccXXwgMY.s 			page 20
 
 
 1006:src/stm32f1xx_ll_usb.c ****   * @brief  USB_ReadDevAllInEpInterrupt: return the USB device IN endpoints interrupt status
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
 1060:src/stm32f1xx_ll_usb.c ****   * @brief  USB_ClearInterrupts: clear a USB interrupt
 1061:src/stm32f1xx_ll_usb.c ****   * @param  USBx  Selected device
 1062:src/stm32f1xx_ll_usb.c ****   * @param  interrupt  interrupt flag
-ARM GAS  /tmp/ccLEOtsc.s 			page 21
+ARM GAS  /tmp/ccXXwgMY.s 			page 21
 
 
 1063:src/stm32f1xx_ll_usb.c ****   * @retval None
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
 1117:src/stm32f1xx_ll_usb.c ****     }
 1118:src/stm32f1xx_ll_usb.c ****   }
 1119:src/stm32f1xx_ll_usb.c **** 
-ARM GAS  /tmp/ccLEOtsc.s 			page 22
+ARM GAS  /tmp/ccXXwgMY.s 			page 22
 
 
 1120:src/stm32f1xx_ll_usb.c ****   USBx_OUTEP(0U)->DOEPTSIZ = 0U;
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
 1174:src/stm32f1xx_ll_usb.c ****   uint32_t i;
 1175:src/stm32f1xx_ll_usb.c **** 
 1176:src/stm32f1xx_ll_usb.c ****   /* Restart the Phy Clock */
-ARM GAS  /tmp/ccLEOtsc.s 			page 23
+ARM GAS  /tmp/ccXXwgMY.s 			page 23
 
 
 1177:src/stm32f1xx_ll_usb.c ****   USBx_PCGCCTL = 0U;
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
 1231:src/stm32f1xx_ll_usb.c ****   */
 1232:src/stm32f1xx_ll_usb.c **** HAL_StatusTypeDef USB_InitFSLSPClkSel(USB_OTG_GlobalTypeDef *USBx, uint8_t freq)
 1233:src/stm32f1xx_ll_usb.c **** {
-ARM GAS  /tmp/ccLEOtsc.s 			page 24
+ARM GAS  /tmp/ccXXwgMY.s 			page 24
 
 
 1234:src/stm32f1xx_ll_usb.c ****   uint32_t USBx_BASE = (uint32_t)USBx;
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
 1288:src/stm32f1xx_ll_usb.c **** */
 1289:src/stm32f1xx_ll_usb.c **** HAL_StatusTypeDef USB_DriveVbus(USB_OTG_GlobalTypeDef *USBx, uint8_t state)
 1290:src/stm32f1xx_ll_usb.c **** {
-ARM GAS  /tmp/ccLEOtsc.s 			page 25
+ARM GAS  /tmp/ccXXwgMY.s 			page 25
 
 
 1291:src/stm32f1xx_ll_usb.c ****   uint32_t USBx_BASE = (uint32_t)USBx;
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
 1345:src/stm32f1xx_ll_usb.c ****   *          This parameter can be a value from 1 to 15
 1346:src/stm32f1xx_ll_usb.c ****   * @param  dev_address  Current device address
 1347:src/stm32f1xx_ll_usb.c ****   *          This parameter can be a value from 0 to 255
-ARM GAS  /tmp/ccLEOtsc.s 			page 26
+ARM GAS  /tmp/ccXXwgMY.s 			page 26
 
 
 1348:src/stm32f1xx_ll_usb.c ****   * @param  speed  Current device speed
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
 1402:src/stm32f1xx_ll_usb.c ****                                             USB_OTG_HCINTMSK_FRMORM;
 1403:src/stm32f1xx_ll_usb.c **** 
 1404:src/stm32f1xx_ll_usb.c ****       if ((epnum & 0x80U) == 0x80U)
-ARM GAS  /tmp/ccLEOtsc.s 			page 27
+ARM GAS  /tmp/ccXXwgMY.s 			page 27
 
 
 1405:src/stm32f1xx_ll_usb.c ****       {
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
 1459:src/stm32f1xx_ll_usb.c ****   {
 1460:src/stm32f1xx_ll_usb.c ****     USBx_HC((uint32_t)ch_num)->HCCHAR |= USB_OTG_HCCHAR_ODDFRM ;
 1461:src/stm32f1xx_ll_usb.c ****   }
-ARM GAS  /tmp/ccLEOtsc.s 			page 28
+ARM GAS  /tmp/ccXXwgMY.s 			page 28
 
 
 1462:src/stm32f1xx_ll_usb.c **** 
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
 1516:src/stm32f1xx_ll_usb.c ****   if (hc->ep_is_in != 0U)
 1517:src/stm32f1xx_ll_usb.c ****   {
 1518:src/stm32f1xx_ll_usb.c ****     tmpreg |= USB_OTG_HCCHAR_EPDIR;
-ARM GAS  /tmp/ccLEOtsc.s 			page 29
+ARM GAS  /tmp/ccXXwgMY.s 			page 29
 
 
 1519:src/stm32f1xx_ll_usb.c ****   }
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
 1573:src/stm32f1xx_ll_usb.c **** uint32_t USB_HC_ReadInterrupt(USB_OTG_GlobalTypeDef *USBx)
 1574:src/stm32f1xx_ll_usb.c **** {
 1575:src/stm32f1xx_ll_usb.c ****   uint32_t USBx_BASE = (uint32_t)USBx;
-ARM GAS  /tmp/ccLEOtsc.s 			page 30
+ARM GAS  /tmp/ccXXwgMY.s 			page 30
 
 
 1576:src/stm32f1xx_ll_usb.c **** 
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
 1630:src/stm32f1xx_ll_usb.c ****         {
 1631:src/stm32f1xx_ll_usb.c ****           break;
 1632:src/stm32f1xx_ll_usb.c ****         }
-ARM GAS  /tmp/ccLEOtsc.s 			page 31
+ARM GAS  /tmp/ccXXwgMY.s 			page 31
 
 
 1633:src/stm32f1xx_ll_usb.c ****       }
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
 1687:src/stm32f1xx_ll_usb.c ****   (void)USB_FlushRxFifo(USBx);
 1688:src/stm32f1xx_ll_usb.c **** 
 1689:src/stm32f1xx_ll_usb.c ****   /* Flush out any leftover queued requests. */
-ARM GAS  /tmp/ccLEOtsc.s 			page 32
+ARM GAS  /tmp/ccXXwgMY.s 			page 32
 
 
 1690:src/stm32f1xx_ll_usb.c ****   for (i = 0U; i <= 15U; i++)
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
 1744:src/stm32f1xx_ll_usb.c **** 
 1745:src/stm32f1xx_ll_usb.c **** /**
 1746:src/stm32f1xx_ll_usb.c ****   * @brief  USB_DeActivateRemoteWakeup de-active remote wakeup signalling
-ARM GAS  /tmp/ccLEOtsc.s 			page 33
+ARM GAS  /tmp/ccXXwgMY.s 			page 33
 
 
 1747:src/stm32f1xx_ll_usb.c ****   * @param  USBx Selected device
@@ -1978,7 +1978,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
   98              		.cfi_endproc
   99              	.LFE65:
  100              		.size	USB_CoreInit, .-USB_CoreInit
-ARM GAS  /tmp/ccLEOtsc.s 			page 34
+ARM GAS  /tmp/ccXXwgMY.s 			page 34
 
 
  101              		.align	1
@@ -2038,7 +2038,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  133              		.fpu softvfp
  134              		.type	USB_DisableGlobalInt, %function
  135              	USB_DisableGlobalInt:
-ARM GAS  /tmp/ccLEOtsc.s 			page 35
+ARM GAS  /tmp/ccXXwgMY.s 			page 35
 
 
  136              	.LFB67:
@@ -2098,7 +2098,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  168              		@ link register save eliminated.
  169 0034 0020     		movs	r0, #0	@,
  170 0036 7047     		bx	lr	@
-ARM GAS  /tmp/ccLEOtsc.s 			page 36
+ARM GAS  /tmp/ccXXwgMY.s 			page 36
 
 
  171              		.cfi_endproc
@@ -2158,7 +2158,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  193              	.LCFI3:
  194              		.cfi_def_cfa_offset 24
  195              		.cfi_offset 4, -24
-ARM GAS  /tmp/ccLEOtsc.s 			page 37
+ARM GAS  /tmp/ccXXwgMY.s 			page 37
 
 
  196              		.cfi_offset 14, -20
@@ -2218,7 +2218,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  223              	.LBE4:
  224              		.loc 1 1878 0
  225 005e 04B0     		add	sp, sp, #16	@,,
-ARM GAS  /tmp/ccLEOtsc.s 			page 38
+ARM GAS  /tmp/ccXXwgMY.s 			page 38
 
 
  226              	.LCFI5:
@@ -2278,7 +2278,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
 1899:src/stm32f1xx_ll_usb.c **** }
  259              		.loc 1 1899 0
  260 006e 0020     		movs	r0, #0	@,
-ARM GAS  /tmp/ccLEOtsc.s 			page 39
+ARM GAS  /tmp/ccXXwgMY.s 			page 39
 
 
  261              	.LVL11:
@@ -2338,7 +2338,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  293              		.fpu softvfp
  294              		.type	USB_FlushRxFifo, %function
  295              	USB_FlushRxFifo:
-ARM GAS  /tmp/ccLEOtsc.s 			page 40
+ARM GAS  /tmp/ccXXwgMY.s 			page 40
 
 
  296              	.LFB100:
@@ -2398,7 +2398,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  323              		.cfi_def_cfa_offset 20
  324              		.cfi_offset 4, -20
  325              		.cfi_offset 5, -16
-ARM GAS  /tmp/ccLEOtsc.s 			page 41
+ARM GAS  /tmp/ccXXwgMY.s 			page 41
 
 
  326              		.cfi_offset 6, -12
@@ -2458,7 +2458,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
 1963:src/stm32f1xx_ll_usb.c ****       break;
 1964:src/stm32f1xx_ll_usb.c **** 
 1965:src/stm32f1xx_ll_usb.c ****     case EP_TYPE_INTR:
-ARM GAS  /tmp/ccLEOtsc.s 			page 42
+ARM GAS  /tmp/ccXXwgMY.s 			page 42
 
 
 1966:src/stm32f1xx_ll_usb.c ****       wEpRegVal |= USB_EP_INTERRUPT;
@@ -2518,7 +2518,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  395 00da 24F00104 		bic	r4, r4, #1	@ tmp375, ep_18(D)->pmaadress,
  396 00de B6B2     		uxth	r6, r6	@ _105, USBx_15(D)->BTABLE
  397              	.LVL23:
-ARM GAS  /tmp/ccLEOtsc.s 			page 43
+ARM GAS  /tmp/ccXXwgMY.s 			page 43
 
 
  398 00e0 02F58062 		add	r2, r2, #1024	@ tmp373, tmp372,
@@ -2578,7 +2578,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  445              	.LBE13:
  446              	.LBB14:
 1994:src/stm32f1xx_ll_usb.c ****       }
-ARM GAS  /tmp/ccLEOtsc.s 			page 44
+ARM GAS  /tmp/ccXXwgMY.s 			page 44
 
 
 1995:src/stm32f1xx_ll_usb.c ****       else
@@ -2638,7 +2638,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
 2049:src/stm32f1xx_ll_usb.c **** 
 2050:src/stm32f1xx_ll_usb.c ****       PCD_SET_EP_RX_STATUS(USBx, ep->num, USB_EP_RX_DIS);
  447              		.loc 1 2050 0
-ARM GAS  /tmp/ccLEOtsc.s 			page 45
+ARM GAS  /tmp/ccXXwgMY.s 			page 45
 
 
  448 011e 42F40042 		orr	r2, r2, #32768	@ _271, tmp622,
@@ -2698,7 +2698,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  497              	.LBB18:
  498 0160 5DBB     		cbnz	r5, .L21	@ _66,
 2006:src/stm32f1xx_ll_usb.c ****       PCD_CLEAR_RX_DTOG(USBx, ep->num);
-ARM GAS  /tmp/ccLEOtsc.s 			page 46
+ARM GAS  /tmp/ccXXwgMY.s 			page 46
 
 
  499              		.loc 1 2006 0 is_stmt 0 discriminator 1
@@ -2758,7 +2758,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  549              	.LVL51:
  550              	.L21:
  551              	.LBE22:
-ARM GAS  /tmp/ccLEOtsc.s 			page 47
+ARM GAS  /tmp/ccXXwgMY.s 			page 47
 
 
  552              	.LBB23:
@@ -2818,7 +2818,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  601 01fc 24F00104 		bic	r4, r4, #1	@ tmp488, ep_18(D)->pmaaddr0,
  602 0200 B6B2     		uxth	r6, r6	@ _153, USBx_15(D)->BTABLE
  603              	.LVL62:
-ARM GAS  /tmp/ccLEOtsc.s 			page 48
+ARM GAS  /tmp/ccXXwgMY.s 			page 48
 
 
  604 0202 02F58062 		add	r2, r2, #1024	@ tmp486, tmp485,
@@ -2878,7 +2878,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  654              	.LVL73:
  655 024e 5706     		lsls	r7, r2, #25	@, *_190,
  656 0250 0DD5     		bpl	.L29	@,
-ARM GAS  /tmp/ccLEOtsc.s 			page 49
+ARM GAS  /tmp/ccXXwgMY.s 			page 49
 
 
  657              	.LBB30:
@@ -2938,7 +2938,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  707              	.LVL82:
  708 02b2 22F4E042 		bic	r2, r2, #28672	@ tmp552, *_216,
  709              	.LVL83:
-ARM GAS  /tmp/ccLEOtsc.s 			page 50
+ARM GAS  /tmp/ccXXwgMY.s 			page 50
 
 
  710 02b6 22F04002 		bic	r2, r2, #64	@ tmp552, tmp552,
@@ -2998,7 +2998,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  755              		.loc 1 2036 0 is_stmt 0 discriminator 1
  756 02ec 33F82420 		ldrh	r2, [r3, r4, lsl #2]	@, *_233
  757              	.LVL93:
-ARM GAS  /tmp/ccLEOtsc.s 			page 51
+ARM GAS  /tmp/ccXXwgMY.s 			page 51
 
 
  758 02f0 22F4E042 		bic	r2, r2, #28672	@ tmp580, *_233,
@@ -3058,7 +3058,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  807              	.LVL99:
  808 034c 33F82120 		ldrh	r2, [r3, r1, lsl #2]	@, *_268
  809              	.LVL100:
-ARM GAS  /tmp/ccLEOtsc.s 			page 52
+ARM GAS  /tmp/ccXXwgMY.s 			page 52
 
 
  810 0350 22F48042 		bic	r2, r2, #16384	@ tmp622, *_268,
@@ -3118,7 +3118,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  852 0378 13B3     		cbz	r3, .L64	@ ep_9(D)->is_in,
  853              	.LBB43:
 2068:src/stm32f1xx_ll_usb.c ****     {
-ARM GAS  /tmp/ccLEOtsc.s 			page 53
+ARM GAS  /tmp/ccXXwgMY.s 			page 53
 
 
 2069:src/stm32f1xx_ll_usb.c ****       PCD_CLEAR_TX_DTOG(USBx, ep->num);
@@ -3178,7 +3178,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
 2083:src/stm32f1xx_ll_usb.c ****     if (ep->is_in == 0U)
 2084:src/stm32f1xx_ll_usb.c ****     {
 2085:src/stm32f1xx_ll_usb.c ****       /* Clear the data toggle bits for the endpoint IN/OUT*/
-ARM GAS  /tmp/ccLEOtsc.s 			page 54
+ARM GAS  /tmp/ccXXwgMY.s 			page 54
 
 
 2086:src/stm32f1xx_ll_usb.c ****       PCD_CLEAR_RX_DTOG(USBx, ep->num);
@@ -3238,7 +3238,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
 2077:src/stm32f1xx_ll_usb.c ****     }
  923              		.loc 1 2077 0 is_stmt 1
  924 03e4 0A78     		ldrb	r2, [r1]	@ zero_extendqisi2	@ ep_9(D)->num, ep_9(D)->num
-ARM GAS  /tmp/ccLEOtsc.s 			page 55
+ARM GAS  /tmp/ccXXwgMY.s 			page 55
 
 
  925 03e6 30F82230 		ldrh	r3, [r0, r2, lsl #2]	@, *_26
@@ -3298,7 +3298,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  974 0436 43F40043 		orr	r3, r3, #32768	@ _67, tmp302,
  975 043a 43F0C003 		orr	r3, r3, #192	@ _67, _67,
  976 043e 20F82230 		strh	r3, [r0, r2, lsl #2]	@ movhi	@ _67, *_63
-ARM GAS  /tmp/ccLEOtsc.s 			page 56
+ARM GAS  /tmp/ccXXwgMY.s 			page 56
 
 
  977              	.L70:
@@ -3358,7 +3358,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  1027              	.L68:
  1028              	.LBE57:
  1029              	.LBB58:
-ARM GAS  /tmp/ccLEOtsc.s 			page 57
+ARM GAS  /tmp/ccXXwgMY.s 			page 57
 
 
 2098:src/stm32f1xx_ll_usb.c ****       PCD_CLEAR_TX_DTOG(USBx, ep->num);
@@ -3418,7 +3418,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  1079              	.LVL140:
  1080 04ea 23F07003 		bic	r3, r3, #112	@ tmp370, tmp370,
  1081 04ee 1B04     		lsls	r3, r3, #16	@ tmp370, tmp370,
-ARM GAS  /tmp/ccLEOtsc.s 			page 58
+ARM GAS  /tmp/ccXXwgMY.s 			page 58
 
 
  1082 04f0 1B0C     		lsrs	r3, r3, #16	@ tmp370, tmp370,
@@ -3478,7 +3478,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
 2119:src/stm32f1xx_ll_usb.c ****   uint32_t len;
 2120:src/stm32f1xx_ll_usb.c **** 
 2121:src/stm32f1xx_ll_usb.c ****   /* IN endpoint */
-ARM GAS  /tmp/ccLEOtsc.s 			page 59
+ARM GAS  /tmp/ccXXwgMY.s 			page 59
 
 
 2122:src/stm32f1xx_ll_usb.c ****   if (ep->is_in == 1U)
@@ -3538,7 +3538,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
 2176:src/stm32f1xx_ll_usb.c **** 
 2177:src/stm32f1xx_ll_usb.c ****     /* configure and validate Rx endpoint */
 2178:src/stm32f1xx_ll_usb.c ****     if (ep->doublebuffer == 0U)
-ARM GAS  /tmp/ccLEOtsc.s 			page 60
+ARM GAS  /tmp/ccXXwgMY.s 			page 60
 
 
 2179:src/stm32f1xx_ll_usb.c ****     {
@@ -3598,7 +3598,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  1140              		.thumb
  1141              		.thumb_func
  1142              		.fpu softvfp
-ARM GAS  /tmp/ccLEOtsc.s 			page 61
+ARM GAS  /tmp/ccXXwgMY.s 			page 61
 
 
  1143              		.type	USB_ReadPacket, %function
@@ -3658,7 +3658,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
 2246:src/stm32f1xx_ll_usb.c **** {
  1168              		.loc 1 2246 0
  1169              		.cfi_startproc
-ARM GAS  /tmp/ccLEOtsc.s 			page 62
+ARM GAS  /tmp/ccXXwgMY.s 			page 62
 
 
  1170              		@ args = 0, pretend = 0, frame = 0
@@ -3718,7 +3718,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  1212 0570 ECE7     		b	.L98	@
  1213              	.LBE67:
  1214              		.cfi_endproc
-ARM GAS  /tmp/ccLEOtsc.s 			page 63
+ARM GAS  /tmp/ccXXwgMY.s 			page 63
 
 
  1215              	.LFE78:
@@ -3778,7 +3778,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  1255 0594 43F40043 		orr	r3, r3, #32768	@ _17, tmp161,
  1256 0598 43F0C003 		orr	r3, r3, #192	@ _17, _17,
  1257 059c 20F82230 		strh	r3, [r0, r2, lsl #2]	@ movhi	@ _17, *_13
-ARM GAS  /tmp/ccLEOtsc.s 			page 64
+ARM GAS  /tmp/ccXXwgMY.s 			page 64
 
 
  1258              	.L103:
@@ -3838,7 +3838,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  1293 05cc 30F82230 		ldrh	r3, [r0, r2, lsl #2]	@,* USBx
  1294              	.LVL166:
  1295 05d0 5B04     		lsls	r3, r3, #17	@, *_33,
-ARM GAS  /tmp/ccLEOtsc.s 			page 65
+ARM GAS  /tmp/ccXXwgMY.s 			page 65
 
 
  1296              	.LVL167:
@@ -3898,7 +3898,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  1340              		@ args = 0, pretend = 0, frame = 0
  1341              		@ frame_needed = 0, uses_anonymous_args = 0
  1342              		@ link register save eliminated.
-ARM GAS  /tmp/ccLEOtsc.s 			page 66
+ARM GAS  /tmp/ccXXwgMY.s 			page 66
 
 
  1343              	.LVL172:
@@ -3958,7 +3958,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  1374              		.cfi_startproc
  1375              		@ args = 0, pretend = 0, frame = 0
  1376              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/ccLEOtsc.s 			page 67
+ARM GAS  /tmp/ccXXwgMY.s 			page 67
 
 
  1377              		@ link register save eliminated.
@@ -4018,7 +4018,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
 2331:src/stm32f1xx_ll_usb.c ****   * @retval HAL status
 2332:src/stm32f1xx_ll_usb.c ****   */
 2333:src/stm32f1xx_ll_usb.c **** HAL_StatusTypeDef  USB_DevConnect(USB_TypeDef *USBx)
-ARM GAS  /tmp/ccLEOtsc.s 			page 68
+ARM GAS  /tmp/ccXXwgMY.s 			page 68
 
 
 2334:src/stm32f1xx_ll_usb.c **** {
@@ -4078,7 +4078,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
 2366:src/stm32f1xx_ll_usb.c ****   */
 2367:src/stm32f1xx_ll_usb.c **** uint32_t  USB_ReadInterrupts(USB_TypeDef *USBx)
 2368:src/stm32f1xx_ll_usb.c **** {
-ARM GAS  /tmp/ccLEOtsc.s 			page 69
+ARM GAS  /tmp/ccXXwgMY.s 			page 69
 
 
  1441              		.loc 1 2368 0
@@ -4138,7 +4138,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
 2380:src/stm32f1xx_ll_usb.c **** uint32_t USB_ReadDevAllOutEpInterrupt(USB_TypeDef *USBx)
 2381:src/stm32f1xx_ll_usb.c **** {
 2382:src/stm32f1xx_ll_usb.c ****   /* Prevent unused argument(s) compilation warning */
-ARM GAS  /tmp/ccLEOtsc.s 			page 70
+ARM GAS  /tmp/ccXXwgMY.s 			page 70
 
 
 2383:src/stm32f1xx_ll_usb.c ****   UNUSED(USBx);
@@ -4198,7 +4198,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  1515              		.align	1
  1516              		.global	USB_ReadDevInEPInterrupt
  1517              		.syntax unified
-ARM GAS  /tmp/ccLEOtsc.s 			page 71
+ARM GAS  /tmp/ccXXwgMY.s 			page 71
 
 
  1518              		.thumb
@@ -4258,7 +4258,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  1534              		.cfi_endproc
  1535              	.LFE88:
  1536              		.size	USB_ReadDevInEPInterrupt, .-USB_ReadDevInEPInterrupt
-ARM GAS  /tmp/ccLEOtsc.s 			page 72
+ARM GAS  /tmp/ccXXwgMY.s 			page 72
 
 
  1537              		.align	1
@@ -4318,7 +4318,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  1565              		.loc 1 2469 0
  1566              		.cfi_startproc
  1567              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  /tmp/ccLEOtsc.s 			page 73
+ARM GAS  /tmp/ccXXwgMY.s 			page 73
 
 
  1568              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -4378,7 +4378,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  1601 0660 7047     		bx	lr	@
  1602              		.cfi_endproc
  1603              	.LFE91:
-ARM GAS  /tmp/ccLEOtsc.s 			page 74
+ARM GAS  /tmp/ccXXwgMY.s 			page 74
 
 
  1604              		.size	USB_ActivateRemoteWakeup, .-USB_ActivateRemoteWakeup
@@ -4438,7 +4438,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
 2507:src/stm32f1xx_ll_usb.c ****   * @param   wPMABufAddr address into PMA.
 2508:src/stm32f1xx_ll_usb.c ****   * @param   wNBytes: no. of bytes to be copied.
 2509:src/stm32f1xx_ll_usb.c ****   * @retval None
-ARM GAS  /tmp/ccLEOtsc.s 			page 75
+ARM GAS  /tmp/ccXXwgMY.s 			page 75
 
 
 2510:src/stm32f1xx_ll_usb.c ****   */
@@ -4498,7 +4498,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  1668 068c 31F8020B 		ldrh	r0, [r1], #2	@ unaligned	@ load_dst_15, MEM[(uint8_t *)pBuf_3]
  1669              	.LVL197:
 2526:src/stm32f1xx_ll_usb.c ****     pdwVal++;
-ARM GAS  /tmp/ccLEOtsc.s 			page 76
+ARM GAS  /tmp/ccXXwgMY.s 			page 76
 
 
  1670              		.loc 1 2526 0 discriminator 3
@@ -4558,7 +4558,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  1717 06ac 0023     		movls	r3, #0	@ tmp277,
  1718              	.LVL203:
  1719 06ae AB61     		strls	r3, [r5, #24]	@ tmp277, ep_24(D)->xfer_len
-ARM GAS  /tmp/ccLEOtsc.s 			page 77
+ARM GAS  /tmp/ccXXwgMY.s 			page 77
 
 
  1720 06b0 1346     		movls	r3, r2	@ len, _159
@@ -4618,7 +4618,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  1768 06f8 24F82230 		strh	r3, [r4, r2, lsl #2]	@ movhi	@ _272,* USBx
  1769              	.LBE77:
 2193:src/stm32f1xx_ll_usb.c **** 
-ARM GAS  /tmp/ccLEOtsc.s 			page 78
+ARM GAS  /tmp/ccXXwgMY.s 			page 78
 
 
  1770              		.loc 1 2193 0
@@ -4678,7 +4678,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  1814              		.loc 1 2149 0
  1815 0728 6A89     		ldrhne	r2, [r5, #10]	@ pmabuffer, ep_24(D)->pmaaddr1
  1816              	.LVL216:
-ARM GAS  /tmp/ccLEOtsc.s 			page 79
+ARM GAS  /tmp/ccXXwgMY.s 			page 79
 
 
 2155:src/stm32f1xx_ll_usb.c ****       }
@@ -4738,7 +4738,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  1864              	.L134:
  1865              	.LBE86:
 2166:src/stm32f1xx_ll_usb.c ****     {
-ARM GAS  /tmp/ccLEOtsc.s 			page 80
+ARM GAS  /tmp/ccXXwgMY.s 			page 80
 
 
  1866              		.loc 1 2166 0 is_stmt 1
@@ -4798,7 +4798,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  1913 07b6 3FE0     		b	.L147	@
  1914              	.LVL231:
  1915              	.L145:
-ARM GAS  /tmp/ccLEOtsc.s 			page 81
+ARM GAS  /tmp/ccXXwgMY.s 			page 81
 
 
  1916              	.LBE89:
@@ -4858,7 +4858,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  1963 07f6 88B2     		uxth	r0, r1	@ _253, USBx_35(D)->BTABLE
  1964              	.LVL237:
  1965 07f8 04F20C41 		addw	r1, r4, #1036	@ tmp413, USBx,
-ARM GAS  /tmp/ccLEOtsc.s 			page 82
+ARM GAS  /tmp/ccXXwgMY.s 			page 82
 
 
  1966 07fc 0144     		add	r1, r1, r0	@ tmp414, _253
@@ -4918,7 +4918,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  2015              	.LVL249:
  2016 082c DE07     		lsls	r6, r3, #31	@, len,
  2017 082e 48BF     		it	mi
-ARM GAS  /tmp/ccLEOtsc.s 			page 83
+ARM GAS  /tmp/ccXXwgMY.s 			page 83
 
 
  2018 0830 0131     		addmi	r1, r1, #1	@ wNBlocks, wNBlocks,
@@ -4978,7 +4978,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  2070              		.syntax unified
  2071              		.thumb
  2072              		.thumb_func
-ARM GAS  /tmp/ccLEOtsc.s 			page 84
+ARM GAS  /tmp/ccXXwgMY.s 			page 84
 
 
  2073              		.fpu softvfp
@@ -5038,7 +5038,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  2105              	.LVL263:
  2106              	.L186:
  2107 087a 0230     		adds	r0, r0, #2	@ ivtmp.127, ivtmp.127,
-ARM GAS  /tmp/ccLEOtsc.s 			page 85
+ARM GAS  /tmp/ccXXwgMY.s 			page 85
 
 
  2108              	.LVL264:
@@ -5098,7 +5098,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  2140 089e ECE7     		b	.L186	@
  2141              		.cfi_endproc
  2142              	.LFE94:
-ARM GAS  /tmp/ccLEOtsc.s 			page 86
+ARM GAS  /tmp/ccXXwgMY.s 			page 86
 
 
  2143              		.size	USB_ReadPMA, .-USB_ReadPMA
@@ -5158,7 +5158,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  2197 005e 62000000 		.4byte	0x62
  2198 0062 02       		.uleb128 0x2
  2199 0063 04       		.byte	0x4
-ARM GAS  /tmp/ccLEOtsc.s 			page 87
+ARM GAS  /tmp/ccXXwgMY.s 			page 87
 
 
  2200 0064 05       		.byte	0x5
@@ -5218,7 +5218,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  2254 00d3 04       		.byte	0x4
  2255 00d4 07       		.byte	0x7
  2256 00d5 BE030000 		.4byte	.LASF17
-ARM GAS  /tmp/ccLEOtsc.s 			page 88
+ARM GAS  /tmp/ccXXwgMY.s 			page 88
 
 
  2257 00d9 07       		.uleb128 0x7
@@ -5278,7 +5278,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  2311 0147 0702     		.2byte	0x207
  2312 0149 B2000000 		.4byte	0xb2
  2313 014d 02       		.byte	0x2
-ARM GAS  /tmp/ccLEOtsc.s 			page 89
+ARM GAS  /tmp/ccXXwgMY.s 			page 89
 
 
  2314 014e 23       		.byte	0x23
@@ -5338,7 +5338,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  2368 01b2 B2000000 		.4byte	0xb2
  2369 01b6 02       		.byte	0x2
  2370 01b7 23       		.byte	0x23
-ARM GAS  /tmp/ccLEOtsc.s 			page 90
+ARM GAS  /tmp/ccXXwgMY.s 			page 90
 
 
  2371 01b8 0E       		.uleb128 0xe
@@ -5398,7 +5398,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  2425 021f 02       		.byte	0x2
  2426 0220 23       		.byte	0x23
  2427 0221 1C       		.uleb128 0x1c
-ARM GAS  /tmp/ccLEOtsc.s 			page 91
+ARM GAS  /tmp/ccXXwgMY.s 			page 91
 
 
  2428 0222 0C       		.uleb128 0xc
@@ -5458,7 +5458,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  2482 0289 23       		.byte	0x23
  2483 028a 4A       		.uleb128 0x4a
  2484 028b 0C       		.uleb128 0xc
-ARM GAS  /tmp/ccLEOtsc.s 			page 92
+ARM GAS  /tmp/ccXXwgMY.s 			page 92
 
 
  2485 028c B1060000 		.4byte	.LASF43
@@ -5518,7 +5518,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  2539 02f7 2A       		.byte	0x2a
  2540 02f8 15030000 		.4byte	0x315
  2541 02fc 10       		.uleb128 0x10
-ARM GAS  /tmp/ccLEOtsc.s 			page 93
+ARM GAS  /tmp/ccXXwgMY.s 			page 93
 
 
  2542 02fd DD020000 		.4byte	.LASF49
@@ -5578,7 +5578,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  2596 0363 C7000000 		.4byte	0xc7
  2597 0367 02       		.byte	0x2
  2598 0368 23       		.byte	0x23
-ARM GAS  /tmp/ccLEOtsc.s 			page 94
+ARM GAS  /tmp/ccXXwgMY.s 			page 94
 
 
  2599 0369 04       		.uleb128 0x4
@@ -5638,7 +5638,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  2653 03c6 46030000 		.4byte	0x346
  2654 03ca 13       		.uleb128 0x13
  2655 03cb 20       		.byte	0x20
-ARM GAS  /tmp/ccLEOtsc.s 			page 95
+ARM GAS  /tmp/ccXXwgMY.s 			page 95
 
 
  2656 03cc 08       		.byte	0x8
@@ -5698,7 +5698,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  2710 042e 0701     		.2byte	0x107
  2711 0430 A7000000 		.4byte	0xa7
  2712 0434 02       		.byte	0x2
-ARM GAS  /tmp/ccLEOtsc.s 			page 96
+ARM GAS  /tmp/ccXXwgMY.s 			page 96
 
 
  2713 0435 23       		.byte	0x23
@@ -5758,7 +5758,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  2767 0499 C7000000 		.4byte	0xc7
  2768 049d 02       		.byte	0x2
  2769 049e 23       		.byte	0x23
-ARM GAS  /tmp/ccLEOtsc.s 			page 97
+ARM GAS  /tmp/ccXXwgMY.s 			page 97
 
 
  2770 049f 1C       		.uleb128 0x1c
@@ -5818,7 +5818,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  2824 050d 01       		.byte	0x1
  2825 050e AB050000 		.4byte	0x5ab
  2826 0512 17       		.uleb128 0x17
-ARM GAS  /tmp/ccLEOtsc.s 			page 98
+ARM GAS  /tmp/ccXXwgMY.s 			page 98
 
 
  2827 0513 44000000 		.4byte	.LASF86
@@ -5878,7 +5878,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  2881 0596 0F010000 		.4byte	.LLST129
  2882 059a 1A       		.uleb128 0x1a
  2883 059b C1060000 		.4byte	.LASF93
-ARM GAS  /tmp/ccLEOtsc.s 			page 99
+ARM GAS  /tmp/ccXXwgMY.s 			page 99
 
 
  2884 059f 01       		.byte	0x1
@@ -5938,7 +5938,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  2938 061f 1A       		.uleb128 0x1a
  2939 0620 AA030000 		.4byte	.LASF90
  2940 0624 01       		.byte	0x1
-ARM GAS  /tmp/ccLEOtsc.s 			page 100
+ARM GAS  /tmp/ccXXwgMY.s 			page 100
 
 
  2941 0625 D209     		.2byte	0x9d2
@@ -5998,7 +5998,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  2995 06a6 00       		.byte	0
  2996 06a7 1F       		.uleb128 0x1f
  2997 06a8 01       		.byte	0x1
-ARM GAS  /tmp/ccLEOtsc.s 			page 101
+ARM GAS  /tmp/ccXXwgMY.s 			page 101
 
 
  2998 06a9 75060000 		.4byte	.LASF99
@@ -6058,7 +6058,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  3052 0721 4C060000 		.4byte	.LFE89
  3053 0725 02       		.byte	0x2
  3054 0726 7D       		.byte	0x7d
-ARM GAS  /tmp/ccLEOtsc.s 			page 102
+ARM GAS  /tmp/ccXXwgMY.s 			page 102
 
 
  3055 0727 00       		.sleb128 0
@@ -6118,7 +6118,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  3109 079a 6E09     		.2byte	0x96e
  3110 079c 97000000 		.4byte	0x97
  3111 07a0 00       		.byte	0
-ARM GAS  /tmp/ccLEOtsc.s 			page 103
+ARM GAS  /tmp/ccXXwgMY.s 			page 103
 
 
  3112 07a1 20       		.uleb128 0x20
@@ -6178,7 +6178,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  3166 081a 5E030000 		.4byte	.LLST86
  3167 081e 00       		.byte	0
  3168 081f 20       		.uleb128 0x20
-ARM GAS  /tmp/ccLEOtsc.s 			page 104
+ARM GAS  /tmp/ccXXwgMY.s 			page 104
 
 
  3169 0820 01       		.byte	0x1
@@ -6238,7 +6238,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  3223 0899 51       		.byte	0x51
  3224 089a 00       		.byte	0
  3225 089b 1F       		.uleb128 0x1f
-ARM GAS  /tmp/ccLEOtsc.s 			page 105
+ARM GAS  /tmp/ccXXwgMY.s 			page 105
 
 
  3226 089c 01       		.byte	0x1
@@ -6298,7 +6298,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  3280 0918 DF08     		.2byte	0x8df
  3281 091a A7000000 		.4byte	0xa7
  3282 091e ED030000 		.4byte	.LLST76
-ARM GAS  /tmp/ccLEOtsc.s 			page 106
+ARM GAS  /tmp/ccXXwgMY.s 			page 106
 
 
  3283 0922 25       		.uleb128 0x25
@@ -6358,7 +6358,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  3337 09ab 04       		.byte	0x4
  3338 09ac A1040000 		.4byte	0x4a1
  3339 09b0 1F       		.uleb128 0x1f
-ARM GAS  /tmp/ccLEOtsc.s 			page 107
+ARM GAS  /tmp/ccXXwgMY.s 			page 107
 
 
  3340 09b1 01       		.byte	0x1
@@ -6418,7 +6418,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  3394 0a2e 2E050000 		.4byte	.LFB77
  3395 0a32 32050000 		.4byte	.LFE77
  3396 0a36 02       		.byte	0x2
-ARM GAS  /tmp/ccLEOtsc.s 			page 108
+ARM GAS  /tmp/ccXXwgMY.s 			page 108
 
 
  3397 0a37 7D       		.byte	0x7d
@@ -6478,7 +6478,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  3451 0aac 01       		.byte	0x1
  3452 0aad 9C08     		.2byte	0x89c
  3453 0aaf 97000000 		.4byte	0x97
-ARM GAS  /tmp/ccLEOtsc.s 			page 109
+ARM GAS  /tmp/ccXXwgMY.s 			page 109
 
 
  3454 0ab3 01       		.byte	0x1
@@ -6538,7 +6538,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  3508 0b37 C7000000 		.4byte	0xc7
  3509 0b3b 30060000 		.4byte	.LLST106
  3510 0b3f 1A       		.uleb128 0x1a
-ARM GAS  /tmp/ccLEOtsc.s 			page 110
+ARM GAS  /tmp/ccXXwgMY.s 			page 110
 
 
  3511 0b40 71030000 		.4byte	.LASF117
@@ -6598,7 +6598,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  3565 0bbd E7000000 		.4byte	.LASF129
  3566 0bc1 01       		.byte	0x1
  3567 0bc2 6A08     		.2byte	0x86a
-ARM GAS  /tmp/ccLEOtsc.s 			page 111
+ARM GAS  /tmp/ccXXwgMY.s 			page 111
 
 
  3568 0bc4 C7000000 		.4byte	0xc7
@@ -6658,7 +6658,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  3622 0c50 2C040000 		.4byte	.LASF126
  3623 0c54 01       		.byte	0x1
  3624 0c55 8508     		.2byte	0x885
-ARM GAS  /tmp/ccLEOtsc.s 			page 112
+ARM GAS  /tmp/ccXXwgMY.s 			page 112
 
 
  3625 0c57 C7000000 		.4byte	0xc7
@@ -6718,7 +6718,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  3679 0cd9 360D0000 		.4byte	0xd36
  3680 0cdd 1A       		.uleb128 0x1a
  3681 0cde 63000000 		.4byte	.LASF127
-ARM GAS  /tmp/ccLEOtsc.s 			page 113
+ARM GAS  /tmp/ccXXwgMY.s 			page 113
 
 
  3682 0ce2 01       		.byte	0x1
@@ -6778,7 +6778,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  3736 0d63 2E       		.uleb128 0x2e
  3737 0d64 01       		.byte	0x1
  3738 0d65 53       		.byte	0x53
-ARM GAS  /tmp/ccLEOtsc.s 			page 114
+ARM GAS  /tmp/ccXXwgMY.s 			page 114
 
 
  3739 0d66 02       		.byte	0x2
@@ -6838,7 +6838,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  3793 0dd8 00090000 		.4byte	.LLST50
  3794 0ddc 25       		.uleb128 0x25
  3795 0ddd 82030000 		.4byte	.LBB44
-ARM GAS  /tmp/ccLEOtsc.s 			page 115
+ARM GAS  /tmp/ccXXwgMY.s 			page 115
 
 
  3796 0de1 9E030000 		.4byte	.LBE44
@@ -6898,7 +6898,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  3850 0e70 9F0E0000 		.4byte	0xe9f
  3851 0e74 1A       		.uleb128 0x1a
  3852 0e75 71030000 		.4byte	.LASF117
-ARM GAS  /tmp/ccLEOtsc.s 			page 116
+ARM GAS  /tmp/ccXXwgMY.s 			page 116
 
 
  3853 0e79 01       		.byte	0x1
@@ -6958,7 +6958,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  3907 0f08 2C08     		.2byte	0x82c
  3908 0f0a A7000000 		.4byte	0xa7
  3909 0f0e FB090000 		.4byte	.LLST61
-ARM GAS  /tmp/ccLEOtsc.s 			page 117
+ARM GAS  /tmp/ccXXwgMY.s 			page 117
 
 
  3910 0f12 00       		.byte	0
@@ -7018,7 +7018,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  3964 0fa1 24       		.uleb128 0x24
  3965 0fa2 E0040000 		.4byte	.LBB62
  3966 0fa6 FE040000 		.4byte	.LBE62
-ARM GAS  /tmp/ccLEOtsc.s 			page 118
+ARM GAS  /tmp/ccXXwgMY.s 			page 118
 
 
  3967 0faa BF0F0000 		.4byte	0xfbf
@@ -7078,7 +7078,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  4021 1033 72657400 		.ascii	"ret\000"
  4022 1037 01       		.byte	0x1
  4023 1038 9D07     		.2byte	0x79d
-ARM GAS  /tmp/ccLEOtsc.s 			page 119
+ARM GAS  /tmp/ccXXwgMY.s 			page 119
 
 
  4024 103a 15030000 		.4byte	0x315
@@ -7138,7 +7138,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  4078 10d0 4A0C0000 		.4byte	.LLST18
  4079 10d4 00       		.byte	0
  4080 10d5 00       		.byte	0
-ARM GAS  /tmp/ccLEOtsc.s 			page 120
+ARM GAS  /tmp/ccXXwgMY.s 			page 120
 
 
  4081 10d6 29       		.uleb128 0x29
@@ -7198,7 +7198,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  4135 1163 01       		.byte	0x1
  4136 1164 D607     		.2byte	0x7d6
  4137 1166 C7000000 		.4byte	0xc7
-ARM GAS  /tmp/ccLEOtsc.s 			page 121
+ARM GAS  /tmp/ccXXwgMY.s 			page 121
 
 
  4138 116a 090D0000 		.4byte	.LLST25
@@ -7258,7 +7258,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  4192 11f9 B1050000 		.4byte	0x5b1
  4193 11fd 9A0D0000 		.4byte	.LLST30
  4194 1201 1A       		.uleb128 0x1a
-ARM GAS  /tmp/ccLEOtsc.s 			page 122
+ARM GAS  /tmp/ccXXwgMY.s 			page 122
 
 
  4195 1202 2C040000 		.4byte	.LASF126
@@ -7318,7 +7318,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  4249 1295 25       		.uleb128 0x25
  4250 1296 52020000 		.4byte	.LBB30
  4251 129a 6E020000 		.4byte	.LBE30
-ARM GAS  /tmp/ccLEOtsc.s 			page 123
+ARM GAS  /tmp/ccXXwgMY.s 			page 123
 
 
  4252 129e 1A       		.uleb128 0x1a
@@ -7378,7 +7378,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  4306 1330 1A       		.uleb128 0x1a
  4307 1331 5B010000 		.4byte	.LASF118
  4308 1335 01       		.byte	0x1
-ARM GAS  /tmp/ccLEOtsc.s 			page 124
+ARM GAS  /tmp/ccXXwgMY.s 			page 124
 
 
  4309 1336 F307     		.2byte	0x7f3
@@ -7438,7 +7438,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  4363 13c8 01       		.byte	0x1
  4364 13c9 FF07     		.2byte	0x7ff
  4365 13cb A7000000 		.4byte	0xa7
-ARM GAS  /tmp/ccLEOtsc.s 			page 125
+ARM GAS  /tmp/ccXXwgMY.s 			page 125
 
 
  4366 13cf 00       		.byte	0
@@ -7498,7 +7498,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  4420 1444 01       		.byte	0x1
  4421 1445 77010000 		.4byte	.LASF136
  4422 1449 01       		.byte	0x1
-ARM GAS  /tmp/ccLEOtsc.s 			page 126
+ARM GAS  /tmp/ccXXwgMY.s 			page 126
 
 
  4423 144a 5F07     		.2byte	0x75f
@@ -7558,7 +7558,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  4477 14cc C5150000 		.4byte	0x15c5
  4478 14d0 00       		.byte	0
  4479 14d1 00       		.byte	0
-ARM GAS  /tmp/ccLEOtsc.s 			page 127
+ARM GAS  /tmp/ccXXwgMY.s 			page 127
 
 
  4480 14d2 00       		.byte	0
@@ -7618,7 +7618,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  4534 154a 01       		.byte	0x1
  4535 154b 68150000 		.4byte	0x1568
  4536 154f 21       		.uleb128 0x21
-ARM GAS  /tmp/ccLEOtsc.s 			page 128
+ARM GAS  /tmp/ccXXwgMY.s 			page 128
 
 
  4537 1550 44000000 		.4byte	.LASF86
@@ -7678,7 +7678,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  4591 15cf 43140000 		.4byte	0x1443
  4592 15d3 6E000000 		.4byte	.LFB70
  4593 15d7 72000000 		.4byte	.LFE70
-ARM GAS  /tmp/ccLEOtsc.s 			page 129
+ARM GAS  /tmp/ccXXwgMY.s 			page 129
 
 
  4594 15db 02       		.byte	0x2
@@ -7738,7 +7738,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  4648 1653 00       		.byte	0
  4649 1654 00       		.byte	0
  4650              		.section	.debug_abbrev,"",%progbits
-ARM GAS  /tmp/ccLEOtsc.s 			page 130
+ARM GAS  /tmp/ccXXwgMY.s 			page 130
 
 
  4651              	.Ldebug_abbrev0:
@@ -7798,7 +7798,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  4705 0035 00       		.byte	0
  4706 0036 05       		.uleb128 0x5
  4707 0037 26       		.uleb128 0x26
-ARM GAS  /tmp/ccLEOtsc.s 			page 131
+ARM GAS  /tmp/ccXXwgMY.s 			page 131
 
 
  4708 0038 00       		.byte	0
@@ -7858,7 +7858,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  4762 006e 00       		.byte	0
  4763 006f 0A       		.uleb128 0xa
  4764 0070 21       		.uleb128 0x21
-ARM GAS  /tmp/ccLEOtsc.s 			page 132
+ARM GAS  /tmp/ccXXwgMY.s 			page 132
 
 
  4765 0071 00       		.byte	0
@@ -7918,7 +7918,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  4819 00a7 0E       		.uleb128 0xe
  4820 00a8 3A       		.uleb128 0x3a
  4821 00a9 0B       		.uleb128 0xb
-ARM GAS  /tmp/ccLEOtsc.s 			page 133
+ARM GAS  /tmp/ccXXwgMY.s 			page 133
 
 
  4822 00aa 3B       		.uleb128 0x3b
@@ -7978,7 +7978,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  4876 00e0 0B       		.uleb128 0xb
  4877 00e1 01       		.uleb128 0x1
  4878 00e2 13       		.uleb128 0x13
-ARM GAS  /tmp/ccLEOtsc.s 			page 134
+ARM GAS  /tmp/ccXXwgMY.s 			page 134
 
 
  4879 00e3 00       		.byte	0
@@ -8038,7 +8038,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  4933 011a 13       		.uleb128 0x13
  4934 011b 00       		.byte	0
  4935 011c 00       		.byte	0
-ARM GAS  /tmp/ccLEOtsc.s 			page 135
+ARM GAS  /tmp/ccXXwgMY.s 			page 135
 
 
  4936 011d 17       		.uleb128 0x17
@@ -8098,7 +8098,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  4990 0153 49       		.uleb128 0x49
  4991 0154 13       		.uleb128 0x13
  4992 0155 02       		.uleb128 0x2
-ARM GAS  /tmp/ccLEOtsc.s 			page 136
+ARM GAS  /tmp/ccXXwgMY.s 			page 136
 
 
  4993 0156 06       		.uleb128 0x6
@@ -8158,7 +8158,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  5047 018d 00       		.byte	0
  5048 018e 00       		.byte	0
  5049 018f 1E       		.uleb128 0x1e
-ARM GAS  /tmp/ccLEOtsc.s 			page 137
+ARM GAS  /tmp/ccXXwgMY.s 			page 137
 
 
  5050 0190 34       		.uleb128 0x34
@@ -8218,7 +8218,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  5104 01c7 49       		.uleb128 0x49
  5105 01c8 13       		.uleb128 0x13
  5106 01c9 20       		.uleb128 0x20
-ARM GAS  /tmp/ccLEOtsc.s 			page 138
+ARM GAS  /tmp/ccXXwgMY.s 			page 138
 
 
  5107 01ca 0B       		.uleb128 0xb
@@ -8278,7 +8278,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  5161 0200 01       		.byte	0x1
  5162 0201 11       		.uleb128 0x11
  5163 0202 01       		.uleb128 0x1
-ARM GAS  /tmp/ccLEOtsc.s 			page 139
+ARM GAS  /tmp/ccXXwgMY.s 			page 139
 
 
  5164 0203 12       		.uleb128 0x12
@@ -8338,7 +8338,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  5218 023a 3A       		.uleb128 0x3a
  5219 023b 0B       		.uleb128 0xb
  5220 023c 3B       		.uleb128 0x3b
-ARM GAS  /tmp/ccLEOtsc.s 			page 140
+ARM GAS  /tmp/ccXXwgMY.s 			page 140
 
 
  5221 023d 05       		.uleb128 0x5
@@ -8398,7 +8398,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  5275 0277 00       		.byte	0
  5276 0278 02       		.uleb128 0x2
  5277 0279 0A       		.uleb128 0xa
-ARM GAS  /tmp/ccLEOtsc.s 			page 141
+ARM GAS  /tmp/ccXXwgMY.s 			page 141
 
 
  5278 027a 9142     		.uleb128 0x2111
@@ -8458,7 +8458,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  5332 02b3 13       		.uleb128 0x13
  5333 02b4 1C       		.uleb128 0x1c
  5334 02b5 0D       		.uleb128 0xd
-ARM GAS  /tmp/ccLEOtsc.s 			page 142
+ARM GAS  /tmp/ccXXwgMY.s 			page 142
 
 
  5335 02b6 00       		.byte	0
@@ -8518,7 +8518,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  5389              	.Ldebug_loc0:
  5390              	.LLST122:
  5391 0000 68080000 		.4byte	.LFB94-.Ltext0
-ARM GAS  /tmp/ccLEOtsc.s 			page 143
+ARM GAS  /tmp/ccXXwgMY.s 			page 143
 
 
  5392 0004 6E080000 		.4byte	.LCFI9-.Ltext0
@@ -8578,7 +8578,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  5446 0085 53       		.byte	0x53
  5447 0086 00000000 		.4byte	0
  5448 008a 00000000 		.4byte	0
-ARM GAS  /tmp/ccLEOtsc.s 			page 144
+ARM GAS  /tmp/ccXXwgMY.s 			page 144
 
 
  5449              	.LLST126:
@@ -8638,7 +8638,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  5503 0107 00000000 		.4byte	0
  5504 010b 00000000 		.4byte	0
  5505              	.LLST129:
-ARM GAS  /tmp/ccLEOtsc.s 			page 145
+ARM GAS  /tmp/ccXXwgMY.s 			page 145
 
 
  5506 010f 74080000 		.4byte	.LVL261-.Ltext0
@@ -8698,7 +8698,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  5560 0195 76060000 		.4byte	.LVL192-.Ltext0
  5561 0199 86060000 		.4byte	.LVL196-.Ltext0
  5562 019d 0100     		.2byte	0x1
-ARM GAS  /tmp/ccLEOtsc.s 			page 146
+ARM GAS  /tmp/ccXXwgMY.s 			page 146
 
 
  5563 019f 50       		.byte	0x50
@@ -8758,7 +8758,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  5617 021d 7C060000 		.4byte	.LVL194-.Ltext0
  5618 0221 0B00     		.2byte	0xb
  5619 0223 73       		.byte	0x73
-ARM GAS  /tmp/ccLEOtsc.s 			page 147
+ARM GAS  /tmp/ccXXwgMY.s 			page 147
 
 
  5620 0224 00       		.sleb128 0
@@ -8818,7 +8818,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  5674 0287 90060000 		.4byte	.LVL197-.Ltext0
  5675 028b 94060000 		.4byte	.LVL198-.Ltext0
  5676 028f 1600     		.2byte	0x16
-ARM GAS  /tmp/ccLEOtsc.s 			page 148
+ARM GAS  /tmp/ccXXwgMY.s 			page 148
 
 
  5677 0291 71       		.byte	0x71
@@ -8878,7 +8878,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  5731              	.LLST90:
  5732 02fb 50060000 		.4byte	.LVL188-.Ltext0
  5733 02ff 60060000 		.4byte	.LVL189-.Ltext0
-ARM GAS  /tmp/ccLEOtsc.s 			page 149
+ARM GAS  /tmp/ccXXwgMY.s 			page 149
 
 
  5734 0303 0100     		.2byte	0x1
@@ -8938,7 +8938,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  5788 037e 00000000 		.4byte	0
  5789              	.LLST83:
  5790 0382 1E060000 		.4byte	.LVL174-.Ltext0
-ARM GAS  /tmp/ccLEOtsc.s 			page 150
+ARM GAS  /tmp/ccXXwgMY.s 			page 150
 
 
  5791 0386 28060000 		.4byte	.LVL175-.Ltext0
@@ -8998,7 +8998,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  5845 040c 0B       		.byte	0xb
  5846 040d 8F8F     		.2byte	0x8f8f
  5847 040f 1A       		.byte	0x1a
-ARM GAS  /tmp/ccLEOtsc.s 			page 151
+ARM GAS  /tmp/ccXXwgMY.s 			page 151
 
 
  5848 0410 9F       		.byte	0x9f
@@ -9058,7 +9058,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  5902 0481 27       		.byte	0x27
  5903 0482 9F       		.byte	0x9f
  5904 0483 00000000 		.4byte	0
-ARM GAS  /tmp/ccLEOtsc.s 			page 152
+ARM GAS  /tmp/ccXXwgMY.s 			page 152
 
 
  5905 0487 00000000 		.4byte	0
@@ -9118,7 +9118,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  5959              	.LLST71:
  5960 04fc 2E050000 		.4byte	.LVL148-.Ltext0
  5961 0500 30050000 		.4byte	.LVL149-.Ltext0
-ARM GAS  /tmp/ccLEOtsc.s 			page 153
+ARM GAS  /tmp/ccXXwgMY.s 			page 153
 
 
  5962 0504 0100     		.2byte	0x1
@@ -9178,7 +9178,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  6016 0587 9C060000 		.4byte	.LVL200-.Ltext0
  6017 058b 68080000 		.4byte	.LFE75-.Ltext0
  6018 058f 0100     		.2byte	0x1
-ARM GAS  /tmp/ccLEOtsc.s 			page 154
+ARM GAS  /tmp/ccXXwgMY.s 			page 154
 
 
  6019 0591 55       		.byte	0x55
@@ -9238,7 +9238,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  6073 0621 54080000 		.4byte	.LVL257-.Ltext0
  6074 0625 0100     		.2byte	0x1
  6075 0627 53       		.byte	0x53
-ARM GAS  /tmp/ccLEOtsc.s 			page 155
+ARM GAS  /tmp/ccXXwgMY.s 			page 155
 
 
  6076 0628 00000000 		.4byte	0
@@ -9298,7 +9298,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  6130 0697 0A       		.byte	0xa
  6131 0698 FFFF     		.2byte	0xffff
  6132 069a 1A       		.byte	0x1a
-ARM GAS  /tmp/ccLEOtsc.s 			page 156
+ARM GAS  /tmp/ccXXwgMY.s 			page 156
 
 
  6133 069b 70       		.byte	0x70
@@ -9358,7 +9358,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  6187              	.LLST119:
  6188 0709 BA070000 		.4byte	.LVL232-.Ltext0
  6189 070d C2070000 		.4byte	.LVL233-.Ltext0
-ARM GAS  /tmp/ccLEOtsc.s 			page 157
+ARM GAS  /tmp/ccXXwgMY.s 			page 157
 
 
  6190 0711 0100     		.2byte	0x1
@@ -9418,7 +9418,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  6244 0773 00       		.sleb128 0
  6245 0774 72       		.byte	0x72
  6246 0775 00       		.sleb128 0
-ARM GAS  /tmp/ccLEOtsc.s 			page 158
+ARM GAS  /tmp/ccXXwgMY.s 			page 158
 
 
  6247 0776 22       		.byte	0x22
@@ -9478,7 +9478,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  6301 07eb 22       		.byte	0x22
  6302 07ec 9F       		.byte	0x9f
  6303 07ed 26080000 		.4byte	.LVL248-.Ltext0
-ARM GAS  /tmp/ccLEOtsc.s 			page 159
+ARM GAS  /tmp/ccXXwgMY.s 			page 159
 
 
  6304 07f1 38080000 		.4byte	.LVL252-.Ltext0
@@ -9538,7 +9538,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  6358              	.LLST47:
  6359 0861 6C030000 		.4byte	.LFB74-.Ltext0
  6360 0865 6E030000 		.4byte	.LCFI7-.Ltext0
-ARM GAS  /tmp/ccLEOtsc.s 			page 160
+ARM GAS  /tmp/ccXXwgMY.s 			page 160
 
 
  6361 0869 0200     		.2byte	0x2
@@ -9598,7 +9598,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  6415 08e9 51       		.byte	0x51
  6416 08ea 1C050000 		.4byte	.LVL143-.Ltext0
  6417 08ee 2A050000 		.4byte	.LFE74-.Ltext0
-ARM GAS  /tmp/ccLEOtsc.s 			page 161
+ARM GAS  /tmp/ccXXwgMY.s 			page 161
 
 
  6418 08f2 0400     		.2byte	0x4
@@ -9658,7 +9658,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  6472 0968 9F       		.byte	0x9f
  6473 0969 00000000 		.4byte	0
  6474 096d 00000000 		.4byte	0
-ARM GAS  /tmp/ccLEOtsc.s 			page 162
+ARM GAS  /tmp/ccXXwgMY.s 			page 162
 
 
  6475              	.LLST53:
@@ -9718,7 +9718,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  6529 09ec 73       		.byte	0x73
  6530 09ed 00       		.sleb128 0
  6531 09ee 0B       		.byte	0xb
-ARM GAS  /tmp/ccLEOtsc.s 			page 163
+ARM GAS  /tmp/ccXXwgMY.s 			page 163
 
 
  6532 09ef 8F8F     		.2byte	0x8f8f
@@ -9778,7 +9778,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  6586 0a68 00000000 		.4byte	0
  6587              	.LLST67:
  6588 0a6c C8040000 		.4byte	.LVL137-.Ltext0
-ARM GAS  /tmp/ccLEOtsc.s 			page 164
+ARM GAS  /tmp/ccXXwgMY.s 			page 164
 
 
  6589 0a70 CC040000 		.4byte	.LVL138-.Ltext0
@@ -9838,7 +9838,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  6643 0ae4 0200     		.2byte	0x2
  6644 0ae6 7D       		.byte	0x7d
  6645 0ae7 14       		.sleb128 20
-ARM GAS  /tmp/ccLEOtsc.s 			page 165
+ARM GAS  /tmp/ccXXwgMY.s 			page 165
 
 
  6646 0ae8 00000000 		.4byte	0
@@ -9898,7 +9898,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  6700 0b6e F3       		.byte	0xf3
  6701 0b6f 01       		.uleb128 0x1
  6702 0b70 51       		.byte	0x51
-ARM GAS  /tmp/ccLEOtsc.s 			page 166
+ARM GAS  /tmp/ccXXwgMY.s 			page 166
 
 
  6703 0b71 9F       		.byte	0x9f
@@ -9958,7 +9958,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  6757 0bef 9F       		.byte	0x9f
  6758 0bf0 00000000 		.4byte	0
  6759 0bf4 00000000 		.4byte	0
-ARM GAS  /tmp/ccLEOtsc.s 			page 167
+ARM GAS  /tmp/ccXXwgMY.s 			page 167
 
 
  6760              	.LLST15:
@@ -10018,7 +10018,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  6814 0c6d 72       		.byte	0x72
  6815 0c6e 00       		.sleb128 0
  6816 0c6f 08       		.byte	0x8
-ARM GAS  /tmp/ccLEOtsc.s 			page 168
+ARM GAS  /tmp/ccXXwgMY.s 			page 168
 
 
  6817 0c70 20       		.byte	0x20
@@ -10078,7 +10078,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  6871 0cdd 00000000 		.4byte	0
  6872              	.LLST24:
  6873 0ce1 60010000 		.4byte	.LVL44-.Ltext0
-ARM GAS  /tmp/ccLEOtsc.s 			page 169
+ARM GAS  /tmp/ccXXwgMY.s 			page 169
 
 
  6874 0ce5 82010000 		.4byte	.LVL45-.Ltext0
@@ -10138,7 +10138,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  6928 0d5e 00       		.sleb128 0
  6929 0d5f 0A       		.byte	0xa
  6930 0d60 0030     		.2byte	0x3000
-ARM GAS  /tmp/ccLEOtsc.s 			page 170
+ARM GAS  /tmp/ccXXwgMY.s 			page 170
 
 
  6931 0d62 27       		.byte	0x27
@@ -10198,7 +10198,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  6985 0dce 00       		.sleb128 0
  6986 0dcf 22       		.byte	0x22
  6987 0dd0 9F       		.byte	0x9f
-ARM GAS  /tmp/ccLEOtsc.s 			page 171
+ARM GAS  /tmp/ccXXwgMY.s 			page 171
 
 
  6988 0dd1 00000000 		.4byte	0
@@ -10258,7 +10258,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  7042 0e43 3C020000 		.4byte	.LVL72-.Ltext0
  7043 0e47 0700     		.2byte	0x7
  7044 0e49 72       		.byte	0x72
-ARM GAS  /tmp/ccLEOtsc.s 			page 172
+ARM GAS  /tmp/ccXXwgMY.s 			page 172
 
 
  7045 0e4a 00       		.sleb128 0
@@ -10318,7 +10318,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  7099 0ebb 0030     		.2byte	0x3000
  7100 0ebd 27       		.byte	0x27
  7101 0ebe 0A       		.byte	0xa
-ARM GAS  /tmp/ccLEOtsc.s 			page 173
+ARM GAS  /tmp/ccXXwgMY.s 			page 173
 
 
  7102 0ebf 0030     		.2byte	0x3000
@@ -10378,7 +10378,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  7156 0f38 00000000 		.4byte	0
  7157              	.LLST45:
  7158 0f3c 10030000 		.4byte	.LVL95-.Ltext0
-ARM GAS  /tmp/ccLEOtsc.s 			page 174
+ARM GAS  /tmp/ccXXwgMY.s 			page 174
 
 
  7159 0f40 14030000 		.4byte	.LVL96-.Ltext0
@@ -10438,7 +10438,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  7213 0fb3 3A000000 		.4byte	.LCFI2-.Ltext0
  7214 0fb7 3C000000 		.4byte	.LCFI3-.Ltext0
  7215 0fbb 0200     		.2byte	0x2
-ARM GAS  /tmp/ccLEOtsc.s 			page 175
+ARM GAS  /tmp/ccXXwgMY.s 			page 175
 
 
  7216 0fbd 7D       		.byte	0x7d
@@ -10498,7 +10498,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  7270              	.LLST0:
  7271 1040 00000000 		.4byte	.LFB65-.Ltext0
  7272 1044 02000000 		.4byte	.LCFI0-.Ltext0
-ARM GAS  /tmp/ccLEOtsc.s 			page 176
+ARM GAS  /tmp/ccXXwgMY.s 			page 176
 
 
  7273 1048 0200     		.2byte	0x2
@@ -10558,7 +10558,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  7327 10c6 9F       		.byte	0x9f
  7328 10c7 00000000 		.4byte	0
  7329 10cb 00000000 		.4byte	0
-ARM GAS  /tmp/ccLEOtsc.s 			page 177
+ARM GAS  /tmp/ccXXwgMY.s 			page 177
 
 
  7330              	.LLST84:
@@ -10618,7 +10618,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  7384              		.section	.debug_ranges,"",%progbits
  7385              	.Ldebug_ranges0:
  7386 0000 5A000000 		.4byte	.LBB4-.Ltext0
-ARM GAS  /tmp/ccLEOtsc.s 			page 178
+ARM GAS  /tmp/ccXXwgMY.s 			page 178
 
 
  7387 0004 5E000000 		.4byte	.LBE4-.Ltext0
@@ -10678,7 +10678,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  7441 00dc 08060000 		.4byte	.LBE74-.Ltext0
  7442 00e0 00000000 		.4byte	0
  7443 00e4 00000000 		.4byte	0
-ARM GAS  /tmp/ccLEOtsc.s 			page 179
+ARM GAS  /tmp/ccXXwgMY.s 			page 179
 
 
  7444 00e8 F0060000 		.4byte	.LBB77-.Ltext0
@@ -10738,7 +10738,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  7498 01c0 BA070000 		.4byte	.LBB94-.Ltext0
  7499 01c4 E4070000 		.4byte	.LBE94-.Ltext0
  7500 01c8 04080000 		.4byte	.LBB98-.Ltext0
-ARM GAS  /tmp/ccLEOtsc.s 			page 180
+ARM GAS  /tmp/ccXXwgMY.s 			page 180
 
 
  7501 01cc 26080000 		.4byte	.LBE98-.Ltext0
@@ -10798,7 +10798,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  7531              	.LASF127:
  7532 0063 5F774261 		.ascii	"_wBase\000"
  7532      736500
-ARM GAS  /tmp/ccLEOtsc.s 			page 181
+ARM GAS  /tmp/ccXXwgMY.s 			page 181
 
 
  7533              	.LASF67:
@@ -10858,7 +10858,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  7557              	.LASF10:
  7558 010b 6C6F6E67 		.ascii	"long long int\000"
  7558      206C6F6E 
-ARM GAS  /tmp/ccLEOtsc.s 			page 182
+ARM GAS  /tmp/ccXXwgMY.s 			page 182
 
 
  7558      6720696E 
@@ -10918,7 +10918,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  7582      6E746572 
  7583              	.LASF137:
  7584 01b2 5553425F 		.ascii	"USB_DevInit\000"
-ARM GAS  /tmp/ccLEOtsc.s 			page 183
+ARM GAS  /tmp/ccXXwgMY.s 			page 183
 
 
  7584      44657649 
@@ -10978,7 +10978,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  7609              	.LASF91:
  7610 0244 74656D70 		.ascii	"temp\000"
  7610      00
-ARM GAS  /tmp/ccLEOtsc.s 			page 184
+ARM GAS  /tmp/ccXXwgMY.s 			page 184
 
 
  7611              	.LASF52:
@@ -11038,7 +11038,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  7636 02e4 5553425F 		.ascii	"USB_ReadDevOutEPInterrupt\000"
  7636      52656164 
  7636      4465764F 
-ARM GAS  /tmp/ccLEOtsc.s 			page 185
+ARM GAS  /tmp/ccXXwgMY.s 			page 185
 
 
  7636      75744550 
@@ -11098,7 +11098,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  7658      44654163 
  7658      74697661 
  7658      74655265 
-ARM GAS  /tmp/ccLEOtsc.s 			page 186
+ARM GAS  /tmp/ccXXwgMY.s 			page 186
 
 
  7658      6D6F7465 
@@ -11158,7 +11158,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  7685              	.LASF142:
  7686 0436 5553425F 		.ascii	"USB_EnableGlobalInt\000"
  7686      456E6162 
-ARM GAS  /tmp/ccLEOtsc.s 			page 187
+ARM GAS  /tmp/ccXXwgMY.s 			page 187
 
 
  7686      6C65476C 
@@ -11218,7 +11218,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  7712      6A2F6769 
  7712      742F7374 
  7713              	.LASF15:
-ARM GAS  /tmp/ccLEOtsc.s 			page 188
+ARM GAS  /tmp/ccXXwgMY.s 			page 188
 
 
  7714 04eb 696E7433 		.ascii	"int32_t\000"
@@ -11278,7 +11278,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  7737      6E744D6F 
  7737      646500
  7738              	.LASF63:
-ARM GAS  /tmp/ccLEOtsc.s 			page 189
+ARM GAS  /tmp/ccXXwgMY.s 			page 189
 
 
  7739 05b9 62617474 		.ascii	"battery_charging_enable\000"
@@ -11338,7 +11338,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  7761 0663 5F5F696E 		.ascii	"__int32_t\000"
  7761      7433325F 
  7761      7400
-ARM GAS  /tmp/ccLEOtsc.s 			page 190
+ARM GAS  /tmp/ccXXwgMY.s 			page 190
 
 
  7762              	.LASF58:
@@ -11398,7 +11398,7 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  7789      385F7400 
  7790              	.LASF69:
  7791 0709 706D6161 		.ascii	"pmaadress\000"
-ARM GAS  /tmp/ccLEOtsc.s 			page 191
+ARM GAS  /tmp/ccXXwgMY.s 			page 191
 
 
  7791      64726573 
@@ -11437,48 +11437,48 @@ ARM GAS  /tmp/ccLEOtsc.s 			page 1
  7807      72427566 
  7807      00
  7808              		.ident	"GCC: (15:6.3.1+svn253039-1build1) 6.3.1 20170620"
-ARM GAS  /tmp/ccLEOtsc.s 			page 192
+ARM GAS  /tmp/ccXXwgMY.s 			page 192
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32f1xx_ll_usb.c
-     /tmp/ccLEOtsc.s:69     .text:0000000000000000 $t
-     /tmp/ccLEOtsc.s:76     .text:0000000000000000 USB_CoreInit
-     /tmp/ccLEOtsc.s:108    .text:000000000000000e USB_EnableGlobalInt
-     /tmp/ccLEOtsc.s:135    .text:0000000000000020 USB_DisableGlobalInt
-     /tmp/ccLEOtsc.s:163    .text:0000000000000034 USB_SetCurrentMode
-     /tmp/ccLEOtsc.s:181    .text:0000000000000038 USB_DevInit
-     /tmp/ccLEOtsc.s:251    .text:000000000000006e USB_SetDevSpeed
-     /tmp/ccLEOtsc.s:273    .text:0000000000000072 USB_FlushTxFifo
-     /tmp/ccLEOtsc.s:295    .text:0000000000000076 USB_FlushRxFifo
-     /tmp/ccLEOtsc.s:313    .text:000000000000007a USB_ActivateEndpoint
-     /tmp/ccLEOtsc.s:349    .text:000000000000009a $d
-     /tmp/ccLEOtsc.s:353    .text:000000000000009e $t
-     /tmp/ccLEOtsc.s:819    .text:0000000000000360 $d
-     /tmp/ccLEOtsc.s:826    .text:000000000000036c $t
-     /tmp/ccLEOtsc.s:833    .text:000000000000036c USB_DeactivateEndpoint
-     /tmp/ccLEOtsc.s:1122   .text:000000000000052a USB_WritePacket
-     /tmp/ccLEOtsc.s:1144   .text:000000000000052e USB_ReadPacket
-     /tmp/ccLEOtsc.s:1166   .text:0000000000000532 USB_EPSetStall
-     /tmp/ccLEOtsc.s:1224   .text:0000000000000572 USB_EPClearStall
-     /tmp/ccLEOtsc.s:1336   .text:0000000000000608 USB_StopDevice
-     /tmp/ccLEOtsc.s:1371   .text:000000000000061e USB_SetDevAddress
-     /tmp/ccLEOtsc.s:1399   .text:000000000000062a USB_DevConnect
-     /tmp/ccLEOtsc.s:1417   .text:000000000000062e USB_DevDisconnect
-     /tmp/ccLEOtsc.s:1439   .text:0000000000000632 USB_ReadInterrupts
-     /tmp/ccLEOtsc.s:1464   .text:000000000000063a USB_ReadDevAllOutEpInterrupt
-     /tmp/ccLEOtsc.s:1482   .text:000000000000063e USB_ReadDevAllInEpInterrupt
-     /tmp/ccLEOtsc.s:1504   .text:0000000000000642 USB_ReadDevOutEPInterrupt
-     /tmp/ccLEOtsc.s:1522   .text:0000000000000646 USB_ReadDevInEPInterrupt
-     /tmp/ccLEOtsc.s:1544   .text:000000000000064a USB_ClearInterrupts
-     /tmp/ccLEOtsc.s:1563   .text:000000000000064c USB_EP0_OutStart
-     /tmp/ccLEOtsc.s:1585   .text:0000000000000650 USB_ActivateRemoteWakeup
-     /tmp/ccLEOtsc.s:1612   .text:0000000000000662 USB_DeActivateRemoteWakeup
-     /tmp/ccLEOtsc.s:1640   .text:0000000000000676 USB_WritePMA
-     /tmp/ccLEOtsc.s:1684   .text:0000000000000696 USB_EPStartXfer
-     /tmp/ccLEOtsc.s:2061   .text:0000000000000864 $d
-     /tmp/ccLEOtsc.s:2068   .text:0000000000000868 $t
-     /tmp/ccLEOtsc.s:2075   .text:0000000000000868 USB_ReadPMA
+     /tmp/ccXXwgMY.s:69     .text:0000000000000000 $t
+     /tmp/ccXXwgMY.s:76     .text:0000000000000000 USB_CoreInit
+     /tmp/ccXXwgMY.s:108    .text:000000000000000e USB_EnableGlobalInt
+     /tmp/ccXXwgMY.s:135    .text:0000000000000020 USB_DisableGlobalInt
+     /tmp/ccXXwgMY.s:163    .text:0000000000000034 USB_SetCurrentMode
+     /tmp/ccXXwgMY.s:181    .text:0000000000000038 USB_DevInit
+     /tmp/ccXXwgMY.s:251    .text:000000000000006e USB_SetDevSpeed
+     /tmp/ccXXwgMY.s:273    .text:0000000000000072 USB_FlushTxFifo
+     /tmp/ccXXwgMY.s:295    .text:0000000000000076 USB_FlushRxFifo
+     /tmp/ccXXwgMY.s:313    .text:000000000000007a USB_ActivateEndpoint
+     /tmp/ccXXwgMY.s:349    .text:000000000000009a $d
+     /tmp/ccXXwgMY.s:353    .text:000000000000009e $t
+     /tmp/ccXXwgMY.s:819    .text:0000000000000360 $d
+     /tmp/ccXXwgMY.s:826    .text:000000000000036c $t
+     /tmp/ccXXwgMY.s:833    .text:000000000000036c USB_DeactivateEndpoint
+     /tmp/ccXXwgMY.s:1122   .text:000000000000052a USB_WritePacket
+     /tmp/ccXXwgMY.s:1144   .text:000000000000052e USB_ReadPacket
+     /tmp/ccXXwgMY.s:1166   .text:0000000000000532 USB_EPSetStall
+     /tmp/ccXXwgMY.s:1224   .text:0000000000000572 USB_EPClearStall
+     /tmp/ccXXwgMY.s:1336   .text:0000000000000608 USB_StopDevice
+     /tmp/ccXXwgMY.s:1371   .text:000000000000061e USB_SetDevAddress
+     /tmp/ccXXwgMY.s:1399   .text:000000000000062a USB_DevConnect
+     /tmp/ccXXwgMY.s:1417   .text:000000000000062e USB_DevDisconnect
+     /tmp/ccXXwgMY.s:1439   .text:0000000000000632 USB_ReadInterrupts
+     /tmp/ccXXwgMY.s:1464   .text:000000000000063a USB_ReadDevAllOutEpInterrupt
+     /tmp/ccXXwgMY.s:1482   .text:000000000000063e USB_ReadDevAllInEpInterrupt
+     /tmp/ccXXwgMY.s:1504   .text:0000000000000642 USB_ReadDevOutEPInterrupt
+     /tmp/ccXXwgMY.s:1522   .text:0000000000000646 USB_ReadDevInEPInterrupt
+     /tmp/ccXXwgMY.s:1544   .text:000000000000064a USB_ClearInterrupts
+     /tmp/ccXXwgMY.s:1563   .text:000000000000064c USB_EP0_OutStart
+     /tmp/ccXXwgMY.s:1585   .text:0000000000000650 USB_ActivateRemoteWakeup
+     /tmp/ccXXwgMY.s:1612   .text:0000000000000662 USB_DeActivateRemoteWakeup
+     /tmp/ccXXwgMY.s:1640   .text:0000000000000676 USB_WritePMA
+     /tmp/ccXXwgMY.s:1684   .text:0000000000000696 USB_EPStartXfer
+     /tmp/ccXXwgMY.s:2061   .text:0000000000000864 $d
+     /tmp/ccXXwgMY.s:2068   .text:0000000000000868 $t
+     /tmp/ccXXwgMY.s:2075   .text:0000000000000868 USB_ReadPMA
                      .debug_frame:0000000000000010 $d
 
 NO UNDEFINED SYMBOLS

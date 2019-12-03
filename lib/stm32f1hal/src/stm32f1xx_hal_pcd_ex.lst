@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccAUnyVA.s 			page 1
+ARM GAS  /tmp/cc5DFdVi.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -18,7 +18,7 @@ ARM GAS  /tmp/ccAUnyVA.s 			page 1
   15              	@ GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
   16              	@ options passed:  -I ./inc -I ./inc/Legacy -I ../cmsisstm32f1xx/inc
   17              	@ -I ../cmsiscore/inc -imultilib thumb/v7-m -D__USES_INITFINI__
-  18              	@ -D STM32F103x6 -D RUN_FROM_FLASH=1 -D __c src/stm32f1xx_hal_pcd_ex.c
+  18              	@ -D STM32F103x6 -D RUN_FROM_FLASH=1 src/stm32f1xx_hal_pcd_ex.c
   19              	@ -mcpu=cortex-m3 -mthumb -auxbase-strip bin/stm32f1xx_hal_pcd_ex.o -g
   20              	@ -gdwarf-2 -Os -Wall -fomit-frame-pointer -fverbose-asm
   21              	@ options enabled:  -faggressive-loop-optimizations -falign-jumps
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccAUnyVA.s 			page 1
   55              	@ -ftree-copy-prop -ftree-cselim -ftree-dce -ftree-dominator-opts
   56              	@ -ftree-dse -ftree-forwprop -ftree-fre -ftree-loop-if-convert
   57              	@ -ftree-loop-im -ftree-loop-ivcanon -ftree-loop-optimize
-ARM GAS  /tmp/ccAUnyVA.s 			page 2
+ARM GAS  /tmp/cc5DFdVi.s 			page 2
 
 
   58              	@ -ftree-parallelize-loops= -ftree-phiprop -ftree-pre -ftree-pta
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccAUnyVA.s 			page 1
   34:src/stm32f1xx_hal_pcd_ex.c ****   */
   35:src/stm32f1xx_hal_pcd_ex.c **** 
   36:src/stm32f1xx_hal_pcd_ex.c **** #ifdef HAL_PCD_MODULE_ENABLED
-ARM GAS  /tmp/ccAUnyVA.s 			page 3
+ARM GAS  /tmp/cc5DFdVi.s 			page 3
 
 
   37:src/stm32f1xx_hal_pcd_ex.c **** 
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccAUnyVA.s 			page 1
   91:src/stm32f1xx_hal_pcd_ex.c ****   }
   92:src/stm32f1xx_hal_pcd_ex.c ****   else
   93:src/stm32f1xx_hal_pcd_ex.c ****   {
-ARM GAS  /tmp/ccAUnyVA.s 			page 4
+ARM GAS  /tmp/cc5DFdVi.s 			page 4
 
 
   94:src/stm32f1xx_hal_pcd_ex.c ****     Tx_Offset += (hpcd->Instance->DIEPTXF0_HNPTXFSIZ) >> 16;
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccAUnyVA.s 			page 1
   84              	.LVL0:
  143:src/stm32f1xx_hal_pcd_ex.c ****   PCD_EPTypeDef *ep;
  144:src/stm32f1xx_hal_pcd_ex.c **** 
-ARM GAS  /tmp/ccAUnyVA.s 			page 5
+ARM GAS  /tmp/cc5DFdVi.s 			page 5
 
 
  145:src/stm32f1xx_hal_pcd_ex.c ****   /* initialize ep structure*/
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccAUnyVA.s 			page 1
  109              		.loc 1 173 0
  110 0020 0020     		movs	r0, #0	@,
  111              	.LVL5:
-ARM GAS  /tmp/ccAUnyVA.s 			page 6
+ARM GAS  /tmp/cc5DFdVi.s 			page 6
 
 
  112 0022 7047     		bx	lr	@
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccAUnyVA.s 			page 1
  161 0032 7047     		bx	lr	@
  162              		.cfi_endproc
  163              	.LFE70:
-ARM GAS  /tmp/ccAUnyVA.s 			page 7
+ARM GAS  /tmp/cc5DFdVi.s 			page 7
 
 
  164              		.size	HAL_PCDEx_LPM_Callback, .-HAL_PCDEx_LPM_Callback
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccAUnyVA.s 			page 1
  218:src/stm32f1xx_hal_pcd_ex.c **** {
  174              		.loc 1 218 0
  175              		.cfi_startproc
-ARM GAS  /tmp/ccAUnyVA.s 			page 8
+ARM GAS  /tmp/cc5DFdVi.s 			page 8
 
 
  176              		@ args = 0, pretend = 0, frame = 0
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccAUnyVA.s 			page 1
  230 0050 02       		.uleb128 0x2
  231 0051 02       		.byte	0x2
  232 0052 07       		.byte	0x7
-ARM GAS  /tmp/ccAUnyVA.s 			page 9
+ARM GAS  /tmp/cc5DFdVi.s 			page 9
 
 
  233 0053 E3020000 		.4byte	.LASF5
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccAUnyVA.s 			page 1
  287 00c2 2C       		.byte	0x2c
  288 00c3 57000000 		.4byte	0x57
  289 00c7 05       		.uleb128 0x5
-ARM GAS  /tmp/ccAUnyVA.s 			page 10
+ARM GAS  /tmp/cc5DFdVi.s 			page 10
 
 
  290 00c8 BC000000 		.4byte	0xbc
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccAUnyVA.s 			page 1
  344 013b 35       		.byte	0x35
  345 013c 30010000 		.4byte	0x130
  346 0140 01       		.byte	0x1
-ARM GAS  /tmp/ccAUnyVA.s 			page 11
+ARM GAS  /tmp/cc5DFdVi.s 			page 11
 
 
  347 0141 01       		.byte	0x1
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccAUnyVA.s 			page 1
  401 01a7 37040000 		.4byte	.LASF27
  402 01ab 06       		.byte	0x6
  403 01ac 0C02     		.2byte	0x20c
-ARM GAS  /tmp/ccAUnyVA.s 			page 12
+ARM GAS  /tmp/cc5DFdVi.s 			page 12
 
 
  404 01ae B7000000 		.4byte	0xb7
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccAUnyVA.s 			page 1
  458 0214 06       		.byte	0x6
  459 0215 1302     		.2byte	0x213
  460 0217 B7000000 		.4byte	0xb7
-ARM GAS  /tmp/ccAUnyVA.s 			page 13
+ARM GAS  /tmp/cc5DFdVi.s 			page 13
 
 
  461 021b 02       		.byte	0x2
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccAUnyVA.s 			page 1
  515 027e 1A02     		.2byte	0x21a
  516 0280 B7000000 		.4byte	0xb7
  517 0284 02       		.byte	0x2
-ARM GAS  /tmp/ccAUnyVA.s 			page 14
+ARM GAS  /tmp/cc5DFdVi.s 			page 14
 
 
  518 0285 23       		.byte	0x23
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccAUnyVA.s 			page 1
  572 02eb 0A       		.uleb128 0xa
  573 02ec DC000000 		.4byte	0xdc
  574 02f0 10       		.byte	0x10
-ARM GAS  /tmp/ccAUnyVA.s 			page 15
+ARM GAS  /tmp/cc5DFdVi.s 			page 15
 
 
  575 02f1 00       		.byte	0
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccAUnyVA.s 			page 1
  629 035e 11       		.uleb128 0x11
  630 035f 04       		.byte	0x4
  631 0360 12       		.uleb128 0x12
-ARM GAS  /tmp/ccAUnyVA.s 			page 16
+ARM GAS  /tmp/cc5DFdVi.s 			page 16
 
 
  632 0361 04       		.byte	0x4
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccAUnyVA.s 			page 1
  686 03c1 14       		.uleb128 0x14
  687 03c2 14       		.uleb128 0x14
  688 03c3 73060000 		.4byte	.LASF63
-ARM GAS  /tmp/ccAUnyVA.s 			page 17
+ARM GAS  /tmp/cc5DFdVi.s 			page 17
 
 
  689 03c7 08       		.byte	0x8
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccAUnyVA.s 			page 1
  743 0427 02       		.byte	0x2
  744 0428 23       		.byte	0x23
  745 0429 03       		.uleb128 0x3
-ARM GAS  /tmp/ccAUnyVA.s 			page 18
+ARM GAS  /tmp/cc5DFdVi.s 			page 18
 
 
  746 042a 0C       		.uleb128 0xc
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccAUnyVA.s 			page 1
  800 0491 23       		.byte	0x23
  801 0492 10       		.uleb128 0x10
  802 0493 0C       		.uleb128 0xc
-ARM GAS  /tmp/ccAUnyVA.s 			page 19
+ARM GAS  /tmp/cc5DFdVi.s 			page 19
 
 
  803 0494 31060000 		.4byte	.LASF76
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccAUnyVA.s 			page 1
  857 04fe 38       		.byte	0x38
  858 04ff CD040000 		.4byte	0x4cd
  859 0503 05       		.uleb128 0x5
-ARM GAS  /tmp/ccAUnyVA.s 			page 20
+ARM GAS  /tmp/cc5DFdVi.s 			page 20
 
 
  860 0504 F8040000 		.4byte	0x4f8
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccAUnyVA.s 			page 1
  914 0573 FE       		.byte	0xfe
  915 0574 10       		.uleb128 0x10
  916 0575 B5000000 		.4byte	.LASF96
-ARM GAS  /tmp/ccAUnyVA.s 			page 21
+ARM GAS  /tmp/cc5DFdVi.s 			page 21
 
 
  917 0579 FD       		.byte	0xfd
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccAUnyVA.s 			page 1
  971 05e3 09       		.byte	0x9
  972 05e4 6D       		.byte	0x6d
  973 05e5 A2000000 		.4byte	0xa2
-ARM GAS  /tmp/ccAUnyVA.s 			page 22
+ARM GAS  /tmp/cc5DFdVi.s 			page 22
 
 
  974 05e9 02       		.byte	0x2
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccAUnyVA.s 			page 1
  1028 064b 7A       		.byte	0x7a
  1029 064c 2D050000 		.4byte	0x52d
  1030 0650 03       		.byte	0x3
-ARM GAS  /tmp/ccAUnyVA.s 			page 23
+ARM GAS  /tmp/cc5DFdVi.s 			page 23
 
 
  1031 0651 23       		.byte	0x23
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccAUnyVA.s 			page 1
  1085 06ba 34000000 		.4byte	.LASF121
  1086 06be 0A       		.byte	0xa
  1087 06bf 38       		.byte	0x38
-ARM GAS  /tmp/ccAUnyVA.s 			page 24
+ARM GAS  /tmp/cc5DFdVi.s 			page 24
 
 
  1088 06c0 94060000 		.4byte	0x694
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccAUnyVA.s 			page 1
  1142 072c 00       		.byte	0
  1143 072d 1A       		.uleb128 0x1a
  1144 072e 01       		.byte	0x1
-ARM GAS  /tmp/ccAUnyVA.s 			page 25
+ARM GAS  /tmp/cc5DFdVi.s 			page 25
 
 
  1145 072f 79020000 		.4byte	.LASF126
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccAUnyVA.s 			page 1
  1199 07aa 1D       		.uleb128 0x1d
  1200 07ab 657000   		.ascii	"ep\000"
  1201 07ae 01       		.byte	0x1
-ARM GAS  /tmp/ccAUnyVA.s 			page 26
+ARM GAS  /tmp/cc5DFdVi.s 			page 26
 
 
  1202 07af 8F       		.byte	0x8f
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccAUnyVA.s 			page 1
  1256 001b 0E       		.uleb128 0xe
  1257 001c 00       		.byte	0
  1258 001d 00       		.byte	0
-ARM GAS  /tmp/ccAUnyVA.s 			page 27
+ARM GAS  /tmp/cc5DFdVi.s 			page 27
 
 
  1259 001e 03       		.uleb128 0x3
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/ccAUnyVA.s 			page 1
  1313 0054 00       		.byte	0
  1314 0055 08       		.uleb128 0x8
  1315 0056 34       		.uleb128 0x34
-ARM GAS  /tmp/ccAUnyVA.s 			page 28
+ARM GAS  /tmp/cc5DFdVi.s 			page 28
 
 
  1316 0057 00       		.byte	0
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/ccAUnyVA.s 			page 1
  1370 008d 05       		.uleb128 0x5
  1371 008e 49       		.uleb128 0x49
  1372 008f 13       		.uleb128 0x13
-ARM GAS  /tmp/ccAUnyVA.s 			page 29
+ARM GAS  /tmp/cc5DFdVi.s 			page 29
 
 
  1373 0090 38       		.uleb128 0x38
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/ccAUnyVA.s 			page 1
  1427 00c6 00       		.byte	0
  1428 00c7 00       		.byte	0
  1429 00c8 11       		.uleb128 0x11
-ARM GAS  /tmp/ccAUnyVA.s 			page 30
+ARM GAS  /tmp/cc5DFdVi.s 			page 30
 
 
  1430 00c9 0F       		.uleb128 0xf
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/ccAUnyVA.s 			page 1
  1484 00ff 38       		.uleb128 0x38
  1485 0100 0A       		.uleb128 0xa
  1486 0101 00       		.byte	0
-ARM GAS  /tmp/ccAUnyVA.s 			page 31
+ARM GAS  /tmp/cc5DFdVi.s 			page 31
 
 
  1487 0102 00       		.byte	0
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/ccAUnyVA.s 			page 1
  1541 0138 0B       		.uleb128 0xb
  1542 0139 49       		.uleb128 0x49
  1543 013a 13       		.uleb128 0x13
-ARM GAS  /tmp/ccAUnyVA.s 			page 32
+ARM GAS  /tmp/cc5DFdVi.s 			page 32
 
 
  1544 013b 00       		.byte	0
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/ccAUnyVA.s 			page 1
  1598 0172 0B       		.uleb128 0xb
  1599 0173 49       		.uleb128 0x49
  1600 0174 13       		.uleb128 0x13
-ARM GAS  /tmp/ccAUnyVA.s 			page 33
+ARM GAS  /tmp/cc5DFdVi.s 			page 33
 
 
  1601 0175 02       		.uleb128 0x2
@@ -1978,7 +1978,7 @@ ARM GAS  /tmp/ccAUnyVA.s 			page 1
  1655 0015 F3       		.byte	0xf3
  1656 0016 01       		.uleb128 0x1
  1657 0017 50       		.byte	0x50
-ARM GAS  /tmp/ccAUnyVA.s 			page 34
+ARM GAS  /tmp/cc5DFdVi.s 			page 34
 
 
  1658 0018 9F       		.byte	0x9f
@@ -2038,7 +2038,7 @@ ARM GAS  /tmp/ccAUnyVA.s 			page 1
  1712 0095 24000000 		.4byte	.LVL6-.Ltext0
  1713 0099 2A000000 		.4byte	.LVL8-.Ltext0
  1714 009d 0100     		.2byte	0x1
-ARM GAS  /tmp/ccAUnyVA.s 			page 35
+ARM GAS  /tmp/cc5DFdVi.s 			page 35
 
 
  1715 009f 53       		.byte	0x53
@@ -2098,7 +2098,7 @@ ARM GAS  /tmp/ccAUnyVA.s 			page 1
  1756      6C6C6261 
  1757              	.LASF24:
  1758 002f 45503152 		.ascii	"EP1R\000"
-ARM GAS  /tmp/ccAUnyVA.s 			page 36
+ARM GAS  /tmp/cc5DFdVi.s 			page 36
 
 
  1758      00
@@ -2158,7 +2158,7 @@ ARM GAS  /tmp/ccAUnyVA.s 			page 1
  1783              	.LASF81:
  1784 00d1 48414C5F 		.ascii	"HAL_PCD_STATE_READY\000"
  1784      5043445F 
-ARM GAS  /tmp/ccAUnyVA.s 			page 37
+ARM GAS  /tmp/cc5DFdVi.s 			page 37
 
 
  1784      53544154 
@@ -2218,7 +2218,7 @@ ARM GAS  /tmp/ccAUnyVA.s 			page 1
  1811              	.LASF38:
  1812 0164 434E5452 		.ascii	"CNTR\000"
  1812      00
-ARM GAS  /tmp/ccAUnyVA.s 			page 38
+ARM GAS  /tmp/cc5DFdVi.s 			page 38
 
 
  1813              	.LASF78:
@@ -2278,7 +2278,7 @@ ARM GAS  /tmp/ccAUnyVA.s 			page 1
  1840 01f2 756E7369 		.ascii	"unsigned int\000"
  1840      676E6564 
  1840      20696E74 
-ARM GAS  /tmp/ccAUnyVA.s 			page 39
+ARM GAS  /tmp/cc5DFdVi.s 			page 39
 
 
  1840      00
@@ -2338,7 +2338,7 @@ ARM GAS  /tmp/ccAUnyVA.s 			page 1
  1863      5F444F57 
  1864              	.LASF5:
  1865 02e3 73686F72 		.ascii	"short unsigned int\000"
-ARM GAS  /tmp/ccAUnyVA.s 			page 40
+ARM GAS  /tmp/cc5DFdVi.s 			page 40
 
 
  1865      7420756E 
@@ -2398,7 +2398,7 @@ ARM GAS  /tmp/ccAUnyVA.s 			page 1
  1886              	.LASF77:
  1887 039b 78666572 		.ascii	"xfer_len\000"
  1887      5F6C656E 
-ARM GAS  /tmp/ccAUnyVA.s 			page 41
+ARM GAS  /tmp/cc5DFdVi.s 			page 41
 
 
  1887      00
@@ -2458,7 +2458,7 @@ ARM GAS  /tmp/ccAUnyVA.s 			page 1
  1911      3100
  1912              	.LASF27:
  1913 0437 52455345 		.ascii	"RESERVED2\000"
-ARM GAS  /tmp/ccAUnyVA.s 			page 42
+ARM GAS  /tmp/cc5DFdVi.s 			page 42
 
 
  1913      52564544 
@@ -2518,7 +2518,7 @@ ARM GAS  /tmp/ccAUnyVA.s 			page 1
  1939 04e2 73686F72 		.ascii	"short int\000"
  1939      7420696E 
  1939      7400
-ARM GAS  /tmp/ccAUnyVA.s 			page 43
+ARM GAS  /tmp/cc5DFdVi.s 			page 43
 
 
  1940              	.LASF131:
@@ -2578,7 +2578,7 @@ ARM GAS  /tmp/ccAUnyVA.s 			page 1
  1963      20646F75 
  1963      626C6500 
  1964              	.LASF122:
-ARM GAS  /tmp/ccAUnyVA.s 			page 44
+ARM GAS  /tmp/cc5DFdVi.s 			page 44
 
 
  1965 05a3 75775469 		.ascii	"uwTickPrio\000"
@@ -2638,7 +2638,7 @@ ARM GAS  /tmp/ccAUnyVA.s 			page 1
  1991      6600
  1992              	.LASF134:
  1993 063b 48414C5F 		.ascii	"HAL_PCDEx_PMAConfig\000"
-ARM GAS  /tmp/ccAUnyVA.s 			page 45
+ARM GAS  /tmp/cc5DFdVi.s 			page 45
 
 
  1993      50434445 
@@ -2698,7 +2698,7 @@ ARM GAS  /tmp/ccAUnyVA.s 			page 1
  2017      6100
  2018              	.LASF62:
  2019 06de 6C6F775F 		.ascii	"low_power_enable\000"
-ARM GAS  /tmp/ccAUnyVA.s 			page 46
+ARM GAS  /tmp/cc5DFdVi.s 			page 46
 
 
  2019      706F7765 
@@ -2712,16 +2712,16 @@ ARM GAS  /tmp/ccAUnyVA.s 			page 1
  2021      455F5245 
  2021      53455400 
  2022              		.ident	"GCC: (15:6.3.1+svn253039-1build1) 6.3.1 20170620"
-ARM GAS  /tmp/ccAUnyVA.s 			page 47
+ARM GAS  /tmp/cc5DFdVi.s 			page 47
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32f1xx_hal_pcd_ex.c
-     /tmp/ccAUnyVA.s:69     .text:0000000000000000 $t
-     /tmp/ccAUnyVA.s:76     .text:0000000000000000 HAL_PCDEx_PMAConfig
-     /tmp/ccAUnyVA.s:138    .text:0000000000000030 HAL_PCDEx_SetConnectionState
-     /tmp/ccAUnyVA.s:155    .text:0000000000000032 HAL_PCDEx_LPM_Callback
-     /tmp/ccAUnyVA.s:172    .text:0000000000000034 HAL_PCDEx_BCD_Callback
+     /tmp/cc5DFdVi.s:69     .text:0000000000000000 $t
+     /tmp/cc5DFdVi.s:76     .text:0000000000000000 HAL_PCDEx_PMAConfig
+     /tmp/cc5DFdVi.s:138    .text:0000000000000030 HAL_PCDEx_SetConnectionState
+     /tmp/cc5DFdVi.s:155    .text:0000000000000032 HAL_PCDEx_LPM_Callback
+     /tmp/cc5DFdVi.s:172    .text:0000000000000034 HAL_PCDEx_BCD_Callback
                      .debug_frame:0000000000000010 $d
 
 NO UNDEFINED SYMBOLS

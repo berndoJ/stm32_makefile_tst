@@ -46,3 +46,6 @@ clean:
 	@echo "[Make][$(LIBNAME)] Cleaning up bin directory."
 	@if test -d $(BINDIR); then rm -rf $(BINDIR)/*; fi
 	@echo "[Make][$(LIBNAME)] Cleaned up."
+
+.PHONY: rebuild
+rebuild: clean module_core

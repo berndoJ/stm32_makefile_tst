@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccM6Uqrc.s 			page 1
+ARM GAS  /tmp/ccRfs1Oe.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -18,7 +18,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
   15              	@ GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
   16              	@ options passed:  -I ./inc -I ./inc/Legacy -I ../cmsisstm32f1xx/inc
   17              	@ -I ../cmsiscore/inc -imultilib thumb/v7-m -D__USES_INITFINI__
-  18              	@ -D STM32F103x6 -D RUN_FROM_FLASH=1 -D __c src/stm32f1xx_hal_rtc.c
+  18              	@ -D STM32F103x6 -D RUN_FROM_FLASH=1 src/stm32f1xx_hal_rtc.c
   19              	@ -mcpu=cortex-m3 -mthumb -auxbase-strip bin/stm32f1xx_hal_rtc.o -g
   20              	@ -gdwarf-2 -Os -Wall -fomit-frame-pointer -fverbose-asm
   21              	@ options enabled:  -faggressive-loop-optimizations -falign-jumps
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
   55              	@ -ftree-copy-prop -ftree-cselim -ftree-dce -ftree-dominator-opts
   56              	@ -ftree-dse -ftree-forwprop -ftree-fre -ftree-loop-if-convert
   57              	@ -ftree-loop-im -ftree-loop-ivcanon -ftree-loop-optimize
-ARM GAS  /tmp/ccM6Uqrc.s 			page 2
+ARM GAS  /tmp/ccRfs1Oe.s 			page 2
 
 
   58              	@ -ftree-parallelize-loops= -ftree-phiprop -ftree-pre -ftree-pta
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
   35:src/stm32f1xx_hal_rtc.c ****     (+) To read the RTC Alarm, use the HAL_RTC_GetAlarm() function.
   36:src/stm32f1xx_hal_rtc.c **** 
   37:src/stm32f1xx_hal_rtc.c ****   *** Tamper configuration ***
-ARM GAS  /tmp/ccM6Uqrc.s 			page 3
+ARM GAS  /tmp/ccRfs1Oe.s 			page 3
 
 
   38:src/stm32f1xx_hal_rtc.c ****   ============================
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
   92:src/stm32f1xx_hal_rtc.c ****   ==================================================================
   93:src/stm32f1xx_hal_rtc.c ****   [..] The backup domain reset sets all RTC registers and the RCC_BDCR register
   94:src/stm32f1xx_hal_rtc.c ****        to their reset values.
-ARM GAS  /tmp/ccM6Uqrc.s 			page 4
+ARM GAS  /tmp/ccRfs1Oe.s 			page 4
 
 
   95:src/stm32f1xx_hal_rtc.c ****   [..] A backup domain reset is generated when one of the following events occurs:
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  149:src/stm32f1xx_hal_rtc.c ****   [..]
  150:src/stm32f1xx_hal_rtc.c ****   By default, after the @ref HAL_RTC_Init() and when the state is HAL_RTC_STATE_RESET,
  151:src/stm32f1xx_hal_rtc.c ****   all callbacks are set to the corresponding weak functions :
-ARM GAS  /tmp/ccM6Uqrc.s 			page 5
+ARM GAS  /tmp/ccRfs1Oe.s 			page 5
 
 
  152:src/stm32f1xx_hal_rtc.c ****   example @ref AlarmAEventCallback().
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  206:src/stm32f1xx_hal_rtc.c **** 
  207:src/stm32f1xx_hal_rtc.c **** /**
  208:src/stm32f1xx_hal_rtc.c ****   * @}
-ARM GAS  /tmp/ccM6Uqrc.s 			page 6
+ARM GAS  /tmp/ccRfs1Oe.s 			page 6
 
 
  209:src/stm32f1xx_hal_rtc.c ****   */
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  263:src/stm32f1xx_hal_rtc.c ****              sequence (RSF clear and RSF check).
  264:src/stm32f1xx_hal_rtc.c **** 
  265:src/stm32f1xx_hal_rtc.c **** @endverbatim
-ARM GAS  /tmp/ccM6Uqrc.s 			page 7
+ARM GAS  /tmp/ccRfs1Oe.s 			page 7
 
 
  266:src/stm32f1xx_hal_rtc.c ****   * @{
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  320:src/stm32f1xx_hal_rtc.c **** 
  321:src/stm32f1xx_hal_rtc.c ****   /* Set RTC state */
  322:src/stm32f1xx_hal_rtc.c ****   hrtc->State = HAL_RTC_STATE_BUSY;
-ARM GAS  /tmp/ccM6Uqrc.s 			page 8
+ARM GAS  /tmp/ccRfs1Oe.s 			page 8
 
 
  323:src/stm32f1xx_hal_rtc.c **** 
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  377:src/stm32f1xx_hal_rtc.c ****       }
  378:src/stm32f1xx_hal_rtc.c ****     }
  379:src/stm32f1xx_hal_rtc.c **** 
-ARM GAS  /tmp/ccM6Uqrc.s 			page 9
+ARM GAS  /tmp/ccRfs1Oe.s 			page 9
 
 
  380:src/stm32f1xx_hal_rtc.c ****     /* Configure the RTC_PRLH / RTC_PRLL */
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  434:src/stm32f1xx_hal_rtc.c ****     return HAL_ERROR;
  435:src/stm32f1xx_hal_rtc.c ****   }
  436:src/stm32f1xx_hal_rtc.c ****   else
-ARM GAS  /tmp/ccM6Uqrc.s 			page 10
+ARM GAS  /tmp/ccRfs1Oe.s 			page 10
 
 
  437:src/stm32f1xx_hal_rtc.c ****   {
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  491:src/stm32f1xx_hal_rtc.c ****   * @param  CallbackID ID of the callback to be registered
  492:src/stm32f1xx_hal_rtc.c ****   *         This parameter can be one of the following values:
  493:src/stm32f1xx_hal_rtc.c ****   *          @arg @ref HAL_RTC_ALARM_A_EVENT_CB_ID          Alarm A Event Callback ID
-ARM GAS  /tmp/ccM6Uqrc.s 			page 11
+ARM GAS  /tmp/ccRfs1Oe.s 			page 11
 
 
  494:src/stm32f1xx_hal_rtc.c ****   *          @arg @ref HAL_RTC_TAMPER1_EVENT_CB_ID          Tamper 1 Callback ID
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  548:src/stm32f1xx_hal_rtc.c ****         break;
  549:src/stm32f1xx_hal_rtc.c **** 
  550:src/stm32f1xx_hal_rtc.c ****       default :
-ARM GAS  /tmp/ccM6Uqrc.s 			page 12
+ARM GAS  /tmp/ccRfs1Oe.s 			page 12
 
 
  551:src/stm32f1xx_hal_rtc.c ****         /* Return error status */
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  605:src/stm32f1xx_hal_rtc.c ****         break;
  606:src/stm32f1xx_hal_rtc.c **** 
  607:src/stm32f1xx_hal_rtc.c ****       default :
-ARM GAS  /tmp/ccM6Uqrc.s 			page 13
+ARM GAS  /tmp/ccRfs1Oe.s 			page 13
 
 
  608:src/stm32f1xx_hal_rtc.c ****         /* Return error status */
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  662:src/stm32f1xx_hal_rtc.c ****   *                the configuration information for RTC.
  663:src/stm32f1xx_hal_rtc.c ****   * @retval None
  664:src/stm32f1xx_hal_rtc.c ****   */
-ARM GAS  /tmp/ccM6Uqrc.s 			page 14
+ARM GAS  /tmp/ccRfs1Oe.s 			page 14
 
 
  665:src/stm32f1xx_hal_rtc.c **** __weak void HAL_RTC_MspDeInit(RTC_HandleTypeDef *hrtc)
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  719:src/stm32f1xx_hal_rtc.c ****   hrtc->State = HAL_RTC_STATE_BUSY;
  720:src/stm32f1xx_hal_rtc.c **** 
  721:src/stm32f1xx_hal_rtc.c ****   if (Format == RTC_FORMAT_BIN)
-ARM GAS  /tmp/ccM6Uqrc.s 			page 15
+ARM GAS  /tmp/ccRfs1Oe.s 			page 15
 
 
  722:src/stm32f1xx_hal_rtc.c ****   {
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  776:src/stm32f1xx_hal_rtc.c ****           __HAL_UNLOCK(hrtc);
  777:src/stm32f1xx_hal_rtc.c **** 
  778:src/stm32f1xx_hal_rtc.c ****           return HAL_ERROR;
-ARM GAS  /tmp/ccM6Uqrc.s 			page 16
+ARM GAS  /tmp/ccRfs1Oe.s 			page 16
 
 
  779:src/stm32f1xx_hal_rtc.c ****         }
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  833:src/stm32f1xx_hal_rtc.c **** 
  834:src/stm32f1xx_hal_rtc.c ****     /* Set Hours in RTC_TimeTypeDef structure*/
  835:src/stm32f1xx_hal_rtc.c ****     sTime->Hours = (hours % 24U);
-ARM GAS  /tmp/ccM6Uqrc.s 			page 17
+ARM GAS  /tmp/ccRfs1Oe.s 			page 17
 
 
  836:src/stm32f1xx_hal_rtc.c **** 
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  890:src/stm32f1xx_hal_rtc.c ****   if (Format != RTC_FORMAT_BIN)
  891:src/stm32f1xx_hal_rtc.c ****   {
  892:src/stm32f1xx_hal_rtc.c ****     /* Convert the time structure parameters to BCD format */
-ARM GAS  /tmp/ccM6Uqrc.s 			page 18
+ARM GAS  /tmp/ccRfs1Oe.s 			page 18
 
 
  893:src/stm32f1xx_hal_rtc.c ****     sTime->Hours    = (uint8_t)RTC_ByteToBcd2(sTime->Hours);
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  947:src/stm32f1xx_hal_rtc.c **** 
  948:src/stm32f1xx_hal_rtc.c ****     /* Change the current date */
  949:src/stm32f1xx_hal_rtc.c ****     hrtc->DateToUpdate.Year  = RTC_Bcd2ToByte(sDate->Year);
-ARM GAS  /tmp/ccM6Uqrc.s 			page 19
+ARM GAS  /tmp/ccRfs1Oe.s 			page 19
 
 
  950:src/stm32f1xx_hal_rtc.c ****     hrtc->DateToUpdate.Month = RTC_Bcd2ToByte(sDate->Month);
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
 1004:src/stm32f1xx_hal_rtc.c **** 
 1005:src/stm32f1xx_hal_rtc.c **** 
 1006:src/stm32f1xx_hal_rtc.c ****   }
-ARM GAS  /tmp/ccM6Uqrc.s 			page 20
+ARM GAS  /tmp/ccRfs1Oe.s 			page 20
 
 
 1007:src/stm32f1xx_hal_rtc.c **** 
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
 1061:src/stm32f1xx_hal_rtc.c **** }
 1062:src/stm32f1xx_hal_rtc.c **** 
 1063:src/stm32f1xx_hal_rtc.c **** /**
-ARM GAS  /tmp/ccM6Uqrc.s 			page 21
+ARM GAS  /tmp/ccRfs1Oe.s 			page 21
 
 
 1064:src/stm32f1xx_hal_rtc.c ****   * @}
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
 1118:src/stm32f1xx_hal_rtc.c ****   /* Convert time in seconds */
 1119:src/stm32f1xx_hal_rtc.c ****   counter_time = (uint32_t)(((uint32_t)stime.Hours * 3600U) + \
 1120:src/stm32f1xx_hal_rtc.c ****                             ((uint32_t)stime.Minutes * 60U) + \
-ARM GAS  /tmp/ccM6Uqrc.s 			page 22
+ARM GAS  /tmp/ccRfs1Oe.s 			page 22
 
 
 1121:src/stm32f1xx_hal_rtc.c ****                             ((uint32_t)stime.Seconds));
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
 1175:src/stm32f1xx_hal_rtc.c ****   *                the configuration information for RTC.
 1176:src/stm32f1xx_hal_rtc.c ****   * @param  sAlarm: Pointer to Alarm structure
 1177:src/stm32f1xx_hal_rtc.c ****   * @param  Format: Specifies the format of the entered parameters.
-ARM GAS  /tmp/ccM6Uqrc.s 			page 23
+ARM GAS  /tmp/ccRfs1Oe.s 			page 23
 
 
 1178:src/stm32f1xx_hal_rtc.c ****   *          This parameter can be one of the following values:
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
 1232:src/stm32f1xx_hal_rtc.c ****                      ((uint32_t)(RTC_Bcd2ToByte(sAlarm->AlarmTime.Minutes)) * 60U) + \
 1233:src/stm32f1xx_hal_rtc.c ****                      ((uint32_t)RTC_Bcd2ToByte(sAlarm->AlarmTime.Seconds)));
 1234:src/stm32f1xx_hal_rtc.c ****   }
-ARM GAS  /tmp/ccM6Uqrc.s 			page 24
+ARM GAS  /tmp/ccRfs1Oe.s 			page 24
 
 
 1235:src/stm32f1xx_hal_rtc.c **** 
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
 1289:src/stm32f1xx_hal_rtc.c **** HAL_StatusTypeDef HAL_RTC_GetAlarm(RTC_HandleTypeDef *hrtc, RTC_AlarmTypeDef *sAlarm, uint32_t Alar
 1290:src/stm32f1xx_hal_rtc.c **** {
 1291:src/stm32f1xx_hal_rtc.c ****   uint32_t counter_alarm = 0U;
-ARM GAS  /tmp/ccM6Uqrc.s 			page 25
+ARM GAS  /tmp/ccRfs1Oe.s 			page 25
 
 
 1292:src/stm32f1xx_hal_rtc.c **** 
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
 1346:src/stm32f1xx_hal_rtc.c ****   }
 1347:src/stm32f1xx_hal_rtc.c **** 
 1348:src/stm32f1xx_hal_rtc.c ****   /* Process Locked */
-ARM GAS  /tmp/ccM6Uqrc.s 			page 26
+ARM GAS  /tmp/ccRfs1Oe.s 			page 26
 
 
 1349:src/stm32f1xx_hal_rtc.c ****   __HAL_LOCK(hrtc);
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
 1403:src/stm32f1xx_hal_rtc.c ****   */
 1404:src/stm32f1xx_hal_rtc.c **** void HAL_RTC_AlarmIRQHandler(RTC_HandleTypeDef *hrtc)
 1405:src/stm32f1xx_hal_rtc.c **** {
-ARM GAS  /tmp/ccM6Uqrc.s 			page 27
+ARM GAS  /tmp/ccRfs1Oe.s 			page 27
 
 
 1406:src/stm32f1xx_hal_rtc.c ****   if (__HAL_RTC_ALARM_GET_IT_SOURCE(hrtc, RTC_IT_ALRA))
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
 1460:src/stm32f1xx_hal_rtc.c ****   }
 1461:src/stm32f1xx_hal_rtc.c **** 
 1462:src/stm32f1xx_hal_rtc.c ****   while (__HAL_RTC_ALARM_GET_FLAG(hrtc, RTC_FLAG_ALRAF) == RESET)
-ARM GAS  /tmp/ccM6Uqrc.s 			page 28
+ARM GAS  /tmp/ccRfs1Oe.s 			page 28
 
 
 1463:src/stm32f1xx_hal_rtc.c ****   {
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
 1517:src/stm32f1xx_hal_rtc.c ****  *  @brief   Peripheral Control functions
 1518:src/stm32f1xx_hal_rtc.c ****  *
 1519:src/stm32f1xx_hal_rtc.c **** @verbatim
-ARM GAS  /tmp/ccM6Uqrc.s 			page 29
+ARM GAS  /tmp/ccRfs1Oe.s 			page 29
 
 
 1520:src/stm32f1xx_hal_rtc.c ****  ===============================================================================
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
 1574:src/stm32f1xx_hal_rtc.c ****   */
 1575:src/stm32f1xx_hal_rtc.c **** 
 1576:src/stm32f1xx_hal_rtc.c **** /** @addtogroup RTC_Private_Functions
-ARM GAS  /tmp/ccM6Uqrc.s 			page 30
+ARM GAS  /tmp/ccRfs1Oe.s 			page 30
 
 
 1577:src/stm32f1xx_hal_rtc.c ****   * @{
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  107 0012 D869     		ldrne	r0, [r3, #28]	@ _12, _6->CNTL
  108              	.LVL4:
  109 0014 80B2     		uxthne	r0, r0	@ tmp126, _12
-ARM GAS  /tmp/ccM6Uqrc.s 			page 31
+ARM GAS  /tmp/ccRfs1Oe.s 			page 31
 
 
  110 0016 40EA0140 		orrne	r0, r0, r1, lsl #16	@ <retval>, tmp126, _10,
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
 1634:src/stm32f1xx_hal_rtc.c **** 
 1635:src/stm32f1xx_hal_rtc.c ****     /* Wait for synchro */
 1636:src/stm32f1xx_hal_rtc.c ****     if (RTC_ExitInitMode(hrtc) != HAL_OK)
-ARM GAS  /tmp/ccM6Uqrc.s 			page 32
+ARM GAS  /tmp/ccRfs1Oe.s 			page 32
 
 
 1637:src/stm32f1xx_hal_rtc.c ****     {
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
 1661:src/stm32f1xx_hal_rtc.c **** /**
 1662:src/stm32f1xx_hal_rtc.c ****   * @brief  Write the time counter in RTC_ALR registers.
 1663:src/stm32f1xx_hal_rtc.c ****   * @param  hrtc   pointer to a RTC_HandleTypeDef structure that contains
-ARM GAS  /tmp/ccM6Uqrc.s 			page 33
+ARM GAS  /tmp/ccRfs1Oe.s 			page 33
 
 
 1664:src/stm32f1xx_hal_rtc.c ****   *                the configuration information for RTC.
@@ -1978,7 +1978,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
 1718:src/stm32f1xx_hal_rtc.c ****   return HAL_OK;
 1719:src/stm32f1xx_hal_rtc.c **** }
 1720:src/stm32f1xx_hal_rtc.c **** 
-ARM GAS  /tmp/ccM6Uqrc.s 			page 34
+ARM GAS  /tmp/ccRfs1Oe.s 			page 34
 
 
 1721:src/stm32f1xx_hal_rtc.c **** /**
@@ -2038,7 +2038,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
 1762:src/stm32f1xx_hal_rtc.c ****   return ((uint8_t)(bcdhigh << 4U) | Value);
  174              		.loc 1 1762 0
  175 0038 40EA0310 		orr	r0, r0, r3, lsl #4	@ tmp220, Value, bcdhigh,
-ARM GAS  /tmp/ccM6Uqrc.s 			page 35
+ARM GAS  /tmp/ccRfs1Oe.s 			page 35
 
 
  176              	.LVL14:
@@ -2098,7 +2098,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  214 004c 00F00F00 		and	r0, r0, #15	@ tmp122, Value,
  215              	.LVL20:
  216 0050 02FB0300 		mla	r0, r2, r3, r0	@ tmp125, tmp121, tmp119, tmp122
-ARM GAS  /tmp/ccM6Uqrc.s 			page 36
+ARM GAS  /tmp/ccRfs1Oe.s 			page 36
 
 
 1775:src/stm32f1xx_hal_rtc.c **** }
@@ -2158,7 +2158,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
 1815:src/stm32f1xx_hal_rtc.c ****         {
 1816:src/stm32f1xx_hal_rtc.c ****           month = 1U;
 1817:src/stm32f1xx_hal_rtc.c ****           day = 1U;
-ARM GAS  /tmp/ccM6Uqrc.s 			page 37
+ARM GAS  /tmp/ccRfs1Oe.s 			page 37
 
 
 1818:src/stm32f1xx_hal_rtc.c ****           year++;
@@ -2218,7 +2218,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
 1872:src/stm32f1xx_hal_rtc.c **** 
 1873:src/stm32f1xx_hal_rtc.c **** /**
 1874:src/stm32f1xx_hal_rtc.c ****   * @brief  Check whether the passed year is Leap or not.
-ARM GAS  /tmp/ccM6Uqrc.s 			page 38
+ARM GAS  /tmp/ccRfs1Oe.s 			page 38
 
 
 1875:src/stm32f1xx_hal_rtc.c ****   * @param  nYear  year to check
@@ -2278,7 +2278,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  237 0058 0229     		cmp	r1, #2	@ nMonth,
 1917:src/stm32f1xx_hal_rtc.c ****   uint32_t year = 0U, weekday = 0U;
  238              		.loc 1 1917 0
-ARM GAS  /tmp/ccM6Uqrc.s 			page 39
+ARM GAS  /tmp/ccRfs1Oe.s 			page 39
 
 
  239 005a 70B5     		push	{r4, r5, r6, lr}	@
@@ -2338,7 +2338,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  280 009e 70BD     		pop	{r4, r5, r6, pc}	@
  281              	.LVL28:
  282              	.L10:
-ARM GAS  /tmp/ccM6Uqrc.s 			page 40
+ARM GAS  /tmp/ccRfs1Oe.s 			page 40
 
 
 1930:src/stm32f1xx_hal_rtc.c ****   }
@@ -2398,7 +2398,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  332 00d2 5A68     		ldr	r2, [r3, #4]	@ _9, _8->CRL
  333 00d4 9206     		lsls	r2, r2, #26	@, _9,
  334 00d6 05D5     		bpl	.L16	@,
-ARM GAS  /tmp/ccM6Uqrc.s 			page 41
+ARM GAS  /tmp/ccRfs1Oe.s 			page 41
 
 
 1715:src/stm32f1xx_hal_rtc.c **** 
@@ -2458,7 +2458,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  379              		.cfi_offset 4, -12
  380              		.cfi_offset 5, -8
  381              		.cfi_offset 14, -4
-ARM GAS  /tmp/ccM6Uqrc.s 			page 42
+ARM GAS  /tmp/ccRfs1Oe.s 			page 42
 
 
 1732:src/stm32f1xx_hal_rtc.c **** 
@@ -2518,7 +2518,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  426              		.loc 1 1620 0
  427              		.cfi_startproc
  428              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  /tmp/ccM6Uqrc.s 			page 43
+ARM GAS  /tmp/ccRfs1Oe.s 			page 43
 
 
  429              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -2578,7 +2578,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
 1643:src/stm32f1xx_hal_rtc.c **** 
  474              		.loc 1 1643 0
  475 014a 38BD     		pop	{r3, r4, r5, pc}	@
-ARM GAS  /tmp/ccM6Uqrc.s 			page 44
+ARM GAS  /tmp/ccRfs1Oe.s 			page 44
 
 
  476              		.cfi_endproc
@@ -2638,7 +2638,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  521              		.loc 1 1685 0
  522 0164 FFF7C6FF 		bl	RTC_ExitInitMode	@
  523              	.LVL52:
-ARM GAS  /tmp/ccM6Uqrc.s 			page 45
+ARM GAS  /tmp/ccRfs1Oe.s 			page 45
 
 
  524              	.LBE9:
@@ -2698,7 +2698,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  576              		.syntax unified
  577              		.thumb
  578              		.thumb_func
-ARM GAS  /tmp/ccM6Uqrc.s 			page 46
+ARM GAS  /tmp/ccRfs1Oe.s 			page 46
 
 
  579              		.fpu softvfp
@@ -2758,7 +2758,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  622 0198 4FF46163 		mov	r3, #3600	@ tmp150,
  728:src/stm32f1xx_hal_rtc.c ****                               ((uint32_t)sTime->Seconds));
  623              		.loc 1 728 0
-ARM GAS  /tmp/ccM6Uqrc.s 			page 47
+ARM GAS  /tmp/ccRfs1Oe.s 			page 47
 
 
  624 019c 7543     		muls	r5, r6, r5	@ tmp152, sTime_6(D)->Minutes
@@ -2818,7 +2818,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  668 01da 0544     		add	r5, r5, r0	@ counter_time,
  669              	.LVL65:
  670 01dc E2E7     		b	.L34	@
-ARM GAS  /tmp/ccM6Uqrc.s 			page 48
+ARM GAS  /tmp/ccRfs1Oe.s 			page 48
 
 
  671              	.L35:
@@ -2878,7 +2878,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  713              	.L32:
  789:src/stm32f1xx_hal_rtc.c **** 
  714              		.loc 1 789 0
-ARM GAS  /tmp/ccM6Uqrc.s 			page 49
+ARM GAS  /tmp/ccRfs1Oe.s 			page 49
 
 
  715 0216 3046     		mov	r0, r6	@, <retval>
@@ -2938,7 +2938,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  763 0232 5B68     		ldr	r3, [r3, #4]	@ _7, _6->CRL
  764 0234 5E07     		lsls	r6, r3, #29	@, _7,
  765 0236 F6D4     		bmi	.L49	@,
-ARM GAS  /tmp/ccM6Uqrc.s 			page 50
+ARM GAS  /tmp/ccRfs1Oe.s 			page 50
 
 
  766              	.LVL74:
@@ -2998,7 +2998,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  806              		.loc 1 841 0
  807 0270 411C     		adds	r1, r0, #1	@, counter_alarm,
  838:src/stm32f1xx_hal_rtc.c **** 
-ARM GAS  /tmp/ccM6Uqrc.s 			page 51
+ARM GAS  /tmp/ccRfs1Oe.s 			page 51
 
 
  808              		.loc 1 838 0
@@ -3058,7 +3058,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  853              	.LBE19:
  854              	.LBE18:
  832:src/stm32f1xx_hal_rtc.c **** 
-ARM GAS  /tmp/ccM6Uqrc.s 			page 52
+ARM GAS  /tmp/ccRfs1Oe.s 			page 52
 
 
  855              		.loc 1 832 0
@@ -3118,7 +3118,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  896              		.loc 1 1870 0
  897 02d0 FFF7C2FE 		bl	RTC_WeekDayNum	@
  898              	.LVL96:
-ARM GAS  /tmp/ccM6Uqrc.s 			page 53
+ARM GAS  /tmp/ccRfs1Oe.s 			page 53
 
 
  899 02d4 2073     		strb	r0, [r4, #12]	@, hrtc_3(D)->DateToUpdate.WeekDay
@@ -3178,7 +3178,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  945 0310 042B     		cmp	r3, #4	@ _73,
  946 0312 01D0     		beq	.L59	@,
  947 0314 092B     		cmp	r3, #9	@ _73,
-ARM GAS  /tmp/ccM6Uqrc.s 			page 54
+ARM GAS  /tmp/ccRfs1Oe.s 			page 54
 
 
  948 0316 04D1     		bne	.L60	@,
@@ -3238,7 +3238,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
 1891:src/stm32f1xx_hal_rtc.c ****   {
  991              		.loc 1 1891 0
  992 0344 B2FBFCF3 		udiv	r3, r2, ip	@ tmp225, _53, tmp249
-ARM GAS  /tmp/ccM6Uqrc.s 			page 55
+ARM GAS  /tmp/ccRfs1Oe.s 			page 55
 
 
  993 0348 0CFB1323 		mls	r3, ip, r3, r2	@ tmp229, tmp249, tmp225, _53
@@ -3298,7 +3298,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
 1799:src/stm32f1xx_hal_rtc.c ****     {
  1040              		.loc 1 1799 0
  1041 0370 0C29     		cmp	r1, #12	@ month,
-ARM GAS  /tmp/ccM6Uqrc.s 			page 56
+ARM GAS  /tmp/ccRfs1Oe.s 			page 56
 
 
  1042 0372 CBD1     		bne	.L56	@,
@@ -3358,7 +3358,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  1090              		.cfi_offset 14, -4
  914:src/stm32f1xx_hal_rtc.c ****   uint32_t counter_time = 0U, counter_alarm = 0U, hours = 0U;
  1091              		.loc 1 914 0
-ARM GAS  /tmp/ccM6Uqrc.s 			page 57
+ARM GAS  /tmp/ccRfs1Oe.s 			page 57
 
 
  1092 038a 0D46     		mov	r5, r1	@ sDate, sDate
@@ -3418,7 +3418,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  1133              		.loc 1 960 0
  1134 03bc 2046     		mov	r0, r4	@, hrtc
  1135 03be FFF71FFE 		bl	RTC_ReadTimeCounter	@
-ARM GAS  /tmp/ccM6Uqrc.s 			page 58
+ARM GAS  /tmp/ccRfs1Oe.s 			page 58
 
 
  1136              	.LVL124:
@@ -3478,7 +3478,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  1181              	.LVL133:
  1182 0400 A073     		strb	r0, [r4, #14]	@, hrtc_6(D)->DateToUpdate.Date
  1183 0402 D4E7     		b	.L98	@
-ARM GAS  /tmp/ccM6Uqrc.s 			page 59
+ARM GAS  /tmp/ccRfs1Oe.s 			page 59
 
 
  1184              	.LVL134:
@@ -3538,7 +3538,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  1226              		.align	2
  1227              	.L110:
  1228 0434 8F5F0100 		.word	89999
-ARM GAS  /tmp/ccM6Uqrc.s 			page 60
+ARM GAS  /tmp/ccRfs1Oe.s 			page 60
 
 
  1229              		.cfi_endproc
@@ -3598,7 +3598,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  1275              	.LCFI10:
  1276              		.cfi_remember_state
  1277              		.cfi_def_cfa_offset 20
-ARM GAS  /tmp/ccM6Uqrc.s 			page 61
+ARM GAS  /tmp/ccRfs1Oe.s 			page 61
 
 
  1278              		@ sp needed	@
@@ -3658,7 +3658,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  1322              	.LVL149:
  1323 048c A070     		strb	r0, [r4, #2]	@, sDate_6(D)->Date
  1324 048e DEE7     		b	.L114	@
-ARM GAS  /tmp/ccM6Uqrc.s 			page 62
+ARM GAS  /tmp/ccRfs1Oe.s 			page 62
 
 
  1325              		.cfi_endproc
@@ -3718,7 +3718,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  1371              		.loc 1 1170 0
  1372 04a8 02B0     		add	sp, sp, #8	@,,
  1373              	.LCFI13:
-ARM GAS  /tmp/ccM6Uqrc.s 			page 63
+ARM GAS  /tmp/ccRfs1Oe.s 			page 63
 
 
  1374              		.cfi_remember_state
@@ -3778,7 +3778,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  1415              		.loc 1 1121 0
  1416 04e0 9DF80630 		ldrb	r3, [sp, #6]	@ zero_extendqisi2	@ stime.Seconds, stime.Seconds
  1417 04e4 98F80000 		ldrb	r0, [r8]	@ zero_extendqisi2	@ sAlarm_8(D)->AlarmTime.Hours, sAlarm_8(D)->AlarmTime.Hours
-ARM GAS  /tmp/ccM6Uqrc.s 			page 64
+ARM GAS  /tmp/ccRfs1Oe.s 			page 64
 
 
  1418 04e8 98F80170 		ldrb	r7, [r8, #1]	@ zero_extendqisi2	@ sAlarm_8(D)->AlarmTime.Minutes, sAlarm_8(D)->AlarmTime.Minu
@@ -3838,7 +3838,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  1461 0526 3846     		mov	r0, r7	@, sAlarm_8(D)->AlarmTime.Minutes
  1462 0528 FFF78EFD 		bl	RTC_Bcd2ToByte	@
  1463              	.LVL164:
-ARM GAS  /tmp/ccM6Uqrc.s 			page 65
+ARM GAS  /tmp/ccRfs1Oe.s 			page 65
 
 
  1464 052c 7043     		muls	r0, r6, r0	@ tmp181, tmp164
@@ -3898,7 +3898,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  1509              	.LCFI15:
  1510              		.cfi_def_cfa_offset 40
  1511              		.cfi_offset 4, -32
-ARM GAS  /tmp/ccM6Uqrc.s 			page 66
+ARM GAS  /tmp/ccRfs1Oe.s 			page 66
 
 
  1512              		.cfi_offset 5, -28
@@ -3958,7 +3958,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  1556              		.loc 1 1200 0 is_stmt 0 discriminator 2
  1557 0574 0121     		movs	r1, #1	@ tmp160,
  1558              	.LVL174:
-ARM GAS  /tmp/ccM6Uqrc.s 			page 67
+ARM GAS  /tmp/ccRfs1Oe.s 			page 67
 
 
 1202:src/stm32f1xx_hal_rtc.c **** 
@@ -4018,7 +4018,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  1599              	.L140:
 1237:src/stm32f1xx_hal_rtc.c ****   {
  1600              		.loc 1 1237 0
-ARM GAS  /tmp/ccM6Uqrc.s 			page 68
+ARM GAS  /tmp/ccRfs1Oe.s 			page 68
 
 
  1601 05ba A942     		cmp	r1, r5	@ counter_alarm, counter_time
@@ -4078,7 +4078,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  1645 05f8 2368     		ldr	r3, [r4]	@ _53, hrtc_7(D)->Instance
  1646 05fa 5A60     		str	r2, [r3, #4]	@ tmp200, _53->CRL
 1260:src/stm32f1xx_hal_rtc.c **** 
-ARM GAS  /tmp/ccM6Uqrc.s 			page 69
+ARM GAS  /tmp/ccRfs1Oe.s 			page 69
 
 
  1647              		.loc 1 1260 0
@@ -4138,7 +4138,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  1693              		@ frame_needed = 0, uses_anonymous_args = 0
  1694              	.LVL190:
  1695 0628 70B5     		push	{r4, r5, r6, lr}	@
-ARM GAS  /tmp/ccM6Uqrc.s 			page 70
+ARM GAS  /tmp/ccRfs1Oe.s 			page 70
 
 
  1696              	.LCFI18:
@@ -4198,7 +4198,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  1737 0660 5AB1     		cbz	r2, .L155	@ Format,
 1317:src/stm32f1xx_hal_rtc.c ****     sAlarm->AlarmTime.Minutes = RTC_ByteToBcd2(sAlarm->AlarmTime.Minutes);
  1738              		.loc 1 1317 0
-ARM GAS  /tmp/ccM6Uqrc.s 			page 71
+ARM GAS  /tmp/ccRfs1Oe.s 			page 71
 
 
  1739 0662 1846     		mov	r0, r3	@, _10
@@ -4258,7 +4258,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  1787              		.loc 1 1343 0
  1788 0684 0446     		mov	r4, r0	@ hrtc, hrtc
  1789 0686 A0B1     		cbz	r0, .L160	@ hrtc,
-ARM GAS  /tmp/ccM6Uqrc.s 			page 72
+ARM GAS  /tmp/ccRfs1Oe.s 			page 72
 
 
 1349:src/stm32f1xx_hal_rtc.c **** 
@@ -4318,7 +4318,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  1830              		.loc 1 1370 0
  1831 06be 5A60     		str	r2, [r3, #4]	@ tmp131, _16->CRL
 1373:src/stm32f1xx_hal_rtc.c ****     WRITE_REG(hrtc->Instance->ALRL, RTC_ALARM_RESETVALUE_REGISTER);
-ARM GAS  /tmp/ccM6Uqrc.s 			page 73
+ARM GAS  /tmp/ccRfs1Oe.s 			page 73
 
 
  1832              		.loc 1 1373 0
@@ -4378,7 +4378,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  1875              		.thumb_func
  1876              		.fpu softvfp
  1877              		.type	HAL_RTC_AlarmAEventCallback, %function
-ARM GAS  /tmp/ccM6Uqrc.s 			page 74
+ARM GAS  /tmp/ccRfs1Oe.s 			page 74
 
 
  1878              	HAL_RTC_AlarmAEventCallback:
@@ -4438,7 +4438,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  1923              		.loc 1 1415 0
  1924 0704 FFF7FEFF 		bl	HAL_RTC_AlarmAEventCallback	@
  1925              	.LVL207:
-ARM GAS  /tmp/ccM6Uqrc.s 			page 75
+ARM GAS  /tmp/ccRfs1Oe.s 			page 75
 
 
 1419:src/stm32f1xx_hal_rtc.c ****     }
@@ -4498,7 +4498,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  1974 072e 0646     		mov	r6, r0	@ tickstart,
  1975              	.LVL211:
 1457:src/stm32f1xx_hal_rtc.c ****   {
-ARM GAS  /tmp/ccM6Uqrc.s 			page 76
+ARM GAS  /tmp/ccRfs1Oe.s 			page 76
 
 
  1976              		.loc 1 1457 0
@@ -4558,7 +4558,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  2018              		.loc 1 1478 0
  2019 075e 6374     		strb	r3, [r4, #17]	@ tmp124, hrtc_8(D)->State
 1480:src/stm32f1xx_hal_rtc.c **** }
-ARM GAS  /tmp/ccM6Uqrc.s 			page 77
+ARM GAS  /tmp/ccRfs1Oe.s 			page 77
 
 
  2020              		.loc 1 1480 0
@@ -4618,7 +4618,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  2069              		.loc 1 1545 0
  2070 0768 0446     		mov	r4, r0	@ hrtc, hrtc
  2071 076a A8B1     		cbz	r0, .L188	@ hrtc,
-ARM GAS  /tmp/ccM6Uqrc.s 			page 78
+ARM GAS  /tmp/ccRfs1Oe.s 			page 78
 
 
 1551:src/stm32f1xx_hal_rtc.c **** 
@@ -4678,7 +4678,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  2118              		.type	HAL_RTC_Init, %function
  2119              	HAL_RTC_Init:
  2120              	.LFB65:
-ARM GAS  /tmp/ccM6Uqrc.s 			page 79
+ARM GAS  /tmp/ccRfs1Oe.s 			page 79
 
 
  276:src/stm32f1xx_hal_rtc.c ****   uint32_t prescaler = 0U;
@@ -4738,7 +4738,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  2163 07c2 10BD     		pop	{r4, pc}	@
  2164              	.LVL229:
  2165              	.L193:
-ARM GAS  /tmp/ccM6Uqrc.s 			page 80
+ARM GAS  /tmp/ccRfs1Oe.s 			page 80
 
 
  334:src/stm32f1xx_hal_rtc.c ****   {
@@ -4798,7 +4798,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  2208              		.loc 1 381 0
  2209 0802 2268     		ldr	r2, [r4]	@ _36, hrtc_7(D)->Instance
  2210 0804 9368     		ldr	r3, [r2, #8]	@ _37, _36->PRLH
-ARM GAS  /tmp/ccM6Uqrc.s 			page 81
+ARM GAS  /tmp/ccRfs1Oe.s 			page 81
 
 
  2211 0806 23F00F03 		bic	r3, r3, #15	@ tmp155, _37,
@@ -4858,7 +4858,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  2257              		.type	HAL_RTC_DeInit, %function
  2258              	HAL_RTC_DeInit:
  2259              	.LFB66:
-ARM GAS  /tmp/ccM6Uqrc.s 			page 82
+ARM GAS  /tmp/ccRfs1Oe.s 			page 82
 
 
  412:src/stm32f1xx_hal_rtc.c ****   /* Check input parameters */
@@ -4918,7 +4918,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  441:src/stm32f1xx_hal_rtc.c **** 
  2303              		.loc 1 441 0
  2304 0866 9860     		str	r0, [r3, #8]	@ tmp119, _10->PRLH
-ARM GAS  /tmp/ccM6Uqrc.s 			page 83
+ARM GAS  /tmp/ccRfs1Oe.s 			page 83
 
 
  444:src/stm32f1xx_hal_rtc.c ****     CLEAR_REG(hrtc->Instance->CRL);
@@ -4978,7 +4978,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  2345 089a 70BD     		pop	{r4, r5, r6, pc}	@
  2346              		.cfi_endproc
  2347              	.LFE66:
-ARM GAS  /tmp/ccM6Uqrc.s 			page 84
+ARM GAS  /tmp/ccRfs1Oe.s 			page 84
 
 
  2348              		.size	HAL_RTC_DeInit, .-HAL_RTC_DeInit
@@ -5038,7 +5038,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  2402 0059 07       		.byte	0x7
  2403 005a 49030000 		.4byte	.LASF6
  2404 005e 03       		.uleb128 0x3
-ARM GAS  /tmp/ccM6Uqrc.s 			page 85
+ARM GAS  /tmp/ccRfs1Oe.s 			page 85
 
 
  2405 005f 66060000 		.4byte	.LASF7
@@ -5098,7 +5098,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  2459 00ce C2000000 		.4byte	0xc2
  2460 00d2 02       		.uleb128 0x2
  2461 00d3 04       		.byte	0x4
-ARM GAS  /tmp/ccM6Uqrc.s 			page 86
+ARM GAS  /tmp/ccRfs1Oe.s 			page 86
 
 
  2462 00d4 07       		.byte	0x7
@@ -5158,7 +5158,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  2516 0141 9E040000 		.4byte	.LASF22
  2517 0145 06       		.byte	0x6
  2518 0146 B2       		.byte	0xb2
-ARM GAS  /tmp/ccM6Uqrc.s 			page 87
+ARM GAS  /tmp/ccRfs1Oe.s 			page 87
 
 
  2519 0147 C2000000 		.4byte	0xc2
@@ -5218,7 +5218,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  2573 01a7 06       		.byte	0x6
  2574 01a8 B9       		.byte	0xb9
  2575 01a9 CD000000 		.4byte	0xcd
-ARM GAS  /tmp/ccM6Uqrc.s 			page 88
+ARM GAS  /tmp/ccRfs1Oe.s 			page 88
 
 
  2576 01ad 02       		.byte	0x2
@@ -5278,7 +5278,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  2630 0209 06       		.byte	0x6
  2631 020a C0       		.byte	0xc0
  2632 020b 38010000 		.4byte	0x138
-ARM GAS  /tmp/ccM6Uqrc.s 			page 89
+ARM GAS  /tmp/ccRfs1Oe.s 			page 89
 
 
  2633 020f 0E       		.uleb128 0xe
@@ -5338,7 +5338,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  2687 0272 11       		.uleb128 0x11
  2688 0273 47070000 		.4byte	.LASF29
  2689 0277 06       		.byte	0x6
-ARM GAS  /tmp/ccM6Uqrc.s 			page 90
+ARM GAS  /tmp/ccRfs1Oe.s 			page 90
 
 
  2690 0278 3A01     		.2byte	0x13a
@@ -5398,7 +5398,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  2744 02e0 14       		.uleb128 0x14
  2745 02e1 10       		.uleb128 0x10
  2746 02e2 98010000 		.4byte	.LASF34
-ARM GAS  /tmp/ccM6Uqrc.s 			page 91
+ARM GAS  /tmp/ccRfs1Oe.s 			page 91
 
 
  2747 02e6 06       		.byte	0x6
@@ -5458,7 +5458,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  2801 034b 01       		.byte	0x1
  2802 034c 3E000000 		.4byte	0x3e
  2803 0350 08       		.byte	0x8
-ARM GAS  /tmp/ccM6Uqrc.s 			page 92
+ARM GAS  /tmp/ccRfs1Oe.s 			page 92
 
 
  2804 0351 2A       		.byte	0x2a
@@ -5518,7 +5518,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  2858 03ba 62       		.byte	0x62
  2859 03bb 97000000 		.4byte	0x97
  2860 03bf 02       		.byte	0x2
-ARM GAS  /tmp/ccM6Uqrc.s 			page 93
+ARM GAS  /tmp/ccRfs1Oe.s 			page 93
 
 
  2861 03c0 23       		.byte	0x23
@@ -5578,7 +5578,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  2915 0423 01       		.byte	0x1
  2916 0424 13       		.uleb128 0x13
  2917 0425 1D050000 		.4byte	.LASF58
-ARM GAS  /tmp/ccM6Uqrc.s 			page 94
+ARM GAS  /tmp/ccRfs1Oe.s 			page 94
 
 
  2918 0429 02       		.byte	0x2
@@ -5638,7 +5638,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  2972 048c 00       		.uleb128 0
  2973 048d 0C       		.uleb128 0xc
  2974 048e 82000000 		.4byte	.LASF66
-ARM GAS  /tmp/ccM6Uqrc.s 			page 95
+ARM GAS  /tmp/ccRfs1Oe.s 			page 95
 
 
  2975 0492 09       		.byte	0x9
@@ -5698,7 +5698,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  3029 04f2 02       		.byte	0x2
  3030 04f3 23       		.byte	0x23
  3031 04f4 0C       		.uleb128 0xc
-ARM GAS  /tmp/ccM6Uqrc.s 			page 96
+ARM GAS  /tmp/ccRfs1Oe.s 			page 96
 
 
  3032 04f5 0C       		.uleb128 0xc
@@ -5758,7 +5758,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  3086 055e 01       		.byte	0x1
  3087 055f 01       		.byte	0x1
  3088 0560 08       		.uleb128 0x8
-ARM GAS  /tmp/ccM6Uqrc.s 			page 97
+ARM GAS  /tmp/ccRfs1Oe.s 			page 97
 
 
  3089 0561 C7020000 		.4byte	.LASF82
@@ -5818,7 +5818,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  3143 05e3 97000000 		.4byte	0x97
  3144 05e7 01       		.byte	0x1
  3145 05e8 F9050000 		.4byte	0x5f9
-ARM GAS  /tmp/ccM6Uqrc.s 			page 98
+ARM GAS  /tmp/ccRfs1Oe.s 			page 98
 
 
  3146 05ec 1B       		.uleb128 0x1b
@@ -5878,7 +5878,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  3200 0667 58000000 		.4byte	.LFE89
  3201 066b 02       		.byte	0x2
  3202 066c 7D       		.byte	0x7d
-ARM GAS  /tmp/ccM6Uqrc.s 			page 99
+ARM GAS  /tmp/ccRfs1Oe.s 			page 99
 
 
  3203 066d 00       		.sleb128 0
@@ -5938,7 +5938,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  3257 06f1 B2060000 		.4byte	.LASF88
  3258 06f5 01       		.byte	0x1
  3259 06f6 BF06     		.2byte	0x6bf
-ARM GAS  /tmp/ccM6Uqrc.s 			page 100
+ARM GAS  /tmp/ccRfs1Oe.s 			page 100
 
 
  3260 06f8 50060000 		.4byte	0x650
@@ -5998,7 +5998,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  3314 0787 B2060000 		.4byte	.LASF88
  3315 078b 01       		.byte	0x1
  3316 078c 8406     		.2byte	0x684
-ARM GAS  /tmp/ccM6Uqrc.s 			page 101
+ARM GAS  /tmp/ccRfs1Oe.s 			page 101
 
 
  3317 078e 50060000 		.4byte	0x650
@@ -6058,7 +6058,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  3371 0810 01       		.byte	0x1
  3372 0811 5306     		.2byte	0x653
  3373 0813 50060000 		.4byte	0x650
-ARM GAS  /tmp/ccM6Uqrc.s 			page 102
+ARM GAS  /tmp/ccRfs1Oe.s 			page 102
 
 
  3374 0817 1B       		.uleb128 0x1b
@@ -6118,7 +6118,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  3428 08a0 01       		.byte	0x1
  3429 08a1 13070000 		.4byte	.LASF111
  3430 08a5 01       		.byte	0x1
-ARM GAS  /tmp/ccM6Uqrc.s 			page 103
+ARM GAS  /tmp/ccRfs1Oe.s 			page 103
 
 
  3431 08a6 0406     		.2byte	0x604
@@ -6178,7 +6178,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  3485 092a 6F030000 		.4byte	0x36f
  3486 092e 24070000 		.4byte	.LFB79
  3487 0932 62070000 		.4byte	.LFE79
-ARM GAS  /tmp/ccM6Uqrc.s 			page 104
+ARM GAS  /tmp/ccRfs1Oe.s 			page 104
 
 
  3488 0936 07040000 		.4byte	.LLST89
@@ -6238,7 +6238,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  3542 09ba B2060000 		.4byte	.LASF88
  3543 09be 01       		.byte	0x1
  3544 09bf 7C05     		.2byte	0x57c
-ARM GAS  /tmp/ccM6Uqrc.s 			page 105
+ARM GAS  /tmp/ccRfs1Oe.s 			page 105
 
 
  3545 09c1 50060000 		.4byte	0x650
@@ -6298,7 +6298,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  3599 0a39 02       		.byte	0x2
  3600 0a3a 74       		.byte	0x74
  3601 0a3b 00       		.sleb128 0
-ARM GAS  /tmp/ccM6Uqrc.s 			page 106
+ARM GAS  /tmp/ccRfs1Oe.s 			page 106
 
 
  3602 0a3c 00       		.byte	0
@@ -6358,7 +6358,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  3656 0abd 01       		.uleb128 0x1
  3657 0abe 50       		.byte	0x50
  3658 0abf 00       		.byte	0
-ARM GAS  /tmp/ccM6Uqrc.s 			page 107
+ARM GAS  /tmp/ccRfs1Oe.s 			page 107
 
 
  3659 0ac0 21       		.uleb128 0x21
@@ -6418,7 +6418,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  3713 0b38 01       		.byte	0x1
  3714 0b39 A004     		.2byte	0x4a0
  3715 0b3b C2000000 		.4byte	0xc2
-ARM GAS  /tmp/ccM6Uqrc.s 			page 108
+ARM GAS  /tmp/ccRfs1Oe.s 			page 108
 
 
  3716 0b3f E3060000 		.4byte	.LLST76
@@ -6478,7 +6478,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  3770 0bae 56060000 		.4byte	0x656
  3771 0bb2 BD0B0000 		.4byte	0xbbd
  3772 0bb6 27       		.uleb128 0x27
-ARM GAS  /tmp/ccM6Uqrc.s 			page 109
+ARM GAS  /tmp/ccRfs1Oe.s 			page 109
 
 
  3773 0bb7 01       		.byte	0x1
@@ -6538,7 +6538,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  3827 0c2e A2050000 		.4byte	.LASF121
  3828 0c32 01       		.byte	0x1
  3829 0c33 4604     		.2byte	0x446
-ARM GAS  /tmp/ccM6Uqrc.s 			page 110
+ARM GAS  /tmp/ccRfs1Oe.s 			page 110
 
 
  3830 0c35 C2000000 		.4byte	0xc2
@@ -6598,7 +6598,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  3884 0c9c 56060000 		.4byte	0x656
  3885 0ca0 27       		.uleb128 0x27
  3886 0ca1 01       		.byte	0x1
-ARM GAS  /tmp/ccM6Uqrc.s 			page 111
+ARM GAS  /tmp/ccRfs1Oe.s 			page 111
 
 
  3887 0ca2 50       		.byte	0x50
@@ -6658,7 +6658,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  3941 0d19 00       		.byte	0
  3942 0d1a 21       		.uleb128 0x21
  3943 0d1b 7C040000 		.4byte	.LVL147
-ARM GAS  /tmp/ccM6Uqrc.s 			page 112
+ARM GAS  /tmp/ccRfs1Oe.s 			page 112
 
 
  3944 0d1f 94060000 		.4byte	0x694
@@ -6718,7 +6718,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  3998 0d95 C2000000 		.4byte	0xc2
  3999 0d99 180A0000 		.4byte	.LLST59
  4000 0d9d 19       		.uleb128 0x19
-ARM GAS  /tmp/ccM6Uqrc.s 			page 113
+ARM GAS  /tmp/ccRfs1Oe.s 			page 113
 
 
  4001 0d9e A2050000 		.4byte	.LASF121
@@ -6778,7 +6778,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  4055 0e0d 00       		.sleb128 0
  4056 0e0e 00       		.byte	0
  4057 0e0f 21       		.uleb128 0x21
-ARM GAS  /tmp/ccM6Uqrc.s 			page 114
+ARM GAS  /tmp/ccRfs1Oe.s 			page 114
 
 
  4058 0e10 F0030000 		.4byte	.LVL131
@@ -6838,7 +6838,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  4112 0e86 1D       		.uleb128 0x1d
  4113 0e87 A2050000 		.4byte	.LASF121
  4114 0e8b 01       		.byte	0x1
-ARM GAS  /tmp/ccM6Uqrc.s 			page 115
+ARM GAS  /tmp/ccRfs1Oe.s 			page 115
 
 
  4115 0e8c 2403     		.2byte	0x324
@@ -6898,7 +6898,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  4169 0f12 C102     		.2byte	0x2c1
  4170 0f14 C2000000 		.4byte	0xc2
  4171 0f18 A80B0000 		.4byte	.LLST40
-ARM GAS  /tmp/ccM6Uqrc.s 			page 116
+ARM GAS  /tmp/ccRfs1Oe.s 			page 116
 
 
  4172 0f1c 19       		.uleb128 0x19
@@ -6958,7 +6958,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  4226 0f86 50       		.byte	0x50
  4227 0f87 02       		.byte	0x2
  4228 0f88 74       		.byte	0x74
-ARM GAS  /tmp/ccM6Uqrc.s 			page 117
+ARM GAS  /tmp/ccRfs1Oe.s 			page 117
 
 
  4229 0f89 00       		.sleb128 0
@@ -7018,7 +7018,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  4283 0ff7 9B01     		.2byte	0x19b
  4284 0ff9 50060000 		.4byte	0x650
  4285 0ffd 430C0000 		.4byte	.LLST101
-ARM GAS  /tmp/ccM6Uqrc.s 			page 118
+ARM GAS  /tmp/ccRfs1Oe.s 			page 118
 
 
  4286 1001 28       		.uleb128 0x28
@@ -7078,7 +7078,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  4340 1068 01       		.byte	0x1
  4341 1069 ED100000 		.4byte	0x10ed
  4342 106d 17       		.uleb128 0x17
-ARM GAS  /tmp/ccM6Uqrc.s 			page 119
+ARM GAS  /tmp/ccRfs1Oe.s 			page 119
 
 
  4343 106e B2060000 		.4byte	.LASF88
@@ -7138,7 +7138,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  4397 10dc 26       		.uleb128 0x26
  4398 10dd 22080000 		.4byte	.LVL234
  4399 10e1 D2060000 		.4byte	0x6d2
-ARM GAS  /tmp/ccM6Uqrc.s 			page 120
+ARM GAS  /tmp/ccRfs1Oe.s 			page 120
 
 
  4400 10e5 27       		.uleb128 0x27
@@ -7198,7 +7198,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  4454 1166 27       		.uleb128 0x27
  4455 1167 01       		.byte	0x1
  4456 1168 50       		.byte	0x50
-ARM GAS  /tmp/ccM6Uqrc.s 			page 121
+ARM GAS  /tmp/ccRfs1Oe.s 			page 121
 
 
  4457 1169 02       		.byte	0x2
@@ -7258,7 +7258,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  4511 11ea 02       		.byte	0x2
  4512 11eb 75       		.byte	0x75
  4513 11ec 00       		.sleb128 0
-ARM GAS  /tmp/ccM6Uqrc.s 			page 122
+ARM GAS  /tmp/ccRfs1Oe.s 			page 122
 
 
  4514 11ed 00       		.byte	0
@@ -7318,7 +7318,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  4568 127a F9050000 		.4byte	0x5f9
  4569 127e AA020000 		.4byte	.LBB18
  4570 1282 00000000 		.4byte	.Ldebug_ranges0+0
-ARM GAS  /tmp/ccM6Uqrc.s 			page 123
+ARM GAS  /tmp/ccRfs1Oe.s 			page 123
 
 
  4571 1286 01       		.byte	0x1
@@ -7378,7 +7378,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  4625 1309 74       		.byte	0x74
  4626 130a 00       		.sleb128 0
  4627 130b 00       		.byte	0
-ARM GAS  /tmp/ccM6Uqrc.s 			page 124
+ARM GAS  /tmp/ccRfs1Oe.s 			page 124
 
 
  4628 130c 28       		.uleb128 0x28
@@ -7438,7 +7438,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  4682 1375 F2060000 		.4byte	.LFE78
  4683 1379 02       		.byte	0x2
  4684 137a 7D       		.byte	0x7d
-ARM GAS  /tmp/ccM6Uqrc.s 			page 125
+ARM GAS  /tmp/ccRfs1Oe.s 			page 125
 
 
  4685 137b 00       		.sleb128 0
@@ -7498,7 +7498,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  4739 001d 00       		.byte	0
  4740 001e 03       		.uleb128 0x3
  4741 001f 16       		.uleb128 0x16
-ARM GAS  /tmp/ccM6Uqrc.s 			page 126
+ARM GAS  /tmp/ccRfs1Oe.s 			page 126
 
 
  4742 0020 00       		.byte	0
@@ -7558,7 +7558,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  4796 0056 34       		.uleb128 0x34
  4797 0057 00       		.byte	0
  4798 0058 03       		.uleb128 0x3
-ARM GAS  /tmp/ccM6Uqrc.s 			page 127
+ARM GAS  /tmp/ccRfs1Oe.s 			page 127
 
 
  4799 0059 0E       		.uleb128 0xe
@@ -7618,7 +7618,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  4853 008f 13       		.uleb128 0x13
  4854 0090 38       		.uleb128 0x38
  4855 0091 0A       		.uleb128 0xa
-ARM GAS  /tmp/ccM6Uqrc.s 			page 128
+ARM GAS  /tmp/ccRfs1Oe.s 			page 128
 
 
  4856 0092 00       		.byte	0
@@ -7678,7 +7678,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  4910 00c8 49       		.uleb128 0x49
  4911 00c9 13       		.uleb128 0x13
  4912 00ca 38       		.uleb128 0x38
-ARM GAS  /tmp/ccM6Uqrc.s 			page 129
+ARM GAS  /tmp/ccRfs1Oe.s 			page 129
 
 
  4913 00cb 0A       		.uleb128 0xa
@@ -7738,7 +7738,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  4967 0101 49       		.uleb128 0x49
  4968 0102 13       		.uleb128 0x13
  4969 0103 00       		.byte	0
-ARM GAS  /tmp/ccM6Uqrc.s 			page 130
+ARM GAS  /tmp/ccRfs1Oe.s 			page 130
 
 
  4970 0104 00       		.byte	0
@@ -7798,7 +7798,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  5024 013b 00       		.byte	0
  5025 013c 00       		.byte	0
  5026 013d 19       		.uleb128 0x19
-ARM GAS  /tmp/ccM6Uqrc.s 			page 131
+ARM GAS  /tmp/ccRfs1Oe.s 			page 131
 
 
  5027 013e 34       		.uleb128 0x34
@@ -7858,7 +7858,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  5081 0174 05       		.uleb128 0x5
  5082 0175 27       		.uleb128 0x27
  5083 0176 0C       		.uleb128 0xc
-ARM GAS  /tmp/ccM6Uqrc.s 			page 132
+ARM GAS  /tmp/ccRfs1Oe.s 			page 132
 
 
  5084 0177 20       		.uleb128 0x20
@@ -7918,7 +7918,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  5138 01ae 13       		.uleb128 0x13
  5139 01af 00       		.byte	0
  5140 01b0 00       		.byte	0
-ARM GAS  /tmp/ccM6Uqrc.s 			page 133
+ARM GAS  /tmp/ccRfs1Oe.s 			page 133
 
 
  5141 01b1 20       		.uleb128 0x20
@@ -7978,7 +7978,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  5195 01ea 3F       		.uleb128 0x3f
  5196 01eb 0C       		.uleb128 0xc
  5197 01ec 03       		.uleb128 0x3
-ARM GAS  /tmp/ccM6Uqrc.s 			page 134
+ARM GAS  /tmp/ccRfs1Oe.s 			page 134
 
 
  5198 01ed 0E       		.uleb128 0xe
@@ -8038,7 +8038,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  5252 0224 01       		.uleb128 0x1
  5253 0225 12       		.uleb128 0x12
  5254 0226 01       		.uleb128 0x1
-ARM GAS  /tmp/ccM6Uqrc.s 			page 135
+ARM GAS  /tmp/ccRfs1Oe.s 			page 135
 
 
  5255 0227 40       		.uleb128 0x40
@@ -8098,7 +8098,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  5309 0265 01       		.byte	0x1
  5310 0266 3F       		.uleb128 0x3f
  5311 0267 0C       		.uleb128 0xc
-ARM GAS  /tmp/ccM6Uqrc.s 			page 136
+ARM GAS  /tmp/ccRfs1Oe.s 			page 136
 
 
  5312 0268 03       		.uleb128 0x3
@@ -8158,7 +8158,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  5366 029f 13       		.uleb128 0x13
  5367 02a0 02       		.uleb128 0x2
  5368 02a1 06       		.uleb128 0x6
-ARM GAS  /tmp/ccM6Uqrc.s 			page 137
+ARM GAS  /tmp/ccRfs1Oe.s 			page 137
 
 
  5369 02a2 00       		.byte	0
@@ -8218,7 +8218,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  5423 02d8 55       		.uleb128 0x55
  5424 02d9 06       		.uleb128 0x6
  5425 02da 58       		.uleb128 0x58
-ARM GAS  /tmp/ccM6Uqrc.s 			page 138
+ARM GAS  /tmp/ccRfs1Oe.s 			page 138
 
 
  5426 02db 0B       		.uleb128 0xb
@@ -8278,7 +8278,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  5480 0313 05       		.uleb128 0x5
  5481 0314 00       		.byte	0
  5482 0315 00       		.byte	0
-ARM GAS  /tmp/ccM6Uqrc.s 			page 139
+ARM GAS  /tmp/ccRfs1Oe.s 			page 139
 
 
  5483 0316 00       		.byte	0
@@ -8338,7 +8338,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  5537 007e 01       		.uleb128 0x1
  5538 007f 52       		.byte	0x52
  5539 0080 9F       		.byte	0x9f
-ARM GAS  /tmp/ccM6Uqrc.s 			page 140
+ARM GAS  /tmp/ccRfs1Oe.s 			page 140
 
 
  5540 0081 A0000000 		.4byte	.LVL28-.Ltext0
@@ -8398,7 +8398,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  5594 0105 00000000 		.4byte	0
  5595 0109 00000000 		.4byte	0
  5596              	.LLST12:
-ARM GAS  /tmp/ccM6Uqrc.s 			page 141
+ARM GAS  /tmp/ccRfs1Oe.s 			page 141
 
 
  5597 010d 48000000 		.4byte	.LVL19-.Ltext0
@@ -8458,7 +8458,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  5651 017e 00000000 		.4byte	0
  5652 0182 00000000 		.4byte	0
  5653              	.LLST21:
-ARM GAS  /tmp/ccM6Uqrc.s 			page 142
+ARM GAS  /tmp/ccRfs1Oe.s 			page 142
 
 
  5654 0186 F4000000 		.4byte	.LFB87-.Ltext0
@@ -8518,7 +8518,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  5708 0212 F4000000 		.4byte	.LFE86-.Ltext0
  5709 0216 0100     		.2byte	0x1
  5710 0218 54       		.byte	0x54
-ARM GAS  /tmp/ccM6Uqrc.s 			page 143
+ARM GAS  /tmp/ccRfs1Oe.s 			page 143
 
 
  5711 0219 00000000 		.4byte	0
@@ -8578,7 +8578,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  5765 02a3 04000000 		.4byte	.LCFI0-.Ltext0
  5766 02a7 0200     		.2byte	0x2
  5767 02a9 7D       		.byte	0x7d
-ARM GAS  /tmp/ccM6Uqrc.s 			page 144
+ARM GAS  /tmp/ccRfs1Oe.s 			page 144
 
 
  5768 02aa 00       		.sleb128 0
@@ -8638,7 +8638,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  5822 0332 0100     		.2byte	0x1
  5823 0334 50       		.byte	0x50
  5824 0335 00000000 		.4byte	0
-ARM GAS  /tmp/ccM6Uqrc.s 			page 145
+ARM GAS  /tmp/ccRfs1Oe.s 			page 145
 
 
  5825 0339 00000000 		.4byte	0
@@ -8698,7 +8698,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  5879 03c6 9F       		.byte	0x9f
  5880 03c7 7C070000 		.4byte	.LVL220-.Ltext0
  5881 03cb 98070000 		.4byte	.LVL223-.Ltext0
-ARM GAS  /tmp/ccM6Uqrc.s 			page 146
+ARM GAS  /tmp/ccRfs1Oe.s 			page 146
 
 
  5882 03cf 0100     		.2byte	0x1
@@ -8758,7 +8758,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  5936 0458 0100     		.2byte	0x1
  5937 045a 55       		.byte	0x55
  5938 045b 00000000 		.4byte	0
-ARM GAS  /tmp/ccM6Uqrc.s 			page 147
+ARM GAS  /tmp/ccRfs1Oe.s 			page 147
 
 
  5939 045f 00000000 		.4byte	0
@@ -8818,7 +8818,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  5993 04e5 00000000 		.4byte	0
  5994 04e9 00000000 		.4byte	0
  5995              	.LLST85:
-ARM GAS  /tmp/ccM6Uqrc.s 			page 148
+ARM GAS  /tmp/ccRfs1Oe.s 			page 148
 
 
  5996 04ed 82060000 		.4byte	.LVL199-.Ltext0
@@ -8878,7 +8878,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  6050 0578 33060000 		.4byte	.LVL192-1-.Ltext0
  6051 057c 7E060000 		.4byte	.LVL197-.Ltext0
  6052 0580 0400     		.2byte	0x4
-ARM GAS  /tmp/ccM6Uqrc.s 			page 149
+ARM GAS  /tmp/ccRfs1Oe.s 			page 149
 
 
  6053 0582 F3       		.byte	0xf3
@@ -8938,7 +8938,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  6107 0605 0200     		.2byte	0x2
  6108 0607 30       		.byte	0x30
  6109 0608 9F       		.byte	0x9f
-ARM GAS  /tmp/ccM6Uqrc.s 			page 150
+ARM GAS  /tmp/ccRfs1Oe.s 			page 150
 
 
  6110 0609 00000000 		.4byte	0
@@ -8998,7 +8998,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  6164 0697 5E050000 		.4byte	.LVL172-.Ltext0
  6165 069b 0100     		.2byte	0x1
  6166 069d 51       		.byte	0x51
-ARM GAS  /tmp/ccM6Uqrc.s 			page 151
+ARM GAS  /tmp/ccRfs1Oe.s 			page 151
 
 
  6167 069e 5E050000 		.4byte	.LVL172-.Ltext0
@@ -9058,7 +9058,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  6221 0724 C6050000 		.4byte	.LVL180-.Ltext0
  6222 0728 CB050000 		.4byte	.LVL181-1-.Ltext0
  6223 072c 0100     		.2byte	0x1
-ARM GAS  /tmp/ccM6Uqrc.s 			page 152
+ARM GAS  /tmp/ccRfs1Oe.s 			page 152
 
 
  6224 072e 51       		.byte	0x51
@@ -9118,7 +9118,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  6278 07b8 0100     		.2byte	0x1
  6279 07ba 54       		.byte	0x54
  6280 07bb AE040000 		.4byte	.LVL153-.Ltext0
-ARM GAS  /tmp/ccM6Uqrc.s 			page 153
+ARM GAS  /tmp/ccRfs1Oe.s 			page 153
 
 
  6281 07bf C7040000 		.4byte	.LVL155-1-.Ltext0
@@ -9178,7 +9178,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  6335 0849 52       		.byte	0x52
  6336 084a 98040000 		.4byte	.LVL151-.Ltext0
  6337 084e 48050000 		.4byte	.LFE73-.Ltext0
-ARM GAS  /tmp/ccM6Uqrc.s 			page 154
+ARM GAS  /tmp/ccRfs1Oe.s 			page 154
 
 
  6338 0852 0100     		.2byte	0x1
@@ -9238,7 +9238,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  6392 08dd 0200     		.2byte	0x2
  6393 08df 7D       		.byte	0x7d
  6394 08e0 20       		.sleb128 32
-ARM GAS  /tmp/ccM6Uqrc.s 			page 155
+ARM GAS  /tmp/ccRfs1Oe.s 			page 155
 
 
  6395 08e1 52040000 		.4byte	.LCFI10-.Ltext0
@@ -9298,7 +9298,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  6449 0973 52       		.byte	0x52
  6450 0974 3E040000 		.4byte	.LVL142-.Ltext0
  6451 0978 90040000 		.4byte	.LFE72-.Ltext0
-ARM GAS  /tmp/ccM6Uqrc.s 			page 156
+ARM GAS  /tmp/ccRfs1Oe.s 			page 156
 
 
  6452 097c 0100     		.2byte	0x1
@@ -9358,7 +9358,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  6506 0a01 51       		.byte	0x51
  6507 0a02 04040000 		.4byte	.LVL134-.Ltext0
  6508 0a06 38040000 		.4byte	.LFE71-.Ltext0
-ARM GAS  /tmp/ccM6Uqrc.s 			page 157
+ARM GAS  /tmp/ccRfs1Oe.s 			page 157
 
 
  6509 0a0a 0400     		.2byte	0x4
@@ -9418,7 +9418,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  6563 0a8a 55       		.byte	0x55
  6564 0a8b 00000000 		.4byte	0
  6565 0a8f 00000000 		.4byte	0
-ARM GAS  /tmp/ccM6Uqrc.s 			page 158
+ARM GAS  /tmp/ccRfs1Oe.s 			page 158
 
 
  6566              	.LLST61:
@@ -9478,7 +9478,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  6620 0b0b 00000000 		.4byte	0
  6621              	.LLST36:
  6622 0b0f 78010000 		.4byte	.LFB69-.Ltext0
-ARM GAS  /tmp/ccM6Uqrc.s 			page 159
+ARM GAS  /tmp/ccRfs1Oe.s 			page 159
 
 
  6623 0b13 7A010000 		.4byte	.LCFI6-.Ltext0
@@ -9538,7 +9538,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  6677 0b9a 0400     		.2byte	0x4
  6678 0b9c F3       		.byte	0xf3
  6679 0b9d 01       		.uleb128 0x1
-ARM GAS  /tmp/ccM6Uqrc.s 			page 160
+ARM GAS  /tmp/ccRfs1Oe.s 			page 160
 
 
  6680 0b9e 52       		.byte	0x52
@@ -9598,7 +9598,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  6734 0c27 3E080000 		.4byte	.LCFI24-.Ltext0
  6735 0c2b 0200     		.2byte	0x2
  6736 0c2d 7D       		.byte	0x7d
-ARM GAS  /tmp/ccM6Uqrc.s 			page 161
+ARM GAS  /tmp/ccRfs1Oe.s 			page 161
 
 
  6737 0c2e 00       		.sleb128 0
@@ -9658,7 +9658,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  6791 0cb7 30       		.byte	0x30
  6792 0cb8 9F       		.byte	0x9f
  6793 0cb9 C4070000 		.4byte	.LVL229-.Ltext0
-ARM GAS  /tmp/ccM6Uqrc.s 			page 162
+ARM GAS  /tmp/ccRfs1Oe.s 			page 162
 
 
  6794 0cbd FC070000 		.4byte	.LVL231-.Ltext0
@@ -9718,7 +9718,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  6848 0d45 00000000 		.4byte	0
  6849 0d49 00000000 		.4byte	0
  6850              	.LLST27:
-ARM GAS  /tmp/ccM6Uqrc.s 			page 163
+ARM GAS  /tmp/ccRfs1Oe.s 			page 163
 
 
  6851 0d4d 24010000 		.4byte	.LVL41-.Ltext0
@@ -9778,7 +9778,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  6905 0dd6 00000000 		.4byte	0
  6906 0dda 00000000 		.4byte	0
  6907              	.LLST32:
-ARM GAS  /tmp/ccM6Uqrc.s 			page 164
+ARM GAS  /tmp/ccRfs1Oe.s 			page 164
 
 
  6908 0dde 4C010000 		.4byte	.LVL48-.Ltext0
@@ -9838,7 +9838,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  6962              	.LLST42:
  6963 0e68 1A020000 		.4byte	.LFB70-.Ltext0
  6964 0e6c 1E020000 		.4byte	.LCFI7-.Ltext0
-ARM GAS  /tmp/ccM6Uqrc.s 			page 165
+ARM GAS  /tmp/ccRfs1Oe.s 			page 165
 
 
  6965 0e70 0200     		.2byte	0x2
@@ -9898,7 +9898,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  7019 0eff 2C020000 		.4byte	.LVL73-.Ltext0
  7020 0f03 0100     		.2byte	0x1
  7021 0f05 58       		.byte	0x58
-ARM GAS  /tmp/ccM6Uqrc.s 			page 166
+ARM GAS  /tmp/ccRfs1Oe.s 			page 166
 
 
  7022 0f06 2C020000 		.4byte	.LVL73-.Ltext0
@@ -9958,7 +9958,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  7076 0f92 25       		.uleb128 0x25
  7077 0f93 1B       		.byte	0x1b
  7078 0f94 F7       		.byte	0xf7
-ARM GAS  /tmp/ccM6Uqrc.s 			page 167
+ARM GAS  /tmp/ccRfs1Oe.s 			page 167
 
 
  7079 0f95 00       		.uleb128 0
@@ -10018,7 +10018,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  7133 1023 62030000 		.4byte	.LVL111-.Ltext0
  7134 1027 0100     		.2byte	0x1
  7135 1029 51       		.byte	0x51
-ARM GAS  /tmp/ccM6Uqrc.s 			page 168
+ARM GAS  /tmp/ccRfs1Oe.s 			page 168
 
 
  7136 102a 64030000 		.4byte	.LVL112-.Ltext0
@@ -10078,7 +10078,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  7190 10b9 9F       		.byte	0x9f
  7191 10ba 7E030000 		.4byte	.LVL117-.Ltext0
  7192 10be 88030000 		.4byte	.LFE70-.Ltext0
-ARM GAS  /tmp/ccM6Uqrc.s 			page 169
+ARM GAS  /tmp/ccRfs1Oe.s 			page 169
 
 
  7193 10c2 0100     		.2byte	0x1
@@ -10138,7 +10138,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  7247 001c 00000000 		.4byte	0
  7248              		.section	.debug_ranges,"",%progbits
  7249              	.Ldebug_ranges0:
-ARM GAS  /tmp/ccM6Uqrc.s 			page 170
+ARM GAS  /tmp/ccRfs1Oe.s 			page 170
 
 
  7250 0000 AA020000 		.4byte	.LBB18-.Ltext0
@@ -10198,7 +10198,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  7282 0060 48414C5F 		.ascii	"HAL_BUSY\000"
  7282      42555359 
  7282      00
-ARM GAS  /tmp/ccM6Uqrc.s 			page 171
+ARM GAS  /tmp/ccRfs1Oe.s 			page 171
 
 
  7283              	.LASF21:
@@ -10258,7 +10258,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  7308 00fb 48414C5F 		.ascii	"HAL_RTC_PollForAlarmAEvent\000"
  7308      5254435F 
  7308      506F6C6C 
-ARM GAS  /tmp/ccM6Uqrc.s 			page 172
+ARM GAS  /tmp/ccRfs1Oe.s 			page 172
 
 
  7308      466F7241 
@@ -10318,7 +10318,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  7332      6D54696D 
  7332      6500
  7333              	.LASF130:
-ARM GAS  /tmp/ccM6Uqrc.s 			page 173
+ARM GAS  /tmp/ccRfs1Oe.s 			page 173
 
 
  7334 01b0 48414C5F 		.ascii	"HAL_RTC_SetTime\000"
@@ -10378,7 +10378,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  7356      5F7400
  7357              	.LASF114:
  7358 0250 54696D65 		.ascii	"Timeout\000"
-ARM GAS  /tmp/ccM6Uqrc.s 			page 174
+ARM GAS  /tmp/ccRfs1Oe.s 			page 174
 
 
  7358      6F757400 
@@ -10438,7 +10438,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  7382      20756E73 
  7382      69676E65 
  7382      6420696E 
-ARM GAS  /tmp/ccM6Uqrc.s 			page 175
+ARM GAS  /tmp/ccRfs1Oe.s 			page 175
 
 
  7382      7400
@@ -10498,7 +10498,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  7406      53746174 
  7406      75735479 
  7406      70654465 
-ARM GAS  /tmp/ccM6Uqrc.s 			page 176
+ARM GAS  /tmp/ccRfs1Oe.s 			page 176
 
 
  7406      6600
@@ -10558,7 +10558,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  7433              	.LASF84:
  7434 0440 6E4D6F6E 		.ascii	"nMonth\000"
  7434      746800
-ARM GAS  /tmp/ccM6Uqrc.s 			page 177
+ARM GAS  /tmp/ccRfs1Oe.s 			page 177
 
 
  7435              	.LASF50:
@@ -10618,7 +10618,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  7462      676E6564 
  7462      20636861 
  7462      7200
-ARM GAS  /tmp/ccM6Uqrc.s 			page 178
+ARM GAS  /tmp/ccRfs1Oe.s 			page 178
 
 
  7463              	.LASF25:
@@ -10678,7 +10678,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  7487      7465725F 
  7487      74696D65 
  7487      00
-ARM GAS  /tmp/ccM6Uqrc.s 			page 179
+ARM GAS  /tmp/ccRfs1Oe.s 			page 179
 
 
  7488              	.LASF140:
@@ -10738,7 +10738,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  7513      515F3130 
  7513      30485A00 
  7514              	.LASF7:
-ARM GAS  /tmp/ccM6Uqrc.s 			page 180
+ARM GAS  /tmp/ccRfs1Oe.s 			page 180
 
 
  7515 0666 5F5F696E 		.ascii	"__int32_t\000"
@@ -10798,7 +10798,7 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  7541      6D436F75 
  7541      6E746572 
  7542              	.LASF93:
-ARM GAS  /tmp/ccM6Uqrc.s 			page 181
+ARM GAS  /tmp/ccRfs1Oe.s 			page 181
 
 
  7543 06ff 5254435F 		.ascii	"RTC_Bcd2ToByte\000"
@@ -10839,48 +10839,48 @@ ARM GAS  /tmp/ccM6Uqrc.s 			page 1
  7559 075e 50524C4C 		.ascii	"PRLL\000"
  7559      00
  7560              		.ident	"GCC: (15:6.3.1+svn253039-1build1) 6.3.1 20170620"
-ARM GAS  /tmp/ccM6Uqrc.s 			page 182
+ARM GAS  /tmp/ccRfs1Oe.s 			page 182
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32f1xx_hal_rtc.c
-     /tmp/ccM6Uqrc.s:69     .text:0000000000000000 $t
-     /tmp/ccM6Uqrc.s:75     .text:0000000000000000 RTC_ReadTimeCounter
-     /tmp/ccM6Uqrc.s:129    .text:0000000000000024 RTC_ReadAlarmCounter
-     /tmp/ccM6Uqrc.s:159    .text:0000000000000032 RTC_ByteToBcd2
-     /tmp/ccM6Uqrc.s:201    .text:0000000000000048 RTC_Bcd2ToByte
-     /tmp/ccM6Uqrc.s:229    .text:0000000000000058 RTC_WeekDayNum
-     /tmp/ccM6Uqrc.s:308    .text:00000000000000c6 RTC_EnterInitMode
-     /tmp/ccM6Uqrc.s:365    .text:00000000000000f4 RTC_ExitInitMode
-     /tmp/ccM6Uqrc.s:424    .text:0000000000000124 RTC_WriteTimeCounter
-     /tmp/ccM6Uqrc.s:485    .text:000000000000014c RTC_WriteAlarmCounter
-     /tmp/ccM6Uqrc.s:547    .text:0000000000000174 HAL_RTC_MspInit
-     /tmp/ccM6Uqrc.s:564    .text:0000000000000176 HAL_RTC_MspDeInit
-     /tmp/ccM6Uqrc.s:581    .text:0000000000000178 HAL_RTC_SetTime
-     /tmp/ccM6Uqrc.s:727    .text:000000000000021a HAL_RTC_GetTime
-     /tmp/ccM6Uqrc.s:1062   .text:0000000000000384 $d
-     /tmp/ccM6Uqrc.s:1070   .text:0000000000000388 $t
-     /tmp/ccM6Uqrc.s:1077   .text:0000000000000388 HAL_RTC_SetDate
-     /tmp/ccM6Uqrc.s:1228   .text:0000000000000434 $d
-     /tmp/ccM6Uqrc.s:1232   .text:0000000000000438 $t
-     /tmp/ccM6Uqrc.s:1239   .text:0000000000000438 HAL_RTC_GetDate
-     /tmp/ccM6Uqrc.s:1335   .text:0000000000000490 HAL_RTC_SetAlarm
-     /tmp/ccM6Uqrc.s:1501   .text:0000000000000548 HAL_RTC_SetAlarm_IT
-     /tmp/ccM6Uqrc.s:1677   .text:0000000000000624 $d
-     /tmp/ccM6Uqrc.s:1681   .text:0000000000000628 $t
-     /tmp/ccM6Uqrc.s:1688   .text:0000000000000628 HAL_RTC_GetAlarm
-     /tmp/ccM6Uqrc.s:1773   .text:0000000000000682 HAL_RTC_DeactivateAlarm
-     /tmp/ccM6Uqrc.s:1878   .text:00000000000006f0 HAL_RTC_AlarmAEventCallback
-     /tmp/ccM6Uqrc.s:1897   .text:00000000000006f2 HAL_RTC_AlarmIRQHandler
-     /tmp/ccM6Uqrc.s:1943   .text:0000000000000720 $d
-     /tmp/ccM6Uqrc.s:1947   .text:0000000000000724 $t
-     /tmp/ccM6Uqrc.s:1954   .text:0000000000000724 HAL_RTC_PollForAlarmAEvent
-     /tmp/ccM6Uqrc.s:2032   .text:0000000000000762 HAL_RTC_GetState
-     /tmp/ccM6Uqrc.s:2055   .text:0000000000000766 HAL_RTC_WaitForSynchro
-     /tmp/ccM6Uqrc.s:2119   .text:000000000000079c HAL_RTC_Init
-     /tmp/ccM6Uqrc.s:2247   .text:0000000000000838 $d
-     /tmp/ccM6Uqrc.s:2251   .text:000000000000083c $t
-     /tmp/ccM6Uqrc.s:2258   .text:000000000000083c HAL_RTC_DeInit
+     /tmp/ccRfs1Oe.s:69     .text:0000000000000000 $t
+     /tmp/ccRfs1Oe.s:75     .text:0000000000000000 RTC_ReadTimeCounter
+     /tmp/ccRfs1Oe.s:129    .text:0000000000000024 RTC_ReadAlarmCounter
+     /tmp/ccRfs1Oe.s:159    .text:0000000000000032 RTC_ByteToBcd2
+     /tmp/ccRfs1Oe.s:201    .text:0000000000000048 RTC_Bcd2ToByte
+     /tmp/ccRfs1Oe.s:229    .text:0000000000000058 RTC_WeekDayNum
+     /tmp/ccRfs1Oe.s:308    .text:00000000000000c6 RTC_EnterInitMode
+     /tmp/ccRfs1Oe.s:365    .text:00000000000000f4 RTC_ExitInitMode
+     /tmp/ccRfs1Oe.s:424    .text:0000000000000124 RTC_WriteTimeCounter
+     /tmp/ccRfs1Oe.s:485    .text:000000000000014c RTC_WriteAlarmCounter
+     /tmp/ccRfs1Oe.s:547    .text:0000000000000174 HAL_RTC_MspInit
+     /tmp/ccRfs1Oe.s:564    .text:0000000000000176 HAL_RTC_MspDeInit
+     /tmp/ccRfs1Oe.s:581    .text:0000000000000178 HAL_RTC_SetTime
+     /tmp/ccRfs1Oe.s:727    .text:000000000000021a HAL_RTC_GetTime
+     /tmp/ccRfs1Oe.s:1062   .text:0000000000000384 $d
+     /tmp/ccRfs1Oe.s:1070   .text:0000000000000388 $t
+     /tmp/ccRfs1Oe.s:1077   .text:0000000000000388 HAL_RTC_SetDate
+     /tmp/ccRfs1Oe.s:1228   .text:0000000000000434 $d
+     /tmp/ccRfs1Oe.s:1232   .text:0000000000000438 $t
+     /tmp/ccRfs1Oe.s:1239   .text:0000000000000438 HAL_RTC_GetDate
+     /tmp/ccRfs1Oe.s:1335   .text:0000000000000490 HAL_RTC_SetAlarm
+     /tmp/ccRfs1Oe.s:1501   .text:0000000000000548 HAL_RTC_SetAlarm_IT
+     /tmp/ccRfs1Oe.s:1677   .text:0000000000000624 $d
+     /tmp/ccRfs1Oe.s:1681   .text:0000000000000628 $t
+     /tmp/ccRfs1Oe.s:1688   .text:0000000000000628 HAL_RTC_GetAlarm
+     /tmp/ccRfs1Oe.s:1773   .text:0000000000000682 HAL_RTC_DeactivateAlarm
+     /tmp/ccRfs1Oe.s:1878   .text:00000000000006f0 HAL_RTC_AlarmAEventCallback
+     /tmp/ccRfs1Oe.s:1897   .text:00000000000006f2 HAL_RTC_AlarmIRQHandler
+     /tmp/ccRfs1Oe.s:1943   .text:0000000000000720 $d
+     /tmp/ccRfs1Oe.s:1947   .text:0000000000000724 $t
+     /tmp/ccRfs1Oe.s:1954   .text:0000000000000724 HAL_RTC_PollForAlarmAEvent
+     /tmp/ccRfs1Oe.s:2032   .text:0000000000000762 HAL_RTC_GetState
+     /tmp/ccRfs1Oe.s:2055   .text:0000000000000766 HAL_RTC_WaitForSynchro
+     /tmp/ccRfs1Oe.s:2119   .text:000000000000079c HAL_RTC_Init
+     /tmp/ccRfs1Oe.s:2247   .text:0000000000000838 $d
+     /tmp/ccRfs1Oe.s:2251   .text:000000000000083c $t
+     /tmp/ccRfs1Oe.s:2258   .text:000000000000083c HAL_RTC_DeInit
                      .debug_frame:0000000000000010 $d
 
 UNDEFINED SYMBOLS

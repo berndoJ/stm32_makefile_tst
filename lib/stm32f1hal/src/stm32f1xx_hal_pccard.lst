@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccRS4a31.s 			page 1
+ARM GAS  /tmp/ccIs0SGI.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -18,7 +18,7 @@ ARM GAS  /tmp/ccRS4a31.s 			page 1
   15              	@ GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
   16              	@ options passed:  -I ./inc -I ./inc/Legacy -I ../cmsisstm32f1xx/inc
   17              	@ -I ../cmsiscore/inc -imultilib thumb/v7-m -D__USES_INITFINI__
-  18              	@ -D STM32F103x6 -D RUN_FROM_FLASH=1 -D __c src/stm32f1xx_hal_pccard.c
+  18              	@ -D STM32F103x6 -D RUN_FROM_FLASH=1 src/stm32f1xx_hal_pccard.c
   19              	@ -mcpu=cortex-m3 -mthumb -auxbase-strip bin/stm32f1xx_hal_pccard.o -g
   20              	@ -gdwarf-2 -Os -Wall -fomit-frame-pointer -fverbose-asm
   21              	@ options enabled:  -faggressive-loop-optimizations -falign-jumps
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccRS4a31.s 			page 1
   55              	@ -ftree-copy-prop -ftree-cselim -ftree-dce -ftree-dominator-opts
   56              	@ -ftree-dse -ftree-forwprop -ftree-fre -ftree-loop-if-convert
   57              	@ -ftree-loop-im -ftree-loop-ivcanon -ftree-loop-optimize
-ARM GAS  /tmp/ccRS4a31.s 			page 2
+ARM GAS  /tmp/ccIs0SGI.s 			page 2
 
 
   58              	@ -ftree-parallelize-loops= -ftree-phiprop -ftree-pre -ftree-pta
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccRS4a31.s 			page 1
  112 004b 4F000000 		.4byte	0x4f
  113 004f 02       		.uleb128 0x2
  114 0050 04       		.byte	0x4
-ARM GAS  /tmp/ccRS4a31.s 			page 3
+ARM GAS  /tmp/ccIs0SGI.s 			page 3
 
 
  115 0051 05       		.byte	0x5
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccRS4a31.s 			page 1
  169 00be 9F000000 		.4byte	0x9f
  170 00c2 01       		.byte	0x1
  171 00c3 01       		.byte	0x1
-ARM GAS  /tmp/ccRS4a31.s 			page 4
+ARM GAS  /tmp/ccIs0SGI.s 			page 4
 
 
  172 00c4 08       		.uleb128 0x8
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccRS4a31.s 			page 1
  226 0133 0A       		.byte	0xa
  227 0134 0C       		.uleb128 0xc
  228 0135 21000000 		.4byte	.LASF23
-ARM GAS  /tmp/ccRS4a31.s 			page 5
+ARM GAS  /tmp/ccIs0SGI.s 			page 5
 
 
  229 0139 01       		.byte	0x1
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccRS4a31.s 			page 1
  283 001b 16       		.uleb128 0x16
  284 001c 00       		.byte	0
  285 001d 03       		.uleb128 0x3
-ARM GAS  /tmp/ccRS4a31.s 			page 6
+ARM GAS  /tmp/ccIs0SGI.s 			page 6
 
 
  286 001e 0E       		.uleb128 0xe
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccRS4a31.s 			page 1
  340 0054 03       		.uleb128 0x3
  341 0055 0E       		.uleb128 0xe
  342 0056 3A       		.uleb128 0x3a
-ARM GAS  /tmp/ccRS4a31.s 			page 7
+ARM GAS  /tmp/ccIs0SGI.s 			page 7
 
 
  343 0057 0B       		.uleb128 0xb
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccRS4a31.s 			page 1
  397              		.section	.debug_aranges,"",%progbits
  398 0000 14000000 		.4byte	0x14
  399 0004 0200     		.2byte	0x2
-ARM GAS  /tmp/ccRS4a31.s 			page 8
+ARM GAS  /tmp/ccIs0SGI.s 			page 8
 
 
  400 0006 00000000 		.4byte	.Ldebug_info0
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccRS4a31.s 			page 1
  425      6C5F7063 
  426              	.LASF3:
  427 007d 73686F72 		.ascii	"short unsigned int\000"
-ARM GAS  /tmp/ccRS4a31.s 			page 9
+ARM GAS  /tmp/ccIs0SGI.s 			page 9
 
 
  427      7420756E 
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccRS4a31.s 			page 1
  447              	.LASF13:
  448 015d 696E7433 		.ascii	"int32_t\000"
  448      325F7400 
-ARM GAS  /tmp/ccRS4a31.s 			page 10
+ARM GAS  /tmp/ccIs0SGI.s 			page 10
 
 
  449              	.LASF15:
@@ -598,10 +598,10 @@ ARM GAS  /tmp/ccRS4a31.s 			page 1
  472      515F3130 
  472      485A00
  473              		.ident	"GCC: (15:6.3.1+svn253039-1build1) 6.3.1 20170620"
-ARM GAS  /tmp/ccRS4a31.s 			page 11
+ARM GAS  /tmp/ccIs0SGI.s 			page 11
 
 
-ARM GAS  /tmp/ccRS4a31.s 			page 12
+ARM GAS  /tmp/ccIs0SGI.s 			page 12
 
 
 DEFINED SYMBOLS

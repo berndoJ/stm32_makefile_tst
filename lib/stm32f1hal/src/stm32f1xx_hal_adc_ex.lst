@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccHubou1.s 			page 1
+ARM GAS  /tmp/ccsQUkbE.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -18,7 +18,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
   15              	@ GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
   16              	@ options passed:  -I ./inc -I ./inc/Legacy -I ../cmsisstm32f1xx/inc
   17              	@ -I ../cmsiscore/inc -imultilib thumb/v7-m -D__USES_INITFINI__
-  18              	@ -D STM32F103x6 -D RUN_FROM_FLASH=1 -D __c src/stm32f1xx_hal_adc_ex.c
+  18              	@ -D STM32F103x6 -D RUN_FROM_FLASH=1 src/stm32f1xx_hal_adc_ex.c
   19              	@ -mcpu=cortex-m3 -mthumb -auxbase-strip bin/stm32f1xx_hal_adc_ex.o -g
   20              	@ -gdwarf-2 -Os -Wall -fomit-frame-pointer -fverbose-asm
   21              	@ options enabled:  -faggressive-loop-optimizations -falign-jumps
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
   55              	@ -ftree-copy-prop -ftree-cselim -ftree-dce -ftree-dominator-opts
   56              	@ -ftree-dse -ftree-forwprop -ftree-fre -ftree-loop-if-convert
   57              	@ -ftree-loop-im -ftree-loop-ivcanon -ftree-loop-optimize
-ARM GAS  /tmp/ccHubou1.s 			page 2
+ARM GAS  /tmp/ccsQUkbE.s 			page 2
 
 
   58              	@ -ftree-parallelize-loops= -ftree-phiprop -ftree-pre -ftree-pta
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
   34:src/stm32f1xx_hal_adc_ex.c ****   *
   35:src/stm32f1xx_hal_adc_ex.c ****   ******************************************************************************
   36:src/stm32f1xx_hal_adc_ex.c ****   */
-ARM GAS  /tmp/ccHubou1.s 			page 3
+ARM GAS  /tmp/ccsQUkbE.s 			page 3
 
 
   37:src/stm32f1xx_hal_adc_ex.c **** 
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
   91:src/stm32f1xx_hal_adc_ex.c ****  *  @brief    Extended Extended Input and Output operation functions
   92:src/stm32f1xx_hal_adc_ex.c ****  *
   93:src/stm32f1xx_hal_adc_ex.c **** @verbatim    
-ARM GAS  /tmp/ccHubou1.s 			page 4
+ARM GAS  /tmp/ccsQUkbE.s 			page 4
 
 
   94:src/stm32f1xx_hal_adc_ex.c ****  ===============================================================================
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
   95 0004 0193     		str	r3, [sp, #4]	@ tmp149, wait_loop_index
  131:src/stm32f1xx_hal_adc_ex.c ****   
  132:src/stm32f1xx_hal_adc_ex.c ****   /* Check the parameters */
-ARM GAS  /tmp/ccHubou1.s 			page 5
+ARM GAS  /tmp/ccsQUkbE.s 			page 5
 
 
  133:src/stm32f1xx_hal_adc_ex.c ****   assert_param(IS_ADC_ALL_INSTANCE(hadc->Instance));
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  123              		.loc 1 157 0
  124 0032 264B     		ldr	r3, .L14	@ tmp156,
  125 0034 1E68     		ldr	r6, [r3]	@ SystemCoreClock.0_18, SystemCoreClock
-ARM GAS  /tmp/ccHubou1.s 			page 6
+ARM GAS  /tmp/ccsQUkbE.s 			page 6
 
 
  126 0036 FFF7FEFF 		bl	HAL_RCCEx_GetPeriphCLKFreq	@
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  180:src/stm32f1xx_hal_adc_ex.c ****                           HAL_ADC_STATE_BUSY_INTERNAL,
  181:src/stm32f1xx_hal_adc_ex.c ****                           HAL_ADC_STATE_ERROR_INTERNAL);
  182:src/stm32f1xx_hal_adc_ex.c ****         
-ARM GAS  /tmp/ccHubou1.s 			page 7
+ARM GAS  /tmp/ccsQUkbE.s 			page 7
 
 
  183:src/stm32f1xx_hal_adc_ex.c ****         /* Process unlocked */
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  215:src/stm32f1xx_hal_adc_ex.c ****                       HAL_ADC_STATE_BUSY_INTERNAL,
  216:src/stm32f1xx_hal_adc_ex.c ****                       HAL_ADC_STATE_READY);
  217:src/stm32f1xx_hal_adc_ex.c ****   }
-ARM GAS  /tmp/ccHubou1.s 			page 8
+ARM GAS  /tmp/ccsQUkbE.s 			page 8
 
 
  218:src/stm32f1xx_hal_adc_ex.c ****   
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  220              	.LVL13:
  221              	.L9:
  222              	.LCFI2:
-ARM GAS  /tmp/ccHubou1.s 			page 9
+ARM GAS  /tmp/ccsQUkbE.s 			page 9
 
 
  223              		.cfi_restore_state
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  233:src/stm32f1xx_hal_adc_ex.c ****   HAL_StatusTypeDef tmp_hal_status = HAL_OK;
  259              		.loc 1 233 0
  260 00d4 10B5     		push	{r4, lr}	@
-ARM GAS  /tmp/ccHubou1.s 			page 10
+ARM GAS  /tmp/ccsQUkbE.s 			page 10
 
 
  261              	.LCFI3:
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  296 0108 12F4702F 		tst	r2, #983040	@ _16,
  297 010c 25D1     		bne	.L20	@,
  298              	.L19:
-ARM GAS  /tmp/ccHubou1.s 			page 11
+ARM GAS  /tmp/ccsQUkbE.s 			page 11
 
 
  258:src/stm32f1xx_hal_adc_ex.c ****     {
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  294:src/stm32f1xx_hal_adc_ex.c ****     if (HAL_IS_BIT_CLR(hadc->Instance->CR1, ADC_CR1_JAUTO))
  317              		.loc 1 294 0
  318 012c 5A68     		ldr	r2, [r3, #4]	@ _29, _15->CR1
-ARM GAS  /tmp/ccHubou1.s 			page 12
+ARM GAS  /tmp/ccsQUkbE.s 			page 12
 
 
  319 012e 5205     		lsls	r2, r2, #21	@, _29,
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  310:src/stm32f1xx_hal_adc_ex.c ****   {
  311:src/stm32f1xx_hal_adc_ex.c ****     /* Process unlocked */
  312:src/stm32f1xx_hal_adc_ex.c ****     __HAL_UNLOCK(hadc);
-ARM GAS  /tmp/ccHubou1.s 			page 13
+ARM GAS  /tmp/ccsQUkbE.s 			page 13
 
 
  356              		.loc 1 312 0
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  389              	.LVL22:
  333:src/stm32f1xx_hal_adc_ex.c ****   HAL_StatusTypeDef tmp_hal_status = HAL_OK;
  334:src/stm32f1xx_hal_adc_ex.c ****   
-ARM GAS  /tmp/ccHubou1.s 			page 14
+ARM GAS  /tmp/ccsQUkbE.s 			page 14
 
 
  335:src/stm32f1xx_hal_adc_ex.c ****   /* Check the parameters */
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  420              		.loc 1 355 0
  421 01a0 38B9     		cbnz	r0, .L33	@ <retval>,
  356:src/stm32f1xx_hal_adc_ex.c ****     {
-ARM GAS  /tmp/ccHubou1.s 			page 15
+ARM GAS  /tmp/ccsQUkbE.s 			page 15
 
 
  357:src/stm32f1xx_hal_adc_ex.c ****       /* Set ADC state */
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  452              		.loc 1 376 0
  453 01c8 10BD     		pop	{r4, pc}	@
  454              		.cfi_endproc
-ARM GAS  /tmp/ccHubou1.s 			page 16
+ARM GAS  /tmp/ccsQUkbE.s 			page 16
 
 
  455              	.LFE67:
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  394:src/stm32f1xx_hal_adc_ex.c ****   assert_param(IS_ADC_ALL_INSTANCE(hadc->Instance));
  395:src/stm32f1xx_hal_adc_ex.c **** 
  396:src/stm32f1xx_hal_adc_ex.c ****   /* Get timeout */
-ARM GAS  /tmp/ccHubou1.s 			page 17
+ARM GAS  /tmp/ccsQUkbE.s 			page 17
 
 
  397:src/stm32f1xx_hal_adc_ex.c ****   tickstart = HAL_GetTick();  
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  438:src/stm32f1xx_hal_adc_ex.c ****     /* Replace polling by wait for maximum conversion time */
  439:src/stm32f1xx_hal_adc_ex.c ****     /*  - Computation of CPU clock cycles corresponding to ADC clock cycles   */
  440:src/stm32f1xx_hal_adc_ex.c ****     /*    and ADC maximum conversion cycles on all channels.                  */
-ARM GAS  /tmp/ccHubou1.s 			page 18
+ARM GAS  /tmp/ccsQUkbE.s 			page 18
 
 
  441:src/stm32f1xx_hal_adc_ex.c ****     /*  - Wait for the expected ADC clock cycles delay                        */
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  544 0222 691C     		adds	r1, r5, #1	@, Timeout,
  545 0224 05D0     		beq	.L49	@,
  450:src/stm32f1xx_hal_adc_ex.c ****       {
-ARM GAS  /tmp/ccHubou1.s 			page 19
+ARM GAS  /tmp/ccsQUkbE.s 			page 19
 
 
  451:src/stm32f1xx_hal_adc_ex.c ****         if((Timeout == 0)||((HAL_GetTick() - tickstart ) > Timeout))
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  465:src/stm32f1xx_hal_adc_ex.c **** 
  466:src/stm32f1xx_hal_adc_ex.c ****   /* Clear injected group conversion flag */
  467:src/stm32f1xx_hal_adc_ex.c ****   /* Note: On STM32F1 ADC, clear regular conversion flag raised               */
-ARM GAS  /tmp/ccHubou1.s 			page 20
+ARM GAS  /tmp/ccsQUkbE.s 			page 20
 
 
  468:src/stm32f1xx_hal_adc_ex.c ****   /* simultaneously.                                                          */
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  469:src/stm32f1xx_hal_adc_ex.c ****   
  606              		.loc 1 469 0
  607 0266 6FF00E02 		mvn	r2, #14	@ tmp175,
-ARM GAS  /tmp/ccHubou1.s 			page 21
+ARM GAS  /tmp/ccsQUkbE.s 			page 21
 
 
  608 026a 2368     		ldr	r3, [r4]	@ _64, hadc_16(D)->Instance
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  653 02b6 14BF     		ite	ne
  654 02b8 FC23     		movne	r3, #252	@ iftmp.6_2,
  655 02ba 5423     		moveq	r3, #84	@ iftmp.6_2,
-ARM GAS  /tmp/ccHubou1.s 			page 22
+ARM GAS  /tmp/ccsQUkbE.s 			page 22
 
 
  656 02bc ACE7     		b	.L46	@
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  703              		.global	HAL_ADCEx_InjectedStart_IT
  704              		.syntax unified
  705              		.thumb
-ARM GAS  /tmp/ccHubou1.s 			page 23
+ARM GAS  /tmp/ccsQUkbE.s 			page 23
 
 
  706              		.thumb_func
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  516:src/stm32f1xx_hal_adc_ex.c ****   if (tmp_hal_status == HAL_OK)
  736              		.loc 1 516 0 discriminator 2
  737 0316 0028     		cmp	r0, #0	@ <retval>
-ARM GAS  /tmp/ccHubou1.s 			page 24
+ARM GAS  /tmp/ccsQUkbE.s 			page 24
 
 
  738 0318 43D1     		bne	.L77	@
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  541:src/stm32f1xx_hal_adc_ex.c ****     {
  542:src/stm32f1xx_hal_adc_ex.c ****       /* Reset ADC all error code fields */
  543:src/stm32f1xx_hal_adc_ex.c ****       ADC_CLEAR_ERRORCODE(hadc);
-ARM GAS  /tmp/ccHubou1.s 			page 25
+ARM GAS  /tmp/ccsQUkbE.s 			page 25
 
 
  767              		.loc 1 543 0
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  796              		.loc 1 566 0 discriminator 2
  797 0382 12F4702F 		tst	r2, #983040	@ _36,
  798 0386 08D1     		bne	.L82	@,
-ARM GAS  /tmp/ccHubou1.s 			page 26
+ARM GAS  /tmp/ccsQUkbE.s 			page 26
 
 
  799              	.L83:
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  831              	.LVL50:
  832              	.L88:
  833 03ae 00BF     		.align	2
-ARM GAS  /tmp/ccHubou1.s 			page 27
+ARM GAS  /tmp/ccsQUkbE.s 			page 27
 
 
  834              	.L87:
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  864 03bc 0446     		mov	r4, r0	@ hadc, hadc
  865              		.loc 1 609 0
  866 03be 23D0     		beq	.L93	@,
-ARM GAS  /tmp/ccHubou1.s 			page 28
+ARM GAS  /tmp/ccsQUkbE.s 			page 28
 
 
  867              		.loc 1 609 0 is_stmt 0 discriminator 2
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  632:src/stm32f1xx_hal_adc_ex.c ****                         HAL_ADC_STATE_REG_BUSY | HAL_ADC_STATE_INJ_BUSY,
  633:src/stm32f1xx_hal_adc_ex.c ****                         HAL_ADC_STATE_READY);
  634:src/stm32f1xx_hal_adc_ex.c ****     }
-ARM GAS  /tmp/ccHubou1.s 			page 29
+ARM GAS  /tmp/ccsQUkbE.s 			page 29
 
 
  635:src/stm32f1xx_hal_adc_ex.c ****   }
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  933              	.LFB71:
  650:src/stm32f1xx_hal_adc_ex.c **** 
  651:src/stm32f1xx_hal_adc_ex.c **** #if defined (STM32F103x6) || defined (STM32F103xB) || defined (STM32F105xC) || defined (STM32F107xC
-ARM GAS  /tmp/ccHubou1.s 			page 30
+ARM GAS  /tmp/ccsQUkbE.s 			page 30
 
 
  652:src/stm32f1xx_hal_adc_ex.c **** /**
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  957 0418 0E46     		mov	r6, r1	@ pData, pData
  958 041a 1746     		mov	r7, r2	@ Length, Length
  959              		.loc 1 680 0
-ARM GAS  /tmp/ccHubou1.s 			page 31
+ARM GAS  /tmp/ccsQUkbE.s 			page 31
 
 
  960 041c 58D0     		beq	.L100	@,
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  714:src/stm32f1xx_hal_adc_ex.c ****     ADC_STATE_CLR_SET(hadc->State,
  715:src/stm32f1xx_hal_adc_ex.c ****                       HAL_ADC_STATE_READY | HAL_ADC_STATE_REG_EOC | HAL_ADC_STATE_MULTIMODE_SLAVE,
  716:src/stm32f1xx_hal_adc_ex.c ****                       HAL_ADC_STATE_REG_BUSY);
-ARM GAS  /tmp/ccHubou1.s 			page 32
+ARM GAS  /tmp/ccsQUkbE.s 			page 32
 
 
  717:src/stm32f1xx_hal_adc_ex.c ****       
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  771:src/stm32f1xx_hal_adc_ex.c ****     }
  772:src/stm32f1xx_hal_adc_ex.c ****   }
  773:src/stm32f1xx_hal_adc_ex.c ****   else
-ARM GAS  /tmp/ccHubou1.s 			page 33
+ARM GAS  /tmp/ccsQUkbE.s 			page 33
 
 
  774:src/stm32f1xx_hal_adc_ex.c ****   {
@@ -1978,7 +1978,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  1020 0470 A36A     		ldrmi	r3, [r4, #40]	@ _28, hadc_7(D)->State
  755:src/stm32f1xx_hal_adc_ex.c ****     
  1021              		.loc 1 755 0
-ARM GAS  /tmp/ccHubou1.s 			page 34
+ARM GAS  /tmp/ccsQUkbE.s 			page 34
 
 
  1022 0472 3246     		mov	r2, r6	@, pData
@@ -2038,7 +2038,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  1062              		.loc 1 765 0
  1063 04bc 9A68     		ldr	r2, [r3, #8]	@ _54,
  1064 04be 0CBF     		ite	eq
-ARM GAS  /tmp/ccHubou1.s 			page 35
+ARM GAS  /tmp/ccsQUkbE.s 			page 35
 
 
  1065 04c0 42F4A002 		orreq	r2, r2, #5242880	@ _55, _54,
@@ -2098,7 +2098,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  789:src/stm32f1xx_hal_adc_ex.c ****   *         reinitialized using HAL_ADC_Init() or HAL_ADC_ReInit().
  790:src/stm32f1xx_hal_adc_ex.c ****   * @note   In case of DMA configured in circular mode, function 
  791:src/stm32f1xx_hal_adc_ex.c ****   *         HAL_ADC_Stop_DMA must be called after this function with handle of
-ARM GAS  /tmp/ccHubou1.s 			page 36
+ARM GAS  /tmp/ccsQUkbE.s 			page 36
 
 
  792:src/stm32f1xx_hal_adc_ex.c ****   *         ADC slave, to properly disable the DMA channel.
@@ -2158,7 +2158,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  1135              		.loc 1 813 0 discriminator 2
  1136 0500 0546     		mov	r5, r0	@ <retval>,
  1137 0502 28BB     		cbnz	r0, .L109	@ <retval>,
-ARM GAS  /tmp/ccHubou1.s 			page 37
+ARM GAS  /tmp/ccsQUkbE.s 			page 37
 
 
  814:src/stm32f1xx_hal_adc_ex.c ****   {
@@ -2218,7 +2218,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  847:src/stm32f1xx_hal_adc_ex.c ****   }
  848:src/stm32f1xx_hal_adc_ex.c ****   
  849:src/stm32f1xx_hal_adc_ex.c ****   /* Process unlocked */
-ARM GAS  /tmp/ccHubou1.s 			page 38
+ARM GAS  /tmp/ccsQUkbE.s 			page 38
 
 
  850:src/stm32f1xx_hal_adc_ex.c ****   __HAL_UNLOCK(hadc);
@@ -2278,7 +2278,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  1199              		.loc 1 853 0
  1200 0556 E3E7     		b	.L108	@
  1201              	.LVL78:
-ARM GAS  /tmp/ccHubou1.s 			page 39
+ARM GAS  /tmp/ccsQUkbE.s 			page 39
 
 
  1202              	.L111:
@@ -2338,7 +2338,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  1223              		.cfi_startproc
  1224              		@ args = 0, pretend = 0, frame = 0
  1225              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/ccHubou1.s 			page 40
+ARM GAS  /tmp/ccsQUkbE.s 			page 40
 
 
  1226              		@ link register save eliminated.
@@ -2398,7 +2398,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  906:src/stm32f1xx_hal_adc_ex.c ****     default:
  907:src/stm32f1xx_hal_adc_ex.c ****       tmp_jdr = hadc->Instance->JDR1;
  1257              		.loc 1 907 0
-ARM GAS  /tmp/ccHubou1.s 			page 41
+ARM GAS  /tmp/ccsQUkbE.s 			page 41
 
 
  1258 057a D86B     		ldr	r0, [r3, #60]	@ <retval>, _11->JDR1
@@ -2458,7 +2458,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  1282 0580 D86C     		ldr	r0, [r3, #76]	@ <retval>, _4->DR
  1283              	.LVL88:
  938:src/stm32f1xx_hal_adc_ex.c **** 
-ARM GAS  /tmp/ccHubou1.s 			page 42
+ARM GAS  /tmp/ccsQUkbE.s 			page 42
 
 
  939:src/stm32f1xx_hal_adc_ex.c ****   if (HAL_IS_BIT_CLR(ADC1->CR2, ADC_CR2_DMA))
@@ -2518,7 +2518,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  1321              	.LFE75:
  1322              		.size	HAL_ADCEx_InjectedConvCpltCallback, .-HAL_ADCEx_InjectedConvCpltCallback
  1323              		.align	1
-ARM GAS  /tmp/ccHubou1.s 			page 43
+ARM GAS  /tmp/ccsQUkbE.s 			page 43
 
 
  1324              		.global	HAL_ADCEx_InjectedConfigChannel
@@ -2578,7 +2578,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  1336              	.LVL91:
  1337              		.loc 1 997 0
  1338 059e F7B5     		push	{r0, r1, r2, r4, r5, r6, r7, lr}	@
-ARM GAS  /tmp/ccHubou1.s 			page 44
+ARM GAS  /tmp/ccsQUkbE.s 			page 44
 
 
  1339              	.LCFI18:
@@ -2638,7 +2638,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
 1022:src/stm32f1xx_hal_adc_ex.c ****   /*   Parameter "InjectedNbrOfConversion" is discarded.                      */
 1023:src/stm32f1xx_hal_adc_ex.c ****   /*   Note: Scan mode is present by hardware on this device and, if          */
 1024:src/stm32f1xx_hal_adc_ex.c ****   /*   disabled, discards automatically nb of conversions. Anyway, nb of      */
-ARM GAS  /tmp/ccHubou1.s 			page 45
+ARM GAS  /tmp/ccsQUkbE.s 			page 45
 
 
 1025:src/stm32f1xx_hal_adc_ex.c ****   /*   conversions is forced to 0x00 for alignment over all STM32 devices.    */
@@ -2698,7 +2698,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
 1062:src/stm32f1xx_hal_adc_ex.c ****       MODIFY_REG(hadc->Instance->JSQR                                         ,
 1063:src/stm32f1xx_hal_adc_ex.c ****                  
 1064:src/stm32f1xx_hal_adc_ex.c ****                  ADC_JSQR_JL                                               |
-ARM GAS  /tmp/ccHubou1.s 			page 46
+ARM GAS  /tmp/ccsQUkbE.s 			page 46
 
 
 1065:src/stm32f1xx_hal_adc_ex.c ****                  ADC_JSQR_RK_JL(ADC_JSQR_JSQ1,                         
@@ -2758,7 +2758,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
 1107:src/stm32f1xx_hal_adc_ex.c ****   /*  - Automatic injected conversion                                         */
 1108:src/stm32f1xx_hal_adc_ex.c ****   /*  - Injected discontinuous mode                                           */
 1109:src/stm32f1xx_hal_adc_ex.c ****   
-ARM GAS  /tmp/ccHubou1.s 			page 47
+ARM GAS  /tmp/ccsQUkbE.s 			page 47
 
 
 1110:src/stm32f1xx_hal_adc_ex.c ****     /* Automatic injected conversion can be enabled if injected group         */
@@ -2818,7 +2818,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  1425 0616 002C     		cmp	r4, #0	@ _70
  1426 0618 74D1     		bne	.L136	@
 1132:src/stm32f1xx_hal_adc_ex.c ****       {
-ARM GAS  /tmp/ccHubou1.s 			page 48
+ARM GAS  /tmp/ccsQUkbE.s 			page 48
 
 
 1133:src/stm32f1xx_hal_adc_ex.c ****         SET_BIT(hadc->Instance->CR1, ADC_CR1_JDISCEN);
@@ -2878,7 +2878,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  1451 064c 012C     		cmp	r4, #1	@ _105,
 1163:src/stm32f1xx_hal_adc_ex.c ****       (sConfigInjected->InjectedChannel == ADC_CHANNEL_VREFINT)      )
 1164:src/stm32f1xx_hal_adc_ex.c ****   {
-ARM GAS  /tmp/ccHubou1.s 			page 49
+ARM GAS  /tmp/ccsQUkbE.s 			page 49
 
 
 1165:src/stm32f1xx_hal_adc_ex.c ****     SET_BIT(hadc->Instance->CR2, ADC_CR2_TSVREFE);
@@ -2938,7 +2938,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
 1197:src/stm32f1xx_hal_adc_ex.c ****   
 1198:src/stm32f1xx_hal_adc_ex.c ****   /* If ADC1 Channel_16 or Channel_17 is selected, enable Temperature sensor  */
 1199:src/stm32f1xx_hal_adc_ex.c ****   /* and VREFINT measurement path.                                            */
-ARM GAS  /tmp/ccHubou1.s 			page 50
+ARM GAS  /tmp/ccsQUkbE.s 			page 50
 
 
 1200:src/stm32f1xx_hal_adc_ex.c ****   if ((sConfigInjected->InjectedChannel == ADC_CHANNEL_TEMPSENSOR) ||
@@ -2998,7 +2998,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  1506 06a4 002B     		cmp	r3, #0	@ wait_loop_index.17_139
  1507 06a6 52D1     		bne	.L148	@
  1508              	.LVL99:
-ARM GAS  /tmp/ccHubou1.s 			page 51
+ARM GAS  /tmp/ccsQUkbE.s 			page 51
 
 
  1509              	.L145:
@@ -3058,7 +3058,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  1539              		.loc 1 1062 0
  1540 06c0 D3F838E0 		ldr	lr, [r3, #56]	@ _37,
  1541 06c4 F41B     		subs	r4, r6, r7	@ tmp304, _34, _35
-ARM GAS  /tmp/ccHubou1.s 			page 52
+ARM GAS  /tmp/ccsQUkbE.s 			page 52
 
 
  1542 06c6 04EB8404 		add	r4, r4, r4, lsl #2	@ tmp230, tmp304, tmp304,
@@ -3118,7 +3118,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  1588 0724 3C43     		orrs	r4, r4, r7	@, _103, tmp272, tmp271
  1589 0726 1C61     		str	r4, [r3, #16]	@ _103, _62->SMPR2
  1590 0728 8EE7     		b	.L138	@
-ARM GAS  /tmp/ccHubou1.s 			page 53
+ARM GAS  /tmp/ccsQUkbE.s 			page 53
 
 
  1591              	.L141:
@@ -3178,7 +3178,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  1635 075e A3E7     		b	.L145	@
  1636              	.LVL115:
  1637              	.L149:
-ARM GAS  /tmp/ccHubou1.s 			page 54
+ARM GAS  /tmp/ccsQUkbE.s 			page 54
 
 
 1017:src/stm32f1xx_hal_adc_ex.c ****   
@@ -3238,7 +3238,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
 1265:src/stm32f1xx_hal_adc_ex.c ****   
 1266:src/stm32f1xx_hal_adc_ex.c ****   /* Process locked */
 1267:src/stm32f1xx_hal_adc_ex.c ****   __HAL_LOCK(hadc);
-ARM GAS  /tmp/ccHubou1.s 			page 55
+ARM GAS  /tmp/ccsQUkbE.s 			page 55
 
 
  1665              		.loc 1 1267 0
@@ -3298,7 +3298,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
 1283:src/stm32f1xx_hal_adc_ex.c ****   {
 1284:src/stm32f1xx_hal_adc_ex.c ****     MODIFY_REG(hadc->Instance->CR1,
  1700              		.loc 1 1284 0
-ARM GAS  /tmp/ccHubou1.s 			page 56
+ARM GAS  /tmp/ccsQUkbE.s 			page 56
 
 
  1701 079e 6068     		ldr	r0, [r4, #4]	@ _14, MEM[(struct ADC_TypeDef *)1073816576B].CR1
@@ -3358,7 +3358,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  1731 07c0 0220     		movs	r0, #2	@ <retval>,
  1732              	.LVL123:
 1304:src/stm32f1xx_hal_adc_ex.c **** } 
-ARM GAS  /tmp/ccHubou1.s 			page 57
+ARM GAS  /tmp/ccsQUkbE.s 			page 57
 
 
  1733              		.loc 1 1304 0
@@ -3418,7 +3418,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  1787 0045 02       		.uleb128 0x2
  1788 0046 02       		.byte	0x2
  1789 0047 07       		.byte	0x7
-ARM GAS  /tmp/ccHubou1.s 			page 58
+ARM GAS  /tmp/ccsQUkbE.s 			page 58
 
 
  1790 0048 10030000 		.4byte	.LASF3
@@ -3478,7 +3478,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  1844 00b7 06       		.uleb128 0x6
  1845 00b8 AC000000 		.4byte	0xac
  1846 00bc 02       		.uleb128 0x2
-ARM GAS  /tmp/ccHubou1.s 			page 59
+ARM GAS  /tmp/ccsQUkbE.s 			page 59
 
 
  1847 00bd 04       		.byte	0x4
@@ -3538,7 +3538,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  1901 012a 0C       		.uleb128 0xc
  1902 012b 535200   		.ascii	"SR\000"
  1903 012e 06       		.byte	0x6
-ARM GAS  /tmp/ccHubou1.s 			page 60
+ARM GAS  /tmp/ccsQUkbE.s 			page 60
 
 
  1904 012f 8D       		.byte	0x8d
@@ -3598,7 +3598,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  1958 018c 1B040000 		.4byte	.LASF24
  1959 0190 06       		.byte	0x6
  1960 0191 94       		.byte	0x94
-ARM GAS  /tmp/ccHubou1.s 			page 61
+ARM GAS  /tmp/ccsQUkbE.s 			page 61
 
 
  1961 0192 B7000000 		.4byte	0xb7
@@ -3658,7 +3658,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  2015 01f2 06       		.byte	0x6
  2016 01f3 9B       		.byte	0x9b
  2017 01f4 B7000000 		.4byte	0xb7
-ARM GAS  /tmp/ccHubou1.s 			page 62
+ARM GAS  /tmp/ccsQUkbE.s 			page 62
 
 
  2018 01f8 02       		.byte	0x2
@@ -3718,7 +3718,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  2072 0255 0F       		.uleb128 0xf
  2073 0256 43435200 		.ascii	"CCR\000"
  2074 025a 06       		.byte	0x6
-ARM GAS  /tmp/ccHubou1.s 			page 63
+ARM GAS  /tmp/ccsQUkbE.s 			page 63
 
 
  2075 025b 2001     		.2byte	0x120
@@ -3778,7 +3778,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  2129 02c3 23       		.byte	0x23
  2130 02c4 04       		.uleb128 0x4
  2131 02c5 00       		.byte	0
-ARM GAS  /tmp/ccHubou1.s 			page 64
+ARM GAS  /tmp/ccsQUkbE.s 			page 64
 
 
  2132 02c6 11       		.uleb128 0x11
@@ -3838,7 +3838,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  2186 0333 02       		.byte	0x2
  2187 0334 13       		.uleb128 0x13
  2188 0335 23020000 		.4byte	.LASF49
-ARM GAS  /tmp/ccHubou1.s 			page 65
+ARM GAS  /tmp/ccsQUkbE.s 			page 65
 
 
  2189 0339 03       		.byte	0x3
@@ -3898,7 +3898,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  2243 039c 0D       		.uleb128 0xd
  2244 039d C1070000 		.4byte	.LASF57
  2245 03a1 09       		.byte	0x9
-ARM GAS  /tmp/ccHubou1.s 			page 66
+ARM GAS  /tmp/ccsQUkbE.s 			page 66
 
 
  2246 03a2 3C       		.byte	0x3c
@@ -3958,7 +3958,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  2300 0405 03       		.uleb128 0x3
  2301 0406 B0050000 		.4byte	.LASF66
  2302 040a 09       		.byte	0x9
-ARM GAS  /tmp/ccHubou1.s 			page 67
+ARM GAS  /tmp/ccsQUkbE.s 			page 67
 
 
  2303 040b 54       		.byte	0x54
@@ -4018,7 +4018,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  2357 046e 23       		.byte	0x23
  2358 046f 28       		.uleb128 0x28
  2359 0470 0D       		.uleb128 0xd
-ARM GAS  /tmp/ccHubou1.s 			page 68
+ARM GAS  /tmp/ccsQUkbE.s 			page 68
 
 
  2360 0471 F7000000 		.4byte	.LASF73
@@ -4078,7 +4078,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  2414 04ce 01       		.byte	0x1
  2415 04cf D9040000 		.4byte	0x4d9
  2416 04d3 19       		.uleb128 0x19
-ARM GAS  /tmp/ccHubou1.s 			page 69
+ARM GAS  /tmp/ccsQUkbE.s 			page 69
 
 
  2417 04d4 D9040000 		.4byte	0x4d9
@@ -4138,7 +4138,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  2471 0537 E2070000 		.4byte	.LASF84
  2472 053b 0A       		.byte	0xa
  2473 053c 4A       		.byte	0x4a
-ARM GAS  /tmp/ccHubou1.s 			page 70
+ARM GAS  /tmp/ccsQUkbE.s 			page 70
 
 
  2474 053d 04030000 		.4byte	0x304
@@ -4198,7 +4198,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  2528 05a0 23       		.byte	0x23
  2529 05a1 20       		.uleb128 0x20
  2530 05a2 0D       		.uleb128 0xd
-ARM GAS  /tmp/ccHubou1.s 			page 71
+ARM GAS  /tmp/ccsQUkbE.s 			page 71
 
 
  2531 05a3 E4010000 		.4byte	.LASF69
@@ -4258,7 +4258,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  2585 0606 23       		.byte	0x23
  2586 0607 04       		.uleb128 0x4
  2587 0608 0D       		.uleb128 0xd
-ARM GAS  /tmp/ccHubou1.s 			page 72
+ARM GAS  /tmp/ccsQUkbE.s 			page 72
 
 
  2588 0609 FB020000 		.4byte	.LASF94
@@ -4318,7 +4318,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  2642 0669 04       		.byte	0x4
  2643 066a 0B       		.byte	0xb
  2644 066b 74       		.byte	0x74
-ARM GAS  /tmp/ccHubou1.s 			page 73
+ARM GAS  /tmp/ccsQUkbE.s 			page 73
 
 
  2645 066c 7F060000 		.4byte	0x67f
@@ -4378,7 +4378,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  2699 06d5 01       		.byte	0x1
  2700 06d6 33060000 		.4byte	.LASF111
  2701 06da 01       		.byte	0x1
-ARM GAS  /tmp/ccHubou1.s 			page 74
+ARM GAS  /tmp/ccsQUkbE.s 			page 74
 
 
  2702 06db E904     		.2byte	0x4e9
@@ -4438,7 +4438,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  2756 0763 30070000 		.4byte	0x730
  2757 0767 FB000000 		.4byte	.LLST34
  2758 076b 1B       		.uleb128 0x1b
-ARM GAS  /tmp/ccHubou1.s 			page 75
+ARM GAS  /tmp/ccsQUkbE.s 			page 75
 
 
  2759 076c A3040000 		.4byte	.LASF113
@@ -4498,7 +4498,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  2813 07e1 7D       		.byte	0x7d
  2814 07e2 00       		.sleb128 0
  2815 07e3 01       		.byte	0x1
-ARM GAS  /tmp/ccHubou1.s 			page 76
+ARM GAS  /tmp/ccsQUkbE.s 			page 76
 
 
  2816 07e4 09080000 		.4byte	0x809
@@ -4558,7 +4558,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  2870 0860 3B030000 		.4byte	0x33b
  2871 0864 E8040000 		.4byte	.LFB72
  2872 0868 60050000 		.4byte	.LFE72
-ARM GAS  /tmp/ccHubou1.s 			page 77
+ARM GAS  /tmp/ccsQUkbE.s 			page 77
 
 
  2873 086c 34030000 		.4byte	.LLST26
@@ -4618,7 +4618,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  2927 08df 01       		.byte	0x1
  2928 08e0 3B030000 		.4byte	0x33b
  2929 08e4 0C040000 		.4byte	.LFB71
-ARM GAS  /tmp/ccHubou1.s 			page 78
+ARM GAS  /tmp/ccsQUkbE.s 			page 78
 
 
  2930 08e8 E8040000 		.4byte	.LFE71
@@ -4678,7 +4678,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  2984 096c 01       		.byte	0x1
  2985 096d 52       		.byte	0x52
  2986 096e 02       		.byte	0x2
-ARM GAS  /tmp/ccHubou1.s 			page 79
+ARM GAS  /tmp/ccsQUkbE.s 			page 79
 
 
  2987 096f 76       		.byte	0x76
@@ -4738,7 +4738,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  3041 09d9 3B030000 		.4byte	0x33b
  3042 09dd 00030000 		.4byte	.LFB69
  3043 09e1 B4030000 		.4byte	.LFE69
-ARM GAS  /tmp/ccHubou1.s 			page 80
+ARM GAS  /tmp/ccsQUkbE.s 			page 80
 
 
  3044 09e5 EC050000 		.4byte	.LLST15
@@ -4798,7 +4798,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  3098 0a66 AC000000 		.4byte	0xac
  3099 0a6a ED060000 		.4byte	.LLST13
  3100 0a6e 1E       		.uleb128 0x1e
-ARM GAS  /tmp/ccHubou1.s 			page 81
+ARM GAS  /tmp/ccsQUkbE.s 			page 81
 
 
  3101 0a6f 31000000 		.4byte	.LASF130
@@ -4858,7 +4858,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  3155 0af1 4D01     		.2byte	0x14d
  3156 0af3 3B030000 		.4byte	0x33b
  3157 0af7 B8070000 		.4byte	.LLST9
-ARM GAS  /tmp/ccHubou1.s 			page 82
+ARM GAS  /tmp/ccsQUkbE.s 			page 82
 
 
  3158 0afb 25       		.uleb128 0x25
@@ -4918,7 +4918,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  3212 0b6a D0000000 		.4byte	.LFE65
  3213 0b6e 88080000 		.4byte	.LLST0
  3214 0b72 01       		.byte	0x1
-ARM GAS  /tmp/ccHubou1.s 			page 83
+ARM GAS  /tmp/ccsQUkbE.s 			page 83
 
 
  3215 0b73 120C0000 		.4byte	0xc12
@@ -4978,7 +4978,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  3269 0be8 50       		.byte	0x50
  3270 0be9 02       		.byte	0x2
  3271 0bea 74       		.byte	0x74
-ARM GAS  /tmp/ccHubou1.s 			page 84
+ARM GAS  /tmp/ccsQUkbE.s 			page 84
 
 
  3272 0beb 00       		.sleb128 0
@@ -5038,7 +5038,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  3326 0c5f 1D010000 		.4byte	.LASF140
  3327 0c63 0D       		.byte	0xd
  3328 0c64 4507     		.2byte	0x745
-ARM GAS  /tmp/ccHubou1.s 			page 85
+ARM GAS  /tmp/ccsQUkbE.s 			page 85
 
 
  3329 0c66 00       		.byte	0
@@ -5098,7 +5098,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  3383 0033 08       		.uleb128 0x8
  3384 0034 00       		.byte	0
  3385 0035 00       		.byte	0
-ARM GAS  /tmp/ccHubou1.s 			page 86
+ARM GAS  /tmp/ccsQUkbE.s 			page 86
 
 
  3386 0036 05       		.uleb128 0x5
@@ -5158,7 +5158,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  3440 006c 13       		.uleb128 0x13
  3441 006d 00       		.byte	0
  3442 006e 00       		.byte	0
-ARM GAS  /tmp/ccHubou1.s 			page 87
+ARM GAS  /tmp/ccsQUkbE.s 			page 87
 
 
  3443 006f 0A       		.uleb128 0xa
@@ -5218,7 +5218,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  3497 00a5 01       		.byte	0x1
  3498 00a6 0B       		.uleb128 0xb
  3499 00a7 0B       		.uleb128 0xb
-ARM GAS  /tmp/ccHubou1.s 			page 88
+ARM GAS  /tmp/ccsQUkbE.s 			page 88
 
 
  3500 00a8 3A       		.uleb128 0x3a
@@ -5278,7 +5278,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  3554 00de 0B       		.uleb128 0xb
  3555 00df 0B       		.uleb128 0xb
  3556 00e0 49       		.uleb128 0x49
-ARM GAS  /tmp/ccHubou1.s 			page 89
+ARM GAS  /tmp/ccsQUkbE.s 			page 89
 
 
  3557 00e1 13       		.uleb128 0x13
@@ -5338,7 +5338,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  3611 0117 0B       		.uleb128 0xb
  3612 0118 0B       		.uleb128 0xb
  3613 0119 00       		.byte	0
-ARM GAS  /tmp/ccHubou1.s 			page 90
+ARM GAS  /tmp/ccsQUkbE.s 			page 90
 
 
  3614 011a 00       		.byte	0
@@ -5398,7 +5398,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  3668 0151 13       		.uleb128 0x13
  3669 0152 02       		.uleb128 0x2
  3670 0153 06       		.uleb128 0x6
-ARM GAS  /tmp/ccHubou1.s 			page 91
+ARM GAS  /tmp/ccsQUkbE.s 			page 91
 
 
  3671 0154 00       		.byte	0
@@ -5458,7 +5458,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  3725 018a 3B       		.uleb128 0x3b
  3726 018b 05       		.uleb128 0x5
  3727 018c 27       		.uleb128 0x27
-ARM GAS  /tmp/ccHubou1.s 			page 92
+ARM GAS  /tmp/ccsQUkbE.s 			page 92
 
 
  3728 018d 0C       		.uleb128 0xc
@@ -5518,7 +5518,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  3782 01c5 00       		.byte	0
  3783 01c6 22       		.uleb128 0x22
  3784 01c7 898201   		.uleb128 0x4109
-ARM GAS  /tmp/ccHubou1.s 			page 93
+ARM GAS  /tmp/ccsQUkbE.s 			page 93
 
 
  3785 01ca 01       		.byte	0x1
@@ -5578,7 +5578,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  3839 0207 01       		.uleb128 0x1
  3840 0208 40       		.uleb128 0x40
  3841 0209 06       		.uleb128 0x6
-ARM GAS  /tmp/ccHubou1.s 			page 94
+ARM GAS  /tmp/ccsQUkbE.s 			page 94
 
 
  3842 020a 9742     		.uleb128 0x2117
@@ -5638,7 +5638,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  3896 0241 3F       		.uleb128 0x3f
  3897 0242 0C       		.uleb128 0xc
  3898 0243 3C       		.uleb128 0x3c
-ARM GAS  /tmp/ccHubou1.s 			page 95
+ARM GAS  /tmp/ccsQUkbE.s 			page 95
 
 
  3899 0244 0C       		.uleb128 0xc
@@ -5698,7 +5698,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  3953 0069 F3       		.byte	0xf3
  3954 006a 01       		.uleb128 0x1
  3955 006b 51       		.byte	0x51
-ARM GAS  /tmp/ccHubou1.s 			page 96
+ARM GAS  /tmp/ccsQUkbE.s 			page 96
 
 
  3956 006c 9F       		.byte	0x9f
@@ -5758,7 +5758,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  4010 00f2 20       		.sleb128 32
  4011 00f3 00000000 		.4byte	0
  4012 00f7 00000000 		.4byte	0
-ARM GAS  /tmp/ccHubou1.s 			page 97
+ARM GAS  /tmp/ccsQUkbE.s 			page 97
 
 
  4013              	.LLST34:
@@ -5818,7 +5818,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  4067 017b 51       		.byte	0x51
  4068 017c 9F       		.byte	0x9f
  4069 017d 60070000 		.4byte	.LVL115-.Ltext0
-ARM GAS  /tmp/ccHubou1.s 			page 98
+ARM GAS  /tmp/ccsQUkbE.s 			page 98
 
 
  4070 0181 74070000 		.4byte	.LFE76-.Ltext0
@@ -5878,7 +5878,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  4124 020c 0200     		.2byte	0x2
  4125 020e 31       		.byte	0x31
  4126 020f 9F       		.byte	0x9f
-ARM GAS  /tmp/ccHubou1.s 			page 99
+ARM GAS  /tmp/ccsQUkbE.s 			page 99
 
 
  4127 0210 60070000 		.4byte	.LVL115-.Ltext0
@@ -5938,7 +5938,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  4181 0294 50       		.byte	0x50
  4182 0295 9F       		.byte	0x9f
  4183 0296 76050000 		.4byte	.LVL83-.Ltext0
-ARM GAS  /tmp/ccHubou1.s 			page 100
+ARM GAS  /tmp/ccsQUkbE.s 			page 100
 
 
  4184 029a 78050000 		.4byte	.LVL84-.Ltext0
@@ -5998,7 +5998,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  4238 031f 30       		.byte	0x30
  4239 0320 9F       		.byte	0x9f
  4240 0321 7C050000 		.4byte	.LVL86-.Ltext0
-ARM GAS  /tmp/ccHubou1.s 			page 101
+ARM GAS  /tmp/ccsQUkbE.s 			page 101
 
 
  4241 0325 7E050000 		.4byte	.LFE73-.Ltext0
@@ -6058,7 +6058,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  4295 03af 00050000 		.4byte	.LVL69-.Ltext0
  4296 03b3 08050000 		.4byte	.LVL70-.Ltext0
  4297 03b7 0100     		.2byte	0x1
-ARM GAS  /tmp/ccHubou1.s 			page 102
+ARM GAS  /tmp/ccsQUkbE.s 			page 102
 
 
  4298 03b9 50       		.byte	0x50
@@ -6118,7 +6118,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  4352 0444 44040000 		.4byte	.LVL61-.Ltext0
  4353 0448 0100     		.2byte	0x1
  4354 044a 54       		.byte	0x54
-ARM GAS  /tmp/ccHubou1.s 			page 103
+ARM GAS  /tmp/ccsQUkbE.s 			page 103
 
 
  4355 044b 44040000 		.4byte	.LVL61-.Ltext0
@@ -6178,7 +6178,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  4409 04df D0040000 		.4byte	.LVL67-.Ltext0
  4410 04e3 E8040000 		.4byte	.LFE71-.Ltext0
  4411 04e7 0100     		.2byte	0x1
-ARM GAS  /tmp/ccHubou1.s 			page 104
+ARM GAS  /tmp/ccsQUkbE.s 			page 104
 
 
  4412 04e9 52       		.byte	0x52
@@ -6238,7 +6238,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  4466 0574 54       		.byte	0x54
  4467 0575 FC030000 		.4byte	.LVL54-.Ltext0
  4468 0579 00040000 		.4byte	.LVL55-.Ltext0
-ARM GAS  /tmp/ccHubou1.s 			page 105
+ARM GAS  /tmp/ccsQUkbE.s 			page 105
 
 
  4469 057d 0100     		.2byte	0x1
@@ -6298,7 +6298,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  4523 0604 00000000 		.4byte	0
  4524 0608 00000000 		.4byte	0
  4525              	.LLST16:
-ARM GAS  /tmp/ccHubou1.s 			page 106
+ARM GAS  /tmp/ccsQUkbE.s 			page 106
 
 
  4526 060c 00030000 		.4byte	.LVL45-.Ltext0
@@ -6358,7 +6358,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  4580 0695 54020000 		.4byte	.LCFI7-.Ltext0
  4581 0699 0200     		.2byte	0x2
  4582 069b 7D       		.byte	0x7d
-ARM GAS  /tmp/ccHubou1.s 			page 107
+ARM GAS  /tmp/ccsQUkbE.s 			page 107
 
 
  4583 069c 14       		.sleb128 20
@@ -6418,7 +6418,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  4637 072c 30       		.byte	0x30
  4638 072d 9F       		.byte	0x9f
  4639 072e 54020000 		.4byte	.LVL40-.Ltext0
-ARM GAS  /tmp/ccHubou1.s 			page 108
+ARM GAS  /tmp/ccsQUkbE.s 			page 108
 
 
  4640 0732 66020000 		.4byte	.LVL42-.Ltext0
@@ -6478,7 +6478,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  4694 07c0 0200     		.2byte	0x2
  4695 07c2 30       		.byte	0x30
  4696 07c3 9F       		.byte	0x9f
-ARM GAS  /tmp/ccHubou1.s 			page 109
+ARM GAS  /tmp/ccsQUkbE.s 			page 109
 
 
  4697 07c4 A0010000 		.4byte	.LVL23-.Ltext0
@@ -6538,7 +6538,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  4751 0851 F3       		.byte	0xf3
  4752 0852 01       		.uleb128 0x1
  4753 0853 50       		.byte	0x50
-ARM GAS  /tmp/ccHubou1.s 			page 110
+ARM GAS  /tmp/ccsQUkbE.s 			page 110
 
 
  4754 0854 9F       		.byte	0x9f
@@ -6598,7 +6598,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  4808 08de 0100     		.2byte	0x1
  4809 08e0 50       		.byte	0x50
  4810 08e1 00000000 		.4byte	0
-ARM GAS  /tmp/ccHubou1.s 			page 111
+ARM GAS  /tmp/ccsQUkbE.s 			page 111
 
 
  4811 08e5 00000000 		.4byte	0
@@ -6658,7 +6658,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  4860      41444345 
  4860      785F4D75 
  4860      6C74694D 
-ARM GAS  /tmp/ccHubou1.s 			page 112
+ARM GAS  /tmp/ccsQUkbE.s 			page 112
 
 
  4860      6F646553 
@@ -6718,7 +6718,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  4883              	.LASF16:
  4884 00c6 49544D5F 		.ascii	"ITM_RxBuffer\000"
  4884      52784275 
-ARM GAS  /tmp/ccHubou1.s 			page 113
+ARM GAS  /tmp/ccsQUkbE.s 			page 113
 
 
  4884      66666572 
@@ -6778,7 +6778,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  4908      76657273 
  4908      696F6E00 
  4909              	.LASF116:
-ARM GAS  /tmp/ccHubou1.s 			page 114
+ARM GAS  /tmp/ccsQUkbE.s 			page 114
 
 
  4910 0172 48414C5F 		.ascii	"HAL_ADCEx_MultiModeGetValue\000"
@@ -6838,7 +6838,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  4934 0223 48414C5F 		.ascii	"HAL_TIMEOUT\000"
  4934      54494D45 
  4934      4F555400 
-ARM GAS  /tmp/ccHubou1.s 			page 115
+ARM GAS  /tmp/ccsQUkbE.s 			page 115
 
 
  4935              	.LASF40:
@@ -6898,7 +6898,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  4957              	.LASF119:
  4958 02d9 746D705F 		.ascii	"tmp_jdr\000"
  4958      6A647200 
-ARM GAS  /tmp/ccHubou1.s 			page 116
+ARM GAS  /tmp/ccsQUkbE.s 			page 116
 
 
  4959              	.LASF104:
@@ -6958,7 +6958,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  4980      53746174 
  4980      75735479 
  4980      70654465 
-ARM GAS  /tmp/ccHubou1.s 			page 117
+ARM GAS  /tmp/ccsQUkbE.s 			page 117
 
 
  4980      6600
@@ -7018,7 +7018,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  5004      69636B00 
  5005              	.LASF45:
  5006 043c 6C6F6E67 		.ascii	"long double\000"
-ARM GAS  /tmp/ccHubou1.s 			page 118
+ARM GAS  /tmp/ccsQUkbE.s 			page 118
 
 
  5006      20646F75 
@@ -7078,7 +7078,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  5030      515F4445 
  5030      4641554C 
  5031              	.LASF127:
-ARM GAS  /tmp/ccHubou1.s 			page 119
+ARM GAS  /tmp/ccsQUkbE.s 			page 119
 
 
  5032 04f7 48414C5F 		.ascii	"HAL_ADCEx_InjectedPollForConversion\000"
@@ -7138,7 +7138,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  5057              	.LASF66:
  5058 05b0 48414C5F 		.ascii	"HAL_DMA_StateTypeDef\000"
  5058      444D415F 
-ARM GAS  /tmp/ccHubou1.s 			page 120
+ARM GAS  /tmp/ccsQUkbE.s 			page 120
 
 
  5058      53746174 
@@ -7198,7 +7198,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  5077      63436F6E 
  5077      76657273 
  5077      696F6E00 
-ARM GAS  /tmp/ccHubou1.s 			page 121
+ARM GAS  /tmp/ccsQUkbE.s 			page 121
 
 
  5078              	.LASF87:
@@ -7258,7 +7258,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  5101 076b 4D6F6465 		.ascii	"Mode\000"
  5101      00
  5102              	.LASF129:
-ARM GAS  /tmp/ccHubou1.s 			page 122
+ARM GAS  /tmp/ccsQUkbE.s 			page 122
 
 
  5103 0770 7469636B 		.ascii	"tickstart\000"
@@ -7318,7 +7318,7 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  5127      444D415F 
  5127      53544154 
  5127      455F5449 
-ARM GAS  /tmp/ccHubou1.s 			page 123
+ARM GAS  /tmp/ccsQUkbE.s 			page 123
 
 
  5127      4D454F55 
@@ -7377,42 +7377,42 @@ ARM GAS  /tmp/ccHubou1.s 			page 1
  5149      785F6861 
  5149      6C5F6164 
  5150              		.ident	"GCC: (15:6.3.1+svn253039-1build1) 6.3.1 20170620"
-ARM GAS  /tmp/ccHubou1.s 			page 124
+ARM GAS  /tmp/ccsQUkbE.s 			page 124
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32f1xx_hal_adc_ex.c
-     /tmp/ccHubou1.s:69     .text:0000000000000000 $t
-     /tmp/ccHubou1.s:76     .text:0000000000000000 HAL_ADCEx_Calibration_Start
-     /tmp/ccHubou1.s:239    .text:00000000000000cc $d
-     /tmp/ccHubou1.s:243    .text:00000000000000d0 $t
-     /tmp/ccHubou1.s:250    .text:00000000000000d0 HAL_ADCEx_InjectedStart
-     /tmp/ccHubou1.s:372    .text:0000000000000178 $d
-     /tmp/ccHubou1.s:376    .text:000000000000017c $t
-     /tmp/ccHubou1.s:383    .text:000000000000017c HAL_ADCEx_InjectedStop
-     /tmp/ccHubou1.s:464    .text:00000000000001ca HAL_ADCEx_InjectedPollForConversion
-     /tmp/ccHubou1.s:693    .text:00000000000002e8 $d
-     /tmp/ccHubou1.s:702    .text:0000000000000300 $t
-     /tmp/ccHubou1.s:709    .text:0000000000000300 HAL_ADCEx_InjectedStart_IT
-     /tmp/ccHubou1.s:835    .text:00000000000003b0 $d
-     /tmp/ccHubou1.s:839    .text:00000000000003b4 $t
-     /tmp/ccHubou1.s:846    .text:00000000000003b4 HAL_ADCEx_InjectedStop_IT
-     /tmp/ccHubou1.s:932    .text:000000000000040c HAL_ADCEx_MultiModeStart_DMA
-     /tmp/ccHubou1.s:1088   .text:00000000000004d4 $d
-     /tmp/ccHubou1.s:1096   .text:00000000000004e8 $t
-     /tmp/ccHubou1.s:1103   .text:00000000000004e8 HAL_ADCEx_MultiModeStop_DMA
-     /tmp/ccHubou1.s:1209   .text:000000000000055c $d
-     /tmp/ccHubou1.s:1213   .text:0000000000000560 $t
-     /tmp/ccHubou1.s:1220   .text:0000000000000560 HAL_ADCEx_InjectedGetValue
-     /tmp/ccHubou1.s:1272   .text:000000000000057e HAL_ADCEx_MultiModeGetValue
-     /tmp/ccHubou1.s:1299   .text:0000000000000594 $d
-     /tmp/ccHubou1.s:1304   .text:000000000000059c $t
-     /tmp/ccHubou1.s:1311   .text:000000000000059c HAL_ADCEx_InjectedConvCpltCallback
-     /tmp/ccHubou1.s:1330   .text:000000000000059e HAL_ADCEx_InjectedConfigChannel
-     /tmp/ccHubou1.s:1644   .text:0000000000000764 $d
-     /tmp/ccHubou1.s:1651   .text:0000000000000774 $t
-     /tmp/ccHubou1.s:1658   .text:0000000000000774 HAL_ADCEx_MultiModeConfigChannel
-     /tmp/ccHubou1.s:1738   .text:00000000000007c4 $d
+     /tmp/ccsQUkbE.s:69     .text:0000000000000000 $t
+     /tmp/ccsQUkbE.s:76     .text:0000000000000000 HAL_ADCEx_Calibration_Start
+     /tmp/ccsQUkbE.s:239    .text:00000000000000cc $d
+     /tmp/ccsQUkbE.s:243    .text:00000000000000d0 $t
+     /tmp/ccsQUkbE.s:250    .text:00000000000000d0 HAL_ADCEx_InjectedStart
+     /tmp/ccsQUkbE.s:372    .text:0000000000000178 $d
+     /tmp/ccsQUkbE.s:376    .text:000000000000017c $t
+     /tmp/ccsQUkbE.s:383    .text:000000000000017c HAL_ADCEx_InjectedStop
+     /tmp/ccsQUkbE.s:464    .text:00000000000001ca HAL_ADCEx_InjectedPollForConversion
+     /tmp/ccsQUkbE.s:693    .text:00000000000002e8 $d
+     /tmp/ccsQUkbE.s:702    .text:0000000000000300 $t
+     /tmp/ccsQUkbE.s:709    .text:0000000000000300 HAL_ADCEx_InjectedStart_IT
+     /tmp/ccsQUkbE.s:835    .text:00000000000003b0 $d
+     /tmp/ccsQUkbE.s:839    .text:00000000000003b4 $t
+     /tmp/ccsQUkbE.s:846    .text:00000000000003b4 HAL_ADCEx_InjectedStop_IT
+     /tmp/ccsQUkbE.s:932    .text:000000000000040c HAL_ADCEx_MultiModeStart_DMA
+     /tmp/ccsQUkbE.s:1088   .text:00000000000004d4 $d
+     /tmp/ccsQUkbE.s:1096   .text:00000000000004e8 $t
+     /tmp/ccsQUkbE.s:1103   .text:00000000000004e8 HAL_ADCEx_MultiModeStop_DMA
+     /tmp/ccsQUkbE.s:1209   .text:000000000000055c $d
+     /tmp/ccsQUkbE.s:1213   .text:0000000000000560 $t
+     /tmp/ccsQUkbE.s:1220   .text:0000000000000560 HAL_ADCEx_InjectedGetValue
+     /tmp/ccsQUkbE.s:1272   .text:000000000000057e HAL_ADCEx_MultiModeGetValue
+     /tmp/ccsQUkbE.s:1299   .text:0000000000000594 $d
+     /tmp/ccsQUkbE.s:1304   .text:000000000000059c $t
+     /tmp/ccsQUkbE.s:1311   .text:000000000000059c HAL_ADCEx_InjectedConvCpltCallback
+     /tmp/ccsQUkbE.s:1330   .text:000000000000059e HAL_ADCEx_InjectedConfigChannel
+     /tmp/ccsQUkbE.s:1644   .text:0000000000000764 $d
+     /tmp/ccsQUkbE.s:1651   .text:0000000000000774 $t
+     /tmp/ccsQUkbE.s:1658   .text:0000000000000774 HAL_ADCEx_MultiModeConfigChannel
+     /tmp/ccsQUkbE.s:1738   .text:00000000000007c4 $d
                      .debug_frame:0000000000000010 $d
 
 UNDEFINED SYMBOLS

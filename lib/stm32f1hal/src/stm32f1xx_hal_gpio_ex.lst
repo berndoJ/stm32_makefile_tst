@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccjNEupg.s 			page 1
+ARM GAS  /tmp/ccAuSFPF.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -18,7 +18,7 @@ ARM GAS  /tmp/ccjNEupg.s 			page 1
   15              	@ GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
   16              	@ options passed:  -I ./inc -I ./inc/Legacy -I ../cmsisstm32f1xx/inc
   17              	@ -I ../cmsiscore/inc -imultilib thumb/v7-m -D__USES_INITFINI__
-  18              	@ -D STM32F103x6 -D RUN_FROM_FLASH=1 -D __c src/stm32f1xx_hal_gpio_ex.c
+  18              	@ -D STM32F103x6 -D RUN_FROM_FLASH=1 src/stm32f1xx_hal_gpio_ex.c
   19              	@ -mcpu=cortex-m3 -mthumb -auxbase-strip bin/stm32f1xx_hal_gpio_ex.o -g
   20              	@ -gdwarf-2 -Os -Wall -fomit-frame-pointer -fverbose-asm
   21              	@ options enabled:  -faggressive-loop-optimizations -falign-jumps
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccjNEupg.s 			page 1
   55              	@ -ftree-copy-prop -ftree-cselim -ftree-dce -ftree-dominator-opts
   56              	@ -ftree-dse -ftree-forwprop -ftree-fre -ftree-loop-if-convert
   57              	@ -ftree-loop-im -ftree-loop-ivcanon -ftree-loop-optimize
-ARM GAS  /tmp/ccjNEupg.s 			page 2
+ARM GAS  /tmp/ccAuSFPF.s 			page 2
 
 
   58              	@ -ftree-parallelize-loops= -ftree-phiprop -ftree-pre -ftree-pta
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccjNEupg.s 			page 1
   34:src/stm32f1xx_hal_gpio_ex.c ****   *                        opensource.org/licenses/BSD-3-Clause
   35:src/stm32f1xx_hal_gpio_ex.c ****   *
   36:src/stm32f1xx_hal_gpio_ex.c ****   ******************************************************************************
-ARM GAS  /tmp/ccjNEupg.s 			page 3
+ARM GAS  /tmp/ccAuSFPF.s 			page 3
 
 
   37:src/stm32f1xx_hal_gpio_ex.c ****   */
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccjNEupg.s 			page 1
   85:src/stm32f1xx_hal_gpio_ex.c ****   assert_param(IS_AFIO_EVENTOUT_PIN(GPIO_PinSource));
   86:src/stm32f1xx_hal_gpio_ex.c **** 
   87:src/stm32f1xx_hal_gpio_ex.c ****   /* Apply the new configuration */
-ARM GAS  /tmp/ccjNEupg.s 			page 4
+ARM GAS  /tmp/ccAuSFPF.s 			page 4
 
 
   88:src/stm32f1xx_hal_gpio_ex.c ****   MODIFY_REG(AFIO->EVCR, (AFIO_EVCR_PORT) | (AFIO_EVCR_PIN), (GPIO_PortSource) | (GPIO_PinSource));
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccjNEupg.s 			page 1
  129              		.global	HAL_GPIOEx_DisableEventout
  130              		.syntax unified
  131              		.thumb
-ARM GAS  /tmp/ccjNEupg.s 			page 5
+ARM GAS  /tmp/ccAuSFPF.s 			page 5
 
 
  132              		.thumb_func
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccjNEupg.s 			page 1
  177 0026 01       		.byte	0x1
  178 0027 06       		.byte	0x6
  179 0028 9E020000 		.4byte	.LASF0
-ARM GAS  /tmp/ccjNEupg.s 			page 6
+ARM GAS  /tmp/ccAuSFPF.s 			page 6
 
 
  180 002c 03       		.uleb128 0x3
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccjNEupg.s 			page 1
  234 0092 18       		.byte	0x18
  235 0093 2C000000 		.4byte	0x2c
  236 0097 05       		.uleb128 0x5
-ARM GAS  /tmp/ccjNEupg.s 			page 7
+ARM GAS  /tmp/ccAuSFPF.s 			page 7
 
 
  237 0098 8C000000 		.4byte	0x8c
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccjNEupg.s 			page 1
  291 010e 07       		.byte	0x7
  292 010f 00       		.byte	0
  293 0110 05       		.uleb128 0x5
-ARM GAS  /tmp/ccjNEupg.s 			page 8
+ARM GAS  /tmp/ccAuSFPF.s 			page 8
 
 
  294 0111 00010000 		.4byte	0x100
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccjNEupg.s 			page 1
  348 0177 09       		.uleb128 0x9
  349 0178 B7000000 		.4byte	0xb7
  350 017c 87010000 		.4byte	0x187
-ARM GAS  /tmp/ccjNEupg.s 			page 9
+ARM GAS  /tmp/ccAuSFPF.s 			page 9
 
 
  351 0180 0A       		.uleb128 0xa
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccjNEupg.s 			page 1
  405 01ea 01       		.byte	0x1
  406 01eb 0A010000 		.4byte	.LASF34
  407 01ef 01       		.byte	0x1
-ARM GAS  /tmp/ccjNEupg.s 			page 10
+ARM GAS  /tmp/ccAuSFPF.s 			page 10
 
 
  408 01f0 68       		.byte	0x68
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccjNEupg.s 			page 1
  462 0005 13       		.uleb128 0x13
  463 0006 0B       		.uleb128 0xb
  464 0007 03       		.uleb128 0x3
-ARM GAS  /tmp/ccjNEupg.s 			page 11
+ARM GAS  /tmp/ccAuSFPF.s 			page 11
 
 
  465 0008 0E       		.uleb128 0xe
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccjNEupg.s 			page 1
  519 003e 35       		.uleb128 0x35
  520 003f 00       		.byte	0
  521 0040 49       		.uleb128 0x49
-ARM GAS  /tmp/ccjNEupg.s 			page 12
+ARM GAS  /tmp/ccAuSFPF.s 			page 12
 
 
  522 0041 13       		.uleb128 0x13
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccjNEupg.s 			page 1
  576 0077 00       		.byte	0
  577 0078 0B       		.uleb128 0xb
  578 0079 13       		.uleb128 0x13
-ARM GAS  /tmp/ccjNEupg.s 			page 13
+ARM GAS  /tmp/ccAuSFPF.s 			page 13
 
 
  579 007a 01       		.byte	0x1
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccjNEupg.s 			page 1
  633 00b0 0F       		.uleb128 0xf
  634 00b1 28       		.uleb128 0x28
  635 00b2 00       		.byte	0
-ARM GAS  /tmp/ccjNEupg.s 			page 14
+ARM GAS  /tmp/ccAuSFPF.s 			page 14
 
 
  636 00b3 03       		.uleb128 0x3
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccjNEupg.s 			page 1
  690 00eb 00       		.byte	0
  691 00ec 03       		.uleb128 0x3
  692 00ed 0E       		.uleb128 0xe
-ARM GAS  /tmp/ccjNEupg.s 			page 15
+ARM GAS  /tmp/ccAuSFPF.s 			page 15
 
 
  693 00ee 3A       		.uleb128 0x3a
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccjNEupg.s 			page 1
  747              		.section	.debug_line,"",%progbits
  748              	.Ldebug_line0:
  749 0000 17010000 		.section	.debug_str,"MS",%progbits,1
-ARM GAS  /tmp/ccjNEupg.s 			page 16
+ARM GAS  /tmp/ccAuSFPF.s 			page 16
 
 
  749      0200FC00 
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccjNEupg.s 			page 1
  771      5461626C 
  771      6500
  772              	.LASF37:
-ARM GAS  /tmp/ccjNEupg.s 			page 17
+ARM GAS  /tmp/ccAuSFPF.s 			page 17
 
 
  773 0096 4750494F 		.ascii	"GPIO_PinSource\000"
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccjNEupg.s 			page 1
  793      362E332E 
  793      31203230 
  793      31373036 
-ARM GAS  /tmp/ccjNEupg.s 			page 18
+ARM GAS  /tmp/ccAuSFPF.s 			page 18
 
 
  794 016d 67647761 		.ascii	"gdwarf-2 -Os -fomit-frame-pointer\000"
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccjNEupg.s 			page 1
  816      5F465245 
  816      515F4445 
  816      4641554C 
-ARM GAS  /tmp/ccjNEupg.s 			page 19
+ARM GAS  /tmp/ccAuSFPF.s 			page 19
 
 
  817              	.LASF2:
@@ -1120,20 +1120,20 @@ ARM GAS  /tmp/ccjNEupg.s 			page 1
  834      515F3130 
  834      485A00
  835              		.ident	"GCC: (15:6.3.1+svn253039-1build1) 6.3.1 20170620"
-ARM GAS  /tmp/ccjNEupg.s 			page 20
+ARM GAS  /tmp/ccAuSFPF.s 			page 20
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32f1xx_hal_gpio_ex.c
-     /tmp/ccjNEupg.s:69     .text:0000000000000000 $t
-     /tmp/ccjNEupg.s:76     .text:0000000000000000 HAL_GPIOEx_ConfigEventout
-     /tmp/ccjNEupg.s:97     .text:0000000000000010 $d
-     /tmp/ccjNEupg.s:101    .text:0000000000000014 $t
-     /tmp/ccjNEupg.s:108    .text:0000000000000014 HAL_GPIOEx_EnableEventout
-     /tmp/ccjNEupg.s:124    .text:0000000000000020 $d
-     /tmp/ccjNEupg.s:128    .text:0000000000000024 $t
-     /tmp/ccjNEupg.s:135    .text:0000000000000024 HAL_GPIOEx_DisableEventout
-     /tmp/ccjNEupg.s:151    .text:0000000000000030 $d
+     /tmp/ccAuSFPF.s:69     .text:0000000000000000 $t
+     /tmp/ccAuSFPF.s:76     .text:0000000000000000 HAL_GPIOEx_ConfigEventout
+     /tmp/ccAuSFPF.s:97     .text:0000000000000010 $d
+     /tmp/ccAuSFPF.s:101    .text:0000000000000014 $t
+     /tmp/ccAuSFPF.s:108    .text:0000000000000014 HAL_GPIOEx_EnableEventout
+     /tmp/ccAuSFPF.s:124    .text:0000000000000020 $d
+     /tmp/ccAuSFPF.s:128    .text:0000000000000024 $t
+     /tmp/ccAuSFPF.s:135    .text:0000000000000024 HAL_GPIOEx_DisableEventout
+     /tmp/ccAuSFPF.s:151    .text:0000000000000030 $d
                      .debug_frame:0000000000000010 $d
 
 NO UNDEFINED SYMBOLS

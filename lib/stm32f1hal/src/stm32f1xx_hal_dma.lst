@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cck4KHRF.s 			page 1
+ARM GAS  /tmp/ccHVGq3l.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -18,7 +18,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
   15              	@ GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
   16              	@ options passed:  -I ./inc -I ./inc/Legacy -I ../cmsisstm32f1xx/inc
   17              	@ -I ../cmsiscore/inc -imultilib thumb/v7-m -D__USES_INITFINI__
-  18              	@ -D STM32F103x6 -D RUN_FROM_FLASH=1 -D __c src/stm32f1xx_hal_dma.c
+  18              	@ -D STM32F103x6 -D RUN_FROM_FLASH=1 src/stm32f1xx_hal_dma.c
   19              	@ -mcpu=cortex-m3 -mthumb -auxbase-strip bin/stm32f1xx_hal_dma.o -g
   20              	@ -gdwarf-2 -Os -Wall -fomit-frame-pointer -fverbose-asm
   21              	@ options enabled:  -faggressive-loop-optimizations -falign-jumps
@@ -58,7 +58,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
   55              	@ -ftree-copy-prop -ftree-cselim -ftree-dce -ftree-dominator-opts
   56              	@ -ftree-dse -ftree-forwprop -ftree-fre -ftree-loop-if-convert
   57              	@ -ftree-loop-im -ftree-loop-ivcanon -ftree-loop-optimize
-ARM GAS  /tmp/cck4KHRF.s 			page 2
+ARM GAS  /tmp/ccHVGq3l.s 			page 2
 
 
   58              	@ -ftree-parallelize-loops= -ftree-phiprop -ftree-pre -ftree-pta
@@ -118,7 +118,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
   34:src/stm32f1xx_hal_dma.c ****     [..]
   35:src/stm32f1xx_hal_dma.c ****           (+) Use HAL_DMA_Start() to start DMA transfer after the configuration of Source
   36:src/stm32f1xx_hal_dma.c ****               address and destination address and the Length of data to be transferred
-ARM GAS  /tmp/cck4KHRF.s 			page 3
+ARM GAS  /tmp/ccHVGq3l.s 			page 3
 
 
   37:src/stm32f1xx_hal_dma.c ****           (+) Use HAL_DMA_PollForTransfer() to poll for the end of current transfer, in this
@@ -178,7 +178,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
   91:src/stm32f1xx_hal_dma.c **** /** @defgroup DMA DMA
   92:src/stm32f1xx_hal_dma.c ****   * @brief DMA HAL module driver
   93:src/stm32f1xx_hal_dma.c ****   * @{
-ARM GAS  /tmp/cck4KHRF.s 			page 4
+ARM GAS  /tmp/ccHVGq3l.s 			page 4
 
 
   94:src/stm32f1xx_hal_dma.c ****   */
@@ -238,7 +238,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
   82              		@ frame_needed = 0, uses_anonymous_args = 0
   83              	.LVL0:
   84 0000 10B5     		push	{r4, lr}	@
-ARM GAS  /tmp/cck4KHRF.s 			page 5
+ARM GAS  /tmp/ccHVGq3l.s 			page 5
 
 
   85              	.LCFI0:
@@ -298,7 +298,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  189:src/stm32f1xx_hal_dma.c ****   /* Clear PL, MSIZE, PSIZE, MINC, PINC, CIRC and DIR bits */
  190:src/stm32f1xx_hal_dma.c ****   tmp &= ((uint32_t)~(DMA_CCR_PL    | DMA_CCR_MSIZE  | DMA_CCR_PSIZE  | \
  191:src/stm32f1xx_hal_dma.c ****                       DMA_CCR_MINC  | DMA_CCR_PINC   | DMA_CCR_CIRC   | \
-ARM GAS  /tmp/cck4KHRF.s 			page 6
+ARM GAS  /tmp/ccHVGq3l.s 			page 6
 
 
  192:src/stm32f1xx_hal_dma.c ****                       DMA_CCR_DIR));
@@ -358,7 +358,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  135              	.LVL4:
  199:src/stm32f1xx_hal_dma.c **** 
  200:src/stm32f1xx_hal_dma.c ****   /* Write to DMA Channel CR register */
-ARM GAS  /tmp/cck4KHRF.s 			page 7
+ARM GAS  /tmp/ccHVGq3l.s 			page 7
 
 
  201:src/stm32f1xx_hal_dma.c ****   hdma->Instance->CCR = tmp;
@@ -418,7 +418,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  175              		.type	HAL_DMA_DeInit, %function
  176              	HAL_DMA_DeInit:
  177              	.LFB66:
-ARM GAS  /tmp/cck4KHRF.s 			page 8
+ARM GAS  /tmp/ccHVGq3l.s 			page 8
 
 
  213:src/stm32f1xx_hal_dma.c **** 
@@ -478,7 +478,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  253:src/stm32f1xx_hal_dma.c ****   }
  254:src/stm32f1xx_hal_dma.c ****   else
  255:src/stm32f1xx_hal_dma.c ****   {
-ARM GAS  /tmp/cck4KHRF.s 			page 9
+ARM GAS  /tmp/ccHVGq3l.s 			page 9
 
 
  256:src/stm32f1xx_hal_dma.c ****     /* DMA2 */
@@ -538,7 +538,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  225 0090 6260     		str	r2, [r4, #4]	@ _19, MEM[(struct DMA_TypeDef *)1073872896B].IFCR
  268:src/stm32f1xx_hal_dma.c **** 
  269:src/stm32f1xx_hal_dma.c ****   /* Clean all callbacks */
-ARM GAS  /tmp/cck4KHRF.s 			page 10
+ARM GAS  /tmp/ccHVGq3l.s 			page 10
 
 
  270:src/stm32f1xx_hal_dma.c ****   hdma->XferCpltCallback = NULL;
@@ -598,7 +598,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  263              		.thumb_func
  264              		.fpu softvfp
  265              		.type	HAL_DMA_Start, %function
-ARM GAS  /tmp/cck4KHRF.s 			page 11
+ARM GAS  /tmp/ccHVGq3l.s 			page 11
 
 
  266              	HAL_DMA_Start:
@@ -658,7 +658,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  325:src/stm32f1xx_hal_dma.c **** 
  326:src/stm32f1xx_hal_dma.c ****   /* Process locked */
  327:src/stm32f1xx_hal_dma.c ****   __HAL_LOCK(hdma);
-ARM GAS  /tmp/cck4KHRF.s 			page 12
+ARM GAS  /tmp/ccHVGq3l.s 			page 12
 
 
  281              		.loc 1 327 0
@@ -718,7 +718,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  355:src/stm32f1xx_hal_dma.c ****   * @param  hdma: pointer to a DMA_HandleTypeDef structure that contains
  356:src/stm32f1xx_hal_dma.c ****   *               the configuration information for the specified DMA Channel.
  357:src/stm32f1xx_hal_dma.c ****   * @param  SrcAddress: The source memory Buffer address
-ARM GAS  /tmp/cck4KHRF.s 			page 13
+ARM GAS  /tmp/ccHVGq3l.s 			page 13
 
 
  358:src/stm32f1xx_hal_dma.c ****   * @param  DstAddress: The destination memory Buffer address
@@ -778,7 +778,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  412:src/stm32f1xx_hal_dma.c ****   * @param  hdma: pointer to a DMA_HandleTypeDef structure that contains
  413:src/stm32f1xx_hal_dma.c ****   *               the configuration information for the specified DMA Channel.
  414:src/stm32f1xx_hal_dma.c ****   * @retval HAL status
-ARM GAS  /tmp/cck4KHRF.s 			page 14
+ARM GAS  /tmp/ccHVGq3l.s 			page 14
 
 
  415:src/stm32f1xx_hal_dma.c ****   */
@@ -838,7 +838,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  469:src/stm32f1xx_hal_dma.c ****   { 
  470:src/stm32f1xx_hal_dma.c ****     /* Disable DMA IT */
  471:src/stm32f1xx_hal_dma.c ****     __HAL_DMA_DISABLE_IT(hdma, (DMA_IT_TC | DMA_IT_HT | DMA_IT_TE));
-ARM GAS  /tmp/cck4KHRF.s 			page 15
+ARM GAS  /tmp/ccHVGq3l.s 			page 15
 
 
  472:src/stm32f1xx_hal_dma.c **** 
@@ -898,7 +898,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  526:src/stm32f1xx_hal_dma.c ****     temp = __HAL_DMA_GET_TC_FLAG_INDEX(hdma);
  527:src/stm32f1xx_hal_dma.c ****   }
  528:src/stm32f1xx_hal_dma.c ****   else
-ARM GAS  /tmp/cck4KHRF.s 			page 16
+ARM GAS  /tmp/ccHVGq3l.s 			page 16
 
 
  529:src/stm32f1xx_hal_dma.c ****   {
@@ -958,7 +958,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  583:src/stm32f1xx_hal_dma.c ****     hdma->State = HAL_DMA_STATE_READY;
  584:src/stm32f1xx_hal_dma.c ****   }
  585:src/stm32f1xx_hal_dma.c ****   else
-ARM GAS  /tmp/cck4KHRF.s 			page 17
+ARM GAS  /tmp/ccHVGq3l.s 			page 17
 
 
  586:src/stm32f1xx_hal_dma.c ****   {
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  640:src/stm32f1xx_hal_dma.c ****     }
  641:src/stm32f1xx_hal_dma.c ****     /* Clear the transfer complete flag */
  642:src/stm32f1xx_hal_dma.c ****       __HAL_DMA_CLEAR_FLAG(hdma, __HAL_DMA_GET_TC_FLAG_INDEX(hdma));
-ARM GAS  /tmp/cck4KHRF.s 			page 18
+ARM GAS  /tmp/ccHVGq3l.s 			page 18
 
 
  643:src/stm32f1xx_hal_dma.c **** 
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  697:src/stm32f1xx_hal_dma.c ****   /* Process locked */
  698:src/stm32f1xx_hal_dma.c ****   __HAL_LOCK(hdma);
  699:src/stm32f1xx_hal_dma.c ****   
-ARM GAS  /tmp/cck4KHRF.s 			page 19
+ARM GAS  /tmp/ccHVGq3l.s 			page 19
 
 
  700:src/stm32f1xx_hal_dma.c ****   if(HAL_DMA_STATE_READY == hdma->State)
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  754:src/stm32f1xx_hal_dma.c ****     {
  755:src/stm32f1xx_hal_dma.c ****     case  HAL_DMA_XFER_CPLT_CB_ID:
  756:src/stm32f1xx_hal_dma.c ****       hdma->XferCpltCallback = NULL;
-ARM GAS  /tmp/cck4KHRF.s 			page 20
+ARM GAS  /tmp/ccHVGq3l.s 			page 20
 
 
  757:src/stm32f1xx_hal_dma.c ****       break;
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  811:src/stm32f1xx_hal_dma.c ****   * @{
  812:src/stm32f1xx_hal_dma.c ****   */
  813:src/stm32f1xx_hal_dma.c **** 
-ARM GAS  /tmp/cck4KHRF.s 			page 21
+ARM GAS  /tmp/ccHVGq3l.s 			page 21
 
 
  814:src/stm32f1xx_hal_dma.c **** /**
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  311 00e0 26F00106 		bic	r6, r6, #1	@ _12, _11,
  312 00e4 2660     		str	r6, [r4]	@ _12, _10->CCR
  313              	.LVL15:
-ARM GAS  /tmp/cck4KHRF.s 			page 22
+ARM GAS  /tmp/ccHVGq3l.s 			page 22
 
 
  314              	.LBB8:
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  345              	.LBE9:
  342:src/stm32f1xx_hal_dma.c ****   }
  346              		.loc 1 342 0
-ARM GAS  /tmp/cck4KHRF.s 			page 23
+ARM GAS  /tmp/ccHVGq3l.s 			page 23
 
 
  347 00fe 2368     		ldr	r3, [r4]	@ _19, _10->CCR
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  394              		.loc 1 372 0 is_stmt 1 discriminator 2
  395 011c 90F82150 		ldrb	r5, [r0, #33]	@ zero_extendqisi2	@ hdma_5(D)->State, hdma_5(D)->State
  370:src/stm32f1xx_hal_dma.c ****   
-ARM GAS  /tmp/cck4KHRF.s 			page 24
+ARM GAS  /tmp/ccHVGq3l.s 			page 24
 
 
  396              		.loc 1 370 0 discriminator 2
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  439              	.LBB15:
  870:src/stm32f1xx_hal_dma.c **** 
  440              		.loc 1 870 0
-ARM GAS  /tmp/cck4KHRF.s 			page 25
+ARM GAS  /tmp/ccHVGq3l.s 			page 25
 
 
  441 0152 0BBF     		itete	eq
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  484 0182 80F82060 		strb	r6, [r0, #32]	@ tmp149, hdma_5(D)->Lock
  485              	.LVL32:
  486              	.L24:
-ARM GAS  /tmp/cck4KHRF.s 			page 26
+ARM GAS  /tmp/ccHVGq3l.s 			page 26
 
 
  370:src/stm32f1xx_hal_dma.c ****   
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  531 01a4 1A68     		ldr	r2, [r3]	@ _9, _8->CCR
  532 01a6 22F00E02 		bic	r2, r2, #14	@ _10, _9,
  533 01aa 1A60     		str	r2, [r3]	@ _10, _8->CCR
-ARM GAS  /tmp/cck4KHRF.s 			page 27
+ARM GAS  /tmp/ccHVGq3l.s 			page 27
 
 
  437:src/stm32f1xx_hal_dma.c ****       
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  578              		.cfi_offset 14, -4
  461:src/stm32f1xx_hal_dma.c ****   {
  579              		.loc 1 461 0
-ARM GAS  /tmp/cck4KHRF.s 			page 28
+ARM GAS  /tmp/ccHVGq3l.s 			page 28
 
 
  580 01d2 022B     		cmp	r3, #2	@ hdma_5(D)->State,
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  624 0212 0CBF     		ite	eq	@
  625 0214 4FF48013 		moveq	r3, #1048576	@, iftmp.0_2,
  626 0218 4FF08073 		movne	r3, #16777216	@, iftmp.0_2,
-ARM GAS  /tmp/cck4KHRF.s 			page 29
+ARM GAS  /tmp/ccHVGq3l.s 			page 29
 
 
  627              	.L32:
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  492:src/stm32f1xx_hal_dma.c **** 
  670              		.loc 1 492 0
  671 0252 10BD     		pop	{r4, pc}	@
-ARM GAS  /tmp/cck4KHRF.s 			page 30
+ARM GAS  /tmp/ccHVGq3l.s 			page 30
 
 
  672              	.L41:
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  719 026e 0423     		movs	r3, #4	@ tmp145,
  720 0270 8363     		str	r3, [r0, #56]	@ tmp145, hdma_12(D)->ErrorCode
  511:src/stm32f1xx_hal_dma.c ****     return HAL_ERROR;
-ARM GAS  /tmp/cck4KHRF.s 			page 31
+ARM GAS  /tmp/ccHVGq3l.s 			page 31
 
 
  721              		.loc 1 511 0
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  526:src/stm32f1xx_hal_dma.c ****   }
  766              		.loc 1 526 0 discriminator 9
  767 02b0 734C     		ldr	r4, .L93+8	@ tmp155,
-ARM GAS  /tmp/cck4KHRF.s 			page 32
+ARM GAS  /tmp/ccHVGq3l.s 			page 32
 
 
  768 02b2 A342     		cmp	r3, r4	@ _16, tmp155
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  812 02fe 9342     		cmp	r3, r2	@ _29, tmp186
  813 0300 00F08E80 		beq	.L80	@,
  579:src/stm32f1xx_hal_dma.c **** 
-ARM GAS  /tmp/cck4KHRF.s 			page 33
+ARM GAS  /tmp/ccHVGq3l.s 			page 33
 
 
  814              		.loc 1 579 0 discriminator 7
@@ -1978,7 +1978,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  531:src/stm32f1xx_hal_dma.c ****   }
  858              		.loc 1 531 0 discriminator 9
  859 034a 4D4C     		ldr	r4, .L93+8	@ tmp161,
-ARM GAS  /tmp/cck4KHRF.s 			page 34
+ARM GAS  /tmp/ccHVGq3l.s 			page 34
 
 
  860 034c A342     		cmp	r3, r4	@ _16, tmp161
@@ -2038,7 +2038,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  908 039c 21D0     		beq	.L74	@,
  539:src/stm32f1xx_hal_dma.c ****     {
  909              		.loc 1 539 0 discriminator 7
-ARM GAS  /tmp/cck4KHRF.s 			page 35
+ARM GAS  /tmp/ccHVGq3l.s 			page 35
 
 
  910 039e 8342     		cmp	r3, r0	@ _29, tmp210
@@ -2098,7 +2098,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  955 03e8 4FF40023 		mov	r3, #524288	@ iftmp.18_4,
  956 03ec DFE7     		b	.L49	@
  957              	.L50:
-ARM GAS  /tmp/cck4KHRF.s 			page 36
+ARM GAS  /tmp/ccHVGq3l.s 			page 36
 
 
  558:src/stm32f1xx_hal_dma.c ****     {
@@ -2158,7 +2158,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  1003 0434 14D0     		beq	.L84	@,
  588:src/stm32f1xx_hal_dma.c ****   }
  1004              		.loc 1 588 0 discriminator 3
-ARM GAS  /tmp/cck4KHRF.s 			page 37
+ARM GAS  /tmp/ccHVGq3l.s 			page 37
 
 
  1005 0436 1432     		adds	r2, r2, #20	@ tmp194, tmp194,
@@ -2218,7 +2218,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  1054              	.LFE71:
  1055              		.size	HAL_DMA_PollForTransfer, .-HAL_DMA_PollForTransfer
  1056              		.align	1
-ARM GAS  /tmp/cck4KHRF.s 			page 38
+ARM GAS  /tmp/ccHVGq3l.s 			page 38
 
 
  1057              		.global	HAL_DMA_IRQHandler
@@ -2278,7 +2278,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  1100 04ac 1A68     		ldr	r2, [r3]	@ _16, _10->CCR
  1101 04ae 9606     		lsls	r6, r2, #26	@, _16,
  615:src/stm32f1xx_hal_dma.c ****     }
-ARM GAS  /tmp/cck4KHRF.s 			page 39
+ARM GAS  /tmp/ccHVGq3l.s 			page 39
 
 
  1102              		.loc 1 615 0
@@ -2338,7 +2338,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  1146              	.LCFI7:
  1147              		.cfi_remember_state
  1148              		.cfi_restore 6
-ARM GAS  /tmp/cck4KHRF.s 			page 40
+ARM GAS  /tmp/ccHVGq3l.s 			page 40
 
 
  1149              		.cfi_restore 5
@@ -2398,7 +2398,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  1195              		.loc 1 642 0
  1196 052e 214A     		ldr	r2, .L145	@ tmp162,
  1197 0530 9342     		cmp	r3, r2	@ _10, tmp162
-ARM GAS  /tmp/cck4KHRF.s 			page 41
+ARM GAS  /tmp/ccHVGq3l.s 			page 41
 
 
  1198 0532 19D0     		beq	.L111	@,
@@ -2458,7 +2458,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  1243 057a EEE7     		b	.L103	@
  1244              	.L115:
  1245 057c 4FF40033 		mov	r3, #131072	@ iftmp.42_2,
-ARM GAS  /tmp/cck4KHRF.s 			page 42
+ARM GAS  /tmp/ccHVGq3l.s 			page 42
 
 
  1246 0580 EBE7     		b	.L103	@
@@ -2518,7 +2518,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  1291              		.cfi_endproc
  1292              	.LFE72:
  1293              		.size	HAL_DMA_IRQHandler, .-HAL_DMA_IRQHandler
-ARM GAS  /tmp/cck4KHRF.s 			page 43
+ARM GAS  /tmp/ccHVGq3l.s 			page 43
 
 
  1294              		.align	1
@@ -2578,7 +2578,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  1339              		.p2align 1
  1340              	.L150:
  705:src/stm32f1xx_hal_dma.c ****       break;
-ARM GAS  /tmp/cck4KHRF.s 			page 44
+ARM GAS  /tmp/ccHVGq3l.s 			page 44
 
 
  1341              		.loc 1 705 0
@@ -2638,7 +2638,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  1386              		.type	HAL_DMA_UnRegisterCallback, %function
  1387              	HAL_DMA_UnRegisterCallback:
  1388              	.LFB74:
-ARM GAS  /tmp/cck4KHRF.s 			page 45
+ARM GAS  /tmp/ccHVGq3l.s 			page 45
 
 
  745:src/stm32f1xx_hal_dma.c ****   HAL_StatusTypeDef status = HAL_OK;
@@ -2698,7 +2698,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  789:src/stm32f1xx_hal_dma.c ****   
  1432              		.loc 1 789 0
  1433 062e 0022     		movs	r2, #0	@ tmp127,
-ARM GAS  /tmp/cck4KHRF.s 			page 46
+ARM GAS  /tmp/ccHVGq3l.s 			page 46
 
 
  1434 0630 83F82020 		strb	r2, [r3, #32]	@ tmp127, hdma_6(D)->Lock
@@ -2758,7 +2758,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  1478              	HAL_DMA_GetState:
  1479              	.LFB75:
  821:src/stm32f1xx_hal_dma.c ****   /* Return DMA handle state */
-ARM GAS  /tmp/cck4KHRF.s 			page 47
+ARM GAS  /tmp/ccHVGq3l.s 			page 47
 
 
  1480              		.loc 1 821 0
@@ -2818,7 +2818,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  1530 0006 00000000 		.4byte	.Ldebug_abbrev0
  1531 000a 04       		.byte	0x4
  1532 000b 01       		.uleb128 0x1
-ARM GAS  /tmp/cck4KHRF.s 			page 48
+ARM GAS  /tmp/ccHVGq3l.s 			page 48
 
 
  1533 000c 58010000 		.4byte	.LASF101
@@ -2878,7 +2878,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  1587 007e 04       		.uleb128 0x4
  1588 007f 04       		.byte	0x4
  1589 0080 05       		.byte	0x5
-ARM GAS  /tmp/cck4KHRF.s 			page 49
+ARM GAS  /tmp/ccHVGq3l.s 			page 49
 
 
  1590 0081 696E7400 		.ascii	"int\000"
@@ -2938,7 +2938,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  1644 00f4 B6040000 		.4byte	.LASF18
  1645 00f8 05       		.byte	0x5
  1646 00f9 34       		.byte	0x34
-ARM GAS  /tmp/cck4KHRF.s 			page 50
+ARM GAS  /tmp/ccHVGq3l.s 			page 50
 
 
  1647 00fa EE000000 		.4byte	0xee
@@ -2998,7 +2998,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  1701 0165 23       		.byte	0x23
  1702 0166 0C       		.uleb128 0xc
  1703 0167 00       		.byte	0
-ARM GAS  /tmp/cck4KHRF.s 			page 51
+ARM GAS  /tmp/ccHVGq3l.s 			page 51
 
 
  1704 0168 0E       		.uleb128 0xe
@@ -3058,7 +3058,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  1758 01d0 ED010000 		.4byte	0x1ed
  1759 01d4 10       		.uleb128 0x10
  1760 01d5 AD010000 		.4byte	.LASF28
-ARM GAS  /tmp/cck4KHRF.s 			page 52
+ARM GAS  /tmp/ccHVGq3l.s 			page 52
 
 
  1761 01d9 00       		.byte	0
@@ -3118,7 +3118,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  1815 023f 04       		.uleb128 0x4
  1816 0240 13       		.uleb128 0x13
  1817 0241 04050000 		.4byte	.LASF38
-ARM GAS  /tmp/cck4KHRF.s 			page 53
+ARM GAS  /tmp/ccHVGq3l.s 			page 53
 
 
  1818 0245 09       		.byte	0x9
@@ -3178,7 +3178,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  1872 02a5 2D060000 		.4byte	.LASF45
  1873 02a9 01       		.byte	0x1
  1874 02aa 10       		.uleb128 0x10
-ARM GAS  /tmp/cck4KHRF.s 			page 54
+ARM GAS  /tmp/ccHVGq3l.s 			page 54
 
 
  1875 02ab C9010000 		.4byte	.LASF46
@@ -3238,7 +3238,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  1929 0317 09       		.byte	0x9
  1930 0318 6F       		.byte	0x6f
  1931 0319 C6030000 		.4byte	0x3c6
-ARM GAS  /tmp/cck4KHRF.s 			page 55
+ARM GAS  /tmp/ccHVGq3l.s 			page 55
 
 
  1932 031d 13       		.uleb128 0x13
@@ -3298,7 +3298,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  1986 037d 23       		.byte	0x23
  1987 037e 2C       		.uleb128 0x2c
  1988 037f 13       		.uleb128 0x13
-ARM GAS  /tmp/cck4KHRF.s 			page 56
+ARM GAS  /tmp/ccHVGq3l.s 			page 56
 
 
  1989 0380 1E040000 		.4byte	.LASF64
@@ -3358,7 +3358,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  2043 03e0 15       		.uleb128 0x15
  2044 03e1 04       		.byte	0x4
  2045 03e2 CE030000 		.4byte	0x3ce
-ARM GAS  /tmp/cck4KHRF.s 			page 57
+ARM GAS  /tmp/ccHVGq3l.s 			page 57
 
 
  2046 03e6 15       		.uleb128 0x15
@@ -3418,7 +3418,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  2100 0450 01       		.byte	0x1
  2101 0451 86040000 		.4byte	0x486
  2102 0455 1A       		.uleb128 0x1a
-ARM GAS  /tmp/cck4KHRF.s 			page 58
+ARM GAS  /tmp/ccHVGq3l.s 			page 58
 
 
  2103 0456 92030000 		.4byte	.LASF77
@@ -3478,7 +3478,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  2157 04cf E4040000 		.4byte	0x4e4
  2158 04d3 1C       		.uleb128 0x1c
  2159 04d4 92030000 		.4byte	.LASF77
-ARM GAS  /tmp/cck4KHRF.s 			page 59
+ARM GAS  /tmp/ccHVGq3l.s 			page 59
 
 
  2160 04d8 01       		.byte	0x1
@@ -3538,7 +3538,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  2214 0556 B502     		.2byte	0x2b5
  2215 0558 F7030000 		.4byte	0x3f7
  2216 055c C1000000 		.4byte	.LLST36
-ARM GAS  /tmp/cck4KHRF.s 			page 60
+ARM GAS  /tmp/ccHVGq3l.s 			page 60
 
 
  2217 0560 1D       		.uleb128 0x1d
@@ -3598,7 +3598,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  2271 05de 01       		.byte	0x1
  2272 05df 5E02     		.2byte	0x25e
  2273 05e1 AC000000 		.4byte	0xac
-ARM GAS  /tmp/cck4KHRF.s 			page 61
+ARM GAS  /tmp/ccHVGq3l.s 			page 61
 
 
  2274 05e5 B9010000 		.4byte	.LLST34
@@ -3658,7 +3658,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  2328 0672 01       		.byte	0x1
  2329 0673 C901     		.2byte	0x1c9
  2330 0675 01       		.byte	0x1
-ARM GAS  /tmp/cck4KHRF.s 			page 62
+ARM GAS  /tmp/ccHVGq3l.s 			page 62
 
 
  2331 0676 ED010000 		.4byte	0x1ed
@@ -3718,7 +3718,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  2385 06f3 00       		.byte	0
  2386 06f4 00       		.byte	0
  2387 06f5 1F       		.uleb128 0x1f
-ARM GAS  /tmp/cck4KHRF.s 			page 63
+ARM GAS  /tmp/ccHVGq3l.s 			page 63
 
 
  2388 06f6 01       		.byte	0x1
@@ -3778,7 +3778,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  2442 077e CB040000 		.4byte	.LLST18
  2443 0782 26       		.uleb128 0x26
  2444 0783 61040000 		.4byte	0x461
-ARM GAS  /tmp/cck4KHRF.s 			page 64
+ARM GAS  /tmp/ccHVGq3l.s 			page 64
 
 
  2445 0787 DE040000 		.4byte	.LLST19
@@ -3838,7 +3838,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  2499 080e 01       		.byte	0x1
  2500 080f 5301     		.2byte	0x153
  2501 0811 26       		.uleb128 0x26
-ARM GAS  /tmp/cck4KHRF.s 			page 65
+ARM GAS  /tmp/ccHVGq3l.s 			page 65
 
 
  2502 0812 79040000 		.4byte	0x479
@@ -3898,7 +3898,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  2556 0899 AC000000 		.4byte	0xac
  2557 089d C4060000 		.4byte	.LLST2
  2558 08a1 00       		.byte	0
-ARM GAS  /tmp/cck4KHRF.s 			page 66
+ARM GAS  /tmp/ccHVGq3l.s 			page 66
 
 
  2559 08a2 2A       		.uleb128 0x2a
@@ -3958,7 +3958,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  2613 002c 24       		.uleb128 0x24
  2614 002d 00       		.byte	0
  2615 002e 0B       		.uleb128 0xb
-ARM GAS  /tmp/cck4KHRF.s 			page 67
+ARM GAS  /tmp/ccHVGq3l.s 			page 67
 
 
  2616 002f 0B       		.uleb128 0xb
@@ -4018,7 +4018,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  2670 0065 00       		.byte	0
  2671 0066 09       		.uleb128 0x9
  2672 0067 01       		.uleb128 0x1
-ARM GAS  /tmp/cck4KHRF.s 			page 68
+ARM GAS  /tmp/ccHVGq3l.s 			page 68
 
 
  2673 0068 01       		.byte	0x1
@@ -4078,7 +4078,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  2727 009e 13       		.uleb128 0x13
  2728 009f 38       		.uleb128 0x38
  2729 00a0 0A       		.uleb128 0xa
-ARM GAS  /tmp/cck4KHRF.s 			page 69
+ARM GAS  /tmp/ccHVGq3l.s 			page 69
 
 
  2730 00a1 00       		.byte	0
@@ -4138,7 +4138,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  2784 00d7 0B       		.uleb128 0xb
  2785 00d8 3B       		.uleb128 0x3b
  2786 00d9 0B       		.uleb128 0xb
-ARM GAS  /tmp/cck4KHRF.s 			page 70
+ARM GAS  /tmp/ccHVGq3l.s 			page 70
 
 
  2787 00da 01       		.uleb128 0x1
@@ -4198,7 +4198,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  2841 0110 0C       		.uleb128 0xc
  2842 0111 01       		.uleb128 0x1
  2843 0112 13       		.uleb128 0x13
-ARM GAS  /tmp/cck4KHRF.s 			page 71
+ARM GAS  /tmp/ccHVGq3l.s 			page 71
 
 
  2844 0113 00       		.byte	0
@@ -4258,7 +4258,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  2898 0149 11       		.uleb128 0x11
  2899 014a 01       		.uleb128 0x1
  2900 014b 12       		.uleb128 0x12
-ARM GAS  /tmp/cck4KHRF.s 			page 72
+ARM GAS  /tmp/ccHVGq3l.s 			page 72
 
 
  2901 014c 01       		.uleb128 0x1
@@ -4318,7 +4318,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  2955 0183 1F       		.uleb128 0x1f
  2956 0184 2E       		.uleb128 0x2e
  2957 0185 01       		.byte	0x1
-ARM GAS  /tmp/cck4KHRF.s 			page 73
+ARM GAS  /tmp/ccHVGq3l.s 			page 73
 
 
  2958 0186 3F       		.uleb128 0x3f
@@ -4378,7 +4378,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  3012 01bf 00       		.byte	0
  3013 01c0 00       		.byte	0
  3014 01c1 22       		.uleb128 0x22
-ARM GAS  /tmp/cck4KHRF.s 			page 74
+ARM GAS  /tmp/ccHVGq3l.s 			page 74
 
 
  3015 01c2 898201   		.uleb128 0x4109
@@ -4438,7 +4438,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  3069 01fd 27       		.uleb128 0x27
  3070 01fe 2E       		.uleb128 0x2e
  3071 01ff 01       		.byte	0x1
-ARM GAS  /tmp/cck4KHRF.s 			page 75
+ARM GAS  /tmp/ccHVGq3l.s 			page 75
 
 
  3072 0200 3F       		.uleb128 0x3f
@@ -4498,7 +4498,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  3126 0237 2A       		.uleb128 0x2a
  3127 0238 2E       		.uleb128 0x2e
  3128 0239 00       		.byte	0
-ARM GAS  /tmp/cck4KHRF.s 			page 76
+ARM GAS  /tmp/ccHVGq3l.s 			page 76
 
 
  3129 023a 3F       		.uleb128 0x3f
@@ -4558,7 +4558,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  3183 0058 4C060000 		.4byte	.LVL77-.Ltext0
  3184 005c 4E060000 		.4byte	.LVL78-.Ltext0
  3185 0060 0100     		.2byte	0x1
-ARM GAS  /tmp/cck4KHRF.s 			page 77
+ARM GAS  /tmp/ccHVGq3l.s 			page 77
 
 
  3186 0062 50       		.byte	0x50
@@ -4618,7 +4618,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  3240 00ed 00000000 		.4byte	0
  3241 00f1 00000000 		.4byte	0
  3242              	.LLST37:
-ARM GAS  /tmp/cck4KHRF.s 			page 78
+ARM GAS  /tmp/ccHVGq3l.s 			page 78
 
 
  3243 00f5 BC050000 		.4byte	.LVL67-.Ltext0
@@ -4678,7 +4678,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  3297 017b 50       		.byte	0x50
  3298 017c 9F       		.byte	0x9f
  3299 017d F4040000 		.4byte	.LVL62-.Ltext0
-ARM GAS  /tmp/cck4KHRF.s 			page 79
+ARM GAS  /tmp/ccHVGq3l.s 			page 79
 
 
  3300 0181 BC050000 		.4byte	.LFE72-.Ltext0
@@ -4738,7 +4738,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  3354 0211 C1020000 		.4byte	.LVL51-1-.Ltext0
  3355 0215 0100     		.2byte	0x1
  3356 0217 50       		.byte	0x50
-ARM GAS  /tmp/cck4KHRF.s 			page 80
+ARM GAS  /tmp/ccHVGq3l.s 			page 80
 
 
  3357 0218 C1020000 		.4byte	.LVL51-1-.Ltext0
@@ -4798,7 +4798,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  3411 02ad 2E030000 		.4byte	.LVL54-.Ltext0
  3412 02b1 0100     		.2byte	0x1
  3413 02b3 54       		.byte	0x54
-ARM GAS  /tmp/cck4KHRF.s 			page 81
+ARM GAS  /tmp/ccHVGq3l.s 			page 81
 
 
  3414 02b4 8A030000 		.4byte	.LVL55-.Ltext0
@@ -4858,7 +4858,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  3468 033f 50       		.byte	0x50
  3469 0340 9F       		.byte	0x9f
  3470 0341 DE010000 		.4byte	.LVL41-.Ltext0
-ARM GAS  /tmp/cck4KHRF.s 			page 82
+ARM GAS  /tmp/ccHVGq3l.s 			page 82
 
 
  3471 0345 31020000 		.4byte	.LVL42-1-.Ltext0
@@ -4918,7 +4918,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  3525 03c8 01       		.uleb128 0x1
  3526 03c9 50       		.byte	0x50
  3527 03ca 9F       		.byte	0x9f
-ARM GAS  /tmp/cck4KHRF.s 			page 83
+ARM GAS  /tmp/ccHVGq3l.s 			page 83
 
 
  3528 03cb A0010000 		.4byte	.LVL36-.Ltext0
@@ -4978,7 +4978,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  3582 044e 0100     		.2byte	0x1
  3583 0450 53       		.byte	0x53
  3584 0451 4C010000 		.4byte	.LVL25-.Ltext0
-ARM GAS  /tmp/cck4KHRF.s 			page 84
+ARM GAS  /tmp/ccHVGq3l.s 			page 84
 
 
  3585 0455 64010000 		.4byte	.LVL27-.Ltext0
@@ -5038,7 +5038,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  3639 04d6 00000000 		.4byte	0
  3640 04da 00000000 		.4byte	0
  3641              	.LLST19:
-ARM GAS  /tmp/cck4KHRF.s 			page 85
+ARM GAS  /tmp/ccHVGq3l.s 			page 85
 
 
  3642 04de 42010000 		.4byte	.LVL24-.Ltext0
@@ -5098,7 +5098,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  3696 0566 0100     		.2byte	0x1
  3697 0568 53       		.byte	0x53
  3698 0569 F0000000 		.4byte	.LVL16-.Ltext0
-ARM GAS  /tmp/cck4KHRF.s 			page 86
+ARM GAS  /tmp/ccHVGq3l.s 			page 86
 
 
  3699 056d 06010000 		.4byte	.LVL19-.Ltext0
@@ -5158,7 +5158,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  3753 05f7 0100     		.2byte	0x1
  3754 05f9 50       		.byte	0x50
  3755 05fa F2000000 		.4byte	.LVL17-.Ltext0
-ARM GAS  /tmp/cck4KHRF.s 			page 87
+ARM GAS  /tmp/ccHVGq3l.s 			page 87
 
 
  3756 05fe FE000000 		.4byte	.LVL18-.Ltext0
@@ -5218,7 +5218,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  3810 067e 0200     		.2byte	0x2
  3811 0680 7D       		.byte	0x7d
  3812 0681 08       		.sleb128 8
-ARM GAS  /tmp/cck4KHRF.s 			page 88
+ARM GAS  /tmp/ccHVGq3l.s 			page 88
 
 
  3813 0682 00000000 		.4byte	0
@@ -5278,7 +5278,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  3867 0708 9F       		.byte	0x9f
  3868 0709 00000000 		.4byte	0
  3869 070d 00000000 		.4byte	0
-ARM GAS  /tmp/cck4KHRF.s 			page 89
+ARM GAS  /tmp/ccHVGq3l.s 			page 89
 
 
  3870              		.section	.debug_aranges,"",%progbits
@@ -5338,7 +5338,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  3910 0034 48414C5F 		.ascii	"HAL_UNLOCKED\000"
  3910      554E4C4F 
  3910      434B4544 
-ARM GAS  /tmp/cck4KHRF.s 			page 90
+ARM GAS  /tmp/ccHVGq3l.s 			page 90
 
 
  3910      00
@@ -5398,7 +5398,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  3933              	.LASF85:
  3934 00dc 48414C5F 		.ascii	"HAL_DMA_RegisterCallback\000"
  3934      444D415F 
-ARM GAS  /tmp/cck4KHRF.s 			page 91
+ARM GAS  /tmp/ccHVGq3l.s 			page 91
 
 
  3934      52656769 
@@ -5458,7 +5458,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  3955      65547970 
  3955      65446566 
  3956              	.LASF46:
-ARM GAS  /tmp/cck4KHRF.s 			page 92
+ARM GAS  /tmp/ccHVGq3l.s 			page 92
 
 
  3957 01c9 48414C5F 		.ascii	"HAL_DMA_STATE_BUSY\000"
@@ -5518,7 +5518,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  3981      00
  3982              	.LASF37:
  3983 0263 50657269 		.ascii	"PeriphInc\000"
-ARM GAS  /tmp/cck4KHRF.s 			page 93
+ARM GAS  /tmp/ccHVGq3l.s 			page 93
 
 
  3983      7068496E 
@@ -5578,7 +5578,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  4005      444D415F 
  4005      41626F72 
  4005      745F4954 
-ARM GAS  /tmp/cck4KHRF.s 			page 94
+ARM GAS  /tmp/ccHVGq3l.s 			page 94
 
 
  4005      00
@@ -5638,7 +5638,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  4030              	.LASF57:
  4031 03b9 496E7374 		.ascii	"Instance\000"
  4031      616E6365 
-ARM GAS  /tmp/cck4KHRF.s 			page 95
+ARM GAS  /tmp/ccHVGq3l.s 			page 95
 
 
  4031      00
@@ -5698,7 +5698,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  4054              	.LASF96:
  4055 0466 48414C5F 		.ascii	"HAL_DMA_Abort\000"
  4055      444D415F 
-ARM GAS  /tmp/cck4KHRF.s 			page 96
+ARM GAS  /tmp/ccHVGq3l.s 			page 96
 
 
  4055      41626F72 
@@ -5758,7 +5758,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  4077      58464552 
  4077      5F414C4C 
  4077      5F43425F 
-ARM GAS  /tmp/cck4KHRF.s 			page 97
+ARM GAS  /tmp/ccHVGq3l.s 			page 97
 
 
  4078              	.LASF74:
@@ -5818,7 +5818,7 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  4101      00
  4102              	.LASF11:
  4103 05bb 756E7369 		.ascii	"unsigned int\000"
-ARM GAS  /tmp/cck4KHRF.s 			page 98
+ARM GAS  /tmp/ccHVGq3l.s 			page 98
 
 
  4103      676E6564 
@@ -5866,40 +5866,40 @@ ARM GAS  /tmp/cck4KHRF.s 			page 1
  4119      466F7254 
  4119      72616E73 
  4120              		.ident	"GCC: (15:6.3.1+svn253039-1build1) 6.3.1 20170620"
-ARM GAS  /tmp/cck4KHRF.s 			page 99
+ARM GAS  /tmp/ccHVGq3l.s 			page 99
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32f1xx_hal_dma.c
-     /tmp/cck4KHRF.s:69     .text:0000000000000000 $t
-     /tmp/cck4KHRF.s:76     .text:0000000000000000 HAL_DMA_Init
-     /tmp/cck4KHRF.s:164    .text:0000000000000058 $d
-     /tmp/cck4KHRF.s:169    .text:0000000000000060 $t
-     /tmp/cck4KHRF.s:176    .text:0000000000000060 HAL_DMA_DeInit
-     /tmp/cck4KHRF.s:254    .text:00000000000000ac $d
-     /tmp/cck4KHRF.s:259    .text:00000000000000b4 $t
-     /tmp/cck4KHRF.s:266    .text:00000000000000b4 HAL_DMA_Start
-     /tmp/cck4KHRF.s:373    .text:0000000000000110 HAL_DMA_Start_IT
-     /tmp/cck4KHRF.s:502    .text:000000000000018a HAL_DMA_Abort
-     /tmp/cck4KHRF.s:564    .text:00000000000001cc HAL_DMA_Abort_IT
-     /tmp/cck4KHRF.s:675    .text:0000000000000254 $d
-     /tmp/cck4KHRF.s:680    .text:000000000000025c $t
-     /tmp/cck4KHRF.s:687    .text:000000000000025c HAL_DMA_PollForTransfer
-     /tmp/cck4KHRF.s:1046   .text:0000000000000478 $d
-     /tmp/cck4KHRF.s:1056   .text:0000000000000494 $t
-     /tmp/cck4KHRF.s:1063   .text:0000000000000494 HAL_DMA_IRQHandler
-     /tmp/cck4KHRF.s:1289   .text:00000000000005b4 $d
-     /tmp/cck4KHRF.s:1294   .text:00000000000005bc $t
-     /tmp/cck4KHRF.s:1301   .text:00000000000005bc HAL_DMA_RegisterCallback
-     /tmp/cck4KHRF.s:1335   .text:00000000000005de $d
-     /tmp/cck4KHRF.s:1339   .text:00000000000005e2 $t
-     /tmp/cck4KHRF.s:1387   .text:0000000000000602 HAL_DMA_UnRegisterCallback
-     /tmp/cck4KHRF.s:1418   .text:0000000000000624 $d
-     /tmp/cck4KHRF.s:1478   .text:0000000000000650 HAL_DMA_GetState
-     /tmp/cck4KHRF.s:1500   .text:0000000000000656 HAL_DMA_GetError
+     /tmp/ccHVGq3l.s:69     .text:0000000000000000 $t
+     /tmp/ccHVGq3l.s:76     .text:0000000000000000 HAL_DMA_Init
+     /tmp/ccHVGq3l.s:164    .text:0000000000000058 $d
+     /tmp/ccHVGq3l.s:169    .text:0000000000000060 $t
+     /tmp/ccHVGq3l.s:176    .text:0000000000000060 HAL_DMA_DeInit
+     /tmp/ccHVGq3l.s:254    .text:00000000000000ac $d
+     /tmp/ccHVGq3l.s:259    .text:00000000000000b4 $t
+     /tmp/ccHVGq3l.s:266    .text:00000000000000b4 HAL_DMA_Start
+     /tmp/ccHVGq3l.s:373    .text:0000000000000110 HAL_DMA_Start_IT
+     /tmp/ccHVGq3l.s:502    .text:000000000000018a HAL_DMA_Abort
+     /tmp/ccHVGq3l.s:564    .text:00000000000001cc HAL_DMA_Abort_IT
+     /tmp/ccHVGq3l.s:675    .text:0000000000000254 $d
+     /tmp/ccHVGq3l.s:680    .text:000000000000025c $t
+     /tmp/ccHVGq3l.s:687    .text:000000000000025c HAL_DMA_PollForTransfer
+     /tmp/ccHVGq3l.s:1046   .text:0000000000000478 $d
+     /tmp/ccHVGq3l.s:1056   .text:0000000000000494 $t
+     /tmp/ccHVGq3l.s:1063   .text:0000000000000494 HAL_DMA_IRQHandler
+     /tmp/ccHVGq3l.s:1289   .text:00000000000005b4 $d
+     /tmp/ccHVGq3l.s:1294   .text:00000000000005bc $t
+     /tmp/ccHVGq3l.s:1301   .text:00000000000005bc HAL_DMA_RegisterCallback
+     /tmp/ccHVGq3l.s:1335   .text:00000000000005de $d
+     /tmp/ccHVGq3l.s:1339   .text:00000000000005e2 $t
+     /tmp/ccHVGq3l.s:1387   .text:0000000000000602 HAL_DMA_UnRegisterCallback
+     /tmp/ccHVGq3l.s:1418   .text:0000000000000624 $d
+     /tmp/ccHVGq3l.s:1478   .text:0000000000000650 HAL_DMA_GetState
+     /tmp/ccHVGq3l.s:1500   .text:0000000000000656 HAL_DMA_GetError
                      .debug_frame:0000000000000010 $d
-     /tmp/cck4KHRF.s:1423   .text:0000000000000629 $d
-     /tmp/cck4KHRF.s:1423   .text:000000000000062a $t
+     /tmp/ccHVGq3l.s:1423   .text:0000000000000629 $d
+     /tmp/ccHVGq3l.s:1423   .text:000000000000062a $t
 
 UNDEFINED SYMBOLS
 HAL_GetTick

@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccvrs2bU.s 			page 1
+ARM GAS  /tmp/ccRM5e9E.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -18,7 +18,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
   15              	@ GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
   16              	@ options passed:  -I ./inc -I ./inc/Legacy -I ../cmsisstm32f1xx/inc
   17              	@ -I ../cmsiscore/inc -imultilib thumb/v7-m -D__USES_INITFINI__
-  18              	@ -D STM32F103x6 -D RUN_FROM_FLASH=1 -D __c src/stm32f1xx_hal_smartcard.c
+  18              	@ -D STM32F103x6 -D RUN_FROM_FLASH=1 src/stm32f1xx_hal_smartcard.c
   19              	@ -mcpu=cortex-m3 -mthumb -auxbase-strip bin/stm32f1xx_hal_smartcard.o -g
   20              	@ -gdwarf-2 -Os -Wall -fomit-frame-pointer -fverbose-asm
   21              	@ options enabled:  -faggressive-loop-optimizations -falign-jumps
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
   55              	@ -ftree-copy-prop -ftree-cselim -ftree-dce -ftree-dominator-opts
   56              	@ -ftree-dse -ftree-forwprop -ftree-fre -ftree-loop-if-convert
   57              	@ -ftree-loop-im -ftree-loop-ivcanon -ftree-loop-optimize
-ARM GAS  /tmp/ccvrs2bU.s 			page 2
+ARM GAS  /tmp/ccRM5e9E.s 			page 2
 
 
   58              	@ -ftree-parallelize-loops= -ftree-phiprop -ftree-pre -ftree-pta
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
   35:src/stm32f1xx_hal_smartcard.c ****             (+++) Configure the DMA Tx/Rx channel.
   36:src/stm32f1xx_hal_smartcard.c ****             (+++) Associate the initialized DMA handle to the SMARTCARD DMA Tx/Rx handle.
   37:src/stm32f1xx_hal_smartcard.c ****             (+++) Configure the priority and enable the NVIC for the transfer complete interrupt on
-ARM GAS  /tmp/ccvrs2bU.s 			page 3
+ARM GAS  /tmp/ccRM5e9E.s 			page 3
 
 
   38:src/stm32f1xx_hal_smartcard.c ****             (+++) Configure the USARTx interrupt priority and enable the NVIC USART IRQ handle
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
   92:src/stm32f1xx_hal_smartcard.c ****       (+) __HAL_SMARTCARD_GET_FLAG : Check whether the specified SMARTCARD flag is set or not
   93:src/stm32f1xx_hal_smartcard.c ****       (+) __HAL_SMARTCARD_CLEAR_FLAG : Clear the specified SMARTCARD pending flag
   94:src/stm32f1xx_hal_smartcard.c ****       (+) __HAL_SMARTCARD_ENABLE_IT: Enable the specified SMARTCARD interrupt
-ARM GAS  /tmp/ccvrs2bU.s 			page 4
+ARM GAS  /tmp/ccRM5e9E.s 			page 4
 
 
   95:src/stm32f1xx_hal_smartcard.c ****       (+) __HAL_SMARTCARD_DISABLE_IT: Disable the specified SMARTCARD interrupt
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  149:src/stm32f1xx_hal_smartcard.c ****     in HAL_SMARTCARD_STATE_READY or HAL_SMARTCARD_STATE_RESET state, thus registered (user)
  150:src/stm32f1xx_hal_smartcard.c ****     MspInit/DeInit callbacks can be used during the Init/DeInit.
  151:src/stm32f1xx_hal_smartcard.c ****     In that case first register the MspInit/MspDeInit user callbacks
-ARM GAS  /tmp/ccvrs2bU.s 			page 5
+ARM GAS  /tmp/ccRM5e9E.s 			page 5
 
 
  152:src/stm32f1xx_hal_smartcard.c ****     using @ref HAL_SMARTCARD_RegisterCallback() before calling @ref HAL_SMARTCARD_DeInit()
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  206:src/stm32f1xx_hal_smartcard.c **** static void SMARTCARD_EndRxTransfer(SMARTCARD_HandleTypeDef *hsc);
  207:src/stm32f1xx_hal_smartcard.c **** static void SMARTCARD_SetConfig (SMARTCARD_HandleTypeDef *hsc);
  208:src/stm32f1xx_hal_smartcard.c **** static HAL_StatusTypeDef SMARTCARD_Transmit_IT(SMARTCARD_HandleTypeDef *hsc);
-ARM GAS  /tmp/ccvrs2bU.s 			page 6
+ARM GAS  /tmp/ccRM5e9E.s 			page 6
 
 
  209:src/stm32f1xx_hal_smartcard.c **** static HAL_StatusTypeDef SMARTCARD_EndTransmit_IT(SMARTCARD_HandleTypeDef *hsc);
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  263:src/stm32f1xx_hal_smartcard.c ****         (++) Even parity
  264:src/stm32f1xx_hal_smartcard.c ****         (++) BaudRate = 12096 baud
  265:src/stm32f1xx_hal_smartcard.c ****         (++) Tx and Rx enabled
-ARM GAS  /tmp/ccvrs2bU.s 			page 7
+ARM GAS  /tmp/ccRM5e9E.s 			page 7
 
 
  266:src/stm32f1xx_hal_smartcard.c ****   [..]
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  320:src/stm32f1xx_hal_smartcard.c **** 
  321:src/stm32f1xx_hal_smartcard.c ****     /* Init the low level hardware */
  322:src/stm32f1xx_hal_smartcard.c ****     hsc->MspInitCallback(hsc);
-ARM GAS  /tmp/ccvrs2bU.s 			page 8
+ARM GAS  /tmp/ccRM5e9E.s 			page 8
 
 
  323:src/stm32f1xx_hal_smartcard.c **** #else
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  377:src/stm32f1xx_hal_smartcard.c ****   /* Check the SMARTCARD handle allocation */
  378:src/stm32f1xx_hal_smartcard.c ****   if(hsc == NULL)
  379:src/stm32f1xx_hal_smartcard.c ****   {
-ARM GAS  /tmp/ccvrs2bU.s 			page 9
+ARM GAS  /tmp/ccRM5e9E.s 			page 9
 
 
  380:src/stm32f1xx_hal_smartcard.c ****     return HAL_ERROR;
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  434:src/stm32f1xx_hal_smartcard.c ****   */
  435:src/stm32f1xx_hal_smartcard.c **** __weak void HAL_SMARTCARD_MspDeInit(SMARTCARD_HandleTypeDef *hsc)
  436:src/stm32f1xx_hal_smartcard.c **** {
-ARM GAS  /tmp/ccvrs2bU.s 			page 10
+ARM GAS  /tmp/ccRM5e9E.s 			page 10
 
 
  437:src/stm32f1xx_hal_smartcard.c ****   /* Prevent unused argument(s) compilation warning */
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  491:src/stm32f1xx_hal_smartcard.c ****         hsc->ErrorCallback = pCallback;
  492:src/stm32f1xx_hal_smartcard.c ****         break;
  493:src/stm32f1xx_hal_smartcard.c **** 
-ARM GAS  /tmp/ccvrs2bU.s 			page 11
+ARM GAS  /tmp/ccRM5e9E.s 			page 11
 
 
  494:src/stm32f1xx_hal_smartcard.c ****       case HAL_SMARTCARD_ABORT_COMPLETE_CB_ID :
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  548:src/stm32f1xx_hal_smartcard.c ****     hsc->ErrorCode |= HAL_SMARTCARD_ERROR_INVALID_CALLBACK;
  549:src/stm32f1xx_hal_smartcard.c **** 
  550:src/stm32f1xx_hal_smartcard.c ****     /* Return error status */
-ARM GAS  /tmp/ccvrs2bU.s 			page 12
+ARM GAS  /tmp/ccRM5e9E.s 			page 12
 
 
  551:src/stm32f1xx_hal_smartcard.c ****     status =  HAL_ERROR;
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  605:src/stm32f1xx_hal_smartcard.c ****         break;
  606:src/stm32f1xx_hal_smartcard.c **** 
  607:src/stm32f1xx_hal_smartcard.c ****       case HAL_SMARTCARD_ABORT_RECEIVE_COMPLETE_CB_ID :
-ARM GAS  /tmp/ccvrs2bU.s 			page 13
+ARM GAS  /tmp/ccRM5e9E.s 			page 13
 
 
  608:src/stm32f1xx_hal_smartcard.c ****         hsc->AbortReceiveCpltCallback = HAL_SMARTCARD_AbortReceiveCpltCallback;   /* Legacy weak Ab
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  662:src/stm32f1xx_hal_smartcard.c ****   return status;
  663:src/stm32f1xx_hal_smartcard.c **** }
  664:src/stm32f1xx_hal_smartcard.c **** #endif /* USE_HAL_SMARTCARD_REGISTER_CALLBACKS */
-ARM GAS  /tmp/ccvrs2bU.s 			page 14
+ARM GAS  /tmp/ccRM5e9E.s 			page 14
 
 
  665:src/stm32f1xx_hal_smartcard.c **** 
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  719:src/stm32f1xx_hal_smartcard.c ****     (#) Non-Blocking mode transfers could be aborted using Abort API's :
  720:src/stm32f1xx_hal_smartcard.c ****         (+) HAL_SMARTCARD_Abort()
  721:src/stm32f1xx_hal_smartcard.c ****         (+) HAL_SMARTCARD_AbortTransmit()
-ARM GAS  /tmp/ccvrs2bU.s 			page 15
+ARM GAS  /tmp/ccRM5e9E.s 			page 15
 
 
  722:src/stm32f1xx_hal_smartcard.c ****         (+) HAL_SMARTCARD_AbortReceive()
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  776:src/stm32f1xx_hal_smartcard.c **** 
  777:src/stm32f1xx_hal_smartcard.c ****     hsc->TxXferSize = Size;
  778:src/stm32f1xx_hal_smartcard.c ****     hsc->TxXferCount = Size;
-ARM GAS  /tmp/ccvrs2bU.s 			page 16
+ARM GAS  /tmp/ccRM5e9E.s 			page 16
 
 
  779:src/stm32f1xx_hal_smartcard.c ****     while(hsc->TxXferCount > 0U)
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  833:src/stm32f1xx_hal_smartcard.c **** 
  834:src/stm32f1xx_hal_smartcard.c ****     hsc->ErrorCode = HAL_SMARTCARD_ERROR_NONE;
  835:src/stm32f1xx_hal_smartcard.c ****     hsc->RxState = HAL_SMARTCARD_STATE_BUSY_RX;
-ARM GAS  /tmp/ccvrs2bU.s 			page 17
+ARM GAS  /tmp/ccRM5e9E.s 			page 17
 
 
  836:src/stm32f1xx_hal_smartcard.c **** 
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  890:src/stm32f1xx_hal_smartcard.c **** 
  891:src/stm32f1xx_hal_smartcard.c ****     hsc->pTxBuffPtr = pData;
  892:src/stm32f1xx_hal_smartcard.c ****     hsc->TxXferSize = Size;
-ARM GAS  /tmp/ccvrs2bU.s 			page 18
+ARM GAS  /tmp/ccRM5e9E.s 			page 18
 
 
  893:src/stm32f1xx_hal_smartcard.c ****     hsc->TxXferCount = Size;
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  947:src/stm32f1xx_hal_smartcard.c ****     __HAL_UNLOCK(hsc);
  948:src/stm32f1xx_hal_smartcard.c **** 
  949:src/stm32f1xx_hal_smartcard.c ****     /* Enable the SMARTCARD Parity Error and Data Register not empty Interrupts */
-ARM GAS  /tmp/ccvrs2bU.s 			page 19
+ARM GAS  /tmp/ccRM5e9E.s 			page 19
 
 
  950:src/stm32f1xx_hal_smartcard.c ****     SET_BIT(hsc->Instance->CR1, USART_CR1_PEIE| USART_CR1_RXNEIE);
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
 1004:src/stm32f1xx_hal_smartcard.c ****     HAL_DMA_Start_IT(hsc->hdmatx, *(uint32_t*)tmp, (uint32_t)&hsc->Instance->DR, Size);
 1005:src/stm32f1xx_hal_smartcard.c **** 
 1006:src/stm32f1xx_hal_smartcard.c ****      /* Clear the TC flag in the SR register by writing 0 to it */
-ARM GAS  /tmp/ccvrs2bU.s 			page 20
+ARM GAS  /tmp/ccRM5e9E.s 			page 20
 
 
 1007:src/stm32f1xx_hal_smartcard.c ****     __HAL_SMARTCARD_CLEAR_FLAG(hsc, SMARTCARD_FLAG_TC);
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
 1061:src/stm32f1xx_hal_smartcard.c ****     hsc->hdmatx->XferAbortCallback = NULL;
 1062:src/stm32f1xx_hal_smartcard.c **** 
 1063:src/stm32f1xx_hal_smartcard.c ****     /* Enable the DMA channel */
-ARM GAS  /tmp/ccvrs2bU.s 			page 21
+ARM GAS  /tmp/ccRM5e9E.s 			page 21
 
 
 1064:src/stm32f1xx_hal_smartcard.c ****     tmp = (uint32_t*)&pData;
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
 1118:src/stm32f1xx_hal_smartcard.c ****          No call back execution at end of DMA abort procedure */
 1119:src/stm32f1xx_hal_smartcard.c ****       hsc->hdmatx->XferAbortCallback = NULL;
 1120:src/stm32f1xx_hal_smartcard.c **** 
-ARM GAS  /tmp/ccvrs2bU.s 			page 22
+ARM GAS  /tmp/ccRM5e9E.s 			page 22
 
 
 1121:src/stm32f1xx_hal_smartcard.c ****       HAL_DMA_Abort(hsc->hdmatx);
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
 1175:src/stm32f1xx_hal_smartcard.c ****     CLEAR_BIT(hsc->Instance->CR3, USART_CR3_DMAT);
 1176:src/stm32f1xx_hal_smartcard.c **** 
 1177:src/stm32f1xx_hal_smartcard.c ****     /* Abort the SMARTCARD DMA Tx channel : use blocking DMA Abort API (no callback) */
-ARM GAS  /tmp/ccvrs2bU.s 			page 23
+ARM GAS  /tmp/ccRM5e9E.s 			page 23
 
 
 1178:src/stm32f1xx_hal_smartcard.c ****     if(hsc->hdmatx != NULL)
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
 1232:src/stm32f1xx_hal_smartcard.c ****   hsc->RxXferCount = 0x00U;
 1233:src/stm32f1xx_hal_smartcard.c **** 
 1234:src/stm32f1xx_hal_smartcard.c ****   /* Restore hsc->RxState to Ready */
-ARM GAS  /tmp/ccvrs2bU.s 			page 24
+ARM GAS  /tmp/ccRM5e9E.s 			page 24
 
 
 1235:src/stm32f1xx_hal_smartcard.c ****   hsc->RxState = HAL_SMARTCARD_STATE_READY;
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
 1289:src/stm32f1xx_hal_smartcard.c ****       hsc->hdmarx->XferAbortCallback = NULL;
 1290:src/stm32f1xx_hal_smartcard.c ****     }
 1291:src/stm32f1xx_hal_smartcard.c ****   }
-ARM GAS  /tmp/ccvrs2bU.s 			page 25
+ARM GAS  /tmp/ccRM5e9E.s 			page 25
 
 
 1292:src/stm32f1xx_hal_smartcard.c **** 
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
 1346:src/stm32f1xx_hal_smartcard.c ****     hsc->RxXferCount = 0x00U;
 1347:src/stm32f1xx_hal_smartcard.c **** 
 1348:src/stm32f1xx_hal_smartcard.c ****     /* Reset ErrorCode */
-ARM GAS  /tmp/ccvrs2bU.s 			page 26
+ARM GAS  /tmp/ccRM5e9E.s 			page 26
 
 
 1349:src/stm32f1xx_hal_smartcard.c ****     hsc->ErrorCode = HAL_SMARTCARD_ERROR_NONE;
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
 1403:src/stm32f1xx_hal_smartcard.c ****       }
 1404:src/stm32f1xx_hal_smartcard.c ****     }
 1405:src/stm32f1xx_hal_smartcard.c ****     else
-ARM GAS  /tmp/ccvrs2bU.s 			page 27
+ARM GAS  /tmp/ccRM5e9E.s 			page 27
 
 
 1406:src/stm32f1xx_hal_smartcard.c ****     {
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
 1460:src/stm32f1xx_hal_smartcard.c ****   /* Disable RXNE, PE and ERR (Frame error, noise error, overrun error) interrupts */
 1461:src/stm32f1xx_hal_smartcard.c ****   CLEAR_BIT(hsc->Instance->CR1, (USART_CR1_RXNEIE | USART_CR1_PEIE));
 1462:src/stm32f1xx_hal_smartcard.c ****   CLEAR_BIT(hsc->Instance->CR3, USART_CR3_EIE);
-ARM GAS  /tmp/ccvrs2bU.s 			page 28
+ARM GAS  /tmp/ccRM5e9E.s 			page 28
 
 
 1463:src/stm32f1xx_hal_smartcard.c **** 
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
 1517:src/stm32f1xx_hal_smartcard.c ****   }
 1518:src/stm32f1xx_hal_smartcard.c **** 
 1519:src/stm32f1xx_hal_smartcard.c ****   return HAL_OK;
-ARM GAS  /tmp/ccvrs2bU.s 			page 29
+ARM GAS  /tmp/ccRM5e9E.s 			page 29
 
 
 1520:src/stm32f1xx_hal_smartcard.c **** }
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
 1574:src/stm32f1xx_hal_smartcard.c ****     /* Call the Error call Back in case of Errors --------------------------*/
 1575:src/stm32f1xx_hal_smartcard.c ****     if(hsc->ErrorCode != HAL_SMARTCARD_ERROR_NONE)
 1576:src/stm32f1xx_hal_smartcard.c ****     {
-ARM GAS  /tmp/ccvrs2bU.s 			page 30
+ARM GAS  /tmp/ccRM5e9E.s 			page 30
 
 
 1577:src/stm32f1xx_hal_smartcard.c ****       /* SMARTCARD in mode Receiver ----------------------------------------*/
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
 1631:src/stm32f1xx_hal_smartcard.c ****       }
 1632:src/stm32f1xx_hal_smartcard.c ****       else
 1633:src/stm32f1xx_hal_smartcard.c ****       {
-ARM GAS  /tmp/ccvrs2bU.s 			page 31
+ARM GAS  /tmp/ccRM5e9E.s 			page 31
 
 
 1634:src/stm32f1xx_hal_smartcard.c ****         /* Non Blocking error : transfer could go on.
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
 1688:src/stm32f1xx_hal_smartcard.c ****   /* Prevent unused argument(s) compilation warning */
 1689:src/stm32f1xx_hal_smartcard.c ****   UNUSED(hsc);
 1690:src/stm32f1xx_hal_smartcard.c **** 
-ARM GAS  /tmp/ccvrs2bU.s 			page 32
+ARM GAS  /tmp/ccRM5e9E.s 			page 32
 
 
 1691:src/stm32f1xx_hal_smartcard.c ****   /* NOTE : This function should not be modified, when the callback is needed,
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
 1745:src/stm32f1xx_hal_smartcard.c ****   * @retval None
 1746:src/stm32f1xx_hal_smartcard.c ****   */
 1747:src/stm32f1xx_hal_smartcard.c **** __weak void HAL_SMARTCARD_AbortReceiveCpltCallback (SMARTCARD_HandleTypeDef *hsc)
-ARM GAS  /tmp/ccvrs2bU.s 			page 33
+ARM GAS  /tmp/ccRM5e9E.s 			page 33
 
 
 1748:src/stm32f1xx_hal_smartcard.c **** {
@@ -1978,7 +1978,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
 1802:src/stm32f1xx_hal_smartcard.c **** /**
 1803:src/stm32f1xx_hal_smartcard.c ****   * @}
 1804:src/stm32f1xx_hal_smartcard.c ****   */
-ARM GAS  /tmp/ccvrs2bU.s 			page 34
+ARM GAS  /tmp/ccRM5e9E.s 			page 34
 
 
 1805:src/stm32f1xx_hal_smartcard.c **** 
@@ -2038,7 +2038,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
 1845:src/stm32f1xx_hal_smartcard.c ****   /* Disable the DMA transfer for transmit request by setting the DMAT bit
 1846:src/stm32f1xx_hal_smartcard.c ****      in the USART CR3 register */
 1847:src/stm32f1xx_hal_smartcard.c ****   CLEAR_BIT(hsc->Instance->CR3, USART_CR3_DMAT);
-ARM GAS  /tmp/ccvrs2bU.s 			page 35
+ARM GAS  /tmp/ccRM5e9E.s 			page 35
 
 
   91              		.loc 1 1847 0
@@ -2098,7 +2098,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
 1880:src/stm32f1xx_hal_smartcard.c ****   /* Call legacy weak Rx complete callback */
 1881:src/stm32f1xx_hal_smartcard.c ****   HAL_SMARTCARD_RxCpltCallback(hsc);
 1882:src/stm32f1xx_hal_smartcard.c **** #endif /* USE_HAL_SMARTCARD_REGISTER_CALLBACK */
-ARM GAS  /tmp/ccvrs2bU.s 			page 36
+ARM GAS  /tmp/ccRM5e9E.s 			page 36
 
 
 1883:src/stm32f1xx_hal_smartcard.c **** }
@@ -2158,7 +2158,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  117              	.LVL3:
  118 001a F8B5     		push	{r3, r4, r5, r6, r7, lr}	@
  119              	.LCFI0:
-ARM GAS  /tmp/ccvrs2bU.s 			page 37
+ARM GAS  /tmp/ccRM5e9E.s 			page 37
 
 
  120              		.cfi_def_cfa_offset 24
@@ -2218,7 +2218,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
 1940:src/stm32f1xx_hal_smartcard.c ****       {
  148              		.loc 1 1940 0
  149 0036 95B9     		cbnz	r5, .L5	@ Timeout,
-ARM GAS  /tmp/ccvrs2bU.s 			page 38
+ARM GAS  /tmp/ccRM5e9E.s 			page 38
 
 
  150              	.L7:
@@ -2278,7 +2278,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  196              		.type	HAL_SMARTCARD_MspInit, %function
  197              	HAL_SMARTCARD_MspInit:
  198              	.LFB120:
-ARM GAS  /tmp/ccvrs2bU.s 			page 39
+ARM GAS  /tmp/ccRM5e9E.s 			page 39
 
 
  199              		.cfi_startproc
@@ -2338,7 +2338,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  332:src/stm32f1xx_hal_smartcard.c **** 
  246              		.loc 1 332 0
  247 008e 2B68     		ldr	r3, [r5]	@ _10, hsc_4(D)->Instance
-ARM GAS  /tmp/ccvrs2bU.s 			page 40
+ARM GAS  /tmp/ccRM5e9E.s 			page 40
 
 
  248 0090 696A     		ldr	r1, [r5, #36]	@ hsc_4(D)->Init.Prescaler, hsc_4(D)->Init.Prescaler
@@ -2398,7 +2398,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
 2008:src/stm32f1xx_hal_smartcard.c ****     if(--hsc->TxXferCount == 0U)
 2009:src/stm32f1xx_hal_smartcard.c ****     {
 2010:src/stm32f1xx_hal_smartcard.c ****       /* Disable the SMARTCARD Transmit data register empty Interrupt */
-ARM GAS  /tmp/ccvrs2bU.s 			page 41
+ARM GAS  /tmp/ccRM5e9E.s 			page 41
 
 
 2011:src/stm32f1xx_hal_smartcard.c ****       CLEAR_BIT(hsc->Instance->CR1, USART_CR1_TXEIE);
@@ -2458,7 +2458,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
 2065:src/stm32f1xx_hal_smartcard.c ****   {
 2066:src/stm32f1xx_hal_smartcard.c ****     tmp = (uint16_t*) hsc->pRxBuffPtr;
 2067:src/stm32f1xx_hal_smartcard.c ****     *tmp = (uint8_t)(hsc->Instance->DR & (uint8_t)0x00FF);
-ARM GAS  /tmp/ccvrs2bU.s 			page 42
+ARM GAS  /tmp/ccRM5e9E.s 			page 42
 
 
 2068:src/stm32f1xx_hal_smartcard.c ****     hsc->pRxBuffPtr += 1U;
@@ -2518,7 +2518,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
 2122:src/stm32f1xx_hal_smartcard.c **** /**
 2123:src/stm32f1xx_hal_smartcard.c ****   * @brief  DMA SMARTCARD Tx communication abort callback, when initiated by user
 2124:src/stm32f1xx_hal_smartcard.c ****   *         (To be called at end of DMA Tx Abort procedure following user abort request).
-ARM GAS  /tmp/ccvrs2bU.s 			page 43
+ARM GAS  /tmp/ccRM5e9E.s 			page 43
 
 
 2125:src/stm32f1xx_hal_smartcard.c ****   * @note   When this callback is executed, User Abort complete call back is called only if no
@@ -2578,7 +2578,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
 2179:src/stm32f1xx_hal_smartcard.c ****   /* Check if an Abort process is still ongoing */
 2180:src/stm32f1xx_hal_smartcard.c ****   if(hsc->hdmatx != NULL)
 2181:src/stm32f1xx_hal_smartcard.c ****   {
-ARM GAS  /tmp/ccvrs2bU.s 			page 44
+ARM GAS  /tmp/ccRM5e9E.s 			page 44
 
 
 2182:src/stm32f1xx_hal_smartcard.c ****     if(hsc->hdmatx->XferAbortCallback != NULL)
@@ -2638,7 +2638,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
 2236:src/stm32f1xx_hal_smartcard.c ****   *         HAL_SMARTCARD_AbortReceive_IT API (Abort only Rx transfer)
 2237:src/stm32f1xx_hal_smartcard.c ****   *         (This callback is executed at end of DMA Rx Abort procedure following user abort reques
 2238:src/stm32f1xx_hal_smartcard.c ****   *         and leads to user Rx Abort Complete callback execution).
-ARM GAS  /tmp/ccvrs2bU.s 			page 45
+ARM GAS  /tmp/ccRM5e9E.s 			page 45
 
 
 2239:src/stm32f1xx_hal_smartcard.c ****   * @param  hdma DMA handle.
@@ -2698,7 +2698,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
 2293:src/stm32f1xx_hal_smartcard.c ****   /* Set CPHA bit according to hsc->Init.CLKPhase value */
 2294:src/stm32f1xx_hal_smartcard.c ****   /* Set LBCL bit according to hsc->Init.CLKLastBit value */
 2295:src/stm32f1xx_hal_smartcard.c ****   /* Set Stop Bits: Set STOP[13:12] bits according to hsc->Init.StopBits value */
-ARM GAS  /tmp/ccvrs2bU.s 			page 46
+ARM GAS  /tmp/ccRM5e9E.s 			page 46
 
 
 2296:src/stm32f1xx_hal_smartcard.c ****   tmpreg |= (uint32_t)(USART_CR2_CLKEN | hsc->Init.CLKPolarity |
@@ -2758,7 +2758,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  293              		.loc 1 2299 0
  294 00cc 1A61     		str	r2, [r3, #16]	@ tmpreg, _10->CR2
 2300:src/stm32f1xx_hal_smartcard.c **** 
-ARM GAS  /tmp/ccvrs2bU.s 			page 47
+ARM GAS  /tmp/ccRM5e9E.s 			page 47
 
 
 2301:src/stm32f1xx_hal_smartcard.c ****   tmpreg = hsc->Instance->CR2;
@@ -2818,7 +2818,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  321              		.loc 1 2323 0
  322 00ea 0243     		orrs	r2, r2, r0	@, tmp215, tmp212, hsc_4(D)->Init.Mode
  323 00ec 0A43     		orrs	r2, r2, r1	@, tmpreg, tmp215, tmpreg
-ARM GAS  /tmp/ccvrs2bU.s 			page 48
+ARM GAS  /tmp/ccRM5e9E.s 			page 48
 
 
  324              	.LVL22:
@@ -2878,7 +2878,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  343:src/stm32f1xx_hal_smartcard.c ****   CLEAR_BIT(hsc->Instance->CR3, (USART_CR3_IREN | USART_CR3_HDSEL));
  360              		.loc 1 343 0
  361 0128 2B68     		ldr	r3, [r5]	@ _23, hsc_4(D)->Instance
-ARM GAS  /tmp/ccvrs2bU.s 			page 49
+ARM GAS  /tmp/ccRM5e9E.s 			page 49
 
 
  356:src/stm32f1xx_hal_smartcard.c **** 
@@ -2938,7 +2938,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  402              		.loc 1 364 0
  403 0170 85F84A30 		strb	r3, [r5, #74]	@ tmp263, hsc_4(D)->RxState
  366:src/stm32f1xx_hal_smartcard.c **** }
-ARM GAS  /tmp/ccvrs2bU.s 			page 50
+ARM GAS  /tmp/ccRM5e9E.s 			page 50
 
 
  404              		.loc 1 366 0
@@ -2998,7 +2998,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  455              	HAL_SMARTCARD_DeInit:
  456              	.LFB66:
  376:src/stm32f1xx_hal_smartcard.c ****   /* Check the SMARTCARD handle allocation */
-ARM GAS  /tmp/ccvrs2bU.s 			page 51
+ARM GAS  /tmp/ccRM5e9E.s 			page 51
 
 
  457              		.loc 1 376 0
@@ -3058,7 +3058,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  498 01b2 0120     		movs	r0, #1	@ <retval>,
  499              	.LVL36:
  411:src/stm32f1xx_hal_smartcard.c **** 
-ARM GAS  /tmp/ccvrs2bU.s 			page 52
+ARM GAS  /tmp/ccRM5e9E.s 			page 52
 
 
  500              		.loc 1 411 0
@@ -3118,7 +3118,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  545              		.loc 1 763 0 is_stmt 0 discriminator 1
  546 01ce 002A     		cmp	r2, #0	@ Size
  547 01d0 38D0     		beq	.L33	@
-ARM GAS  /tmp/ccvrs2bU.s 			page 53
+ARM GAS  /tmp/ccRM5e9E.s 			page 53
 
 
  769:src/stm32f1xx_hal_smartcard.c **** 
@@ -3178,7 +3178,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  802:src/stm32f1xx_hal_smartcard.c ****   }
  590              		.loc 1 802 0
  591 0216 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}	@
-ARM GAS  /tmp/ccvrs2bU.s 			page 54
+ARM GAS  /tmp/ccRM5e9E.s 			page 54
 
 
  592              	.LVL43:
@@ -3238,7 +3238,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  637              	.LFE69:
  638              		.size	HAL_SMARTCARD_Transmit, .-HAL_SMARTCARD_Transmit
  639              		.align	1
-ARM GAS  /tmp/ccvrs2bU.s 			page 55
+ARM GAS  /tmp/ccRM5e9E.s 			page 55
 
 
  640              		.global	HAL_SMARTCARD_Receive
@@ -3298,7 +3298,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  832:src/stm32f1xx_hal_smartcard.c **** 
  684              		.loc 1 832 0 is_stmt 0 discriminator 2
  685 0270 0123     		movs	r3, #1	@ tmp130,
-ARM GAS  /tmp/ccvrs2bU.s 			page 56
+ARM GAS  /tmp/ccRM5e9E.s 			page 56
 
 
  686 0272 80F84830 		strb	r3, [r0, #72]	@ tmp130, hsc_6(D)->Lock
@@ -3358,7 +3358,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  726              		.loc 1 847 0
  727 02ac 2021     		movs	r1, #32	@,
  728 02ae 3B46     		mov	r3, r7	@, Timeout
-ARM GAS  /tmp/ccvrs2bU.s 			page 57
+ARM GAS  /tmp/ccRM5e9E.s 			page 57
 
 
  729 02b0 2046     		mov	r0, r4	@, hsc
@@ -3418,7 +3418,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  881:src/stm32f1xx_hal_smartcard.c ****   {
  777              		.loc 1 881 0
  778 02d6 90F84930 		ldrb	r3, [r0, #73]	@ zero_extendqisi2	@ hsc_4(D)->gState, hsc_4(D)->gState
-ARM GAS  /tmp/ccvrs2bU.s 			page 58
+ARM GAS  /tmp/ccRM5e9E.s 			page 58
 
 
  779 02da 202B     		cmp	r3, #32	@ hsc_4(D)->gState,
@@ -3478,7 +3478,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  817              		.loc 1 910 0 discriminator 2
  818 030a 1846     		mov	r0, r3	@ <retval>, tmp129
  819              	.LVL70:
-ARM GAS  /tmp/ccvrs2bU.s 			page 59
+ARM GAS  /tmp/ccRM5e9E.s 			page 59
 
 
  905:src/stm32f1xx_hal_smartcard.c **** 
@@ -3538,7 +3538,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  865 032c C9B1     		cbz	r1, .L54	@ pData,
  931:src/stm32f1xx_hal_smartcard.c ****     {
  866              		.loc 1 931 0 is_stmt 0 discriminator 1
-ARM GAS  /tmp/ccvrs2bU.s 			page 60
+ARM GAS  /tmp/ccRM5e9E.s 			page 60
 
 
  867 032e C2B1     		cbz	r2, .L54	@ Size,
@@ -3598,7 +3598,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  955:src/stm32f1xx_hal_smartcard.c ****   }
  906              		.loc 1 955 0 discriminator 2
  907 0360 7047     		bx	lr	@
-ARM GAS  /tmp/ccvrs2bU.s 			page 61
+ARM GAS  /tmp/ccRM5e9E.s 			page 61
 
 
  908              	.LVL80:
@@ -3658,7 +3658,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  978:src/stm32f1xx_hal_smartcard.c ****     {
  955              		.loc 1 978 0 is_stmt 0 discriminator 1
  956 037a 23B3     		cbz	r3, .L60	@ Size,
-ARM GAS  /tmp/ccvrs2bU.s 			page 62
+ARM GAS  /tmp/ccRM5e9E.s 			page 62
 
 
  984:src/stm32f1xx_hal_smartcard.c **** 
@@ -3718,7 +3718,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  994 03a6 2268     		ldr	r2, [r4]	@ hsc_4(D)->Instance, hsc_4(D)->Instance
  995 03a8 0432     		adds	r2, r2, #4	@, hsc_4(D)->Instance,
  996 03aa FFF7FEFF 		bl	HAL_DMA_Start_IT	@
-ARM GAS  /tmp/ccvrs2bU.s 			page 63
+ARM GAS  /tmp/ccRM5e9E.s 			page 63
 
 
  997              	.LVL88:
@@ -3778,7 +3778,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  1041              		.fpu softvfp
  1042              		.type	HAL_SMARTCARD_Receive_DMA, %function
  1043              	HAL_SMARTCARD_Receive_DMA:
-ARM GAS  /tmp/ccvrs2bU.s 			page 64
+ARM GAS  /tmp/ccRM5e9E.s 			page 64
 
 
  1044              	.LFB74:
@@ -3838,7 +3838,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  1085 03fe 2222     		movs	r2, #34	@ tmp141,
 1048:src/stm32f1xx_hal_smartcard.c ****     hsc->RxXferSize = Size;
  1086              		.loc 1 1048 0 discriminator 2
-ARM GAS  /tmp/ccvrs2bU.s 			page 65
+ARM GAS  /tmp/ccRM5e9E.s 			page 65
 
 
  1087 0400 8163     		str	r1, [r0, #56]	@ pData, hsc_4(D)->pRxBuffPtr
@@ -3898,7 +3898,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  1128              		.loc 1 1068 0 discriminator 2
  1129 0432 0192     		str	r2, [sp, #4]	@ tmpreg.3_28, tmpreg
  1130 0434 019A     		ldr	r2, [sp, #4]	@ vol.4_30, tmpreg
-ARM GAS  /tmp/ccvrs2bU.s 			page 66
+ARM GAS  /tmp/ccRM5e9E.s 			page 66
 
 
  1131              	.LBE15:
@@ -3958,7 +3958,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  1179              		.thumb_func
  1180              		.fpu softvfp
  1181              		.type	HAL_SMARTCARD_Abort, %function
-ARM GAS  /tmp/ccvrs2bU.s 			page 67
+ARM GAS  /tmp/ccRM5e9E.s 			page 67
 
 
  1182              	HAL_SMARTCARD_Abort:
@@ -4018,7 +4018,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  1223 048c 0023     		movs	r3, #0	@ tmp129,
  1224 048e 4363     		str	r3, [r0, #52]	@ tmp129, _17->XferAbortCallback
 1121:src/stm32f1xx_hal_smartcard.c ****     }
-ARM GAS  /tmp/ccvrs2bU.s 			page 68
+ARM GAS  /tmp/ccRM5e9E.s 			page 68
 
 
  1225              		.loc 1 1121 0
@@ -4078,7 +4078,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  1264              		.loc 1 1153 0
  1265 04c2 10BD     		pop	{r4, pc}	@
  1266              		.cfi_endproc
-ARM GAS  /tmp/ccvrs2bU.s 			page 69
+ARM GAS  /tmp/ccRM5e9E.s 			page 69
 
 
  1267              	.LFE75:
@@ -4138,7 +4138,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  1310              		.loc 1 1178 0
  1311 04e2 18B1     		cbz	r0, .L87	@ _13,
 1182:src/stm32f1xx_hal_smartcard.c **** 
-ARM GAS  /tmp/ccvrs2bU.s 			page 70
+ARM GAS  /tmp/ccRM5e9E.s 			page 70
 
 
  1312              		.loc 1 1182 0
@@ -4198,7 +4198,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
 1210:src/stm32f1xx_hal_smartcard.c ****   /* Disable RXNE, PE and ERR (Frame error, noise error, overrun error) interrupts */
  1356              		.loc 1 1210 0
  1357 04fe 0446     		mov	r4, r0	@ hsc, hsc
-ARM GAS  /tmp/ccvrs2bU.s 			page 71
+ARM GAS  /tmp/ccRM5e9E.s 			page 71
 
 
 1212:src/stm32f1xx_hal_smartcard.c ****   CLEAR_BIT(hsc->Instance->CR3, USART_CR3_EIE);
@@ -4258,7 +4258,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  1398              		.size	HAL_SMARTCARD_AbortReceive, .-HAL_SMARTCARD_AbortReceive
  1399              		.align	1
  1400              		.weak	HAL_SMARTCARD_TxCpltCallback
-ARM GAS  /tmp/ccvrs2bU.s 			page 72
+ARM GAS  /tmp/ccRM5e9E.s 			page 72
 
 
  1401              		.syntax unified
@@ -4318,7 +4318,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  1452              		.loc 1 1863 0
  1453 053a 0023     		movs	r3, #0	@ tmp120,
 1861:src/stm32f1xx_hal_smartcard.c **** 
-ARM GAS  /tmp/ccvrs2bU.s 			page 73
+ARM GAS  /tmp/ccRM5e9E.s 			page 73
 
 
  1454              		.loc 1 1861 0
@@ -4378,7 +4378,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  1499              	.LCFI13:
  1500              		.cfi_def_cfa_offset 8
  1501              		.cfi_offset 4, -8
-ARM GAS  /tmp/ccvrs2bU.s 			page 74
+ARM GAS  /tmp/ccRM5e9E.s 			page 74
 
 
  1502              		.cfi_offset 14, -4
@@ -4438,7 +4438,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  1545              		.loc 1 2070 0
  1546 05aa 0020     		movs	r0, #0	@ <retval>,
  1547              	.LBE19:
-ARM GAS  /tmp/ccvrs2bU.s 			page 75
+ARM GAS  /tmp/ccRM5e9E.s 			page 75
 
 
  1548              	.LBE18:
@@ -4498,7 +4498,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  1597 05b6 0023     		movs	r3, #0	@ tmp126,
 1894:src/stm32f1xx_hal_smartcard.c ****   hsc->RxXferCount = 0U;
  1598              		.loc 1 1894 0
-ARM GAS  /tmp/ccvrs2bU.s 			page 76
+ARM GAS  /tmp/ccRM5e9E.s 			page 76
 
 
  1599 05b8 406A     		ldr	r0, [r0, #36]	@ hsc, hdma_4(D)->Parent
@@ -4558,7 +4558,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  1642 05ea 5206     		lsls	r2, r2, #25	@, _15,
  1643              	.LVL132:
  1644 05ec 0AD5     		bpl	.L109	@,
-ARM GAS  /tmp/ccvrs2bU.s 			page 77
+ARM GAS  /tmp/ccRM5e9E.s 			page 77
 
 
  1645              	.LVL133:
@@ -4618,7 +4618,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  1692              		.cfi_offset 6, -8
  1693              		.cfi_offset 14, -4
 1530:src/stm32f1xx_hal_smartcard.c ****   uint32_t cr1its     = READ_REG(hsc->Instance->CR1);
-ARM GAS  /tmp/ccvrs2bU.s 			page 78
+ARM GAS  /tmp/ccRM5e9E.s 			page 78
 
 
  1694              		.loc 1 1530 0
@@ -4678,7 +4678,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  1737 0632 56D0     		beq	.L118	@,
  1738              	.L119:
 1552:src/stm32f1xx_hal_smartcard.c ****     {
-ARM GAS  /tmp/ccvrs2bU.s 			page 79
+ARM GAS  /tmp/ccRM5e9E.s 			page 79
 
 
  1739              		.loc 1 1552 0 is_stmt 1
@@ -4738,7 +4738,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  1781              		.loc 1 1575 0
  1782 066e E36C     		ldr	r3, [r4, #76]	@ _36, hsc_8(D)->ErrorCode
  1783 0670 002B     		cmp	r3, #0	@ _36
-ARM GAS  /tmp/ccvrs2bU.s 			page 80
+ARM GAS  /tmp/ccRM5e9E.s 			page 80
 
 
  1784 0672 65D0     		beq	.L116	@
@@ -4798,7 +4798,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  1828 06aa 5206     		lsls	r2, r2, #25	@, _49,
  1829 06ac 10D5     		bpl	.L129	@,
 1595:src/stm32f1xx_hal_smartcard.c **** 
-ARM GAS  /tmp/ccvrs2bU.s 			page 81
+ARM GAS  /tmp/ccRM5e9E.s 			page 81
 
 
  1830              		.loc 1 1595 0
@@ -4858,7 +4858,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  1874 06d8 2046     		mov	r0, r4	@, hsc
  1875 06da FFF7FEFF 		bl	HAL_SMARTCARD_ErrorCallback	@
  1876              	.LVL154:
-ARM GAS  /tmp/ccvrs2bU.s 			page 82
+ARM GAS  /tmp/ccRM5e9E.s 			page 82
 
 
 1643:src/stm32f1xx_hal_smartcard.c ****       }
@@ -4918,7 +4918,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  1922              	.LVL162:
  1923              	.L131:
  1924              	.LBE37:
-ARM GAS  /tmp/ccvrs2bU.s 			page 83
+ARM GAS  /tmp/ccRM5e9E.s 			page 83
 
 
  1925              	.LBE36:
@@ -4978,7 +4978,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  1971              		.type	SMARTCARD_DMAAbortOnError, %function
  1972              	SMARTCARD_DMAAbortOnError:
  1973              	.LFB99:
-ARM GAS  /tmp/ccvrs2bU.s 			page 84
+ARM GAS  /tmp/ccRM5e9E.s 			page 84
 
 
 2108:src/stm32f1xx_hal_smartcard.c ****   SMARTCARD_HandleTypeDef* hsc = (SMARTCARD_HandleTypeDef* )((DMA_HandleTypeDef* )hdma)->Parent;
@@ -5038,7 +5038,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  2022              		.fpu softvfp
  2023              		.type	HAL_SMARTCARD_Abort_IT, %function
  2024              	HAL_SMARTCARD_Abort_IT:
-ARM GAS  /tmp/ccvrs2bU.s 			page 85
+ARM GAS  /tmp/ccRM5e9E.s 			page 85
 
 
  2025              	.LFB78:
@@ -5098,7 +5098,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  2065              		.loc 1 1279 0
  2066 0780 616C     		ldr	r1, [r4, #68]	@ _22, hsc_9(D)->hdmarx
  2067 0782 29B1     		cbz	r1, .L199	@ _22,
-ARM GAS  /tmp/ccvrs2bU.s 			page 86
+ARM GAS  /tmp/ccRM5e9E.s 			page 86
 
 
 1283:src/stm32f1xx_hal_smartcard.c ****     {
@@ -5158,7 +5158,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
 1345:src/stm32f1xx_hal_smartcard.c ****     hsc->RxXferCount = 0x00U;
  2110              		.loc 1 1345 0
  2111 07b8 0023     		movs	r3, #0	@ tmp153,
-ARM GAS  /tmp/ccvrs2bU.s 			page 87
+ARM GAS  /tmp/ccRM5e9E.s 			page 87
 
 
  2112 07ba E386     		strh	r3, [r4, #54]	@ movhi	@ tmp153, hsc_9(D)->TxXferCount
@@ -5218,7 +5218,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  2153              		.loc 1 1342 0
  2154 07f0 002B     		cmp	r3, #0	@ AbortCplt
  2155 07f2 E1D1     		bne	.L207	@
-ARM GAS  /tmp/ccvrs2bU.s 			page 88
+ARM GAS  /tmp/ccRM5e9E.s 			page 88
 
 
  2156              	.LVL180:
@@ -5278,7 +5278,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
 2189:src/stm32f1xx_hal_smartcard.c ****   hsc->RxXferCount = 0x00U;
  2203              		.loc 1 2189 0
  2204 0812 C386     		strh	r3, [r0, #54]	@ movhi	@ tmp127, hsc_4->TxXferCount
-ARM GAS  /tmp/ccvrs2bU.s 			page 89
+ARM GAS  /tmp/ccRM5e9E.s 			page 89
 
 
 2190:src/stm32f1xx_hal_smartcard.c **** 
@@ -5338,7 +5338,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  2249 0832 426C     		ldr	r2, [r0, #68]	@ _7, hsc_4->hdmarx
  2250 0834 0AB1     		cbz	r2, .L235	@ _7,
 2139:src/stm32f1xx_hal_smartcard.c ****     {
-ARM GAS  /tmp/ccvrs2bU.s 			page 90
+ARM GAS  /tmp/ccRM5e9E.s 			page 90
 
 
  2251              		.loc 1 2139 0
@@ -5398,7 +5398,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  2299              	.LFB79:
 1382:src/stm32f1xx_hal_smartcard.c ****   /* Disable TXEIE and TCIE interrupts */
  2300              		.loc 1 1382 0
-ARM GAS  /tmp/ccvrs2bU.s 			page 91
+ARM GAS  /tmp/ccRM5e9E.s 			page 91
 
 
  2301              		.cfi_startproc
@@ -5458,7 +5458,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  2342              		.loc 1 1402 0
  2343 0880 206C     		ldr	r0, [r4, #64]	@ _20, hsc_3(D)->hdmatx
  2344 0882 436B     		ldr	r3, [r0, #52]	@ _20->XferAbortCallback, _20->XferAbortCallback
-ARM GAS  /tmp/ccvrs2bU.s 			page 92
+ARM GAS  /tmp/ccRM5e9E.s 			page 92
 
 
  2345 0884 9847     		blx	r3	@ _20->XferAbortCallback
@@ -5518,7 +5518,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
 2220:src/stm32f1xx_hal_smartcard.c **** 
  2393              		.loc 1 2220 0
  2394 08a2 0023     		movs	r3, #0	@ tmp113,
-ARM GAS  /tmp/ccvrs2bU.s 			page 93
+ARM GAS  /tmp/ccRM5e9E.s 			page 93
 
 
 2218:src/stm32f1xx_hal_smartcard.c **** 
@@ -5578,7 +5578,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
 1461:src/stm32f1xx_hal_smartcard.c ****   CLEAR_BIT(hsc->Instance->CR3, USART_CR3_EIE);
  2443              		.loc 1 1461 0
  2444 08b6 0368     		ldr	r3, [r0]	@ _4, hsc_3(D)->Instance
-ARM GAS  /tmp/ccvrs2bU.s 			page 94
+ARM GAS  /tmp/ccRM5e9E.s 			page 94
 
 
 1459:src/stm32f1xx_hal_smartcard.c ****   /* Disable RXNE, PE and ERR (Frame error, noise error, overrun error) interrupts */
@@ -5638,7 +5638,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  2486 08ee 436B     		ldr	r3, [r0, #52]	@ _23->XferAbortCallback, _23->XferAbortCallback
  2487 08f0 9847     		blx	r3	@ _23->XferAbortCallback
  2488              	.LVL202:
-ARM GAS  /tmp/ccvrs2bU.s 			page 95
+ARM GAS  /tmp/ccRM5e9E.s 			page 95
 
 
  2489              	.L256:
@@ -5698,7 +5698,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  2536 090e 0023     		movs	r3, #0	@ tmp113,
 2244:src/stm32f1xx_hal_smartcard.c **** 
  2537              		.loc 1 2244 0
-ARM GAS  /tmp/ccvrs2bU.s 			page 96
+ARM GAS  /tmp/ccRM5e9E.s 			page 96
 
 
  2538 0910 406A     		ldr	r0, [r0, #36]	@ hsc, hdma_2(D)->Parent
@@ -5758,7 +5758,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  2585              		.fpu softvfp
  2586              		.type	HAL_SMARTCARD_GetError, %function
  2587              	HAL_SMARTCARD_GetError:
-ARM GAS  /tmp/ccvrs2bU.s 			page 97
+ARM GAS  /tmp/ccRM5e9E.s 			page 97
 
 
  2588              	.LFB89:
@@ -5818,7 +5818,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  2639 0038 01       		.byte	0x1
  2640 0039 08       		.byte	0x8
  2641 003a 35070000 		.4byte	.LASF1
-ARM GAS  /tmp/ccvrs2bU.s 			page 98
+ARM GAS  /tmp/ccRM5e9E.s 			page 98
 
 
  2642 003e 02       		.uleb128 0x2
@@ -5878,7 +5878,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  2696 00a7 03       		.uleb128 0x3
  2697 00a8 63020000 		.4byte	.LASF14
  2698 00ac 03       		.byte	0x3
-ARM GAS  /tmp/ccvrs2bU.s 			page 99
+ARM GAS  /tmp/ccRM5e9E.s 			page 99
 
 
  2699 00ad 24       		.byte	0x24
@@ -5938,7 +5938,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  2753 0120 2B010000 		.4byte	0x12b
  2754 0124 0A       		.uleb128 0xa
  2755 0125 D7000000 		.4byte	0xd7
-ARM GAS  /tmp/ccvrs2bU.s 			page 100
+ARM GAS  /tmp/ccRM5e9E.s 			page 100
 
 
  2756 0129 07       		.byte	0x7
@@ -5998,7 +5998,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  2810 018f 0B       		.uleb128 0xb
  2811 0190 08       		.byte	0x8
  2812 0191 06       		.byte	0x6
-ARM GAS  /tmp/ccvrs2bU.s 			page 101
+ARM GAS  /tmp/ccRM5e9E.s 			page 101
 
 
  2813 0192 2601     		.2byte	0x126
@@ -6058,7 +6058,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  2867 01f8 43523100 		.ascii	"CR1\000"
  2868 01fc 06       		.byte	0x6
  2869 01fd FB01     		.2byte	0x1fb
-ARM GAS  /tmp/ccvrs2bU.s 			page 102
+ARM GAS  /tmp/ccRM5e9E.s 			page 102
 
 
  2870 01ff D2000000 		.4byte	0xd2
@@ -6118,7 +6118,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  2924 0266 04       		.byte	0x4
  2925 0267 DD050000 		.4byte	.LASF32
  2926 026b 0F       		.uleb128 0xf
-ARM GAS  /tmp/ccvrs2bU.s 			page 103
+ARM GAS  /tmp/ccRM5e9E.s 			page 103
 
 
  2927 026c 01       		.byte	0x1
@@ -6178,7 +6178,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  2981 02d5 13       		.uleb128 0x13
  2982 02d6 54020000 		.4byte	.LASF42
  2983 02da 09       		.byte	0x9
-ARM GAS  /tmp/ccvrs2bU.s 			page 104
+ARM GAS  /tmp/ccRM5e9E.s 			page 104
 
 
  2984 02db 36       		.byte	0x36
@@ -6238,7 +6238,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  3038 033b 09       		.byte	0x9
  3039 033c 4F       		.byte	0x4f
  3040 033d 5A030000 		.4byte	0x35a
-ARM GAS  /tmp/ccvrs2bU.s 			page 105
+ARM GAS  /tmp/ccRM5e9E.s 			page 105
 
 
  3041 0341 10       		.uleb128 0x10
@@ -6298,7 +6298,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  3095 03a7 23       		.byte	0x23
  3096 03a8 21       		.uleb128 0x21
  3097 03a9 13       		.uleb128 0x13
-ARM GAS  /tmp/ccvrs2bU.s 			page 106
+ARM GAS  /tmp/ccRM5e9E.s 			page 106
 
 
  3098 03aa B9020000 		.4byte	.LASF58
@@ -6358,7 +6358,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  3152 040a 3C       		.uleb128 0x3c
  3153 040b 13       		.uleb128 0x13
  3154 040c 0B0B0000 		.4byte	.LASF65
-ARM GAS  /tmp/ccvrs2bU.s 			page 107
+ARM GAS  /tmp/ccRM5e9E.s 			page 107
 
 
  3155 0410 09       		.byte	0x9
@@ -6418,7 +6418,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  3209 0473 13       		.uleb128 0x13
  3210 0474 AF050000 		.4byte	.LASF68
  3211 0478 0A       		.byte	0xa
-ARM GAS  /tmp/ccvrs2bU.s 			page 108
+ARM GAS  /tmp/ccRM5e9E.s 			page 108
 
 
  3212 0479 36       		.byte	0x36
@@ -6478,7 +6478,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  3266 04d6 8B090000 		.4byte	.LASF74
  3267 04da 0A       		.byte	0xa
  3268 04db 50       		.byte	0x50
-ARM GAS  /tmp/ccvrs2bU.s 			page 109
+ARM GAS  /tmp/ccRM5e9E.s 			page 109
 
 
  3269 04dc C7000000 		.4byte	0xc7
@@ -6538,7 +6538,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  3323 0542 CD090000 		.4byte	.LASF85
  3324 0546 E0       		.byte	0xe0
  3325 0547 00       		.byte	0
-ARM GAS  /tmp/ccvrs2bU.s 			page 110
+ARM GAS  /tmp/ccRM5e9E.s 			page 110
 
 
  3326 0548 03       		.uleb128 0x3
@@ -6598,7 +6598,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  3380 05ab 820A0000 		.4byte	.LASF92
  3381 05af 0A       		.byte	0xa
  3382 05b0 A6       		.byte	0xa6
-ARM GAS  /tmp/ccvrs2bU.s 			page 111
+ARM GAS  /tmp/ccRM5e9E.s 			page 111
 
 
  3383 05b1 51040000 		.4byte	0x451
@@ -6658,7 +6658,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  3437 0611 0A       		.byte	0xa
  3438 0612 B6       		.byte	0xb6
  3439 0613 53050000 		.4byte	0x553
-ARM GAS  /tmp/ccvrs2bU.s 			page 112
+ARM GAS  /tmp/ccRM5e9E.s 			page 112
 
 
  3440 0617 02       		.byte	0x2
@@ -6718,7 +6718,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  3494 067d 01       		.byte	0x1
  3495 067e 19       		.uleb128 0x19
  3496 067f 4D0B0000 		.4byte	.LASF118
-ARM GAS  /tmp/ccvrs2bU.s 			page 113
+ARM GAS  /tmp/ccRM5e9E.s 			page 113
 
 
  3497 0683 01       		.byte	0x1
@@ -6778,7 +6778,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  3551 0703 01       		.byte	0x1
  3552 0704 A0080000 		.4byte	.LFB102
  3553 0708 B4080000 		.4byte	.LFE102
-ARM GAS  /tmp/ccvrs2bU.s 			page 114
+ARM GAS  /tmp/ccRM5e9E.s 			page 114
 
 
  3554 070c 54000000 		.4byte	.LLST92
@@ -6838,7 +6838,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  3608 0799 C7070000 		.4byte	0x7c7
  3609 079d 1D       		.uleb128 0x1d
  3610 079e BA050000 		.4byte	.LASF111
-ARM GAS  /tmp/ccvrs2bU.s 			page 115
+ARM GAS  /tmp/ccRM5e9E.s 			page 115
 
 
  3611 07a2 01       		.byte	0x1
@@ -6898,7 +6898,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  3665 082a 746D7000 		.ascii	"tmp\000"
  3666 082e 01       		.byte	0x1
  3667 082f 0D08     		.2byte	0x80d
-ARM GAS  /tmp/ccvrs2bU.s 			page 116
+ARM GAS  /tmp/ccRM5e9E.s 			page 116
 
 
  3668 0831 36080000 		.4byte	0x836
@@ -6958,7 +6958,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  3722 08a7 AD07     		.2byte	0x7ad
  3723 08a9 01       		.byte	0x1
  3724 08aa 01       		.byte	0x1
-ARM GAS  /tmp/ccvrs2bU.s 			page 117
+ARM GAS  /tmp/ccRM5e9E.s 			page 117
 
 
  3725 08ab BC080000 		.4byte	0x8bc
@@ -7018,7 +7018,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  3779 092b 6307     		.2byte	0x763
  3780 092d 4B040000 		.4byte	0x44b
  3781 0931 C4010000 		.4byte	.LLST62
-ARM GAS  /tmp/ccvrs2bU.s 			page 118
+ARM GAS  /tmp/ccRM5e9E.s 			page 118
 
 
  3782 0935 23       		.uleb128 0x23
@@ -7078,7 +7078,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  3836 09c5 1E       		.uleb128 0x1e
  3837 09c6 68736300 		.ascii	"hsc\000"
  3838 09ca 01       		.byte	0x1
-ARM GAS  /tmp/ccvrs2bU.s 			page 119
+ARM GAS  /tmp/ccRM5e9E.s 			page 119
 
 
  3839 09cb 4507     		.2byte	0x745
@@ -7138,7 +7138,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  3893 0a46 28       		.uleb128 0x28
  3894 0a47 01       		.byte	0x1
  3895 0a48 64070000 		.4byte	.LASF131
-ARM GAS  /tmp/ccvrs2bU.s 			page 120
+ARM GAS  /tmp/ccRM5e9E.s 			page 120
 
 
  3896 0a4c 01       		.byte	0x1
@@ -7198,7 +7198,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  3950 0ac5 C406     		.2byte	0x6c4
  3951 0ac7 B1060000 		.4byte	0x6b1
  3952 0acb 00       		.byte	0
-ARM GAS  /tmp/ccvrs2bU.s 			page 121
+ARM GAS  /tmp/ccRM5e9E.s 			page 121
 
 
  3953 0acc 2B       		.uleb128 0x2b
@@ -7258,7 +7258,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  4007 0b3a 72090000 		.4byte	.LASF173
  4008 0b3e 01       		.byte	0x1
  4009 0b3f F805     		.2byte	0x5f8
-ARM GAS  /tmp/ccvrs2bU.s 			page 122
+ARM GAS  /tmp/ccRM5e9E.s 			page 122
 
 
  4010 0b41 01       		.byte	0x1
@@ -7318,7 +7318,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  4064 0bd5 EA060000 		.4byte	.LBB36
  4065 0bd9 1C070000 		.4byte	.LBE36
  4066 0bdd 01       		.byte	0x1
-ARM GAS  /tmp/ccvrs2bU.s 			page 123
+ARM GAS  /tmp/ccRM5e9E.s 			page 123
 
 
  4067 0bde 7406     		.2byte	0x674
@@ -7378,7 +7378,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  4121 0c55 02       		.byte	0x2
  4122 0c56 74       		.byte	0x74
  4123 0c57 00       		.sleb128 0
-ARM GAS  /tmp/ccvrs2bU.s 			page 124
+ARM GAS  /tmp/ccRM5e9E.s 			page 124
 
 
  4124 0c58 00       		.byte	0
@@ -7438,7 +7438,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  4178 0ccf 01       		.byte	0x1
  4179 0cd0 6505     		.2byte	0x565
  4180 0cd2 01       		.byte	0x1
-ARM GAS  /tmp/ccvrs2bU.s 			page 125
+ARM GAS  /tmp/ccRM5e9E.s 			page 125
 
 
  4181 0cd3 90020000 		.4byte	0x290
@@ -7498,7 +7498,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  4235 0d64 74       		.byte	0x74
  4236 0d65 00       		.sleb128 0
  4237 0d66 00       		.byte	0
-ARM GAS  /tmp/ccvrs2bU.s 			page 126
+ARM GAS  /tmp/ccRM5e9E.s 			page 126
 
 
  4238 0d67 1F       		.uleb128 0x1f
@@ -7558,7 +7558,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  4292 0ded 90020000 		.4byte	0x290
  4293 0df1 64040000 		.4byte	.LFB75
  4294 0df5 C4040000 		.4byte	.LFE75
-ARM GAS  /tmp/ccvrs2bU.s 			page 127
+ARM GAS  /tmp/ccRM5e9E.s 			page 127
 
 
  4295 0df9 5C070000 		.4byte	.LLST48
@@ -7618,7 +7618,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  4349 0e89 9D0E0000 		.4byte	0xe9d
  4350 0e8d 36       		.uleb128 0x36
  4351 0e8e EF010000 		.4byte	.LASF107
-ARM GAS  /tmp/ccvrs2bU.s 			page 128
+ARM GAS  /tmp/ccRM5e9E.s 			page 128
 
 
  4352 0e92 01       		.byte	0x1
@@ -7678,7 +7678,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  4406 0eff 01       		.byte	0x1
  4407 0f00 CB03     		.2byte	0x3cb
  4408 0f02 A7000000 		.4byte	0xa7
-ARM GAS  /tmp/ccvrs2bU.s 			page 129
+ARM GAS  /tmp/ccRM5e9E.s 			page 129
 
 
  4409 0f06 30090000 		.4byte	.LLST41
@@ -7738,7 +7738,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  4463 0f7d 0F040000 		.4byte	.LASF155
  4464 0f81 01       		.byte	0x1
  4465 0f82 6E03     		.2byte	0x36e
-ARM GAS  /tmp/ccvrs2bU.s 			page 130
+ARM GAS  /tmp/ccRM5e9E.s 			page 130
 
 
  4466 0f84 01       		.byte	0x1
@@ -7798,7 +7798,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  4520 100e 01       		.byte	0x1
  4521 100f 3303     		.2byte	0x333
  4522 1011 A7000000 		.4byte	0xa7
-ARM GAS  /tmp/ccvrs2bU.s 			page 131
+ARM GAS  /tmp/ccRM5e9E.s 			page 131
 
 
  4523 1015 A90B0000 		.4byte	.LLST28
@@ -7858,7 +7858,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  4577 107b 01       		.byte	0x1
  4578 107c F402     		.2byte	0x2f4
  4579 107e 01       		.byte	0x1
-ARM GAS  /tmp/ccvrs2bU.s 			page 132
+ARM GAS  /tmp/ccRM5e9E.s 			page 132
 
 
  4580 107f 90020000 		.4byte	0x290
@@ -7918,7 +7918,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  4634 110f 00       		.sleb128 0
  4635 1110 30       		.uleb128 0x30
  4636 1111 01       		.byte	0x1
-ARM GAS  /tmp/ccvrs2bU.s 			page 133
+ARM GAS  /tmp/ccRM5e9E.s 			page 133
 
 
  4637 1112 51       		.byte	0x51
@@ -7978,7 +7978,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  4691 1155 68736300 		.ascii	"hsc\000"
  4692 1159 01       		.byte	0x1
  4693 115a B301     		.2byte	0x1b3
-ARM GAS  /tmp/ccvrs2bU.s 			page 134
+ARM GAS  /tmp/ccRM5e9E.s 			page 134
 
 
  4694 115c B1060000 		.4byte	0x6b1
@@ -8038,7 +8038,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  4748 11d6 01       		.byte	0x1
  4749 11d7 44120000 		.4byte	0x1244
  4750 11db 29       		.uleb128 0x29
-ARM GAS  /tmp/ccvrs2bU.s 			page 135
+ARM GAS  /tmp/ccRM5e9E.s 			page 135
 
 
  4751 11dc 68736300 		.ascii	"hsc\000"
@@ -8098,7 +8098,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  4805 1268 590F0000 		.4byte	.LLST3
  4806 126c 25       		.uleb128 0x25
  4807 126d F2080000 		.4byte	0x8f2
-ARM GAS  /tmp/ccvrs2bU.s 			page 136
+ARM GAS  /tmp/ccRM5e9E.s 			page 136
 
 
  4808 1271 770F0000 		.4byte	.LLST4
@@ -8158,7 +8158,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  4862 130d 8E100000 		.4byte	.LLST60
  4863 1311 2F       		.uleb128 0x2f
  4864 1312 AA050000 		.4byte	.LVL122
-ARM GAS  /tmp/ccvrs2bU.s 			page 137
+ARM GAS  /tmp/ccRM5e9E.s 			page 137
 
 
  4865 1316 020B0000 		.4byte	0xb02
@@ -8218,7 +8218,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  4919 137a 3F       		.uleb128 0x3f
  4920 137b 01       		.byte	0x1
  4921 137c 01       		.byte	0x1
-ARM GAS  /tmp/ccvrs2bU.s 			page 138
+ARM GAS  /tmp/ccRM5e9E.s 			page 138
 
 
  4922 137d EC060000 		.4byte	.LASF167
@@ -8278,7 +8278,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  4976 0028 13       		.uleb128 0x13
  4977 0029 00       		.byte	0
  4978 002a 00       		.byte	0
-ARM GAS  /tmp/ccvrs2bU.s 			page 139
+ARM GAS  /tmp/ccRM5e9E.s 			page 139
 
 
  4979 002b 04       		.uleb128 0x4
@@ -8338,7 +8338,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  5033 0061 0C       		.uleb128 0xc
  5034 0062 3C       		.uleb128 0x3c
  5035 0063 0C       		.uleb128 0xc
-ARM GAS  /tmp/ccvrs2bU.s 			page 140
+ARM GAS  /tmp/ccRM5e9E.s 			page 140
 
 
  5036 0064 00       		.byte	0
@@ -8398,7 +8398,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  5090 009a 0B       		.uleb128 0xb
  5091 009b 3B       		.uleb128 0x3b
  5092 009c 05       		.uleb128 0x5
-ARM GAS  /tmp/ccvrs2bU.s 			page 141
+ARM GAS  /tmp/ccRM5e9E.s 			page 141
 
 
  5093 009d 49       		.uleb128 0x49
@@ -8458,7 +8458,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  5147 00d3 01       		.byte	0x1
  5148 00d4 0B       		.uleb128 0xb
  5149 00d5 0B       		.uleb128 0xb
-ARM GAS  /tmp/ccvrs2bU.s 			page 142
+ARM GAS  /tmp/ccRM5e9E.s 			page 142
 
 
  5150 00d6 3A       		.uleb128 0x3a
@@ -8518,7 +8518,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  5204 010c 17       		.uleb128 0x17
  5205 010d 15       		.uleb128 0x15
  5206 010e 01       		.byte	0x1
-ARM GAS  /tmp/ccvrs2bU.s 			page 143
+ARM GAS  /tmp/ccRM5e9E.s 			page 143
 
 
  5207 010f 27       		.uleb128 0x27
@@ -8578,7 +8578,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  5261 0145 00       		.byte	0
  5262 0146 00       		.byte	0
  5263 0147 1C       		.uleb128 0x1c
-ARM GAS  /tmp/ccvrs2bU.s 			page 144
+ARM GAS  /tmp/ccRM5e9E.s 			page 144
 
 
  5264 0148 2E       		.uleb128 0x2e
@@ -8638,7 +8638,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  5318 0181 00       		.byte	0
  5319 0182 11       		.uleb128 0x11
  5320 0183 01       		.uleb128 0x1
-ARM GAS  /tmp/ccvrs2bU.s 			page 145
+ARM GAS  /tmp/ccRM5e9E.s 			page 145
 
 
  5321 0184 31       		.uleb128 0x31
@@ -8698,7 +8698,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  5375 01ba 3A       		.uleb128 0x3a
  5376 01bb 0B       		.uleb128 0xb
  5377 01bc 3B       		.uleb128 0x3b
-ARM GAS  /tmp/ccvrs2bU.s 			page 146
+ARM GAS  /tmp/ccRM5e9E.s 			page 146
 
 
  5378 01bd 05       		.uleb128 0x5
@@ -8758,7 +8758,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  5432 01f4 00       		.byte	0
  5433 01f5 00       		.byte	0
  5434 01f6 27       		.uleb128 0x27
-ARM GAS  /tmp/ccvrs2bU.s 			page 147
+ARM GAS  /tmp/ccRM5e9E.s 			page 147
 
 
  5435 01f7 05       		.uleb128 0x5
@@ -8818,7 +8818,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  5489 022e 00       		.byte	0
  5490 022f 00       		.byte	0
  5491 0230 2A       		.uleb128 0x2a
-ARM GAS  /tmp/ccvrs2bU.s 			page 148
+ARM GAS  /tmp/ccRM5e9E.s 			page 148
 
 
  5492 0231 2E       		.uleb128 0x2e
@@ -8878,7 +8878,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  5546 0267 01       		.uleb128 0x1
  5547 0268 13       		.uleb128 0x13
  5548 0269 00       		.byte	0
-ARM GAS  /tmp/ccvrs2bU.s 			page 149
+ARM GAS  /tmp/ccRM5e9E.s 			page 149
 
 
  5549 026a 00       		.byte	0
@@ -8938,7 +8938,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  5603 02aa 01       		.uleb128 0x1
  5604 02ab 31       		.uleb128 0x31
  5605 02ac 13       		.uleb128 0x13
-ARM GAS  /tmp/ccvrs2bU.s 			page 150
+ARM GAS  /tmp/ccRM5e9E.s 			page 150
 
 
  5606 02ad 01       		.uleb128 0x1
@@ -8998,7 +8998,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  5660 02e5 01       		.uleb128 0x1
  5661 02e6 13       		.uleb128 0x13
  5662 02e7 00       		.byte	0
-ARM GAS  /tmp/ccvrs2bU.s 			page 151
+ARM GAS  /tmp/ccRM5e9E.s 			page 151
 
 
  5663 02e8 00       		.byte	0
@@ -9058,7 +9058,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  5717 031e 11       		.uleb128 0x11
  5718 031f 01       		.uleb128 0x1
  5719 0320 12       		.uleb128 0x12
-ARM GAS  /tmp/ccvrs2bU.s 			page 152
+ARM GAS  /tmp/ccRM5e9E.s 			page 152
 
 
  5720 0321 01       		.uleb128 0x1
@@ -9118,7 +9118,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  5774 0359 05       		.uleb128 0x5
  5775 035a 00       		.byte	0
  5776 035b 31       		.uleb128 0x31
-ARM GAS  /tmp/ccvrs2bU.s 			page 153
+ARM GAS  /tmp/ccRM5e9E.s 			page 153
 
 
  5777 035c 13       		.uleb128 0x13
@@ -9178,7 +9178,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  5831 0045 1D090000 		.4byte	.LVL208-1-.Ltext0
  5832 0049 0100     		.2byte	0x1
  5833 004b 50       		.byte	0x50
-ARM GAS  /tmp/ccvrs2bU.s 			page 154
+ARM GAS  /tmp/ccRM5e9E.s 			page 154
 
 
  5834 004c 00000000 		.4byte	0
@@ -9238,7 +9238,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  5888 00d3 06080000 		.4byte	.LVL183-.Ltext0
  5889 00d7 28080000 		.4byte	.LFE101-.Ltext0
  5890 00db 0400     		.2byte	0x4
-ARM GAS  /tmp/ccvrs2bU.s 			page 155
+ARM GAS  /tmp/ccRM5e9E.s 			page 155
 
 
  5891 00dd F3       		.byte	0xf3
@@ -9298,7 +9298,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  5945 0160 58070000 		.4byte	.LFE99-.Ltext0
  5946 0164 0200     		.2byte	0x2
  5947 0166 7D       		.byte	0x7d
-ARM GAS  /tmp/ccvrs2bU.s 			page 156
+ARM GAS  /tmp/ccRM5e9E.s 			page 156
 
 
  5948 0167 08       		.sleb128 8
@@ -9358,7 +9358,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  6002 01ed 0200     		.2byte	0x2
  6003 01ef 30       		.byte	0x30
  6004 01f0 9F       		.byte	0x9f
-ARM GAS  /tmp/ccvrs2bU.s 			page 157
+ARM GAS  /tmp/ccRM5e9E.s 			page 157
 
 
  6005 01f1 C6050000 		.4byte	.LVL127-.Ltext0
@@ -9418,7 +9418,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  6059 0264 0200     		.2byte	0x2
  6060 0266 7D       		.byte	0x7d
  6061 0267 00       		.sleb128 0
-ARM GAS  /tmp/ccvrs2bU.s 			page 158
+ARM GAS  /tmp/ccRM5e9E.s 			page 158
 
 
  6062 0268 3A050000 		.4byte	.LCFI12-.Ltext0
@@ -9478,7 +9478,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  6116              	.LLST100:
  6117 02f0 20090000 		.4byte	.LVL209-.Ltext0
  6118 02f4 28090000 		.4byte	.LVL211-.Ltext0
-ARM GAS  /tmp/ccvrs2bU.s 			page 159
+ARM GAS  /tmp/ccRM5e9E.s 			page 159
 
 
  6119 02f8 0100     		.2byte	0x1
@@ -9538,7 +9538,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  6173 037d 7D       		.byte	0x7d
  6174 037e 10       		.sleb128 16
  6175 037f CC060000 		.4byte	.LCFI18-.Ltext0
-ARM GAS  /tmp/ccvrs2bU.s 			page 160
+ARM GAS  /tmp/ccRM5e9E.s 			page 160
 
 
  6176 0383 D0060000 		.4byte	.LCFI19-.Ltext0
@@ -9598,7 +9598,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  6230 0408 01       		.uleb128 0x1
  6231 0409 50       		.byte	0x50
  6232 040a 9F       		.byte	0x9f
-ARM GAS  /tmp/ccvrs2bU.s 			page 161
+ARM GAS  /tmp/ccRM5e9E.s 			page 161
 
 
  6233 040b 00000000 		.4byte	0
@@ -9658,7 +9658,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  6287 04a1 0200     		.2byte	0x2
  6288 04a3 30       		.byte	0x30
  6289 04a4 9F       		.byte	0x9f
-ARM GAS  /tmp/ccvrs2bU.s 			page 162
+ARM GAS  /tmp/ccRM5e9E.s 			page 162
 
 
  6290 04a5 86060000 		.4byte	.LVL145-.Ltext0
@@ -9718,7 +9718,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  6344 0509 0500     		.2byte	0x5
  6345 050b 72       		.byte	0x72
  6346 050c 00       		.sleb128 0
-ARM GAS  /tmp/ccvrs2bU.s 			page 163
+ARM GAS  /tmp/ccRM5e9E.s 			page 163
 
 
  6347 050d 3F       		.byte	0x3f
@@ -9778,7 +9778,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  6401 0583 1C       		.byte	0x1c
  6402 0584 9F       		.byte	0x9f
  6403 0585 00000000 		.4byte	0
-ARM GAS  /tmp/ccvrs2bU.s 			page 164
+ARM GAS  /tmp/ccRM5e9E.s 			page 164
 
 
  6404 0589 00000000 		.4byte	0
@@ -9838,7 +9838,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  6458 0616 08       		.sleb128 8
  6459 0617 00000000 		.4byte	0
  6460 061b 00000000 		.4byte	0
-ARM GAS  /tmp/ccvrs2bU.s 			page 165
+ARM GAS  /tmp/ccRM5e9E.s 			page 165
 
 
  6461              	.LLST91:
@@ -9898,7 +9898,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  6515              	.LLST83:
  6516 06aa 5A070000 		.4byte	.LVL171-.Ltext0
  6517 06ae 98070000 		.4byte	.LVL173-.Ltext0
-ARM GAS  /tmp/ccvrs2bU.s 			page 166
+ARM GAS  /tmp/ccRM5e9E.s 			page 166
 
 
  6518 06b2 0200     		.2byte	0x2
@@ -9958,7 +9958,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  6572 073a 00000000 		.4byte	0
  6573              	.LLST51:
  6574 073e C4040000 		.4byte	.LVL109-.Ltext0
-ARM GAS  /tmp/ccvrs2bU.s 			page 167
+ARM GAS  /tmp/ccRM5e9E.s 			page 167
 
 
  6575 0742 DC040000 		.4byte	.LVL110-.Ltext0
@@ -10018,7 +10018,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  6629 07ca 00000000 		.4byte	0
  6630 07ce 00000000 		.4byte	0
  6631              	.LLST44:
-ARM GAS  /tmp/ccvrs2bU.s 			page 168
+ARM GAS  /tmp/ccRM5e9E.s 			page 168
 
 
  6632 07d2 D8030000 		.4byte	.LVL94-.Ltext0
@@ -10078,7 +10078,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  6686 0862 64040000 		.4byte	.LFE74-.Ltext0
  6687 0866 0400     		.2byte	0x4
  6688 0868 F3       		.byte	0xf3
-ARM GAS  /tmp/ccvrs2bU.s 			page 169
+ARM GAS  /tmp/ccRM5e9E.s 			page 169
 
 
  6689 0869 01       		.uleb128 0x1
@@ -10138,7 +10138,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  6743 08f6 0400     		.2byte	0x4
  6744 08f8 F3       		.byte	0xf3
  6745 08f9 01       		.uleb128 0x1
-ARM GAS  /tmp/ccvrs2bU.s 			page 170
+ARM GAS  /tmp/ccRM5e9E.s 			page 170
 
 
  6746 08fa 50       		.byte	0x50
@@ -10198,7 +10198,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  6800 097f 01       		.uleb128 0x1
  6801 0980 50       		.byte	0x50
  6802 0981 9F       		.byte	0x9f
-ARM GAS  /tmp/ccvrs2bU.s 			page 171
+ARM GAS  /tmp/ccRM5e9E.s 			page 171
 
 
  6803 0982 62030000 		.4byte	.LVL80-.Ltext0
@@ -10258,7 +10258,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  6857 0a04 42030000 		.4byte	.LVL77-.Ltext0
  6858 0a08 0200     		.2byte	0x2
  6859 0a0a 70       		.byte	0x70
-ARM GAS  /tmp/ccvrs2bU.s 			page 172
+ARM GAS  /tmp/ccRM5e9E.s 			page 172
 
 
  6860 0a0b 3E       		.sleb128 62
@@ -10318,7 +10318,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  6914 0a85 00000000 		.4byte	0
  6915 0a89 00000000 		.4byte	0
  6916              	.LLST33:
-ARM GAS  /tmp/ccvrs2bU.s 			page 173
+ARM GAS  /tmp/ccRM5e9E.s 			page 173
 
 
  6917 0a8d D6020000 		.4byte	.LVL66-.Ltext0
@@ -10378,7 +10378,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  6971 0b0f 54020000 		.4byte	.LCFI4-.Ltext0
  6972 0b13 0200     		.2byte	0x2
  6973 0b15 7D       		.byte	0x7d
-ARM GAS  /tmp/ccvrs2bU.s 			page 174
+ARM GAS  /tmp/ccRM5e9E.s 			page 174
 
 
  6974 0b16 00       		.sleb128 0
@@ -10438,7 +10438,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  7028              	.LLST28:
  7029 0ba9 50020000 		.4byte	.LVL52-.Ltext0
  7030 0bad 83020000 		.4byte	.LVL54-1-.Ltext0
-ARM GAS  /tmp/ccvrs2bU.s 			page 175
+ARM GAS  /tmp/ccRM5e9E.s 			page 175
 
 
  7031 0bb1 0100     		.2byte	0x1
@@ -10498,7 +10498,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  7085 0c35 0100     		.2byte	0x1
  7086 0c37 50       		.byte	0x50
  7087 0c38 8E020000 		.4byte	.LVL56-.Ltext0
-ARM GAS  /tmp/ccvrs2bU.s 			page 176
+ARM GAS  /tmp/ccRM5e9E.s 			page 176
 
 
  7088 0c3c C4020000 		.4byte	.LVL61-.Ltext0
@@ -10558,7 +10558,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  7142              	.LLST20:
  7143 0ccc B6010000 		.4byte	.LVL37-.Ltext0
  7144 0cd0 ED010000 		.4byte	.LVL39-1-.Ltext0
-ARM GAS  /tmp/ccvrs2bU.s 			page 177
+ARM GAS  /tmp/ccRM5e9E.s 			page 177
 
 
  7145 0cd4 0100     		.2byte	0x1
@@ -10618,7 +10618,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  7199 0d5f 0100     		.2byte	0x1
  7200 0d61 55       		.byte	0x55
  7201 0d62 3A020000 		.4byte	.LVL46-.Ltext0
-ARM GAS  /tmp/ccvrs2bU.s 			page 178
+ARM GAS  /tmp/ccRM5e9E.s 			page 178
 
 
  7202 0d66 44020000 		.4byte	.LVL48-.Ltext0
@@ -10678,7 +10678,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  7256 0dee B4010000 		.4byte	.LVL36-.Ltext0
  7257 0df2 B6010000 		.4byte	.LFE66-.Ltext0
  7258 0df6 0100     		.2byte	0x1
-ARM GAS  /tmp/ccvrs2bU.s 			page 179
+ARM GAS  /tmp/ccRM5e9E.s 			page 179
 
 
  7259 0df8 54       		.byte	0x54
@@ -10738,7 +10738,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  7313 0e81 AC000000 		.4byte	.LVL12-.Ltext0
  7314 0e85 BA000000 		.4byte	.LVL13-.Ltext0
  7315 0e89 0200     		.2byte	0x2
-ARM GAS  /tmp/ccvrs2bU.s 			page 180
+ARM GAS  /tmp/ccRM5e9E.s 			page 180
 
 
  7316 0e8b 30       		.byte	0x30
@@ -10798,7 +10798,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  7370 0ef9 70       		.byte	0x70
  7371 0efa 00       		.sleb128 0
  7372 0efb 21       		.byte	0x21
-ARM GAS  /tmp/ccvrs2bU.s 			page 181
+ARM GAS  /tmp/ccRM5e9E.s 			page 181
 
 
  7373 0efc 71       		.byte	0x71
@@ -10858,7 +10858,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  7427 0f86 6A000000 		.4byte	.LFE121-.Ltext0
  7428 0f8a 0100     		.2byte	0x1
  7429 0f8c 57       		.byte	0x57
-ARM GAS  /tmp/ccvrs2bU.s 			page 182
+ARM GAS  /tmp/ccRM5e9E.s 			page 182
 
 
  7430 0f8d 00000000 		.4byte	0
@@ -10918,7 +10918,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  7484 101e 00       		.sleb128 0
  7485 101f 6C050000 		.4byte	.LCFI13-.Ltext0
  7486 1023 B2050000 		.4byte	.LFE98-.Ltext0
-ARM GAS  /tmp/ccvrs2bU.s 			page 183
+ARM GAS  /tmp/ccRM5e9E.s 			page 183
 
 
  7487 1027 0200     		.2byte	0x2
@@ -10978,7 +10978,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  7541 10a5 7F       		.sleb128 -1
  7542 10a6 9F       		.byte	0x9f
  7543 10a7 8A050000 		.4byte	.LVL121-.Ltext0
-ARM GAS  /tmp/ccvrs2bU.s 			page 184
+ARM GAS  /tmp/ccRM5e9E.s 			page 184
 
 
  7544 10ab A9050000 		.4byte	.LVL122-1-.Ltext0
@@ -11038,7 +11038,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  7588      6500
  7589              	.LASF104:
  7590 001f 48414C5F 		.ascii	"HAL_TickFreqTypeDef\000"
-ARM GAS  /tmp/ccvrs2bU.s 			page 185
+ARM GAS  /tmp/ccRM5e9E.s 			page 185
 
 
  7590      5469636B 
@@ -11098,7 +11098,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  7611              	.LASF141:
  7612 00d3 63723369 		.ascii	"cr3its\000"
  7612      747300
-ARM GAS  /tmp/ccvrs2bU.s 			page 186
+ARM GAS  /tmp/ccRM5e9E.s 			page 186
 
 
  7613              	.LASF100:
@@ -11158,7 +11158,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  7634 0195 534D4152 		.ascii	"SMARTCARD_DMATxOnlyAbortCallback\000"
  7634      54434152 
  7634      445F444D 
-ARM GAS  /tmp/ccvrs2bU.s 			page 187
+ARM GAS  /tmp/ccRM5e9E.s 			page 187
 
 
  7634      4154784F 
@@ -11218,7 +11218,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  7658 0254 50657269 		.ascii	"PeriphInc\000"
  7658      7068496E 
  7658      6300
-ARM GAS  /tmp/ccvrs2bU.s 			page 188
+ARM GAS  /tmp/ccRM5e9E.s 			page 188
 
 
  7659              	.LASF122:
@@ -11278,7 +11278,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  7686      534D4152 
  7686      54434152 
  7686      445F5354 
-ARM GAS  /tmp/ccvrs2bU.s 			page 189
+ARM GAS  /tmp/ccRM5e9E.s 			page 189
 
 
  7686      4154455F 
@@ -11338,7 +11338,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  7710      41626F72 
  7710      745F4954 
  7710      00
-ARM GAS  /tmp/ccvrs2bU.s 			page 190
+ARM GAS  /tmp/ccRM5e9E.s 			page 190
 
 
  7711              	.LASF130:
@@ -11398,7 +11398,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  7732      72666C61 
  7732      677300
  7733              	.LASF128:
-ARM GAS  /tmp/ccvrs2bU.s 			page 191
+ARM GAS  /tmp/ccRM5e9E.s 			page 191
 
 
  7734 0488 534D4152 		.ascii	"SMARTCARD_DMAReceiveCplt\000"
@@ -11458,7 +11458,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  7754      444D415F 
  7754      53544154 
  7754      455F5245 
-ARM GAS  /tmp/ccvrs2bU.s 			page 192
+ARM GAS  /tmp/ccRM5e9E.s 			page 192
 
 
  7754      41445900 
@@ -11518,7 +11518,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  7778      454400
  7779              	.LASF21:
  7780 0613 41504250 		.ascii	"APBPrescTable\000"
-ARM GAS  /tmp/ccvrs2bU.s 			page 193
+ARM GAS  /tmp/ccRM5e9E.s 			page 193
 
 
  7780      72657363 
@@ -11578,7 +11578,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  7803              	.LASF84:
  7804 06d0 48414C5F 		.ascii	"HAL_SMARTCARD_STATE_TIMEOUT\000"
  7804      534D4152 
-ARM GAS  /tmp/ccvrs2bU.s 			page 194
+ARM GAS  /tmp/ccRM5e9E.s 			page 194
 
 
  7804      54434152 
@@ -11638,7 +11638,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  7824 07c2 73686F72 		.ascii	"short int\000"
  7824      7420696E 
  7824      7400
-ARM GAS  /tmp/ccvrs2bU.s 			page 195
+ARM GAS  /tmp/ccRM5e9E.s 			page 195
 
 
  7825              	.LASF108:
@@ -11698,7 +11698,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  7847      65717565 
  7847      737400
  7848              	.LASF87:
-ARM GAS  /tmp/ccvrs2bU.s 			page 196
+ARM GAS  /tmp/ccRM5e9E.s 			page 196
 
 
  7849 08af 5F5F444D 		.ascii	"__DMA_HandleTypeDef\000"
@@ -11758,7 +11758,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  7873      30485A00 
  7874              	.LASF121:
  7875 0951 534D4152 		.ascii	"SMARTCARD_WaitOnFlagUntilTimeout\000"
-ARM GAS  /tmp/ccvrs2bU.s 			page 197
+ARM GAS  /tmp/ccRM5e9E.s 			page 197
 
 
  7875      54434152 
@@ -11818,7 +11818,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  7893      445F5354 
  7893      4154455F 
  7894              	.LASF22:
-ARM GAS  /tmp/ccvrs2bU.s 			page 198
+ARM GAS  /tmp/ccRM5e9E.s 			page 198
 
 
  7895 0a40 434E4454 		.ascii	"CNDTR\000"
@@ -11878,7 +11878,7 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  7918              	.LASF38:
  7919 0af7 48414C5F 		.ascii	"HAL_UNLOCKED\000"
  7919      554E4C4F 
-ARM GAS  /tmp/ccvrs2bU.s 			page 199
+ARM GAS  /tmp/ccRM5e9E.s 			page 199
 
 
  7919      434B4544 
@@ -11919,67 +11919,67 @@ ARM GAS  /tmp/ccvrs2bU.s 			page 1
  7933      6261636B 
  7933      00
  7934              		.ident	"GCC: (15:6.3.1+svn253039-1build1) 6.3.1 20170620"
-ARM GAS  /tmp/ccvrs2bU.s 			page 200
+ARM GAS  /tmp/ccRM5e9E.s 			page 200
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32f1xx_hal_smartcard.c
-     /tmp/ccvrs2bU.s:69     .text:0000000000000000 $t
-     /tmp/ccvrs2bU.s:75     .text:0000000000000000 SMARTCARD_DMATransmitCplt
-     /tmp/ccvrs2bU.s:111    .text:000000000000001a SMARTCARD_WaitOnFlagUntilTimeout.constprop.3
-     /tmp/ccvrs2bU.s:197    .text:000000000000006a HAL_SMARTCARD_MspInit
-     /tmp/ccvrs2bU.s:214    .text:000000000000006c HAL_SMARTCARD_Init
-     /tmp/ccvrs2bU.s:427    .text:0000000000000180 $d
-     /tmp/ccvrs2bU.s:431    .text:0000000000000184 $t
-     /tmp/ccvrs2bU.s:438    .text:0000000000000184 HAL_SMARTCARD_MspDeInit
-     /tmp/ccvrs2bU.s:455    .text:0000000000000186 HAL_SMARTCARD_DeInit
-     /tmp/ccvrs2bU.s:512    .text:00000000000001b6 HAL_SMARTCARD_Transmit
-     /tmp/ccvrs2bU.s:646    .text:0000000000000250 HAL_SMARTCARD_Receive
-     /tmp/ccvrs2bU.s:769    .text:00000000000002d6 HAL_SMARTCARD_Transmit_IT
-     /tmp/ccvrs2bU.s:852    .text:0000000000000324 HAL_SMARTCARD_Receive_IT
-     /tmp/ccvrs2bU.s:931    .text:000000000000036a HAL_SMARTCARD_Transmit_DMA
-     /tmp/ccvrs2bU.s:1031   .text:00000000000003d0 $d
-     /tmp/ccvrs2bU.s:1583   .text:00000000000005b4 SMARTCARD_DMAError
-     /tmp/ccvrs2bU.s:1036   .text:00000000000003d8 $t
-     /tmp/ccvrs2bU.s:1043   .text:00000000000003d8 HAL_SMARTCARD_Receive_DMA
-     /tmp/ccvrs2bU.s:1170   .text:000000000000045c $d
-     /tmp/ccvrs2bU.s:1439   .text:0000000000000538 SMARTCARD_DMAReceiveCplt
-     /tmp/ccvrs2bU.s:1175   .text:0000000000000464 $t
-     /tmp/ccvrs2bU.s:1182   .text:0000000000000464 HAL_SMARTCARD_Abort
-     /tmp/ccvrs2bU.s:1276   .text:00000000000004c4 HAL_SMARTCARD_AbortTransmit
-     /tmp/ccvrs2bU.s:1339   .text:00000000000004f8 HAL_SMARTCARD_AbortReceive
-     /tmp/ccvrs2bU.s:1406   .text:0000000000000534 HAL_SMARTCARD_TxCpltCallback
-     /tmp/ccvrs2bU.s:1423   .text:0000000000000536 HAL_SMARTCARD_RxCpltCallback
-     /tmp/ccvrs2bU.s:1488   .text:0000000000000566 SMARTCARD_Receive_IT
-     /tmp/ccvrs2bU.s:1567   .text:00000000000005b2 HAL_SMARTCARD_ErrorCallback
-     /tmp/ccvrs2bU.s:1677   .text:000000000000060a HAL_SMARTCARD_IRQHandler
-     /tmp/ccvrs2bU.s:1960   .text:0000000000000744 $d
-     /tmp/ccvrs2bU.s:1972   .text:0000000000000748 SMARTCARD_DMAAbortOnError
-     /tmp/ccvrs2bU.s:1966   .text:0000000000000748 $t
-     /tmp/ccvrs2bU.s:2007   .text:0000000000000758 HAL_SMARTCARD_AbortCpltCallback
-     /tmp/ccvrs2bU.s:2024   .text:000000000000075a HAL_SMARTCARD_Abort_IT
-     /tmp/ccvrs2bU.s:2165   .text:00000000000007f8 $d
-     /tmp/ccvrs2bU.s:2228   .text:0000000000000828 SMARTCARD_DMATxAbortCallback
-     /tmp/ccvrs2bU.s:2176   .text:0000000000000800 SMARTCARD_DMARxAbortCallback
-     /tmp/ccvrs2bU.s:2170   .text:0000000000000800 $t
-     /tmp/ccvrs2bU.s:2281   .text:0000000000000850 HAL_SMARTCARD_AbortTransmitCpltCallback
-     /tmp/ccvrs2bU.s:2298   .text:0000000000000852 HAL_SMARTCARD_AbortTransmit_IT
-     /tmp/ccvrs2bU.s:2371   .text:000000000000089c $d
-     /tmp/ccvrs2bU.s:2381   .text:00000000000008a0 SMARTCARD_DMATxOnlyAbortCallback
-     /tmp/ccvrs2bU.s:2375   .text:00000000000008a0 $t
-     /tmp/ccvrs2bU.s:2417   .text:00000000000008b4 HAL_SMARTCARD_AbortReceiveCpltCallback
-     /tmp/ccvrs2bU.s:2436   .text:00000000000008b6 HAL_SMARTCARD_AbortReceive_IT
-     /tmp/ccvrs2bU.s:2513   .text:0000000000000908 $d
-     /tmp/ccvrs2bU.s:2523   .text:000000000000090c SMARTCARD_DMARxOnlyAbortCallback
-     /tmp/ccvrs2bU.s:2517   .text:000000000000090c $t
-     /tmp/ccvrs2bU.s:2559   .text:0000000000000920 HAL_SMARTCARD_GetState
-     /tmp/ccvrs2bU.s:2587   .text:000000000000092c HAL_SMARTCARD_GetError
+     /tmp/ccRM5e9E.s:69     .text:0000000000000000 $t
+     /tmp/ccRM5e9E.s:75     .text:0000000000000000 SMARTCARD_DMATransmitCplt
+     /tmp/ccRM5e9E.s:111    .text:000000000000001a SMARTCARD_WaitOnFlagUntilTimeout.constprop.3
+     /tmp/ccRM5e9E.s:197    .text:000000000000006a HAL_SMARTCARD_MspInit
+     /tmp/ccRM5e9E.s:214    .text:000000000000006c HAL_SMARTCARD_Init
+     /tmp/ccRM5e9E.s:427    .text:0000000000000180 $d
+     /tmp/ccRM5e9E.s:431    .text:0000000000000184 $t
+     /tmp/ccRM5e9E.s:438    .text:0000000000000184 HAL_SMARTCARD_MspDeInit
+     /tmp/ccRM5e9E.s:455    .text:0000000000000186 HAL_SMARTCARD_DeInit
+     /tmp/ccRM5e9E.s:512    .text:00000000000001b6 HAL_SMARTCARD_Transmit
+     /tmp/ccRM5e9E.s:646    .text:0000000000000250 HAL_SMARTCARD_Receive
+     /tmp/ccRM5e9E.s:769    .text:00000000000002d6 HAL_SMARTCARD_Transmit_IT
+     /tmp/ccRM5e9E.s:852    .text:0000000000000324 HAL_SMARTCARD_Receive_IT
+     /tmp/ccRM5e9E.s:931    .text:000000000000036a HAL_SMARTCARD_Transmit_DMA
+     /tmp/ccRM5e9E.s:1031   .text:00000000000003d0 $d
+     /tmp/ccRM5e9E.s:1583   .text:00000000000005b4 SMARTCARD_DMAError
+     /tmp/ccRM5e9E.s:1036   .text:00000000000003d8 $t
+     /tmp/ccRM5e9E.s:1043   .text:00000000000003d8 HAL_SMARTCARD_Receive_DMA
+     /tmp/ccRM5e9E.s:1170   .text:000000000000045c $d
+     /tmp/ccRM5e9E.s:1439   .text:0000000000000538 SMARTCARD_DMAReceiveCplt
+     /tmp/ccRM5e9E.s:1175   .text:0000000000000464 $t
+     /tmp/ccRM5e9E.s:1182   .text:0000000000000464 HAL_SMARTCARD_Abort
+     /tmp/ccRM5e9E.s:1276   .text:00000000000004c4 HAL_SMARTCARD_AbortTransmit
+     /tmp/ccRM5e9E.s:1339   .text:00000000000004f8 HAL_SMARTCARD_AbortReceive
+     /tmp/ccRM5e9E.s:1406   .text:0000000000000534 HAL_SMARTCARD_TxCpltCallback
+     /tmp/ccRM5e9E.s:1423   .text:0000000000000536 HAL_SMARTCARD_RxCpltCallback
+     /tmp/ccRM5e9E.s:1488   .text:0000000000000566 SMARTCARD_Receive_IT
+     /tmp/ccRM5e9E.s:1567   .text:00000000000005b2 HAL_SMARTCARD_ErrorCallback
+     /tmp/ccRM5e9E.s:1677   .text:000000000000060a HAL_SMARTCARD_IRQHandler
+     /tmp/ccRM5e9E.s:1960   .text:0000000000000744 $d
+     /tmp/ccRM5e9E.s:1972   .text:0000000000000748 SMARTCARD_DMAAbortOnError
+     /tmp/ccRM5e9E.s:1966   .text:0000000000000748 $t
+     /tmp/ccRM5e9E.s:2007   .text:0000000000000758 HAL_SMARTCARD_AbortCpltCallback
+     /tmp/ccRM5e9E.s:2024   .text:000000000000075a HAL_SMARTCARD_Abort_IT
+     /tmp/ccRM5e9E.s:2165   .text:00000000000007f8 $d
+     /tmp/ccRM5e9E.s:2228   .text:0000000000000828 SMARTCARD_DMATxAbortCallback
+     /tmp/ccRM5e9E.s:2176   .text:0000000000000800 SMARTCARD_DMARxAbortCallback
+     /tmp/ccRM5e9E.s:2170   .text:0000000000000800 $t
+     /tmp/ccRM5e9E.s:2281   .text:0000000000000850 HAL_SMARTCARD_AbortTransmitCpltCallback
+     /tmp/ccRM5e9E.s:2298   .text:0000000000000852 HAL_SMARTCARD_AbortTransmit_IT
+     /tmp/ccRM5e9E.s:2371   .text:000000000000089c $d
+     /tmp/ccRM5e9E.s:2381   .text:00000000000008a0 SMARTCARD_DMATxOnlyAbortCallback
+     /tmp/ccRM5e9E.s:2375   .text:00000000000008a0 $t
+     /tmp/ccRM5e9E.s:2417   .text:00000000000008b4 HAL_SMARTCARD_AbortReceiveCpltCallback
+     /tmp/ccRM5e9E.s:2436   .text:00000000000008b6 HAL_SMARTCARD_AbortReceive_IT
+     /tmp/ccRM5e9E.s:2513   .text:0000000000000908 $d
+     /tmp/ccRM5e9E.s:2523   .text:000000000000090c SMARTCARD_DMARxOnlyAbortCallback
+     /tmp/ccRM5e9E.s:2517   .text:000000000000090c $t
+     /tmp/ccRM5e9E.s:2559   .text:0000000000000920 HAL_SMARTCARD_GetState
+     /tmp/ccRM5e9E.s:2587   .text:000000000000092c HAL_SMARTCARD_GetError
                      .debug_frame:0000000000000010 $d
 
 UNDEFINED SYMBOLS
 HAL_GetTick
 HAL_RCC_GetPCLK2Freq
-ARM GAS  /tmp/ccvrs2bU.s 			page 201
+ARM GAS  /tmp/ccRM5e9E.s 			page 201
 
 
 HAL_RCC_GetPCLK1Freq
