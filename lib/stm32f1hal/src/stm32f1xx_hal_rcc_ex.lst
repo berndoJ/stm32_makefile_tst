@@ -1,0 +1,3076 @@
+ARM GAS  /tmp/ccX2Hj4B.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1	@ Tag_ABI_FP_denormal
+   3              		.eabi_attribute 21, 1	@ Tag_ABI_FP_exceptions
+   4              		.eabi_attribute 23, 3	@ Tag_ABI_FP_number_model
+   5              		.eabi_attribute 24, 1	@ Tag_ABI_align8_needed
+   6              		.eabi_attribute 25, 1	@ Tag_ABI_align8_preserved
+   7              		.eabi_attribute 26, 1	@ Tag_ABI_enum_size
+   8              		.eabi_attribute 30, 4	@ Tag_ABI_optimization_goals
+   9              		.eabi_attribute 34, 1	@ Tag_CPU_unaligned_access
+  10              		.eabi_attribute 18, 4	@ Tag_ABI_PCS_wchar_t
+  11              		.file	"stm32f1xx_hal_rcc_ex.c"
+  12              	@ GNU C11 (15:6.3.1+svn253039-1build1) version 6.3.1 20170620 (arm-none-eabi)
+  13              	@	compiled by GNU C version 7.2.0, GMP version 6.1.2, MPFR version 4.0.1-rc1, MPC version 1.1.0, is
+  14              	@ warning: MPFR header version 4.0.1-rc1 differs from library version 4.0.1.
+  15              	@ GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+  16              	@ options passed:  -I ./inc -I ./inc/Legacy -I ../cmsisstm32f1xx/inc
+  17              	@ -I ../cmsiscore/inc -imultilib thumb/v7-m -D__USES_INITFINI__
+  18              	@ -D STM32F103x6 -D RUN_FROM_FLASH=1 -D __c src/stm32f1xx_hal_rcc_ex.c
+  19              	@ -mcpu=cortex-m3 -mthumb -auxbase-strip bin/stm32f1xx_hal_rcc_ex.o -g
+  20              	@ -gdwarf-2 -Os -Wall -fomit-frame-pointer -fverbose-asm
+  21              	@ options enabled:  -faggressive-loop-optimizations -falign-jumps
+  22              	@ -falign-labels -falign-loops -fauto-inc-dec -fbranch-count-reg
+  23              	@ -fcaller-saves -fchkp-check-incomplete-type -fchkp-check-read
+  24              	@ -fchkp-check-write -fchkp-instrument-calls -fchkp-narrow-bounds
+  25              	@ -fchkp-optimize -fchkp-store-bounds -fchkp-use-static-bounds
+  26              	@ -fchkp-use-static-const-bounds -fchkp-use-wrappers
+  27              	@ -fcombine-stack-adjustments -fcommon -fcompare-elim -fcprop-registers
+  28              	@ -fcrossjumping -fcse-follow-jumps -fdefer-pop
+  29              	@ -fdelete-null-pointer-checks -fdevirtualize -fdevirtualize-speculatively
+  30              	@ -fdwarf2-cfi-asm -fearly-inlining -feliminate-unused-debug-types
+  31              	@ -fexpensive-optimizations -fforward-propagate -ffunction-cse -fgcse
+  32              	@ -fgcse-lm -fgnu-runtime -fgnu-unique -fguess-branch-probability
+  33              	@ -fhoist-adjacent-loads -fident -fif-conversion -fif-conversion2
+  34              	@ -findirect-inlining -finline -finline-atomics -finline-functions
+  35              	@ -finline-functions-called-once -finline-small-functions -fipa-cp
+  36              	@ -fipa-cp-alignment -fipa-icf -fipa-icf-functions -fipa-icf-variables
+  37              	@ -fipa-profile -fipa-pure-const -fipa-ra -fipa-reference -fipa-sra
+  38              	@ -fira-hoist-pressure -fira-share-save-slots -fira-share-spill-slots
+  39              	@ -fisolate-erroneous-paths-dereference -fivopts -fkeep-static-consts
+  40              	@ -fleading-underscore -flifetime-dse -flra-remat -flto-odr-type-merging
+  41              	@ -fmath-errno -fmerge-constants -fmerge-debug-strings
+  42              	@ -fmove-loop-invariants -fomit-frame-pointer -foptimize-sibling-calls
+  43              	@ -fpartial-inlining -fpeephole -fpeephole2 -fplt -fprefetch-loop-arrays
+  44              	@ -freg-struct-return -freorder-blocks -freorder-functions
+  45              	@ -frerun-cse-after-loop -fsched-critical-path-heuristic
+  46              	@ -fsched-dep-count-heuristic -fsched-group-heuristic -fsched-interblock
+  47              	@ -fsched-last-insn-heuristic -fsched-pressure -fsched-rank-heuristic
+  48              	@ -fsched-spec -fsched-spec-insn-heuristic -fsched-stalled-insns-dep
+  49              	@ -fschedule-insns2 -fsection-anchors -fsemantic-interposition
+  50              	@ -fshow-column -fsigned-zeros -fsplit-ivs-in-unroller -fsplit-wide-types
+  51              	@ -fssa-backprop -fssa-phiopt -fstdarg-opt -fstrict-aliasing
+  52              	@ -fstrict-overflow -fstrict-volatile-bitfields -fsync-libcalls
+  53              	@ -fthread-jumps -ftoplevel-reorder -ftrapping-math -ftree-bit-ccp
+  54              	@ -ftree-builtin-call-dce -ftree-ccp -ftree-ch -ftree-coalesce-vars
+  55              	@ -ftree-copy-prop -ftree-cselim -ftree-dce -ftree-dominator-opts
+  56              	@ -ftree-dse -ftree-forwprop -ftree-fre -ftree-loop-if-convert
+  57              	@ -ftree-loop-im -ftree-loop-ivcanon -ftree-loop-optimize
+ARM GAS  /tmp/ccX2Hj4B.s 			page 2
+
+
+  58              	@ -ftree-parallelize-loops= -ftree-phiprop -ftree-pre -ftree-pta
+  59              	@ -ftree-reassoc -ftree-scev-cprop -ftree-sink -ftree-slsr -ftree-sra
+  60              	@ -ftree-switch-conversion -ftree-tail-merge -ftree-ter -ftree-vrp
+  61              	@ -funit-at-a-time -fvar-tracking -fvar-tracking-assignments -fverbose-asm
+  62              	@ -fzero-initialized-in-bss -masm-syntax-unified -mfix-cortex-m3-ldrd
+  63              	@ -mlittle-endian -mpic-data-is-text-relative -msched-prolog -mthumb
+  64              	@ -munaligned-access -mvectorize-with-neon-quad
+  65              	
+  66              		.text
+  67              	.Ltext0:
+  68              		.cfi_sections	.debug_frame
+  69              		.align	1
+  70              		.global	HAL_RCCEx_PeriphCLKConfig
+  71              		.syntax unified
+  72              		.thumb
+  73              		.thumb_func
+  74              		.fpu softvfp
+  75              		.type	HAL_RCCEx_PeriphCLKConfig, %function
+  76              	HAL_RCCEx_PeriphCLKConfig:
+  77              	.LFB65:
+  78              		.file 1 "src/stm32f1xx_hal_rcc_ex.c"
+   1:src/stm32f1xx_hal_rcc_ex.c **** /**
+   2:src/stm32f1xx_hal_rcc_ex.c ****   ******************************************************************************
+   3:src/stm32f1xx_hal_rcc_ex.c ****   * @file    stm32f1xx_hal_rcc_ex.c
+   4:src/stm32f1xx_hal_rcc_ex.c ****   * @author  MCD Application Team
+   5:src/stm32f1xx_hal_rcc_ex.c ****   * @brief   Extended RCC HAL module driver.
+   6:src/stm32f1xx_hal_rcc_ex.c ****   *          This file provides firmware functions to manage the following
+   7:src/stm32f1xx_hal_rcc_ex.c ****   *          functionalities RCC extension peripheral:
+   8:src/stm32f1xx_hal_rcc_ex.c ****   *           + Extended Peripheral Control functions
+   9:src/stm32f1xx_hal_rcc_ex.c ****   *
+  10:src/stm32f1xx_hal_rcc_ex.c ****   ******************************************************************************
+  11:src/stm32f1xx_hal_rcc_ex.c ****   * @attention
+  12:src/stm32f1xx_hal_rcc_ex.c ****   *
+  13:src/stm32f1xx_hal_rcc_ex.c ****   * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics.
+  14:src/stm32f1xx_hal_rcc_ex.c ****   * All rights reserved.</center></h2>
+  15:src/stm32f1xx_hal_rcc_ex.c ****   *
+  16:src/stm32f1xx_hal_rcc_ex.c ****   * This software component is licensed by ST under BSD 3-Clause license,
+  17:src/stm32f1xx_hal_rcc_ex.c ****   * the "License"; You may not use this file except in compliance with the
+  18:src/stm32f1xx_hal_rcc_ex.c ****   * License. You may obtain a copy of the License at:
+  19:src/stm32f1xx_hal_rcc_ex.c ****   *                        opensource.org/licenses/BSD-3-Clause
+  20:src/stm32f1xx_hal_rcc_ex.c ****   *
+  21:src/stm32f1xx_hal_rcc_ex.c ****   ******************************************************************************
+  22:src/stm32f1xx_hal_rcc_ex.c ****   */
+  23:src/stm32f1xx_hal_rcc_ex.c **** 
+  24:src/stm32f1xx_hal_rcc_ex.c **** /* Includes ------------------------------------------------------------------*/
+  25:src/stm32f1xx_hal_rcc_ex.c **** #include "stm32f1xx_hal.h"
+  26:src/stm32f1xx_hal_rcc_ex.c **** 
+  27:src/stm32f1xx_hal_rcc_ex.c **** /** @addtogroup STM32F1xx_HAL_Driver
+  28:src/stm32f1xx_hal_rcc_ex.c ****   * @{
+  29:src/stm32f1xx_hal_rcc_ex.c ****   */
+  30:src/stm32f1xx_hal_rcc_ex.c **** 
+  31:src/stm32f1xx_hal_rcc_ex.c **** #ifdef HAL_RCC_MODULE_ENABLED
+  32:src/stm32f1xx_hal_rcc_ex.c **** 
+  33:src/stm32f1xx_hal_rcc_ex.c **** /** @defgroup RCCEx RCCEx
+  34:src/stm32f1xx_hal_rcc_ex.c ****   * @brief RCC Extension HAL module driver.
+  35:src/stm32f1xx_hal_rcc_ex.c ****   * @{
+  36:src/stm32f1xx_hal_rcc_ex.c ****   */
+ARM GAS  /tmp/ccX2Hj4B.s 			page 3
+
+
+  37:src/stm32f1xx_hal_rcc_ex.c **** 
+  38:src/stm32f1xx_hal_rcc_ex.c **** /* Private typedef -----------------------------------------------------------*/
+  39:src/stm32f1xx_hal_rcc_ex.c **** /* Private define ------------------------------------------------------------*/
+  40:src/stm32f1xx_hal_rcc_ex.c **** /** @defgroup RCCEx_Private_Constants RCCEx Private Constants
+  41:src/stm32f1xx_hal_rcc_ex.c ****   * @{
+  42:src/stm32f1xx_hal_rcc_ex.c ****   */
+  43:src/stm32f1xx_hal_rcc_ex.c **** /**
+  44:src/stm32f1xx_hal_rcc_ex.c ****   * @}
+  45:src/stm32f1xx_hal_rcc_ex.c ****   */
+  46:src/stm32f1xx_hal_rcc_ex.c **** 
+  47:src/stm32f1xx_hal_rcc_ex.c **** /* Private macro -------------------------------------------------------------*/
+  48:src/stm32f1xx_hal_rcc_ex.c **** /** @defgroup RCCEx_Private_Macros RCCEx Private Macros
+  49:src/stm32f1xx_hal_rcc_ex.c ****   * @{
+  50:src/stm32f1xx_hal_rcc_ex.c ****   */
+  51:src/stm32f1xx_hal_rcc_ex.c **** /**
+  52:src/stm32f1xx_hal_rcc_ex.c ****   * @}
+  53:src/stm32f1xx_hal_rcc_ex.c ****   */
+  54:src/stm32f1xx_hal_rcc_ex.c **** 
+  55:src/stm32f1xx_hal_rcc_ex.c **** /* Private variables ---------------------------------------------------------*/
+  56:src/stm32f1xx_hal_rcc_ex.c **** /* Private function prototypes -----------------------------------------------*/
+  57:src/stm32f1xx_hal_rcc_ex.c **** /* Private functions ---------------------------------------------------------*/
+  58:src/stm32f1xx_hal_rcc_ex.c **** 
+  59:src/stm32f1xx_hal_rcc_ex.c **** /** @defgroup RCCEx_Exported_Functions RCCEx Exported Functions
+  60:src/stm32f1xx_hal_rcc_ex.c ****   * @{
+  61:src/stm32f1xx_hal_rcc_ex.c ****   */
+  62:src/stm32f1xx_hal_rcc_ex.c **** 
+  63:src/stm32f1xx_hal_rcc_ex.c **** /** @defgroup RCCEx_Exported_Functions_Group1 Peripheral Control functions
+  64:src/stm32f1xx_hal_rcc_ex.c ****   *  @brief  Extended Peripheral Control functions
+  65:src/stm32f1xx_hal_rcc_ex.c ****   *
+  66:src/stm32f1xx_hal_rcc_ex.c **** @verbatim
+  67:src/stm32f1xx_hal_rcc_ex.c ****  ===============================================================================
+  68:src/stm32f1xx_hal_rcc_ex.c ****                 ##### Extended Peripheral Control functions  #####
+  69:src/stm32f1xx_hal_rcc_ex.c ****  ===============================================================================
+  70:src/stm32f1xx_hal_rcc_ex.c ****     [..]
+  71:src/stm32f1xx_hal_rcc_ex.c ****     This subsection provides a set of functions allowing to control the RCC Clocks
+  72:src/stm32f1xx_hal_rcc_ex.c ****     frequencies.
+  73:src/stm32f1xx_hal_rcc_ex.c ****     [..]
+  74:src/stm32f1xx_hal_rcc_ex.c ****     (@) Important note: Care must be taken when HAL_RCCEx_PeriphCLKConfig() is used to
+  75:src/stm32f1xx_hal_rcc_ex.c ****         select the RTC clock source; in this case the Backup domain will be reset in
+  76:src/stm32f1xx_hal_rcc_ex.c ****         order to modify the RTC Clock source, as consequence RTC registers (including
+  77:src/stm32f1xx_hal_rcc_ex.c ****         the backup registers) are set to their reset values.
+  78:src/stm32f1xx_hal_rcc_ex.c **** 
+  79:src/stm32f1xx_hal_rcc_ex.c **** @endverbatim
+  80:src/stm32f1xx_hal_rcc_ex.c ****   * @{
+  81:src/stm32f1xx_hal_rcc_ex.c ****   */
+  82:src/stm32f1xx_hal_rcc_ex.c **** 
+  83:src/stm32f1xx_hal_rcc_ex.c **** /**
+  84:src/stm32f1xx_hal_rcc_ex.c ****   * @brief  Initializes the RCC extended peripherals clocks according to the specified parameters i
+  85:src/stm32f1xx_hal_rcc_ex.c ****   *         RCC_PeriphCLKInitTypeDef.
+  86:src/stm32f1xx_hal_rcc_ex.c ****   * @param  PeriphClkInit pointer to an RCC_PeriphCLKInitTypeDef structure that
+  87:src/stm32f1xx_hal_rcc_ex.c ****   *         contains the configuration information for the Extended Peripherals clocks(RTC clock).
+  88:src/stm32f1xx_hal_rcc_ex.c ****   *
+  89:src/stm32f1xx_hal_rcc_ex.c ****   * @note   Care must be taken when HAL_RCCEx_PeriphCLKConfig() is used to select
+  90:src/stm32f1xx_hal_rcc_ex.c ****   *         the RTC clock source; in this case the Backup domain will be reset in
+  91:src/stm32f1xx_hal_rcc_ex.c ****   *         order to modify the RTC Clock source, as consequence RTC registers (including
+  92:src/stm32f1xx_hal_rcc_ex.c ****   *         the backup registers) are set to their reset values.
+  93:src/stm32f1xx_hal_rcc_ex.c ****   *
+ARM GAS  /tmp/ccX2Hj4B.s 			page 4
+
+
+  94:src/stm32f1xx_hal_rcc_ex.c ****   * @note   In case of STM32F105xC or STM32F107xC devices, PLLI2S will be enabled if requested on
+  95:src/stm32f1xx_hal_rcc_ex.c ****   *         one of 2 I2S interfaces. When PLLI2S is enabled, you need to call HAL_RCCEx_DisablePLLI
+  96:src/stm32f1xx_hal_rcc_ex.c ****   *         manually disable it.
+  97:src/stm32f1xx_hal_rcc_ex.c ****   *
+  98:src/stm32f1xx_hal_rcc_ex.c ****   * @retval HAL status
+  99:src/stm32f1xx_hal_rcc_ex.c ****   */
+ 100:src/stm32f1xx_hal_rcc_ex.c **** HAL_StatusTypeDef HAL_RCCEx_PeriphCLKConfig(RCC_PeriphCLKInitTypeDef  *PeriphClkInit)
+ 101:src/stm32f1xx_hal_rcc_ex.c **** {
+  79              		.loc 1 101 0
+  80              		.cfi_startproc
+  81              		@ args = 0, pretend = 0, frame = 8
+  82              		@ frame_needed = 0, uses_anonymous_args = 0
+  83              	.LVL0:
+ 102:src/stm32f1xx_hal_rcc_ex.c ****   uint32_t tickstart = 0U, temp_reg = 0U;
+ 103:src/stm32f1xx_hal_rcc_ex.c **** #if defined(STM32F105xC) || defined(STM32F107xC)
+ 104:src/stm32f1xx_hal_rcc_ex.c ****   uint32_t  pllactive = 0U;
+ 105:src/stm32f1xx_hal_rcc_ex.c **** #endif /* STM32F105xC || STM32F107xC */
+ 106:src/stm32f1xx_hal_rcc_ex.c **** 
+ 107:src/stm32f1xx_hal_rcc_ex.c ****   /* Check the parameters */
+ 108:src/stm32f1xx_hal_rcc_ex.c ****   assert_param(IS_RCC_PERIPHCLOCK(PeriphClkInit->PeriphClockSelection));
+ 109:src/stm32f1xx_hal_rcc_ex.c **** 
+ 110:src/stm32f1xx_hal_rcc_ex.c ****   /*------------------------------- RTC/LCD Configuration ------------------------*/
+ 111:src/stm32f1xx_hal_rcc_ex.c ****   if ((((PeriphClkInit->PeriphClockSelection) & RCC_PERIPHCLK_RTC) == RCC_PERIPHCLK_RTC))
+  84              		.loc 1 111 0
+  85 0000 0368     		ldr	r3, [r0]	@ PeriphClkInit_12(D)->PeriphClockSelection, PeriphClkInit_12(D)->PeriphClockSelectio
+ 101:src/stm32f1xx_hal_rcc_ex.c ****   uint32_t tickstart = 0U, temp_reg = 0U;
+  86              		.loc 1 101 0
+  87 0002 2DE9F341 		push	{r0, r1, r4, r5, r6, r7, r8, lr}	@
+  88              	.LCFI0:
+  89              		.cfi_def_cfa_offset 32
+  90              		.cfi_offset 4, -24
+  91              		.cfi_offset 5, -20
+  92              		.cfi_offset 6, -16
+  93              		.cfi_offset 7, -12
+  94              		.cfi_offset 8, -8
+  95              		.cfi_offset 14, -4
+  96              		.loc 1 111 0
+  97 0006 D907     		lsls	r1, r3, #31	@, PeriphClkInit_12(D)->PeriphClockSelection,
+ 101:src/stm32f1xx_hal_rcc_ex.c ****   uint32_t tickstart = 0U, temp_reg = 0U;
+  98              		.loc 1 101 0
+  99 0008 0546     		mov	r5, r0	@ PeriphClkInit, PeriphClkInit
+ 100              		.loc 1 111 0
+ 101 000a 20D5     		bpl	.L3	@,
+ 102              	.LVL1:
+ 103              	.LBB2:
+ 112:src/stm32f1xx_hal_rcc_ex.c ****   {
+ 113:src/stm32f1xx_hal_rcc_ex.c ****     /* check for RTC Parameters used to output RTCCLK */
+ 114:src/stm32f1xx_hal_rcc_ex.c ****     assert_param(IS_RCC_RTCCLKSOURCE(PeriphClkInit->RTCClockSelection));
+ 115:src/stm32f1xx_hal_rcc_ex.c **** 
+ 116:src/stm32f1xx_hal_rcc_ex.c ****     FlagStatus       pwrclkchanged = RESET;
+ 117:src/stm32f1xx_hal_rcc_ex.c **** 
+ 118:src/stm32f1xx_hal_rcc_ex.c ****     /* As soon as function is called to change RTC clock source, activation of the
+ 119:src/stm32f1xx_hal_rcc_ex.c ****        power domain is done. */
+ 120:src/stm32f1xx_hal_rcc_ex.c ****     /* Requires to enable write access to Backup Domain of necessary */
+ 121:src/stm32f1xx_hal_rcc_ex.c ****     if (__HAL_RCC_PWR_IS_CLK_DISABLED())
+ 104              		.loc 1 121 0
+ 105 000c 354C     		ldr	r4, .L27	@ tmp162,
+ARM GAS  /tmp/ccX2Hj4B.s 			page 5
+
+
+ 106 000e E369     		ldr	r3, [r4, #28]	@ _15, MEM[(struct RCC_TypeDef *)1073876992B].APB1ENR
+ 107 0010 DA00     		lsls	r2, r3, #3	@, _15,
+ 108 0012 32D4     		bmi	.L18	@,
+ 122:src/stm32f1xx_hal_rcc_ex.c ****     {
+ 123:src/stm32f1xx_hal_rcc_ex.c ****       __HAL_RCC_PWR_CLK_ENABLE();
+ 124:src/stm32f1xx_hal_rcc_ex.c ****       pwrclkchanged = SET;
+ 109              		.loc 1 124 0
+ 110 0014 0127     		movs	r7, #1	@ pwrclkchanged,
+ 111              	.LBB3:
+ 123:src/stm32f1xx_hal_rcc_ex.c ****       pwrclkchanged = SET;
+ 112              		.loc 1 123 0
+ 113 0016 E369     		ldr	r3, [r4, #28]	@ _17, MEM[(struct RCC_TypeDef *)1073876992B].APB1ENR
+ 114 0018 43F08053 		orr	r3, r3, #268435456	@ _18, _17,
+ 115 001c E361     		str	r3, [r4, #28]	@ _18, MEM[(struct RCC_TypeDef *)1073876992B].APB1ENR
+ 116 001e E369     		ldr	r3, [r4, #28]	@ _20, MEM[(struct RCC_TypeDef *)1073876992B].APB1ENR
+ 117 0020 03F08053 		and	r3, r3, #268435456	@ tmpreg.0_21, _20,
+ 118 0024 0193     		str	r3, [sp, #4]	@ tmpreg.0_21, tmpreg
+ 119 0026 019B     		ldr	r3, [sp, #4]	@ vol.1_23, tmpreg
+ 120              	.LVL2:
+ 121              	.L4:
+ 122              	.LBE3:
+ 125:src/stm32f1xx_hal_rcc_ex.c ****     }
+ 126:src/stm32f1xx_hal_rcc_ex.c **** 
+ 127:src/stm32f1xx_hal_rcc_ex.c ****     if (HAL_IS_BIT_CLR(PWR->CR, PWR_CR_DBP))
+ 123              		.loc 1 127 0
+ 124 0028 2F4E     		ldr	r6, .L27+4	@ tmp167,
+ 125 002a 3368     		ldr	r3, [r6]	@ _24, MEM[(struct PWR_TypeDef *)1073770496B].CR
+ 126 002c DB05     		lsls	r3, r3, #23	@, _24,
+ 127 002e 26D5     		bpl	.L5	@,
+ 128              	.LVL3:
+ 129              	.L11:
+ 128:src/stm32f1xx_hal_rcc_ex.c ****     {
+ 129:src/stm32f1xx_hal_rcc_ex.c ****       /* Enable write access to Backup domain */
+ 130:src/stm32f1xx_hal_rcc_ex.c ****       SET_BIT(PWR->CR, PWR_CR_DBP);
+ 131:src/stm32f1xx_hal_rcc_ex.c **** 
+ 132:src/stm32f1xx_hal_rcc_ex.c ****       /* Wait for Backup domain Write protection disable */
+ 133:src/stm32f1xx_hal_rcc_ex.c ****       tickstart = HAL_GetTick();
+ 134:src/stm32f1xx_hal_rcc_ex.c **** 
+ 135:src/stm32f1xx_hal_rcc_ex.c ****       while (HAL_IS_BIT_CLR(PWR->CR, PWR_CR_DBP))
+ 136:src/stm32f1xx_hal_rcc_ex.c ****       {
+ 137:src/stm32f1xx_hal_rcc_ex.c ****         if ((HAL_GetTick() - tickstart) > RCC_DBP_TIMEOUT_VALUE)
+ 138:src/stm32f1xx_hal_rcc_ex.c ****         {
+ 139:src/stm32f1xx_hal_rcc_ex.c ****           return HAL_TIMEOUT;
+ 140:src/stm32f1xx_hal_rcc_ex.c ****         }
+ 141:src/stm32f1xx_hal_rcc_ex.c ****       }
+ 142:src/stm32f1xx_hal_rcc_ex.c ****     }
+ 143:src/stm32f1xx_hal_rcc_ex.c **** 
+ 144:src/stm32f1xx_hal_rcc_ex.c ****     /* Reset the Backup domain only if the RTC Clock source selection is modified from reset value 
+ 145:src/stm32f1xx_hal_rcc_ex.c ****     temp_reg = (RCC->BDCR & RCC_BDCR_RTCSEL);
+ 130              		.loc 1 145 0
+ 131 0030 236A     		ldr	r3, [r4, #32]	@ _36, MEM[(struct RCC_TypeDef *)1073876992B].BDCR
+ 132              	.LVL4:
+ 146:src/stm32f1xx_hal_rcc_ex.c ****     if ((temp_reg != 0x00000000U) && (temp_reg != (PeriphClkInit->RTCClockSelection & RCC_BDCR_RTCS
+ 133              		.loc 1 146 0
+ 134 0032 13F44073 		ands	r3, r3, #768	@ temp_reg, _36,
+ 135              	.LVL5:
+ 136 0036 36D1     		bne	.L6	@,
+ARM GAS  /tmp/ccX2Hj4B.s 			page 6
+
+
+ 137              	.LVL6:
+ 138              	.L7:
+ 147:src/stm32f1xx_hal_rcc_ex.c ****     {
+ 148:src/stm32f1xx_hal_rcc_ex.c ****       /* Store the content of BDCR register before the reset of Backup Domain */
+ 149:src/stm32f1xx_hal_rcc_ex.c ****       temp_reg = (RCC->BDCR & ~(RCC_BDCR_RTCSEL));
+ 150:src/stm32f1xx_hal_rcc_ex.c ****       /* RTC Clock selection can be changed only if the Backup Domain is reset */
+ 151:src/stm32f1xx_hal_rcc_ex.c ****       __HAL_RCC_BACKUPRESET_FORCE();
+ 152:src/stm32f1xx_hal_rcc_ex.c ****       __HAL_RCC_BACKUPRESET_RELEASE();
+ 153:src/stm32f1xx_hal_rcc_ex.c ****       /* Restore the Content of BDCR register */
+ 154:src/stm32f1xx_hal_rcc_ex.c ****       RCC->BDCR = temp_reg;
+ 155:src/stm32f1xx_hal_rcc_ex.c **** 
+ 156:src/stm32f1xx_hal_rcc_ex.c ****       /* Wait for LSERDY if LSE was enabled */
+ 157:src/stm32f1xx_hal_rcc_ex.c ****       if (HAL_IS_BIT_SET(temp_reg, RCC_BDCR_LSEON))
+ 158:src/stm32f1xx_hal_rcc_ex.c ****       {
+ 159:src/stm32f1xx_hal_rcc_ex.c ****         /* Get Start Tick */
+ 160:src/stm32f1xx_hal_rcc_ex.c ****         tickstart = HAL_GetTick();
+ 161:src/stm32f1xx_hal_rcc_ex.c **** 
+ 162:src/stm32f1xx_hal_rcc_ex.c ****         /* Wait till LSE is ready */
+ 163:src/stm32f1xx_hal_rcc_ex.c ****         while (__HAL_RCC_GET_FLAG(RCC_FLAG_LSERDY) == RESET)
+ 164:src/stm32f1xx_hal_rcc_ex.c ****         {
+ 165:src/stm32f1xx_hal_rcc_ex.c ****           if ((HAL_GetTick() - tickstart) > RCC_LSE_TIMEOUT_VALUE)
+ 166:src/stm32f1xx_hal_rcc_ex.c ****           {
+ 167:src/stm32f1xx_hal_rcc_ex.c ****             return HAL_TIMEOUT;
+ 168:src/stm32f1xx_hal_rcc_ex.c ****           }
+ 169:src/stm32f1xx_hal_rcc_ex.c ****         }
+ 170:src/stm32f1xx_hal_rcc_ex.c ****       }
+ 171:src/stm32f1xx_hal_rcc_ex.c ****     }
+ 172:src/stm32f1xx_hal_rcc_ex.c ****     __HAL_RCC_RTC_CONFIG(PeriphClkInit->RTCClockSelection);
+ 139              		.loc 1 172 0
+ 140 0038 236A     		ldr	r3, [r4, #32]	@ _53, MEM[(struct RCC_TypeDef *)1073876992B].BDCR
+ 141 003a 6A68     		ldr	r2, [r5, #4]	@ PeriphClkInit_12(D)->RTCClockSelection, PeriphClkInit_12(D)->RTCClockSelection
+ 142 003c 23F44073 		bic	r3, r3, #768	@ tmp176, _53,
+ 143 0040 1343     		orrs	r3, r3, r2	@, _56, tmp176, PeriphClkInit_12(D)->RTCClockSelection
+ 144 0042 2362     		str	r3, [r4, #32]	@ _56, MEM[(struct RCC_TypeDef *)1073876992B].BDCR
+ 173:src/stm32f1xx_hal_rcc_ex.c **** 
+ 174:src/stm32f1xx_hal_rcc_ex.c ****     /* Require to disable power clock if necessary */
+ 175:src/stm32f1xx_hal_rcc_ex.c ****     if (pwrclkchanged == SET)
+ 145              		.loc 1 175 0
+ 146 0044 1FB1     		cbz	r7, .L3	@ pwrclkchanged,
+ 176:src/stm32f1xx_hal_rcc_ex.c ****     {
+ 177:src/stm32f1xx_hal_rcc_ex.c ****       __HAL_RCC_PWR_CLK_DISABLE();
+ 147              		.loc 1 177 0
+ 148 0046 E369     		ldr	r3, [r4, #28]	@ _58, MEM[(struct RCC_TypeDef *)1073876992B].APB1ENR
+ 149 0048 23F08053 		bic	r3, r3, #268435456	@ _59, _58,
+ 150 004c E361     		str	r3, [r4, #28]	@ _59, MEM[(struct RCC_TypeDef *)1073876992B].APB1ENR
+ 151              	.LVL7:
+ 152              	.L3:
+ 153              	.LBE2:
+ 178:src/stm32f1xx_hal_rcc_ex.c ****     }
+ 179:src/stm32f1xx_hal_rcc_ex.c ****   }
+ 180:src/stm32f1xx_hal_rcc_ex.c **** 
+ 181:src/stm32f1xx_hal_rcc_ex.c ****   /*------------------------------ ADC clock Configuration ------------------*/
+ 182:src/stm32f1xx_hal_rcc_ex.c ****   if (((PeriphClkInit->PeriphClockSelection) & RCC_PERIPHCLK_ADC) == RCC_PERIPHCLK_ADC)
+ 154              		.loc 1 182 0
+ 155 004e 2868     		ldr	r0, [r5]	@ _61, PeriphClkInit_12(D)->PeriphClockSelection
+ 156 0050 8307     		lsls	r3, r0, #30	@, _61,
+ 157 0052 06D5     		bpl	.L17	@,
+ARM GAS  /tmp/ccX2Hj4B.s 			page 7
+
+
+ 183:src/stm32f1xx_hal_rcc_ex.c ****   {
+ 184:src/stm32f1xx_hal_rcc_ex.c ****     /* Check the parameters */
+ 185:src/stm32f1xx_hal_rcc_ex.c ****     assert_param(IS_RCC_ADCPLLCLK_DIV(PeriphClkInit->AdcClockSelection));
+ 186:src/stm32f1xx_hal_rcc_ex.c **** 
+ 187:src/stm32f1xx_hal_rcc_ex.c ****     /* Configure the ADC clock source */
+ 188:src/stm32f1xx_hal_rcc_ex.c ****     __HAL_RCC_ADC_CONFIG(PeriphClkInit->AdcClockSelection);
+ 158              		.loc 1 188 0
+ 159 0054 234A     		ldr	r2, .L27	@ tmp195,
+ 160 0056 A968     		ldr	r1, [r5, #8]	@ PeriphClkInit_12(D)->AdcClockSelection, PeriphClkInit_12(D)->AdcClockSelection
+ 161 0058 5368     		ldr	r3, [r2, #4]	@ _63, MEM[(struct RCC_TypeDef *)1073876992B].CFGR
+ 162 005a 23F44043 		bic	r3, r3, #49152	@ tmp196, _63,
+ 163 005e 0B43     		orrs	r3, r3, r1	@, _66, tmp196, PeriphClkInit_12(D)->AdcClockSelection
+ 164 0060 5360     		str	r3, [r2, #4]	@ _66, MEM[(struct RCC_TypeDef *)1073876992B].CFGR
+ 165              	.L17:
+ 189:src/stm32f1xx_hal_rcc_ex.c ****   }
+ 190:src/stm32f1xx_hal_rcc_ex.c **** 
+ 191:src/stm32f1xx_hal_rcc_ex.c **** #if defined(STM32F105xC) || defined(STM32F107xC)
+ 192:src/stm32f1xx_hal_rcc_ex.c ****   /*------------------------------ I2S2 Configuration ------------------------*/
+ 193:src/stm32f1xx_hal_rcc_ex.c ****   if (((PeriphClkInit->PeriphClockSelection) & RCC_PERIPHCLK_I2S2) == RCC_PERIPHCLK_I2S2)
+ 194:src/stm32f1xx_hal_rcc_ex.c ****   {
+ 195:src/stm32f1xx_hal_rcc_ex.c ****     /* Check the parameters */
+ 196:src/stm32f1xx_hal_rcc_ex.c ****     assert_param(IS_RCC_I2S2CLKSOURCE(PeriphClkInit->I2s2ClockSelection));
+ 197:src/stm32f1xx_hal_rcc_ex.c **** 
+ 198:src/stm32f1xx_hal_rcc_ex.c ****     /* Configure the I2S2 clock source */
+ 199:src/stm32f1xx_hal_rcc_ex.c ****     __HAL_RCC_I2S2_CONFIG(PeriphClkInit->I2s2ClockSelection);
+ 200:src/stm32f1xx_hal_rcc_ex.c ****   }
+ 201:src/stm32f1xx_hal_rcc_ex.c **** 
+ 202:src/stm32f1xx_hal_rcc_ex.c ****   /*------------------------------ I2S3 Configuration ------------------------*/
+ 203:src/stm32f1xx_hal_rcc_ex.c ****   if (((PeriphClkInit->PeriphClockSelection) & RCC_PERIPHCLK_I2S3) == RCC_PERIPHCLK_I2S3)
+ 204:src/stm32f1xx_hal_rcc_ex.c ****   {
+ 205:src/stm32f1xx_hal_rcc_ex.c ****     /* Check the parameters */
+ 206:src/stm32f1xx_hal_rcc_ex.c ****     assert_param(IS_RCC_I2S3CLKSOURCE(PeriphClkInit->I2s3ClockSelection));
+ 207:src/stm32f1xx_hal_rcc_ex.c **** 
+ 208:src/stm32f1xx_hal_rcc_ex.c ****     /* Configure the I2S3 clock source */
+ 209:src/stm32f1xx_hal_rcc_ex.c ****     __HAL_RCC_I2S3_CONFIG(PeriphClkInit->I2s3ClockSelection);
+ 210:src/stm32f1xx_hal_rcc_ex.c ****   }
+ 211:src/stm32f1xx_hal_rcc_ex.c **** 
+ 212:src/stm32f1xx_hal_rcc_ex.c ****   /*------------------------------ PLL I2S Configuration ----------------------*/
+ 213:src/stm32f1xx_hal_rcc_ex.c ****   /* Check that PLLI2S need to be enabled */
+ 214:src/stm32f1xx_hal_rcc_ex.c ****   if (HAL_IS_BIT_SET(RCC->CFGR2, RCC_CFGR2_I2S2SRC) || HAL_IS_BIT_SET(RCC->CFGR2, RCC_CFGR2_I2S3SRC
+ 215:src/stm32f1xx_hal_rcc_ex.c ****   {
+ 216:src/stm32f1xx_hal_rcc_ex.c ****     /* Update flag to indicate that PLL I2S should be active */
+ 217:src/stm32f1xx_hal_rcc_ex.c ****     pllactive = 1;
+ 218:src/stm32f1xx_hal_rcc_ex.c ****   }
+ 219:src/stm32f1xx_hal_rcc_ex.c **** 
+ 220:src/stm32f1xx_hal_rcc_ex.c ****   /* Check if PLL I2S need to be enabled */
+ 221:src/stm32f1xx_hal_rcc_ex.c ****   if (pllactive == 1)
+ 222:src/stm32f1xx_hal_rcc_ex.c ****   {
+ 223:src/stm32f1xx_hal_rcc_ex.c ****     /* Enable PLL I2S only if not active */
+ 224:src/stm32f1xx_hal_rcc_ex.c ****     if (HAL_IS_BIT_CLR(RCC->CR, RCC_CR_PLL3ON))
+ 225:src/stm32f1xx_hal_rcc_ex.c ****     {
+ 226:src/stm32f1xx_hal_rcc_ex.c ****       /* Check the parameters */
+ 227:src/stm32f1xx_hal_rcc_ex.c ****       assert_param(IS_RCC_PLLI2S_MUL(PeriphClkInit->PLLI2S.PLLI2SMUL));
+ 228:src/stm32f1xx_hal_rcc_ex.c ****       assert_param(IS_RCC_HSE_PREDIV2(PeriphClkInit->PLLI2S.HSEPrediv2Value));
+ 229:src/stm32f1xx_hal_rcc_ex.c **** 
+ 230:src/stm32f1xx_hal_rcc_ex.c ****       /* Prediv2 can be written only when the PLL2 is disabled. */
+ 231:src/stm32f1xx_hal_rcc_ex.c ****       /* Return an error only if new value is different from the programmed value */
+ARM GAS  /tmp/ccX2Hj4B.s 			page 8
+
+
+ 232:src/stm32f1xx_hal_rcc_ex.c ****       if (HAL_IS_BIT_SET(RCC->CR, RCC_CR_PLL2ON) && \
+ 233:src/stm32f1xx_hal_rcc_ex.c ****           (__HAL_RCC_HSE_GET_PREDIV2() != PeriphClkInit->PLLI2S.HSEPrediv2Value))
+ 234:src/stm32f1xx_hal_rcc_ex.c ****       {
+ 235:src/stm32f1xx_hal_rcc_ex.c ****         return HAL_ERROR;
+ 236:src/stm32f1xx_hal_rcc_ex.c ****       }
+ 237:src/stm32f1xx_hal_rcc_ex.c **** 
+ 238:src/stm32f1xx_hal_rcc_ex.c ****       /* Configure the HSE prediv2 factor --------------------------------*/
+ 239:src/stm32f1xx_hal_rcc_ex.c ****       __HAL_RCC_HSE_PREDIV2_CONFIG(PeriphClkInit->PLLI2S.HSEPrediv2Value);
+ 240:src/stm32f1xx_hal_rcc_ex.c **** 
+ 241:src/stm32f1xx_hal_rcc_ex.c ****       /* Configure the main PLLI2S multiplication factors. */
+ 242:src/stm32f1xx_hal_rcc_ex.c ****       __HAL_RCC_PLLI2S_CONFIG(PeriphClkInit->PLLI2S.PLLI2SMUL);
+ 243:src/stm32f1xx_hal_rcc_ex.c **** 
+ 244:src/stm32f1xx_hal_rcc_ex.c ****       /* Enable the main PLLI2S. */
+ 245:src/stm32f1xx_hal_rcc_ex.c ****       __HAL_RCC_PLLI2S_ENABLE();
+ 246:src/stm32f1xx_hal_rcc_ex.c **** 
+ 247:src/stm32f1xx_hal_rcc_ex.c ****       /* Get Start Tick*/
+ 248:src/stm32f1xx_hal_rcc_ex.c ****       tickstart = HAL_GetTick();
+ 249:src/stm32f1xx_hal_rcc_ex.c **** 
+ 250:src/stm32f1xx_hal_rcc_ex.c ****       /* Wait till PLLI2S is ready */
+ 251:src/stm32f1xx_hal_rcc_ex.c ****       while (__HAL_RCC_GET_FLAG(RCC_FLAG_PLLI2SRDY)  == RESET)
+ 252:src/stm32f1xx_hal_rcc_ex.c ****       {
+ 253:src/stm32f1xx_hal_rcc_ex.c ****         if ((HAL_GetTick() - tickstart) > PLLI2S_TIMEOUT_VALUE)
+ 254:src/stm32f1xx_hal_rcc_ex.c ****         {
+ 255:src/stm32f1xx_hal_rcc_ex.c ****           return HAL_TIMEOUT;
+ 256:src/stm32f1xx_hal_rcc_ex.c ****         }
+ 257:src/stm32f1xx_hal_rcc_ex.c ****       }
+ 258:src/stm32f1xx_hal_rcc_ex.c ****     }
+ 259:src/stm32f1xx_hal_rcc_ex.c ****     else
+ 260:src/stm32f1xx_hal_rcc_ex.c ****     {
+ 261:src/stm32f1xx_hal_rcc_ex.c ****       /* Return an error only if user wants to change the PLLI2SMUL whereas PLLI2S is active */
+ 262:src/stm32f1xx_hal_rcc_ex.c ****       if (READ_BIT(RCC->CFGR2, RCC_CFGR2_PLL3MUL) != PeriphClkInit->PLLI2S.PLLI2SMUL)
+ 263:src/stm32f1xx_hal_rcc_ex.c ****       {
+ 264:src/stm32f1xx_hal_rcc_ex.c ****         return HAL_ERROR;
+ 265:src/stm32f1xx_hal_rcc_ex.c ****       }
+ 266:src/stm32f1xx_hal_rcc_ex.c ****     }
+ 267:src/stm32f1xx_hal_rcc_ex.c ****   }
+ 268:src/stm32f1xx_hal_rcc_ex.c **** #endif /* STM32F105xC || STM32F107xC */
+ 269:src/stm32f1xx_hal_rcc_ex.c **** 
+ 270:src/stm32f1xx_hal_rcc_ex.c **** #if defined(STM32F102x6) || defined(STM32F102xB) || defined(STM32F103x6)\
+ 271:src/stm32f1xx_hal_rcc_ex.c ****  || defined(STM32F103xB) || defined(STM32F103xE) || defined(STM32F103xG)\
+ 272:src/stm32f1xx_hal_rcc_ex.c ****  || defined(STM32F105xC) || defined(STM32F107xC)
+ 273:src/stm32f1xx_hal_rcc_ex.c ****   /*------------------------------ USB clock Configuration ------------------*/
+ 274:src/stm32f1xx_hal_rcc_ex.c ****   if (((PeriphClkInit->PeriphClockSelection) & RCC_PERIPHCLK_USB) == RCC_PERIPHCLK_USB)
+ 166              		.loc 1 274 0
+ 167 0062 10F01000 		ands	r0, r0, #16	@ tmp199, _61,
+ 168 0066 1BD0     		beq	.L9	@,
+ 275:src/stm32f1xx_hal_rcc_ex.c ****   {
+ 276:src/stm32f1xx_hal_rcc_ex.c ****     /* Check the parameters */
+ 277:src/stm32f1xx_hal_rcc_ex.c ****     assert_param(IS_RCC_USBPLLCLK_DIV(PeriphClkInit->UsbClockSelection));
+ 278:src/stm32f1xx_hal_rcc_ex.c **** 
+ 279:src/stm32f1xx_hal_rcc_ex.c ****     /* Configure the USB clock source */
+ 280:src/stm32f1xx_hal_rcc_ex.c ****     __HAL_RCC_USB_CONFIG(PeriphClkInit->UsbClockSelection);
+ 169              		.loc 1 280 0
+ 170 0068 1E4A     		ldr	r2, .L27	@ tmp200,
+ 171 006a E968     		ldr	r1, [r5, #12]	@ PeriphClkInit_12(D)->UsbClockSelection, PeriphClkInit_12(D)->UsbClockSelection
+ 172 006c 5368     		ldr	r3, [r2, #4]	@ _69, MEM[(struct RCC_TypeDef *)1073876992B].CFGR
+ 281:src/stm32f1xx_hal_rcc_ex.c ****   }
+ARM GAS  /tmp/ccX2Hj4B.s 			page 9
+
+
+ 282:src/stm32f1xx_hal_rcc_ex.c **** #endif /* STM32F102x6 || STM32F102xB || STM32F103x6 || STM32F103xB || STM32F103xE || STM32F103xG ||
+ 283:src/stm32f1xx_hal_rcc_ex.c **** 
+ 284:src/stm32f1xx_hal_rcc_ex.c ****   return HAL_OK;
+ 173              		.loc 1 284 0
+ 174 006e 0020     		movs	r0, #0	@ <retval>,
+ 280:src/stm32f1xx_hal_rcc_ex.c ****   }
+ 175              		.loc 1 280 0
+ 176 0070 23F48003 		bic	r3, r3, #4194304	@ tmp201, _69,
+ 177 0074 0B43     		orrs	r3, r3, r1	@, _72, tmp201, PeriphClkInit_12(D)->UsbClockSelection
+ 178 0076 5360     		str	r3, [r2, #4]	@ _72, MEM[(struct RCC_TypeDef *)1073876992B].CFGR
+ 179 0078 12E0     		b	.L9	@
+ 180              	.LVL8:
+ 181              	.L18:
+ 182              	.LBB4:
+ 116:src/stm32f1xx_hal_rcc_ex.c **** 
+ 183              		.loc 1 116 0
+ 184 007a 0027     		movs	r7, #0	@ pwrclkchanged,
+ 185 007c D4E7     		b	.L4	@
+ 186              	.LVL9:
+ 187              	.L5:
+ 130:src/stm32f1xx_hal_rcc_ex.c **** 
+ 188              		.loc 1 130 0
+ 189 007e 3368     		ldr	r3, [r6]	@ _26, MEM[(struct PWR_TypeDef *)1073770496B].CR
+ 190 0080 43F48073 		orr	r3, r3, #256	@ _27, _26,
+ 191 0084 3360     		str	r3, [r6]	@ _27, MEM[(struct PWR_TypeDef *)1073770496B].CR
+ 133:src/stm32f1xx_hal_rcc_ex.c **** 
+ 192              		.loc 1 133 0
+ 193 0086 FFF7FEFF 		bl	HAL_GetTick	@
+ 194              	.LVL10:
+ 195 008a 8046     		mov	r8, r0	@ tickstart,
+ 196              	.LVL11:
+ 197              	.L8:
+ 135:src/stm32f1xx_hal_rcc_ex.c ****       {
+ 198              		.loc 1 135 0
+ 199 008c 3368     		ldr	r3, [r6]	@ _31, MEM[(struct PWR_TypeDef *)1073770496B].CR
+ 200 008e D805     		lsls	r0, r3, #23	@, _31,
+ 201 0090 CED4     		bmi	.L11	@,
+ 137:src/stm32f1xx_hal_rcc_ex.c ****         {
+ 202              		.loc 1 137 0
+ 203 0092 FFF7FEFF 		bl	HAL_GetTick	@
+ 204              	.LVL12:
+ 205 0096 A0EB0800 		sub	r0, r0, r8	@ tmp172,, tickstart
+ 206 009a 6428     		cmp	r0, #100	@ tmp172,
+ 207 009c F6D9     		bls	.L8	@,
+ 208              	.LVL13:
+ 209              	.L15:
+ 139:src/stm32f1xx_hal_rcc_ex.c ****         }
+ 210              		.loc 1 139 0
+ 211 009e 0320     		movs	r0, #3	@ <retval>,
+ 212              	.LVL14:
+ 213              	.L9:
+ 214              	.LBE4:
+ 285:src/stm32f1xx_hal_rcc_ex.c **** }
+ 215              		.loc 1 285 0
+ 216 00a0 02B0     		add	sp, sp, #8	@,,
+ 217              	.LCFI1:
+ 218              		.cfi_remember_state
+ARM GAS  /tmp/ccX2Hj4B.s 			page 10
+
+
+ 219              		.cfi_def_cfa_offset 24
+ 220              		@ sp needed	@
+ 221 00a2 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}	@
+ 222              	.LVL15:
+ 223              	.L6:
+ 224              	.LCFI2:
+ 225              		.cfi_restore_state
+ 226              	.LBB5:
+ 146:src/stm32f1xx_hal_rcc_ex.c ****     {
+ 227              		.loc 1 146 0 discriminator 1
+ 228 00a6 6A68     		ldr	r2, [r5, #4]	@ PeriphClkInit_12(D)->RTCClockSelection, PeriphClkInit_12(D)->RTCClockSelection
+ 229 00a8 02F44072 		and	r2, r2, #768	@ tmp179, PeriphClkInit_12(D)->RTCClockSelection,
+ 230 00ac 9342     		cmp	r3, r2	@ temp_reg, tmp179
+ 231 00ae C3D0     		beq	.L7	@,
+ 151:src/stm32f1xx_hal_rcc_ex.c ****       __HAL_RCC_BACKUPRESET_RELEASE();
+ 232              		.loc 1 151 0
+ 233 00b0 0120     		movs	r0, #1	@ tmp183,
+ 234 00b2 0E4A     		ldr	r2, .L27+8	@ tmp182,
+ 149:src/stm32f1xx_hal_rcc_ex.c ****       /* RTC Clock selection can be changed only if the Backup Domain is reset */
+ 235              		.loc 1 149 0
+ 236 00b4 236A     		ldr	r3, [r4, #32]	@ _40, MEM[(struct RCC_TypeDef *)1073876992B].BDCR
+ 237              	.LVL16:
+ 151:src/stm32f1xx_hal_rcc_ex.c ****       __HAL_RCC_BACKUPRESET_RELEASE();
+ 238              		.loc 1 151 0
+ 239 00b6 1060     		str	r0, [r2]	@ tmp183, MEM[(volatile uint32_t *)1111622720B]
+ 152:src/stm32f1xx_hal_rcc_ex.c ****       /* Restore the Content of BDCR register */
+ 240              		.loc 1 152 0
+ 241 00b8 0020     		movs	r0, #0	@ tmp185,
+ 149:src/stm32f1xx_hal_rcc_ex.c ****       /* RTC Clock selection can be changed only if the Backup Domain is reset */
+ 242              		.loc 1 149 0
+ 243 00ba 23F44071 		bic	r1, r3, #768	@ temp_reg, _40,
+ 244              	.LVL17:
+ 152:src/stm32f1xx_hal_rcc_ex.c ****       /* Restore the Content of BDCR register */
+ 245              		.loc 1 152 0
+ 246 00be 1060     		str	r0, [r2]	@ tmp185, MEM[(volatile uint32_t *)1111622720B]
+ 154:src/stm32f1xx_hal_rcc_ex.c **** 
+ 247              		.loc 1 154 0
+ 248 00c0 2162     		str	r1, [r4, #32]	@ temp_reg, MEM[(struct RCC_TypeDef *)1073876992B].BDCR
+ 157:src/stm32f1xx_hal_rcc_ex.c ****       {
+ 249              		.loc 1 157 0
+ 250 00c2 D907     		lsls	r1, r3, #31	@, _40,
+ 251              	.LVL18:
+ 252 00c4 B8D5     		bpl	.L7	@,
+ 160:src/stm32f1xx_hal_rcc_ex.c **** 
+ 253              		.loc 1 160 0
+ 254 00c6 FFF7FEFF 		bl	HAL_GetTick	@
+ 255              	.LVL19:
+ 165:src/stm32f1xx_hal_rcc_ex.c ****           {
+ 256              		.loc 1 165 0
+ 257 00ca 41F28838 		movw	r8, #5000	@ tmp206,
+ 160:src/stm32f1xx_hal_rcc_ex.c **** 
+ 258              		.loc 1 160 0
+ 259 00ce 0646     		mov	r6, r0	@ tickstart,
+ 260              	.LVL20:
+ 261              	.L14:
+ 163:src/stm32f1xx_hal_rcc_ex.c ****         {
+ 262              		.loc 1 163 0
+ARM GAS  /tmp/ccX2Hj4B.s 			page 11
+
+
+ 263 00d0 236A     		ldr	r3, [r4, #32]	@ _48, MEM[(struct RCC_TypeDef *)1073876992B].BDCR
+ 264 00d2 9A07     		lsls	r2, r3, #30	@, _48,
+ 265 00d4 B0D4     		bmi	.L7	@,
+ 165:src/stm32f1xx_hal_rcc_ex.c ****           {
+ 266              		.loc 1 165 0
+ 267 00d6 FFF7FEFF 		bl	HAL_GetTick	@
+ 268              	.LVL21:
+ 269 00da 801B     		subs	r0, r0, r6	@ tmp188,, tickstart
+ 270 00dc 4045     		cmp	r0, r8	@ tmp188, tmp206
+ 271 00de F7D9     		bls	.L14	@,
+ 272 00e0 DDE7     		b	.L15	@
+ 273              	.L28:
+ 274 00e2 00BF     		.align	2
+ 275              	.L27:
+ 276 00e4 00100240 		.word	1073876992
+ 277 00e8 00700040 		.word	1073770496
+ 278 00ec 40044242 		.word	1111622720
+ 279              	.LBE5:
+ 280              		.cfi_endproc
+ 281              	.LFE65:
+ 282              		.size	HAL_RCCEx_PeriphCLKConfig, .-HAL_RCCEx_PeriphCLKConfig
+ 283              		.align	1
+ 284              		.global	HAL_RCCEx_GetPeriphCLKConfig
+ 285              		.syntax unified
+ 286              		.thumb
+ 287              		.thumb_func
+ 288              		.fpu softvfp
+ 289              		.type	HAL_RCCEx_GetPeriphCLKConfig, %function
+ 290              	HAL_RCCEx_GetPeriphCLKConfig:
+ 291              	.LFB66:
+ 286:src/stm32f1xx_hal_rcc_ex.c **** 
+ 287:src/stm32f1xx_hal_rcc_ex.c **** /**
+ 288:src/stm32f1xx_hal_rcc_ex.c ****   * @brief  Get the PeriphClkInit according to the internal
+ 289:src/stm32f1xx_hal_rcc_ex.c ****   * RCC configuration registers.
+ 290:src/stm32f1xx_hal_rcc_ex.c ****   * @param  PeriphClkInit pointer to an RCC_PeriphCLKInitTypeDef structure that
+ 291:src/stm32f1xx_hal_rcc_ex.c ****   *         returns the configuration information for the Extended Peripherals clocks(RTC, I2S, ADC
+ 292:src/stm32f1xx_hal_rcc_ex.c ****   * @retval None
+ 293:src/stm32f1xx_hal_rcc_ex.c ****   */
+ 294:src/stm32f1xx_hal_rcc_ex.c **** void HAL_RCCEx_GetPeriphCLKConfig(RCC_PeriphCLKInitTypeDef  *PeriphClkInit)
+ 295:src/stm32f1xx_hal_rcc_ex.c **** {
+ 292              		.loc 1 295 0
+ 293              		.cfi_startproc
+ 294              		@ args = 0, pretend = 0, frame = 0
+ 295              		@ frame_needed = 0, uses_anonymous_args = 0
+ 296              		@ link register save eliminated.
+ 297              	.LVL22:
+ 296:src/stm32f1xx_hal_rcc_ex.c ****   uint32_t srcclk = 0U;
+ 297:src/stm32f1xx_hal_rcc_ex.c **** 
+ 298:src/stm32f1xx_hal_rcc_ex.c ****   /* Set all possible values for the extended clock type parameter------------*/
+ 299:src/stm32f1xx_hal_rcc_ex.c ****   PeriphClkInit->PeriphClockSelection = RCC_PERIPHCLK_RTC;
+ 300:src/stm32f1xx_hal_rcc_ex.c **** 
+ 301:src/stm32f1xx_hal_rcc_ex.c ****   /* Get the RTC configuration -----------------------------------------------*/
+ 302:src/stm32f1xx_hal_rcc_ex.c ****   srcclk = __HAL_RCC_GET_RTC_SOURCE();
+ 298              		.loc 1 302 0
+ 299 00f0 074B     		ldr	r3, .L30	@ tmp117,
+ 300 00f2 1A6A     		ldr	r2, [r3, #32]	@ _3, MEM[(struct RCC_TypeDef *)1073876992B].BDCR
+ 301              	.LVL23:
+ARM GAS  /tmp/ccX2Hj4B.s 			page 12
+
+
+ 302 00f4 02F44072 		and	r2, r2, #768	@ srcclk, _3,
+ 303              	.LVL24:
+ 303:src/stm32f1xx_hal_rcc_ex.c ****   /* Source clock is LSE or LSI*/
+ 304:src/stm32f1xx_hal_rcc_ex.c ****   PeriphClkInit->RTCClockSelection = srcclk;
+ 304              		.loc 1 304 0
+ 305 00f8 4260     		str	r2, [r0, #4]	@ srcclk, PeriphClkInit_2(D)->RTCClockSelection
+ 305:src/stm32f1xx_hal_rcc_ex.c **** 
+ 306:src/stm32f1xx_hal_rcc_ex.c ****   /* Get the ADC clock configuration -----------------------------------------*/
+ 307:src/stm32f1xx_hal_rcc_ex.c ****   PeriphClkInit->PeriphClockSelection |= RCC_PERIPHCLK_ADC;
+ 308:src/stm32f1xx_hal_rcc_ex.c ****   PeriphClkInit->AdcClockSelection = __HAL_RCC_GET_ADC_SOURCE();
+ 306              		.loc 1 308 0
+ 307 00fa 5A68     		ldr	r2, [r3, #4]	@ _6, MEM[(struct RCC_TypeDef *)1073876992B].CFGR
+ 308              	.LVL25:
+ 309 00fc 02F44042 		and	r2, r2, #49152	@ tmp120, _6,
+ 310 0100 8260     		str	r2, [r0, #8]	@ tmp120, PeriphClkInit_2(D)->AdcClockSelection
+ 309:src/stm32f1xx_hal_rcc_ex.c **** 
+ 310:src/stm32f1xx_hal_rcc_ex.c **** #if defined(STM32F105xC) || defined(STM32F107xC)
+ 311:src/stm32f1xx_hal_rcc_ex.c ****   /* Get the I2S2 clock configuration -----------------------------------------*/
+ 312:src/stm32f1xx_hal_rcc_ex.c ****   PeriphClkInit->PeriphClockSelection |= RCC_PERIPHCLK_I2S2;
+ 313:src/stm32f1xx_hal_rcc_ex.c ****   PeriphClkInit->I2s2ClockSelection = __HAL_RCC_GET_I2S2_SOURCE();
+ 314:src/stm32f1xx_hal_rcc_ex.c **** 
+ 315:src/stm32f1xx_hal_rcc_ex.c ****   /* Get the I2S3 clock configuration -----------------------------------------*/
+ 316:src/stm32f1xx_hal_rcc_ex.c ****   PeriphClkInit->PeriphClockSelection |= RCC_PERIPHCLK_I2S3;
+ 317:src/stm32f1xx_hal_rcc_ex.c ****   PeriphClkInit->I2s3ClockSelection = __HAL_RCC_GET_I2S3_SOURCE();
+ 318:src/stm32f1xx_hal_rcc_ex.c **** 
+ 319:src/stm32f1xx_hal_rcc_ex.c **** #endif /* STM32F105xC || STM32F107xC */
+ 320:src/stm32f1xx_hal_rcc_ex.c **** 
+ 321:src/stm32f1xx_hal_rcc_ex.c **** #if defined(STM32F103xE) || defined(STM32F103xG)
+ 322:src/stm32f1xx_hal_rcc_ex.c ****   /* Get the I2S2 clock configuration -----------------------------------------*/
+ 323:src/stm32f1xx_hal_rcc_ex.c ****   PeriphClkInit->PeriphClockSelection |= RCC_PERIPHCLK_I2S2;
+ 324:src/stm32f1xx_hal_rcc_ex.c ****   PeriphClkInit->I2s2ClockSelection = RCC_I2S2CLKSOURCE_SYSCLK;
+ 325:src/stm32f1xx_hal_rcc_ex.c **** 
+ 326:src/stm32f1xx_hal_rcc_ex.c ****   /* Get the I2S3 clock configuration -----------------------------------------*/
+ 327:src/stm32f1xx_hal_rcc_ex.c ****   PeriphClkInit->PeriphClockSelection |= RCC_PERIPHCLK_I2S3;
+ 328:src/stm32f1xx_hal_rcc_ex.c ****   PeriphClkInit->I2s3ClockSelection = RCC_I2S3CLKSOURCE_SYSCLK;
+ 329:src/stm32f1xx_hal_rcc_ex.c **** 
+ 330:src/stm32f1xx_hal_rcc_ex.c **** #endif /* STM32F103xE || STM32F103xG */
+ 331:src/stm32f1xx_hal_rcc_ex.c **** 
+ 332:src/stm32f1xx_hal_rcc_ex.c **** #if defined(STM32F102x6) || defined(STM32F102xB) || defined(STM32F103x6)\
+ 333:src/stm32f1xx_hal_rcc_ex.c ****  || defined(STM32F103xB) || defined(STM32F103xE) || defined(STM32F103xG)\
+ 334:src/stm32f1xx_hal_rcc_ex.c ****  || defined(STM32F105xC) || defined(STM32F107xC)
+ 335:src/stm32f1xx_hal_rcc_ex.c ****   /* Get the USB clock configuration -----------------------------------------*/
+ 336:src/stm32f1xx_hal_rcc_ex.c ****   PeriphClkInit->PeriphClockSelection |= RCC_PERIPHCLK_USB;
+ 311              		.loc 1 336 0
+ 312 0102 1322     		movs	r2, #19	@ tmp121,
+ 313 0104 0260     		str	r2, [r0]	@ tmp121, PeriphClkInit_2(D)->PeriphClockSelection
+ 337:src/stm32f1xx_hal_rcc_ex.c ****   PeriphClkInit->UsbClockSelection = __HAL_RCC_GET_USB_SOURCE();
+ 314              		.loc 1 337 0
+ 315 0106 5B68     		ldr	r3, [r3, #4]	@ _10, MEM[(struct RCC_TypeDef *)1073876992B].CFGR
+ 316 0108 03F48003 		and	r3, r3, #4194304	@ tmp123, _10,
+ 317 010c C360     		str	r3, [r0, #12]	@ tmp123, PeriphClkInit_2(D)->UsbClockSelection
+ 318 010e 7047     		bx	lr	@
+ 319              	.L31:
+ 320              		.align	2
+ 321              	.L30:
+ 322 0110 00100240 		.word	1073876992
+ 323              		.cfi_endproc
+ARM GAS  /tmp/ccX2Hj4B.s 			page 13
+
+
+ 324              	.LFE66:
+ 325              		.size	HAL_RCCEx_GetPeriphCLKConfig, .-HAL_RCCEx_GetPeriphCLKConfig
+ 326              		.align	1
+ 327              		.global	HAL_RCCEx_GetPeriphCLKFreq
+ 328              		.syntax unified
+ 329              		.thumb
+ 330              		.thumb_func
+ 331              		.fpu softvfp
+ 332              		.type	HAL_RCCEx_GetPeriphCLKFreq, %function
+ 333              	HAL_RCCEx_GetPeriphCLKFreq:
+ 334              	.LFB67:
+ 338:src/stm32f1xx_hal_rcc_ex.c **** #endif /* STM32F102x6 || STM32F102xB || STM32F103x6 || STM32F103xB || STM32F103xE || STM32F103xG ||
+ 339:src/stm32f1xx_hal_rcc_ex.c **** }
+ 340:src/stm32f1xx_hal_rcc_ex.c **** 
+ 341:src/stm32f1xx_hal_rcc_ex.c **** /**
+ 342:src/stm32f1xx_hal_rcc_ex.c ****   * @brief  Returns the peripheral clock frequency
+ 343:src/stm32f1xx_hal_rcc_ex.c ****   * @note   Returns 0 if peripheral clock is unknown
+ 344:src/stm32f1xx_hal_rcc_ex.c ****   * @param  PeriphClk Peripheral clock identifier
+ 345:src/stm32f1xx_hal_rcc_ex.c ****   *         This parameter can be one of the following values:
+ 346:src/stm32f1xx_hal_rcc_ex.c ****   *            @arg @ref RCC_PERIPHCLK_RTC  RTC peripheral clock
+ 347:src/stm32f1xx_hal_rcc_ex.c ****   *            @arg @ref RCC_PERIPHCLK_ADC  ADC peripheral clock
+ 348:src/stm32f1xx_hal_rcc_ex.c ****   @if STM32F103xE
+ 349:src/stm32f1xx_hal_rcc_ex.c ****   *            @arg @ref RCC_PERIPHCLK_I2S2 I2S2 peripheral clock
+ 350:src/stm32f1xx_hal_rcc_ex.c ****   *            @arg @ref RCC_PERIPHCLK_I2S3 I2S3 peripheral clock
+ 351:src/stm32f1xx_hal_rcc_ex.c ****   *            @arg @ref RCC_PERIPHCLK_I2S3 I2S3 peripheral clock
+ 352:src/stm32f1xx_hal_rcc_ex.c ****   @endif
+ 353:src/stm32f1xx_hal_rcc_ex.c ****   @if STM32F103xG
+ 354:src/stm32f1xx_hal_rcc_ex.c ****   *            @arg @ref RCC_PERIPHCLK_I2S2 I2S2 peripheral clock
+ 355:src/stm32f1xx_hal_rcc_ex.c ****   *            @arg @ref RCC_PERIPHCLK_I2S3 I2S3 peripheral clock
+ 356:src/stm32f1xx_hal_rcc_ex.c ****   *            @arg @ref RCC_PERIPHCLK_I2S3 I2S3 peripheral clock
+ 357:src/stm32f1xx_hal_rcc_ex.c ****   *            @arg @ref RCC_PERIPHCLK_I2S2 I2S2 peripheral clock
+ 358:src/stm32f1xx_hal_rcc_ex.c ****   @endif
+ 359:src/stm32f1xx_hal_rcc_ex.c ****   @if STM32F105xC
+ 360:src/stm32f1xx_hal_rcc_ex.c ****   *            @arg @ref RCC_PERIPHCLK_I2S2 I2S2 peripheral clock
+ 361:src/stm32f1xx_hal_rcc_ex.c ****   *            @arg @ref RCC_PERIPHCLK_I2S3 I2S3 peripheral clock
+ 362:src/stm32f1xx_hal_rcc_ex.c ****   *            @arg @ref RCC_PERIPHCLK_I2S3 I2S3 peripheral clock
+ 363:src/stm32f1xx_hal_rcc_ex.c ****   *            @arg @ref RCC_PERIPHCLK_I2S2 I2S2 peripheral clock
+ 364:src/stm32f1xx_hal_rcc_ex.c ****   *            @arg @ref RCC_PERIPHCLK_I2S3 I2S3 peripheral clock
+ 365:src/stm32f1xx_hal_rcc_ex.c ****   *            @arg @ref RCC_PERIPHCLK_I2S3 I2S3 peripheral clock
+ 366:src/stm32f1xx_hal_rcc_ex.c ****   *            @arg @ref RCC_PERIPHCLK_I2S2 I2S2 peripheral clock
+ 367:src/stm32f1xx_hal_rcc_ex.c ****   *            @arg @ref RCC_PERIPHCLK_USB  USB peripheral clock
+ 368:src/stm32f1xx_hal_rcc_ex.c ****   @endif
+ 369:src/stm32f1xx_hal_rcc_ex.c ****   @if STM32F107xC
+ 370:src/stm32f1xx_hal_rcc_ex.c ****   *            @arg @ref RCC_PERIPHCLK_I2S2 I2S2 peripheral clock
+ 371:src/stm32f1xx_hal_rcc_ex.c ****   *            @arg @ref RCC_PERIPHCLK_I2S3 I2S3 peripheral clock
+ 372:src/stm32f1xx_hal_rcc_ex.c ****   *            @arg @ref RCC_PERIPHCLK_I2S3 I2S3 peripheral clock
+ 373:src/stm32f1xx_hal_rcc_ex.c ****   *            @arg @ref RCC_PERIPHCLK_I2S2 I2S2 peripheral clock
+ 374:src/stm32f1xx_hal_rcc_ex.c ****   *            @arg @ref RCC_PERIPHCLK_I2S3 I2S3 peripheral clock
+ 375:src/stm32f1xx_hal_rcc_ex.c ****   *            @arg @ref RCC_PERIPHCLK_I2S3 I2S3 peripheral clock
+ 376:src/stm32f1xx_hal_rcc_ex.c ****   *            @arg @ref RCC_PERIPHCLK_I2S2 I2S2 peripheral clock
+ 377:src/stm32f1xx_hal_rcc_ex.c ****   *            @arg @ref RCC_PERIPHCLK_USB  USB peripheral clock
+ 378:src/stm32f1xx_hal_rcc_ex.c ****   @endif
+ 379:src/stm32f1xx_hal_rcc_ex.c ****   @if STM32F102xx
+ 380:src/stm32f1xx_hal_rcc_ex.c ****   *            @arg @ref RCC_PERIPHCLK_USB  USB peripheral clock
+ 381:src/stm32f1xx_hal_rcc_ex.c ****   @endif
+ 382:src/stm32f1xx_hal_rcc_ex.c ****   @if STM32F103xx
+ 383:src/stm32f1xx_hal_rcc_ex.c ****   *            @arg @ref RCC_PERIPHCLK_USB  USB peripheral clock
+ARM GAS  /tmp/ccX2Hj4B.s 			page 14
+
+
+ 384:src/stm32f1xx_hal_rcc_ex.c ****   @endif
+ 385:src/stm32f1xx_hal_rcc_ex.c ****   * @retval Frequency in Hz (0: means that no available frequency for the peripheral)
+ 386:src/stm32f1xx_hal_rcc_ex.c ****   */
+ 387:src/stm32f1xx_hal_rcc_ex.c **** uint32_t HAL_RCCEx_GetPeriphCLKFreq(uint32_t PeriphClk)
+ 388:src/stm32f1xx_hal_rcc_ex.c **** {
+ 335              		.loc 1 388 0
+ 336              		.cfi_startproc
+ 337              		@ args = 0, pretend = 0, frame = 24
+ 338              		@ frame_needed = 0, uses_anonymous_args = 0
+ 339              	.LVL26:
+ 340 0114 70B5     		push	{r4, r5, r6, lr}	@
+ 341              	.LCFI3:
+ 342              		.cfi_def_cfa_offset 16
+ 343              		.cfi_offset 4, -16
+ 344              		.cfi_offset 5, -12
+ 345              		.cfi_offset 6, -8
+ 346              		.cfi_offset 14, -4
+ 347 0116 0446     		mov	r4, r0	@ PeriphClk, PeriphClk
+ 389:src/stm32f1xx_hal_rcc_ex.c **** #if defined(STM32F105xC) || defined(STM32F107xC)
+ 390:src/stm32f1xx_hal_rcc_ex.c ****   const uint8_t aPLLMULFactorTable[14] = {0, 0, 4, 5, 6, 7, 8, 9, 0, 0, 0, 0, 0, 13};
+ 391:src/stm32f1xx_hal_rcc_ex.c ****   const uint8_t aPredivFactorTable[16] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16};
+ 392:src/stm32f1xx_hal_rcc_ex.c **** 
+ 393:src/stm32f1xx_hal_rcc_ex.c ****   uint32_t prediv1 = 0U, pllclk = 0U, pllmul = 0U;
+ 394:src/stm32f1xx_hal_rcc_ex.c ****   uint32_t pll2mul = 0U, pll3mul = 0U, prediv2 = 0U;
+ 395:src/stm32f1xx_hal_rcc_ex.c **** #endif /* STM32F105xC || STM32F107xC */
+ 396:src/stm32f1xx_hal_rcc_ex.c **** #if defined(STM32F102x6) || defined(STM32F102xB) || defined(STM32F103x6) || \
+ 397:src/stm32f1xx_hal_rcc_ex.c ****     defined(STM32F103xB) || defined(STM32F103xE) || defined(STM32F103xG)
+ 398:src/stm32f1xx_hal_rcc_ex.c ****   const uint8_t aPLLMULFactorTable[16] = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 16};
+ 348              		.loc 1 398 0
+ 349 0118 354B     		ldr	r3, .L52	@ tmp143,
+ 388:src/stm32f1xx_hal_rcc_ex.c **** #if defined(STM32F105xC) || defined(STM32F107xC)
+ 350              		.loc 1 388 0
+ 351 011a 86B0     		sub	sp, sp, #24	@,,
+ 352              	.LCFI4:
+ 353              		.cfi_def_cfa_offset 40
+ 354              		.loc 1 398 0
+ 355 011c 02AD     		add	r5, sp, #8	@ tmp144,,
+ 356 011e 03F11006 		add	r6, r3, #16	@ tmp145, tmp143,
+ 357              	.LVL27:
+ 358              	.L33:
+ 359 0122 2A46     		mov	r2, r5	@ tmp146, tmp144
+ 360 0124 1868     		ldr	r0, [r3]	@ unaligned	@,
+ 361 0126 5968     		ldr	r1, [r3, #4]	@ unaligned	@,
+ 362 0128 0833     		adds	r3, r3, #8	@ tmp143, tmp143,
+ 363 012a 03C2     		stmia	r2!, {r0, r1}	@ tmp146,,
+ 364 012c B342     		cmp	r3, r6	@ tmp143, tmp145
+ 365 012e 1546     		mov	r5, r2	@ tmp144, tmp146
+ 366 0130 F7D1     		bne	.L33	@,
+ 399:src/stm32f1xx_hal_rcc_ex.c ****   const uint8_t aPredivFactorTable[2] = {1, 2};
+ 367              		.loc 1 399 0
+ 368 0132 0123     		movs	r3, #1	@ tmp148,
+ 369 0134 8DF80430 		strb	r3, [sp, #4]	@ tmp148, MEM[(uint8_t[2] *)&aPredivFactorTable]
+ 370 0138 0223     		movs	r3, #2	@ tmp150,
+ 400:src/stm32f1xx_hal_rcc_ex.c **** 
+ 401:src/stm32f1xx_hal_rcc_ex.c ****   uint32_t prediv1 = 0U, pllclk = 0U, pllmul = 0U;
+ 402:src/stm32f1xx_hal_rcc_ex.c **** #endif /* STM32F102x6 || STM32F102xB || STM32F103x6 || STM32F103xB || STM32F103xE || STM32F103xG */
+ 403:src/stm32f1xx_hal_rcc_ex.c ****   uint32_t temp_reg = 0U, frequency = 0U;
+ARM GAS  /tmp/ccX2Hj4B.s 			page 15
+
+
+ 404:src/stm32f1xx_hal_rcc_ex.c **** 
+ 405:src/stm32f1xx_hal_rcc_ex.c ****   /* Check the parameters */
+ 406:src/stm32f1xx_hal_rcc_ex.c ****   assert_param(IS_RCC_PERIPHCLOCK(PeriphClk));
+ 407:src/stm32f1xx_hal_rcc_ex.c **** 
+ 408:src/stm32f1xx_hal_rcc_ex.c ****   switch (PeriphClk)
+ 371              		.loc 1 408 0
+ 372 013a 9C42     		cmp	r4, r3	@ PeriphClk,
+ 399:src/stm32f1xx_hal_rcc_ex.c ****   const uint8_t aPredivFactorTable[2] = {1, 2};
+ 373              		.loc 1 399 0
+ 374 013c 8DF80530 		strb	r3, [sp, #5]	@ tmp150, MEM[(uint8_t[2] *)&aPredivFactorTable + 1B]
+ 375              	.LVL28:
+ 376              		.loc 1 408 0
+ 377 0140 47D0     		beq	.L35	@,
+ 378 0142 102C     		cmp	r4, #16	@ PeriphClk,
+ 379 0144 17D0     		beq	.L36	@,
+ 380 0146 012C     		cmp	r4, #1	@ PeriphClk,
+ 381 0148 4FD1     		bne	.L45	@,
+ 409:src/stm32f1xx_hal_rcc_ex.c ****   {
+ 410:src/stm32f1xx_hal_rcc_ex.c **** #if defined(STM32F102x6) || defined(STM32F102xB) || defined(STM32F103x6)\
+ 411:src/stm32f1xx_hal_rcc_ex.c ****  || defined(STM32F103xB) || defined(STM32F103xE) || defined(STM32F103xG)\
+ 412:src/stm32f1xx_hal_rcc_ex.c ****  || defined(STM32F105xC) || defined(STM32F107xC)
+ 413:src/stm32f1xx_hal_rcc_ex.c ****     case RCC_PERIPHCLK_USB:
+ 414:src/stm32f1xx_hal_rcc_ex.c ****     {
+ 415:src/stm32f1xx_hal_rcc_ex.c ****       /* Get RCC configuration ------------------------------------------------------*/
+ 416:src/stm32f1xx_hal_rcc_ex.c ****       temp_reg = RCC->CFGR;
+ 417:src/stm32f1xx_hal_rcc_ex.c **** 
+ 418:src/stm32f1xx_hal_rcc_ex.c ****       /* Check if PLL is enabled */
+ 419:src/stm32f1xx_hal_rcc_ex.c ****       if (HAL_IS_BIT_SET(RCC->CR, RCC_CR_PLLON))
+ 420:src/stm32f1xx_hal_rcc_ex.c ****       {
+ 421:src/stm32f1xx_hal_rcc_ex.c ****         pllmul = aPLLMULFactorTable[(uint32_t)(temp_reg & RCC_CFGR_PLLMULL) >> RCC_CFGR_PLLMULL_Pos
+ 422:src/stm32f1xx_hal_rcc_ex.c ****         if ((temp_reg & RCC_CFGR_PLLSRC) != RCC_PLLSOURCE_HSI_DIV2)
+ 423:src/stm32f1xx_hal_rcc_ex.c ****         {
+ 424:src/stm32f1xx_hal_rcc_ex.c **** #if defined(STM32F105xC) || defined(STM32F107xC) || defined(STM32F100xB)\
+ 425:src/stm32f1xx_hal_rcc_ex.c ****  || defined(STM32F100xE)
+ 426:src/stm32f1xx_hal_rcc_ex.c ****           prediv1 = aPredivFactorTable[(uint32_t)(RCC->CFGR2 & RCC_CFGR2_PREDIV1) >> RCC_CFGR2_PRED
+ 427:src/stm32f1xx_hal_rcc_ex.c **** #else
+ 428:src/stm32f1xx_hal_rcc_ex.c ****           prediv1 = aPredivFactorTable[(uint32_t)(RCC->CFGR & RCC_CFGR_PLLXTPRE) >> RCC_CFGR_PLLXTP
+ 429:src/stm32f1xx_hal_rcc_ex.c **** #endif /* STM32F105xC || STM32F107xC || STM32F100xB || STM32F100xE */
+ 430:src/stm32f1xx_hal_rcc_ex.c **** 
+ 431:src/stm32f1xx_hal_rcc_ex.c **** #if defined(STM32F105xC) || defined(STM32F107xC)
+ 432:src/stm32f1xx_hal_rcc_ex.c ****           if (HAL_IS_BIT_SET(RCC->CFGR2, RCC_CFGR2_PREDIV1SRC))
+ 433:src/stm32f1xx_hal_rcc_ex.c ****           {
+ 434:src/stm32f1xx_hal_rcc_ex.c ****             /* PLL2 selected as Prediv1 source */
+ 435:src/stm32f1xx_hal_rcc_ex.c ****             /* PLLCLK = PLL2CLK / PREDIV1 * PLLMUL with PLL2CLK = HSE/PREDIV2 * PLL2MUL */
+ 436:src/stm32f1xx_hal_rcc_ex.c ****             prediv2 = ((RCC->CFGR2 & RCC_CFGR2_PREDIV2) >> RCC_CFGR2_PREDIV2_Pos) + 1;
+ 437:src/stm32f1xx_hal_rcc_ex.c ****             pll2mul = ((RCC->CFGR2 & RCC_CFGR2_PLL2MUL) >> RCC_CFGR2_PLL2MUL_Pos) + 2;
+ 438:src/stm32f1xx_hal_rcc_ex.c ****             pllclk = (uint32_t)((((HSE_VALUE / prediv2) * pll2mul) / prediv1) * pllmul);
+ 439:src/stm32f1xx_hal_rcc_ex.c ****           }
+ 440:src/stm32f1xx_hal_rcc_ex.c ****           else
+ 441:src/stm32f1xx_hal_rcc_ex.c ****           {
+ 442:src/stm32f1xx_hal_rcc_ex.c ****             /* HSE used as PLL clock source : PLLCLK = HSE/PREDIV1 * PLLMUL */
+ 443:src/stm32f1xx_hal_rcc_ex.c ****             pllclk = (uint32_t)((HSE_VALUE / prediv1) * pllmul);
+ 444:src/stm32f1xx_hal_rcc_ex.c ****           }
+ 445:src/stm32f1xx_hal_rcc_ex.c **** 
+ 446:src/stm32f1xx_hal_rcc_ex.c ****           /* If PLLMUL was set to 13 means that it was to cover the case PLLMUL 6.5 (avoid using fl
+ 447:src/stm32f1xx_hal_rcc_ex.c ****           /* In this case need to divide pllclk by 2 */
+ 448:src/stm32f1xx_hal_rcc_ex.c ****           if (pllmul == aPLLMULFactorTable[(uint32_t)(RCC_CFGR_PLLMULL6_5) >> RCC_CFGR_PLLMULL_Pos]
+ARM GAS  /tmp/ccX2Hj4B.s 			page 16
+
+
+ 449:src/stm32f1xx_hal_rcc_ex.c ****           {
+ 450:src/stm32f1xx_hal_rcc_ex.c ****             pllclk = pllclk / 2;
+ 451:src/stm32f1xx_hal_rcc_ex.c ****           }
+ 452:src/stm32f1xx_hal_rcc_ex.c **** #else
+ 453:src/stm32f1xx_hal_rcc_ex.c ****           if ((temp_reg & RCC_CFGR_PLLSRC) != RCC_PLLSOURCE_HSI_DIV2)
+ 454:src/stm32f1xx_hal_rcc_ex.c ****           {
+ 455:src/stm32f1xx_hal_rcc_ex.c ****             /* HSE used as PLL clock source : PLLCLK = HSE/PREDIV1 * PLLMUL */
+ 456:src/stm32f1xx_hal_rcc_ex.c ****             pllclk = (uint32_t)((HSE_VALUE / prediv1) * pllmul);
+ 457:src/stm32f1xx_hal_rcc_ex.c ****           }
+ 458:src/stm32f1xx_hal_rcc_ex.c **** #endif /* STM32F105xC || STM32F107xC */
+ 459:src/stm32f1xx_hal_rcc_ex.c ****         }
+ 460:src/stm32f1xx_hal_rcc_ex.c ****         else
+ 461:src/stm32f1xx_hal_rcc_ex.c ****         {
+ 462:src/stm32f1xx_hal_rcc_ex.c ****           /* HSI used as PLL clock source : PLLCLK = HSI/2 * PLLMUL */
+ 463:src/stm32f1xx_hal_rcc_ex.c ****           pllclk = (uint32_t)((HSI_VALUE >> 1) * pllmul);
+ 464:src/stm32f1xx_hal_rcc_ex.c ****         }
+ 465:src/stm32f1xx_hal_rcc_ex.c **** 
+ 466:src/stm32f1xx_hal_rcc_ex.c ****         /* Calcul of the USB frequency*/
+ 467:src/stm32f1xx_hal_rcc_ex.c **** #if defined(STM32F105xC) || defined(STM32F107xC)
+ 468:src/stm32f1xx_hal_rcc_ex.c ****         /* USBCLK = PLLVCO = (2 x PLLCLK) / USB prescaler */
+ 469:src/stm32f1xx_hal_rcc_ex.c ****         if (__HAL_RCC_GET_USB_SOURCE() == RCC_USBCLKSOURCE_PLL_DIV2)
+ 470:src/stm32f1xx_hal_rcc_ex.c ****         {
+ 471:src/stm32f1xx_hal_rcc_ex.c ****           /* Prescaler of 2 selected for USB */
+ 472:src/stm32f1xx_hal_rcc_ex.c ****           frequency = pllclk;
+ 473:src/stm32f1xx_hal_rcc_ex.c ****         }
+ 474:src/stm32f1xx_hal_rcc_ex.c ****         else
+ 475:src/stm32f1xx_hal_rcc_ex.c ****         {
+ 476:src/stm32f1xx_hal_rcc_ex.c ****           /* Prescaler of 3 selected for USB */
+ 477:src/stm32f1xx_hal_rcc_ex.c ****           frequency = (2 * pllclk) / 3;
+ 478:src/stm32f1xx_hal_rcc_ex.c ****         }
+ 479:src/stm32f1xx_hal_rcc_ex.c **** #else
+ 480:src/stm32f1xx_hal_rcc_ex.c ****         /* USBCLK = PLLCLK / USB prescaler */
+ 481:src/stm32f1xx_hal_rcc_ex.c ****         if (__HAL_RCC_GET_USB_SOURCE() == RCC_USBCLKSOURCE_PLL)
+ 482:src/stm32f1xx_hal_rcc_ex.c ****         {
+ 483:src/stm32f1xx_hal_rcc_ex.c ****           /* No prescaler selected for USB */
+ 484:src/stm32f1xx_hal_rcc_ex.c ****           frequency = pllclk;
+ 485:src/stm32f1xx_hal_rcc_ex.c ****         }
+ 486:src/stm32f1xx_hal_rcc_ex.c ****         else
+ 487:src/stm32f1xx_hal_rcc_ex.c ****         {
+ 488:src/stm32f1xx_hal_rcc_ex.c ****           /* Prescaler of 1.5 selected for USB */
+ 489:src/stm32f1xx_hal_rcc_ex.c ****           frequency = (pllclk * 2) / 3;
+ 490:src/stm32f1xx_hal_rcc_ex.c ****         }
+ 491:src/stm32f1xx_hal_rcc_ex.c **** #endif
+ 492:src/stm32f1xx_hal_rcc_ex.c ****       }
+ 493:src/stm32f1xx_hal_rcc_ex.c ****       break;
+ 494:src/stm32f1xx_hal_rcc_ex.c ****     }
+ 495:src/stm32f1xx_hal_rcc_ex.c **** #endif /* STM32F102x6 || STM32F102xB || STM32F103x6 || STM32F103xB || STM32F103xE || STM32F103xG ||
+ 496:src/stm32f1xx_hal_rcc_ex.c **** #if defined(STM32F103xE) || defined(STM32F103xG) || defined(STM32F105xC) || defined(STM32F107xC)
+ 497:src/stm32f1xx_hal_rcc_ex.c ****     case RCC_PERIPHCLK_I2S2:
+ 498:src/stm32f1xx_hal_rcc_ex.c ****     {
+ 499:src/stm32f1xx_hal_rcc_ex.c **** #if defined(STM32F103xE) || defined(STM32F103xG)
+ 500:src/stm32f1xx_hal_rcc_ex.c ****       /* SYSCLK used as source clock for I2S2 */
+ 501:src/stm32f1xx_hal_rcc_ex.c ****       frequency = HAL_RCC_GetSysClockFreq();
+ 502:src/stm32f1xx_hal_rcc_ex.c **** #else
+ 503:src/stm32f1xx_hal_rcc_ex.c ****       if (__HAL_RCC_GET_I2S2_SOURCE() == RCC_I2S2CLKSOURCE_SYSCLK)
+ 504:src/stm32f1xx_hal_rcc_ex.c ****       {
+ 505:src/stm32f1xx_hal_rcc_ex.c ****         /* SYSCLK used as source clock for I2S2 */
+ARM GAS  /tmp/ccX2Hj4B.s 			page 17
+
+
+ 506:src/stm32f1xx_hal_rcc_ex.c ****         frequency = HAL_RCC_GetSysClockFreq();
+ 507:src/stm32f1xx_hal_rcc_ex.c ****       }
+ 508:src/stm32f1xx_hal_rcc_ex.c ****       else
+ 509:src/stm32f1xx_hal_rcc_ex.c ****       {
+ 510:src/stm32f1xx_hal_rcc_ex.c ****         /* Check if PLLI2S is enabled */
+ 511:src/stm32f1xx_hal_rcc_ex.c ****         if (HAL_IS_BIT_SET(RCC->CR, RCC_CR_PLL3ON))
+ 512:src/stm32f1xx_hal_rcc_ex.c ****         {
+ 513:src/stm32f1xx_hal_rcc_ex.c ****           /* PLLI2SVCO = 2 * PLLI2SCLK = 2 * (HSE/PREDIV2 * PLL3MUL) */
+ 514:src/stm32f1xx_hal_rcc_ex.c ****           prediv2 = ((RCC->CFGR2 & RCC_CFGR2_PREDIV2) >> RCC_CFGR2_PREDIV2_Pos) + 1;
+ 515:src/stm32f1xx_hal_rcc_ex.c ****           pll3mul = ((RCC->CFGR2 & RCC_CFGR2_PLL3MUL) >> RCC_CFGR2_PLL3MUL_Pos) + 2;
+ 516:src/stm32f1xx_hal_rcc_ex.c ****           frequency = (uint32_t)(2 * ((HSE_VALUE / prediv2) * pll3mul));
+ 517:src/stm32f1xx_hal_rcc_ex.c ****         }
+ 518:src/stm32f1xx_hal_rcc_ex.c ****       }
+ 519:src/stm32f1xx_hal_rcc_ex.c **** #endif /* STM32F103xE || STM32F103xG */
+ 520:src/stm32f1xx_hal_rcc_ex.c ****       break;
+ 521:src/stm32f1xx_hal_rcc_ex.c ****     }
+ 522:src/stm32f1xx_hal_rcc_ex.c ****     case RCC_PERIPHCLK_I2S3:
+ 523:src/stm32f1xx_hal_rcc_ex.c ****     {
+ 524:src/stm32f1xx_hal_rcc_ex.c **** #if defined(STM32F103xE) || defined(STM32F103xG)
+ 525:src/stm32f1xx_hal_rcc_ex.c ****       /* SYSCLK used as source clock for I2S3 */
+ 526:src/stm32f1xx_hal_rcc_ex.c ****       frequency = HAL_RCC_GetSysClockFreq();
+ 527:src/stm32f1xx_hal_rcc_ex.c **** #else
+ 528:src/stm32f1xx_hal_rcc_ex.c ****       if (__HAL_RCC_GET_I2S3_SOURCE() == RCC_I2S3CLKSOURCE_SYSCLK)
+ 529:src/stm32f1xx_hal_rcc_ex.c ****       {
+ 530:src/stm32f1xx_hal_rcc_ex.c ****         /* SYSCLK used as source clock for I2S3 */
+ 531:src/stm32f1xx_hal_rcc_ex.c ****         frequency = HAL_RCC_GetSysClockFreq();
+ 532:src/stm32f1xx_hal_rcc_ex.c ****       }
+ 533:src/stm32f1xx_hal_rcc_ex.c ****       else
+ 534:src/stm32f1xx_hal_rcc_ex.c ****       {
+ 535:src/stm32f1xx_hal_rcc_ex.c ****         /* Check if PLLI2S is enabled */
+ 536:src/stm32f1xx_hal_rcc_ex.c ****         if (HAL_IS_BIT_SET(RCC->CR, RCC_CR_PLL3ON))
+ 537:src/stm32f1xx_hal_rcc_ex.c ****         {
+ 538:src/stm32f1xx_hal_rcc_ex.c ****           /* PLLI2SVCO = 2 * PLLI2SCLK = 2 * (HSE/PREDIV2 * PLL3MUL) */
+ 539:src/stm32f1xx_hal_rcc_ex.c ****           prediv2 = ((RCC->CFGR2 & RCC_CFGR2_PREDIV2) >> RCC_CFGR2_PREDIV2_Pos) + 1;
+ 540:src/stm32f1xx_hal_rcc_ex.c ****           pll3mul = ((RCC->CFGR2 & RCC_CFGR2_PLL3MUL) >> RCC_CFGR2_PLL3MUL_Pos) + 2;
+ 541:src/stm32f1xx_hal_rcc_ex.c ****           frequency = (uint32_t)(2 * ((HSE_VALUE / prediv2) * pll3mul));
+ 542:src/stm32f1xx_hal_rcc_ex.c ****         }
+ 543:src/stm32f1xx_hal_rcc_ex.c ****       }
+ 544:src/stm32f1xx_hal_rcc_ex.c **** #endif /* STM32F103xE || STM32F103xG */
+ 545:src/stm32f1xx_hal_rcc_ex.c ****       break;
+ 546:src/stm32f1xx_hal_rcc_ex.c ****     }
+ 547:src/stm32f1xx_hal_rcc_ex.c **** #endif /* STM32F103xE || STM32F103xG || STM32F105xC || STM32F107xC */
+ 548:src/stm32f1xx_hal_rcc_ex.c ****     case RCC_PERIPHCLK_RTC:
+ 549:src/stm32f1xx_hal_rcc_ex.c ****     {
+ 550:src/stm32f1xx_hal_rcc_ex.c ****       /* Get RCC BDCR configuration ------------------------------------------------------*/
+ 551:src/stm32f1xx_hal_rcc_ex.c ****       temp_reg = RCC->BDCR;
+ 552:src/stm32f1xx_hal_rcc_ex.c **** 
+ 553:src/stm32f1xx_hal_rcc_ex.c ****       /* Check if LSE is ready if RTC clock selection is LSE */
+ 554:src/stm32f1xx_hal_rcc_ex.c ****       if (((temp_reg & RCC_BDCR_RTCSEL) == RCC_RTCCLKSOURCE_LSE) && (HAL_IS_BIT_SET(temp_reg, RCC_B
+ 382              		.loc 1 554 0
+ 383 014a 40F20231 		movw	r1, #770	@ tmp174,
+ 551:src/stm32f1xx_hal_rcc_ex.c **** 
+ 384              		.loc 1 551 0
+ 385 014e 294A     		ldr	r2, .L52+4	@ tmp172,
+ 386 0150 136A     		ldr	r3, [r2, #32]	@ temp_reg, MEM[(struct RCC_TypeDef *)1073876992B].BDCR
+ 387              	.LVL29:
+ 388              		.loc 1 554 0
+ARM GAS  /tmp/ccX2Hj4B.s 			page 18
+
+
+ 389 0152 1940     		ands	r1, r1, r3	@, tmp174, tmp174, temp_reg
+ 390 0154 B1F5817F 		cmp	r1, #258	@ tmp174,
+ 391 0158 44D0     		beq	.L43	@,
+ 555:src/stm32f1xx_hal_rcc_ex.c ****       {
+ 556:src/stm32f1xx_hal_rcc_ex.c ****         frequency = LSE_VALUE;
+ 557:src/stm32f1xx_hal_rcc_ex.c ****       }
+ 558:src/stm32f1xx_hal_rcc_ex.c ****       /* Check if LSI is ready if RTC clock selection is LSI */
+ 559:src/stm32f1xx_hal_rcc_ex.c ****       else if (((temp_reg & RCC_BDCR_RTCSEL) == RCC_RTCCLKSOURCE_LSI) && (HAL_IS_BIT_SET(RCC->CSR, 
+ 392              		.loc 1 559 0
+ 393 015a 03F44073 		and	r3, r3, #768	@ _31, temp_reg,
+ 394              	.LVL30:
+ 395 015e B3F5007F 		cmp	r3, #512	@ _31,
+ 396 0162 2DD1     		bne	.L40	@,
+ 560:src/stm32f1xx_hal_rcc_ex.c ****       {
+ 561:src/stm32f1xx_hal_rcc_ex.c ****         frequency = LSI_VALUE;
+ 397              		.loc 1 561 0 discriminator 1
+ 398 0164 49F64040 		movw	r0, #40000	@ tmp186,
+ 559:src/stm32f1xx_hal_rcc_ex.c ****       {
+ 399              		.loc 1 559 0 discriminator 1
+ 400 0168 536A     		ldr	r3, [r2, #36]	@ _32, MEM[(struct RCC_TypeDef *)1073876992B].CSR
+ 401              		.loc 1 561 0 discriminator 1
+ 402 016a 13F0020F 		tst	r3, #2	@ _32,
+ 403              	.L51:
+ 562:src/stm32f1xx_hal_rcc_ex.c ****       }
+ 563:src/stm32f1xx_hal_rcc_ex.c ****       else if (((temp_reg & RCC_BDCR_RTCSEL) == RCC_RTCCLKSOURCE_HSE_DIV128) && (HAL_IS_BIT_SET(RCC
+ 564:src/stm32f1xx_hal_rcc_ex.c ****       {
+ 565:src/stm32f1xx_hal_rcc_ex.c ****         frequency = HSE_VALUE / 128U;
+ 404              		.loc 1 565 0 discriminator 1
+ 405 016e 08BF     		it	eq
+ 406 0170 0020     		moveq	r0, #0	@ <retval>,
+ 407              	.LVL31:
+ 408              	.L32:
+ 566:src/stm32f1xx_hal_rcc_ex.c ****       }
+ 567:src/stm32f1xx_hal_rcc_ex.c ****       /* Clock not enabled for RTC*/
+ 568:src/stm32f1xx_hal_rcc_ex.c ****       else
+ 569:src/stm32f1xx_hal_rcc_ex.c ****       {
+ 570:src/stm32f1xx_hal_rcc_ex.c ****         /* nothing to do: frequency already initialized to 0U */
+ 571:src/stm32f1xx_hal_rcc_ex.c ****       }
+ 572:src/stm32f1xx_hal_rcc_ex.c ****       break;
+ 573:src/stm32f1xx_hal_rcc_ex.c ****     }
+ 574:src/stm32f1xx_hal_rcc_ex.c ****     case RCC_PERIPHCLK_ADC:
+ 575:src/stm32f1xx_hal_rcc_ex.c ****     {
+ 576:src/stm32f1xx_hal_rcc_ex.c ****       frequency = HAL_RCC_GetPCLK2Freq() / (((__HAL_RCC_GET_ADC_SOURCE() >> RCC_CFGR_ADCPRE_Pos) + 
+ 577:src/stm32f1xx_hal_rcc_ex.c ****       break;
+ 578:src/stm32f1xx_hal_rcc_ex.c ****     }
+ 579:src/stm32f1xx_hal_rcc_ex.c ****     default:
+ 580:src/stm32f1xx_hal_rcc_ex.c ****     {
+ 581:src/stm32f1xx_hal_rcc_ex.c ****       break;
+ 582:src/stm32f1xx_hal_rcc_ex.c ****     }
+ 583:src/stm32f1xx_hal_rcc_ex.c ****   }
+ 584:src/stm32f1xx_hal_rcc_ex.c ****   return (frequency);
+ 585:src/stm32f1xx_hal_rcc_ex.c **** }
+ 409              		.loc 1 585 0
+ 410 0172 06B0     		add	sp, sp, #24	@,,
+ 411              	.LCFI5:
+ 412              		.cfi_remember_state
+ 413              		.cfi_def_cfa_offset 16
+ARM GAS  /tmp/ccX2Hj4B.s 			page 19
+
+
+ 414              		@ sp needed	@
+ 415 0174 70BD     		pop	{r4, r5, r6, pc}	@
+ 416              	.LVL32:
+ 417              	.L36:
+ 418              	.LCFI6:
+ 419              		.cfi_restore_state
+ 416:src/stm32f1xx_hal_rcc_ex.c **** 
+ 420              		.loc 1 416 0
+ 421 0176 1F4B     		ldr	r3, .L52+4	@ tmp152,
+ 422 0178 5968     		ldr	r1, [r3, #4]	@ temp_reg, MEM[(struct RCC_TypeDef *)1073876992B].CFGR
+ 423              	.LVL33:
+ 419:src/stm32f1xx_hal_rcc_ex.c ****       {
+ 424              		.loc 1 419 0
+ 425 017a 1868     		ldr	r0, [r3]	@ _10, MEM[(struct RCC_TypeDef *)1073876992B].CR
+ 426 017c 10F08070 		ands	r0, r0, #16777216	@ tmp154, _10,
+ 427 0180 F7D0     		beq	.L32	@,
+ 421:src/stm32f1xx_hal_rcc_ex.c ****         if ((temp_reg & RCC_CFGR_PLLSRC) != RCC_PLLSOURCE_HSI_DIV2)
+ 428              		.loc 1 421 0
+ 429 0182 C1F38342 		ubfx	r2, r1, #18, #4	@ tmp156, temp_reg,,
+ 430 0186 06A8     		add	r0, sp, #24	@ tmp188,,
+ 431 0188 0244     		add	r2, r2, r0	@ tmp157, tmp188
+ 432 018a 12F8100C 		ldrb	r0, [r2, #-16]	@ zero_extendqisi2	@ pllmul, aPLLMULFactorTable
+ 433              	.LVL34:
+ 422:src/stm32f1xx_hal_rcc_ex.c ****         {
+ 434              		.loc 1 422 0
+ 435 018e CA03     		lsls	r2, r1, #15	@, temp_reg,
+ 428:src/stm32f1xx_hal_rcc_ex.c **** #endif /* STM32F105xC || STM32F107xC || STM32F100xB || STM32F100xE */
+ 436              		.loc 1 428 0
+ 437 0190 41BF     		itttt	mi
+ 438 0192 5A68     		ldrmi	r2, [r3, #4]	@ _17, MEM[(struct RCC_TypeDef *)1073876992B].CFGR
+ 439              	.LVL35:
+ 440 0194 06A9     		addmi	r1, sp, #24	@ tmp189,,
+ 441              	.LVL36:
+ 442 0196 C2F34042 		ubfxmi	r2, r2, #17, #1	@ tmp161, _17,,
+ 443              	.LVL37:
+ 444 019a 5218     		addmi	r2, r2, r1	@ tmp162, tmp189
+ 445 019c 44BF     		itt	mi
+ 446 019e 12F8141C 		ldrbmi	r1, [r2, #-20]	@ zero_extendqisi2	@ prediv1, aPredivFactorTable
+ 456:src/stm32f1xx_hal_rcc_ex.c ****           }
+ 447              		.loc 1 456 0
+ 448 01a2 154A     		ldrmi	r2, .L52+8	@ tmp166,
+ 481:src/stm32f1xx_hal_rcc_ex.c ****         {
+ 449              		.loc 1 481 0
+ 450 01a4 5B68     		ldr	r3, [r3, #4]	@ _25, MEM[(struct RCC_TypeDef *)1073876992B].CFGR
+ 456:src/stm32f1xx_hal_rcc_ex.c ****           }
+ 451              		.loc 1 456 0
+ 452 01a6 4CBF     		ite	mi
+ 453 01a8 B2FBF1F2 		udivmi	r2, r2, r1	@ tmp165, tmp166, prediv1
+ 463:src/stm32f1xx_hal_rcc_ex.c ****         }
+ 454              		.loc 1 463 0
+ 455 01ac 134A     		ldrpl	r2, .L52+12	@ tmp167,
+ 481:src/stm32f1xx_hal_rcc_ex.c ****         {
+ 456              		.loc 1 481 0
+ 457 01ae 5B02     		lsls	r3, r3, #9	@, _25,
+ 463:src/stm32f1xx_hal_rcc_ex.c ****         }
+ 458              		.loc 1 463 0
+ 459 01b0 02FB00F0 		mul	r0, r2, r0	@ <retval>, tmp167, pllmul
+ARM GAS  /tmp/ccX2Hj4B.s 			page 20
+
+
+ 460              	.LVL38:
+ 481:src/stm32f1xx_hal_rcc_ex.c ****         {
+ 461              		.loc 1 481 0
+ 462 01b4 DDD4     		bmi	.L32	@,
+ 489:src/stm32f1xx_hal_rcc_ex.c ****         }
+ 463              		.loc 1 489 0
+ 464 01b6 0323     		movs	r3, #3	@ tmp171,
+ 465 01b8 4000     		lsls	r0, r0, #1	@ tmp170, <retval>,
+ 466              	.LVL39:
+ 467              	.L50:
+ 576:src/stm32f1xx_hal_rcc_ex.c ****       break;
+ 468              		.loc 1 576 0
+ 469 01ba B0FBF3F0 		udiv	r0, r0, r3	@ <retval>,, tmp183
+ 470              	.LVL40:
+ 577:src/stm32f1xx_hal_rcc_ex.c ****     }
+ 471              		.loc 1 577 0
+ 472 01be D8E7     		b	.L32	@
+ 473              	.LVL41:
+ 474              	.L40:
+ 563:src/stm32f1xx_hal_rcc_ex.c ****       {
+ 475              		.loc 1 563 0
+ 476 01c0 B3F5407F 		cmp	r3, #768	@ _31,
+ 477 01c4 11D1     		bne	.L45	@,
+ 563:src/stm32f1xx_hal_rcc_ex.c ****       {
+ 478              		.loc 1 563 0 is_stmt 0 discriminator 1
+ 479 01c6 1368     		ldr	r3, [r2]	@ _34, MEM[(struct RCC_TypeDef *)1073876992B].CR
+ 565:src/stm32f1xx_hal_rcc_ex.c ****       }
+ 480              		.loc 1 565 0 is_stmt 1 discriminator 1
+ 481 01c8 4FF22440 		movw	r0, #62500	@ tmp187,
+ 482 01cc 13F4003F 		tst	r3, #131072	@ _34,
+ 483 01d0 CDE7     		b	.L51	@
+ 484              	.LVL42:
+ 485              	.L35:
+ 576:src/stm32f1xx_hal_rcc_ex.c ****       break;
+ 486              		.loc 1 576 0
+ 487 01d2 FFF7FEFF 		bl	HAL_RCC_GetPCLK2Freq	@
+ 488              	.LVL43:
+ 489 01d6 074B     		ldr	r3, .L52+4	@ tmp179,
+ 490 01d8 5B68     		ldr	r3, [r3, #4]	@ _38, MEM[(struct RCC_TypeDef *)1073876992B].CFGR
+ 491 01da C3F38133 		ubfx	r3, r3, #14, #2	@ tmp181, _38,,
+ 492 01de 0133     		adds	r3, r3, #1	@ tmp182, tmp181,
+ 493 01e0 5B00     		lsls	r3, r3, #1	@ tmp183, tmp182,
+ 494 01e2 EAE7     		b	.L50	@
+ 495              	.LVL44:
+ 496              	.L43:
+ 556:src/stm32f1xx_hal_rcc_ex.c ****       }
+ 497              		.loc 1 556 0
+ 498 01e4 4FF40040 		mov	r0, #32768	@ <retval>,
+ 499 01e8 C3E7     		b	.L32	@
+ 500              	.LVL45:
+ 501              	.L45:
+ 403:src/stm32f1xx_hal_rcc_ex.c **** 
+ 502              		.loc 1 403 0
+ 503 01ea 0020     		movs	r0, #0	@ <retval>,
+ 504 01ec C1E7     		b	.L32	@
+ 505              	.L53:
+ 506 01ee 00BF     		.align	2
+ARM GAS  /tmp/ccX2Hj4B.s 			page 21
+
+
+ 507              	.L52:
+ 508 01f0 00000000 		.word	.LANCHOR0
+ 509 01f4 00100240 		.word	1073876992
+ 510 01f8 00127A00 		.word	8000000
+ 511 01fc 00093D00 		.word	4000000
+ 512              		.cfi_endproc
+ 513              	.LFE67:
+ 514              		.size	HAL_RCCEx_GetPeriphCLKFreq, .-HAL_RCCEx_GetPeriphCLKFreq
+ 515              		.section	.rodata
+ 516              		.set	.LANCHOR0,. + 0
+ 517              	.LC0:
+ 518 0000 02       		.byte	2
+ 519 0001 03       		.byte	3
+ 520 0002 04       		.byte	4
+ 521 0003 05       		.byte	5
+ 522 0004 06       		.byte	6
+ 523 0005 07       		.byte	7
+ 524 0006 08       		.byte	8
+ 525 0007 09       		.byte	9
+ 526 0008 0A       		.byte	10
+ 527 0009 0B       		.byte	11
+ 528 000a 0C       		.byte	12
+ 529 000b 0D       		.byte	13
+ 530 000c 0E       		.byte	14
+ 531 000d 0F       		.byte	15
+ 532 000e 10       		.byte	16
+ 533 000f 10       		.byte	16
+ 534              		.text
+ 535              	.Letext0:
+ 536              		.file 2 "/usr/include/newlib/machine/_default_types.h"
+ 537              		.file 3 "/usr/include/newlib/sys/_stdint.h"
+ 538              		.file 4 "../cmsiscore/inc/core_cm3.h"
+ 539              		.file 5 "../cmsisstm32f1xx/inc/system_stm32f1xx.h"
+ 540              		.file 6 "../cmsisstm32f1xx/inc/stm32f103x6.h"
+ 541              		.file 7 "../cmsisstm32f1xx/inc/stm32f1xx.h"
+ 542              		.file 8 "./inc/stm32f1xx_hal_def.h"
+ 543              		.file 9 "./inc/stm32f1xx_hal_rcc_ex.h"
+ 544              		.file 10 "./inc/stm32f1xx_hal.h"
+ 545              		.file 11 "./inc/stm32f1xx_hal_rcc.h"
+ 546              		.section	.debug_info,"",%progbits
+ 547              	.Ldebug_info0:
+ 548 0000 C5040000 		.4byte	0x4c5
+ 549 0004 0200     		.2byte	0x2
+ 550 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 551 000a 04       		.byte	0x4
+ 552 000b 01       		.uleb128 0x1
+ 553 000c A2000000 		.4byte	.LASF68
+ 554 0010 0C       		.byte	0xc
+ 555 0011 FB020000 		.4byte	.LASF69
+ 556 0015 29020000 		.4byte	.LASF70
+ 557 0019 00000000 		.4byte	.Ltext0
+ 558 001d 00020000 		.4byte	.Letext0
+ 559 0021 00000000 		.4byte	.Ldebug_line0
+ 560 0025 02       		.uleb128 0x2
+ 561 0026 01       		.byte	0x1
+ 562 0027 06       		.byte	0x6
+ 563 0028 5D020000 		.4byte	.LASF0
+ARM GAS  /tmp/ccX2Hj4B.s 			page 22
+
+
+ 564 002c 03       		.uleb128 0x3
+ 565 002d 9E010000 		.4byte	.LASF4
+ 566 0031 02       		.byte	0x2
+ 567 0032 1D       		.byte	0x1d
+ 568 0033 37000000 		.4byte	0x37
+ 569 0037 02       		.uleb128 0x2
+ 570 0038 01       		.byte	0x1
+ 571 0039 08       		.byte	0x8
+ 572 003a 1B020000 		.4byte	.LASF1
+ 573 003e 02       		.uleb128 0x2
+ 574 003f 02       		.byte	0x2
+ 575 0040 05       		.byte	0x5
+ 576 0041 1F010000 		.4byte	.LASF2
+ 577 0045 02       		.uleb128 0x2
+ 578 0046 02       		.byte	0x2
+ 579 0047 07       		.byte	0x7
+ 580 0048 E0020000 		.4byte	.LASF3
+ 581 004c 03       		.uleb128 0x3
+ 582 004d BB030000 		.4byte	.LASF5
+ 583 0051 02       		.byte	0x2
+ 584 0052 3F       		.byte	0x3f
+ 585 0053 57000000 		.4byte	0x57
+ 586 0057 02       		.uleb128 0x2
+ 587 0058 04       		.byte	0x4
+ 588 0059 05       		.byte	0x5
+ 589 005a 66010000 		.4byte	.LASF6
+ 590 005e 03       		.uleb128 0x3
+ 591 005f 77000000 		.4byte	.LASF7
+ 592 0063 02       		.byte	0x2
+ 593 0064 41       		.byte	0x41
+ 594 0065 69000000 		.4byte	0x69
+ 595 0069 02       		.uleb128 0x2
+ 596 006a 04       		.byte	0x4
+ 597 006b 07       		.byte	0x7
+ 598 006c 67030000 		.4byte	.LASF8
+ 599 0070 02       		.uleb128 0x2
+ 600 0071 08       		.byte	0x8
+ 601 0072 05       		.byte	0x5
+ 602 0073 3D010000 		.4byte	.LASF9
+ 603 0077 02       		.uleb128 0x2
+ 604 0078 08       		.byte	0x8
+ 605 0079 07       		.byte	0x7
+ 606 007a 69020000 		.4byte	.LASF10
+ 607 007e 04       		.uleb128 0x4
+ 608 007f 04       		.byte	0x4
+ 609 0080 05       		.byte	0x5
+ 610 0081 696E7400 		.ascii	"int\000"
+ 611 0085 02       		.uleb128 0x2
+ 612 0086 04       		.byte	0x4
+ 613 0087 07       		.byte	0x7
+ 614 0088 94020000 		.4byte	.LASF11
+ 615 008c 03       		.uleb128 0x3
+ 616 008d FE000000 		.4byte	.LASF12
+ 617 0091 03       		.byte	0x3
+ 618 0092 18       		.byte	0x18
+ 619 0093 2C000000 		.4byte	0x2c
+ 620 0097 05       		.uleb128 0x5
+ARM GAS  /tmp/ccX2Hj4B.s 			page 23
+
+
+ 621 0098 8C000000 		.4byte	0x8c
+ 622 009c 03       		.uleb128 0x3
+ 623 009d F3020000 		.4byte	.LASF13
+ 624 00a1 03       		.byte	0x3
+ 625 00a2 2C       		.byte	0x2c
+ 626 00a3 4C000000 		.4byte	0x4c
+ 627 00a7 06       		.uleb128 0x6
+ 628 00a8 9C000000 		.4byte	0x9c
+ 629 00ac 03       		.uleb128 0x3
+ 630 00ad 80020000 		.4byte	.LASF14
+ 631 00b1 03       		.byte	0x3
+ 632 00b2 30       		.byte	0x30
+ 633 00b3 5E000000 		.4byte	0x5e
+ 634 00b7 06       		.uleb128 0x6
+ 635 00b8 AC000000 		.4byte	0xac
+ 636 00bc 02       		.uleb128 0x2
+ 637 00bd 04       		.byte	0x4
+ 638 00be 07       		.byte	0x7
+ 639 00bf 44000000 		.4byte	.LASF15
+ 640 00c3 07       		.uleb128 0x7
+ 641 00c4 FE030000 		.4byte	.LASF16
+ 642 00c8 04       		.byte	0x4
+ 643 00c9 4807     		.2byte	0x748
+ 644 00cb A7000000 		.4byte	0xa7
+ 645 00cf 01       		.byte	0x1
+ 646 00d0 01       		.byte	0x1
+ 647 00d1 08       		.uleb128 0x8
+ 648 00d2 16030000 		.4byte	.LASF17
+ 649 00d6 05       		.byte	0x5
+ 650 00d7 33       		.byte	0x33
+ 651 00d8 AC000000 		.4byte	0xac
+ 652 00dc 01       		.byte	0x1
+ 653 00dd 01       		.byte	0x1
+ 654 00de 09       		.uleb128 0x9
+ 655 00df 97000000 		.4byte	0x97
+ 656 00e3 EE000000 		.4byte	0xee
+ 657 00e7 0A       		.uleb128 0xa
+ 658 00e8 BC000000 		.4byte	0xbc
+ 659 00ec 0F       		.byte	0xf
+ 660 00ed 00       		.byte	0
+ 661 00ee 05       		.uleb128 0x5
+ 662 00ef DE000000 		.4byte	0xde
+ 663 00f3 08       		.uleb128 0x8
+ 664 00f4 59030000 		.4byte	.LASF18
+ 665 00f8 05       		.byte	0x5
+ 666 00f9 34       		.byte	0x34
+ 667 00fa EE000000 		.4byte	0xee
+ 668 00fe 01       		.byte	0x1
+ 669 00ff 01       		.byte	0x1
+ 670 0100 09       		.uleb128 0x9
+ 671 0101 97000000 		.4byte	0x97
+ 672 0105 10010000 		.4byte	0x110
+ 673 0109 0A       		.uleb128 0xa
+ 674 010a BC000000 		.4byte	0xbc
+ 675 010e 07       		.byte	0x7
+ 676 010f 00       		.byte	0
+ 677 0110 05       		.uleb128 0x5
+ARM GAS  /tmp/ccX2Hj4B.s 			page 24
+
+
+ 678 0111 00010000 		.4byte	0x100
+ 679 0115 08       		.uleb128 0x8
+ 680 0116 B2010000 		.4byte	.LASF19
+ 681 011a 05       		.byte	0x5
+ 682 011b 35       		.byte	0x35
+ 683 011c 10010000 		.4byte	0x110
+ 684 0120 01       		.byte	0x1
+ 685 0121 01       		.byte	0x1
+ 686 0122 0B       		.uleb128 0xb
+ 687 0123 08       		.byte	0x8
+ 688 0124 06       		.byte	0x6
+ 689 0125 9901     		.2byte	0x199
+ 690 0127 49010000 		.4byte	0x149
+ 691 012b 0C       		.uleb128 0xc
+ 692 012c 435200   		.ascii	"CR\000"
+ 693 012f 06       		.byte	0x6
+ 694 0130 9B01     		.2byte	0x19b
+ 695 0132 B7000000 		.4byte	0xb7
+ 696 0136 02       		.byte	0x2
+ 697 0137 23       		.byte	0x23
+ 698 0138 00       		.uleb128 0
+ 699 0139 0C       		.uleb128 0xc
+ 700 013a 43535200 		.ascii	"CSR\000"
+ 701 013e 06       		.byte	0x6
+ 702 013f 9C01     		.2byte	0x19c
+ 703 0141 B7000000 		.4byte	0xb7
+ 704 0145 02       		.byte	0x2
+ 705 0146 23       		.byte	0x23
+ 706 0147 04       		.uleb128 0x4
+ 707 0148 00       		.byte	0
+ 708 0149 0D       		.uleb128 0xd
+ 709 014a 6B000000 		.4byte	.LASF20
+ 710 014e 06       		.byte	0x6
+ 711 014f 9D01     		.2byte	0x19d
+ 712 0151 22010000 		.4byte	0x122
+ 713 0155 0B       		.uleb128 0xb
+ 714 0156 28       		.byte	0x28
+ 715 0157 06       		.byte	0x6
+ 716 0158 A301     		.2byte	0x1a3
+ 717 015a F4010000 		.4byte	0x1f4
+ 718 015e 0C       		.uleb128 0xc
+ 719 015f 435200   		.ascii	"CR\000"
+ 720 0162 06       		.byte	0x6
+ 721 0163 A501     		.2byte	0x1a5
+ 722 0165 B7000000 		.4byte	0xb7
+ 723 0169 02       		.byte	0x2
+ 724 016a 23       		.byte	0x23
+ 725 016b 00       		.uleb128 0
+ 726 016c 0E       		.uleb128 0xe
+ 727 016d C8020000 		.4byte	.LASF21
+ 728 0171 06       		.byte	0x6
+ 729 0172 A601     		.2byte	0x1a6
+ 730 0174 B7000000 		.4byte	0xb7
+ 731 0178 02       		.byte	0x2
+ 732 0179 23       		.byte	0x23
+ 733 017a 04       		.uleb128 0x4
+ 734 017b 0C       		.uleb128 0xc
+ARM GAS  /tmp/ccX2Hj4B.s 			page 25
+
+
+ 735 017c 43495200 		.ascii	"CIR\000"
+ 736 0180 06       		.byte	0x6
+ 737 0181 A701     		.2byte	0x1a7
+ 738 0183 B7000000 		.4byte	0xb7
+ 739 0187 02       		.byte	0x2
+ 740 0188 23       		.byte	0x23
+ 741 0189 08       		.uleb128 0x8
+ 742 018a 0E       		.uleb128 0xe
+ 743 018b 95010000 		.4byte	.LASF22
+ 744 018f 06       		.byte	0x6
+ 745 0190 A801     		.2byte	0x1a8
+ 746 0192 B7000000 		.4byte	0xb7
+ 747 0196 02       		.byte	0x2
+ 748 0197 23       		.byte	0x23
+ 749 0198 0C       		.uleb128 0xc
+ 750 0199 0E       		.uleb128 0xe
+ 751 019a 21000000 		.4byte	.LASF23
+ 752 019e 06       		.byte	0x6
+ 753 019f A901     		.2byte	0x1a9
+ 754 01a1 B7000000 		.4byte	0xb7
+ 755 01a5 02       		.byte	0x2
+ 756 01a6 23       		.byte	0x23
+ 757 01a7 10       		.uleb128 0x10
+ 758 01a8 0E       		.uleb128 0xe
+ 759 01a9 8E010000 		.4byte	.LASF24
+ 760 01ad 06       		.byte	0x6
+ 761 01ae AA01     		.2byte	0x1aa
+ 762 01b0 B7000000 		.4byte	0xb7
+ 763 01b4 02       		.byte	0x2
+ 764 01b5 23       		.byte	0x23
+ 765 01b6 14       		.uleb128 0x14
+ 766 01b7 0E       		.uleb128 0xe
+ 767 01b8 55020000 		.4byte	.LASF25
+ 768 01bc 06       		.byte	0x6
+ 769 01bd AB01     		.2byte	0x1ab
+ 770 01bf B7000000 		.4byte	0xb7
+ 771 01c3 02       		.byte	0x2
+ 772 01c4 23       		.byte	0x23
+ 773 01c5 18       		.uleb128 0x18
+ 774 01c6 0E       		.uleb128 0xe
+ 775 01c7 06010000 		.4byte	.LASF26
+ 776 01cb 06       		.byte	0x6
+ 777 01cc AC01     		.2byte	0x1ac
+ 778 01ce B7000000 		.4byte	0xb7
+ 779 01d2 02       		.byte	0x2
+ 780 01d3 23       		.byte	0x23
+ 781 01d4 1C       		.uleb128 0x1c
+ 782 01d5 0E       		.uleb128 0xe
+ 783 01d6 4D000000 		.4byte	.LASF27
+ 784 01da 06       		.byte	0x6
+ 785 01db AD01     		.2byte	0x1ad
+ 786 01dd B7000000 		.4byte	0xb7
+ 787 01e1 02       		.byte	0x2
+ 788 01e2 23       		.byte	0x23
+ 789 01e3 20       		.uleb128 0x20
+ 790 01e4 0C       		.uleb128 0xc
+ 791 01e5 43535200 		.ascii	"CSR\000"
+ARM GAS  /tmp/ccX2Hj4B.s 			page 26
+
+
+ 792 01e9 06       		.byte	0x6
+ 793 01ea AE01     		.2byte	0x1ae
+ 794 01ec B7000000 		.4byte	0xb7
+ 795 01f0 02       		.byte	0x2
+ 796 01f1 23       		.byte	0x23
+ 797 01f2 24       		.uleb128 0x24
+ 798 01f3 00       		.byte	0
+ 799 01f4 0D       		.uleb128 0xd
+ 800 01f5 77010000 		.4byte	.LASF28
+ 801 01f9 06       		.byte	0x6
+ 802 01fa B101     		.2byte	0x1b1
+ 803 01fc 55010000 		.4byte	0x155
+ 804 0200 0F       		.uleb128 0xf
+ 805 0201 01       		.byte	0x1
+ 806 0202 37000000 		.4byte	0x37
+ 807 0206 07       		.byte	0x7
+ 808 0207 98       		.byte	0x98
+ 809 0208 19020000 		.4byte	0x219
+ 810 020c 10       		.uleb128 0x10
+ 811 020d C5030000 		.4byte	.LASF29
+ 812 0211 00       		.byte	0
+ 813 0212 11       		.uleb128 0x11
+ 814 0213 53455400 		.ascii	"SET\000"
+ 815 0217 01       		.byte	0x1
+ 816 0218 00       		.byte	0
+ 817 0219 03       		.uleb128 0x3
+ 818 021a 83010000 		.4byte	.LASF30
+ 819 021e 07       		.byte	0x7
+ 820 021f 9B       		.byte	0x9b
+ 821 0220 00020000 		.4byte	0x200
+ 822 0224 0F       		.uleb128 0xf
+ 823 0225 01       		.byte	0x1
+ 824 0226 37000000 		.4byte	0x37
+ 825 022a 07       		.byte	0x7
+ 826 022b 9E       		.byte	0x9e
+ 827 022c 3D020000 		.4byte	0x23d
+ 828 0230 10       		.uleb128 0x10
+ 829 0231 17010000 		.4byte	.LASF31
+ 830 0235 00       		.byte	0
+ 831 0236 10       		.uleb128 0x10
+ 832 0237 20040000 		.4byte	.LASF32
+ 833 023b 01       		.byte	0x1
+ 834 023c 00       		.byte	0
+ 835 023d 02       		.uleb128 0x2
+ 836 023e 08       		.byte	0x8
+ 837 023f 04       		.byte	0x4
+ 838 0240 05020000 		.4byte	.LASF33
+ 839 0244 0F       		.uleb128 0xf
+ 840 0245 01       		.byte	0x1
+ 841 0246 37000000 		.4byte	0x37
+ 842 024a 08       		.byte	0x8
+ 843 024b 2A       		.byte	0x2a
+ 844 024c 69020000 		.4byte	0x269
+ 845 0250 10       		.uleb128 0x10
+ 846 0251 F7000000 		.4byte	.LASF34
+ 847 0255 00       		.byte	0
+ 848 0256 10       		.uleb128 0x10
+ARM GAS  /tmp/ccX2Hj4B.s 			page 27
+
+
+ 849 0257 11020000 		.4byte	.LASF35
+ 850 025b 01       		.byte	0x1
+ 851 025c 10       		.uleb128 0x10
+ 852 025d 0E010000 		.4byte	.LASF36
+ 853 0261 02       		.byte	0x2
+ 854 0262 10       		.uleb128 0x10
+ 855 0263 15000000 		.4byte	.LASF37
+ 856 0267 03       		.byte	0x3
+ 857 0268 00       		.byte	0
+ 858 0269 03       		.uleb128 0x3
+ 859 026a D2010000 		.4byte	.LASF38
+ 860 026e 08       		.byte	0x8
+ 861 026f 2F       		.byte	0x2f
+ 862 0270 44020000 		.4byte	0x244
+ 863 0274 0B       		.uleb128 0xb
+ 864 0275 10       		.byte	0x10
+ 865 0276 09       		.byte	0x9
+ 866 0277 1B01     		.2byte	0x11b
+ 867 0279 BA020000 		.4byte	0x2ba
+ 868 027d 0E       		.uleb128 0xe
+ 869 027e 00000000 		.4byte	.LASF39
+ 870 0282 09       		.byte	0x9
+ 871 0283 1D01     		.2byte	0x11d
+ 872 0285 AC000000 		.4byte	0xac
+ 873 0289 02       		.byte	0x2
+ 874 028a 23       		.byte	0x23
+ 875 028b 00       		.uleb128 0
+ 876 028c 0E       		.uleb128 0xe
+ 877 028d C0010000 		.4byte	.LASF40
+ 878 0291 09       		.byte	0x9
+ 879 0292 2001     		.2byte	0x120
+ 880 0294 AC000000 		.4byte	0xac
+ 881 0298 02       		.byte	0x2
+ 882 0299 23       		.byte	0x23
+ 883 029a 04       		.uleb128 0x4
+ 884 029b 0E       		.uleb128 0xe
+ 885 029c 47030000 		.4byte	.LASF41
+ 886 02a0 09       		.byte	0x9
+ 887 02a1 2301     		.2byte	0x123
+ 888 02a3 AC000000 		.4byte	0xac
+ 889 02a7 02       		.byte	0x2
+ 890 02a8 23       		.byte	0x23
+ 891 02a9 08       		.uleb128 0x8
+ 892 02aa 0E       		.uleb128 0xe
+ 893 02ab 79030000 		.4byte	.LASF42
+ 894 02af 09       		.byte	0x9
+ 895 02b0 3801     		.2byte	0x138
+ 896 02b2 AC000000 		.4byte	0xac
+ 897 02b6 02       		.byte	0x2
+ 898 02b7 23       		.byte	0x23
+ 899 02b8 0C       		.uleb128 0xc
+ 900 02b9 00       		.byte	0
+ 901 02ba 0D       		.uleb128 0xd
+ 902 02bb 52000000 		.4byte	.LASF43
+ 903 02bf 09       		.byte	0x9
+ 904 02c0 3C01     		.2byte	0x13c
+ 905 02c2 74020000 		.4byte	0x274
+ARM GAS  /tmp/ccX2Hj4B.s 			page 28
+
+
+ 906 02c6 0F       		.uleb128 0xf
+ 907 02c7 01       		.byte	0x1
+ 908 02c8 37000000 		.4byte	0x37
+ 909 02cc 0A       		.byte	0xa
+ 910 02cd 33       		.byte	0x33
+ 911 02ce EB020000 		.4byte	0x2eb
+ 912 02d2 10       		.uleb128 0x10
+ 913 02d3 34030000 		.4byte	.LASF44
+ 914 02d7 64       		.byte	0x64
+ 915 02d8 10       		.uleb128 0x10
+ 916 02d9 29010000 		.4byte	.LASF45
+ 917 02dd 0A       		.byte	0xa
+ 918 02de 10       		.uleb128 0x10
+ 919 02df CD020000 		.4byte	.LASF46
+ 920 02e3 01       		.byte	0x1
+ 921 02e4 10       		.uleb128 0x10
+ 922 02e5 D5030000 		.4byte	.LASF47
+ 923 02e9 01       		.byte	0x1
+ 924 02ea 00       		.byte	0
+ 925 02eb 03       		.uleb128 0x3
+ 926 02ec A0030000 		.4byte	.LASF48
+ 927 02f0 0A       		.byte	0xa
+ 928 02f1 38       		.byte	0x38
+ 929 02f2 C6020000 		.4byte	0x2c6
+ 930 02f6 08       		.uleb128 0x8
+ 931 02f7 97000000 		.4byte	.LASF49
+ 932 02fb 0A       		.byte	0xa
+ 933 02fc 3D       		.byte	0x3d
+ 934 02fd AC000000 		.4byte	0xac
+ 935 0301 01       		.byte	0x1
+ 936 0302 01       		.byte	0x1
+ 937 0303 08       		.uleb128 0x8
+ 938 0304 89020000 		.4byte	.LASF50
+ 939 0308 0A       		.byte	0xa
+ 940 0309 3E       		.byte	0x3e
+ 941 030a EB020000 		.4byte	0x2eb
+ 942 030e 01       		.byte	0x1
+ 943 030f 01       		.byte	0x1
+ 944 0310 12       		.uleb128 0x12
+ 945 0311 01       		.byte	0x1
+ 946 0312 4B010000 		.4byte	.LASF61
+ 947 0316 01       		.byte	0x1
+ 948 0317 8301     		.2byte	0x183
+ 949 0319 01       		.byte	0x1
+ 950 031a AC000000 		.4byte	0xac
+ 951 031e 14010000 		.4byte	.LFB67
+ 952 0322 00020000 		.4byte	.LFE67
+ 953 0326 00000000 		.4byte	.LLST6
+ 954 032a 01       		.byte	0x1
+ 955 032b B7030000 		.4byte	0x3b7
+ 956 032f 13       		.uleb128 0x13
+ 957 0330 A1020000 		.4byte	.LASF58
+ 958 0334 01       		.byte	0x1
+ 959 0335 8301     		.2byte	0x183
+ 960 0337 AC000000 		.4byte	0xac
+ 961 033b 44000000 		.4byte	.LLST7
+ 962 033f 14       		.uleb128 0x14
+ARM GAS  /tmp/ccX2Hj4B.s 			page 29
+
+
+ 963 0340 E4010000 		.4byte	.LASF51
+ 964 0344 01       		.byte	0x1
+ 965 0345 8E01     		.2byte	0x18e
+ 966 0347 EE000000 		.4byte	0xee
+ 967 034b 02       		.byte	0x2
+ 968 034c 91       		.byte	0x91
+ 969 034d 60       		.sleb128 -32
+ 970 034e 14       		.uleb128 0x14
+ 971 034f EB030000 		.4byte	.LASF52
+ 972 0353 01       		.byte	0x1
+ 973 0354 8F01     		.2byte	0x18f
+ 974 0356 C7030000 		.4byte	0x3c7
+ 975 035a 02       		.byte	0x2
+ 976 035b 91       		.byte	0x91
+ 977 035c 5C       		.sleb128 -36
+ 978 035d 15       		.uleb128 0x15
+ 979 035e 6F010000 		.4byte	.LASF53
+ 980 0362 01       		.byte	0x1
+ 981 0363 9101     		.2byte	0x191
+ 982 0365 AC000000 		.4byte	0xac
+ 983 0369 62000000 		.4byte	.LLST8
+ 984 036d 15       		.uleb128 0x15
+ 985 036e B4030000 		.4byte	.LASF54
+ 986 0372 01       		.byte	0x1
+ 987 0373 9101     		.2byte	0x191
+ 988 0375 AC000000 		.4byte	0xac
+ 989 0379 AA000000 		.4byte	.LLST9
+ 990 037d 15       		.uleb128 0x15
+ 991 037e FE010000 		.4byte	.LASF55
+ 992 0382 01       		.byte	0x1
+ 993 0383 9101     		.2byte	0x191
+ 994 0385 AC000000 		.4byte	0xac
+ 995 0389 E1000000 		.4byte	.LLST10
+ 996 038d 15       		.uleb128 0x15
+ 997 038e 8E000000 		.4byte	.LASF56
+ 998 0392 01       		.byte	0x1
+ 999 0393 9301     		.2byte	0x193
+ 1000 0395 AC000000 		.4byte	0xac
+ 1001 0399 18010000 		.4byte	.LLST11
+ 1002 039d 15       		.uleb128 0x15
+ 1003 039e CB030000 		.4byte	.LASF57
+ 1004 03a2 01       		.byte	0x1
+ 1005 03a3 9301     		.2byte	0x193
+ 1006 03a5 AC000000 		.4byte	0xac
+ 1007 03a9 65010000 		.4byte	.LLST12
+ 1008 03ad 16       		.uleb128 0x16
+ 1009 03ae D6010000 		.4byte	.LVL43
+ 1010 03b2 AC040000 		.4byte	0x4ac
+ 1011 03b6 00       		.byte	0
+ 1012 03b7 09       		.uleb128 0x9
+ 1013 03b8 97000000 		.4byte	0x97
+ 1014 03bc C7030000 		.4byte	0x3c7
+ 1015 03c0 0A       		.uleb128 0xa
+ 1016 03c1 BC000000 		.4byte	0xbc
+ 1017 03c5 01       		.byte	0x1
+ 1018 03c6 00       		.byte	0
+ 1019 03c7 05       		.uleb128 0x5
+ARM GAS  /tmp/ccX2Hj4B.s 			page 30
+
+
+ 1020 03c8 B7030000 		.4byte	0x3b7
+ 1021 03cc 17       		.uleb128 0x17
+ 1022 03cd 01       		.byte	0x1
+ 1023 03ce AB020000 		.4byte	.LASF71
+ 1024 03d2 01       		.byte	0x1
+ 1025 03d3 2601     		.2byte	0x126
+ 1026 03d5 01       		.byte	0x1
+ 1027 03d6 F0000000 		.4byte	.LFB66
+ 1028 03da 14010000 		.4byte	.LFE66
+ 1029 03de 02       		.byte	0x2
+ 1030 03df 7D       		.byte	0x7d
+ 1031 03e0 00       		.sleb128 0
+ 1032 03e1 01       		.byte	0x1
+ 1033 03e2 05040000 		.4byte	0x405
+ 1034 03e6 18       		.uleb128 0x18
+ 1035 03e7 26030000 		.4byte	.LASF59
+ 1036 03eb 01       		.byte	0x1
+ 1037 03ec 2601     		.2byte	0x126
+ 1038 03ee 05040000 		.4byte	0x405
+ 1039 03f2 01       		.byte	0x1
+ 1040 03f3 50       		.byte	0x50
+ 1041 03f4 15       		.uleb128 0x15
+ 1042 03f5 19040000 		.4byte	.LASF60
+ 1043 03f9 01       		.byte	0x1
+ 1044 03fa 2801     		.2byte	0x128
+ 1045 03fc AC000000 		.4byte	0xac
+ 1046 0400 9C010000 		.4byte	.LLST5
+ 1047 0404 00       		.byte	0
+ 1048 0405 19       		.uleb128 0x19
+ 1049 0406 04       		.byte	0x4
+ 1050 0407 BA020000 		.4byte	0x2ba
+ 1051 040b 1A       		.uleb128 0x1a
+ 1052 040c 01       		.byte	0x1
+ 1053 040d 2A000000 		.4byte	.LASF62
+ 1054 0411 01       		.byte	0x1
+ 1055 0412 64       		.byte	0x64
+ 1056 0413 01       		.byte	0x1
+ 1057 0414 69020000 		.4byte	0x269
+ 1058 0418 00000000 		.4byte	.LFB65
+ 1059 041c F0000000 		.4byte	.LFE65
+ 1060 0420 D8010000 		.4byte	.LLST0
+ 1061 0424 01       		.byte	0x1
+ 1062 0425 AC040000 		.4byte	0x4ac
+ 1063 0429 1B       		.uleb128 0x1b
+ 1064 042a 26030000 		.4byte	.LASF59
+ 1065 042e 01       		.byte	0x1
+ 1066 042f 64       		.byte	0x64
+ 1067 0430 05040000 		.4byte	0x405
+ 1068 0434 10020000 		.4byte	.LLST1
+ 1069 0438 1C       		.uleb128 0x1c
+ 1070 0439 A8010000 		.4byte	.LASF63
+ 1071 043d 01       		.byte	0x1
+ 1072 043e 66       		.byte	0x66
+ 1073 043f AC000000 		.4byte	0xac
+ 1074 0443 44020000 		.4byte	.LLST2
+ 1075 0447 1C       		.uleb128 0x1c
+ 1076 0448 8E000000 		.4byte	.LASF56
+ARM GAS  /tmp/ccX2Hj4B.s 			page 31
+
+
+ 1077 044c 01       		.byte	0x1
+ 1078 044d 66       		.byte	0x66
+ 1079 044e AC000000 		.4byte	0xac
+ 1080 0452 7A020000 		.4byte	.LLST3
+ 1081 0456 1D       		.uleb128 0x1d
+ 1082 0457 00000000 		.4byte	.Ldebug_ranges0+0
+ 1083 045b 1C       		.uleb128 0x1c
+ 1084 045c 0B040000 		.4byte	.LASF64
+ 1085 0460 01       		.byte	0x1
+ 1086 0461 74       		.byte	0x74
+ 1087 0462 19020000 		.4byte	0x219
+ 1088 0466 D8020000 		.4byte	.LLST4
+ 1089 046a 1E       		.uleb128 0x1e
+ 1090 046b 16000000 		.4byte	.LBB3
+ 1091 046f 28000000 		.4byte	.LBE3
+ 1092 0473 86040000 		.4byte	0x486
+ 1093 0477 1F       		.uleb128 0x1f
+ 1094 0478 F7010000 		.4byte	.LASF65
+ 1095 047c 01       		.byte	0x1
+ 1096 047d 7B       		.byte	0x7b
+ 1097 047e B7000000 		.4byte	0xb7
+ 1098 0482 02       		.byte	0x2
+ 1099 0483 91       		.byte	0x91
+ 1100 0484 64       		.sleb128 -28
+ 1101 0485 00       		.byte	0
+ 1102 0486 16       		.uleb128 0x16
+ 1103 0487 8A000000 		.4byte	.LVL10
+ 1104 048b BA040000 		.4byte	0x4ba
+ 1105 048f 16       		.uleb128 0x16
+ 1106 0490 96000000 		.4byte	.LVL12
+ 1107 0494 BA040000 		.4byte	0x4ba
+ 1108 0498 16       		.uleb128 0x16
+ 1109 0499 CA000000 		.4byte	.LVL19
+ 1110 049d BA040000 		.4byte	0x4ba
+ 1111 04a1 16       		.uleb128 0x16
+ 1112 04a2 DA000000 		.4byte	.LVL21
+ 1113 04a6 BA040000 		.4byte	0x4ba
+ 1114 04aa 00       		.byte	0
+ 1115 04ab 00       		.byte	0
+ 1116 04ac 20       		.uleb128 0x20
+ 1117 04ad 01       		.byte	0x1
+ 1118 04ae 01       		.byte	0x1
+ 1119 04af 8B030000 		.4byte	.LASF66
+ 1120 04b3 8B030000 		.4byte	.LASF66
+ 1121 04b7 0B       		.byte	0xb
+ 1122 04b8 9704     		.2byte	0x497
+ 1123 04ba 20       		.uleb128 0x20
+ 1124 04bb 01       		.byte	0x1
+ 1125 04bc 01       		.byte	0x1
+ 1126 04bd 82000000 		.4byte	.LASF67
+ 1127 04c1 82000000 		.4byte	.LASF67
+ 1128 04c5 0A       		.byte	0xa
+ 1129 04c6 2A01     		.2byte	0x12a
+ 1130 04c8 00       		.byte	0
+ 1131              		.section	.debug_abbrev,"",%progbits
+ 1132              	.Ldebug_abbrev0:
+ 1133 0000 01       		.uleb128 0x1
+ARM GAS  /tmp/ccX2Hj4B.s 			page 32
+
+
+ 1134 0001 11       		.uleb128 0x11
+ 1135 0002 01       		.byte	0x1
+ 1136 0003 25       		.uleb128 0x25
+ 1137 0004 0E       		.uleb128 0xe
+ 1138 0005 13       		.uleb128 0x13
+ 1139 0006 0B       		.uleb128 0xb
+ 1140 0007 03       		.uleb128 0x3
+ 1141 0008 0E       		.uleb128 0xe
+ 1142 0009 1B       		.uleb128 0x1b
+ 1143 000a 0E       		.uleb128 0xe
+ 1144 000b 11       		.uleb128 0x11
+ 1145 000c 01       		.uleb128 0x1
+ 1146 000d 12       		.uleb128 0x12
+ 1147 000e 01       		.uleb128 0x1
+ 1148 000f 10       		.uleb128 0x10
+ 1149 0010 06       		.uleb128 0x6
+ 1150 0011 00       		.byte	0
+ 1151 0012 00       		.byte	0
+ 1152 0013 02       		.uleb128 0x2
+ 1153 0014 24       		.uleb128 0x24
+ 1154 0015 00       		.byte	0
+ 1155 0016 0B       		.uleb128 0xb
+ 1156 0017 0B       		.uleb128 0xb
+ 1157 0018 3E       		.uleb128 0x3e
+ 1158 0019 0B       		.uleb128 0xb
+ 1159 001a 03       		.uleb128 0x3
+ 1160 001b 0E       		.uleb128 0xe
+ 1161 001c 00       		.byte	0
+ 1162 001d 00       		.byte	0
+ 1163 001e 03       		.uleb128 0x3
+ 1164 001f 16       		.uleb128 0x16
+ 1165 0020 00       		.byte	0
+ 1166 0021 03       		.uleb128 0x3
+ 1167 0022 0E       		.uleb128 0xe
+ 1168 0023 3A       		.uleb128 0x3a
+ 1169 0024 0B       		.uleb128 0xb
+ 1170 0025 3B       		.uleb128 0x3b
+ 1171 0026 0B       		.uleb128 0xb
+ 1172 0027 49       		.uleb128 0x49
+ 1173 0028 13       		.uleb128 0x13
+ 1174 0029 00       		.byte	0
+ 1175 002a 00       		.byte	0
+ 1176 002b 04       		.uleb128 0x4
+ 1177 002c 24       		.uleb128 0x24
+ 1178 002d 00       		.byte	0
+ 1179 002e 0B       		.uleb128 0xb
+ 1180 002f 0B       		.uleb128 0xb
+ 1181 0030 3E       		.uleb128 0x3e
+ 1182 0031 0B       		.uleb128 0xb
+ 1183 0032 03       		.uleb128 0x3
+ 1184 0033 08       		.uleb128 0x8
+ 1185 0034 00       		.byte	0
+ 1186 0035 00       		.byte	0
+ 1187 0036 05       		.uleb128 0x5
+ 1188 0037 26       		.uleb128 0x26
+ 1189 0038 00       		.byte	0
+ 1190 0039 49       		.uleb128 0x49
+ARM GAS  /tmp/ccX2Hj4B.s 			page 33
+
+
+ 1191 003a 13       		.uleb128 0x13
+ 1192 003b 00       		.byte	0
+ 1193 003c 00       		.byte	0
+ 1194 003d 06       		.uleb128 0x6
+ 1195 003e 35       		.uleb128 0x35
+ 1196 003f 00       		.byte	0
+ 1197 0040 49       		.uleb128 0x49
+ 1198 0041 13       		.uleb128 0x13
+ 1199 0042 00       		.byte	0
+ 1200 0043 00       		.byte	0
+ 1201 0044 07       		.uleb128 0x7
+ 1202 0045 34       		.uleb128 0x34
+ 1203 0046 00       		.byte	0
+ 1204 0047 03       		.uleb128 0x3
+ 1205 0048 0E       		.uleb128 0xe
+ 1206 0049 3A       		.uleb128 0x3a
+ 1207 004a 0B       		.uleb128 0xb
+ 1208 004b 3B       		.uleb128 0x3b
+ 1209 004c 05       		.uleb128 0x5
+ 1210 004d 49       		.uleb128 0x49
+ 1211 004e 13       		.uleb128 0x13
+ 1212 004f 3F       		.uleb128 0x3f
+ 1213 0050 0C       		.uleb128 0xc
+ 1214 0051 3C       		.uleb128 0x3c
+ 1215 0052 0C       		.uleb128 0xc
+ 1216 0053 00       		.byte	0
+ 1217 0054 00       		.byte	0
+ 1218 0055 08       		.uleb128 0x8
+ 1219 0056 34       		.uleb128 0x34
+ 1220 0057 00       		.byte	0
+ 1221 0058 03       		.uleb128 0x3
+ 1222 0059 0E       		.uleb128 0xe
+ 1223 005a 3A       		.uleb128 0x3a
+ 1224 005b 0B       		.uleb128 0xb
+ 1225 005c 3B       		.uleb128 0x3b
+ 1226 005d 0B       		.uleb128 0xb
+ 1227 005e 49       		.uleb128 0x49
+ 1228 005f 13       		.uleb128 0x13
+ 1229 0060 3F       		.uleb128 0x3f
+ 1230 0061 0C       		.uleb128 0xc
+ 1231 0062 3C       		.uleb128 0x3c
+ 1232 0063 0C       		.uleb128 0xc
+ 1233 0064 00       		.byte	0
+ 1234 0065 00       		.byte	0
+ 1235 0066 09       		.uleb128 0x9
+ 1236 0067 01       		.uleb128 0x1
+ 1237 0068 01       		.byte	0x1
+ 1238 0069 49       		.uleb128 0x49
+ 1239 006a 13       		.uleb128 0x13
+ 1240 006b 01       		.uleb128 0x1
+ 1241 006c 13       		.uleb128 0x13
+ 1242 006d 00       		.byte	0
+ 1243 006e 00       		.byte	0
+ 1244 006f 0A       		.uleb128 0xa
+ 1245 0070 21       		.uleb128 0x21
+ 1246 0071 00       		.byte	0
+ 1247 0072 49       		.uleb128 0x49
+ARM GAS  /tmp/ccX2Hj4B.s 			page 34
+
+
+ 1248 0073 13       		.uleb128 0x13
+ 1249 0074 2F       		.uleb128 0x2f
+ 1250 0075 0B       		.uleb128 0xb
+ 1251 0076 00       		.byte	0
+ 1252 0077 00       		.byte	0
+ 1253 0078 0B       		.uleb128 0xb
+ 1254 0079 13       		.uleb128 0x13
+ 1255 007a 01       		.byte	0x1
+ 1256 007b 0B       		.uleb128 0xb
+ 1257 007c 0B       		.uleb128 0xb
+ 1258 007d 3A       		.uleb128 0x3a
+ 1259 007e 0B       		.uleb128 0xb
+ 1260 007f 3B       		.uleb128 0x3b
+ 1261 0080 05       		.uleb128 0x5
+ 1262 0081 01       		.uleb128 0x1
+ 1263 0082 13       		.uleb128 0x13
+ 1264 0083 00       		.byte	0
+ 1265 0084 00       		.byte	0
+ 1266 0085 0C       		.uleb128 0xc
+ 1267 0086 0D       		.uleb128 0xd
+ 1268 0087 00       		.byte	0
+ 1269 0088 03       		.uleb128 0x3
+ 1270 0089 08       		.uleb128 0x8
+ 1271 008a 3A       		.uleb128 0x3a
+ 1272 008b 0B       		.uleb128 0xb
+ 1273 008c 3B       		.uleb128 0x3b
+ 1274 008d 05       		.uleb128 0x5
+ 1275 008e 49       		.uleb128 0x49
+ 1276 008f 13       		.uleb128 0x13
+ 1277 0090 38       		.uleb128 0x38
+ 1278 0091 0A       		.uleb128 0xa
+ 1279 0092 00       		.byte	0
+ 1280 0093 00       		.byte	0
+ 1281 0094 0D       		.uleb128 0xd
+ 1282 0095 16       		.uleb128 0x16
+ 1283 0096 00       		.byte	0
+ 1284 0097 03       		.uleb128 0x3
+ 1285 0098 0E       		.uleb128 0xe
+ 1286 0099 3A       		.uleb128 0x3a
+ 1287 009a 0B       		.uleb128 0xb
+ 1288 009b 3B       		.uleb128 0x3b
+ 1289 009c 05       		.uleb128 0x5
+ 1290 009d 49       		.uleb128 0x49
+ 1291 009e 13       		.uleb128 0x13
+ 1292 009f 00       		.byte	0
+ 1293 00a0 00       		.byte	0
+ 1294 00a1 0E       		.uleb128 0xe
+ 1295 00a2 0D       		.uleb128 0xd
+ 1296 00a3 00       		.byte	0
+ 1297 00a4 03       		.uleb128 0x3
+ 1298 00a5 0E       		.uleb128 0xe
+ 1299 00a6 3A       		.uleb128 0x3a
+ 1300 00a7 0B       		.uleb128 0xb
+ 1301 00a8 3B       		.uleb128 0x3b
+ 1302 00a9 05       		.uleb128 0x5
+ 1303 00aa 49       		.uleb128 0x49
+ 1304 00ab 13       		.uleb128 0x13
+ARM GAS  /tmp/ccX2Hj4B.s 			page 35
+
+
+ 1305 00ac 38       		.uleb128 0x38
+ 1306 00ad 0A       		.uleb128 0xa
+ 1307 00ae 00       		.byte	0
+ 1308 00af 00       		.byte	0
+ 1309 00b0 0F       		.uleb128 0xf
+ 1310 00b1 04       		.uleb128 0x4
+ 1311 00b2 01       		.byte	0x1
+ 1312 00b3 0B       		.uleb128 0xb
+ 1313 00b4 0B       		.uleb128 0xb
+ 1314 00b5 49       		.uleb128 0x49
+ 1315 00b6 13       		.uleb128 0x13
+ 1316 00b7 3A       		.uleb128 0x3a
+ 1317 00b8 0B       		.uleb128 0xb
+ 1318 00b9 3B       		.uleb128 0x3b
+ 1319 00ba 0B       		.uleb128 0xb
+ 1320 00bb 01       		.uleb128 0x1
+ 1321 00bc 13       		.uleb128 0x13
+ 1322 00bd 00       		.byte	0
+ 1323 00be 00       		.byte	0
+ 1324 00bf 10       		.uleb128 0x10
+ 1325 00c0 28       		.uleb128 0x28
+ 1326 00c1 00       		.byte	0
+ 1327 00c2 03       		.uleb128 0x3
+ 1328 00c3 0E       		.uleb128 0xe
+ 1329 00c4 1C       		.uleb128 0x1c
+ 1330 00c5 0B       		.uleb128 0xb
+ 1331 00c6 00       		.byte	0
+ 1332 00c7 00       		.byte	0
+ 1333 00c8 11       		.uleb128 0x11
+ 1334 00c9 28       		.uleb128 0x28
+ 1335 00ca 00       		.byte	0
+ 1336 00cb 03       		.uleb128 0x3
+ 1337 00cc 08       		.uleb128 0x8
+ 1338 00cd 1C       		.uleb128 0x1c
+ 1339 00ce 0B       		.uleb128 0xb
+ 1340 00cf 00       		.byte	0
+ 1341 00d0 00       		.byte	0
+ 1342 00d1 12       		.uleb128 0x12
+ 1343 00d2 2E       		.uleb128 0x2e
+ 1344 00d3 01       		.byte	0x1
+ 1345 00d4 3F       		.uleb128 0x3f
+ 1346 00d5 0C       		.uleb128 0xc
+ 1347 00d6 03       		.uleb128 0x3
+ 1348 00d7 0E       		.uleb128 0xe
+ 1349 00d8 3A       		.uleb128 0x3a
+ 1350 00d9 0B       		.uleb128 0xb
+ 1351 00da 3B       		.uleb128 0x3b
+ 1352 00db 05       		.uleb128 0x5
+ 1353 00dc 27       		.uleb128 0x27
+ 1354 00dd 0C       		.uleb128 0xc
+ 1355 00de 49       		.uleb128 0x49
+ 1356 00df 13       		.uleb128 0x13
+ 1357 00e0 11       		.uleb128 0x11
+ 1358 00e1 01       		.uleb128 0x1
+ 1359 00e2 12       		.uleb128 0x12
+ 1360 00e3 01       		.uleb128 0x1
+ 1361 00e4 40       		.uleb128 0x40
+ARM GAS  /tmp/ccX2Hj4B.s 			page 36
+
+
+ 1362 00e5 06       		.uleb128 0x6
+ 1363 00e6 9742     		.uleb128 0x2117
+ 1364 00e8 0C       		.uleb128 0xc
+ 1365 00e9 01       		.uleb128 0x1
+ 1366 00ea 13       		.uleb128 0x13
+ 1367 00eb 00       		.byte	0
+ 1368 00ec 00       		.byte	0
+ 1369 00ed 13       		.uleb128 0x13
+ 1370 00ee 05       		.uleb128 0x5
+ 1371 00ef 00       		.byte	0
+ 1372 00f0 03       		.uleb128 0x3
+ 1373 00f1 0E       		.uleb128 0xe
+ 1374 00f2 3A       		.uleb128 0x3a
+ 1375 00f3 0B       		.uleb128 0xb
+ 1376 00f4 3B       		.uleb128 0x3b
+ 1377 00f5 05       		.uleb128 0x5
+ 1378 00f6 49       		.uleb128 0x49
+ 1379 00f7 13       		.uleb128 0x13
+ 1380 00f8 02       		.uleb128 0x2
+ 1381 00f9 06       		.uleb128 0x6
+ 1382 00fa 00       		.byte	0
+ 1383 00fb 00       		.byte	0
+ 1384 00fc 14       		.uleb128 0x14
+ 1385 00fd 34       		.uleb128 0x34
+ 1386 00fe 00       		.byte	0
+ 1387 00ff 03       		.uleb128 0x3
+ 1388 0100 0E       		.uleb128 0xe
+ 1389 0101 3A       		.uleb128 0x3a
+ 1390 0102 0B       		.uleb128 0xb
+ 1391 0103 3B       		.uleb128 0x3b
+ 1392 0104 05       		.uleb128 0x5
+ 1393 0105 49       		.uleb128 0x49
+ 1394 0106 13       		.uleb128 0x13
+ 1395 0107 02       		.uleb128 0x2
+ 1396 0108 0A       		.uleb128 0xa
+ 1397 0109 00       		.byte	0
+ 1398 010a 00       		.byte	0
+ 1399 010b 15       		.uleb128 0x15
+ 1400 010c 34       		.uleb128 0x34
+ 1401 010d 00       		.byte	0
+ 1402 010e 03       		.uleb128 0x3
+ 1403 010f 0E       		.uleb128 0xe
+ 1404 0110 3A       		.uleb128 0x3a
+ 1405 0111 0B       		.uleb128 0xb
+ 1406 0112 3B       		.uleb128 0x3b
+ 1407 0113 05       		.uleb128 0x5
+ 1408 0114 49       		.uleb128 0x49
+ 1409 0115 13       		.uleb128 0x13
+ 1410 0116 02       		.uleb128 0x2
+ 1411 0117 06       		.uleb128 0x6
+ 1412 0118 00       		.byte	0
+ 1413 0119 00       		.byte	0
+ 1414 011a 16       		.uleb128 0x16
+ 1415 011b 898201   		.uleb128 0x4109
+ 1416 011e 00       		.byte	0
+ 1417 011f 11       		.uleb128 0x11
+ 1418 0120 01       		.uleb128 0x1
+ARM GAS  /tmp/ccX2Hj4B.s 			page 37
+
+
+ 1419 0121 31       		.uleb128 0x31
+ 1420 0122 13       		.uleb128 0x13
+ 1421 0123 00       		.byte	0
+ 1422 0124 00       		.byte	0
+ 1423 0125 17       		.uleb128 0x17
+ 1424 0126 2E       		.uleb128 0x2e
+ 1425 0127 01       		.byte	0x1
+ 1426 0128 3F       		.uleb128 0x3f
+ 1427 0129 0C       		.uleb128 0xc
+ 1428 012a 03       		.uleb128 0x3
+ 1429 012b 0E       		.uleb128 0xe
+ 1430 012c 3A       		.uleb128 0x3a
+ 1431 012d 0B       		.uleb128 0xb
+ 1432 012e 3B       		.uleb128 0x3b
+ 1433 012f 05       		.uleb128 0x5
+ 1434 0130 27       		.uleb128 0x27
+ 1435 0131 0C       		.uleb128 0xc
+ 1436 0132 11       		.uleb128 0x11
+ 1437 0133 01       		.uleb128 0x1
+ 1438 0134 12       		.uleb128 0x12
+ 1439 0135 01       		.uleb128 0x1
+ 1440 0136 40       		.uleb128 0x40
+ 1441 0137 0A       		.uleb128 0xa
+ 1442 0138 9742     		.uleb128 0x2117
+ 1443 013a 0C       		.uleb128 0xc
+ 1444 013b 01       		.uleb128 0x1
+ 1445 013c 13       		.uleb128 0x13
+ 1446 013d 00       		.byte	0
+ 1447 013e 00       		.byte	0
+ 1448 013f 18       		.uleb128 0x18
+ 1449 0140 05       		.uleb128 0x5
+ 1450 0141 00       		.byte	0
+ 1451 0142 03       		.uleb128 0x3
+ 1452 0143 0E       		.uleb128 0xe
+ 1453 0144 3A       		.uleb128 0x3a
+ 1454 0145 0B       		.uleb128 0xb
+ 1455 0146 3B       		.uleb128 0x3b
+ 1456 0147 05       		.uleb128 0x5
+ 1457 0148 49       		.uleb128 0x49
+ 1458 0149 13       		.uleb128 0x13
+ 1459 014a 02       		.uleb128 0x2
+ 1460 014b 0A       		.uleb128 0xa
+ 1461 014c 00       		.byte	0
+ 1462 014d 00       		.byte	0
+ 1463 014e 19       		.uleb128 0x19
+ 1464 014f 0F       		.uleb128 0xf
+ 1465 0150 00       		.byte	0
+ 1466 0151 0B       		.uleb128 0xb
+ 1467 0152 0B       		.uleb128 0xb
+ 1468 0153 49       		.uleb128 0x49
+ 1469 0154 13       		.uleb128 0x13
+ 1470 0155 00       		.byte	0
+ 1471 0156 00       		.byte	0
+ 1472 0157 1A       		.uleb128 0x1a
+ 1473 0158 2E       		.uleb128 0x2e
+ 1474 0159 01       		.byte	0x1
+ 1475 015a 3F       		.uleb128 0x3f
+ARM GAS  /tmp/ccX2Hj4B.s 			page 38
+
+
+ 1476 015b 0C       		.uleb128 0xc
+ 1477 015c 03       		.uleb128 0x3
+ 1478 015d 0E       		.uleb128 0xe
+ 1479 015e 3A       		.uleb128 0x3a
+ 1480 015f 0B       		.uleb128 0xb
+ 1481 0160 3B       		.uleb128 0x3b
+ 1482 0161 0B       		.uleb128 0xb
+ 1483 0162 27       		.uleb128 0x27
+ 1484 0163 0C       		.uleb128 0xc
+ 1485 0164 49       		.uleb128 0x49
+ 1486 0165 13       		.uleb128 0x13
+ 1487 0166 11       		.uleb128 0x11
+ 1488 0167 01       		.uleb128 0x1
+ 1489 0168 12       		.uleb128 0x12
+ 1490 0169 01       		.uleb128 0x1
+ 1491 016a 40       		.uleb128 0x40
+ 1492 016b 06       		.uleb128 0x6
+ 1493 016c 9742     		.uleb128 0x2117
+ 1494 016e 0C       		.uleb128 0xc
+ 1495 016f 01       		.uleb128 0x1
+ 1496 0170 13       		.uleb128 0x13
+ 1497 0171 00       		.byte	0
+ 1498 0172 00       		.byte	0
+ 1499 0173 1B       		.uleb128 0x1b
+ 1500 0174 05       		.uleb128 0x5
+ 1501 0175 00       		.byte	0
+ 1502 0176 03       		.uleb128 0x3
+ 1503 0177 0E       		.uleb128 0xe
+ 1504 0178 3A       		.uleb128 0x3a
+ 1505 0179 0B       		.uleb128 0xb
+ 1506 017a 3B       		.uleb128 0x3b
+ 1507 017b 0B       		.uleb128 0xb
+ 1508 017c 49       		.uleb128 0x49
+ 1509 017d 13       		.uleb128 0x13
+ 1510 017e 02       		.uleb128 0x2
+ 1511 017f 06       		.uleb128 0x6
+ 1512 0180 00       		.byte	0
+ 1513 0181 00       		.byte	0
+ 1514 0182 1C       		.uleb128 0x1c
+ 1515 0183 34       		.uleb128 0x34
+ 1516 0184 00       		.byte	0
+ 1517 0185 03       		.uleb128 0x3
+ 1518 0186 0E       		.uleb128 0xe
+ 1519 0187 3A       		.uleb128 0x3a
+ 1520 0188 0B       		.uleb128 0xb
+ 1521 0189 3B       		.uleb128 0x3b
+ 1522 018a 0B       		.uleb128 0xb
+ 1523 018b 49       		.uleb128 0x49
+ 1524 018c 13       		.uleb128 0x13
+ 1525 018d 02       		.uleb128 0x2
+ 1526 018e 06       		.uleb128 0x6
+ 1527 018f 00       		.byte	0
+ 1528 0190 00       		.byte	0
+ 1529 0191 1D       		.uleb128 0x1d
+ 1530 0192 0B       		.uleb128 0xb
+ 1531 0193 01       		.byte	0x1
+ 1532 0194 55       		.uleb128 0x55
+ARM GAS  /tmp/ccX2Hj4B.s 			page 39
+
+
+ 1533 0195 06       		.uleb128 0x6
+ 1534 0196 00       		.byte	0
+ 1535 0197 00       		.byte	0
+ 1536 0198 1E       		.uleb128 0x1e
+ 1537 0199 0B       		.uleb128 0xb
+ 1538 019a 01       		.byte	0x1
+ 1539 019b 11       		.uleb128 0x11
+ 1540 019c 01       		.uleb128 0x1
+ 1541 019d 12       		.uleb128 0x12
+ 1542 019e 01       		.uleb128 0x1
+ 1543 019f 01       		.uleb128 0x1
+ 1544 01a0 13       		.uleb128 0x13
+ 1545 01a1 00       		.byte	0
+ 1546 01a2 00       		.byte	0
+ 1547 01a3 1F       		.uleb128 0x1f
+ 1548 01a4 34       		.uleb128 0x34
+ 1549 01a5 00       		.byte	0
+ 1550 01a6 03       		.uleb128 0x3
+ 1551 01a7 0E       		.uleb128 0xe
+ 1552 01a8 3A       		.uleb128 0x3a
+ 1553 01a9 0B       		.uleb128 0xb
+ 1554 01aa 3B       		.uleb128 0x3b
+ 1555 01ab 0B       		.uleb128 0xb
+ 1556 01ac 49       		.uleb128 0x49
+ 1557 01ad 13       		.uleb128 0x13
+ 1558 01ae 02       		.uleb128 0x2
+ 1559 01af 0A       		.uleb128 0xa
+ 1560 01b0 00       		.byte	0
+ 1561 01b1 00       		.byte	0
+ 1562 01b2 20       		.uleb128 0x20
+ 1563 01b3 2E       		.uleb128 0x2e
+ 1564 01b4 00       		.byte	0
+ 1565 01b5 3F       		.uleb128 0x3f
+ 1566 01b6 0C       		.uleb128 0xc
+ 1567 01b7 3C       		.uleb128 0x3c
+ 1568 01b8 0C       		.uleb128 0xc
+ 1569 01b9 8740     		.uleb128 0x2007
+ 1570 01bb 0E       		.uleb128 0xe
+ 1571 01bc 03       		.uleb128 0x3
+ 1572 01bd 0E       		.uleb128 0xe
+ 1573 01be 3A       		.uleb128 0x3a
+ 1574 01bf 0B       		.uleb128 0xb
+ 1575 01c0 3B       		.uleb128 0x3b
+ 1576 01c1 05       		.uleb128 0x5
+ 1577 01c2 00       		.byte	0
+ 1578 01c3 00       		.byte	0
+ 1579 01c4 00       		.byte	0
+ 1580              		.section	.debug_loc,"",%progbits
+ 1581              	.Ldebug_loc0:
+ 1582              	.LLST6:
+ 1583 0000 14010000 		.4byte	.LFB67-.Ltext0
+ 1584 0004 16010000 		.4byte	.LCFI3-.Ltext0
+ 1585 0008 0200     		.2byte	0x2
+ 1586 000a 7D       		.byte	0x7d
+ 1587 000b 00       		.sleb128 0
+ 1588 000c 16010000 		.4byte	.LCFI3-.Ltext0
+ 1589 0010 1C010000 		.4byte	.LCFI4-.Ltext0
+ARM GAS  /tmp/ccX2Hj4B.s 			page 40
+
+
+ 1590 0014 0200     		.2byte	0x2
+ 1591 0016 7D       		.byte	0x7d
+ 1592 0017 10       		.sleb128 16
+ 1593 0018 1C010000 		.4byte	.LCFI4-.Ltext0
+ 1594 001c 74010000 		.4byte	.LCFI5-.Ltext0
+ 1595 0020 0200     		.2byte	0x2
+ 1596 0022 7D       		.byte	0x7d
+ 1597 0023 28       		.sleb128 40
+ 1598 0024 74010000 		.4byte	.LCFI5-.Ltext0
+ 1599 0028 76010000 		.4byte	.LCFI6-.Ltext0
+ 1600 002c 0200     		.2byte	0x2
+ 1601 002e 7D       		.byte	0x7d
+ 1602 002f 10       		.sleb128 16
+ 1603 0030 76010000 		.4byte	.LCFI6-.Ltext0
+ 1604 0034 00020000 		.4byte	.LFE67-.Ltext0
+ 1605 0038 0200     		.2byte	0x2
+ 1606 003a 7D       		.byte	0x7d
+ 1607 003b 28       		.sleb128 40
+ 1608 003c 00000000 		.4byte	0
+ 1609 0040 00000000 		.4byte	0
+ 1610              	.LLST7:
+ 1611 0044 14010000 		.4byte	.LVL26-.Ltext0
+ 1612 0048 22010000 		.4byte	.LVL27-.Ltext0
+ 1613 004c 0100     		.2byte	0x1
+ 1614 004e 50       		.byte	0x50
+ 1615 004f 22010000 		.4byte	.LVL27-.Ltext0
+ 1616 0053 00020000 		.4byte	.LFE67-.Ltext0
+ 1617 0057 0100     		.2byte	0x1
+ 1618 0059 54       		.byte	0x54
+ 1619 005a 00000000 		.4byte	0
+ 1620 005e 00000000 		.4byte	0
+ 1621              	.LLST8:
+ 1622 0062 40010000 		.4byte	.LVL28-.Ltext0
+ 1623 0066 72010000 		.4byte	.LVL31-.Ltext0
+ 1624 006a 0200     		.2byte	0x2
+ 1625 006c 30       		.byte	0x30
+ 1626 006d 9F       		.byte	0x9f
+ 1627 006e 76010000 		.4byte	.LVL32-.Ltext0
+ 1628 0072 94010000 		.4byte	.LVL35-.Ltext0
+ 1629 0076 0200     		.2byte	0x2
+ 1630 0078 30       		.byte	0x30
+ 1631 0079 9F       		.byte	0x9f
+ 1632 007a 94010000 		.4byte	.LVL35-.Ltext0
+ 1633 007e 9A010000 		.4byte	.LVL37-.Ltext0
+ 1634 0082 1200     		.2byte	0x12
+ 1635 0084 72       		.byte	0x72
+ 1636 0085 00       		.sleb128 0
+ 1637 0086 41       		.byte	0x41
+ 1638 0087 25       		.byte	0x25
+ 1639 0088 31       		.byte	0x31
+ 1640 0089 1A       		.byte	0x1a
+ 1641 008a 91       		.byte	0x91
+ 1642 008b 00       		.sleb128 0
+ 1643 008c 22       		.byte	0x22
+ 1644 008d 08       		.byte	0x8
+ 1645 008e 24       		.byte	0x24
+ 1646 008f 1C       		.byte	0x1c
+ARM GAS  /tmp/ccX2Hj4B.s 			page 41
+
+
+ 1647 0090 94       		.byte	0x94
+ 1648 0091 01       		.byte	0x1
+ 1649 0092 08       		.byte	0x8
+ 1650 0093 FF       		.byte	0xff
+ 1651 0094 1A       		.byte	0x1a
+ 1652 0095 9F       		.byte	0x9f
+ 1653 0096 C0010000 		.4byte	.LVL41-.Ltext0
+ 1654 009a 00020000 		.4byte	.LFE67-.Ltext0
+ 1655 009e 0200     		.2byte	0x2
+ 1656 00a0 30       		.byte	0x30
+ 1657 00a1 9F       		.byte	0x9f
+ 1658 00a2 00000000 		.4byte	0
+ 1659 00a6 00000000 		.4byte	0
+ 1660              	.LLST9:
+ 1661 00aa 40010000 		.4byte	.LVL28-.Ltext0
+ 1662 00ae 72010000 		.4byte	.LVL31-.Ltext0
+ 1663 00b2 0200     		.2byte	0x2
+ 1664 00b4 30       		.byte	0x30
+ 1665 00b5 9F       		.byte	0x9f
+ 1666 00b6 76010000 		.4byte	.LVL32-.Ltext0
+ 1667 00ba B4010000 		.4byte	.LVL38-.Ltext0
+ 1668 00be 0200     		.2byte	0x2
+ 1669 00c0 30       		.byte	0x30
+ 1670 00c1 9F       		.byte	0x9f
+ 1671 00c2 B4010000 		.4byte	.LVL38-.Ltext0
+ 1672 00c6 BA010000 		.4byte	.LVL39-.Ltext0
+ 1673 00ca 0100     		.2byte	0x1
+ 1674 00cc 50       		.byte	0x50
+ 1675 00cd C0010000 		.4byte	.LVL41-.Ltext0
+ 1676 00d1 00020000 		.4byte	.LFE67-.Ltext0
+ 1677 00d5 0200     		.2byte	0x2
+ 1678 00d7 30       		.byte	0x30
+ 1679 00d8 9F       		.byte	0x9f
+ 1680 00d9 00000000 		.4byte	0
+ 1681 00dd 00000000 		.4byte	0
+ 1682              	.LLST10:
+ 1683 00e1 40010000 		.4byte	.LVL28-.Ltext0
+ 1684 00e5 72010000 		.4byte	.LVL31-.Ltext0
+ 1685 00e9 0200     		.2byte	0x2
+ 1686 00eb 30       		.byte	0x30
+ 1687 00ec 9F       		.byte	0x9f
+ 1688 00ed 76010000 		.4byte	.LVL32-.Ltext0
+ 1689 00f1 8E010000 		.4byte	.LVL34-.Ltext0
+ 1690 00f5 0200     		.2byte	0x2
+ 1691 00f7 30       		.byte	0x30
+ 1692 00f8 9F       		.byte	0x9f
+ 1693 00f9 8E010000 		.4byte	.LVL34-.Ltext0
+ 1694 00fd B4010000 		.4byte	.LVL38-.Ltext0
+ 1695 0101 0100     		.2byte	0x1
+ 1696 0103 50       		.byte	0x50
+ 1697 0104 C0010000 		.4byte	.LVL41-.Ltext0
+ 1698 0108 00020000 		.4byte	.LFE67-.Ltext0
+ 1699 010c 0200     		.2byte	0x2
+ 1700 010e 30       		.byte	0x30
+ 1701 010f 9F       		.byte	0x9f
+ 1702 0110 00000000 		.4byte	0
+ 1703 0114 00000000 		.4byte	0
+ARM GAS  /tmp/ccX2Hj4B.s 			page 42
+
+
+ 1704              	.LLST11:
+ 1705 0118 40010000 		.4byte	.LVL28-.Ltext0
+ 1706 011c 52010000 		.4byte	.LVL29-.Ltext0
+ 1707 0120 0200     		.2byte	0x2
+ 1708 0122 30       		.byte	0x30
+ 1709 0123 9F       		.byte	0x9f
+ 1710 0124 52010000 		.4byte	.LVL29-.Ltext0
+ 1711 0128 5E010000 		.4byte	.LVL30-.Ltext0
+ 1712 012c 0100     		.2byte	0x1
+ 1713 012e 53       		.byte	0x53
+ 1714 012f 76010000 		.4byte	.LVL32-.Ltext0
+ 1715 0133 7A010000 		.4byte	.LVL33-.Ltext0
+ 1716 0137 0200     		.2byte	0x2
+ 1717 0139 30       		.byte	0x30
+ 1718 013a 9F       		.byte	0x9f
+ 1719 013b 7A010000 		.4byte	.LVL33-.Ltext0
+ 1720 013f 96010000 		.4byte	.LVL36-.Ltext0
+ 1721 0143 0100     		.2byte	0x1
+ 1722 0145 51       		.byte	0x51
+ 1723 0146 D2010000 		.4byte	.LVL42-.Ltext0
+ 1724 014a E4010000 		.4byte	.LVL44-.Ltext0
+ 1725 014e 0200     		.2byte	0x2
+ 1726 0150 30       		.byte	0x30
+ 1727 0151 9F       		.byte	0x9f
+ 1728 0152 E4010000 		.4byte	.LVL44-.Ltext0
+ 1729 0156 EA010000 		.4byte	.LVL45-.Ltext0
+ 1730 015a 0100     		.2byte	0x1
+ 1731 015c 53       		.byte	0x53
+ 1732 015d 00000000 		.4byte	0
+ 1733 0161 00000000 		.4byte	0
+ 1734              	.LLST12:
+ 1735 0165 40010000 		.4byte	.LVL28-.Ltext0
+ 1736 0169 72010000 		.4byte	.LVL31-.Ltext0
+ 1737 016d 0200     		.2byte	0x2
+ 1738 016f 30       		.byte	0x30
+ 1739 0170 9F       		.byte	0x9f
+ 1740 0171 76010000 		.4byte	.LVL32-.Ltext0
+ 1741 0175 BE010000 		.4byte	.LVL40-.Ltext0
+ 1742 0179 0200     		.2byte	0x2
+ 1743 017b 30       		.byte	0x30
+ 1744 017c 9F       		.byte	0x9f
+ 1745 017d BE010000 		.4byte	.LVL40-.Ltext0
+ 1746 0181 C0010000 		.4byte	.LVL41-.Ltext0
+ 1747 0185 0100     		.2byte	0x1
+ 1748 0187 50       		.byte	0x50
+ 1749 0188 C0010000 		.4byte	.LVL41-.Ltext0
+ 1750 018c 00020000 		.4byte	.LFE67-.Ltext0
+ 1751 0190 0200     		.2byte	0x2
+ 1752 0192 30       		.byte	0x30
+ 1753 0193 9F       		.byte	0x9f
+ 1754 0194 00000000 		.4byte	0
+ 1755 0198 00000000 		.4byte	0
+ 1756              	.LLST5:
+ 1757 019c F0000000 		.4byte	.LVL22-.Ltext0
+ 1758 01a0 F4000000 		.4byte	.LVL23-.Ltext0
+ 1759 01a4 0200     		.2byte	0x2
+ 1760 01a6 30       		.byte	0x30
+ARM GAS  /tmp/ccX2Hj4B.s 			page 43
+
+
+ 1761 01a7 9F       		.byte	0x9f
+ 1762 01a8 F4000000 		.4byte	.LVL23-.Ltext0
+ 1763 01ac F8000000 		.4byte	.LVL24-.Ltext0
+ 1764 01b0 0700     		.2byte	0x7
+ 1765 01b2 72       		.byte	0x72
+ 1766 01b3 00       		.sleb128 0
+ 1767 01b4 0A       		.byte	0xa
+ 1768 01b5 0003     		.2byte	0x300
+ 1769 01b7 1A       		.byte	0x1a
+ 1770 01b8 9F       		.byte	0x9f
+ 1771 01b9 F8000000 		.4byte	.LVL24-.Ltext0
+ 1772 01bd FC000000 		.4byte	.LVL25-.Ltext0
+ 1773 01c1 0100     		.2byte	0x1
+ 1774 01c3 52       		.byte	0x52
+ 1775 01c4 FC000000 		.4byte	.LVL25-.Ltext0
+ 1776 01c8 14010000 		.4byte	.LFE66-.Ltext0
+ 1777 01cc 0200     		.2byte	0x2
+ 1778 01ce 70       		.byte	0x70
+ 1779 01cf 04       		.sleb128 4
+ 1780 01d0 00000000 		.4byte	0
+ 1781 01d4 00000000 		.4byte	0
+ 1782              	.LLST0:
+ 1783 01d8 00000000 		.4byte	.LFB65-.Ltext0
+ 1784 01dc 06000000 		.4byte	.LCFI0-.Ltext0
+ 1785 01e0 0200     		.2byte	0x2
+ 1786 01e2 7D       		.byte	0x7d
+ 1787 01e3 00       		.sleb128 0
+ 1788 01e4 06000000 		.4byte	.LCFI0-.Ltext0
+ 1789 01e8 A2000000 		.4byte	.LCFI1-.Ltext0
+ 1790 01ec 0200     		.2byte	0x2
+ 1791 01ee 7D       		.byte	0x7d
+ 1792 01ef 20       		.sleb128 32
+ 1793 01f0 A2000000 		.4byte	.LCFI1-.Ltext0
+ 1794 01f4 A6000000 		.4byte	.LCFI2-.Ltext0
+ 1795 01f8 0200     		.2byte	0x2
+ 1796 01fa 7D       		.byte	0x7d
+ 1797 01fb 18       		.sleb128 24
+ 1798 01fc A6000000 		.4byte	.LCFI2-.Ltext0
+ 1799 0200 F0000000 		.4byte	.LFE65-.Ltext0
+ 1800 0204 0200     		.2byte	0x2
+ 1801 0206 7D       		.byte	0x7d
+ 1802 0207 20       		.sleb128 32
+ 1803 0208 00000000 		.4byte	0
+ 1804 020c 00000000 		.4byte	0
+ 1805              	.LLST1:
+ 1806 0210 00000000 		.4byte	.LVL0-.Ltext0
+ 1807 0214 30000000 		.4byte	.LVL3-.Ltext0
+ 1808 0218 0100     		.2byte	0x1
+ 1809 021a 50       		.byte	0x50
+ 1810 021b 30000000 		.4byte	.LVL3-.Ltext0
+ 1811 021f 7A000000 		.4byte	.LVL8-.Ltext0
+ 1812 0223 0100     		.2byte	0x1
+ 1813 0225 55       		.byte	0x55
+ 1814 0226 7A000000 		.4byte	.LVL8-.Ltext0
+ 1815 022a 89000000 		.4byte	.LVL10-1-.Ltext0
+ 1816 022e 0100     		.2byte	0x1
+ 1817 0230 50       		.byte	0x50
+ARM GAS  /tmp/ccX2Hj4B.s 			page 44
+
+
+ 1818 0231 89000000 		.4byte	.LVL10-1-.Ltext0
+ 1819 0235 F0000000 		.4byte	.LFE65-.Ltext0
+ 1820 0239 0100     		.2byte	0x1
+ 1821 023b 55       		.byte	0x55
+ 1822 023c 00000000 		.4byte	0
+ 1823 0240 00000000 		.4byte	0
+ 1824              	.LLST2:
+ 1825 0244 00000000 		.4byte	.LVL0-.Ltext0
+ 1826 0248 30000000 		.4byte	.LVL3-.Ltext0
+ 1827 024c 0200     		.2byte	0x2
+ 1828 024e 30       		.byte	0x30
+ 1829 024f 9F       		.byte	0x9f
+ 1830 0250 7A000000 		.4byte	.LVL8-.Ltext0
+ 1831 0254 8C000000 		.4byte	.LVL11-.Ltext0
+ 1832 0258 0200     		.2byte	0x2
+ 1833 025a 30       		.byte	0x30
+ 1834 025b 9F       		.byte	0x9f
+ 1835 025c 8C000000 		.4byte	.LVL11-.Ltext0
+ 1836 0260 9E000000 		.4byte	.LVL13-.Ltext0
+ 1837 0264 0100     		.2byte	0x1
+ 1838 0266 58       		.byte	0x58
+ 1839 0267 D0000000 		.4byte	.LVL20-.Ltext0
+ 1840 026b F0000000 		.4byte	.LFE65-.Ltext0
+ 1841 026f 0100     		.2byte	0x1
+ 1842 0271 56       		.byte	0x56
+ 1843 0272 00000000 		.4byte	0
+ 1844 0276 00000000 		.4byte	0
+ 1845              	.LLST3:
+ 1846 027a 00000000 		.4byte	.LVL0-.Ltext0
+ 1847 027e 32000000 		.4byte	.LVL4-.Ltext0
+ 1848 0282 0200     		.2byte	0x2
+ 1849 0284 30       		.byte	0x30
+ 1850 0285 9F       		.byte	0x9f
+ 1851 0286 32000000 		.4byte	.LVL4-.Ltext0
+ 1852 028a 36000000 		.4byte	.LVL5-.Ltext0
+ 1853 028e 0700     		.2byte	0x7
+ 1854 0290 73       		.byte	0x73
+ 1855 0291 00       		.sleb128 0
+ 1856 0292 0A       		.byte	0xa
+ 1857 0293 0003     		.2byte	0x300
+ 1858 0295 1A       		.byte	0x1a
+ 1859 0296 9F       		.byte	0x9f
+ 1860 0297 36000000 		.4byte	.LVL5-.Ltext0
+ 1861 029b 38000000 		.4byte	.LVL6-.Ltext0
+ 1862 029f 0100     		.2byte	0x1
+ 1863 02a1 53       		.byte	0x53
+ 1864 02a2 7A000000 		.4byte	.LVL8-.Ltext0
+ 1865 02a6 9E000000 		.4byte	.LVL13-.Ltext0
+ 1866 02aa 0200     		.2byte	0x2
+ 1867 02ac 30       		.byte	0x30
+ 1868 02ad 9F       		.byte	0x9f
+ 1869 02ae A6000000 		.4byte	.LVL15-.Ltext0
+ 1870 02b2 B6000000 		.4byte	.LVL16-.Ltext0
+ 1871 02b6 0100     		.2byte	0x1
+ 1872 02b8 53       		.byte	0x53
+ 1873 02b9 BE000000 		.4byte	.LVL17-.Ltext0
+ 1874 02bd C4000000 		.4byte	.LVL18-.Ltext0
+ARM GAS  /tmp/ccX2Hj4B.s 			page 45
+
+
+ 1875 02c1 0100     		.2byte	0x1
+ 1876 02c3 51       		.byte	0x51
+ 1877 02c4 C4000000 		.4byte	.LVL18-.Ltext0
+ 1878 02c8 C9000000 		.4byte	.LVL19-1-.Ltext0
+ 1879 02cc 0200     		.2byte	0x2
+ 1880 02ce 74       		.byte	0x74
+ 1881 02cf 20       		.sleb128 32
+ 1882 02d0 00000000 		.4byte	0
+ 1883 02d4 00000000 		.4byte	0
+ 1884              	.LLST4:
+ 1885 02d8 0C000000 		.4byte	.LVL1-.Ltext0
+ 1886 02dc 28000000 		.4byte	.LVL2-.Ltext0
+ 1887 02e0 0200     		.2byte	0x2
+ 1888 02e2 30       		.byte	0x30
+ 1889 02e3 9F       		.byte	0x9f
+ 1890 02e4 28000000 		.4byte	.LVL2-.Ltext0
+ 1891 02e8 4E000000 		.4byte	.LVL7-.Ltext0
+ 1892 02ec 0100     		.2byte	0x1
+ 1893 02ee 57       		.byte	0x57
+ 1894 02ef 7A000000 		.4byte	.LVL8-.Ltext0
+ 1895 02f3 7E000000 		.4byte	.LVL9-.Ltext0
+ 1896 02f7 0200     		.2byte	0x2
+ 1897 02f9 30       		.byte	0x30
+ 1898 02fa 9F       		.byte	0x9f
+ 1899 02fb 7E000000 		.4byte	.LVL9-.Ltext0
+ 1900 02ff A0000000 		.4byte	.LVL14-.Ltext0
+ 1901 0303 0100     		.2byte	0x1
+ 1902 0305 57       		.byte	0x57
+ 1903 0306 A6000000 		.4byte	.LVL15-.Ltext0
+ 1904 030a F0000000 		.4byte	.LFE65-.Ltext0
+ 1905 030e 0100     		.2byte	0x1
+ 1906 0310 57       		.byte	0x57
+ 1907 0311 00000000 		.4byte	0
+ 1908 0315 00000000 		.4byte	0
+ 1909              		.section	.debug_aranges,"",%progbits
+ 1910 0000 1C000000 		.4byte	0x1c
+ 1911 0004 0200     		.2byte	0x2
+ 1912 0006 00000000 		.4byte	.Ldebug_info0
+ 1913 000a 04       		.byte	0x4
+ 1914 000b 00       		.byte	0
+ 1915 000c 0000     		.2byte	0
+ 1916 000e 0000     		.2byte	0
+ 1917 0010 00000000 		.4byte	.Ltext0
+ 1918 0014 00020000 		.4byte	.Letext0-.Ltext0
+ 1919 0018 00000000 		.4byte	0
+ 1920 001c 00000000 		.4byte	0
+ 1921              		.section	.debug_ranges,"",%progbits
+ 1922              	.Ldebug_ranges0:
+ 1923 0000 0C000000 		.4byte	.LBB2-.Ltext0
+ 1924 0004 4E000000 		.4byte	.LBE2-.Ltext0
+ 1925 0008 7A000000 		.4byte	.LBB4-.Ltext0
+ 1926 000c A0000000 		.4byte	.LBE4-.Ltext0
+ 1927 0010 A6000000 		.4byte	.LBB5-.Ltext0
+ 1928 0014 F0000000 		.4byte	.LBE5-.Ltext0
+ 1929 0018 00000000 		.4byte	0
+ 1930 001c 00000000 		.4byte	0
+ 1931              		.section	.debug_line,"",%progbits
+ARM GAS  /tmp/ccX2Hj4B.s 			page 46
+
+
+ 1932              	.Ldebug_line0:
+ 1933 0000 2C020000 		.section	.debug_str,"MS",%progbits,1
+ 1933      02005201 
+ 1933      00000201 
+ 1933      FB0E0D00 
+ 1933      01010101 
+ 1934              	.LASF39:
+ 1935 0000 50657269 		.ascii	"PeriphClockSelection\000"
+ 1935      7068436C 
+ 1935      6F636B53 
+ 1935      656C6563 
+ 1935      74696F6E 
+ 1936              	.LASF37:
+ 1937 0015 48414C5F 		.ascii	"HAL_TIMEOUT\000"
+ 1937      54494D45 
+ 1937      4F555400 
+ 1938              	.LASF23:
+ 1939 0021 41504231 		.ascii	"APB1RSTR\000"
+ 1939      52535452 
+ 1939      00
+ 1940              	.LASF62:
+ 1941 002a 48414C5F 		.ascii	"HAL_RCCEx_PeriphCLKConfig\000"
+ 1941      52434345 
+ 1941      785F5065 
+ 1941      72697068 
+ 1941      434C4B43 
+ 1942              	.LASF15:
+ 1943 0044 73697A65 		.ascii	"sizetype\000"
+ 1943      74797065 
+ 1943      00
+ 1944              	.LASF27:
+ 1945 004d 42444352 		.ascii	"BDCR\000"
+ 1945      00
+ 1946              	.LASF43:
+ 1947 0052 5243435F 		.ascii	"RCC_PeriphCLKInitTypeDef\000"
+ 1947      50657269 
+ 1947      7068434C 
+ 1947      4B496E69 
+ 1947      74547970 
+ 1948              	.LASF20:
+ 1949 006b 5057525F 		.ascii	"PWR_TypeDef\000"
+ 1949      54797065 
+ 1949      44656600 
+ 1950              	.LASF7:
+ 1951 0077 5F5F7569 		.ascii	"__uint32_t\000"
+ 1951      6E743332 
+ 1951      5F7400
+ 1952              	.LASF67:
+ 1953 0082 48414C5F 		.ascii	"HAL_GetTick\000"
+ 1953      47657454 
+ 1953      69636B00 
+ 1954              	.LASF56:
+ 1955 008e 74656D70 		.ascii	"temp_reg\000"
+ 1955      5F726567 
+ 1955      00
+ 1956              	.LASF49:
+ 1957 0097 75775469 		.ascii	"uwTickPrio\000"
+ARM GAS  /tmp/ccX2Hj4B.s 			page 47
+
+
+ 1957      636B5072 
+ 1957      696F00
+ 1958              	.LASF68:
+ 1959 00a2 474E5520 		.ascii	"GNU C11 6.3.1 20170620 -mcpu=cortex-m3 -mthumb -g -"
+ 1959      43313120 
+ 1959      362E332E 
+ 1959      31203230 
+ 1959      31373036 
+ 1960 00d5 67647761 		.ascii	"gdwarf-2 -Os -fomit-frame-pointer\000"
+ 1960      72662D32 
+ 1960      202D4F73 
+ 1960      202D666F 
+ 1960      6D69742D 
+ 1961              	.LASF34:
+ 1962 00f7 48414C5F 		.ascii	"HAL_OK\000"
+ 1962      4F4B00
+ 1963              	.LASF12:
+ 1964 00fe 75696E74 		.ascii	"uint8_t\000"
+ 1964      385F7400 
+ 1965              	.LASF26:
+ 1966 0106 41504231 		.ascii	"APB1ENR\000"
+ 1966      454E5200 
+ 1967              	.LASF36:
+ 1968 010e 48414C5F 		.ascii	"HAL_BUSY\000"
+ 1968      42555359 
+ 1968      00
+ 1969              	.LASF31:
+ 1970 0117 44495341 		.ascii	"DISABLE\000"
+ 1970      424C4500 
+ 1971              	.LASF2:
+ 1972 011f 73686F72 		.ascii	"short int\000"
+ 1972      7420696E 
+ 1972      7400
+ 1973              	.LASF45:
+ 1974 0129 48414C5F 		.ascii	"HAL_TICK_FREQ_100HZ\000"
+ 1974      5449434B 
+ 1974      5F465245 
+ 1974      515F3130 
+ 1974      30485A00 
+ 1975              	.LASF9:
+ 1976 013d 6C6F6E67 		.ascii	"long long int\000"
+ 1976      206C6F6E 
+ 1976      6720696E 
+ 1976      7400
+ 1977              	.LASF61:
+ 1978 014b 48414C5F 		.ascii	"HAL_RCCEx_GetPeriphCLKFreq\000"
+ 1978      52434345 
+ 1978      785F4765 
+ 1978      74506572 
+ 1978      69706843 
+ 1979              	.LASF6:
+ 1980 0166 6C6F6E67 		.ascii	"long int\000"
+ 1980      20696E74 
+ 1980      00
+ 1981              	.LASF53:
+ 1982 016f 70726564 		.ascii	"prediv1\000"
+ 1982      69763100 
+ARM GAS  /tmp/ccX2Hj4B.s 			page 48
+
+
+ 1983              	.LASF28:
+ 1984 0177 5243435F 		.ascii	"RCC_TypeDef\000"
+ 1984      54797065 
+ 1984      44656600 
+ 1985              	.LASF30:
+ 1986 0183 466C6167 		.ascii	"FlagStatus\000"
+ 1986      53746174 
+ 1986      757300
+ 1987              	.LASF24:
+ 1988 018e 41484245 		.ascii	"AHBENR\000"
+ 1988      4E5200
+ 1989              	.LASF22:
+ 1990 0195 41504232 		.ascii	"APB2RSTR\000"
+ 1990      52535452 
+ 1990      00
+ 1991              	.LASF4:
+ 1992 019e 5F5F7569 		.ascii	"__uint8_t\000"
+ 1992      6E74385F 
+ 1992      7400
+ 1993              	.LASF63:
+ 1994 01a8 7469636B 		.ascii	"tickstart\000"
+ 1994      73746172 
+ 1994      7400
+ 1995              	.LASF19:
+ 1996 01b2 41504250 		.ascii	"APBPrescTable\000"
+ 1996      72657363 
+ 1996      5461626C 
+ 1996      6500
+ 1997              	.LASF40:
+ 1998 01c0 52544343 		.ascii	"RTCClockSelection\000"
+ 1998      6C6F636B 
+ 1998      53656C65 
+ 1998      6374696F 
+ 1998      6E00
+ 1999              	.LASF38:
+ 2000 01d2 48414C5F 		.ascii	"HAL_StatusTypeDef\000"
+ 2000      53746174 
+ 2000      75735479 
+ 2000      70654465 
+ 2000      6600
+ 2001              	.LASF51:
+ 2002 01e4 61504C4C 		.ascii	"aPLLMULFactorTable\000"
+ 2002      4D554C46 
+ 2002      6163746F 
+ 2002      72546162 
+ 2002      6C6500
+ 2003              	.LASF65:
+ 2004 01f7 746D7072 		.ascii	"tmpreg\000"
+ 2004      656700
+ 2005              	.LASF55:
+ 2006 01fe 706C6C6D 		.ascii	"pllmul\000"
+ 2006      756C00
+ 2007              	.LASF33:
+ 2008 0205 6C6F6E67 		.ascii	"long double\000"
+ 2008      20646F75 
+ 2008      626C6500 
+ 2009              	.LASF35:
+ARM GAS  /tmp/ccX2Hj4B.s 			page 49
+
+
+ 2010 0211 48414C5F 		.ascii	"HAL_ERROR\000"
+ 2010      4552524F 
+ 2010      5200
+ 2011              	.LASF1:
+ 2012 021b 756E7369 		.ascii	"unsigned char\000"
+ 2012      676E6564 
+ 2012      20636861 
+ 2012      7200
+ 2013              	.LASF70:
+ 2014 0229 2F686F6D 		.ascii	"/home/berndoj/git/stm32tctst/lib/stm32f1hal\000"
+ 2014      652F6265 
+ 2014      726E646F 
+ 2014      6A2F6769 
+ 2014      742F7374 
+ 2015              	.LASF25:
+ 2016 0255 41504232 		.ascii	"APB2ENR\000"
+ 2016      454E5200 
+ 2017              	.LASF0:
+ 2018 025d 7369676E 		.ascii	"signed char\000"
+ 2018      65642063 
+ 2018      68617200 
+ 2019              	.LASF10:
+ 2020 0269 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2020      206C6F6E 
+ 2020      6720756E 
+ 2020      7369676E 
+ 2020      65642069 
+ 2021              	.LASF14:
+ 2022 0280 75696E74 		.ascii	"uint32_t\000"
+ 2022      33325F74 
+ 2022      00
+ 2023              	.LASF50:
+ 2024 0289 75775469 		.ascii	"uwTickFreq\000"
+ 2024      636B4672 
+ 2024      657100
+ 2025              	.LASF11:
+ 2026 0294 756E7369 		.ascii	"unsigned int\000"
+ 2026      676E6564 
+ 2026      20696E74 
+ 2026      00
+ 2027              	.LASF58:
+ 2028 02a1 50657269 		.ascii	"PeriphClk\000"
+ 2028      7068436C 
+ 2028      6B00
+ 2029              	.LASF71:
+ 2030 02ab 48414C5F 		.ascii	"HAL_RCCEx_GetPeriphCLKConfig\000"
+ 2030      52434345 
+ 2030      785F4765 
+ 2030      74506572 
+ 2030      69706843 
+ 2031              	.LASF21:
+ 2032 02c8 43464752 		.ascii	"CFGR\000"
+ 2032      00
+ 2033              	.LASF46:
+ 2034 02cd 48414C5F 		.ascii	"HAL_TICK_FREQ_1KHZ\000"
+ 2034      5449434B 
+ 2034      5F465245 
+ARM GAS  /tmp/ccX2Hj4B.s 			page 50
+
+
+ 2034      515F314B 
+ 2034      485A00
+ 2035              	.LASF3:
+ 2036 02e0 73686F72 		.ascii	"short unsigned int\000"
+ 2036      7420756E 
+ 2036      7369676E 
+ 2036      65642069 
+ 2036      6E7400
+ 2037              	.LASF13:
+ 2038 02f3 696E7433 		.ascii	"int32_t\000"
+ 2038      325F7400 
+ 2039              	.LASF69:
+ 2040 02fb 7372632F 		.ascii	"src/stm32f1xx_hal_rcc_ex.c\000"
+ 2040      73746D33 
+ 2040      32663178 
+ 2040      785F6861 
+ 2040      6C5F7263 
+ 2041              	.LASF17:
+ 2042 0316 53797374 		.ascii	"SystemCoreClock\000"
+ 2042      656D436F 
+ 2042      7265436C 
+ 2042      6F636B00 
+ 2043              	.LASF59:
+ 2044 0326 50657269 		.ascii	"PeriphClkInit\000"
+ 2044      7068436C 
+ 2044      6B496E69 
+ 2044      7400
+ 2045              	.LASF44:
+ 2046 0334 48414C5F 		.ascii	"HAL_TICK_FREQ_10HZ\000"
+ 2046      5449434B 
+ 2046      5F465245 
+ 2046      515F3130 
+ 2046      485A00
+ 2047              	.LASF41:
+ 2048 0347 41646343 		.ascii	"AdcClockSelection\000"
+ 2048      6C6F636B 
+ 2048      53656C65 
+ 2048      6374696F 
+ 2048      6E00
+ 2049              	.LASF18:
+ 2050 0359 41484250 		.ascii	"AHBPrescTable\000"
+ 2050      72657363 
+ 2050      5461626C 
+ 2050      6500
+ 2051              	.LASF8:
+ 2052 0367 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2052      20756E73 
+ 2052      69676E65 
+ 2052      6420696E 
+ 2052      7400
+ 2053              	.LASF42:
+ 2054 0379 55736243 		.ascii	"UsbClockSelection\000"
+ 2054      6C6F636B 
+ 2054      53656C65 
+ 2054      6374696F 
+ 2054      6E00
+ 2055              	.LASF66:
+ARM GAS  /tmp/ccX2Hj4B.s 			page 51
+
+
+ 2056 038b 48414C5F 		.ascii	"HAL_RCC_GetPCLK2Freq\000"
+ 2056      5243435F 
+ 2056      47657450 
+ 2056      434C4B32 
+ 2056      46726571 
+ 2057              	.LASF48:
+ 2058 03a0 48414C5F 		.ascii	"HAL_TickFreqTypeDef\000"
+ 2058      5469636B 
+ 2058      46726571 
+ 2058      54797065 
+ 2058      44656600 
+ 2059              	.LASF54:
+ 2060 03b4 706C6C63 		.ascii	"pllclk\000"
+ 2060      6C6B00
+ 2061              	.LASF5:
+ 2062 03bb 5F5F696E 		.ascii	"__int32_t\000"
+ 2062      7433325F 
+ 2062      7400
+ 2063              	.LASF29:
+ 2064 03c5 52455345 		.ascii	"RESET\000"
+ 2064      5400
+ 2065              	.LASF57:
+ 2066 03cb 66726571 		.ascii	"frequency\000"
+ 2066      75656E63 
+ 2066      7900
+ 2067              	.LASF47:
+ 2068 03d5 48414C5F 		.ascii	"HAL_TICK_FREQ_DEFAULT\000"
+ 2068      5449434B 
+ 2068      5F465245 
+ 2068      515F4445 
+ 2068      4641554C 
+ 2069              	.LASF52:
+ 2070 03eb 61507265 		.ascii	"aPredivFactorTable\000"
+ 2070      64697646 
+ 2070      6163746F 
+ 2070      72546162 
+ 2070      6C6500
+ 2071              	.LASF16:
+ 2072 03fe 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 2072      52784275 
+ 2072      66666572 
+ 2072      00
+ 2073              	.LASF64:
+ 2074 040b 70777263 		.ascii	"pwrclkchanged\000"
+ 2074      6C6B6368 
+ 2074      616E6765 
+ 2074      6400
+ 2075              	.LASF60:
+ 2076 0419 73726363 		.ascii	"srcclk\000"
+ 2076      6C6B00
+ 2077              	.LASF32:
+ 2078 0420 454E4142 		.ascii	"ENABLE\000"
+ 2078      4C4500
+ 2079              		.ident	"GCC: (15:6.3.1+svn253039-1build1) 6.3.1 20170620"
+ARM GAS  /tmp/ccX2Hj4B.s 			page 52
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 stm32f1xx_hal_rcc_ex.c
+     /tmp/ccX2Hj4B.s:69     .text:0000000000000000 $t
+     /tmp/ccX2Hj4B.s:76     .text:0000000000000000 HAL_RCCEx_PeriphCLKConfig
+     /tmp/ccX2Hj4B.s:276    .text:00000000000000e4 $d
+     /tmp/ccX2Hj4B.s:283    .text:00000000000000f0 $t
+     /tmp/ccX2Hj4B.s:290    .text:00000000000000f0 HAL_RCCEx_GetPeriphCLKConfig
+     /tmp/ccX2Hj4B.s:322    .text:0000000000000110 $d
+     /tmp/ccX2Hj4B.s:326    .text:0000000000000114 $t
+     /tmp/ccX2Hj4B.s:333    .text:0000000000000114 HAL_RCCEx_GetPeriphCLKFreq
+     /tmp/ccX2Hj4B.s:508    .text:00000000000001f0 $d
+                     .debug_frame:0000000000000010 $d
+
+UNDEFINED SYMBOLS
+HAL_GetTick
+HAL_RCC_GetPCLK2Freq

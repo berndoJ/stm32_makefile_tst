@@ -1,0 +1,1969 @@
+ARM GAS  /tmp/ccrpE57I.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1	@ Tag_ABI_FP_denormal
+   3              		.eabi_attribute 21, 1	@ Tag_ABI_FP_exceptions
+   4              		.eabi_attribute 23, 3	@ Tag_ABI_FP_number_model
+   5              		.eabi_attribute 24, 1	@ Tag_ABI_align8_needed
+   6              		.eabi_attribute 25, 1	@ Tag_ABI_align8_preserved
+   7              		.eabi_attribute 26, 1	@ Tag_ABI_enum_size
+   8              		.eabi_attribute 30, 4	@ Tag_ABI_optimization_goals
+   9              		.eabi_attribute 34, 1	@ Tag_CPU_unaligned_access
+  10              		.eabi_attribute 18, 4	@ Tag_ABI_PCS_wchar_t
+  11              		.file	"stm32f1xx_hal_wwdg.c"
+  12              	@ GNU C11 (15:6.3.1+svn253039-1build1) version 6.3.1 20170620 (arm-none-eabi)
+  13              	@	compiled by GNU C version 7.2.0, GMP version 6.1.2, MPFR version 4.0.1-rc1, MPC version 1.1.0, is
+  14              	@ warning: MPFR header version 4.0.1-rc1 differs from library version 4.0.1.
+  15              	@ GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+  16              	@ options passed:  -I ./inc -I ./inc/Legacy -I ../cmsisstm32f1xx/inc
+  17              	@ -I ../cmsiscore/inc -imultilib thumb/v7-m -D__USES_INITFINI__
+  18              	@ -D STM32F103x6 -D RUN_FROM_FLASH=1 -D __c src/stm32f1xx_hal_wwdg.c
+  19              	@ -mcpu=cortex-m3 -mthumb -auxbase-strip bin/stm32f1xx_hal_wwdg.o -g
+  20              	@ -gdwarf-2 -Os -Wall -fomit-frame-pointer -fverbose-asm
+  21              	@ options enabled:  -faggressive-loop-optimizations -falign-jumps
+  22              	@ -falign-labels -falign-loops -fauto-inc-dec -fbranch-count-reg
+  23              	@ -fcaller-saves -fchkp-check-incomplete-type -fchkp-check-read
+  24              	@ -fchkp-check-write -fchkp-instrument-calls -fchkp-narrow-bounds
+  25              	@ -fchkp-optimize -fchkp-store-bounds -fchkp-use-static-bounds
+  26              	@ -fchkp-use-static-const-bounds -fchkp-use-wrappers
+  27              	@ -fcombine-stack-adjustments -fcommon -fcompare-elim -fcprop-registers
+  28              	@ -fcrossjumping -fcse-follow-jumps -fdefer-pop
+  29              	@ -fdelete-null-pointer-checks -fdevirtualize -fdevirtualize-speculatively
+  30              	@ -fdwarf2-cfi-asm -fearly-inlining -feliminate-unused-debug-types
+  31              	@ -fexpensive-optimizations -fforward-propagate -ffunction-cse -fgcse
+  32              	@ -fgcse-lm -fgnu-runtime -fgnu-unique -fguess-branch-probability
+  33              	@ -fhoist-adjacent-loads -fident -fif-conversion -fif-conversion2
+  34              	@ -findirect-inlining -finline -finline-atomics -finline-functions
+  35              	@ -finline-functions-called-once -finline-small-functions -fipa-cp
+  36              	@ -fipa-cp-alignment -fipa-icf -fipa-icf-functions -fipa-icf-variables
+  37              	@ -fipa-profile -fipa-pure-const -fipa-ra -fipa-reference -fipa-sra
+  38              	@ -fira-hoist-pressure -fira-share-save-slots -fira-share-spill-slots
+  39              	@ -fisolate-erroneous-paths-dereference -fivopts -fkeep-static-consts
+  40              	@ -fleading-underscore -flifetime-dse -flra-remat -flto-odr-type-merging
+  41              	@ -fmath-errno -fmerge-constants -fmerge-debug-strings
+  42              	@ -fmove-loop-invariants -fomit-frame-pointer -foptimize-sibling-calls
+  43              	@ -fpartial-inlining -fpeephole -fpeephole2 -fplt -fprefetch-loop-arrays
+  44              	@ -freg-struct-return -freorder-blocks -freorder-functions
+  45              	@ -frerun-cse-after-loop -fsched-critical-path-heuristic
+  46              	@ -fsched-dep-count-heuristic -fsched-group-heuristic -fsched-interblock
+  47              	@ -fsched-last-insn-heuristic -fsched-pressure -fsched-rank-heuristic
+  48              	@ -fsched-spec -fsched-spec-insn-heuristic -fsched-stalled-insns-dep
+  49              	@ -fschedule-insns2 -fsection-anchors -fsemantic-interposition
+  50              	@ -fshow-column -fsigned-zeros -fsplit-ivs-in-unroller -fsplit-wide-types
+  51              	@ -fssa-backprop -fssa-phiopt -fstdarg-opt -fstrict-aliasing
+  52              	@ -fstrict-overflow -fstrict-volatile-bitfields -fsync-libcalls
+  53              	@ -fthread-jumps -ftoplevel-reorder -ftrapping-math -ftree-bit-ccp
+  54              	@ -ftree-builtin-call-dce -ftree-ccp -ftree-ch -ftree-coalesce-vars
+  55              	@ -ftree-copy-prop -ftree-cselim -ftree-dce -ftree-dominator-opts
+  56              	@ -ftree-dse -ftree-forwprop -ftree-fre -ftree-loop-if-convert
+  57              	@ -ftree-loop-im -ftree-loop-ivcanon -ftree-loop-optimize
+ARM GAS  /tmp/ccrpE57I.s 			page 2
+
+
+  58              	@ -ftree-parallelize-loops= -ftree-phiprop -ftree-pre -ftree-pta
+  59              	@ -ftree-reassoc -ftree-scev-cprop -ftree-sink -ftree-slsr -ftree-sra
+  60              	@ -ftree-switch-conversion -ftree-tail-merge -ftree-ter -ftree-vrp
+  61              	@ -funit-at-a-time -fvar-tracking -fvar-tracking-assignments -fverbose-asm
+  62              	@ -fzero-initialized-in-bss -masm-syntax-unified -mfix-cortex-m3-ldrd
+  63              	@ -mlittle-endian -mpic-data-is-text-relative -msched-prolog -mthumb
+  64              	@ -munaligned-access -mvectorize-with-neon-quad
+  65              	
+  66              		.text
+  67              	.Ltext0:
+  68              		.cfi_sections	.debug_frame
+  69              		.align	1
+  70              		.weak	HAL_WWDG_MspInit
+  71              		.syntax unified
+  72              		.thumb
+  73              		.thumb_func
+  74              		.fpu softvfp
+  75              		.type	HAL_WWDG_MspInit, %function
+  76              	HAL_WWDG_MspInit:
+  77              	.LFB71:
+  78              		.cfi_startproc
+  79              		@ args = 0, pretend = 0, frame = 0
+  80              		@ frame_needed = 0, uses_anonymous_args = 0
+  81              		@ link register save eliminated.
+  82 0000 7047     		bx	lr	@
+  83              		.cfi_endproc
+  84              	.LFE71:
+  85              		.size	HAL_WWDG_MspInit, .-HAL_WWDG_MspInit
+  86              		.align	1
+  87              		.global	HAL_WWDG_Init
+  88              		.syntax unified
+  89              		.thumb
+  90              		.thumb_func
+  91              		.fpu softvfp
+  92              		.type	HAL_WWDG_Init, %function
+  93              	HAL_WWDG_Init:
+  94              	.LFB65:
+  95              		.file 1 "src/stm32f1xx_hal_wwdg.c"
+   1:src/stm32f1xx_hal_wwdg.c **** /**
+   2:src/stm32f1xx_hal_wwdg.c ****   ******************************************************************************
+   3:src/stm32f1xx_hal_wwdg.c ****   * @file    stm32f1xx_hal_wwdg.c
+   4:src/stm32f1xx_hal_wwdg.c ****   * @author  MCD Application Team
+   5:src/stm32f1xx_hal_wwdg.c ****   * @brief   WWDG HAL module driver.
+   6:src/stm32f1xx_hal_wwdg.c ****   *          This file provides firmware functions to manage the following
+   7:src/stm32f1xx_hal_wwdg.c ****   *          functionalities of the Window Watchdog (WWDG) peripheral:
+   8:src/stm32f1xx_hal_wwdg.c ****   *           + Initialization and de-initialization functions
+   9:src/stm32f1xx_hal_wwdg.c ****   *           + IO operation functions
+  10:src/stm32f1xx_hal_wwdg.c ****   *           + Peripheral State functions
+  11:src/stm32f1xx_hal_wwdg.c ****   @verbatim
+  12:src/stm32f1xx_hal_wwdg.c ****   ==============================================================================
+  13:src/stm32f1xx_hal_wwdg.c ****                       ##### WWDG specific features #####
+  14:src/stm32f1xx_hal_wwdg.c ****   ==============================================================================
+  15:src/stm32f1xx_hal_wwdg.c ****   [..]
+  16:src/stm32f1xx_hal_wwdg.c ****     Once enabled the WWDG generates a system reset on expiry of a programmed
+  17:src/stm32f1xx_hal_wwdg.c ****     time period, unless the program refreshes the counter (downcounter)
+  18:src/stm32f1xx_hal_wwdg.c ****     before reaching 0x3F value (i.e. a reset is generated when the counter
+  19:src/stm32f1xx_hal_wwdg.c ****     value rolls over from 0x40 to 0x3F).
+ARM GAS  /tmp/ccrpE57I.s 			page 3
+
+
+  20:src/stm32f1xx_hal_wwdg.c **** 
+  21:src/stm32f1xx_hal_wwdg.c ****     (+) An MCU reset is also generated if the counter value is refreshed
+  22:src/stm32f1xx_hal_wwdg.c ****         before the counter has reached the refresh window value. This
+  23:src/stm32f1xx_hal_wwdg.c ****         implies that the counter must be refreshed in a limited window.
+  24:src/stm32f1xx_hal_wwdg.c ****     (+) Once enabled the WWDG cannot be disabled except by a system reset.
+  25:src/stm32f1xx_hal_wwdg.c ****     (+) WWDGRST flag in RCC_CSR register can be used to inform when a WWDG
+  26:src/stm32f1xx_hal_wwdg.c ****         reset occurs.
+  27:src/stm32f1xx_hal_wwdg.c ****     (+) The WWDG counter input clock is derived from the APB clock divided
+  28:src/stm32f1xx_hal_wwdg.c ****         by a programmable prescaler.
+  29:src/stm32f1xx_hal_wwdg.c ****     (+) WWDG clock (Hz) = PCLK1 / (4096 * Prescaler)
+  30:src/stm32f1xx_hal_wwdg.c ****     (+) WWDG timeout (mS) = 1000 * Counter / WWDG clock
+  31:src/stm32f1xx_hal_wwdg.c ****     (+) WWDG Counter refresh is allowed between the following limits :
+  32:src/stm32f1xx_hal_wwdg.c ****         (++) min time (mS) = 1000 * (Counter _ Window) / WWDG clock
+  33:src/stm32f1xx_hal_wwdg.c ****         (++) max time (mS) = 1000 * (Counter _ 0x40) / WWDG clock
+  34:src/stm32f1xx_hal_wwdg.c **** 
+  35:src/stm32f1xx_hal_wwdg.c ****     (+) Min-max timeout value at 36 MHz(PCLK1): 910 us / 58.25 ms
+  36:src/stm32f1xx_hal_wwdg.c **** 
+  37:src/stm32f1xx_hal_wwdg.c ****     (+) The Early Wakeup Interrupt (EWI) can be used if specific safety
+  38:src/stm32f1xx_hal_wwdg.c ****         operations or data logging must be performed before the actual reset is
+  39:src/stm32f1xx_hal_wwdg.c ****         generated. When the downcounter reaches the value 0x40, an EWI interrupt
+  40:src/stm32f1xx_hal_wwdg.c ****         is generated and the corresponding interrupt service routine (ISR) can
+  41:src/stm32f1xx_hal_wwdg.c ****         be used to trigger specific actions (such as communications or data
+  42:src/stm32f1xx_hal_wwdg.c ****         logging), before resetting the device.
+  43:src/stm32f1xx_hal_wwdg.c ****         In some applications, the EWI interrupt can be used to manage a software
+  44:src/stm32f1xx_hal_wwdg.c ****         system check and/or system recovery/graceful degradation, without
+  45:src/stm32f1xx_hal_wwdg.c ****         generating a WWDG reset. In this case, the corresponding interrupt
+  46:src/stm32f1xx_hal_wwdg.c ****         service routine (ISR) should reload the WWDG counter to avoid the WWDG
+  47:src/stm32f1xx_hal_wwdg.c ****         reset, then trigger the required actions.
+  48:src/stm32f1xx_hal_wwdg.c ****         Note:When the EWI interrupt cannot be served, e.g. due to a system lock
+  49:src/stm32f1xx_hal_wwdg.c ****         in a higher priority task, the WWDG reset will eventually be generated.
+  50:src/stm32f1xx_hal_wwdg.c **** 
+  51:src/stm32f1xx_hal_wwdg.c ****     (+) Debug mode : When the microcontroller enters debug mode (core halted),
+  52:src/stm32f1xx_hal_wwdg.c ****         the WWDG counter either continues to work normally or stops, depending
+  53:src/stm32f1xx_hal_wwdg.c ****         on DBG_WWDG_STOP configuration bit in DBG module, accessible through
+  54:src/stm32f1xx_hal_wwdg.c ****         __HAL_DBGMCU_FREEZE_WWDG() and __HAL_DBGMCU_UNFREEZE_WWDG() macros
+  55:src/stm32f1xx_hal_wwdg.c **** 
+  56:src/stm32f1xx_hal_wwdg.c ****                      ##### How to use this driver #####
+  57:src/stm32f1xx_hal_wwdg.c ****   ==============================================================================
+  58:src/stm32f1xx_hal_wwdg.c ****   [..]
+  59:src/stm32f1xx_hal_wwdg.c ****     (+) Enable WWDG APB1 clock using __HAL_RCC_WWDG_CLK_ENABLE().
+  60:src/stm32f1xx_hal_wwdg.c **** 
+  61:src/stm32f1xx_hal_wwdg.c ****     (+) Set the WWDG prescaler, refresh window, counter value and Early Wakeup
+  62:src/stm32f1xx_hal_wwdg.c ****         Interrupt mode using using HAL_WWDG_Init() function.
+  63:src/stm32f1xx_hal_wwdg.c ****         This enables WWDG peripheral and the downcounter starts downcounting
+  64:src/stm32f1xx_hal_wwdg.c ****         from given counter value.
+  65:src/stm32f1xx_hal_wwdg.c ****         Init function can be called again to modify all watchdog parameters,
+  66:src/stm32f1xx_hal_wwdg.c ****         however if EWI mode has been set once, it can't be clear until next
+  67:src/stm32f1xx_hal_wwdg.c ****         reset.
+  68:src/stm32f1xx_hal_wwdg.c **** 
+  69:src/stm32f1xx_hal_wwdg.c ****     (+) The application program must refresh the WWDG counter at regular
+  70:src/stm32f1xx_hal_wwdg.c ****         intervals during normal operation to prevent an MCU reset using
+  71:src/stm32f1xx_hal_wwdg.c ****         HAL_WWDG_Refresh() function. This operation must occur only when
+  72:src/stm32f1xx_hal_wwdg.c ****         the counter is lower than the window value already programmed.
+  73:src/stm32f1xx_hal_wwdg.c **** 
+  74:src/stm32f1xx_hal_wwdg.c ****     (+) if Early Wakeup Interrupt mode is enable an interrupt is generated when
+  75:src/stm32f1xx_hal_wwdg.c ****         the counter reaches 0x40. User can add his own code in weak function
+  76:src/stm32f1xx_hal_wwdg.c ****         HAL_WWDG_EarlyWakeupCallback().
+ARM GAS  /tmp/ccrpE57I.s 			page 4
+
+
+  77:src/stm32f1xx_hal_wwdg.c **** 
+  78:src/stm32f1xx_hal_wwdg.c ****      *** WWDG HAL driver macros list ***
+  79:src/stm32f1xx_hal_wwdg.c ****      ==================================
+  80:src/stm32f1xx_hal_wwdg.c ****      [..]
+  81:src/stm32f1xx_hal_wwdg.c ****        Below the list of most used macros in WWDG HAL driver.
+  82:src/stm32f1xx_hal_wwdg.c **** 
+  83:src/stm32f1xx_hal_wwdg.c ****       (+) __HAL_WWDG_GET_IT_SOURCE: Check the selected WWDG's interrupt source.
+  84:src/stm32f1xx_hal_wwdg.c ****       (+) __HAL_WWDG_GET_FLAG: Get the selected WWDG's flag status.
+  85:src/stm32f1xx_hal_wwdg.c ****       (+) __HAL_WWDG_CLEAR_FLAG: Clear the WWDG's pending flags.
+  86:src/stm32f1xx_hal_wwdg.c **** 
+  87:src/stm32f1xx_hal_wwdg.c ****   @endverbatim
+  88:src/stm32f1xx_hal_wwdg.c ****   ******************************************************************************
+  89:src/stm32f1xx_hal_wwdg.c ****   * @attention
+  90:src/stm32f1xx_hal_wwdg.c ****   *
+  91:src/stm32f1xx_hal_wwdg.c ****   * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics.
+  92:src/stm32f1xx_hal_wwdg.c ****   * All rights reserved.</center></h2>
+  93:src/stm32f1xx_hal_wwdg.c ****   *
+  94:src/stm32f1xx_hal_wwdg.c ****   * This software component is licensed by ST under BSD 3-Clause license,
+  95:src/stm32f1xx_hal_wwdg.c ****   * the "License"; You may not use this file except in compliance with the
+  96:src/stm32f1xx_hal_wwdg.c ****   * License. You may obtain a copy of the License at:
+  97:src/stm32f1xx_hal_wwdg.c ****   *                        opensource.org/licenses/BSD-3-Clause
+  98:src/stm32f1xx_hal_wwdg.c ****   *
+  99:src/stm32f1xx_hal_wwdg.c ****   ******************************************************************************
+ 100:src/stm32f1xx_hal_wwdg.c ****   */
+ 101:src/stm32f1xx_hal_wwdg.c **** 
+ 102:src/stm32f1xx_hal_wwdg.c **** /* Includes ------------------------------------------------------------------*/
+ 103:src/stm32f1xx_hal_wwdg.c **** #include "stm32f1xx_hal.h"
+ 104:src/stm32f1xx_hal_wwdg.c **** 
+ 105:src/stm32f1xx_hal_wwdg.c **** /** @addtogroup STM32F1xx_HAL_Driver
+ 106:src/stm32f1xx_hal_wwdg.c ****   * @{
+ 107:src/stm32f1xx_hal_wwdg.c ****   */
+ 108:src/stm32f1xx_hal_wwdg.c **** 
+ 109:src/stm32f1xx_hal_wwdg.c **** #ifdef HAL_WWDG_MODULE_ENABLED
+ 110:src/stm32f1xx_hal_wwdg.c **** /** @defgroup WWDG WWDG
+ 111:src/stm32f1xx_hal_wwdg.c ****   * @brief WWDG HAL module driver.
+ 112:src/stm32f1xx_hal_wwdg.c ****   * @{
+ 113:src/stm32f1xx_hal_wwdg.c ****   */
+ 114:src/stm32f1xx_hal_wwdg.c **** 
+ 115:src/stm32f1xx_hal_wwdg.c **** /* Private typedef -----------------------------------------------------------*/
+ 116:src/stm32f1xx_hal_wwdg.c **** /* Private define ------------------------------------------------------------*/
+ 117:src/stm32f1xx_hal_wwdg.c **** /* Private macro -------------------------------------------------------------*/
+ 118:src/stm32f1xx_hal_wwdg.c **** /* Private variables ---------------------------------------------------------*/
+ 119:src/stm32f1xx_hal_wwdg.c **** /* Private function prototypes -----------------------------------------------*/
+ 120:src/stm32f1xx_hal_wwdg.c **** /* Exported functions --------------------------------------------------------*/
+ 121:src/stm32f1xx_hal_wwdg.c **** 
+ 122:src/stm32f1xx_hal_wwdg.c **** /** @defgroup WWDG_Exported_Functions WWDG Exported Functions
+ 123:src/stm32f1xx_hal_wwdg.c ****   * @{
+ 124:src/stm32f1xx_hal_wwdg.c ****   */
+ 125:src/stm32f1xx_hal_wwdg.c **** 
+ 126:src/stm32f1xx_hal_wwdg.c **** /** @defgroup WWDG_Exported_Functions_Group1 Initialization and Configuration functions
+ 127:src/stm32f1xx_hal_wwdg.c ****   *  @brief    Initialization and Configuration functions.
+ 128:src/stm32f1xx_hal_wwdg.c ****   *
+ 129:src/stm32f1xx_hal_wwdg.c **** @verbatim
+ 130:src/stm32f1xx_hal_wwdg.c ****   ==============================================================================
+ 131:src/stm32f1xx_hal_wwdg.c ****           ##### Initialization and Configuration functions #####
+ 132:src/stm32f1xx_hal_wwdg.c ****   ==============================================================================
+ 133:src/stm32f1xx_hal_wwdg.c ****   [..]
+ARM GAS  /tmp/ccrpE57I.s 			page 5
+
+
+ 134:src/stm32f1xx_hal_wwdg.c ****     This section provides functions allowing to:
+ 135:src/stm32f1xx_hal_wwdg.c ****       (+) Initialize and start the WWDG according to the specified parameters
+ 136:src/stm32f1xx_hal_wwdg.c ****           in the WWDG_InitTypeDef of associated handle.
+ 137:src/stm32f1xx_hal_wwdg.c ****       (+) Initialize the WWDG MSP.
+ 138:src/stm32f1xx_hal_wwdg.c **** 
+ 139:src/stm32f1xx_hal_wwdg.c **** @endverbatim
+ 140:src/stm32f1xx_hal_wwdg.c ****   * @{
+ 141:src/stm32f1xx_hal_wwdg.c ****   */
+ 142:src/stm32f1xx_hal_wwdg.c **** 
+ 143:src/stm32f1xx_hal_wwdg.c **** /**
+ 144:src/stm32f1xx_hal_wwdg.c ****   * @brief  Initialize the WWDG according to the specified.
+ 145:src/stm32f1xx_hal_wwdg.c ****   *         parameters in the WWDG_InitTypeDef of  associated handle.
+ 146:src/stm32f1xx_hal_wwdg.c ****   * @param  hwwdg  pointer to a WWDG_HandleTypeDef structure that contains
+ 147:src/stm32f1xx_hal_wwdg.c ****   *                the configuration information for the specified WWDG module.
+ 148:src/stm32f1xx_hal_wwdg.c ****   * @retval HAL status
+ 149:src/stm32f1xx_hal_wwdg.c ****   */
+ 150:src/stm32f1xx_hal_wwdg.c **** HAL_StatusTypeDef HAL_WWDG_Init(WWDG_HandleTypeDef *hwwdg)
+ 151:src/stm32f1xx_hal_wwdg.c **** {
+  96              		.loc 1 151 0
+  97              		.cfi_startproc
+  98              		@ args = 0, pretend = 0, frame = 0
+  99              		@ frame_needed = 0, uses_anonymous_args = 0
+ 100              	.LVL0:
+ 101              		.loc 1 151 0
+ 102 0002 10B5     		push	{r4, lr}	@
+ 103              	.LCFI0:
+ 104              		.cfi_def_cfa_offset 8
+ 105              		.cfi_offset 4, -8
+ 106              		.cfi_offset 14, -4
+ 152:src/stm32f1xx_hal_wwdg.c ****   /* Check the WWDG handle allocation */
+ 153:src/stm32f1xx_hal_wwdg.c ****   if (hwwdg == NULL)
+ 107              		.loc 1 153 0
+ 108 0004 0446     		mov	r4, r0	@ hwwdg, hwwdg
+ 109 0006 70B1     		cbz	r0, .L4	@ hwwdg,
+ 154:src/stm32f1xx_hal_wwdg.c ****   {
+ 155:src/stm32f1xx_hal_wwdg.c ****     return HAL_ERROR;
+ 156:src/stm32f1xx_hal_wwdg.c ****   }
+ 157:src/stm32f1xx_hal_wwdg.c **** 
+ 158:src/stm32f1xx_hal_wwdg.c ****   /* Check the parameters */
+ 159:src/stm32f1xx_hal_wwdg.c ****   assert_param(IS_WWDG_ALL_INSTANCE(hwwdg->Instance));
+ 160:src/stm32f1xx_hal_wwdg.c ****   assert_param(IS_WWDG_PRESCALER(hwwdg->Init.Prescaler));
+ 161:src/stm32f1xx_hal_wwdg.c ****   assert_param(IS_WWDG_WINDOW(hwwdg->Init.Window));
+ 162:src/stm32f1xx_hal_wwdg.c ****   assert_param(IS_WWDG_COUNTER(hwwdg->Init.Counter));
+ 163:src/stm32f1xx_hal_wwdg.c ****   assert_param(IS_WWDG_EWI_MODE(hwwdg->Init.EWIMode));
+ 164:src/stm32f1xx_hal_wwdg.c **** 
+ 165:src/stm32f1xx_hal_wwdg.c **** #if (USE_HAL_WWDG_REGISTER_CALLBACKS == 1)
+ 166:src/stm32f1xx_hal_wwdg.c ****   /* Reset Callback pointers */
+ 167:src/stm32f1xx_hal_wwdg.c ****   if(hwwdg->EwiCallback == NULL)
+ 168:src/stm32f1xx_hal_wwdg.c ****   {
+ 169:src/stm32f1xx_hal_wwdg.c ****     hwwdg->EwiCallback = HAL_WWDG_EarlyWakeupCallback;
+ 170:src/stm32f1xx_hal_wwdg.c ****   }
+ 171:src/stm32f1xx_hal_wwdg.c **** 
+ 172:src/stm32f1xx_hal_wwdg.c ****   if(hwwdg->MspInitCallback == NULL)
+ 173:src/stm32f1xx_hal_wwdg.c ****   {
+ 174:src/stm32f1xx_hal_wwdg.c ****     hwwdg->MspInitCallback = HAL_WWDG_MspInit;
+ 175:src/stm32f1xx_hal_wwdg.c ****   }
+ 176:src/stm32f1xx_hal_wwdg.c **** 
+ARM GAS  /tmp/ccrpE57I.s 			page 6
+
+
+ 177:src/stm32f1xx_hal_wwdg.c ****   /* Init the low level hardware */
+ 178:src/stm32f1xx_hal_wwdg.c ****   hwwdg->MspInitCallback(hwwdg);
+ 179:src/stm32f1xx_hal_wwdg.c **** #else
+ 180:src/stm32f1xx_hal_wwdg.c ****   /* Init the low level hardware */
+ 181:src/stm32f1xx_hal_wwdg.c ****   HAL_WWDG_MspInit(hwwdg);
+ 110              		.loc 1 181 0
+ 111 0008 FFF7FEFF 		bl	HAL_WWDG_MspInit	@
+ 112              	.LVL1:
+ 182:src/stm32f1xx_hal_wwdg.c **** #endif
+ 183:src/stm32f1xx_hal_wwdg.c **** 
+ 184:src/stm32f1xx_hal_wwdg.c ****   /* Set WWDG Counter */
+ 185:src/stm32f1xx_hal_wwdg.c ****   WRITE_REG(hwwdg->Instance->CR, (WWDG_CR_WDGA | hwwdg->Init.Counter));
+ 113              		.loc 1 185 0
+ 114 000c E368     		ldr	r3, [r4, #12]	@ hwwdg_3(D)->Init.Counter, hwwdg_3(D)->Init.Counter
+ 115 000e 2268     		ldr	r2, [r4]	@ _6, hwwdg_3(D)->Instance
+ 116 0010 43F08003 		orr	r3, r3, #128	@ _8, hwwdg_3(D)->Init.Counter,
+ 186:src/stm32f1xx_hal_wwdg.c **** 
+ 187:src/stm32f1xx_hal_wwdg.c ****   /* Set WWDG Prescaler and Window */
+ 188:src/stm32f1xx_hal_wwdg.c ****   WRITE_REG(hwwdg->Instance->CFR, (hwwdg->Init.EWIMode | hwwdg->Init.Prescaler | hwwdg->Init.Window
+ 117              		.loc 1 188 0
+ 118 0014 6168     		ldr	r1, [r4, #4]	@ hwwdg_3(D)->Init.Prescaler, hwwdg_3(D)->Init.Prescaler
+ 185:src/stm32f1xx_hal_wwdg.c **** 
+ 119              		.loc 1 185 0
+ 120 0016 1360     		str	r3, [r2]	@ _8, _6->CR
+ 121              		.loc 1 188 0
+ 122 0018 2369     		ldr	r3, [r4, #16]	@ hwwdg_3(D)->Init.EWIMode, hwwdg_3(D)->Init.EWIMode
+ 189:src/stm32f1xx_hal_wwdg.c **** 
+ 190:src/stm32f1xx_hal_wwdg.c ****   /* Return function status */
+ 191:src/stm32f1xx_hal_wwdg.c ****   return HAL_OK;
+ 123              		.loc 1 191 0
+ 124 001a 0020     		movs	r0, #0	@ <retval>,
+ 188:src/stm32f1xx_hal_wwdg.c **** 
+ 125              		.loc 1 188 0
+ 126 001c 0B43     		orrs	r3, r3, r1	@, tmp121, hwwdg_3(D)->Init.EWIMode, hwwdg_3(D)->Init.Prescaler
+ 127 001e A168     		ldr	r1, [r4, #8]	@ hwwdg_3(D)->Init.Window, hwwdg_3(D)->Init.Window
+ 128 0020 0B43     		orrs	r3, r3, r1	@, _14, tmp121, hwwdg_3(D)->Init.Window
+ 129 0022 5360     		str	r3, [r2, #4]	@ _14, _6->CFR
+ 130              		.loc 1 191 0
+ 131 0024 10BD     		pop	{r4, pc}	@
+ 132              	.LVL2:
+ 133              	.L4:
+ 155:src/stm32f1xx_hal_wwdg.c ****   }
+ 134              		.loc 1 155 0
+ 135 0026 0120     		movs	r0, #1	@ <retval>,
+ 136              	.LVL3:
+ 192:src/stm32f1xx_hal_wwdg.c **** }
+ 137              		.loc 1 192 0
+ 138 0028 10BD     		pop	{r4, pc}	@
+ 139              		.cfi_endproc
+ 140              	.LFE65:
+ 141              		.size	HAL_WWDG_Init, .-HAL_WWDG_Init
+ 142              		.align	1
+ 143              		.global	HAL_WWDG_Refresh
+ 144              		.syntax unified
+ 145              		.thumb
+ 146              		.thumb_func
+ 147              		.fpu softvfp
+ARM GAS  /tmp/ccrpE57I.s 			page 7
+
+
+ 148              		.type	HAL_WWDG_Refresh, %function
+ 149              	HAL_WWDG_Refresh:
+ 150              	.LFB67:
+ 193:src/stm32f1xx_hal_wwdg.c **** 
+ 194:src/stm32f1xx_hal_wwdg.c **** /**
+ 195:src/stm32f1xx_hal_wwdg.c ****   * @brief  Initialize the WWDG MSP.
+ 196:src/stm32f1xx_hal_wwdg.c ****   * @param  hwwdg  pointer to a WWDG_HandleTypeDef structure that contains
+ 197:src/stm32f1xx_hal_wwdg.c ****   *                the configuration information for the specified WWDG module.
+ 198:src/stm32f1xx_hal_wwdg.c ****   * @note   When rewriting this function in user file, mechanism may be added
+ 199:src/stm32f1xx_hal_wwdg.c ****   *         to avoid multiple initialize when HAL_WWDG_Init function is called
+ 200:src/stm32f1xx_hal_wwdg.c ****   *         again to change parameters.
+ 201:src/stm32f1xx_hal_wwdg.c ****   * @retval None
+ 202:src/stm32f1xx_hal_wwdg.c ****   */
+ 203:src/stm32f1xx_hal_wwdg.c **** __weak void HAL_WWDG_MspInit(WWDG_HandleTypeDef *hwwdg)
+ 204:src/stm32f1xx_hal_wwdg.c **** {
+ 205:src/stm32f1xx_hal_wwdg.c ****   /* Prevent unused argument(s) compilation warning */
+ 206:src/stm32f1xx_hal_wwdg.c ****   UNUSED(hwwdg);
+ 207:src/stm32f1xx_hal_wwdg.c **** 
+ 208:src/stm32f1xx_hal_wwdg.c ****   /* NOTE: This function should not be modified, when the callback is needed,
+ 209:src/stm32f1xx_hal_wwdg.c ****            the HAL_WWDG_MspInit could be implemented in the user file
+ 210:src/stm32f1xx_hal_wwdg.c ****    */
+ 211:src/stm32f1xx_hal_wwdg.c **** }
+ 212:src/stm32f1xx_hal_wwdg.c **** 
+ 213:src/stm32f1xx_hal_wwdg.c **** 
+ 214:src/stm32f1xx_hal_wwdg.c **** #if (USE_HAL_WWDG_REGISTER_CALLBACKS == 1)
+ 215:src/stm32f1xx_hal_wwdg.c **** /**
+ 216:src/stm32f1xx_hal_wwdg.c ****   * @brief  Register a User WWDG Callback
+ 217:src/stm32f1xx_hal_wwdg.c ****   *         To be used instead of the weak (surcharged) predefined callback
+ 218:src/stm32f1xx_hal_wwdg.c ****   * @param  hwwdg WWDG handle
+ 219:src/stm32f1xx_hal_wwdg.c ****   * @param  CallbackID ID of the callback to be registered
+ 220:src/stm32f1xx_hal_wwdg.c ****   *         This parameter can be one of the following values:
+ 221:src/stm32f1xx_hal_wwdg.c ****   *           @arg @ref HAL_WWDG_EWI_CB_ID Early WakeUp Interrupt Callback ID
+ 222:src/stm32f1xx_hal_wwdg.c ****   *           @arg @ref HAL_WWDG_MSPINIT_CB_ID MspInit callback ID
+ 223:src/stm32f1xx_hal_wwdg.c ****   * @param  pCallback pointer to the Callback function
+ 224:src/stm32f1xx_hal_wwdg.c ****   * @retval status
+ 225:src/stm32f1xx_hal_wwdg.c ****   */
+ 226:src/stm32f1xx_hal_wwdg.c **** HAL_StatusTypeDef HAL_WWDG_RegisterCallback(WWDG_HandleTypeDef *hwwdg, HAL_WWDG_CallbackIDTypeDef C
+ 227:src/stm32f1xx_hal_wwdg.c **** {
+ 228:src/stm32f1xx_hal_wwdg.c ****   HAL_StatusTypeDef status = HAL_OK;
+ 229:src/stm32f1xx_hal_wwdg.c **** 
+ 230:src/stm32f1xx_hal_wwdg.c ****   if(pCallback == NULL)
+ 231:src/stm32f1xx_hal_wwdg.c ****   {
+ 232:src/stm32f1xx_hal_wwdg.c ****     status = HAL_ERROR;
+ 233:src/stm32f1xx_hal_wwdg.c ****   }
+ 234:src/stm32f1xx_hal_wwdg.c ****   else
+ 235:src/stm32f1xx_hal_wwdg.c ****   {
+ 236:src/stm32f1xx_hal_wwdg.c ****     switch(CallbackID)
+ 237:src/stm32f1xx_hal_wwdg.c ****     {
+ 238:src/stm32f1xx_hal_wwdg.c ****       case HAL_WWDG_EWI_CB_ID:
+ 239:src/stm32f1xx_hal_wwdg.c ****         hwwdg->EwiCallback = pCallback;
+ 240:src/stm32f1xx_hal_wwdg.c ****         break;
+ 241:src/stm32f1xx_hal_wwdg.c **** 
+ 242:src/stm32f1xx_hal_wwdg.c ****       case HAL_WWDG_MSPINIT_CB_ID:
+ 243:src/stm32f1xx_hal_wwdg.c ****         hwwdg->MspInitCallback = pCallback;
+ 244:src/stm32f1xx_hal_wwdg.c ****         break;
+ 245:src/stm32f1xx_hal_wwdg.c **** 
+ 246:src/stm32f1xx_hal_wwdg.c ****       default:
+ARM GAS  /tmp/ccrpE57I.s 			page 8
+
+
+ 247:src/stm32f1xx_hal_wwdg.c ****         status = HAL_ERROR;
+ 248:src/stm32f1xx_hal_wwdg.c ****         break;
+ 249:src/stm32f1xx_hal_wwdg.c ****     }
+ 250:src/stm32f1xx_hal_wwdg.c ****   }
+ 251:src/stm32f1xx_hal_wwdg.c **** 
+ 252:src/stm32f1xx_hal_wwdg.c ****   return status;
+ 253:src/stm32f1xx_hal_wwdg.c **** }
+ 254:src/stm32f1xx_hal_wwdg.c **** 
+ 255:src/stm32f1xx_hal_wwdg.c **** 
+ 256:src/stm32f1xx_hal_wwdg.c **** /**
+ 257:src/stm32f1xx_hal_wwdg.c ****   * @brief  Unregister a WWDG Callback
+ 258:src/stm32f1xx_hal_wwdg.c ****   *         WWDG Callback is redirected to the weak (surcharged) predefined callback 
+ 259:src/stm32f1xx_hal_wwdg.c ****   * @param  hwwdg WWDG handle
+ 260:src/stm32f1xx_hal_wwdg.c ****   * @param  CallbackID ID of the callback to be registered
+ 261:src/stm32f1xx_hal_wwdg.c ****   *         This parameter can be one of the following values:
+ 262:src/stm32f1xx_hal_wwdg.c ****   *           @arg @ref HAL_WWDG_EWI_CB_ID Early WakeUp Interrupt Callback ID
+ 263:src/stm32f1xx_hal_wwdg.c ****   *           @arg @ref HAL_WWDG_MSPINIT_CB_ID MspInit callback ID
+ 264:src/stm32f1xx_hal_wwdg.c ****   * @retval status
+ 265:src/stm32f1xx_hal_wwdg.c ****   */
+ 266:src/stm32f1xx_hal_wwdg.c **** HAL_StatusTypeDef HAL_WWDG_UnRegisterCallback(WWDG_HandleTypeDef *hwwdg, HAL_WWDG_CallbackIDTypeDef
+ 267:src/stm32f1xx_hal_wwdg.c **** {
+ 268:src/stm32f1xx_hal_wwdg.c ****   HAL_StatusTypeDef status = HAL_OK;
+ 269:src/stm32f1xx_hal_wwdg.c **** 
+ 270:src/stm32f1xx_hal_wwdg.c ****   switch(CallbackID)
+ 271:src/stm32f1xx_hal_wwdg.c ****   {
+ 272:src/stm32f1xx_hal_wwdg.c ****     case HAL_WWDG_EWI_CB_ID:
+ 273:src/stm32f1xx_hal_wwdg.c ****       hwwdg->EwiCallback = HAL_WWDG_EarlyWakeupCallback;
+ 274:src/stm32f1xx_hal_wwdg.c ****       break;
+ 275:src/stm32f1xx_hal_wwdg.c **** 
+ 276:src/stm32f1xx_hal_wwdg.c ****     case HAL_WWDG_MSPINIT_CB_ID:
+ 277:src/stm32f1xx_hal_wwdg.c ****       hwwdg->MspInitCallback = HAL_WWDG_MspInit;
+ 278:src/stm32f1xx_hal_wwdg.c ****       break;
+ 279:src/stm32f1xx_hal_wwdg.c **** 
+ 280:src/stm32f1xx_hal_wwdg.c ****     default:
+ 281:src/stm32f1xx_hal_wwdg.c ****       status = HAL_ERROR;
+ 282:src/stm32f1xx_hal_wwdg.c ****       break;
+ 283:src/stm32f1xx_hal_wwdg.c ****   }
+ 284:src/stm32f1xx_hal_wwdg.c **** 
+ 285:src/stm32f1xx_hal_wwdg.c ****   return status;
+ 286:src/stm32f1xx_hal_wwdg.c **** }
+ 287:src/stm32f1xx_hal_wwdg.c **** #endif
+ 288:src/stm32f1xx_hal_wwdg.c **** 
+ 289:src/stm32f1xx_hal_wwdg.c **** /**
+ 290:src/stm32f1xx_hal_wwdg.c ****   * @}
+ 291:src/stm32f1xx_hal_wwdg.c ****   */
+ 292:src/stm32f1xx_hal_wwdg.c **** 
+ 293:src/stm32f1xx_hal_wwdg.c **** /** @defgroup WWDG_Exported_Functions_Group2 IO operation functions
+ 294:src/stm32f1xx_hal_wwdg.c ****  *  @brief    IO operation functions
+ 295:src/stm32f1xx_hal_wwdg.c ****  *
+ 296:src/stm32f1xx_hal_wwdg.c **** @verbatim
+ 297:src/stm32f1xx_hal_wwdg.c ****   ==============================================================================
+ 298:src/stm32f1xx_hal_wwdg.c ****                       ##### IO operation functions #####
+ 299:src/stm32f1xx_hal_wwdg.c ****   ==============================================================================
+ 300:src/stm32f1xx_hal_wwdg.c ****   [..]
+ 301:src/stm32f1xx_hal_wwdg.c ****     This section provides functions allowing to:
+ 302:src/stm32f1xx_hal_wwdg.c ****     (+) Refresh the WWDG.
+ 303:src/stm32f1xx_hal_wwdg.c ****     (+) Handle WWDG interrupt request and associated function callback.
+ARM GAS  /tmp/ccrpE57I.s 			page 9
+
+
+ 304:src/stm32f1xx_hal_wwdg.c **** 
+ 305:src/stm32f1xx_hal_wwdg.c **** @endverbatim
+ 306:src/stm32f1xx_hal_wwdg.c ****   * @{
+ 307:src/stm32f1xx_hal_wwdg.c ****   */
+ 308:src/stm32f1xx_hal_wwdg.c **** 
+ 309:src/stm32f1xx_hal_wwdg.c **** /**
+ 310:src/stm32f1xx_hal_wwdg.c ****   * @brief  Refresh the WWDG.
+ 311:src/stm32f1xx_hal_wwdg.c ****   * @param  hwwdg  pointer to a WWDG_HandleTypeDef structure that contains
+ 312:src/stm32f1xx_hal_wwdg.c ****   *                the configuration information for the specified WWDG module.
+ 313:src/stm32f1xx_hal_wwdg.c ****   * @retval HAL status
+ 314:src/stm32f1xx_hal_wwdg.c ****   */
+ 315:src/stm32f1xx_hal_wwdg.c **** HAL_StatusTypeDef HAL_WWDG_Refresh(WWDG_HandleTypeDef *hwwdg)
+ 316:src/stm32f1xx_hal_wwdg.c **** {
+ 151              		.loc 1 316 0
+ 152              		.cfi_startproc
+ 153              		@ args = 0, pretend = 0, frame = 0
+ 154              		@ frame_needed = 0, uses_anonymous_args = 0
+ 155              		@ link register save eliminated.
+ 156              	.LVL4:
+ 317:src/stm32f1xx_hal_wwdg.c ****   /* Write to WWDG CR the WWDG Counter value to refresh with */
+ 318:src/stm32f1xx_hal_wwdg.c ****   WRITE_REG(hwwdg->Instance->CR, (hwwdg->Init.Counter));
+ 157              		.loc 1 318 0
+ 158 002a 0368     		ldr	r3, [r0]	@ _3, hwwdg_2(D)->Instance
+ 159 002c C268     		ldr	r2, [r0, #12]	@ _4, hwwdg_2(D)->Init.Counter
+ 319:src/stm32f1xx_hal_wwdg.c **** 
+ 320:src/stm32f1xx_hal_wwdg.c ****   /* Return function status */
+ 321:src/stm32f1xx_hal_wwdg.c ****   return HAL_OK;
+ 322:src/stm32f1xx_hal_wwdg.c **** }
+ 160              		.loc 1 322 0
+ 161 002e 0020     		movs	r0, #0	@,
+ 162              	.LVL5:
+ 318:src/stm32f1xx_hal_wwdg.c **** 
+ 163              		.loc 1 318 0
+ 164 0030 1A60     		str	r2, [r3]	@ _4, _3->CR
+ 165              		.loc 1 322 0
+ 166 0032 7047     		bx	lr	@
+ 167              		.cfi_endproc
+ 168              	.LFE67:
+ 169              		.size	HAL_WWDG_Refresh, .-HAL_WWDG_Refresh
+ 170              		.align	1
+ 171              		.weak	HAL_WWDG_EarlyWakeupCallback
+ 172              		.syntax unified
+ 173              		.thumb
+ 174              		.thumb_func
+ 175              		.fpu softvfp
+ 176              		.type	HAL_WWDG_EarlyWakeupCallback, %function
+ 177              	HAL_WWDG_EarlyWakeupCallback:
+ 178              	.LFB69:
+ 323:src/stm32f1xx_hal_wwdg.c **** 
+ 324:src/stm32f1xx_hal_wwdg.c **** /**
+ 325:src/stm32f1xx_hal_wwdg.c ****   * @brief  Handle WWDG interrupt request.
+ 326:src/stm32f1xx_hal_wwdg.c ****   * @note   The Early Wakeup Interrupt (EWI) can be used if specific safety operations
+ 327:src/stm32f1xx_hal_wwdg.c ****   *         or data logging must be performed before the actual reset is generated.
+ 328:src/stm32f1xx_hal_wwdg.c ****   *         The EWI interrupt is enabled by calling HAL_WWDG_Init function with
+ 329:src/stm32f1xx_hal_wwdg.c ****   *         EWIMode set to WWDG_EWI_ENABLE.
+ 330:src/stm32f1xx_hal_wwdg.c ****   *         When the downcounter reaches the value 0x40, and EWI interrupt is
+ 331:src/stm32f1xx_hal_wwdg.c ****   *         generated and the corresponding Interrupt Service Routine (ISR) can
+ARM GAS  /tmp/ccrpE57I.s 			page 10
+
+
+ 332:src/stm32f1xx_hal_wwdg.c ****   *         be used to trigger specific actions (such as communications or data
+ 333:src/stm32f1xx_hal_wwdg.c ****   *         logging), before resetting the device.
+ 334:src/stm32f1xx_hal_wwdg.c ****   * @param  hwwdg  pointer to a WWDG_HandleTypeDef structure that contains
+ 335:src/stm32f1xx_hal_wwdg.c ****   *                the configuration information for the specified WWDG module.
+ 336:src/stm32f1xx_hal_wwdg.c ****   * @retval None
+ 337:src/stm32f1xx_hal_wwdg.c ****   */
+ 338:src/stm32f1xx_hal_wwdg.c **** void HAL_WWDG_IRQHandler(WWDG_HandleTypeDef *hwwdg)
+ 339:src/stm32f1xx_hal_wwdg.c **** {
+ 340:src/stm32f1xx_hal_wwdg.c ****   /* Check if Early Wakeup Interrupt is enable */
+ 341:src/stm32f1xx_hal_wwdg.c ****   if (__HAL_WWDG_GET_IT_SOURCE(hwwdg, WWDG_IT_EWI) != RESET)
+ 342:src/stm32f1xx_hal_wwdg.c ****   {
+ 343:src/stm32f1xx_hal_wwdg.c ****     /* Check if WWDG Early Wakeup Interrupt occurred */
+ 344:src/stm32f1xx_hal_wwdg.c ****     if (__HAL_WWDG_GET_FLAG(hwwdg, WWDG_FLAG_EWIF) != RESET)
+ 345:src/stm32f1xx_hal_wwdg.c ****     {
+ 346:src/stm32f1xx_hal_wwdg.c ****       /* Clear the WWDG Early Wakeup flag */
+ 347:src/stm32f1xx_hal_wwdg.c ****       __HAL_WWDG_CLEAR_FLAG(hwwdg, WWDG_FLAG_EWIF);
+ 348:src/stm32f1xx_hal_wwdg.c **** 
+ 349:src/stm32f1xx_hal_wwdg.c **** #if (USE_HAL_WWDG_REGISTER_CALLBACKS == 1)
+ 350:src/stm32f1xx_hal_wwdg.c ****       /* Early Wakeup registered callback */
+ 351:src/stm32f1xx_hal_wwdg.c ****       hwwdg->EwiCallback(hwwdg);
+ 352:src/stm32f1xx_hal_wwdg.c **** #else
+ 353:src/stm32f1xx_hal_wwdg.c ****       /* Early Wakeup callback */
+ 354:src/stm32f1xx_hal_wwdg.c ****       HAL_WWDG_EarlyWakeupCallback(hwwdg);
+ 355:src/stm32f1xx_hal_wwdg.c **** #endif
+ 356:src/stm32f1xx_hal_wwdg.c ****     }
+ 357:src/stm32f1xx_hal_wwdg.c ****   }
+ 358:src/stm32f1xx_hal_wwdg.c **** }
+ 359:src/stm32f1xx_hal_wwdg.c **** 
+ 360:src/stm32f1xx_hal_wwdg.c **** /**
+ 361:src/stm32f1xx_hal_wwdg.c ****   * @brief  WWDG Early Wakeup callback.
+ 362:src/stm32f1xx_hal_wwdg.c ****   * @param  hwwdg : pointer to a WWDG_HandleTypeDef structure that contains
+ 363:src/stm32f1xx_hal_wwdg.c ****   *                the configuration information for the specified WWDG module.
+ 364:src/stm32f1xx_hal_wwdg.c ****   * @retval None
+ 365:src/stm32f1xx_hal_wwdg.c ****   */
+ 366:src/stm32f1xx_hal_wwdg.c **** __weak void HAL_WWDG_EarlyWakeupCallback(WWDG_HandleTypeDef *hwwdg)
+ 367:src/stm32f1xx_hal_wwdg.c **** {
+ 179              		.loc 1 367 0
+ 180              		.cfi_startproc
+ 181              		@ args = 0, pretend = 0, frame = 0
+ 182              		@ frame_needed = 0, uses_anonymous_args = 0
+ 183              		@ link register save eliminated.
+ 184              	.LVL6:
+ 185 0034 7047     		bx	lr	@
+ 186              		.cfi_endproc
+ 187              	.LFE69:
+ 188              		.size	HAL_WWDG_EarlyWakeupCallback, .-HAL_WWDG_EarlyWakeupCallback
+ 189              		.align	1
+ 190              		.global	HAL_WWDG_IRQHandler
+ 191              		.syntax unified
+ 192              		.thumb
+ 193              		.thumb_func
+ 194              		.fpu softvfp
+ 195              		.type	HAL_WWDG_IRQHandler, %function
+ 196              	HAL_WWDG_IRQHandler:
+ 197              	.LFB68:
+ 339:src/stm32f1xx_hal_wwdg.c ****   /* Check if Early Wakeup Interrupt is enable */
+ 198              		.loc 1 339 0
+ARM GAS  /tmp/ccrpE57I.s 			page 11
+
+
+ 199              		.cfi_startproc
+ 200              		@ args = 0, pretend = 0, frame = 0
+ 201              		@ frame_needed = 0, uses_anonymous_args = 0
+ 202              	.LVL7:
+ 339:src/stm32f1xx_hal_wwdg.c ****   /* Check if Early Wakeup Interrupt is enable */
+ 203              		.loc 1 339 0
+ 204 0036 08B5     		push	{r3, lr}	@
+ 205              	.LCFI1:
+ 206              		.cfi_def_cfa_offset 8
+ 207              		.cfi_offset 3, -8
+ 208              		.cfi_offset 14, -4
+ 341:src/stm32f1xx_hal_wwdg.c ****   {
+ 209              		.loc 1 341 0
+ 210 0038 0368     		ldr	r3, [r0]	@ _4, hwwdg_3(D)->Instance
+ 211 003a 5A68     		ldr	r2, [r3, #4]	@ _5, _4->CFR
+ 212 003c 9105     		lsls	r1, r2, #22	@, _5,
+ 213 003e 07D5     		bpl	.L7	@,
+ 344:src/stm32f1xx_hal_wwdg.c ****     {
+ 214              		.loc 1 344 0
+ 215 0040 9A68     		ldr	r2, [r3, #8]	@ _7, _4->SR
+ 216 0042 D207     		lsls	r2, r2, #31	@, _7,
+ 217 0044 04D5     		bpl	.L7	@,
+ 347:src/stm32f1xx_hal_wwdg.c **** 
+ 218              		.loc 1 347 0
+ 219 0046 6FF00102 		mvn	r2, #1	@ tmp118,
+ 220 004a 9A60     		str	r2, [r3, #8]	@ tmp118, _4->SR
+ 354:src/stm32f1xx_hal_wwdg.c **** #endif
+ 221              		.loc 1 354 0
+ 222 004c FFF7FEFF 		bl	HAL_WWDG_EarlyWakeupCallback	@
+ 223              	.LVL8:
+ 224              	.L7:
+ 225 0050 08BD     		pop	{r3, pc}	@
+ 226              		.cfi_endproc
+ 227              	.LFE68:
+ 228              		.size	HAL_WWDG_IRQHandler, .-HAL_WWDG_IRQHandler
+ 229              	.Letext0:
+ 230              		.file 2 "/usr/include/newlib/machine/_default_types.h"
+ 231              		.file 3 "/usr/include/newlib/sys/_stdint.h"
+ 232              		.file 4 "../cmsiscore/inc/core_cm3.h"
+ 233              		.file 5 "../cmsisstm32f1xx/inc/system_stm32f1xx.h"
+ 234              		.file 6 "../cmsisstm32f1xx/inc/stm32f103x6.h"
+ 235              		.file 7 "../cmsisstm32f1xx/inc/stm32f1xx.h"
+ 236              		.file 8 "./inc/stm32f1xx_hal_def.h"
+ 237              		.file 9 "./inc/stm32f1xx_hal_wwdg.h"
+ 238              		.file 10 "./inc/stm32f1xx_hal.h"
+ 239              		.section	.debug_info,"",%progbits
+ 240              	.Ldebug_info0:
+ 241 0000 7A030000 		.4byte	0x37a
+ 242 0004 0200     		.2byte	0x2
+ 243 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 244 000a 04       		.byte	0x4
+ 245 000b 01       		.uleb128 0x1
+ 246 000c BE010000 		.4byte	.LASF46
+ 247 0010 0C       		.byte	0xc
+ 248 0011 28000000 		.4byte	.LASF47
+ 249 0015 91020000 		.4byte	.LASF48
+ 250 0019 00000000 		.4byte	.Ltext0
+ARM GAS  /tmp/ccrpE57I.s 			page 12
+
+
+ 251 001d 52000000 		.4byte	.Letext0
+ 252 0021 00000000 		.4byte	.Ldebug_line0
+ 253 0025 02       		.uleb128 0x2
+ 254 0026 01       		.byte	0x1
+ 255 0027 06       		.byte	0x6
+ 256 0028 0D030000 		.4byte	.LASF0
+ 257 002c 03       		.uleb128 0x3
+ 258 002d 00000000 		.4byte	.LASF4
+ 259 0031 02       		.byte	0x2
+ 260 0032 1D       		.byte	0x1d
+ 261 0033 37000000 		.4byte	0x37
+ 262 0037 02       		.uleb128 0x2
+ 263 0038 01       		.byte	0x1
+ 264 0039 08       		.byte	0x8
+ 265 003a B4000000 		.4byte	.LASF1
+ 266 003e 02       		.uleb128 0x2
+ 267 003f 02       		.byte	0x2
+ 268 0040 05       		.byte	0x5
+ 269 0041 DE020000 		.4byte	.LASF2
+ 270 0045 02       		.uleb128 0x2
+ 271 0046 02       		.byte	0x2
+ 272 0047 07       		.byte	0x7
+ 273 0048 66000000 		.4byte	.LASF3
+ 274 004c 03       		.uleb128 0x3
+ 275 004d 41000000 		.4byte	.LASF5
+ 276 0051 02       		.byte	0x2
+ 277 0052 3F       		.byte	0x3f
+ 278 0053 57000000 		.4byte	0x57
+ 279 0057 02       		.uleb128 0x2
+ 280 0058 04       		.byte	0x4
+ 281 0059 05       		.byte	0x5
+ 282 005a F8020000 		.4byte	.LASF6
+ 283 005e 03       		.uleb128 0x3
+ 284 005f 6F010000 		.4byte	.LASF7
+ 285 0063 02       		.byte	0x2
+ 286 0064 41       		.byte	0x41
+ 287 0065 69000000 		.4byte	0x69
+ 288 0069 02       		.uleb128 0x2
+ 289 006a 04       		.byte	0x4
+ 290 006b 07       		.byte	0x7
+ 291 006c E4000000 		.4byte	.LASF8
+ 292 0070 02       		.uleb128 0x2
+ 293 0071 08       		.byte	0x8
+ 294 0072 05       		.byte	0x5
+ 295 0073 60020000 		.4byte	.LASF9
+ 296 0077 02       		.uleb128 0x2
+ 297 0078 08       		.byte	0x8
+ 298 0079 07       		.byte	0x7
+ 299 007a 1E020000 		.4byte	.LASF10
+ 300 007e 04       		.uleb128 0x4
+ 301 007f 04       		.byte	0x4
+ 302 0080 05       		.byte	0x5
+ 303 0081 696E7400 		.ascii	"int\000"
+ 304 0085 02       		.uleb128 0x2
+ 305 0086 04       		.byte	0x4
+ 306 0087 07       		.byte	0x7
+ 307 0088 BD020000 		.4byte	.LASF11
+ARM GAS  /tmp/ccrpE57I.s 			page 13
+
+
+ 308 008c 03       		.uleb128 0x3
+ 309 008d 35020000 		.4byte	.LASF12
+ 310 0091 03       		.byte	0x3
+ 311 0092 18       		.byte	0x18
+ 312 0093 2C000000 		.4byte	0x2c
+ 313 0097 05       		.uleb128 0x5
+ 314 0098 8C000000 		.4byte	0x8c
+ 315 009c 03       		.uleb128 0x3
+ 316 009d 3D020000 		.4byte	.LASF13
+ 317 00a1 03       		.byte	0x3
+ 318 00a2 2C       		.byte	0x2c
+ 319 00a3 4C000000 		.4byte	0x4c
+ 320 00a7 06       		.uleb128 0x6
+ 321 00a8 9C000000 		.4byte	0x9c
+ 322 00ac 03       		.uleb128 0x3
+ 323 00ad EF020000 		.4byte	.LASF14
+ 324 00b1 03       		.byte	0x3
+ 325 00b2 30       		.byte	0x30
+ 326 00b3 5E000000 		.4byte	0x5e
+ 327 00b7 06       		.uleb128 0x6
+ 328 00b8 AC000000 		.4byte	0xac
+ 329 00bc 02       		.uleb128 0x2
+ 330 00bd 04       		.byte	0x4
+ 331 00be 07       		.byte	0x7
+ 332 00bf 45020000 		.4byte	.LASF15
+ 333 00c3 07       		.uleb128 0x7
+ 334 00c4 12010000 		.4byte	.LASF16
+ 335 00c8 04       		.byte	0x4
+ 336 00c9 4807     		.2byte	0x748
+ 337 00cb A7000000 		.4byte	0xa7
+ 338 00cf 01       		.byte	0x1
+ 339 00d0 01       		.byte	0x1
+ 340 00d1 08       		.uleb128 0x8
+ 341 00d2 81020000 		.4byte	.LASF17
+ 342 00d6 05       		.byte	0x5
+ 343 00d7 33       		.byte	0x33
+ 344 00d8 AC000000 		.4byte	0xac
+ 345 00dc 01       		.byte	0x1
+ 346 00dd 01       		.byte	0x1
+ 347 00de 09       		.uleb128 0x9
+ 348 00df 97000000 		.4byte	0x97
+ 349 00e3 EE000000 		.4byte	0xee
+ 350 00e7 0A       		.uleb128 0xa
+ 351 00e8 BC000000 		.4byte	0xbc
+ 352 00ec 0F       		.byte	0xf
+ 353 00ed 00       		.byte	0
+ 354 00ee 05       		.uleb128 0x5
+ 355 00ef DE000000 		.4byte	0xde
+ 356 00f3 08       		.uleb128 0x8
+ 357 00f4 C2000000 		.4byte	.LASF18
+ 358 00f8 05       		.byte	0x5
+ 359 00f9 34       		.byte	0x34
+ 360 00fa EE000000 		.4byte	0xee
+ 361 00fe 01       		.byte	0x1
+ 362 00ff 01       		.byte	0x1
+ 363 0100 09       		.uleb128 0x9
+ 364 0101 97000000 		.4byte	0x97
+ARM GAS  /tmp/ccrpE57I.s 			page 14
+
+
+ 365 0105 10010000 		.4byte	0x110
+ 366 0109 0A       		.uleb128 0xa
+ 367 010a BC000000 		.4byte	0xbc
+ 368 010e 07       		.byte	0x7
+ 369 010f 00       		.byte	0
+ 370 0110 05       		.uleb128 0x5
+ 371 0111 00010000 		.4byte	0x100
+ 372 0115 08       		.uleb128 0x8
+ 373 0116 96010000 		.4byte	.LASF19
+ 374 011a 05       		.byte	0x5
+ 375 011b 35       		.byte	0x35
+ 376 011c 10010000 		.4byte	0x110
+ 377 0120 01       		.byte	0x1
+ 378 0121 01       		.byte	0x1
+ 379 0122 0B       		.uleb128 0xb
+ 380 0123 0C       		.byte	0xc
+ 381 0124 06       		.byte	0x6
+ 382 0125 2802     		.2byte	0x228
+ 383 0127 57010000 		.4byte	0x157
+ 384 012b 0C       		.uleb128 0xc
+ 385 012c 435200   		.ascii	"CR\000"
+ 386 012f 06       		.byte	0x6
+ 387 0130 2A02     		.2byte	0x22a
+ 388 0132 B7000000 		.4byte	0xb7
+ 389 0136 02       		.byte	0x2
+ 390 0137 23       		.byte	0x23
+ 391 0138 00       		.uleb128 0
+ 392 0139 0C       		.uleb128 0xc
+ 393 013a 43465200 		.ascii	"CFR\000"
+ 394 013e 06       		.byte	0x6
+ 395 013f 2B02     		.2byte	0x22b
+ 396 0141 B7000000 		.4byte	0xb7
+ 397 0145 02       		.byte	0x2
+ 398 0146 23       		.byte	0x23
+ 399 0147 04       		.uleb128 0x4
+ 400 0148 0C       		.uleb128 0xc
+ 401 0149 535200   		.ascii	"SR\000"
+ 402 014c 06       		.byte	0x6
+ 403 014d 2C02     		.2byte	0x22c
+ 404 014f B7000000 		.4byte	0xb7
+ 405 0153 02       		.byte	0x2
+ 406 0154 23       		.byte	0x23
+ 407 0155 08       		.uleb128 0x8
+ 408 0156 00       		.byte	0
+ 409 0157 0D       		.uleb128 0xd
+ 410 0158 79000000 		.4byte	.LASF20
+ 411 015c 06       		.byte	0x6
+ 412 015d 2D02     		.2byte	0x22d
+ 413 015f 22010000 		.4byte	0x122
+ 414 0163 0E       		.uleb128 0xe
+ 415 0164 01       		.byte	0x1
+ 416 0165 37000000 		.4byte	0x37
+ 417 0169 07       		.byte	0x7
+ 418 016a 98       		.byte	0x98
+ 419 016b 7C010000 		.4byte	0x17c
+ 420 016f 0F       		.uleb128 0xf
+ 421 0170 F6000000 		.4byte	.LASF21
+ARM GAS  /tmp/ccrpE57I.s 			page 15
+
+
+ 422 0174 00       		.byte	0
+ 423 0175 10       		.uleb128 0x10
+ 424 0176 53455400 		.ascii	"SET\000"
+ 425 017a 01       		.byte	0x1
+ 426 017b 00       		.byte	0
+ 427 017c 02       		.uleb128 0x2
+ 428 017d 08       		.byte	0x8
+ 429 017e 04       		.byte	0x4
+ 430 017f 01030000 		.4byte	.LASF22
+ 431 0183 0E       		.uleb128 0xe
+ 432 0184 01       		.byte	0x1
+ 433 0185 37000000 		.4byte	0x37
+ 434 0189 08       		.byte	0x8
+ 435 018a 2A       		.byte	0x2a
+ 436 018b A8010000 		.4byte	0x1a8
+ 437 018f 0F       		.uleb128 0xf
+ 438 0190 86000000 		.4byte	.LASF23
+ 439 0194 00       		.byte	0
+ 440 0195 0F       		.uleb128 0xf
+ 441 0196 5C000000 		.4byte	.LASF24
+ 442 019a 01       		.byte	0x1
+ 443 019b 0F       		.uleb128 0xf
+ 444 019c A4010000 		.4byte	.LASF25
+ 445 01a0 02       		.byte	0x2
+ 446 01a1 0F       		.uleb128 0xf
+ 447 01a2 33010000 		.4byte	.LASF26
+ 448 01a6 03       		.byte	0x3
+ 449 01a7 00       		.byte	0
+ 450 01a8 03       		.uleb128 0x3
+ 451 01a9 4E020000 		.4byte	.LASF27
+ 452 01ad 08       		.byte	0x8
+ 453 01ae 2F       		.byte	0x2f
+ 454 01af 83010000 		.4byte	0x183
+ 455 01b3 11       		.uleb128 0x11
+ 456 01b4 10       		.byte	0x10
+ 457 01b5 09       		.byte	0x9
+ 458 01b6 2F       		.byte	0x2f
+ 459 01b7 F4010000 		.4byte	0x1f4
+ 460 01bb 12       		.uleb128 0x12
+ 461 01bc 19030000 		.4byte	.LASF28
+ 462 01c0 09       		.byte	0x9
+ 463 01c1 31       		.byte	0x31
+ 464 01c2 AC000000 		.4byte	0xac
+ 465 01c6 02       		.byte	0x2
+ 466 01c7 23       		.byte	0x23
+ 467 01c8 00       		.uleb128 0
+ 468 01c9 12       		.uleb128 0x12
+ 469 01ca E8020000 		.4byte	.LASF29
+ 470 01ce 09       		.byte	0x9
+ 471 01cf 34       		.byte	0x34
+ 472 01d0 AC000000 		.4byte	0xac
+ 473 01d4 02       		.byte	0x2
+ 474 01d5 23       		.byte	0x23
+ 475 01d6 04       		.uleb128 0x4
+ 476 01d7 12       		.uleb128 0x12
+ 477 01d8 8E010000 		.4byte	.LASF30
+ 478 01dc 09       		.byte	0x9
+ARM GAS  /tmp/ccrpE57I.s 			page 16
+
+
+ 479 01dd 37       		.byte	0x37
+ 480 01de AC000000 		.4byte	0xac
+ 481 01e2 02       		.byte	0x2
+ 482 01e3 23       		.byte	0x23
+ 483 01e4 08       		.uleb128 0x8
+ 484 01e5 12       		.uleb128 0x12
+ 485 01e6 20000000 		.4byte	.LASF31
+ 486 01ea 09       		.byte	0x9
+ 487 01eb 3A       		.byte	0x3a
+ 488 01ec AC000000 		.4byte	0xac
+ 489 01f0 02       		.byte	0x2
+ 490 01f1 23       		.byte	0x23
+ 491 01f2 0C       		.uleb128 0xc
+ 492 01f3 00       		.byte	0
+ 493 01f4 03       		.uleb128 0x3
+ 494 01f5 4B000000 		.4byte	.LASF32
+ 495 01f9 09       		.byte	0x9
+ 496 01fa 3D       		.byte	0x3d
+ 497 01fb B3010000 		.4byte	0x1b3
+ 498 01ff 11       		.uleb128 0x11
+ 499 0200 14       		.byte	0x14
+ 500 0201 09       		.byte	0x9
+ 501 0202 45       		.byte	0x45
+ 502 0203 24020000 		.4byte	0x224
+ 503 0207 12       		.uleb128 0x12
+ 504 0208 D5020000 		.4byte	.LASF33
+ 505 020c 09       		.byte	0x9
+ 506 020d 48       		.byte	0x48
+ 507 020e 24020000 		.4byte	0x224
+ 508 0212 02       		.byte	0x2
+ 509 0213 23       		.byte	0x23
+ 510 0214 00       		.uleb128 0
+ 511 0215 12       		.uleb128 0x12
+ 512 0216 FC000000 		.4byte	.LASF34
+ 513 021a 09       		.byte	0x9
+ 514 021b 4A       		.byte	0x4a
+ 515 021c F4010000 		.4byte	0x1f4
+ 516 0220 02       		.byte	0x2
+ 517 0221 23       		.byte	0x23
+ 518 0222 04       		.uleb128 0x4
+ 519 0223 00       		.byte	0
+ 520 0224 13       		.uleb128 0x13
+ 521 0225 04       		.byte	0x4
+ 522 0226 57010000 		.4byte	0x157
+ 523 022a 03       		.uleb128 0x3
+ 524 022b 3F010000 		.4byte	.LASF35
+ 525 022f 09       		.byte	0x9
+ 526 0230 50       		.byte	0x50
+ 527 0231 FF010000 		.4byte	0x1ff
+ 528 0235 0E       		.uleb128 0xe
+ 529 0236 01       		.byte	0x1
+ 530 0237 37000000 		.4byte	0x37
+ 531 023b 0A       		.byte	0xa
+ 532 023c 33       		.byte	0x33
+ 533 023d 5A020000 		.4byte	0x25a
+ 534 0241 0F       		.uleb128 0xf
+ 535 0242 6E020000 		.4byte	.LASF36
+ARM GAS  /tmp/ccrpE57I.s 			page 17
+
+
+ 536 0246 64       		.byte	0x64
+ 537 0247 0F       		.uleb128 0xf
+ 538 0248 1F010000 		.4byte	.LASF37
+ 539 024c 0A       		.byte	0xa
+ 540 024d 0F       		.uleb128 0xf
+ 541 024e A1000000 		.4byte	.LASF38
+ 542 0252 01       		.byte	0x1
+ 543 0253 0F       		.uleb128 0xf
+ 544 0254 0A000000 		.4byte	.LASF39
+ 545 0258 01       		.byte	0x1
+ 546 0259 00       		.byte	0
+ 547 025a 03       		.uleb128 0x3
+ 548 025b 7A010000 		.4byte	.LASF40
+ 549 025f 0A       		.byte	0xa
+ 550 0260 38       		.byte	0x38
+ 551 0261 35020000 		.4byte	0x235
+ 552 0265 08       		.uleb128 0x8
+ 553 0266 CA020000 		.4byte	.LASF41
+ 554 026a 0A       		.byte	0xa
+ 555 026b 3D       		.byte	0x3d
+ 556 026c AC000000 		.4byte	0xac
+ 557 0270 01       		.byte	0x1
+ 558 0271 01       		.byte	0x1
+ 559 0272 08       		.uleb128 0x8
+ 560 0273 13020000 		.4byte	.LASF42
+ 561 0277 0A       		.byte	0xa
+ 562 0278 3E       		.byte	0x3e
+ 563 0279 5A020000 		.4byte	0x25a
+ 564 027d 01       		.byte	0x1
+ 565 027e 01       		.byte	0x1
+ 566 027f 14       		.uleb128 0x14
+ 567 0280 01       		.byte	0x1
+ 568 0281 52010000 		.4byte	.LASF49
+ 569 0285 01       		.byte	0x1
+ 570 0286 6E01     		.2byte	0x16e
+ 571 0288 01       		.byte	0x1
+ 572 0289 01       		.byte	0x1
+ 573 028a 9B020000 		.4byte	0x29b
+ 574 028e 15       		.uleb128 0x15
+ 575 028f DE000000 		.4byte	.LASF43
+ 576 0293 01       		.byte	0x1
+ 577 0294 6E01     		.2byte	0x16e
+ 578 0296 9B020000 		.4byte	0x29b
+ 579 029a 00       		.byte	0
+ 580 029b 13       		.uleb128 0x13
+ 581 029c 04       		.byte	0x4
+ 582 029d 2A020000 		.4byte	0x22a
+ 583 02a1 16       		.uleb128 0x16
+ 584 02a2 01       		.byte	0x1
+ 585 02a3 8D000000 		.4byte	.LASF50
+ 586 02a7 01       		.byte	0x1
+ 587 02a8 5201     		.2byte	0x152
+ 588 02aa 01       		.byte	0x1
+ 589 02ab 36000000 		.4byte	.LFB68
+ 590 02af 52000000 		.4byte	.LFE68
+ 591 02b3 00000000 		.4byte	.LLST3
+ 592 02b7 01       		.byte	0x1
+ARM GAS  /tmp/ccrpE57I.s 			page 18
+
+
+ 593 02b8 DE020000 		.4byte	0x2de
+ 594 02bc 17       		.uleb128 0x17
+ 595 02bd DE000000 		.4byte	.LASF43
+ 596 02c1 01       		.byte	0x1
+ 597 02c2 5201     		.2byte	0x152
+ 598 02c4 9B020000 		.4byte	0x29b
+ 599 02c8 20000000 		.4byte	.LLST4
+ 600 02cc 18       		.uleb128 0x18
+ 601 02cd 50000000 		.4byte	.LVL8
+ 602 02d1 7F020000 		.4byte	0x27f
+ 603 02d5 19       		.uleb128 0x19
+ 604 02d6 01       		.byte	0x1
+ 605 02d7 50       		.byte	0x50
+ 606 02d8 03       		.byte	0x3
+ 607 02d9 F3       		.byte	0xf3
+ 608 02da 01       		.uleb128 0x1
+ 609 02db 50       		.byte	0x50
+ 610 02dc 00       		.byte	0
+ 611 02dd 00       		.byte	0
+ 612 02de 1A       		.uleb128 0x1a
+ 613 02df 01       		.byte	0x1
+ 614 02e0 01010000 		.4byte	.LASF44
+ 615 02e4 01       		.byte	0x1
+ 616 02e5 3B01     		.2byte	0x13b
+ 617 02e7 01       		.byte	0x1
+ 618 02e8 A8010000 		.4byte	0x1a8
+ 619 02ec 2A000000 		.4byte	.LFB67
+ 620 02f0 34000000 		.4byte	.LFE67
+ 621 02f4 02       		.byte	0x2
+ 622 02f5 7D       		.byte	0x7d
+ 623 02f6 00       		.sleb128 0
+ 624 02f7 01       		.byte	0x1
+ 625 02f8 0D030000 		.4byte	0x30d
+ 626 02fc 17       		.uleb128 0x17
+ 627 02fd DE000000 		.4byte	.LASF43
+ 628 0301 01       		.byte	0x1
+ 629 0302 3B01     		.2byte	0x13b
+ 630 0304 9B020000 		.4byte	0x29b
+ 631 0308 41000000 		.4byte	.LLST2
+ 632 030c 00       		.byte	0
+ 633 030d 1B       		.uleb128 0x1b
+ 634 030e 01       		.byte	0x1
+ 635 030f AD010000 		.4byte	.LASF51
+ 636 0313 01       		.byte	0x1
+ 637 0314 CB       		.byte	0xcb
+ 638 0315 01       		.byte	0x1
+ 639 0316 26030000 		.4byte	0x326
+ 640 031a 1C       		.uleb128 0x1c
+ 641 031b DE000000 		.4byte	.LASF43
+ 642 031f 01       		.byte	0x1
+ 643 0320 CB       		.byte	0xcb
+ 644 0321 9B020000 		.4byte	0x29b
+ 645 0325 00       		.byte	0
+ 646 0326 1D       		.uleb128 0x1d
+ 647 0327 01       		.byte	0x1
+ 648 0328 D0000000 		.4byte	.LASF45
+ 649 032c 01       		.byte	0x1
+ARM GAS  /tmp/ccrpE57I.s 			page 19
+
+
+ 650 032d 96       		.byte	0x96
+ 651 032e 01       		.byte	0x1
+ 652 032f A8010000 		.4byte	0x1a8
+ 653 0333 02000000 		.4byte	.LFB65
+ 654 0337 2A000000 		.4byte	.LFE65
+ 655 033b 62000000 		.4byte	.LLST0
+ 656 033f 01       		.byte	0x1
+ 657 0340 64030000 		.4byte	0x364
+ 658 0344 1E       		.uleb128 0x1e
+ 659 0345 DE000000 		.4byte	.LASF43
+ 660 0349 01       		.byte	0x1
+ 661 034a 96       		.byte	0x96
+ 662 034b 9B020000 		.4byte	0x29b
+ 663 034f 82000000 		.4byte	.LLST1
+ 664 0353 18       		.uleb128 0x18
+ 665 0354 0C000000 		.4byte	.LVL1
+ 666 0358 0D030000 		.4byte	0x30d
+ 667 035c 19       		.uleb128 0x19
+ 668 035d 01       		.byte	0x1
+ 669 035e 50       		.byte	0x50
+ 670 035f 02       		.byte	0x2
+ 671 0360 74       		.byte	0x74
+ 672 0361 00       		.sleb128 0
+ 673 0362 00       		.byte	0
+ 674 0363 00       		.byte	0
+ 675 0364 1F       		.uleb128 0x1f
+ 676 0365 7F020000 		.4byte	0x27f
+ 677 0369 34000000 		.4byte	.LFB69
+ 678 036d 36000000 		.4byte	.LFE69
+ 679 0371 02       		.byte	0x2
+ 680 0372 7D       		.byte	0x7d
+ 681 0373 00       		.sleb128 0
+ 682 0374 01       		.byte	0x1
+ 683 0375 20       		.uleb128 0x20
+ 684 0376 8E020000 		.4byte	0x28e
+ 685 037a 01       		.byte	0x1
+ 686 037b 50       		.byte	0x50
+ 687 037c 00       		.byte	0
+ 688 037d 00       		.byte	0
+ 689              		.section	.debug_abbrev,"",%progbits
+ 690              	.Ldebug_abbrev0:
+ 691 0000 01       		.uleb128 0x1
+ 692 0001 11       		.uleb128 0x11
+ 693 0002 01       		.byte	0x1
+ 694 0003 25       		.uleb128 0x25
+ 695 0004 0E       		.uleb128 0xe
+ 696 0005 13       		.uleb128 0x13
+ 697 0006 0B       		.uleb128 0xb
+ 698 0007 03       		.uleb128 0x3
+ 699 0008 0E       		.uleb128 0xe
+ 700 0009 1B       		.uleb128 0x1b
+ 701 000a 0E       		.uleb128 0xe
+ 702 000b 11       		.uleb128 0x11
+ 703 000c 01       		.uleb128 0x1
+ 704 000d 12       		.uleb128 0x12
+ 705 000e 01       		.uleb128 0x1
+ 706 000f 10       		.uleb128 0x10
+ARM GAS  /tmp/ccrpE57I.s 			page 20
+
+
+ 707 0010 06       		.uleb128 0x6
+ 708 0011 00       		.byte	0
+ 709 0012 00       		.byte	0
+ 710 0013 02       		.uleb128 0x2
+ 711 0014 24       		.uleb128 0x24
+ 712 0015 00       		.byte	0
+ 713 0016 0B       		.uleb128 0xb
+ 714 0017 0B       		.uleb128 0xb
+ 715 0018 3E       		.uleb128 0x3e
+ 716 0019 0B       		.uleb128 0xb
+ 717 001a 03       		.uleb128 0x3
+ 718 001b 0E       		.uleb128 0xe
+ 719 001c 00       		.byte	0
+ 720 001d 00       		.byte	0
+ 721 001e 03       		.uleb128 0x3
+ 722 001f 16       		.uleb128 0x16
+ 723 0020 00       		.byte	0
+ 724 0021 03       		.uleb128 0x3
+ 725 0022 0E       		.uleb128 0xe
+ 726 0023 3A       		.uleb128 0x3a
+ 727 0024 0B       		.uleb128 0xb
+ 728 0025 3B       		.uleb128 0x3b
+ 729 0026 0B       		.uleb128 0xb
+ 730 0027 49       		.uleb128 0x49
+ 731 0028 13       		.uleb128 0x13
+ 732 0029 00       		.byte	0
+ 733 002a 00       		.byte	0
+ 734 002b 04       		.uleb128 0x4
+ 735 002c 24       		.uleb128 0x24
+ 736 002d 00       		.byte	0
+ 737 002e 0B       		.uleb128 0xb
+ 738 002f 0B       		.uleb128 0xb
+ 739 0030 3E       		.uleb128 0x3e
+ 740 0031 0B       		.uleb128 0xb
+ 741 0032 03       		.uleb128 0x3
+ 742 0033 08       		.uleb128 0x8
+ 743 0034 00       		.byte	0
+ 744 0035 00       		.byte	0
+ 745 0036 05       		.uleb128 0x5
+ 746 0037 26       		.uleb128 0x26
+ 747 0038 00       		.byte	0
+ 748 0039 49       		.uleb128 0x49
+ 749 003a 13       		.uleb128 0x13
+ 750 003b 00       		.byte	0
+ 751 003c 00       		.byte	0
+ 752 003d 06       		.uleb128 0x6
+ 753 003e 35       		.uleb128 0x35
+ 754 003f 00       		.byte	0
+ 755 0040 49       		.uleb128 0x49
+ 756 0041 13       		.uleb128 0x13
+ 757 0042 00       		.byte	0
+ 758 0043 00       		.byte	0
+ 759 0044 07       		.uleb128 0x7
+ 760 0045 34       		.uleb128 0x34
+ 761 0046 00       		.byte	0
+ 762 0047 03       		.uleb128 0x3
+ 763 0048 0E       		.uleb128 0xe
+ARM GAS  /tmp/ccrpE57I.s 			page 21
+
+
+ 764 0049 3A       		.uleb128 0x3a
+ 765 004a 0B       		.uleb128 0xb
+ 766 004b 3B       		.uleb128 0x3b
+ 767 004c 05       		.uleb128 0x5
+ 768 004d 49       		.uleb128 0x49
+ 769 004e 13       		.uleb128 0x13
+ 770 004f 3F       		.uleb128 0x3f
+ 771 0050 0C       		.uleb128 0xc
+ 772 0051 3C       		.uleb128 0x3c
+ 773 0052 0C       		.uleb128 0xc
+ 774 0053 00       		.byte	0
+ 775 0054 00       		.byte	0
+ 776 0055 08       		.uleb128 0x8
+ 777 0056 34       		.uleb128 0x34
+ 778 0057 00       		.byte	0
+ 779 0058 03       		.uleb128 0x3
+ 780 0059 0E       		.uleb128 0xe
+ 781 005a 3A       		.uleb128 0x3a
+ 782 005b 0B       		.uleb128 0xb
+ 783 005c 3B       		.uleb128 0x3b
+ 784 005d 0B       		.uleb128 0xb
+ 785 005e 49       		.uleb128 0x49
+ 786 005f 13       		.uleb128 0x13
+ 787 0060 3F       		.uleb128 0x3f
+ 788 0061 0C       		.uleb128 0xc
+ 789 0062 3C       		.uleb128 0x3c
+ 790 0063 0C       		.uleb128 0xc
+ 791 0064 00       		.byte	0
+ 792 0065 00       		.byte	0
+ 793 0066 09       		.uleb128 0x9
+ 794 0067 01       		.uleb128 0x1
+ 795 0068 01       		.byte	0x1
+ 796 0069 49       		.uleb128 0x49
+ 797 006a 13       		.uleb128 0x13
+ 798 006b 01       		.uleb128 0x1
+ 799 006c 13       		.uleb128 0x13
+ 800 006d 00       		.byte	0
+ 801 006e 00       		.byte	0
+ 802 006f 0A       		.uleb128 0xa
+ 803 0070 21       		.uleb128 0x21
+ 804 0071 00       		.byte	0
+ 805 0072 49       		.uleb128 0x49
+ 806 0073 13       		.uleb128 0x13
+ 807 0074 2F       		.uleb128 0x2f
+ 808 0075 0B       		.uleb128 0xb
+ 809 0076 00       		.byte	0
+ 810 0077 00       		.byte	0
+ 811 0078 0B       		.uleb128 0xb
+ 812 0079 13       		.uleb128 0x13
+ 813 007a 01       		.byte	0x1
+ 814 007b 0B       		.uleb128 0xb
+ 815 007c 0B       		.uleb128 0xb
+ 816 007d 3A       		.uleb128 0x3a
+ 817 007e 0B       		.uleb128 0xb
+ 818 007f 3B       		.uleb128 0x3b
+ 819 0080 05       		.uleb128 0x5
+ 820 0081 01       		.uleb128 0x1
+ARM GAS  /tmp/ccrpE57I.s 			page 22
+
+
+ 821 0082 13       		.uleb128 0x13
+ 822 0083 00       		.byte	0
+ 823 0084 00       		.byte	0
+ 824 0085 0C       		.uleb128 0xc
+ 825 0086 0D       		.uleb128 0xd
+ 826 0087 00       		.byte	0
+ 827 0088 03       		.uleb128 0x3
+ 828 0089 08       		.uleb128 0x8
+ 829 008a 3A       		.uleb128 0x3a
+ 830 008b 0B       		.uleb128 0xb
+ 831 008c 3B       		.uleb128 0x3b
+ 832 008d 05       		.uleb128 0x5
+ 833 008e 49       		.uleb128 0x49
+ 834 008f 13       		.uleb128 0x13
+ 835 0090 38       		.uleb128 0x38
+ 836 0091 0A       		.uleb128 0xa
+ 837 0092 00       		.byte	0
+ 838 0093 00       		.byte	0
+ 839 0094 0D       		.uleb128 0xd
+ 840 0095 16       		.uleb128 0x16
+ 841 0096 00       		.byte	0
+ 842 0097 03       		.uleb128 0x3
+ 843 0098 0E       		.uleb128 0xe
+ 844 0099 3A       		.uleb128 0x3a
+ 845 009a 0B       		.uleb128 0xb
+ 846 009b 3B       		.uleb128 0x3b
+ 847 009c 05       		.uleb128 0x5
+ 848 009d 49       		.uleb128 0x49
+ 849 009e 13       		.uleb128 0x13
+ 850 009f 00       		.byte	0
+ 851 00a0 00       		.byte	0
+ 852 00a1 0E       		.uleb128 0xe
+ 853 00a2 04       		.uleb128 0x4
+ 854 00a3 01       		.byte	0x1
+ 855 00a4 0B       		.uleb128 0xb
+ 856 00a5 0B       		.uleb128 0xb
+ 857 00a6 49       		.uleb128 0x49
+ 858 00a7 13       		.uleb128 0x13
+ 859 00a8 3A       		.uleb128 0x3a
+ 860 00a9 0B       		.uleb128 0xb
+ 861 00aa 3B       		.uleb128 0x3b
+ 862 00ab 0B       		.uleb128 0xb
+ 863 00ac 01       		.uleb128 0x1
+ 864 00ad 13       		.uleb128 0x13
+ 865 00ae 00       		.byte	0
+ 866 00af 00       		.byte	0
+ 867 00b0 0F       		.uleb128 0xf
+ 868 00b1 28       		.uleb128 0x28
+ 869 00b2 00       		.byte	0
+ 870 00b3 03       		.uleb128 0x3
+ 871 00b4 0E       		.uleb128 0xe
+ 872 00b5 1C       		.uleb128 0x1c
+ 873 00b6 0B       		.uleb128 0xb
+ 874 00b7 00       		.byte	0
+ 875 00b8 00       		.byte	0
+ 876 00b9 10       		.uleb128 0x10
+ 877 00ba 28       		.uleb128 0x28
+ARM GAS  /tmp/ccrpE57I.s 			page 23
+
+
+ 878 00bb 00       		.byte	0
+ 879 00bc 03       		.uleb128 0x3
+ 880 00bd 08       		.uleb128 0x8
+ 881 00be 1C       		.uleb128 0x1c
+ 882 00bf 0B       		.uleb128 0xb
+ 883 00c0 00       		.byte	0
+ 884 00c1 00       		.byte	0
+ 885 00c2 11       		.uleb128 0x11
+ 886 00c3 13       		.uleb128 0x13
+ 887 00c4 01       		.byte	0x1
+ 888 00c5 0B       		.uleb128 0xb
+ 889 00c6 0B       		.uleb128 0xb
+ 890 00c7 3A       		.uleb128 0x3a
+ 891 00c8 0B       		.uleb128 0xb
+ 892 00c9 3B       		.uleb128 0x3b
+ 893 00ca 0B       		.uleb128 0xb
+ 894 00cb 01       		.uleb128 0x1
+ 895 00cc 13       		.uleb128 0x13
+ 896 00cd 00       		.byte	0
+ 897 00ce 00       		.byte	0
+ 898 00cf 12       		.uleb128 0x12
+ 899 00d0 0D       		.uleb128 0xd
+ 900 00d1 00       		.byte	0
+ 901 00d2 03       		.uleb128 0x3
+ 902 00d3 0E       		.uleb128 0xe
+ 903 00d4 3A       		.uleb128 0x3a
+ 904 00d5 0B       		.uleb128 0xb
+ 905 00d6 3B       		.uleb128 0x3b
+ 906 00d7 0B       		.uleb128 0xb
+ 907 00d8 49       		.uleb128 0x49
+ 908 00d9 13       		.uleb128 0x13
+ 909 00da 38       		.uleb128 0x38
+ 910 00db 0A       		.uleb128 0xa
+ 911 00dc 00       		.byte	0
+ 912 00dd 00       		.byte	0
+ 913 00de 13       		.uleb128 0x13
+ 914 00df 0F       		.uleb128 0xf
+ 915 00e0 00       		.byte	0
+ 916 00e1 0B       		.uleb128 0xb
+ 917 00e2 0B       		.uleb128 0xb
+ 918 00e3 49       		.uleb128 0x49
+ 919 00e4 13       		.uleb128 0x13
+ 920 00e5 00       		.byte	0
+ 921 00e6 00       		.byte	0
+ 922 00e7 14       		.uleb128 0x14
+ 923 00e8 2E       		.uleb128 0x2e
+ 924 00e9 01       		.byte	0x1
+ 925 00ea 3F       		.uleb128 0x3f
+ 926 00eb 0C       		.uleb128 0xc
+ 927 00ec 03       		.uleb128 0x3
+ 928 00ed 0E       		.uleb128 0xe
+ 929 00ee 3A       		.uleb128 0x3a
+ 930 00ef 0B       		.uleb128 0xb
+ 931 00f0 3B       		.uleb128 0x3b
+ 932 00f1 05       		.uleb128 0x5
+ 933 00f2 27       		.uleb128 0x27
+ 934 00f3 0C       		.uleb128 0xc
+ARM GAS  /tmp/ccrpE57I.s 			page 24
+
+
+ 935 00f4 20       		.uleb128 0x20
+ 936 00f5 0B       		.uleb128 0xb
+ 937 00f6 01       		.uleb128 0x1
+ 938 00f7 13       		.uleb128 0x13
+ 939 00f8 00       		.byte	0
+ 940 00f9 00       		.byte	0
+ 941 00fa 15       		.uleb128 0x15
+ 942 00fb 05       		.uleb128 0x5
+ 943 00fc 00       		.byte	0
+ 944 00fd 03       		.uleb128 0x3
+ 945 00fe 0E       		.uleb128 0xe
+ 946 00ff 3A       		.uleb128 0x3a
+ 947 0100 0B       		.uleb128 0xb
+ 948 0101 3B       		.uleb128 0x3b
+ 949 0102 05       		.uleb128 0x5
+ 950 0103 49       		.uleb128 0x49
+ 951 0104 13       		.uleb128 0x13
+ 952 0105 00       		.byte	0
+ 953 0106 00       		.byte	0
+ 954 0107 16       		.uleb128 0x16
+ 955 0108 2E       		.uleb128 0x2e
+ 956 0109 01       		.byte	0x1
+ 957 010a 3F       		.uleb128 0x3f
+ 958 010b 0C       		.uleb128 0xc
+ 959 010c 03       		.uleb128 0x3
+ 960 010d 0E       		.uleb128 0xe
+ 961 010e 3A       		.uleb128 0x3a
+ 962 010f 0B       		.uleb128 0xb
+ 963 0110 3B       		.uleb128 0x3b
+ 964 0111 05       		.uleb128 0x5
+ 965 0112 27       		.uleb128 0x27
+ 966 0113 0C       		.uleb128 0xc
+ 967 0114 11       		.uleb128 0x11
+ 968 0115 01       		.uleb128 0x1
+ 969 0116 12       		.uleb128 0x12
+ 970 0117 01       		.uleb128 0x1
+ 971 0118 40       		.uleb128 0x40
+ 972 0119 06       		.uleb128 0x6
+ 973 011a 9742     		.uleb128 0x2117
+ 974 011c 0C       		.uleb128 0xc
+ 975 011d 01       		.uleb128 0x1
+ 976 011e 13       		.uleb128 0x13
+ 977 011f 00       		.byte	0
+ 978 0120 00       		.byte	0
+ 979 0121 17       		.uleb128 0x17
+ 980 0122 05       		.uleb128 0x5
+ 981 0123 00       		.byte	0
+ 982 0124 03       		.uleb128 0x3
+ 983 0125 0E       		.uleb128 0xe
+ 984 0126 3A       		.uleb128 0x3a
+ 985 0127 0B       		.uleb128 0xb
+ 986 0128 3B       		.uleb128 0x3b
+ 987 0129 05       		.uleb128 0x5
+ 988 012a 49       		.uleb128 0x49
+ 989 012b 13       		.uleb128 0x13
+ 990 012c 02       		.uleb128 0x2
+ 991 012d 06       		.uleb128 0x6
+ARM GAS  /tmp/ccrpE57I.s 			page 25
+
+
+ 992 012e 00       		.byte	0
+ 993 012f 00       		.byte	0
+ 994 0130 18       		.uleb128 0x18
+ 995 0131 898201   		.uleb128 0x4109
+ 996 0134 01       		.byte	0x1
+ 997 0135 11       		.uleb128 0x11
+ 998 0136 01       		.uleb128 0x1
+ 999 0137 31       		.uleb128 0x31
+ 1000 0138 13       		.uleb128 0x13
+ 1001 0139 00       		.byte	0
+ 1002 013a 00       		.byte	0
+ 1003 013b 19       		.uleb128 0x19
+ 1004 013c 8A8201   		.uleb128 0x410a
+ 1005 013f 00       		.byte	0
+ 1006 0140 02       		.uleb128 0x2
+ 1007 0141 0A       		.uleb128 0xa
+ 1008 0142 9142     		.uleb128 0x2111
+ 1009 0144 0A       		.uleb128 0xa
+ 1010 0145 00       		.byte	0
+ 1011 0146 00       		.byte	0
+ 1012 0147 1A       		.uleb128 0x1a
+ 1013 0148 2E       		.uleb128 0x2e
+ 1014 0149 01       		.byte	0x1
+ 1015 014a 3F       		.uleb128 0x3f
+ 1016 014b 0C       		.uleb128 0xc
+ 1017 014c 03       		.uleb128 0x3
+ 1018 014d 0E       		.uleb128 0xe
+ 1019 014e 3A       		.uleb128 0x3a
+ 1020 014f 0B       		.uleb128 0xb
+ 1021 0150 3B       		.uleb128 0x3b
+ 1022 0151 05       		.uleb128 0x5
+ 1023 0152 27       		.uleb128 0x27
+ 1024 0153 0C       		.uleb128 0xc
+ 1025 0154 49       		.uleb128 0x49
+ 1026 0155 13       		.uleb128 0x13
+ 1027 0156 11       		.uleb128 0x11
+ 1028 0157 01       		.uleb128 0x1
+ 1029 0158 12       		.uleb128 0x12
+ 1030 0159 01       		.uleb128 0x1
+ 1031 015a 40       		.uleb128 0x40
+ 1032 015b 0A       		.uleb128 0xa
+ 1033 015c 9742     		.uleb128 0x2117
+ 1034 015e 0C       		.uleb128 0xc
+ 1035 015f 01       		.uleb128 0x1
+ 1036 0160 13       		.uleb128 0x13
+ 1037 0161 00       		.byte	0
+ 1038 0162 00       		.byte	0
+ 1039 0163 1B       		.uleb128 0x1b
+ 1040 0164 2E       		.uleb128 0x2e
+ 1041 0165 01       		.byte	0x1
+ 1042 0166 3F       		.uleb128 0x3f
+ 1043 0167 0C       		.uleb128 0xc
+ 1044 0168 03       		.uleb128 0x3
+ 1045 0169 0E       		.uleb128 0xe
+ 1046 016a 3A       		.uleb128 0x3a
+ 1047 016b 0B       		.uleb128 0xb
+ 1048 016c 3B       		.uleb128 0x3b
+ARM GAS  /tmp/ccrpE57I.s 			page 26
+
+
+ 1049 016d 0B       		.uleb128 0xb
+ 1050 016e 27       		.uleb128 0x27
+ 1051 016f 0C       		.uleb128 0xc
+ 1052 0170 01       		.uleb128 0x1
+ 1053 0171 13       		.uleb128 0x13
+ 1054 0172 00       		.byte	0
+ 1055 0173 00       		.byte	0
+ 1056 0174 1C       		.uleb128 0x1c
+ 1057 0175 05       		.uleb128 0x5
+ 1058 0176 00       		.byte	0
+ 1059 0177 03       		.uleb128 0x3
+ 1060 0178 0E       		.uleb128 0xe
+ 1061 0179 3A       		.uleb128 0x3a
+ 1062 017a 0B       		.uleb128 0xb
+ 1063 017b 3B       		.uleb128 0x3b
+ 1064 017c 0B       		.uleb128 0xb
+ 1065 017d 49       		.uleb128 0x49
+ 1066 017e 13       		.uleb128 0x13
+ 1067 017f 00       		.byte	0
+ 1068 0180 00       		.byte	0
+ 1069 0181 1D       		.uleb128 0x1d
+ 1070 0182 2E       		.uleb128 0x2e
+ 1071 0183 01       		.byte	0x1
+ 1072 0184 3F       		.uleb128 0x3f
+ 1073 0185 0C       		.uleb128 0xc
+ 1074 0186 03       		.uleb128 0x3
+ 1075 0187 0E       		.uleb128 0xe
+ 1076 0188 3A       		.uleb128 0x3a
+ 1077 0189 0B       		.uleb128 0xb
+ 1078 018a 3B       		.uleb128 0x3b
+ 1079 018b 0B       		.uleb128 0xb
+ 1080 018c 27       		.uleb128 0x27
+ 1081 018d 0C       		.uleb128 0xc
+ 1082 018e 49       		.uleb128 0x49
+ 1083 018f 13       		.uleb128 0x13
+ 1084 0190 11       		.uleb128 0x11
+ 1085 0191 01       		.uleb128 0x1
+ 1086 0192 12       		.uleb128 0x12
+ 1087 0193 01       		.uleb128 0x1
+ 1088 0194 40       		.uleb128 0x40
+ 1089 0195 06       		.uleb128 0x6
+ 1090 0196 9742     		.uleb128 0x2117
+ 1091 0198 0C       		.uleb128 0xc
+ 1092 0199 01       		.uleb128 0x1
+ 1093 019a 13       		.uleb128 0x13
+ 1094 019b 00       		.byte	0
+ 1095 019c 00       		.byte	0
+ 1096 019d 1E       		.uleb128 0x1e
+ 1097 019e 05       		.uleb128 0x5
+ 1098 019f 00       		.byte	0
+ 1099 01a0 03       		.uleb128 0x3
+ 1100 01a1 0E       		.uleb128 0xe
+ 1101 01a2 3A       		.uleb128 0x3a
+ 1102 01a3 0B       		.uleb128 0xb
+ 1103 01a4 3B       		.uleb128 0x3b
+ 1104 01a5 0B       		.uleb128 0xb
+ 1105 01a6 49       		.uleb128 0x49
+ARM GAS  /tmp/ccrpE57I.s 			page 27
+
+
+ 1106 01a7 13       		.uleb128 0x13
+ 1107 01a8 02       		.uleb128 0x2
+ 1108 01a9 06       		.uleb128 0x6
+ 1109 01aa 00       		.byte	0
+ 1110 01ab 00       		.byte	0
+ 1111 01ac 1F       		.uleb128 0x1f
+ 1112 01ad 2E       		.uleb128 0x2e
+ 1113 01ae 01       		.byte	0x1
+ 1114 01af 31       		.uleb128 0x31
+ 1115 01b0 13       		.uleb128 0x13
+ 1116 01b1 11       		.uleb128 0x11
+ 1117 01b2 01       		.uleb128 0x1
+ 1118 01b3 12       		.uleb128 0x12
+ 1119 01b4 01       		.uleb128 0x1
+ 1120 01b5 40       		.uleb128 0x40
+ 1121 01b6 0A       		.uleb128 0xa
+ 1122 01b7 9742     		.uleb128 0x2117
+ 1123 01b9 0C       		.uleb128 0xc
+ 1124 01ba 00       		.byte	0
+ 1125 01bb 00       		.byte	0
+ 1126 01bc 20       		.uleb128 0x20
+ 1127 01bd 05       		.uleb128 0x5
+ 1128 01be 00       		.byte	0
+ 1129 01bf 31       		.uleb128 0x31
+ 1130 01c0 13       		.uleb128 0x13
+ 1131 01c1 02       		.uleb128 0x2
+ 1132 01c2 0A       		.uleb128 0xa
+ 1133 01c3 00       		.byte	0
+ 1134 01c4 00       		.byte	0
+ 1135 01c5 00       		.byte	0
+ 1136              		.section	.debug_loc,"",%progbits
+ 1137              	.Ldebug_loc0:
+ 1138              	.LLST3:
+ 1139 0000 36000000 		.4byte	.LFB68-.Ltext0
+ 1140 0004 38000000 		.4byte	.LCFI1-.Ltext0
+ 1141 0008 0200     		.2byte	0x2
+ 1142 000a 7D       		.byte	0x7d
+ 1143 000b 00       		.sleb128 0
+ 1144 000c 38000000 		.4byte	.LCFI1-.Ltext0
+ 1145 0010 52000000 		.4byte	.LFE68-.Ltext0
+ 1146 0014 0200     		.2byte	0x2
+ 1147 0016 7D       		.byte	0x7d
+ 1148 0017 08       		.sleb128 8
+ 1149 0018 00000000 		.4byte	0
+ 1150 001c 00000000 		.4byte	0
+ 1151              	.LLST4:
+ 1152 0020 36000000 		.4byte	.LVL7-.Ltext0
+ 1153 0024 4F000000 		.4byte	.LVL8-1-.Ltext0
+ 1154 0028 0100     		.2byte	0x1
+ 1155 002a 50       		.byte	0x50
+ 1156 002b 4F000000 		.4byte	.LVL8-1-.Ltext0
+ 1157 002f 52000000 		.4byte	.LFE68-.Ltext0
+ 1158 0033 0400     		.2byte	0x4
+ 1159 0035 F3       		.byte	0xf3
+ 1160 0036 01       		.uleb128 0x1
+ 1161 0037 50       		.byte	0x50
+ 1162 0038 9F       		.byte	0x9f
+ARM GAS  /tmp/ccrpE57I.s 			page 28
+
+
+ 1163 0039 00000000 		.4byte	0
+ 1164 003d 00000000 		.4byte	0
+ 1165              	.LLST2:
+ 1166 0041 2A000000 		.4byte	.LVL4-.Ltext0
+ 1167 0045 30000000 		.4byte	.LVL5-.Ltext0
+ 1168 0049 0100     		.2byte	0x1
+ 1169 004b 50       		.byte	0x50
+ 1170 004c 30000000 		.4byte	.LVL5-.Ltext0
+ 1171 0050 34000000 		.4byte	.LFE67-.Ltext0
+ 1172 0054 0400     		.2byte	0x4
+ 1173 0056 F3       		.byte	0xf3
+ 1174 0057 01       		.uleb128 0x1
+ 1175 0058 50       		.byte	0x50
+ 1176 0059 9F       		.byte	0x9f
+ 1177 005a 00000000 		.4byte	0
+ 1178 005e 00000000 		.4byte	0
+ 1179              	.LLST0:
+ 1180 0062 02000000 		.4byte	.LFB65-.Ltext0
+ 1181 0066 04000000 		.4byte	.LCFI0-.Ltext0
+ 1182 006a 0200     		.2byte	0x2
+ 1183 006c 7D       		.byte	0x7d
+ 1184 006d 00       		.sleb128 0
+ 1185 006e 04000000 		.4byte	.LCFI0-.Ltext0
+ 1186 0072 2A000000 		.4byte	.LFE65-.Ltext0
+ 1187 0076 0200     		.2byte	0x2
+ 1188 0078 7D       		.byte	0x7d
+ 1189 0079 08       		.sleb128 8
+ 1190 007a 00000000 		.4byte	0
+ 1191 007e 00000000 		.4byte	0
+ 1192              	.LLST1:
+ 1193 0082 02000000 		.4byte	.LVL0-.Ltext0
+ 1194 0086 0B000000 		.4byte	.LVL1-1-.Ltext0
+ 1195 008a 0100     		.2byte	0x1
+ 1196 008c 50       		.byte	0x50
+ 1197 008d 0B000000 		.4byte	.LVL1-1-.Ltext0
+ 1198 0091 26000000 		.4byte	.LVL2-.Ltext0
+ 1199 0095 0100     		.2byte	0x1
+ 1200 0097 54       		.byte	0x54
+ 1201 0098 26000000 		.4byte	.LVL2-.Ltext0
+ 1202 009c 28000000 		.4byte	.LVL3-.Ltext0
+ 1203 00a0 0100     		.2byte	0x1
+ 1204 00a2 50       		.byte	0x50
+ 1205 00a3 28000000 		.4byte	.LVL3-.Ltext0
+ 1206 00a7 2A000000 		.4byte	.LFE65-.Ltext0
+ 1207 00ab 0100     		.2byte	0x1
+ 1208 00ad 54       		.byte	0x54
+ 1209 00ae 00000000 		.4byte	0
+ 1210 00b2 00000000 		.4byte	0
+ 1211              		.section	.debug_aranges,"",%progbits
+ 1212 0000 1C000000 		.4byte	0x1c
+ 1213 0004 0200     		.2byte	0x2
+ 1214 0006 00000000 		.4byte	.Ldebug_info0
+ 1215 000a 04       		.byte	0x4
+ 1216 000b 00       		.byte	0
+ 1217 000c 0000     		.2byte	0
+ 1218 000e 0000     		.2byte	0
+ 1219 0010 00000000 		.4byte	.Ltext0
+ARM GAS  /tmp/ccrpE57I.s 			page 29
+
+
+ 1220 0014 52000000 		.4byte	.Letext0-.Ltext0
+ 1221 0018 00000000 		.4byte	0
+ 1222 001c 00000000 		.4byte	0
+ 1223              		.section	.debug_line,"",%progbits
+ 1224              	.Ldebug_line0:
+ 1225 0000 72010000 		.section	.debug_str,"MS",%progbits,1
+ 1225      02003701 
+ 1225      00000201 
+ 1225      FB0E0D00 
+ 1225      01010101 
+ 1226              	.LASF4:
+ 1227 0000 5F5F7569 		.ascii	"__uint8_t\000"
+ 1227      6E74385F 
+ 1227      7400
+ 1228              	.LASF39:
+ 1229 000a 48414C5F 		.ascii	"HAL_TICK_FREQ_DEFAULT\000"
+ 1229      5449434B 
+ 1229      5F465245 
+ 1229      515F4445 
+ 1229      4641554C 
+ 1230              	.LASF31:
+ 1231 0020 4557494D 		.ascii	"EWIMode\000"
+ 1231      6F646500 
+ 1232              	.LASF47:
+ 1233 0028 7372632F 		.ascii	"src/stm32f1xx_hal_wwdg.c\000"
+ 1233      73746D33 
+ 1233      32663178 
+ 1233      785F6861 
+ 1233      6C5F7777 
+ 1234              	.LASF5:
+ 1235 0041 5F5F696E 		.ascii	"__int32_t\000"
+ 1235      7433325F 
+ 1235      7400
+ 1236              	.LASF32:
+ 1237 004b 57574447 		.ascii	"WWDG_InitTypeDef\000"
+ 1237      5F496E69 
+ 1237      74547970 
+ 1237      65446566 
+ 1237      00
+ 1238              	.LASF24:
+ 1239 005c 48414C5F 		.ascii	"HAL_ERROR\000"
+ 1239      4552524F 
+ 1239      5200
+ 1240              	.LASF3:
+ 1241 0066 73686F72 		.ascii	"short unsigned int\000"
+ 1241      7420756E 
+ 1241      7369676E 
+ 1241      65642069 
+ 1241      6E7400
+ 1242              	.LASF20:
+ 1243 0079 57574447 		.ascii	"WWDG_TypeDef\000"
+ 1243      5F547970 
+ 1243      65446566 
+ 1243      00
+ 1244              	.LASF23:
+ 1245 0086 48414C5F 		.ascii	"HAL_OK\000"
+ 1245      4F4B00
+ARM GAS  /tmp/ccrpE57I.s 			page 30
+
+
+ 1246              	.LASF50:
+ 1247 008d 48414C5F 		.ascii	"HAL_WWDG_IRQHandler\000"
+ 1247      57574447 
+ 1247      5F495251 
+ 1247      48616E64 
+ 1247      6C657200 
+ 1248              	.LASF38:
+ 1249 00a1 48414C5F 		.ascii	"HAL_TICK_FREQ_1KHZ\000"
+ 1249      5449434B 
+ 1249      5F465245 
+ 1249      515F314B 
+ 1249      485A00
+ 1250              	.LASF1:
+ 1251 00b4 756E7369 		.ascii	"unsigned char\000"
+ 1251      676E6564 
+ 1251      20636861 
+ 1251      7200
+ 1252              	.LASF18:
+ 1253 00c2 41484250 		.ascii	"AHBPrescTable\000"
+ 1253      72657363 
+ 1253      5461626C 
+ 1253      6500
+ 1254              	.LASF45:
+ 1255 00d0 48414C5F 		.ascii	"HAL_WWDG_Init\000"
+ 1255      57574447 
+ 1255      5F496E69 
+ 1255      7400
+ 1256              	.LASF43:
+ 1257 00de 68777764 		.ascii	"hwwdg\000"
+ 1257      6700
+ 1258              	.LASF8:
+ 1259 00e4 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1259      20756E73 
+ 1259      69676E65 
+ 1259      6420696E 
+ 1259      7400
+ 1260              	.LASF21:
+ 1261 00f6 52455345 		.ascii	"RESET\000"
+ 1261      5400
+ 1262              	.LASF34:
+ 1263 00fc 496E6974 		.ascii	"Init\000"
+ 1263      00
+ 1264              	.LASF44:
+ 1265 0101 48414C5F 		.ascii	"HAL_WWDG_Refresh\000"
+ 1265      57574447 
+ 1265      5F526566 
+ 1265      72657368 
+ 1265      00
+ 1266              	.LASF16:
+ 1267 0112 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1267      52784275 
+ 1267      66666572 
+ 1267      00
+ 1268              	.LASF37:
+ 1269 011f 48414C5F 		.ascii	"HAL_TICK_FREQ_100HZ\000"
+ 1269      5449434B 
+ 1269      5F465245 
+ARM GAS  /tmp/ccrpE57I.s 			page 31
+
+
+ 1269      515F3130 
+ 1269      30485A00 
+ 1270              	.LASF26:
+ 1271 0133 48414C5F 		.ascii	"HAL_TIMEOUT\000"
+ 1271      54494D45 
+ 1271      4F555400 
+ 1272              	.LASF35:
+ 1273 013f 57574447 		.ascii	"WWDG_HandleTypeDef\000"
+ 1273      5F48616E 
+ 1273      646C6554 
+ 1273      79706544 
+ 1273      656600
+ 1274              	.LASF49:
+ 1275 0152 48414C5F 		.ascii	"HAL_WWDG_EarlyWakeupCallback\000"
+ 1275      57574447 
+ 1275      5F456172 
+ 1275      6C795761 
+ 1275      6B657570 
+ 1276              	.LASF7:
+ 1277 016f 5F5F7569 		.ascii	"__uint32_t\000"
+ 1277      6E743332 
+ 1277      5F7400
+ 1278              	.LASF40:
+ 1279 017a 48414C5F 		.ascii	"HAL_TickFreqTypeDef\000"
+ 1279      5469636B 
+ 1279      46726571 
+ 1279      54797065 
+ 1279      44656600 
+ 1280              	.LASF30:
+ 1281 018e 436F756E 		.ascii	"Counter\000"
+ 1281      74657200 
+ 1282              	.LASF19:
+ 1283 0196 41504250 		.ascii	"APBPrescTable\000"
+ 1283      72657363 
+ 1283      5461626C 
+ 1283      6500
+ 1284              	.LASF25:
+ 1285 01a4 48414C5F 		.ascii	"HAL_BUSY\000"
+ 1285      42555359 
+ 1285      00
+ 1286              	.LASF51:
+ 1287 01ad 48414C5F 		.ascii	"HAL_WWDG_MspInit\000"
+ 1287      57574447 
+ 1287      5F4D7370 
+ 1287      496E6974 
+ 1287      00
+ 1288              	.LASF46:
+ 1289 01be 474E5520 		.ascii	"GNU C11 6.3.1 20170620 -mcpu=cortex-m3 -mthumb -g -"
+ 1289      43313120 
+ 1289      362E332E 
+ 1289      31203230 
+ 1289      31373036 
+ 1290 01f1 67647761 		.ascii	"gdwarf-2 -Os -fomit-frame-pointer\000"
+ 1290      72662D32 
+ 1290      202D4F73 
+ 1290      202D666F 
+ 1290      6D69742D 
+ARM GAS  /tmp/ccrpE57I.s 			page 32
+
+
+ 1291              	.LASF42:
+ 1292 0213 75775469 		.ascii	"uwTickFreq\000"
+ 1292      636B4672 
+ 1292      657100
+ 1293              	.LASF10:
+ 1294 021e 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1294      206C6F6E 
+ 1294      6720756E 
+ 1294      7369676E 
+ 1294      65642069 
+ 1295              	.LASF12:
+ 1296 0235 75696E74 		.ascii	"uint8_t\000"
+ 1296      385F7400 
+ 1297              	.LASF13:
+ 1298 023d 696E7433 		.ascii	"int32_t\000"
+ 1298      325F7400 
+ 1299              	.LASF15:
+ 1300 0245 73697A65 		.ascii	"sizetype\000"
+ 1300      74797065 
+ 1300      00
+ 1301              	.LASF27:
+ 1302 024e 48414C5F 		.ascii	"HAL_StatusTypeDef\000"
+ 1302      53746174 
+ 1302      75735479 
+ 1302      70654465 
+ 1302      6600
+ 1303              	.LASF9:
+ 1304 0260 6C6F6E67 		.ascii	"long long int\000"
+ 1304      206C6F6E 
+ 1304      6720696E 
+ 1304      7400
+ 1305              	.LASF36:
+ 1306 026e 48414C5F 		.ascii	"HAL_TICK_FREQ_10HZ\000"
+ 1306      5449434B 
+ 1306      5F465245 
+ 1306      515F3130 
+ 1306      485A00
+ 1307              	.LASF17:
+ 1308 0281 53797374 		.ascii	"SystemCoreClock\000"
+ 1308      656D436F 
+ 1308      7265436C 
+ 1308      6F636B00 
+ 1309              	.LASF48:
+ 1310 0291 2F686F6D 		.ascii	"/home/berndoj/git/stm32tctst/lib/stm32f1hal\000"
+ 1310      652F6265 
+ 1310      726E646F 
+ 1310      6A2F6769 
+ 1310      742F7374 
+ 1311              	.LASF11:
+ 1312 02bd 756E7369 		.ascii	"unsigned int\000"
+ 1312      676E6564 
+ 1312      20696E74 
+ 1312      00
+ 1313              	.LASF41:
+ 1314 02ca 75775469 		.ascii	"uwTickPrio\000"
+ 1314      636B5072 
+ 1314      696F00
+ARM GAS  /tmp/ccrpE57I.s 			page 33
+
+
+ 1315              	.LASF33:
+ 1316 02d5 496E7374 		.ascii	"Instance\000"
+ 1316      616E6365 
+ 1316      00
+ 1317              	.LASF2:
+ 1318 02de 73686F72 		.ascii	"short int\000"
+ 1318      7420696E 
+ 1318      7400
+ 1319              	.LASF29:
+ 1320 02e8 57696E64 		.ascii	"Window\000"
+ 1320      6F7700
+ 1321              	.LASF14:
+ 1322 02ef 75696E74 		.ascii	"uint32_t\000"
+ 1322      33325F74 
+ 1322      00
+ 1323              	.LASF6:
+ 1324 02f8 6C6F6E67 		.ascii	"long int\000"
+ 1324      20696E74 
+ 1324      00
+ 1325              	.LASF22:
+ 1326 0301 6C6F6E67 		.ascii	"long double\000"
+ 1326      20646F75 
+ 1326      626C6500 
+ 1327              	.LASF0:
+ 1328 030d 7369676E 		.ascii	"signed char\000"
+ 1328      65642063 
+ 1328      68617200 
+ 1329              	.LASF28:
+ 1330 0319 50726573 		.ascii	"Prescaler\000"
+ 1330      63616C65 
+ 1330      7200
+ 1331              		.ident	"GCC: (15:6.3.1+svn253039-1build1) 6.3.1 20170620"
+ARM GAS  /tmp/ccrpE57I.s 			page 34
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 stm32f1xx_hal_wwdg.c
+     /tmp/ccrpE57I.s:69     .text:0000000000000000 $t
+     /tmp/ccrpE57I.s:76     .text:0000000000000000 HAL_WWDG_MspInit
+     /tmp/ccrpE57I.s:93     .text:0000000000000002 HAL_WWDG_Init
+     /tmp/ccrpE57I.s:149    .text:000000000000002a HAL_WWDG_Refresh
+     /tmp/ccrpE57I.s:177    .text:0000000000000034 HAL_WWDG_EarlyWakeupCallback
+     /tmp/ccrpE57I.s:196    .text:0000000000000036 HAL_WWDG_IRQHandler
+                     .debug_frame:0000000000000010 $d
+
+NO UNDEFINED SYMBOLS

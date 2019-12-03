@@ -18,9 +18,10 @@ OBJCP   = $(CPREFIX)objcopy
 ASM     = $(CPREFIX)gcc -x assembler-with-cpp
 GDBTUI  = $(CPREFIX)gdbtui
 CSIZE   = $(CPREFIX)size
+AR		= $(CPREFIC)ar
 
 # --- C/CPP DEFINES ---
-CDEFS = 
+CDEFS = -DSTM32F103x6
 
 # --- OPTIMISATION LEVEL FLAGS ---
 OPTIM = -Os
@@ -29,6 +30,6 @@ OPTIM = -Os
 COMPDEFS = $(CDEFS) -DRUN_FROM_FLASH=1
 
 MCUFLAGS = -mcpu=$(MCUTYPE)
-CFLAGS = $(MCUFLAGS) $(OPTIM) -g -gdwarf-2 -mthumb -fomit-frame-pointer -Wall -fverbose-asm -Wa,-ahlms=$(<:.c=.lst) $(COMPDEFS) -D__c
-CPPFLAGS = $(MCUFLAGS) $(OPTIM) -g -gdwarf-2 -mthumb -fomit-frame-pointer -Wall -fverbose-asm -Wa,-ahlms=$(<:.cpp=.lst) $(COMPDEFS) -D__cplusplus
+CFLAGS = $(MCUFLAGS) $(OPTIM) -g -gdwarf-2 -mthumb -fomit-frame-pointer -Wall -fverbose-asm -Wa,-ahlms=$(<:.c=.lst) $(COMPDEFS)
+CPPFLAGS = $(MCUFLAGS) $(OPTIM) -g -gdwarf-2 -mthumb -fomit-frame-pointer -Wall -fverbose-asm -Wa,-ahlms=$(<:.cpp=.lst) $(COMPDEFS)
 ASMFLAGS = $(MCUFLAGS) -g -gdwarf-2 -mthumb -Wa,-amhls=$(<:.s=.lst)

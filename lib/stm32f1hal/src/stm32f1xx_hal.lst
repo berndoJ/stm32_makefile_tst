@@ -1,0 +1,4251 @@
+ARM GAS  /tmp/ccAUAHaM.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1	@ Tag_ABI_FP_denormal
+   3              		.eabi_attribute 21, 1	@ Tag_ABI_FP_exceptions
+   4              		.eabi_attribute 23, 3	@ Tag_ABI_FP_number_model
+   5              		.eabi_attribute 24, 1	@ Tag_ABI_align8_needed
+   6              		.eabi_attribute 25, 1	@ Tag_ABI_align8_preserved
+   7              		.eabi_attribute 26, 1	@ Tag_ABI_enum_size
+   8              		.eabi_attribute 30, 4	@ Tag_ABI_optimization_goals
+   9              		.eabi_attribute 34, 1	@ Tag_CPU_unaligned_access
+  10              		.eabi_attribute 18, 4	@ Tag_ABI_PCS_wchar_t
+  11              		.file	"stm32f1xx_hal.c"
+  12              	@ GNU C11 (15:6.3.1+svn253039-1build1) version 6.3.1 20170620 (arm-none-eabi)
+  13              	@	compiled by GNU C version 7.2.0, GMP version 6.1.2, MPFR version 4.0.1-rc1, MPC version 1.1.0, is
+  14              	@ warning: MPFR header version 4.0.1-rc1 differs from library version 4.0.1.
+  15              	@ GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+  16              	@ options passed:  -I ./inc -I ./inc/Legacy -I ../cmsisstm32f1xx/inc
+  17              	@ -I ../cmsiscore/inc -imultilib thumb/v7-m -D__USES_INITFINI__
+  18              	@ -D STM32F103x6 -D RUN_FROM_FLASH=1 -D __c src/stm32f1xx_hal.c
+  19              	@ -mcpu=cortex-m3 -mthumb -auxbase-strip bin/stm32f1xx_hal.o -g -gdwarf-2
+  20              	@ -Os -Wall -fomit-frame-pointer -fverbose-asm
+  21              	@ options enabled:  -faggressive-loop-optimizations -falign-jumps
+  22              	@ -falign-labels -falign-loops -fauto-inc-dec -fbranch-count-reg
+  23              	@ -fcaller-saves -fchkp-check-incomplete-type -fchkp-check-read
+  24              	@ -fchkp-check-write -fchkp-instrument-calls -fchkp-narrow-bounds
+  25              	@ -fchkp-optimize -fchkp-store-bounds -fchkp-use-static-bounds
+  26              	@ -fchkp-use-static-const-bounds -fchkp-use-wrappers
+  27              	@ -fcombine-stack-adjustments -fcommon -fcompare-elim -fcprop-registers
+  28              	@ -fcrossjumping -fcse-follow-jumps -fdefer-pop
+  29              	@ -fdelete-null-pointer-checks -fdevirtualize -fdevirtualize-speculatively
+  30              	@ -fdwarf2-cfi-asm -fearly-inlining -feliminate-unused-debug-types
+  31              	@ -fexpensive-optimizations -fforward-propagate -ffunction-cse -fgcse
+  32              	@ -fgcse-lm -fgnu-runtime -fgnu-unique -fguess-branch-probability
+  33              	@ -fhoist-adjacent-loads -fident -fif-conversion -fif-conversion2
+  34              	@ -findirect-inlining -finline -finline-atomics -finline-functions
+  35              	@ -finline-functions-called-once -finline-small-functions -fipa-cp
+  36              	@ -fipa-cp-alignment -fipa-icf -fipa-icf-functions -fipa-icf-variables
+  37              	@ -fipa-profile -fipa-pure-const -fipa-ra -fipa-reference -fipa-sra
+  38              	@ -fira-hoist-pressure -fira-share-save-slots -fira-share-spill-slots
+  39              	@ -fisolate-erroneous-paths-dereference -fivopts -fkeep-static-consts
+  40              	@ -fleading-underscore -flifetime-dse -flra-remat -flto-odr-type-merging
+  41              	@ -fmath-errno -fmerge-constants -fmerge-debug-strings
+  42              	@ -fmove-loop-invariants -fomit-frame-pointer -foptimize-sibling-calls
+  43              	@ -fpartial-inlining -fpeephole -fpeephole2 -fplt -fprefetch-loop-arrays
+  44              	@ -freg-struct-return -freorder-blocks -freorder-functions
+  45              	@ -frerun-cse-after-loop -fsched-critical-path-heuristic
+  46              	@ -fsched-dep-count-heuristic -fsched-group-heuristic -fsched-interblock
+  47              	@ -fsched-last-insn-heuristic -fsched-pressure -fsched-rank-heuristic
+  48              	@ -fsched-spec -fsched-spec-insn-heuristic -fsched-stalled-insns-dep
+  49              	@ -fschedule-insns2 -fsection-anchors -fsemantic-interposition
+  50              	@ -fshow-column -fsigned-zeros -fsplit-ivs-in-unroller -fsplit-wide-types
+  51              	@ -fssa-backprop -fssa-phiopt -fstdarg-opt -fstrict-aliasing
+  52              	@ -fstrict-overflow -fstrict-volatile-bitfields -fsync-libcalls
+  53              	@ -fthread-jumps -ftoplevel-reorder -ftrapping-math -ftree-bit-ccp
+  54              	@ -ftree-builtin-call-dce -ftree-ccp -ftree-ch -ftree-coalesce-vars
+  55              	@ -ftree-copy-prop -ftree-cselim -ftree-dce -ftree-dominator-opts
+  56              	@ -ftree-dse -ftree-forwprop -ftree-fre -ftree-loop-if-convert
+  57              	@ -ftree-loop-im -ftree-loop-ivcanon -ftree-loop-optimize
+ARM GAS  /tmp/ccAUAHaM.s 			page 2
+
+
+  58              	@ -ftree-parallelize-loops= -ftree-phiprop -ftree-pre -ftree-pta
+  59              	@ -ftree-reassoc -ftree-scev-cprop -ftree-sink -ftree-slsr -ftree-sra
+  60              	@ -ftree-switch-conversion -ftree-tail-merge -ftree-ter -ftree-vrp
+  61              	@ -funit-at-a-time -fvar-tracking -fvar-tracking-assignments -fverbose-asm
+  62              	@ -fzero-initialized-in-bss -masm-syntax-unified -mfix-cortex-m3-ldrd
+  63              	@ -mlittle-endian -mpic-data-is-text-relative -msched-prolog -mthumb
+  64              	@ -munaligned-access -mvectorize-with-neon-quad
+  65              	
+  66              		.text
+  67              	.Ltext0:
+  68              		.cfi_sections	.debug_frame
+  69              		.align	1
+  70              		.weak	HAL_MspInit
+  71              		.syntax unified
+  72              		.thumb
+  73              		.thumb_func
+  74              		.fpu softvfp
+  75              		.type	HAL_MspInit, %function
+  76              	HAL_MspInit:
+  77              	.LFB92:
+  78              		.cfi_startproc
+  79              		@ args = 0, pretend = 0, frame = 0
+  80              		@ frame_needed = 0, uses_anonymous_args = 0
+  81              		@ link register save eliminated.
+  82 0000 7047     		bx	lr	@
+  83              		.cfi_endproc
+  84              	.LFE92:
+  85              		.size	HAL_MspInit, .-HAL_MspInit
+  86              		.align	1
+  87              		.weak	HAL_MspDeInit
+  88              		.syntax unified
+  89              		.thumb
+  90              		.thumb_func
+  91              		.fpu softvfp
+  92              		.type	HAL_MspDeInit, %function
+  93              	HAL_MspDeInit:
+  94              	.LFB68:
+  95              		.file 1 "src/stm32f1xx_hal.c"
+   1:src/stm32f1xx_hal.c **** /**
+   2:src/stm32f1xx_hal.c ****   ******************************************************************************
+   3:src/stm32f1xx_hal.c ****   * @file    stm32f1xx_hal.c
+   4:src/stm32f1xx_hal.c ****   * @author  MCD Application Team
+   5:src/stm32f1xx_hal.c ****   * @brief   HAL module driver.
+   6:src/stm32f1xx_hal.c ****   *          This is the common part of the HAL initialization
+   7:src/stm32f1xx_hal.c ****   *
+   8:src/stm32f1xx_hal.c ****   @verbatim
+   9:src/stm32f1xx_hal.c ****   ==============================================================================
+  10:src/stm32f1xx_hal.c ****                      ##### How to use this driver #####
+  11:src/stm32f1xx_hal.c ****   ==============================================================================
+  12:src/stm32f1xx_hal.c ****     [..]
+  13:src/stm32f1xx_hal.c ****     The common HAL driver contains a set of generic and common APIs that can be
+  14:src/stm32f1xx_hal.c ****     used by the PPP peripheral drivers and the user to start using the HAL.
+  15:src/stm32f1xx_hal.c ****     [..]
+  16:src/stm32f1xx_hal.c ****     The HAL contains two APIs' categories:
+  17:src/stm32f1xx_hal.c ****          (+) Common HAL APIs
+  18:src/stm32f1xx_hal.c ****          (+) Services HAL APIs
+  19:src/stm32f1xx_hal.c **** 
+ARM GAS  /tmp/ccAUAHaM.s 			page 3
+
+
+  20:src/stm32f1xx_hal.c ****   @endverbatim
+  21:src/stm32f1xx_hal.c ****   ******************************************************************************
+  22:src/stm32f1xx_hal.c ****   * @attention
+  23:src/stm32f1xx_hal.c ****   *
+  24:src/stm32f1xx_hal.c ****   * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics.
+  25:src/stm32f1xx_hal.c ****   * All rights reserved.</center></h2>
+  26:src/stm32f1xx_hal.c ****   *
+  27:src/stm32f1xx_hal.c ****   * This software component is licensed by ST under BSD 3-Clause license,
+  28:src/stm32f1xx_hal.c ****   * the "License"; You may not use this file except in compliance with the
+  29:src/stm32f1xx_hal.c ****   * License. You may obtain a copy of the License at:
+  30:src/stm32f1xx_hal.c ****   *                        opensource.org/licenses/BSD-3-Clause
+  31:src/stm32f1xx_hal.c ****   *
+  32:src/stm32f1xx_hal.c ****   ******************************************************************************
+  33:src/stm32f1xx_hal.c ****   */
+  34:src/stm32f1xx_hal.c **** 
+  35:src/stm32f1xx_hal.c **** /* Includes ------------------------------------------------------------------*/
+  36:src/stm32f1xx_hal.c **** #include "stm32f1xx_hal.h"
+  37:src/stm32f1xx_hal.c **** 
+  38:src/stm32f1xx_hal.c **** /** @addtogroup STM32F1xx_HAL_Driver
+  39:src/stm32f1xx_hal.c ****   * @{
+  40:src/stm32f1xx_hal.c ****   */
+  41:src/stm32f1xx_hal.c **** 
+  42:src/stm32f1xx_hal.c **** /** @defgroup HAL HAL
+  43:src/stm32f1xx_hal.c ****   * @brief HAL module driver.
+  44:src/stm32f1xx_hal.c ****   * @{
+  45:src/stm32f1xx_hal.c ****   */
+  46:src/stm32f1xx_hal.c **** 
+  47:src/stm32f1xx_hal.c **** #ifdef HAL_MODULE_ENABLED
+  48:src/stm32f1xx_hal.c **** 
+  49:src/stm32f1xx_hal.c **** /* Private typedef -----------------------------------------------------------*/
+  50:src/stm32f1xx_hal.c **** /* Private define ------------------------------------------------------------*/
+  51:src/stm32f1xx_hal.c **** 
+  52:src/stm32f1xx_hal.c **** /** @defgroup HAL_Private_Constants HAL Private Constants
+  53:src/stm32f1xx_hal.c ****   * @{
+  54:src/stm32f1xx_hal.c ****   */
+  55:src/stm32f1xx_hal.c **** /**
+  56:src/stm32f1xx_hal.c ****  * @brief STM32F1xx HAL Driver version number V1.1.4
+  57:src/stm32f1xx_hal.c ****    */
+  58:src/stm32f1xx_hal.c **** #define __STM32F1xx_HAL_VERSION_MAIN   (0x01U) /*!< [31:24] main version */
+  59:src/stm32f1xx_hal.c **** #define __STM32F1xx_HAL_VERSION_SUB1   (0x01U) /*!< [23:16] sub1 version */
+  60:src/stm32f1xx_hal.c **** #define __STM32F1xx_HAL_VERSION_SUB2   (0x04U) /*!< [15:8]  sub2 version */
+  61:src/stm32f1xx_hal.c **** #define __STM32F1xx_HAL_VERSION_RC     (0x00U) /*!< [7:0]  release candidate */
+  62:src/stm32f1xx_hal.c **** #define __STM32F1xx_HAL_VERSION         ((__STM32F1xx_HAL_VERSION_MAIN << 24)\
+  63:src/stm32f1xx_hal.c ****                                         |(__STM32F1xx_HAL_VERSION_SUB1 << 16)\
+  64:src/stm32f1xx_hal.c ****                                         |(__STM32F1xx_HAL_VERSION_SUB2 << 8 )\
+  65:src/stm32f1xx_hal.c ****                                         |(__STM32F1xx_HAL_VERSION_RC))
+  66:src/stm32f1xx_hal.c **** 
+  67:src/stm32f1xx_hal.c **** #define IDCODE_DEVID_MASK    0x00000FFFU
+  68:src/stm32f1xx_hal.c **** 
+  69:src/stm32f1xx_hal.c **** /**
+  70:src/stm32f1xx_hal.c ****   * @}
+  71:src/stm32f1xx_hal.c ****   */
+  72:src/stm32f1xx_hal.c **** 
+  73:src/stm32f1xx_hal.c **** /* Private macro -------------------------------------------------------------*/
+  74:src/stm32f1xx_hal.c **** /* Private variables ---------------------------------------------------------*/
+  75:src/stm32f1xx_hal.c **** 
+  76:src/stm32f1xx_hal.c **** /** @defgroup HAL_Private_Variables HAL Private Variables
+ARM GAS  /tmp/ccAUAHaM.s 			page 4
+
+
+  77:src/stm32f1xx_hal.c ****   * @{
+  78:src/stm32f1xx_hal.c ****   */
+  79:src/stm32f1xx_hal.c **** __IO uint32_t uwTick;
+  80:src/stm32f1xx_hal.c **** uint32_t uwTickPrio   = (1UL << __NVIC_PRIO_BITS); /* Invalid PRIO */
+  81:src/stm32f1xx_hal.c **** HAL_TickFreqTypeDef uwTickFreq = HAL_TICK_FREQ_DEFAULT;  /* 1KHz */
+  82:src/stm32f1xx_hal.c **** /**
+  83:src/stm32f1xx_hal.c ****   * @}
+  84:src/stm32f1xx_hal.c ****   */
+  85:src/stm32f1xx_hal.c **** /* Private function prototypes -----------------------------------------------*/
+  86:src/stm32f1xx_hal.c **** /* Exported functions ---------------------------------------------------------*/
+  87:src/stm32f1xx_hal.c **** 
+  88:src/stm32f1xx_hal.c **** /** @defgroup HAL_Exported_Functions HAL Exported Functions
+  89:src/stm32f1xx_hal.c ****   * @{
+  90:src/stm32f1xx_hal.c ****   */
+  91:src/stm32f1xx_hal.c **** 
+  92:src/stm32f1xx_hal.c **** /** @defgroup HAL_Exported_Functions_Group1 Initialization and de-initialization Functions
+  93:src/stm32f1xx_hal.c ****  *  @brief    Initialization and de-initialization functions
+  94:src/stm32f1xx_hal.c ****  *
+  95:src/stm32f1xx_hal.c **** @verbatim
+  96:src/stm32f1xx_hal.c ****  ===============================================================================
+  97:src/stm32f1xx_hal.c ****               ##### Initialization and de-initialization functions #####
+  98:src/stm32f1xx_hal.c ****  ===============================================================================
+  99:src/stm32f1xx_hal.c ****    [..]  This section provides functions allowing to:
+ 100:src/stm32f1xx_hal.c ****       (+) Initializes the Flash interface, the NVIC allocation and initial clock
+ 101:src/stm32f1xx_hal.c ****           configuration. It initializes the systick also when timeout is needed
+ 102:src/stm32f1xx_hal.c ****           and the backup domain when enabled.
+ 103:src/stm32f1xx_hal.c ****       (+) de-Initializes common part of the HAL.
+ 104:src/stm32f1xx_hal.c ****       (+) Configure The time base source to have 1ms time base with a dedicated
+ 105:src/stm32f1xx_hal.c ****           Tick interrupt priority.
+ 106:src/stm32f1xx_hal.c ****         (++) SysTick timer is used by default as source of time base, but user
+ 107:src/stm32f1xx_hal.c ****              can eventually implement his proper time base source (a general purpose
+ 108:src/stm32f1xx_hal.c ****              timer for example or other time source), keeping in mind that Time base
+ 109:src/stm32f1xx_hal.c ****              duration should be kept 1ms since PPP_TIMEOUT_VALUEs are defined and
+ 110:src/stm32f1xx_hal.c ****              handled in milliseconds basis.
+ 111:src/stm32f1xx_hal.c ****         (++) Time base configuration function (HAL_InitTick ()) is called automatically
+ 112:src/stm32f1xx_hal.c ****              at the beginning of the program after reset by HAL_Init() or at any time
+ 113:src/stm32f1xx_hal.c ****              when clock is configured, by HAL_RCC_ClockConfig().
+ 114:src/stm32f1xx_hal.c ****         (++) Source of time base is configured  to generate interrupts at regular
+ 115:src/stm32f1xx_hal.c ****              time intervals. Care must be taken if HAL_Delay() is called from a
+ 116:src/stm32f1xx_hal.c ****              peripheral ISR process, the Tick interrupt line must have higher priority
+ 117:src/stm32f1xx_hal.c ****             (numerically lower) than the peripheral interrupt. Otherwise the caller
+ 118:src/stm32f1xx_hal.c ****             ISR process will be blocked.
+ 119:src/stm32f1xx_hal.c ****        (++) functions affecting time base configurations are declared as __weak
+ 120:src/stm32f1xx_hal.c ****              to make  override possible  in case of other  implementations in user file.
+ 121:src/stm32f1xx_hal.c **** @endverbatim
+ 122:src/stm32f1xx_hal.c ****   * @{
+ 123:src/stm32f1xx_hal.c ****   */
+ 124:src/stm32f1xx_hal.c **** 
+ 125:src/stm32f1xx_hal.c **** /**
+ 126:src/stm32f1xx_hal.c ****   * @brief  This function is used to initialize the HAL Library; it must be the first
+ 127:src/stm32f1xx_hal.c ****   *         instruction to be executed in the main program (before to call any other
+ 128:src/stm32f1xx_hal.c ****   *         HAL function), it performs the following:
+ 129:src/stm32f1xx_hal.c ****   *           Configure the Flash prefetch.
+ 130:src/stm32f1xx_hal.c ****   *           Configures the SysTick to generate an interrupt each 1 millisecond,
+ 131:src/stm32f1xx_hal.c ****   *           which is clocked by the HSI (at this stage, the clock is not yet
+ 132:src/stm32f1xx_hal.c ****   *           configured and thus the system is running from the internal HSI at 16 MHz).
+ 133:src/stm32f1xx_hal.c ****   *           Set NVIC Group Priority to 4.
+ARM GAS  /tmp/ccAUAHaM.s 			page 5
+
+
+ 134:src/stm32f1xx_hal.c ****   *           Calls the HAL_MspInit() callback function defined in user file
+ 135:src/stm32f1xx_hal.c ****   *           "stm32f1xx_hal_msp.c" to do the global low level hardware initialization
+ 136:src/stm32f1xx_hal.c ****   *
+ 137:src/stm32f1xx_hal.c ****   * @note   SysTick is used as time base for the HAL_Delay() function, the application
+ 138:src/stm32f1xx_hal.c ****   *         need to ensure that the SysTick time base is always set to 1 millisecond
+ 139:src/stm32f1xx_hal.c ****   *         to have correct HAL operation.
+ 140:src/stm32f1xx_hal.c ****   * @retval HAL status
+ 141:src/stm32f1xx_hal.c ****   */
+ 142:src/stm32f1xx_hal.c **** HAL_StatusTypeDef HAL_Init(void)
+ 143:src/stm32f1xx_hal.c **** {
+ 144:src/stm32f1xx_hal.c ****   /* Configure Flash prefetch */
+ 145:src/stm32f1xx_hal.c **** #if (PREFETCH_ENABLE != 0)
+ 146:src/stm32f1xx_hal.c **** #if defined(STM32F101x6) || defined(STM32F101xB) || defined(STM32F101xE) || defined(STM32F101xG) ||
+ 147:src/stm32f1xx_hal.c ****     defined(STM32F102x6) || defined(STM32F102xB) || \
+ 148:src/stm32f1xx_hal.c ****     defined(STM32F103x6) || defined(STM32F103xB) || defined(STM32F103xE) || defined(STM32F103xG) ||
+ 149:src/stm32f1xx_hal.c ****     defined(STM32F105xC) || defined(STM32F107xC)
+ 150:src/stm32f1xx_hal.c **** 
+ 151:src/stm32f1xx_hal.c ****   /* Prefetch buffer is not available on value line devices */
+ 152:src/stm32f1xx_hal.c ****   __HAL_FLASH_PREFETCH_BUFFER_ENABLE();
+ 153:src/stm32f1xx_hal.c **** #endif
+ 154:src/stm32f1xx_hal.c **** #endif /* PREFETCH_ENABLE */
+ 155:src/stm32f1xx_hal.c **** 
+ 156:src/stm32f1xx_hal.c ****   /* Set Interrupt Group Priority */
+ 157:src/stm32f1xx_hal.c ****   HAL_NVIC_SetPriorityGrouping(NVIC_PRIORITYGROUP_4);
+ 158:src/stm32f1xx_hal.c **** 
+ 159:src/stm32f1xx_hal.c ****   /* Use systick as time base source and configure 1ms tick (default clock after Reset is HSI) */
+ 160:src/stm32f1xx_hal.c ****   HAL_InitTick(TICK_INT_PRIORITY);
+ 161:src/stm32f1xx_hal.c **** 
+ 162:src/stm32f1xx_hal.c ****   /* Init the low level hardware */
+ 163:src/stm32f1xx_hal.c ****   HAL_MspInit();
+ 164:src/stm32f1xx_hal.c **** 
+ 165:src/stm32f1xx_hal.c ****   /* Return function status */
+ 166:src/stm32f1xx_hal.c ****   return HAL_OK;
+ 167:src/stm32f1xx_hal.c **** }
+ 168:src/stm32f1xx_hal.c **** 
+ 169:src/stm32f1xx_hal.c **** /**
+ 170:src/stm32f1xx_hal.c ****   * @brief This function de-Initializes common part of the HAL and stops the systick.
+ 171:src/stm32f1xx_hal.c ****   *        of time base.
+ 172:src/stm32f1xx_hal.c ****   * @note This function is optional.
+ 173:src/stm32f1xx_hal.c ****   * @retval HAL status
+ 174:src/stm32f1xx_hal.c ****   */
+ 175:src/stm32f1xx_hal.c **** HAL_StatusTypeDef HAL_DeInit(void)
+ 176:src/stm32f1xx_hal.c **** {
+ 177:src/stm32f1xx_hal.c ****   /* Reset of all peripherals */
+ 178:src/stm32f1xx_hal.c ****   __HAL_RCC_APB1_FORCE_RESET();
+ 179:src/stm32f1xx_hal.c ****   __HAL_RCC_APB1_RELEASE_RESET();
+ 180:src/stm32f1xx_hal.c **** 
+ 181:src/stm32f1xx_hal.c ****   __HAL_RCC_APB2_FORCE_RESET();
+ 182:src/stm32f1xx_hal.c ****   __HAL_RCC_APB2_RELEASE_RESET();
+ 183:src/stm32f1xx_hal.c **** 
+ 184:src/stm32f1xx_hal.c **** #if defined(STM32F105xC) || defined(STM32F107xC)
+ 185:src/stm32f1xx_hal.c ****   __HAL_RCC_AHB_FORCE_RESET();
+ 186:src/stm32f1xx_hal.c ****   __HAL_RCC_AHB_RELEASE_RESET();
+ 187:src/stm32f1xx_hal.c **** #endif
+ 188:src/stm32f1xx_hal.c **** 
+ 189:src/stm32f1xx_hal.c ****   /* De-Init the low level hardware */
+ 190:src/stm32f1xx_hal.c ****   HAL_MspDeInit();
+ARM GAS  /tmp/ccAUAHaM.s 			page 6
+
+
+ 191:src/stm32f1xx_hal.c **** 
+ 192:src/stm32f1xx_hal.c ****   /* Return function status */
+ 193:src/stm32f1xx_hal.c ****   return HAL_OK;
+ 194:src/stm32f1xx_hal.c **** }
+ 195:src/stm32f1xx_hal.c **** 
+ 196:src/stm32f1xx_hal.c **** /**
+ 197:src/stm32f1xx_hal.c ****   * @brief  Initialize the MSP.
+ 198:src/stm32f1xx_hal.c ****   * @retval None
+ 199:src/stm32f1xx_hal.c ****   */
+ 200:src/stm32f1xx_hal.c **** __weak void HAL_MspInit(void)
+ 201:src/stm32f1xx_hal.c **** {
+ 202:src/stm32f1xx_hal.c ****   /* NOTE : This function should not be modified, when the callback is needed,
+ 203:src/stm32f1xx_hal.c ****             the HAL_MspInit could be implemented in the user file
+ 204:src/stm32f1xx_hal.c ****    */
+ 205:src/stm32f1xx_hal.c **** }
+ 206:src/stm32f1xx_hal.c **** 
+ 207:src/stm32f1xx_hal.c **** /**
+ 208:src/stm32f1xx_hal.c ****   * @brief  DeInitializes the MSP.
+ 209:src/stm32f1xx_hal.c ****   * @retval None
+ 210:src/stm32f1xx_hal.c ****   */
+ 211:src/stm32f1xx_hal.c **** __weak void HAL_MspDeInit(void)
+ 212:src/stm32f1xx_hal.c **** {
+  96              		.loc 1 212 0
+  97              		.cfi_startproc
+  98              		@ args = 0, pretend = 0, frame = 0
+  99              		@ frame_needed = 0, uses_anonymous_args = 0
+ 100              		@ link register save eliminated.
+ 101 0002 7047     		bx	lr	@
+ 102              		.cfi_endproc
+ 103              	.LFE68:
+ 104              		.size	HAL_MspDeInit, .-HAL_MspDeInit
+ 105              		.align	1
+ 106              		.global	HAL_DeInit
+ 107              		.syntax unified
+ 108              		.thumb
+ 109              		.thumb_func
+ 110              		.fpu softvfp
+ 111              		.type	HAL_DeInit, %function
+ 112              	HAL_DeInit:
+ 113              	.LFB66:
+ 176:src/stm32f1xx_hal.c ****   /* Reset of all peripherals */
+ 114              		.loc 1 176 0
+ 115              		.cfi_startproc
+ 116              		@ args = 0, pretend = 0, frame = 0
+ 117              		@ frame_needed = 0, uses_anonymous_args = 0
+ 176:src/stm32f1xx_hal.c ****   /* Reset of all peripherals */
+ 118              		.loc 1 176 0
+ 119 0004 10B5     		push	{r4, lr}	@
+ 120              	.LCFI0:
+ 121              		.cfi_def_cfa_offset 8
+ 122              		.cfi_offset 4, -8
+ 123              		.cfi_offset 14, -4
+ 178:src/stm32f1xx_hal.c ****   __HAL_RCC_APB1_RELEASE_RESET();
+ 124              		.loc 1 178 0
+ 125 0006 4FF0FF32 		mov	r2, #-1	@ tmp112,
+ 179:src/stm32f1xx_hal.c **** 
+ 126              		.loc 1 179 0
+ARM GAS  /tmp/ccAUAHaM.s 			page 7
+
+
+ 127 000a 0024     		movs	r4, #0	@ tmp114,
+ 178:src/stm32f1xx_hal.c ****   __HAL_RCC_APB1_RELEASE_RESET();
+ 128              		.loc 1 178 0
+ 129 000c 044B     		ldr	r3, .L4	@ tmp111,
+ 130 000e DA60     		str	r2, [r3, #12]	@ tmp112, MEM[(struct RCC_TypeDef *)1073876992B].APB2RSTR
+ 179:src/stm32f1xx_hal.c **** 
+ 131              		.loc 1 179 0
+ 132 0010 1C61     		str	r4, [r3, #16]	@ tmp114, MEM[(struct RCC_TypeDef *)1073876992B].APB1RSTR
+ 181:src/stm32f1xx_hal.c ****   __HAL_RCC_APB2_RELEASE_RESET();
+ 133              		.loc 1 181 0
+ 134 0012 DA60     		str	r2, [r3, #12]	@ tmp112, MEM[(struct RCC_TypeDef *)1073876992B].APB2RSTR
+ 182:src/stm32f1xx_hal.c **** 
+ 135              		.loc 1 182 0
+ 136 0014 DC60     		str	r4, [r3, #12]	@ tmp114, MEM[(struct RCC_TypeDef *)1073876992B].APB2RSTR
+ 190:src/stm32f1xx_hal.c **** 
+ 137              		.loc 1 190 0
+ 138 0016 FFF7FEFF 		bl	HAL_MspDeInit	@
+ 139              	.LVL0:
+ 194:src/stm32f1xx_hal.c **** 
+ 140              		.loc 1 194 0
+ 141 001a 2046     		mov	r0, r4	@, tmp114
+ 142 001c 10BD     		pop	{r4, pc}	@
+ 143              	.L5:
+ 144 001e 00BF     		.align	2
+ 145              	.L4:
+ 146 0020 00100240 		.word	1073876992
+ 147              		.cfi_endproc
+ 148              	.LFE66:
+ 149              		.size	HAL_DeInit, .-HAL_DeInit
+ 150              		.align	1
+ 151              		.weak	HAL_InitTick
+ 152              		.syntax unified
+ 153              		.thumb
+ 154              		.thumb_func
+ 155              		.fpu softvfp
+ 156              		.type	HAL_InitTick, %function
+ 157              	HAL_InitTick:
+ 158              	.LFB69:
+ 213:src/stm32f1xx_hal.c ****   /* NOTE : This function should not be modified, when the callback is needed,
+ 214:src/stm32f1xx_hal.c ****             the HAL_MspDeInit could be implemented in the user file
+ 215:src/stm32f1xx_hal.c ****    */
+ 216:src/stm32f1xx_hal.c **** }
+ 217:src/stm32f1xx_hal.c **** 
+ 218:src/stm32f1xx_hal.c **** /**
+ 219:src/stm32f1xx_hal.c ****   * @brief This function configures the source of the time base.
+ 220:src/stm32f1xx_hal.c ****   *        The time source is configured  to have 1ms time base with a dedicated
+ 221:src/stm32f1xx_hal.c ****   *        Tick interrupt priority.
+ 222:src/stm32f1xx_hal.c ****   * @note This function is called  automatically at the beginning of program after
+ 223:src/stm32f1xx_hal.c ****   *       reset by HAL_Init() or at any time when clock is reconfigured  by HAL_RCC_ClockConfig().
+ 224:src/stm32f1xx_hal.c ****   * @note In the default implementation, SysTick timer is the source of time base.
+ 225:src/stm32f1xx_hal.c ****   *       It is used to generate interrupts at regular time intervals.
+ 226:src/stm32f1xx_hal.c ****   *       Care must be taken if HAL_Delay() is called from a peripheral ISR process,
+ 227:src/stm32f1xx_hal.c ****   *       The SysTick interrupt must have higher priority (numerically lower)
+ 228:src/stm32f1xx_hal.c ****   *       than the peripheral interrupt. Otherwise the caller ISR process will be blocked.
+ 229:src/stm32f1xx_hal.c ****   *       The function is declared as __weak  to be overwritten  in case of other
+ 230:src/stm32f1xx_hal.c ****   *       implementation  in user file.
+ 231:src/stm32f1xx_hal.c ****   * @param TickPriority Tick interrupt priority.
+ARM GAS  /tmp/ccAUAHaM.s 			page 8
+
+
+ 232:src/stm32f1xx_hal.c ****   * @retval HAL status
+ 233:src/stm32f1xx_hal.c ****   */
+ 234:src/stm32f1xx_hal.c **** __weak HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority)
+ 235:src/stm32f1xx_hal.c **** {
+ 159              		.loc 1 235 0
+ 160              		.cfi_startproc
+ 161              		@ args = 0, pretend = 0, frame = 0
+ 162              		@ frame_needed = 0, uses_anonymous_args = 0
+ 163              	.LVL1:
+ 236:src/stm32f1xx_hal.c ****   /* Configure the SysTick to have interrupt in 1ms time basis*/
+ 237:src/stm32f1xx_hal.c ****   if (HAL_SYSTICK_Config(SystemCoreClock / (1000U / uwTickFreq)) > 0U)
+ 164              		.loc 1 237 0
+ 165 0024 4FF47A73 		mov	r3, #1000	@ tmp123,
+ 235:src/stm32f1xx_hal.c ****   /* Configure the SysTick to have interrupt in 1ms time basis*/
+ 166              		.loc 1 235 0
+ 167 0028 70B5     		push	{r4, r5, r6, lr}	@
+ 168              	.LCFI1:
+ 169              		.cfi_def_cfa_offset 16
+ 170              		.cfi_offset 4, -16
+ 171              		.cfi_offset 5, -12
+ 172              		.cfi_offset 6, -8
+ 173              		.cfi_offset 14, -4
+ 174              		.loc 1 237 0
+ 175 002a 0D4E     		ldr	r6, .L10	@ tmp119,
+ 235:src/stm32f1xx_hal.c ****   /* Configure the SysTick to have interrupt in 1ms time basis*/
+ 176              		.loc 1 235 0
+ 177 002c 0546     		mov	r5, r0	@ TickPriority, TickPriority
+ 178              		.loc 1 237 0
+ 179 002e 3078     		ldrb	r0, [r6]	@ zero_extendqisi2	@ uwTickFreq, uwTickFreq
+ 180              	.LVL2:
+ 181 0030 0C4A     		ldr	r2, .L10+4	@ tmp118,
+ 182 0032 B3FBF0F3 		udiv	r3, r3, r0	@ tmp122, tmp123, uwTickFreq
+ 183 0036 1068     		ldr	r0, [r2]	@ SystemCoreClock, SystemCoreClock
+ 184 0038 B0FBF3F0 		udiv	r0, r0, r3	@, SystemCoreClock, tmp122
+ 185 003c FFF7FEFF 		bl	HAL_SYSTICK_Config	@
+ 186              	.LVL3:
+ 187 0040 0446     		mov	r4, r0	@ _9,
+ 188 0042 50B9     		cbnz	r0, .L9	@ _9,
+ 238:src/stm32f1xx_hal.c ****   {
+ 239:src/stm32f1xx_hal.c ****     return HAL_ERROR;
+ 240:src/stm32f1xx_hal.c ****   }
+ 241:src/stm32f1xx_hal.c **** 
+ 242:src/stm32f1xx_hal.c ****   /* Configure the SysTick IRQ priority */
+ 243:src/stm32f1xx_hal.c ****   if (TickPriority < (1UL << __NVIC_PRIO_BITS))
+ 189              		.loc 1 243 0
+ 190 0044 0F2D     		cmp	r5, #15	@ TickPriority,
+ 191 0046 08D8     		bhi	.L9	@,
+ 192              	.LVL4:
+ 193              	.LBB4:
+ 194              	.LBB5:
+ 244:src/stm32f1xx_hal.c ****   {
+ 245:src/stm32f1xx_hal.c ****     HAL_NVIC_SetPriority(SysTick_IRQn, TickPriority, 0U);
+ 195              		.loc 1 245 0
+ 196 0048 0246     		mov	r2, r0	@, _9
+ 197 004a 2946     		mov	r1, r5	@, TickPriority
+ 198 004c 4FF0FF30 		mov	r0, #-1	@,
+ 199 0050 FFF7FEFF 		bl	HAL_NVIC_SetPriority	@
+ARM GAS  /tmp/ccAUAHaM.s 			page 9
+
+
+ 200              	.LVL5:
+ 246:src/stm32f1xx_hal.c ****     uwTickPrio = TickPriority;
+ 201              		.loc 1 246 0
+ 202 0054 7560     		str	r5, [r6, #4]	@ TickPriority, uwTickPrio
+ 203              	.LVL6:
+ 204 0056 2046     		mov	r0, r4	@ <retval>, _9
+ 205 0058 70BD     		pop	{r4, r5, r6, pc}	@
+ 206              	.LVL7:
+ 207              	.L9:
+ 208              	.LBE5:
+ 209              	.LBE4:
+ 239:src/stm32f1xx_hal.c ****   }
+ 210              		.loc 1 239 0
+ 211 005a 0120     		movs	r0, #1	@ <retval>,
+ 247:src/stm32f1xx_hal.c ****   }
+ 248:src/stm32f1xx_hal.c ****   else
+ 249:src/stm32f1xx_hal.c ****   {
+ 250:src/stm32f1xx_hal.c ****     return HAL_ERROR;
+ 251:src/stm32f1xx_hal.c ****   }
+ 252:src/stm32f1xx_hal.c **** 
+ 253:src/stm32f1xx_hal.c ****   /* Return function status */
+ 254:src/stm32f1xx_hal.c ****   return HAL_OK;
+ 255:src/stm32f1xx_hal.c **** }
+ 212              		.loc 1 255 0
+ 213 005c 70BD     		pop	{r4, r5, r6, pc}	@
+ 214              	.LVL8:
+ 215              	.L11:
+ 216 005e 00BF     		.align	2
+ 217              	.L10:
+ 218 0060 00000000 		.word	.LANCHOR0
+ 219 0064 00000000 		.word	SystemCoreClock
+ 220              		.cfi_endproc
+ 221              	.LFE69:
+ 222              		.size	HAL_InitTick, .-HAL_InitTick
+ 223              		.align	1
+ 224              		.global	HAL_Init
+ 225              		.syntax unified
+ 226              		.thumb
+ 227              		.thumb_func
+ 228              		.fpu softvfp
+ 229              		.type	HAL_Init, %function
+ 230              	HAL_Init:
+ 231              	.LFB65:
+ 143:src/stm32f1xx_hal.c ****   /* Configure Flash prefetch */
+ 232              		.loc 1 143 0
+ 233              		.cfi_startproc
+ 234              		@ args = 0, pretend = 0, frame = 0
+ 235              		@ frame_needed = 0, uses_anonymous_args = 0
+ 152:src/stm32f1xx_hal.c **** #endif
+ 236              		.loc 1 152 0
+ 237 0068 074A     		ldr	r2, .L13	@ tmp113,
+ 143:src/stm32f1xx_hal.c ****   /* Configure Flash prefetch */
+ 238              		.loc 1 143 0
+ 239 006a 08B5     		push	{r3, lr}	@
+ 240              	.LCFI2:
+ 241              		.cfi_def_cfa_offset 8
+ 242              		.cfi_offset 3, -8
+ARM GAS  /tmp/ccAUAHaM.s 			page 10
+
+
+ 243              		.cfi_offset 14, -4
+ 152:src/stm32f1xx_hal.c **** #endif
+ 244              		.loc 1 152 0
+ 245 006c 1368     		ldr	r3, [r2]	@ _2, MEM[(struct FLASH_TypeDef *)1073881088B].ACR
+ 157:src/stm32f1xx_hal.c **** 
+ 246              		.loc 1 157 0
+ 247 006e 0320     		movs	r0, #3	@,
+ 152:src/stm32f1xx_hal.c **** #endif
+ 248              		.loc 1 152 0
+ 249 0070 43F01003 		orr	r3, r3, #16	@ _3, _2,
+ 250 0074 1360     		str	r3, [r2]	@ _3, MEM[(struct FLASH_TypeDef *)1073881088B].ACR
+ 157:src/stm32f1xx_hal.c **** 
+ 251              		.loc 1 157 0
+ 252 0076 FFF7FEFF 		bl	HAL_NVIC_SetPriorityGrouping	@
+ 253              	.LVL9:
+ 160:src/stm32f1xx_hal.c **** 
+ 254              		.loc 1 160 0
+ 255 007a 0F20     		movs	r0, #15	@,
+ 256 007c FFF7FEFF 		bl	HAL_InitTick	@
+ 257              	.LVL10:
+ 163:src/stm32f1xx_hal.c **** 
+ 258              		.loc 1 163 0
+ 259 0080 FFF7FEFF 		bl	HAL_MspInit	@
+ 260              	.LVL11:
+ 167:src/stm32f1xx_hal.c **** 
+ 261              		.loc 1 167 0
+ 262 0084 0020     		movs	r0, #0	@,
+ 263 0086 08BD     		pop	{r3, pc}	@
+ 264              	.L14:
+ 265              		.align	2
+ 266              	.L13:
+ 267 0088 00200240 		.word	1073881088
+ 268              		.cfi_endproc
+ 269              	.LFE65:
+ 270              		.size	HAL_Init, .-HAL_Init
+ 271              		.align	1
+ 272              		.weak	HAL_IncTick
+ 273              		.syntax unified
+ 274              		.thumb
+ 275              		.thumb_func
+ 276              		.fpu softvfp
+ 277              		.type	HAL_IncTick, %function
+ 278              	HAL_IncTick:
+ 279              	.LFB70:
+ 256:src/stm32f1xx_hal.c **** 
+ 257:src/stm32f1xx_hal.c **** /**
+ 258:src/stm32f1xx_hal.c ****   * @}
+ 259:src/stm32f1xx_hal.c ****   */
+ 260:src/stm32f1xx_hal.c **** 
+ 261:src/stm32f1xx_hal.c **** /** @defgroup HAL_Exported_Functions_Group2 HAL Control functions
+ 262:src/stm32f1xx_hal.c ****   *  @brief    HAL Control functions
+ 263:src/stm32f1xx_hal.c ****   *
+ 264:src/stm32f1xx_hal.c **** @verbatim
+ 265:src/stm32f1xx_hal.c ****  ===============================================================================
+ 266:src/stm32f1xx_hal.c ****                       ##### HAL Control functions #####
+ 267:src/stm32f1xx_hal.c ****  ===============================================================================
+ 268:src/stm32f1xx_hal.c ****     [..]  This section provides functions allowing to:
+ARM GAS  /tmp/ccAUAHaM.s 			page 11
+
+
+ 269:src/stm32f1xx_hal.c ****       (+) Provide a tick value in millisecond
+ 270:src/stm32f1xx_hal.c ****       (+) Provide a blocking delay in millisecond
+ 271:src/stm32f1xx_hal.c ****       (+) Suspend the time base source interrupt
+ 272:src/stm32f1xx_hal.c ****       (+) Resume the time base source interrupt
+ 273:src/stm32f1xx_hal.c ****       (+) Get the HAL API driver version
+ 274:src/stm32f1xx_hal.c ****       (+) Get the device identifier
+ 275:src/stm32f1xx_hal.c ****       (+) Get the device revision identifier
+ 276:src/stm32f1xx_hal.c ****       (+) Enable/Disable Debug module during SLEEP mode
+ 277:src/stm32f1xx_hal.c ****       (+) Enable/Disable Debug module during STOP mode
+ 278:src/stm32f1xx_hal.c ****       (+) Enable/Disable Debug module during STANDBY mode
+ 279:src/stm32f1xx_hal.c **** 
+ 280:src/stm32f1xx_hal.c **** @endverbatim
+ 281:src/stm32f1xx_hal.c ****   * @{
+ 282:src/stm32f1xx_hal.c ****   */
+ 283:src/stm32f1xx_hal.c **** 
+ 284:src/stm32f1xx_hal.c **** /**
+ 285:src/stm32f1xx_hal.c ****   * @brief This function is called to increment  a global variable "uwTick"
+ 286:src/stm32f1xx_hal.c ****   *        used as application time base.
+ 287:src/stm32f1xx_hal.c ****   * @note In the default implementation, this variable is incremented each 1ms
+ 288:src/stm32f1xx_hal.c ****   *       in SysTick ISR.
+ 289:src/stm32f1xx_hal.c ****   * @note This function is declared as __weak to be overwritten in case of other
+ 290:src/stm32f1xx_hal.c ****   *      implementations in user file.
+ 291:src/stm32f1xx_hal.c ****   * @retval None
+ 292:src/stm32f1xx_hal.c ****   */
+ 293:src/stm32f1xx_hal.c **** __weak void HAL_IncTick(void)
+ 294:src/stm32f1xx_hal.c **** {
+ 280              		.loc 1 294 0
+ 281              		.cfi_startproc
+ 282              		@ args = 0, pretend = 0, frame = 0
+ 283              		@ frame_needed = 0, uses_anonymous_args = 0
+ 284              		@ link register save eliminated.
+ 295:src/stm32f1xx_hal.c ****   uwTick += uwTickFreq;
+ 285              		.loc 1 295 0
+ 286 008c 034A     		ldr	r2, .L16	@ tmp114,
+ 287 008e 044B     		ldr	r3, .L16+4	@ tmp115,
+ 288 0090 1168     		ldr	r1, [r2]	@ uwTick.3_4, uwTick
+ 289 0092 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2	@ uwTickFreq, uwTickFreq
+ 290 0094 0B44     		add	r3, r3, r1	@ _5, uwTick.3_4
+ 291 0096 1360     		str	r3, [r2]	@ _5, uwTick
+ 292 0098 7047     		bx	lr	@
+ 293              	.L17:
+ 294 009a 00BF     		.align	2
+ 295              	.L16:
+ 296 009c 00000000 		.word	uwTick
+ 297 00a0 00000000 		.word	.LANCHOR0
+ 298              		.cfi_endproc
+ 299              	.LFE70:
+ 300              		.size	HAL_IncTick, .-HAL_IncTick
+ 301              		.align	1
+ 302              		.weak	HAL_GetTick
+ 303              		.syntax unified
+ 304              		.thumb
+ 305              		.thumb_func
+ 306              		.fpu softvfp
+ 307              		.type	HAL_GetTick, %function
+ 308              	HAL_GetTick:
+ 309              	.LFB71:
+ARM GAS  /tmp/ccAUAHaM.s 			page 12
+
+
+ 296:src/stm32f1xx_hal.c **** }
+ 297:src/stm32f1xx_hal.c **** 
+ 298:src/stm32f1xx_hal.c **** /**
+ 299:src/stm32f1xx_hal.c ****   * @brief Provides a tick value in millisecond.
+ 300:src/stm32f1xx_hal.c ****   * @note  This function is declared as __weak to be overwritten in case of other
+ 301:src/stm32f1xx_hal.c ****   *       implementations in user file.
+ 302:src/stm32f1xx_hal.c ****   * @retval tick value
+ 303:src/stm32f1xx_hal.c ****   */
+ 304:src/stm32f1xx_hal.c **** __weak uint32_t HAL_GetTick(void)
+ 305:src/stm32f1xx_hal.c **** {
+ 310              		.loc 1 305 0
+ 311              		.cfi_startproc
+ 312              		@ args = 0, pretend = 0, frame = 0
+ 313              		@ frame_needed = 0, uses_anonymous_args = 0
+ 314              		@ link register save eliminated.
+ 306:src/stm32f1xx_hal.c ****   return uwTick;
+ 315              		.loc 1 306 0
+ 316 00a4 014B     		ldr	r3, .L19	@ tmp111,
+ 317 00a6 1868     		ldr	r0, [r3]	@ <retval>, uwTick
+ 307:src/stm32f1xx_hal.c **** }
+ 318              		.loc 1 307 0
+ 319 00a8 7047     		bx	lr	@
+ 320              	.L20:
+ 321 00aa 00BF     		.align	2
+ 322              	.L19:
+ 323 00ac 00000000 		.word	uwTick
+ 324              		.cfi_endproc
+ 325              	.LFE71:
+ 326              		.size	HAL_GetTick, .-HAL_GetTick
+ 327              		.align	1
+ 328              		.global	HAL_GetTickPrio
+ 329              		.syntax unified
+ 330              		.thumb
+ 331              		.thumb_func
+ 332              		.fpu softvfp
+ 333              		.type	HAL_GetTickPrio, %function
+ 334              	HAL_GetTickPrio:
+ 335              	.LFB72:
+ 308:src/stm32f1xx_hal.c **** 
+ 309:src/stm32f1xx_hal.c **** /**
+ 310:src/stm32f1xx_hal.c ****   * @brief This function returns a tick priority.
+ 311:src/stm32f1xx_hal.c ****   * @retval tick priority
+ 312:src/stm32f1xx_hal.c ****   */
+ 313:src/stm32f1xx_hal.c **** uint32_t HAL_GetTickPrio(void)
+ 314:src/stm32f1xx_hal.c **** {
+ 336              		.loc 1 314 0
+ 337              		.cfi_startproc
+ 338              		@ args = 0, pretend = 0, frame = 0
+ 339              		@ frame_needed = 0, uses_anonymous_args = 0
+ 340              		@ link register save eliminated.
+ 315:src/stm32f1xx_hal.c ****   return uwTickPrio;
+ 316:src/stm32f1xx_hal.c **** }
+ 341              		.loc 1 316 0
+ 342 00b0 014B     		ldr	r3, .L22	@ tmp112,
+ 343 00b2 5868     		ldr	r0, [r3, #4]	@, uwTickPrio
+ 344 00b4 7047     		bx	lr	@
+ 345              	.L23:
+ARM GAS  /tmp/ccAUAHaM.s 			page 13
+
+
+ 346 00b6 00BF     		.align	2
+ 347              	.L22:
+ 348 00b8 00000000 		.word	.LANCHOR0
+ 349              		.cfi_endproc
+ 350              	.LFE72:
+ 351              		.size	HAL_GetTickPrio, .-HAL_GetTickPrio
+ 352              		.align	1
+ 353              		.global	HAL_SetTickFreq
+ 354              		.syntax unified
+ 355              		.thumb
+ 356              		.thumb_func
+ 357              		.fpu softvfp
+ 358              		.type	HAL_SetTickFreq, %function
+ 359              	HAL_SetTickFreq:
+ 360              	.LFB73:
+ 317:src/stm32f1xx_hal.c **** 
+ 318:src/stm32f1xx_hal.c **** /**
+ 319:src/stm32f1xx_hal.c ****   * @brief Set new tick Freq.
+ 320:src/stm32f1xx_hal.c ****   * @retval status
+ 321:src/stm32f1xx_hal.c ****   */
+ 322:src/stm32f1xx_hal.c **** HAL_StatusTypeDef HAL_SetTickFreq(HAL_TickFreqTypeDef Freq)
+ 323:src/stm32f1xx_hal.c **** {
+ 361              		.loc 1 323 0
+ 362              		.cfi_startproc
+ 363              		@ args = 0, pretend = 0, frame = 0
+ 364              		@ frame_needed = 0, uses_anonymous_args = 0
+ 365              	.LVL12:
+ 366 00bc 38B5     		push	{r3, r4, r5, lr}	@
+ 367              	.LCFI3:
+ 368              		.cfi_def_cfa_offset 16
+ 369              		.cfi_offset 3, -16
+ 370              		.cfi_offset 4, -12
+ 371              		.cfi_offset 5, -8
+ 372              		.cfi_offset 14, -4
+ 324:src/stm32f1xx_hal.c ****   HAL_StatusTypeDef status  = HAL_OK;
+ 325:src/stm32f1xx_hal.c ****   assert_param(IS_TICKFREQ(Freq));
+ 326:src/stm32f1xx_hal.c **** 
+ 327:src/stm32f1xx_hal.c ****   if (uwTickFreq != Freq)
+ 373              		.loc 1 327 0
+ 374 00be 064C     		ldr	r4, .L27	@ tmp114,
+ 323:src/stm32f1xx_hal.c ****   HAL_StatusTypeDef status  = HAL_OK;
+ 375              		.loc 1 323 0
+ 376 00c0 0546     		mov	r5, r0	@ Freq, Freq
+ 377              		.loc 1 327 0
+ 378 00c2 2378     		ldrb	r3, [r4]	@ zero_extendqisi2	@ uwTickFreq, uwTickFreq
+ 379 00c4 8342     		cmp	r3, r0	@ uwTickFreq, Freq
+ 380 00c6 05D0     		beq	.L26	@,
+ 328:src/stm32f1xx_hal.c ****   {
+ 329:src/stm32f1xx_hal.c ****     /* Apply the new tick Freq  */
+ 330:src/stm32f1xx_hal.c ****     status = HAL_InitTick(uwTickPrio);
+ 381              		.loc 1 330 0
+ 382 00c8 6068     		ldr	r0, [r4, #4]	@, uwTickPrio
+ 383              	.LVL13:
+ 384 00ca FFF7FEFF 		bl	HAL_InitTick	@
+ 385              	.LVL14:
+ 331:src/stm32f1xx_hal.c ****     if (status == HAL_OK)
+ 386              		.loc 1 331 0
+ARM GAS  /tmp/ccAUAHaM.s 			page 14
+
+
+ 387 00ce 10B9     		cbnz	r0, .L25	@ <retval>,
+ 332:src/stm32f1xx_hal.c ****     {
+ 333:src/stm32f1xx_hal.c ****       uwTickFreq = Freq;
+ 388              		.loc 1 333 0
+ 389 00d0 2570     		strb	r5, [r4]	@ Freq, uwTickFreq
+ 390 00d2 38BD     		pop	{r3, r4, r5, pc}	@
+ 391              	.LVL15:
+ 392              	.L26:
+ 324:src/stm32f1xx_hal.c ****   assert_param(IS_TICKFREQ(Freq));
+ 393              		.loc 1 324 0
+ 394 00d4 0020     		movs	r0, #0	@ <retval>,
+ 395              	.LVL16:
+ 396              	.L25:
+ 334:src/stm32f1xx_hal.c ****     }
+ 335:src/stm32f1xx_hal.c ****   }
+ 336:src/stm32f1xx_hal.c **** 
+ 337:src/stm32f1xx_hal.c ****   return status;
+ 338:src/stm32f1xx_hal.c **** }
+ 397              		.loc 1 338 0
+ 398 00d6 38BD     		pop	{r3, r4, r5, pc}	@
+ 399              	.L28:
+ 400              		.align	2
+ 401              	.L27:
+ 402 00d8 00000000 		.word	.LANCHOR0
+ 403              		.cfi_endproc
+ 404              	.LFE73:
+ 405              		.size	HAL_SetTickFreq, .-HAL_SetTickFreq
+ 406              		.align	1
+ 407              		.global	HAL_GetTickFreq
+ 408              		.syntax unified
+ 409              		.thumb
+ 410              		.thumb_func
+ 411              		.fpu softvfp
+ 412              		.type	HAL_GetTickFreq, %function
+ 413              	HAL_GetTickFreq:
+ 414              	.LFB74:
+ 339:src/stm32f1xx_hal.c **** 
+ 340:src/stm32f1xx_hal.c **** /**
+ 341:src/stm32f1xx_hal.c ****   * @brief Return tick frequency.
+ 342:src/stm32f1xx_hal.c ****   * @retval tick period in Hz
+ 343:src/stm32f1xx_hal.c ****   */
+ 344:src/stm32f1xx_hal.c **** HAL_TickFreqTypeDef HAL_GetTickFreq(void)
+ 345:src/stm32f1xx_hal.c **** {
+ 415              		.loc 1 345 0
+ 416              		.cfi_startproc
+ 417              		@ args = 0, pretend = 0, frame = 0
+ 418              		@ frame_needed = 0, uses_anonymous_args = 0
+ 419              		@ link register save eliminated.
+ 346:src/stm32f1xx_hal.c ****   return uwTickFreq;
+ 347:src/stm32f1xx_hal.c **** }
+ 420              		.loc 1 347 0
+ 421 00dc 014B     		ldr	r3, .L30	@ tmp112,
+ 422 00de 1878     		ldrb	r0, [r3]	@ zero_extendqisi2	@, uwTickFreq
+ 423 00e0 7047     		bx	lr	@
+ 424              	.L31:
+ 425 00e2 00BF     		.align	2
+ 426              	.L30:
+ARM GAS  /tmp/ccAUAHaM.s 			page 15
+
+
+ 427 00e4 00000000 		.word	.LANCHOR0
+ 428              		.cfi_endproc
+ 429              	.LFE74:
+ 430              		.size	HAL_GetTickFreq, .-HAL_GetTickFreq
+ 431              		.align	1
+ 432              		.weak	HAL_Delay
+ 433              		.syntax unified
+ 434              		.thumb
+ 435              		.thumb_func
+ 436              		.fpu softvfp
+ 437              		.type	HAL_Delay, %function
+ 438              	HAL_Delay:
+ 439              	.LFB75:
+ 348:src/stm32f1xx_hal.c **** 
+ 349:src/stm32f1xx_hal.c **** /**
+ 350:src/stm32f1xx_hal.c ****   * @brief This function provides minimum delay (in milliseconds) based
+ 351:src/stm32f1xx_hal.c ****   *        on variable incremented.
+ 352:src/stm32f1xx_hal.c ****   * @note In the default implementation , SysTick timer is the source of time base.
+ 353:src/stm32f1xx_hal.c ****   *       It is used to generate interrupts at regular time intervals where uwTick
+ 354:src/stm32f1xx_hal.c ****   *       is incremented.
+ 355:src/stm32f1xx_hal.c ****   * @note This function is declared as __weak to be overwritten in case of other
+ 356:src/stm32f1xx_hal.c ****   *       implementations in user file.
+ 357:src/stm32f1xx_hal.c ****   * @param Delay specifies the delay time length, in milliseconds.
+ 358:src/stm32f1xx_hal.c ****   * @retval None
+ 359:src/stm32f1xx_hal.c ****   */
+ 360:src/stm32f1xx_hal.c **** __weak void HAL_Delay(uint32_t Delay)
+ 361:src/stm32f1xx_hal.c **** {
+ 440              		.loc 1 361 0
+ 441              		.cfi_startproc
+ 442              		@ args = 0, pretend = 0, frame = 0
+ 443              		@ frame_needed = 0, uses_anonymous_args = 0
+ 444              	.LVL17:
+ 445 00e8 38B5     		push	{r3, r4, r5, lr}	@
+ 446              	.LCFI4:
+ 447              		.cfi_def_cfa_offset 16
+ 448              		.cfi_offset 3, -16
+ 449              		.cfi_offset 4, -12
+ 450              		.cfi_offset 5, -8
+ 451              		.cfi_offset 14, -4
+ 452              		.loc 1 361 0
+ 453 00ea 0446     		mov	r4, r0	@ Delay, Delay
+ 362:src/stm32f1xx_hal.c ****   uint32_t tickstart = HAL_GetTick();
+ 454              		.loc 1 362 0
+ 455 00ec FFF7FEFF 		bl	HAL_GetTick	@
+ 456              	.LVL18:
+ 457 00f0 0546     		mov	r5, r0	@ tickstart,
+ 458              	.LVL19:
+ 363:src/stm32f1xx_hal.c ****   uint32_t wait = Delay;
+ 364:src/stm32f1xx_hal.c **** 
+ 365:src/stm32f1xx_hal.c ****   /* Add a freq to guarantee minimum wait */
+ 366:src/stm32f1xx_hal.c ****   if (wait < HAL_MAX_DELAY)
+ 459              		.loc 1 366 0
+ 460 00f2 631C     		adds	r3, r4, #1	@, Delay,
+ 367:src/stm32f1xx_hal.c ****   {
+ 368:src/stm32f1xx_hal.c ****     wait += (uint32_t)(uwTickFreq);
+ 461              		.loc 1 368 0
+ 462 00f4 1EBF     		ittt	ne
+ARM GAS  /tmp/ccAUAHaM.s 			page 16
+
+
+ 463 00f6 044B     		ldrne	r3, .L39	@ tmp116,
+ 464 00f8 1B78     		ldrbne	r3, [r3]	@ zero_extendqisi2	@ uwTickFreq, uwTickFreq
+ 465 00fa E418     		addne	r4, r4, r3	@ Delay, uwTickFreq
+ 466              	.LVL20:
+ 467              	.L34:
+ 369:src/stm32f1xx_hal.c ****   }
+ 370:src/stm32f1xx_hal.c **** 
+ 371:src/stm32f1xx_hal.c ****   while ((HAL_GetTick() - tickstart) < wait)
+ 468              		.loc 1 371 0 discriminator 1
+ 469 00fc FFF7FEFF 		bl	HAL_GetTick	@
+ 470              	.LVL21:
+ 471 0100 401B     		subs	r0, r0, r5	@ tmp118,, tickstart
+ 472 0102 8442     		cmp	r4, r0	@ Delay, tmp118
+ 473 0104 FAD8     		bhi	.L34	@,
+ 372:src/stm32f1xx_hal.c ****   {
+ 373:src/stm32f1xx_hal.c ****   }
+ 374:src/stm32f1xx_hal.c **** }
+ 474              		.loc 1 374 0
+ 475 0106 38BD     		pop	{r3, r4, r5, pc}	@
+ 476              	.LVL22:
+ 477              	.L40:
+ 478              		.align	2
+ 479              	.L39:
+ 480 0108 00000000 		.word	.LANCHOR0
+ 481              		.cfi_endproc
+ 482              	.LFE75:
+ 483              		.size	HAL_Delay, .-HAL_Delay
+ 484              		.align	1
+ 485              		.weak	HAL_SuspendTick
+ 486              		.syntax unified
+ 487              		.thumb
+ 488              		.thumb_func
+ 489              		.fpu softvfp
+ 490              		.type	HAL_SuspendTick, %function
+ 491              	HAL_SuspendTick:
+ 492              	.LFB76:
+ 375:src/stm32f1xx_hal.c **** 
+ 376:src/stm32f1xx_hal.c **** /**
+ 377:src/stm32f1xx_hal.c ****   * @brief Suspend Tick increment.
+ 378:src/stm32f1xx_hal.c ****   * @note In the default implementation , SysTick timer is the source of time base. It is
+ 379:src/stm32f1xx_hal.c ****   *       used to generate interrupts at regular time intervals. Once HAL_SuspendTick()
+ 380:src/stm32f1xx_hal.c ****   *       is called, the SysTick interrupt will be disabled and so Tick increment
+ 381:src/stm32f1xx_hal.c ****   *       is suspended.
+ 382:src/stm32f1xx_hal.c ****   * @note This function is declared as __weak to be overwritten in case of other
+ 383:src/stm32f1xx_hal.c ****   *       implementations in user file.
+ 384:src/stm32f1xx_hal.c ****   * @retval None
+ 385:src/stm32f1xx_hal.c ****   */
+ 386:src/stm32f1xx_hal.c **** __weak void HAL_SuspendTick(void)
+ 387:src/stm32f1xx_hal.c **** {
+ 493              		.loc 1 387 0
+ 494              		.cfi_startproc
+ 495              		@ args = 0, pretend = 0, frame = 0
+ 496              		@ frame_needed = 0, uses_anonymous_args = 0
+ 497              		@ link register save eliminated.
+ 388:src/stm32f1xx_hal.c ****   /* Disable SysTick Interrupt */
+ 389:src/stm32f1xx_hal.c ****   CLEAR_BIT(SysTick->CTRL, SysTick_CTRL_TICKINT_Msk);
+ 498              		.loc 1 389 0
+ARM GAS  /tmp/ccAUAHaM.s 			page 17
+
+
+ 499 010c 024A     		ldr	r2, .L42	@ tmp112,
+ 500 010e 1368     		ldr	r3, [r2]	@ _2, MEM[(struct SysTick_Type *)3758153744B].CTRL
+ 501 0110 23F00203 		bic	r3, r3, #2	@ _3, _2,
+ 502 0114 1360     		str	r3, [r2]	@ _3, MEM[(struct SysTick_Type *)3758153744B].CTRL
+ 503 0116 7047     		bx	lr	@
+ 504              	.L43:
+ 505              		.align	2
+ 506              	.L42:
+ 507 0118 10E000E0 		.word	-536813552
+ 508              		.cfi_endproc
+ 509              	.LFE76:
+ 510              		.size	HAL_SuspendTick, .-HAL_SuspendTick
+ 511              		.align	1
+ 512              		.weak	HAL_ResumeTick
+ 513              		.syntax unified
+ 514              		.thumb
+ 515              		.thumb_func
+ 516              		.fpu softvfp
+ 517              		.type	HAL_ResumeTick, %function
+ 518              	HAL_ResumeTick:
+ 519              	.LFB77:
+ 390:src/stm32f1xx_hal.c **** }
+ 391:src/stm32f1xx_hal.c **** 
+ 392:src/stm32f1xx_hal.c **** /**
+ 393:src/stm32f1xx_hal.c ****   * @brief Resume Tick increment.
+ 394:src/stm32f1xx_hal.c ****   * @note In the default implementation , SysTick timer is the source of time base. It is
+ 395:src/stm32f1xx_hal.c ****   *       used to generate interrupts at regular time intervals. Once HAL_ResumeTick()
+ 396:src/stm32f1xx_hal.c ****   *       is called, the SysTick interrupt will be enabled and so Tick increment
+ 397:src/stm32f1xx_hal.c ****   *       is resumed.
+ 398:src/stm32f1xx_hal.c ****   * @note This function is declared as __weak to be overwritten in case of other
+ 399:src/stm32f1xx_hal.c ****   *       implementations in user file.
+ 400:src/stm32f1xx_hal.c ****   * @retval None
+ 401:src/stm32f1xx_hal.c ****   */
+ 402:src/stm32f1xx_hal.c **** __weak void HAL_ResumeTick(void)
+ 403:src/stm32f1xx_hal.c **** {
+ 520              		.loc 1 403 0
+ 521              		.cfi_startproc
+ 522              		@ args = 0, pretend = 0, frame = 0
+ 523              		@ frame_needed = 0, uses_anonymous_args = 0
+ 524              		@ link register save eliminated.
+ 404:src/stm32f1xx_hal.c ****   /* Enable SysTick Interrupt */
+ 405:src/stm32f1xx_hal.c ****   SET_BIT(SysTick->CTRL, SysTick_CTRL_TICKINT_Msk);
+ 525              		.loc 1 405 0
+ 526 011c 024A     		ldr	r2, .L45	@ tmp112,
+ 527 011e 1368     		ldr	r3, [r2]	@ _2, MEM[(struct SysTick_Type *)3758153744B].CTRL
+ 528 0120 43F00203 		orr	r3, r3, #2	@ _3, _2,
+ 529 0124 1360     		str	r3, [r2]	@ _3, MEM[(struct SysTick_Type *)3758153744B].CTRL
+ 530 0126 7047     		bx	lr	@
+ 531              	.L46:
+ 532              		.align	2
+ 533              	.L45:
+ 534 0128 10E000E0 		.word	-536813552
+ 535              		.cfi_endproc
+ 536              	.LFE77:
+ 537              		.size	HAL_ResumeTick, .-HAL_ResumeTick
+ 538              		.align	1
+ 539              		.global	HAL_GetHalVersion
+ARM GAS  /tmp/ccAUAHaM.s 			page 18
+
+
+ 540              		.syntax unified
+ 541              		.thumb
+ 542              		.thumb_func
+ 543              		.fpu softvfp
+ 544              		.type	HAL_GetHalVersion, %function
+ 545              	HAL_GetHalVersion:
+ 546              	.LFB78:
+ 406:src/stm32f1xx_hal.c **** }
+ 407:src/stm32f1xx_hal.c **** 
+ 408:src/stm32f1xx_hal.c **** /**
+ 409:src/stm32f1xx_hal.c ****   * @brief  Returns the HAL revision
+ 410:src/stm32f1xx_hal.c ****   * @retval version 0xXYZR (8bits for each decimal, R for RC)
+ 411:src/stm32f1xx_hal.c ****   */
+ 412:src/stm32f1xx_hal.c **** uint32_t HAL_GetHalVersion(void)
+ 413:src/stm32f1xx_hal.c **** {
+ 547              		.loc 1 413 0
+ 548              		.cfi_startproc
+ 549              		@ args = 0, pretend = 0, frame = 0
+ 550              		@ frame_needed = 0, uses_anonymous_args = 0
+ 551              		@ link register save eliminated.
+ 414:src/stm32f1xx_hal.c ****   return __STM32F1xx_HAL_VERSION;
+ 415:src/stm32f1xx_hal.c **** }
+ 552              		.loc 1 415 0
+ 553 012c 0048     		ldr	r0, .L48	@,
+ 554 012e 7047     		bx	lr	@
+ 555              	.L49:
+ 556              		.align	2
+ 557              	.L48:
+ 558 0130 00040101 		.word	16843776
+ 559              		.cfi_endproc
+ 560              	.LFE78:
+ 561              		.size	HAL_GetHalVersion, .-HAL_GetHalVersion
+ 562              		.align	1
+ 563              		.global	HAL_GetREVID
+ 564              		.syntax unified
+ 565              		.thumb
+ 566              		.thumb_func
+ 567              		.fpu softvfp
+ 568              		.type	HAL_GetREVID, %function
+ 569              	HAL_GetREVID:
+ 570              	.LFB79:
+ 416:src/stm32f1xx_hal.c **** 
+ 417:src/stm32f1xx_hal.c **** /**
+ 418:src/stm32f1xx_hal.c ****   * @brief Returns the device revision identifier.
+ 419:src/stm32f1xx_hal.c ****   * Note: On devices STM32F10xx8 and STM32F10xxB,
+ 420:src/stm32f1xx_hal.c ****   *                  STM32F101xC/D/E and STM32F103xC/D/E,
+ 421:src/stm32f1xx_hal.c ****   *                  STM32F101xF/G and STM32F103xF/G
+ 422:src/stm32f1xx_hal.c ****   *                  STM32F10xx4 and STM32F10xx6
+ 423:src/stm32f1xx_hal.c ****   *       Debug registers DBGMCU_IDCODE and DBGMCU_CR are accessible only in
+ 424:src/stm32f1xx_hal.c ****   *       debug mode (not accessible by the user software in normal mode).
+ 425:src/stm32f1xx_hal.c ****   *       Refer to errata sheet of these devices for more details.
+ 426:src/stm32f1xx_hal.c ****   * @retval Device revision identifier
+ 427:src/stm32f1xx_hal.c ****   */
+ 428:src/stm32f1xx_hal.c **** uint32_t HAL_GetREVID(void)
+ 429:src/stm32f1xx_hal.c **** {
+ 571              		.loc 1 429 0
+ 572              		.cfi_startproc
+ARM GAS  /tmp/ccAUAHaM.s 			page 19
+
+
+ 573              		@ args = 0, pretend = 0, frame = 0
+ 574              		@ frame_needed = 0, uses_anonymous_args = 0
+ 575              		@ link register save eliminated.
+ 430:src/stm32f1xx_hal.c ****   return ((DBGMCU->IDCODE) >> DBGMCU_IDCODE_REV_ID_Pos);
+ 576              		.loc 1 430 0
+ 577 0134 014B     		ldr	r3, .L51	@ tmp112,
+ 578 0136 1868     		ldr	r0, [r3]	@ _2, MEM[(struct DBGMCU_TypeDef *)3758366720B].IDCODE
+ 431:src/stm32f1xx_hal.c **** }
+ 579              		.loc 1 431 0
+ 580 0138 000C     		lsrs	r0, r0, #16	@, _2,
+ 581 013a 7047     		bx	lr	@
+ 582              	.L52:
+ 583              		.align	2
+ 584              	.L51:
+ 585 013c 002004E0 		.word	-536600576
+ 586              		.cfi_endproc
+ 587              	.LFE79:
+ 588              		.size	HAL_GetREVID, .-HAL_GetREVID
+ 589              		.align	1
+ 590              		.global	HAL_GetDEVID
+ 591              		.syntax unified
+ 592              		.thumb
+ 593              		.thumb_func
+ 594              		.fpu softvfp
+ 595              		.type	HAL_GetDEVID, %function
+ 596              	HAL_GetDEVID:
+ 597              	.LFB80:
+ 432:src/stm32f1xx_hal.c **** 
+ 433:src/stm32f1xx_hal.c **** /**
+ 434:src/stm32f1xx_hal.c ****   * @brief  Returns the device identifier.
+ 435:src/stm32f1xx_hal.c ****   * Note: On devices STM32F10xx8 and STM32F10xxB,
+ 436:src/stm32f1xx_hal.c ****   *                  STM32F101xC/D/E and STM32F103xC/D/E,
+ 437:src/stm32f1xx_hal.c ****   *                  STM32F101xF/G and STM32F103xF/G
+ 438:src/stm32f1xx_hal.c ****   *                  STM32F10xx4 and STM32F10xx6
+ 439:src/stm32f1xx_hal.c ****   *       Debug registers DBGMCU_IDCODE and DBGMCU_CR are accessible only in
+ 440:src/stm32f1xx_hal.c ****   *       debug mode (not accessible by the user software in normal mode).
+ 441:src/stm32f1xx_hal.c ****   *       Refer to errata sheet of these devices for more details.
+ 442:src/stm32f1xx_hal.c ****   * @retval Device identifier
+ 443:src/stm32f1xx_hal.c ****   */
+ 444:src/stm32f1xx_hal.c **** uint32_t HAL_GetDEVID(void)
+ 445:src/stm32f1xx_hal.c **** {
+ 598              		.loc 1 445 0
+ 599              		.cfi_startproc
+ 600              		@ args = 0, pretend = 0, frame = 0
+ 601              		@ frame_needed = 0, uses_anonymous_args = 0
+ 602              		@ link register save eliminated.
+ 446:src/stm32f1xx_hal.c ****   return ((DBGMCU->IDCODE) & IDCODE_DEVID_MASK);
+ 603              		.loc 1 446 0
+ 604 0140 024B     		ldr	r3, .L54	@ tmp112,
+ 605 0142 1868     		ldr	r0, [r3]	@ _2, MEM[(struct DBGMCU_TypeDef *)3758366720B].IDCODE
+ 447:src/stm32f1xx_hal.c **** }
+ 606              		.loc 1 447 0
+ 607 0144 C0F30B00 		ubfx	r0, r0, #0, #12	@, _2,,
+ 608 0148 7047     		bx	lr	@
+ 609              	.L55:
+ 610 014a 00BF     		.align	2
+ 611              	.L54:
+ARM GAS  /tmp/ccAUAHaM.s 			page 20
+
+
+ 612 014c 002004E0 		.word	-536600576
+ 613              		.cfi_endproc
+ 614              	.LFE80:
+ 615              		.size	HAL_GetDEVID, .-HAL_GetDEVID
+ 616              		.align	1
+ 617              		.global	HAL_GetUIDw0
+ 618              		.syntax unified
+ 619              		.thumb
+ 620              		.thumb_func
+ 621              		.fpu softvfp
+ 622              		.type	HAL_GetUIDw0, %function
+ 623              	HAL_GetUIDw0:
+ 624              	.LFB81:
+ 448:src/stm32f1xx_hal.c **** 
+ 449:src/stm32f1xx_hal.c **** /**
+ 450:src/stm32f1xx_hal.c ****   * @brief  Returns first word of the unique device identifier (UID based on 96 bits)
+ 451:src/stm32f1xx_hal.c ****   * @retval Device identifier
+ 452:src/stm32f1xx_hal.c ****   */
+ 453:src/stm32f1xx_hal.c **** uint32_t HAL_GetUIDw0(void)
+ 454:src/stm32f1xx_hal.c **** {
+ 625              		.loc 1 454 0
+ 626              		.cfi_startproc
+ 627              		@ args = 0, pretend = 0, frame = 0
+ 628              		@ frame_needed = 0, uses_anonymous_args = 0
+ 629              		@ link register save eliminated.
+ 455:src/stm32f1xx_hal.c ****    return(READ_REG(*((uint32_t *)UID_BASE)));
+ 456:src/stm32f1xx_hal.c **** }
+ 630              		.loc 1 456 0
+ 631 0150 014B     		ldr	r3, .L57	@ tmp112,
+ 632 0152 1868     		ldr	r0, [r3]	@, MEM[(uint32_t *)536868840B]
+ 633 0154 7047     		bx	lr	@
+ 634              	.L58:
+ 635 0156 00BF     		.align	2
+ 636              	.L57:
+ 637 0158 E8F7FF1F 		.word	536868840
+ 638              		.cfi_endproc
+ 639              	.LFE81:
+ 640              		.size	HAL_GetUIDw0, .-HAL_GetUIDw0
+ 641              		.align	1
+ 642              		.global	HAL_GetUIDw1
+ 643              		.syntax unified
+ 644              		.thumb
+ 645              		.thumb_func
+ 646              		.fpu softvfp
+ 647              		.type	HAL_GetUIDw1, %function
+ 648              	HAL_GetUIDw1:
+ 649              	.LFB82:
+ 457:src/stm32f1xx_hal.c **** 
+ 458:src/stm32f1xx_hal.c **** /**
+ 459:src/stm32f1xx_hal.c ****   * @brief  Returns second word of the unique device identifier (UID based on 96 bits)
+ 460:src/stm32f1xx_hal.c ****   * @retval Device identifier
+ 461:src/stm32f1xx_hal.c ****   */
+ 462:src/stm32f1xx_hal.c **** uint32_t HAL_GetUIDw1(void)
+ 463:src/stm32f1xx_hal.c **** {
+ 650              		.loc 1 463 0
+ 651              		.cfi_startproc
+ 652              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  /tmp/ccAUAHaM.s 			page 21
+
+
+ 653              		@ frame_needed = 0, uses_anonymous_args = 0
+ 654              		@ link register save eliminated.
+ 464:src/stm32f1xx_hal.c ****    return(READ_REG(*((uint32_t *)(UID_BASE + 4U))));
+ 465:src/stm32f1xx_hal.c **** }
+ 655              		.loc 1 465 0
+ 656 015c 014B     		ldr	r3, .L60	@ tmp112,
+ 657 015e 1868     		ldr	r0, [r3]	@, MEM[(uint32_t *)536868844B]
+ 658 0160 7047     		bx	lr	@
+ 659              	.L61:
+ 660 0162 00BF     		.align	2
+ 661              	.L60:
+ 662 0164 ECF7FF1F 		.word	536868844
+ 663              		.cfi_endproc
+ 664              	.LFE82:
+ 665              		.size	HAL_GetUIDw1, .-HAL_GetUIDw1
+ 666              		.align	1
+ 667              		.global	HAL_GetUIDw2
+ 668              		.syntax unified
+ 669              		.thumb
+ 670              		.thumb_func
+ 671              		.fpu softvfp
+ 672              		.type	HAL_GetUIDw2, %function
+ 673              	HAL_GetUIDw2:
+ 674              	.LFB83:
+ 466:src/stm32f1xx_hal.c **** 
+ 467:src/stm32f1xx_hal.c **** /**
+ 468:src/stm32f1xx_hal.c ****   * @brief  Returns third word of the unique device identifier (UID based on 96 bits)
+ 469:src/stm32f1xx_hal.c ****   * @retval Device identifier
+ 470:src/stm32f1xx_hal.c ****   */
+ 471:src/stm32f1xx_hal.c **** uint32_t HAL_GetUIDw2(void)
+ 472:src/stm32f1xx_hal.c **** {
+ 675              		.loc 1 472 0
+ 676              		.cfi_startproc
+ 677              		@ args = 0, pretend = 0, frame = 0
+ 678              		@ frame_needed = 0, uses_anonymous_args = 0
+ 679              		@ link register save eliminated.
+ 473:src/stm32f1xx_hal.c ****    return(READ_REG(*((uint32_t *)(UID_BASE + 8U))));
+ 474:src/stm32f1xx_hal.c **** }
+ 680              		.loc 1 474 0
+ 681 0168 014B     		ldr	r3, .L63	@ tmp112,
+ 682 016a 1868     		ldr	r0, [r3]	@, MEM[(uint32_t *)536868848B]
+ 683 016c 7047     		bx	lr	@
+ 684              	.L64:
+ 685 016e 00BF     		.align	2
+ 686              	.L63:
+ 687 0170 F0F7FF1F 		.word	536868848
+ 688              		.cfi_endproc
+ 689              	.LFE83:
+ 690              		.size	HAL_GetUIDw2, .-HAL_GetUIDw2
+ 691              		.align	1
+ 692              		.global	HAL_DBGMCU_EnableDBGSleepMode
+ 693              		.syntax unified
+ 694              		.thumb
+ 695              		.thumb_func
+ 696              		.fpu softvfp
+ 697              		.type	HAL_DBGMCU_EnableDBGSleepMode, %function
+ 698              	HAL_DBGMCU_EnableDBGSleepMode:
+ARM GAS  /tmp/ccAUAHaM.s 			page 22
+
+
+ 699              	.LFB84:
+ 475:src/stm32f1xx_hal.c **** 
+ 476:src/stm32f1xx_hal.c **** /**
+ 477:src/stm32f1xx_hal.c ****   * @brief  Enable the Debug Module during SLEEP mode
+ 478:src/stm32f1xx_hal.c ****   * @retval None
+ 479:src/stm32f1xx_hal.c ****   */
+ 480:src/stm32f1xx_hal.c **** void HAL_DBGMCU_EnableDBGSleepMode(void)
+ 481:src/stm32f1xx_hal.c **** {
+ 700              		.loc 1 481 0
+ 701              		.cfi_startproc
+ 702              		@ args = 0, pretend = 0, frame = 0
+ 703              		@ frame_needed = 0, uses_anonymous_args = 0
+ 704              		@ link register save eliminated.
+ 482:src/stm32f1xx_hal.c ****   SET_BIT(DBGMCU->CR, DBGMCU_CR_DBG_SLEEP);
+ 705              		.loc 1 482 0
+ 706 0174 024A     		ldr	r2, .L66	@ tmp112,
+ 707 0176 5368     		ldr	r3, [r2, #4]	@ _2, MEM[(struct DBGMCU_TypeDef *)3758366720B].CR
+ 708 0178 43F00103 		orr	r3, r3, #1	@ _3, _2,
+ 709 017c 5360     		str	r3, [r2, #4]	@ _3, MEM[(struct DBGMCU_TypeDef *)3758366720B].CR
+ 710 017e 7047     		bx	lr	@
+ 711              	.L67:
+ 712              		.align	2
+ 713              	.L66:
+ 714 0180 002004E0 		.word	-536600576
+ 715              		.cfi_endproc
+ 716              	.LFE84:
+ 717              		.size	HAL_DBGMCU_EnableDBGSleepMode, .-HAL_DBGMCU_EnableDBGSleepMode
+ 718              		.align	1
+ 719              		.global	HAL_DBGMCU_DisableDBGSleepMode
+ 720              		.syntax unified
+ 721              		.thumb
+ 722              		.thumb_func
+ 723              		.fpu softvfp
+ 724              		.type	HAL_DBGMCU_DisableDBGSleepMode, %function
+ 725              	HAL_DBGMCU_DisableDBGSleepMode:
+ 726              	.LFB85:
+ 483:src/stm32f1xx_hal.c **** }
+ 484:src/stm32f1xx_hal.c **** 
+ 485:src/stm32f1xx_hal.c **** /**
+ 486:src/stm32f1xx_hal.c ****   * @brief  Disable the Debug Module during SLEEP mode
+ 487:src/stm32f1xx_hal.c ****   * Note: On devices STM32F10xx8 and STM32F10xxB,
+ 488:src/stm32f1xx_hal.c ****   *                  STM32F101xC/D/E and STM32F103xC/D/E,
+ 489:src/stm32f1xx_hal.c ****   *                  STM32F101xF/G and STM32F103xF/G
+ 490:src/stm32f1xx_hal.c ****   *                  STM32F10xx4 and STM32F10xx6
+ 491:src/stm32f1xx_hal.c ****   *       Debug registers DBGMCU_IDCODE and DBGMCU_CR are accessible only in
+ 492:src/stm32f1xx_hal.c ****   *       debug mode (not accessible by the user software in normal mode).
+ 493:src/stm32f1xx_hal.c ****   *       Refer to errata sheet of these devices for more details.
+ 494:src/stm32f1xx_hal.c ****   * @retval None
+ 495:src/stm32f1xx_hal.c ****   */
+ 496:src/stm32f1xx_hal.c **** void HAL_DBGMCU_DisableDBGSleepMode(void)
+ 497:src/stm32f1xx_hal.c **** {
+ 727              		.loc 1 497 0
+ 728              		.cfi_startproc
+ 729              		@ args = 0, pretend = 0, frame = 0
+ 730              		@ frame_needed = 0, uses_anonymous_args = 0
+ 731              		@ link register save eliminated.
+ 498:src/stm32f1xx_hal.c ****   CLEAR_BIT(DBGMCU->CR, DBGMCU_CR_DBG_SLEEP);
+ARM GAS  /tmp/ccAUAHaM.s 			page 23
+
+
+ 732              		.loc 1 498 0
+ 733 0184 024A     		ldr	r2, .L69	@ tmp112,
+ 734 0186 5368     		ldr	r3, [r2, #4]	@ _2, MEM[(struct DBGMCU_TypeDef *)3758366720B].CR
+ 735 0188 23F00103 		bic	r3, r3, #1	@ _3, _2,
+ 736 018c 5360     		str	r3, [r2, #4]	@ _3, MEM[(struct DBGMCU_TypeDef *)3758366720B].CR
+ 737 018e 7047     		bx	lr	@
+ 738              	.L70:
+ 739              		.align	2
+ 740              	.L69:
+ 741 0190 002004E0 		.word	-536600576
+ 742              		.cfi_endproc
+ 743              	.LFE85:
+ 744              		.size	HAL_DBGMCU_DisableDBGSleepMode, .-HAL_DBGMCU_DisableDBGSleepMode
+ 745              		.align	1
+ 746              		.global	HAL_DBGMCU_EnableDBGStopMode
+ 747              		.syntax unified
+ 748              		.thumb
+ 749              		.thumb_func
+ 750              		.fpu softvfp
+ 751              		.type	HAL_DBGMCU_EnableDBGStopMode, %function
+ 752              	HAL_DBGMCU_EnableDBGStopMode:
+ 753              	.LFB86:
+ 499:src/stm32f1xx_hal.c **** }
+ 500:src/stm32f1xx_hal.c **** 
+ 501:src/stm32f1xx_hal.c **** /**
+ 502:src/stm32f1xx_hal.c ****   * @brief  Enable the Debug Module during STOP mode
+ 503:src/stm32f1xx_hal.c ****   * Note: On devices STM32F10xx8 and STM32F10xxB,
+ 504:src/stm32f1xx_hal.c ****   *                  STM32F101xC/D/E and STM32F103xC/D/E,
+ 505:src/stm32f1xx_hal.c ****   *                  STM32F101xF/G and STM32F103xF/G
+ 506:src/stm32f1xx_hal.c ****   *                  STM32F10xx4 and STM32F10xx6
+ 507:src/stm32f1xx_hal.c ****   *       Debug registers DBGMCU_IDCODE and DBGMCU_CR are accessible only in
+ 508:src/stm32f1xx_hal.c ****   *       debug mode (not accessible by the user software in normal mode).
+ 509:src/stm32f1xx_hal.c ****   *       Refer to errata sheet of these devices for more details.
+ 510:src/stm32f1xx_hal.c ****   * Note: On all STM32F1 devices:
+ 511:src/stm32f1xx_hal.c ****   *       If the system tick timer interrupt is enabled during the Stop mode
+ 512:src/stm32f1xx_hal.c ****   *       debug (DBG_STOP bit set in the DBGMCU_CR register ), it will wakeup
+ 513:src/stm32f1xx_hal.c ****   *       the system from Stop mode.
+ 514:src/stm32f1xx_hal.c ****   *       Workaround: To debug the Stop mode, disable the system tick timer
+ 515:src/stm32f1xx_hal.c ****   *       interrupt.
+ 516:src/stm32f1xx_hal.c ****   *       Refer to errata sheet of these devices for more details.
+ 517:src/stm32f1xx_hal.c ****   * Note: On all STM32F1 devices:
+ 518:src/stm32f1xx_hal.c ****   *       If the system tick timer interrupt is enabled during the Stop mode
+ 519:src/stm32f1xx_hal.c ****   *       debug (DBG_STOP bit set in the DBGMCU_CR register ), it will wakeup
+ 520:src/stm32f1xx_hal.c ****   *       the system from Stop mode.
+ 521:src/stm32f1xx_hal.c ****   *       Workaround: To debug the Stop mode, disable the system tick timer
+ 522:src/stm32f1xx_hal.c ****   *       interrupt.
+ 523:src/stm32f1xx_hal.c ****   *       Refer to errata sheet of these devices for more details.
+ 524:src/stm32f1xx_hal.c ****   * @retval None
+ 525:src/stm32f1xx_hal.c ****   */
+ 526:src/stm32f1xx_hal.c **** void HAL_DBGMCU_EnableDBGStopMode(void)
+ 527:src/stm32f1xx_hal.c **** {
+ 754              		.loc 1 527 0
+ 755              		.cfi_startproc
+ 756              		@ args = 0, pretend = 0, frame = 0
+ 757              		@ frame_needed = 0, uses_anonymous_args = 0
+ 758              		@ link register save eliminated.
+ 528:src/stm32f1xx_hal.c ****   SET_BIT(DBGMCU->CR, DBGMCU_CR_DBG_STOP);
+ARM GAS  /tmp/ccAUAHaM.s 			page 24
+
+
+ 759              		.loc 1 528 0
+ 760 0194 024A     		ldr	r2, .L72	@ tmp112,
+ 761 0196 5368     		ldr	r3, [r2, #4]	@ _2, MEM[(struct DBGMCU_TypeDef *)3758366720B].CR
+ 762 0198 43F00203 		orr	r3, r3, #2	@ _3, _2,
+ 763 019c 5360     		str	r3, [r2, #4]	@ _3, MEM[(struct DBGMCU_TypeDef *)3758366720B].CR
+ 764 019e 7047     		bx	lr	@
+ 765              	.L73:
+ 766              		.align	2
+ 767              	.L72:
+ 768 01a0 002004E0 		.word	-536600576
+ 769              		.cfi_endproc
+ 770              	.LFE86:
+ 771              		.size	HAL_DBGMCU_EnableDBGStopMode, .-HAL_DBGMCU_EnableDBGStopMode
+ 772              		.align	1
+ 773              		.global	HAL_DBGMCU_DisableDBGStopMode
+ 774              		.syntax unified
+ 775              		.thumb
+ 776              		.thumb_func
+ 777              		.fpu softvfp
+ 778              		.type	HAL_DBGMCU_DisableDBGStopMode, %function
+ 779              	HAL_DBGMCU_DisableDBGStopMode:
+ 780              	.LFB87:
+ 529:src/stm32f1xx_hal.c **** }
+ 530:src/stm32f1xx_hal.c **** 
+ 531:src/stm32f1xx_hal.c **** /**
+ 532:src/stm32f1xx_hal.c ****   * @brief  Disable the Debug Module during STOP mode
+ 533:src/stm32f1xx_hal.c ****   * Note: On devices STM32F10xx8 and STM32F10xxB,
+ 534:src/stm32f1xx_hal.c ****   *                  STM32F101xC/D/E and STM32F103xC/D/E,
+ 535:src/stm32f1xx_hal.c ****   *                  STM32F101xF/G and STM32F103xF/G
+ 536:src/stm32f1xx_hal.c ****   *                  STM32F10xx4 and STM32F10xx6
+ 537:src/stm32f1xx_hal.c ****   *       Debug registers DBGMCU_IDCODE and DBGMCU_CR are accessible only in
+ 538:src/stm32f1xx_hal.c ****   *       debug mode (not accessible by the user software in normal mode).
+ 539:src/stm32f1xx_hal.c ****   *       Refer to errata sheet of these devices for more details.
+ 540:src/stm32f1xx_hal.c ****   * @retval None
+ 541:src/stm32f1xx_hal.c ****   */
+ 542:src/stm32f1xx_hal.c **** void HAL_DBGMCU_DisableDBGStopMode(void)
+ 543:src/stm32f1xx_hal.c **** {
+ 781              		.loc 1 543 0
+ 782              		.cfi_startproc
+ 783              		@ args = 0, pretend = 0, frame = 0
+ 784              		@ frame_needed = 0, uses_anonymous_args = 0
+ 785              		@ link register save eliminated.
+ 544:src/stm32f1xx_hal.c ****   CLEAR_BIT(DBGMCU->CR, DBGMCU_CR_DBG_STOP);
+ 786              		.loc 1 544 0
+ 787 01a4 024A     		ldr	r2, .L75	@ tmp112,
+ 788 01a6 5368     		ldr	r3, [r2, #4]	@ _2, MEM[(struct DBGMCU_TypeDef *)3758366720B].CR
+ 789 01a8 23F00203 		bic	r3, r3, #2	@ _3, _2,
+ 790 01ac 5360     		str	r3, [r2, #4]	@ _3, MEM[(struct DBGMCU_TypeDef *)3758366720B].CR
+ 791 01ae 7047     		bx	lr	@
+ 792              	.L76:
+ 793              		.align	2
+ 794              	.L75:
+ 795 01b0 002004E0 		.word	-536600576
+ 796              		.cfi_endproc
+ 797              	.LFE87:
+ 798              		.size	HAL_DBGMCU_DisableDBGStopMode, .-HAL_DBGMCU_DisableDBGStopMode
+ 799              		.align	1
+ARM GAS  /tmp/ccAUAHaM.s 			page 25
+
+
+ 800              		.global	HAL_DBGMCU_EnableDBGStandbyMode
+ 801              		.syntax unified
+ 802              		.thumb
+ 803              		.thumb_func
+ 804              		.fpu softvfp
+ 805              		.type	HAL_DBGMCU_EnableDBGStandbyMode, %function
+ 806              	HAL_DBGMCU_EnableDBGStandbyMode:
+ 807              	.LFB88:
+ 545:src/stm32f1xx_hal.c **** }
+ 546:src/stm32f1xx_hal.c **** 
+ 547:src/stm32f1xx_hal.c **** /**
+ 548:src/stm32f1xx_hal.c ****   * @brief  Enable the Debug Module during STANDBY mode
+ 549:src/stm32f1xx_hal.c ****   * Note: On devices STM32F10xx8 and STM32F10xxB,
+ 550:src/stm32f1xx_hal.c ****   *                  STM32F101xC/D/E and STM32F103xC/D/E,
+ 551:src/stm32f1xx_hal.c ****   *                  STM32F101xF/G and STM32F103xF/G
+ 552:src/stm32f1xx_hal.c ****   *                  STM32F10xx4 and STM32F10xx6
+ 553:src/stm32f1xx_hal.c ****   *       Debug registers DBGMCU_IDCODE and DBGMCU_CR are accessible only in
+ 554:src/stm32f1xx_hal.c ****   *       debug mode (not accessible by the user software in normal mode).
+ 555:src/stm32f1xx_hal.c ****   *       Refer to errata sheet of these devices for more details.
+ 556:src/stm32f1xx_hal.c ****   * @retval None
+ 557:src/stm32f1xx_hal.c ****   */
+ 558:src/stm32f1xx_hal.c **** void HAL_DBGMCU_EnableDBGStandbyMode(void)
+ 559:src/stm32f1xx_hal.c **** {
+ 808              		.loc 1 559 0
+ 809              		.cfi_startproc
+ 810              		@ args = 0, pretend = 0, frame = 0
+ 811              		@ frame_needed = 0, uses_anonymous_args = 0
+ 812              		@ link register save eliminated.
+ 560:src/stm32f1xx_hal.c ****   SET_BIT(DBGMCU->CR, DBGMCU_CR_DBG_STANDBY);
+ 813              		.loc 1 560 0
+ 814 01b4 024A     		ldr	r2, .L78	@ tmp112,
+ 815 01b6 5368     		ldr	r3, [r2, #4]	@ _2, MEM[(struct DBGMCU_TypeDef *)3758366720B].CR
+ 816 01b8 43F00403 		orr	r3, r3, #4	@ _3, _2,
+ 817 01bc 5360     		str	r3, [r2, #4]	@ _3, MEM[(struct DBGMCU_TypeDef *)3758366720B].CR
+ 818 01be 7047     		bx	lr	@
+ 819              	.L79:
+ 820              		.align	2
+ 821              	.L78:
+ 822 01c0 002004E0 		.word	-536600576
+ 823              		.cfi_endproc
+ 824              	.LFE88:
+ 825              		.size	HAL_DBGMCU_EnableDBGStandbyMode, .-HAL_DBGMCU_EnableDBGStandbyMode
+ 826              		.align	1
+ 827              		.global	HAL_DBGMCU_DisableDBGStandbyMode
+ 828              		.syntax unified
+ 829              		.thumb
+ 830              		.thumb_func
+ 831              		.fpu softvfp
+ 832              		.type	HAL_DBGMCU_DisableDBGStandbyMode, %function
+ 833              	HAL_DBGMCU_DisableDBGStandbyMode:
+ 834              	.LFB89:
+ 561:src/stm32f1xx_hal.c **** }
+ 562:src/stm32f1xx_hal.c **** 
+ 563:src/stm32f1xx_hal.c **** /**
+ 564:src/stm32f1xx_hal.c ****   * @brief  Disable the Debug Module during STANDBY mode
+ 565:src/stm32f1xx_hal.c ****   * Note: On devices STM32F10xx8 and STM32F10xxB,
+ 566:src/stm32f1xx_hal.c ****   *                  STM32F101xC/D/E and STM32F103xC/D/E,
+ARM GAS  /tmp/ccAUAHaM.s 			page 26
+
+
+ 567:src/stm32f1xx_hal.c ****   *                  STM32F101xF/G and STM32F103xF/G
+ 568:src/stm32f1xx_hal.c ****   *                  STM32F10xx4 and STM32F10xx6
+ 569:src/stm32f1xx_hal.c ****   *       Debug registers DBGMCU_IDCODE and DBGMCU_CR are accessible only in
+ 570:src/stm32f1xx_hal.c ****   *       debug mode (not accessible by the user software in normal mode).
+ 571:src/stm32f1xx_hal.c ****   *       Refer to errata sheet of these devices for more details.
+ 572:src/stm32f1xx_hal.c ****   * @retval None
+ 573:src/stm32f1xx_hal.c ****   */
+ 574:src/stm32f1xx_hal.c **** void HAL_DBGMCU_DisableDBGStandbyMode(void)
+ 575:src/stm32f1xx_hal.c **** {
+ 835              		.loc 1 575 0
+ 836              		.cfi_startproc
+ 837              		@ args = 0, pretend = 0, frame = 0
+ 838              		@ frame_needed = 0, uses_anonymous_args = 0
+ 839              		@ link register save eliminated.
+ 576:src/stm32f1xx_hal.c ****   CLEAR_BIT(DBGMCU->CR, DBGMCU_CR_DBG_STANDBY);
+ 840              		.loc 1 576 0
+ 841 01c4 024A     		ldr	r2, .L81	@ tmp112,
+ 842 01c6 5368     		ldr	r3, [r2, #4]	@ _2, MEM[(struct DBGMCU_TypeDef *)3758366720B].CR
+ 843 01c8 23F00403 		bic	r3, r3, #4	@ _3, _2,
+ 844 01cc 5360     		str	r3, [r2, #4]	@ _3, MEM[(struct DBGMCU_TypeDef *)3758366720B].CR
+ 845 01ce 7047     		bx	lr	@
+ 846              	.L82:
+ 847              		.align	2
+ 848              	.L81:
+ 849 01d0 002004E0 		.word	-536600576
+ 850              		.cfi_endproc
+ 851              	.LFE89:
+ 852              		.size	HAL_DBGMCU_DisableDBGStandbyMode, .-HAL_DBGMCU_DisableDBGStandbyMode
+ 853              		.global	uwTickFreq
+ 854              		.global	uwTickPrio
+ 855              		.comm	uwTick,4,4
+ 856              		.data
+ 857              		.align	2
+ 858              		.set	.LANCHOR0,. + 0
+ 859              		.type	uwTickFreq, %object
+ 860              		.size	uwTickFreq, 1
+ 861              	uwTickFreq:
+ 862 0000 01       		.byte	1
+ 863 0001 000000   		.space	3
+ 864              		.type	uwTickPrio, %object
+ 865              		.size	uwTickPrio, 4
+ 866              	uwTickPrio:
+ 867 0004 10000000 		.word	16
+ 868              		.text
+ 869              	.Letext0:
+ 870              		.file 2 "/usr/include/newlib/machine/_default_types.h"
+ 871              		.file 3 "/usr/include/newlib/sys/_stdint.h"
+ 872              		.file 4 "../cmsiscore/inc/core_cm3.h"
+ 873              		.file 5 "../cmsisstm32f1xx/inc/system_stm32f1xx.h"
+ 874              		.file 6 "../cmsisstm32f1xx/inc/stm32f103x6.h"
+ 875              		.file 7 "./inc/stm32f1xx_hal_def.h"
+ 876              		.file 8 "./inc/stm32f1xx_hal.h"
+ 877              		.file 9 "./inc/stm32f1xx_hal_cortex.h"
+ 878              		.section	.debug_info,"",%progbits
+ 879              	.Ldebug_info0:
+ 880 0000 57080000 		.4byte	0x857
+ 881 0004 0200     		.2byte	0x2
+ARM GAS  /tmp/ccAUAHaM.s 			page 27
+
+
+ 882 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 883 000a 04       		.byte	0x4
+ 884 000b 01       		.uleb128 0x1
+ 885 000c 56050000 		.4byte	.LASF129
+ 886 0010 0C       		.byte	0xc
+ 887 0011 FB010000 		.4byte	.LASF130
+ 888 0015 7D040000 		.4byte	.LASF131
+ 889 0019 00000000 		.4byte	.Ltext0
+ 890 001d D4010000 		.4byte	.Letext0
+ 891 0021 00000000 		.4byte	.Ldebug_line0
+ 892 0025 02       		.uleb128 0x2
+ 893 0026 01       		.byte	0x1
+ 894 0027 4C010000 		.4byte	0x14c
+ 895 002b 06       		.byte	0x6
+ 896 002c 46       		.byte	0x46
+ 897 002d 4C010000 		.4byte	0x14c
+ 898 0031 03       		.uleb128 0x3
+ 899 0032 72060000 		.4byte	.LASF0
+ 900 0036 72       		.sleb128 -14
+ 901 0037 03       		.uleb128 0x3
+ 902 0038 F6020000 		.4byte	.LASF1
+ 903 003c 73       		.sleb128 -13
+ 904 003d 03       		.uleb128 0x3
+ 905 003e 49040000 		.4byte	.LASF2
+ 906 0042 74       		.sleb128 -12
+ 907 0043 03       		.uleb128 0x3
+ 908 0044 0F020000 		.4byte	.LASF3
+ 909 0048 75       		.sleb128 -11
+ 910 0049 03       		.uleb128 0x3
+ 911 004a 14060000 		.4byte	.LASF4
+ 912 004e 76       		.sleb128 -10
+ 913 004f 03       		.uleb128 0x3
+ 914 0050 E1030000 		.4byte	.LASF5
+ 915 0054 7B       		.sleb128 -5
+ 916 0055 03       		.uleb128 0x3
+ 917 0056 D3060000 		.4byte	.LASF6
+ 918 005a 7C       		.sleb128 -4
+ 919 005b 03       		.uleb128 0x3
+ 920 005c 91010000 		.4byte	.LASF7
+ 921 0060 7E       		.sleb128 -2
+ 922 0061 03       		.uleb128 0x3
+ 923 0062 91030000 		.4byte	.LASF8
+ 924 0066 7F       		.sleb128 -1
+ 925 0067 04       		.uleb128 0x4
+ 926 0068 DF000000 		.4byte	.LASF9
+ 927 006c 00       		.byte	0
+ 928 006d 04       		.uleb128 0x4
+ 929 006e 26000000 		.4byte	.LASF10
+ 930 0072 01       		.byte	0x1
+ 931 0073 04       		.uleb128 0x4
+ 932 0074 AB060000 		.4byte	.LASF11
+ 933 0078 02       		.byte	0x2
+ 934 0079 04       		.uleb128 0x4
+ 935 007a 86070000 		.4byte	.LASF12
+ 936 007e 03       		.byte	0x3
+ 937 007f 04       		.uleb128 0x4
+ 938 0080 E1050000 		.4byte	.LASF13
+ARM GAS  /tmp/ccAUAHaM.s 			page 28
+
+
+ 939 0084 04       		.byte	0x4
+ 940 0085 04       		.uleb128 0x4
+ 941 0086 50070000 		.4byte	.LASF14
+ 942 008a 05       		.byte	0x5
+ 943 008b 04       		.uleb128 0x4
+ 944 008c 26070000 		.4byte	.LASF15
+ 945 0090 06       		.byte	0x6
+ 946 0091 04       		.uleb128 0x4
+ 947 0092 AE070000 		.4byte	.LASF16
+ 948 0096 07       		.byte	0x7
+ 949 0097 04       		.uleb128 0x4
+ 950 0098 D4000000 		.4byte	.LASF17
+ 951 009c 08       		.byte	0x8
+ 952 009d 04       		.uleb128 0x4
+ 953 009e 3D070000 		.4byte	.LASF18
+ 954 00a2 09       		.byte	0x9
+ 955 00a3 04       		.uleb128 0x4
+ 956 00a4 E0040000 		.4byte	.LASF19
+ 957 00a8 0A       		.byte	0xa
+ 958 00a9 04       		.uleb128 0x4
+ 959 00aa 36040000 		.4byte	.LASF20
+ 960 00ae 0B       		.byte	0xb
+ 961 00af 04       		.uleb128 0x4
+ 962 00b0 B4030000 		.4byte	.LASF21
+ 963 00b4 0C       		.byte	0xc
+ 964 00b5 04       		.uleb128 0x4
+ 965 00b6 57010000 		.4byte	.LASF22
+ 966 00ba 0D       		.byte	0xd
+ 967 00bb 04       		.uleb128 0x4
+ 968 00bc B0010000 		.4byte	.LASF23
+ 969 00c0 0E       		.byte	0xe
+ 970 00c1 04       		.uleb128 0x4
+ 971 00c2 C0020000 		.4byte	.LASF24
+ 972 00c6 0F       		.byte	0xf
+ 973 00c7 04       		.uleb128 0x4
+ 974 00c8 90060000 		.4byte	.LASF25
+ 975 00cc 10       		.byte	0x10
+ 976 00cd 04       		.uleb128 0x4
+ 977 00ce 7E030000 		.4byte	.LASF26
+ 978 00d2 11       		.byte	0x11
+ 979 00d3 04       		.uleb128 0x4
+ 980 00d4 85010000 		.4byte	.LASF27
+ 981 00d8 12       		.byte	0x12
+ 982 00d9 04       		.uleb128 0x4
+ 983 00da BF040000 		.4byte	.LASF28
+ 984 00de 13       		.byte	0x13
+ 985 00df 04       		.uleb128 0x4
+ 986 00e0 41050000 		.4byte	.LASF29
+ 987 00e4 14       		.byte	0x14
+ 988 00e5 04       		.uleb128 0x4
+ 989 00e6 99000000 		.4byte	.LASF30
+ 990 00ea 15       		.byte	0x15
+ 991 00eb 04       		.uleb128 0x4
+ 992 00ec 8F070000 		.4byte	.LASF31
+ 993 00f0 16       		.byte	0x16
+ 994 00f1 04       		.uleb128 0x4
+ 995 00f2 41000000 		.4byte	.LASF32
+ARM GAS  /tmp/ccAUAHaM.s 			page 29
+
+
+ 996 00f6 17       		.byte	0x17
+ 997 00f7 04       		.uleb128 0x4
+ 998 00f8 54060000 		.4byte	.LASF33
+ 999 00fc 18       		.byte	0x18
+ 1000 00fd 04       		.uleb128 0x4
+ 1001 00fe B7060000 		.4byte	.LASF34
+ 1002 0102 19       		.byte	0x19
+ 1003 0103 04       		.uleb128 0x4
+ 1004 0104 2F000000 		.4byte	.LASF35
+ 1005 0108 1A       		.byte	0x1a
+ 1006 0109 04       		.uleb128 0x4
+ 1007 010a 9E030000 		.4byte	.LASF36
+ 1008 010e 1B       		.byte	0x1b
+ 1009 010f 04       		.uleb128 0x4
+ 1010 0110 1C070000 		.4byte	.LASF37
+ 1011 0114 1C       		.byte	0x1c
+ 1012 0115 04       		.uleb128 0x4
+ 1013 0116 9D070000 		.4byte	.LASF38
+ 1014 011a 1D       		.byte	0x1d
+ 1015 011b 04       		.uleb128 0x4
+ 1016 011c 5B000000 		.4byte	.LASF39
+ 1017 0120 1F       		.byte	0x1f
+ 1018 0121 04       		.uleb128 0x4
+ 1019 0122 6B070000 		.4byte	.LASF40
+ 1020 0126 20       		.byte	0x20
+ 1021 0127 04       		.uleb128 0x4
+ 1022 0128 20030000 		.4byte	.LASF41
+ 1023 012c 23       		.byte	0x23
+ 1024 012d 04       		.uleb128 0x4
+ 1025 012e 71040000 		.4byte	.LASF42
+ 1026 0132 25       		.byte	0x25
+ 1027 0133 04       		.uleb128 0x4
+ 1028 0134 08060000 		.4byte	.LASF43
+ 1029 0138 26       		.byte	0x26
+ 1030 0139 04       		.uleb128 0x4
+ 1031 013a 05030000 		.4byte	.LASF44
+ 1032 013e 28       		.byte	0x28
+ 1033 013f 04       		.uleb128 0x4
+ 1034 0140 C5000000 		.4byte	.LASF45
+ 1035 0144 29       		.byte	0x29
+ 1036 0145 04       		.uleb128 0x4
+ 1037 0146 C4060000 		.4byte	.LASF46
+ 1038 014a 2A       		.byte	0x2a
+ 1039 014b 00       		.byte	0
+ 1040 014c 05       		.uleb128 0x5
+ 1041 014d 01       		.byte	0x1
+ 1042 014e 06       		.byte	0x6
+ 1043 014f F7000000 		.4byte	.LASF47
+ 1044 0153 06       		.uleb128 0x6
+ 1045 0154 68000000 		.4byte	.LASF51
+ 1046 0158 02       		.byte	0x2
+ 1047 0159 1D       		.byte	0x1d
+ 1048 015a 5E010000 		.4byte	0x15e
+ 1049 015e 05       		.uleb128 0x5
+ 1050 015f 01       		.byte	0x1
+ 1051 0160 08       		.byte	0x8
+ 1052 0161 B1040000 		.4byte	.LASF48
+ARM GAS  /tmp/ccAUAHaM.s 			page 30
+
+
+ 1053 0165 05       		.uleb128 0x5
+ 1054 0166 02       		.byte	0x2
+ 1055 0167 05       		.byte	0x5
+ 1056 0168 FE040000 		.4byte	.LASF49
+ 1057 016c 05       		.uleb128 0x5
+ 1058 016d 02       		.byte	0x2
+ 1059 016e 07       		.byte	0x7
+ 1060 016f 9D010000 		.4byte	.LASF50
+ 1061 0173 06       		.uleb128 0x6
+ 1062 0174 86060000 		.4byte	.LASF52
+ 1063 0178 02       		.byte	0x2
+ 1064 0179 3F       		.byte	0x3f
+ 1065 017a 7E010000 		.4byte	0x17e
+ 1066 017e 05       		.uleb128 0x5
+ 1067 017f 04       		.byte	0x4
+ 1068 0180 05       		.byte	0x5
+ 1069 0181 28010000 		.4byte	.LASF53
+ 1070 0185 06       		.uleb128 0x6
+ 1071 0186 F0010000 		.4byte	.LASF54
+ 1072 018a 02       		.byte	0x2
+ 1073 018b 41       		.byte	0x41
+ 1074 018c 90010000 		.4byte	0x190
+ 1075 0190 05       		.uleb128 0x5
+ 1076 0191 04       		.byte	0x4
+ 1077 0192 07       		.byte	0x7
+ 1078 0193 88020000 		.4byte	.LASF55
+ 1079 0197 05       		.uleb128 0x5
+ 1080 0198 08       		.byte	0x8
+ 1081 0199 05       		.byte	0x5
+ 1082 019a E9000000 		.4byte	.LASF56
+ 1083 019e 05       		.uleb128 0x5
+ 1084 019f 08       		.byte	0x8
+ 1085 01a0 07       		.byte	0x7
+ 1086 01a1 A7000000 		.4byte	.LASF57
+ 1087 01a5 07       		.uleb128 0x7
+ 1088 01a6 04       		.byte	0x4
+ 1089 01a7 05       		.byte	0x5
+ 1090 01a8 696E7400 		.ascii	"int\000"
+ 1091 01ac 05       		.uleb128 0x5
+ 1092 01ad 04       		.byte	0x4
+ 1093 01ae 07       		.byte	0x7
+ 1094 01af 4A010000 		.4byte	.LASF58
+ 1095 01b3 06       		.uleb128 0x6
+ 1096 01b4 48070000 		.4byte	.LASF59
+ 1097 01b8 03       		.byte	0x3
+ 1098 01b9 18       		.byte	0x18
+ 1099 01ba 53010000 		.4byte	0x153
+ 1100 01be 08       		.uleb128 0x8
+ 1101 01bf B3010000 		.4byte	0x1b3
+ 1102 01c3 06       		.uleb128 0x6
+ 1103 01c4 A9040000 		.4byte	.LASF60
+ 1104 01c8 03       		.byte	0x3
+ 1105 01c9 2C       		.byte	0x2c
+ 1106 01ca 73010000 		.4byte	0x173
+ 1107 01ce 09       		.uleb128 0x9
+ 1108 01cf C3010000 		.4byte	0x1c3
+ 1109 01d3 06       		.uleb128 0x6
+ARM GAS  /tmp/ccAUAHaM.s 			page 31
+
+
+ 1110 01d4 13070000 		.4byte	.LASF61
+ 1111 01d8 03       		.byte	0x3
+ 1112 01d9 30       		.byte	0x30
+ 1113 01da 85010000 		.4byte	0x185
+ 1114 01de 09       		.uleb128 0x9
+ 1115 01df D3010000 		.4byte	0x1d3
+ 1116 01e3 08       		.uleb128 0x8
+ 1117 01e4 DE010000 		.4byte	0x1de
+ 1118 01e8 05       		.uleb128 0x5
+ 1119 01e9 04       		.byte	0x4
+ 1120 01ea 07       		.byte	0x7
+ 1121 01eb C7030000 		.4byte	.LASF62
+ 1122 01ef 0A       		.uleb128 0xa
+ 1123 01f0 10       		.byte	0x10
+ 1124 01f1 04       		.byte	0x4
+ 1125 01f2 B602     		.2byte	0x2b6
+ 1126 01f4 35020000 		.4byte	0x235
+ 1127 01f8 0B       		.uleb128 0xb
+ 1128 01f9 E5060000 		.4byte	.LASF63
+ 1129 01fd 04       		.byte	0x4
+ 1130 01fe B802     		.2byte	0x2b8
+ 1131 0200 DE010000 		.4byte	0x1de
+ 1132 0204 02       		.byte	0x2
+ 1133 0205 23       		.byte	0x23
+ 1134 0206 00       		.uleb128 0
+ 1135 0207 0B       		.uleb128 0xb
+ 1136 0208 D0030000 		.4byte	.LASF64
+ 1137 020c 04       		.byte	0x4
+ 1138 020d B902     		.2byte	0x2b9
+ 1139 020f DE010000 		.4byte	0x1de
+ 1140 0213 02       		.byte	0x2
+ 1141 0214 23       		.byte	0x23
+ 1142 0215 04       		.uleb128 0x4
+ 1143 0216 0C       		.uleb128 0xc
+ 1144 0217 56414C00 		.ascii	"VAL\000"
+ 1145 021b 04       		.byte	0x4
+ 1146 021c BA02     		.2byte	0x2ba
+ 1147 021e DE010000 		.4byte	0x1de
+ 1148 0222 02       		.byte	0x2
+ 1149 0223 23       		.byte	0x23
+ 1150 0224 08       		.uleb128 0x8
+ 1151 0225 0B       		.uleb128 0xb
+ 1152 0226 D3020000 		.4byte	.LASF65
+ 1153 022a 04       		.byte	0x4
+ 1154 022b BB02     		.2byte	0x2bb
+ 1155 022d E3010000 		.4byte	0x1e3
+ 1156 0231 02       		.byte	0x2
+ 1157 0232 23       		.byte	0x23
+ 1158 0233 0C       		.uleb128 0xc
+ 1159 0234 00       		.byte	0
+ 1160 0235 0D       		.uleb128 0xd
+ 1161 0236 2A030000 		.4byte	.LASF66
+ 1162 023a 04       		.byte	0x4
+ 1163 023b BC02     		.2byte	0x2bc
+ 1164 023d EF010000 		.4byte	0x1ef
+ 1165 0241 0E       		.uleb128 0xe
+ 1166 0242 D3040000 		.4byte	.LASF67
+ARM GAS  /tmp/ccAUAHaM.s 			page 32
+
+
+ 1167 0246 04       		.byte	0x4
+ 1168 0247 4807     		.2byte	0x748
+ 1169 0249 CE010000 		.4byte	0x1ce
+ 1170 024d 01       		.byte	0x1
+ 1171 024e 01       		.byte	0x1
+ 1172 024f 0F       		.uleb128 0xf
+ 1173 0250 66020000 		.4byte	.LASF68
+ 1174 0254 05       		.byte	0x5
+ 1175 0255 33       		.byte	0x33
+ 1176 0256 D3010000 		.4byte	0x1d3
+ 1177 025a 01       		.byte	0x1
+ 1178 025b 01       		.byte	0x1
+ 1179 025c 10       		.uleb128 0x10
+ 1180 025d BE010000 		.4byte	0x1be
+ 1181 0261 6C020000 		.4byte	0x26c
+ 1182 0265 11       		.uleb128 0x11
+ 1183 0266 E8010000 		.4byte	0x1e8
+ 1184 026a 0F       		.byte	0xf
+ 1185 026b 00       		.byte	0
+ 1186 026c 08       		.uleb128 0x8
+ 1187 026d 5C020000 		.4byte	0x25c
+ 1188 0271 0F       		.uleb128 0xf
+ 1189 0272 49030000 		.4byte	.LASF69
+ 1190 0276 05       		.byte	0x5
+ 1191 0277 34       		.byte	0x34
+ 1192 0278 6C020000 		.4byte	0x26c
+ 1193 027c 01       		.byte	0x1
+ 1194 027d 01       		.byte	0x1
+ 1195 027e 10       		.uleb128 0x10
+ 1196 027f BE010000 		.4byte	0x1be
+ 1197 0283 8E020000 		.4byte	0x28e
+ 1198 0287 11       		.uleb128 0x11
+ 1199 0288 E8010000 		.4byte	0x1e8
+ 1200 028c 07       		.byte	0x7
+ 1201 028d 00       		.byte	0
+ 1202 028e 08       		.uleb128 0x8
+ 1203 028f 7E020000 		.4byte	0x27e
+ 1204 0293 0F       		.uleb128 0xf
+ 1205 0294 8B000000 		.4byte	.LASF70
+ 1206 0298 05       		.byte	0x5
+ 1207 0299 35       		.byte	0x35
+ 1208 029a 8E020000 		.4byte	0x28e
+ 1209 029e 01       		.byte	0x1
+ 1210 029f 01       		.byte	0x1
+ 1211 02a0 0A       		.uleb128 0xa
+ 1212 02a1 08       		.byte	0x8
+ 1213 02a2 06       		.byte	0x6
+ 1214 02a3 1401     		.2byte	0x114
+ 1215 02a5 C7020000 		.4byte	0x2c7
+ 1216 02a9 0B       		.uleb128 0xb
+ 1217 02aa BE000000 		.4byte	.LASF71
+ 1218 02ae 06       		.byte	0x6
+ 1219 02af 1601     		.2byte	0x116
+ 1220 02b1 DE010000 		.4byte	0x1de
+ 1221 02b5 02       		.byte	0x2
+ 1222 02b6 23       		.byte	0x23
+ 1223 02b7 00       		.uleb128 0
+ARM GAS  /tmp/ccAUAHaM.s 			page 33
+
+
+ 1224 02b8 0C       		.uleb128 0xc
+ 1225 02b9 435200   		.ascii	"CR\000"
+ 1226 02bc 06       		.byte	0x6
+ 1227 02bd 1701     		.2byte	0x117
+ 1228 02bf DE010000 		.4byte	0x1de
+ 1229 02c3 02       		.byte	0x2
+ 1230 02c4 23       		.byte	0x23
+ 1231 02c5 04       		.uleb128 0x4
+ 1232 02c6 00       		.byte	0
+ 1233 02c7 0D       		.uleb128 0xd
+ 1234 02c8 EC050000 		.4byte	.LASF72
+ 1235 02cc 06       		.byte	0x6
+ 1236 02cd 1801     		.2byte	0x118
+ 1237 02cf A0020000 		.4byte	0x2a0
+ 1238 02d3 0A       		.uleb128 0xa
+ 1239 02d4 24       		.byte	0x24
+ 1240 02d5 06       		.byte	0x6
+ 1241 02d6 4001     		.2byte	0x140
+ 1242 02d8 61030000 		.4byte	0x361
+ 1243 02dc 0C       		.uleb128 0xc
+ 1244 02dd 41435200 		.ascii	"ACR\000"
+ 1245 02e1 06       		.byte	0x6
+ 1246 02e2 4201     		.2byte	0x142
+ 1247 02e4 DE010000 		.4byte	0x1de
+ 1248 02e8 02       		.byte	0x2
+ 1249 02e9 23       		.byte	0x23
+ 1250 02ea 00       		.uleb128 0
+ 1251 02eb 0B       		.uleb128 0xb
+ 1252 02ec 6C040000 		.4byte	.LASF73
+ 1253 02f0 06       		.byte	0x6
+ 1254 02f1 4301     		.2byte	0x143
+ 1255 02f3 DE010000 		.4byte	0x1de
+ 1256 02f7 02       		.byte	0x2
+ 1257 02f8 23       		.byte	0x23
+ 1258 02f9 04       		.uleb128 0x4
+ 1259 02fa 0B       		.uleb128 0xb
+ 1260 02fb 6A010000 		.4byte	.LASF74
+ 1261 02ff 06       		.byte	0x6
+ 1262 0300 4401     		.2byte	0x144
+ 1263 0302 DE010000 		.4byte	0x1de
+ 1264 0306 02       		.byte	0x2
+ 1265 0307 23       		.byte	0x23
+ 1266 0308 08       		.uleb128 0x8
+ 1267 0309 0C       		.uleb128 0xc
+ 1268 030a 535200   		.ascii	"SR\000"
+ 1269 030d 06       		.byte	0x6
+ 1270 030e 4501     		.2byte	0x145
+ 1271 0310 DE010000 		.4byte	0x1de
+ 1272 0314 02       		.byte	0x2
+ 1273 0315 23       		.byte	0x23
+ 1274 0316 0C       		.uleb128 0xc
+ 1275 0317 0C       		.uleb128 0xc
+ 1276 0318 435200   		.ascii	"CR\000"
+ 1277 031b 06       		.byte	0x6
+ 1278 031c 4601     		.2byte	0x146
+ 1279 031e DE010000 		.4byte	0x1de
+ 1280 0322 02       		.byte	0x2
+ARM GAS  /tmp/ccAUAHaM.s 			page 34
+
+
+ 1281 0323 23       		.byte	0x23
+ 1282 0324 10       		.uleb128 0x10
+ 1283 0325 0C       		.uleb128 0xc
+ 1284 0326 415200   		.ascii	"AR\000"
+ 1285 0329 06       		.byte	0x6
+ 1286 032a 4701     		.2byte	0x147
+ 1287 032c DE010000 		.4byte	0x1de
+ 1288 0330 02       		.byte	0x2
+ 1289 0331 23       		.byte	0x23
+ 1290 0332 14       		.uleb128 0x14
+ 1291 0333 0B       		.uleb128 0xb
+ 1292 0334 38050000 		.4byte	.LASF75
+ 1293 0338 06       		.byte	0x6
+ 1294 0339 4801     		.2byte	0x148
+ 1295 033b DE010000 		.4byte	0x1de
+ 1296 033f 02       		.byte	0x2
+ 1297 0340 23       		.byte	0x23
+ 1298 0341 18       		.uleb128 0x18
+ 1299 0342 0C       		.uleb128 0xc
+ 1300 0343 4F425200 		.ascii	"OBR\000"
+ 1301 0347 06       		.byte	0x6
+ 1302 0348 4901     		.2byte	0x149
+ 1303 034a DE010000 		.4byte	0x1de
+ 1304 034e 02       		.byte	0x2
+ 1305 034f 23       		.byte	0x23
+ 1306 0350 1C       		.uleb128 0x1c
+ 1307 0351 0B       		.uleb128 0xb
+ 1308 0352 3A060000 		.4byte	.LASF76
+ 1309 0356 06       		.byte	0x6
+ 1310 0357 4A01     		.2byte	0x14a
+ 1311 0359 DE010000 		.4byte	0x1de
+ 1312 035d 02       		.byte	0x2
+ 1313 035e 23       		.byte	0x23
+ 1314 035f 20       		.uleb128 0x20
+ 1315 0360 00       		.byte	0
+ 1316 0361 0D       		.uleb128 0xd
+ 1317 0362 78070000 		.4byte	.LASF77
+ 1318 0366 06       		.byte	0x6
+ 1319 0367 4B01     		.2byte	0x14b
+ 1320 0369 D3020000 		.4byte	0x2d3
+ 1321 036d 0A       		.uleb128 0xa
+ 1322 036e 28       		.byte	0x28
+ 1323 036f 06       		.byte	0x6
+ 1324 0370 A301     		.2byte	0x1a3
+ 1325 0372 0C040000 		.4byte	0x40c
+ 1326 0376 0C       		.uleb128 0xc
+ 1327 0377 435200   		.ascii	"CR\000"
+ 1328 037a 06       		.byte	0x6
+ 1329 037b A501     		.2byte	0x1a5
+ 1330 037d DE010000 		.4byte	0x1de
+ 1331 0381 02       		.byte	0x2
+ 1332 0382 23       		.byte	0x23
+ 1333 0383 00       		.uleb128 0
+ 1334 0384 0B       		.uleb128 0xb
+ 1335 0385 66070000 		.4byte	.LASF78
+ 1336 0389 06       		.byte	0x6
+ 1337 038a A601     		.2byte	0x1a6
+ARM GAS  /tmp/ccAUAHaM.s 			page 35
+
+
+ 1338 038c DE010000 		.4byte	0x1de
+ 1339 0390 02       		.byte	0x2
+ 1340 0391 23       		.byte	0x23
+ 1341 0392 04       		.uleb128 0x4
+ 1342 0393 0C       		.uleb128 0xc
+ 1343 0394 43495200 		.ascii	"CIR\000"
+ 1344 0398 06       		.byte	0x6
+ 1345 0399 A701     		.2byte	0x1a7
+ 1346 039b DE010000 		.4byte	0x1de
+ 1347 039f 02       		.byte	0x2
+ 1348 03a0 23       		.byte	0x23
+ 1349 03a1 08       		.uleb128 0x8
+ 1350 03a2 0B       		.uleb128 0xb
+ 1351 03a3 31010000 		.4byte	.LASF79
+ 1352 03a7 06       		.byte	0x6
+ 1353 03a8 A801     		.2byte	0x1a8
+ 1354 03aa DE010000 		.4byte	0x1de
+ 1355 03ae 02       		.byte	0x2
+ 1356 03af 23       		.byte	0x23
+ 1357 03b0 0C       		.uleb128 0xc
+ 1358 03b1 0B       		.uleb128 0xb
+ 1359 03b2 1E040000 		.4byte	.LASF80
+ 1360 03b6 06       		.byte	0x6
+ 1361 03b7 A901     		.2byte	0x1a9
+ 1362 03b9 DE010000 		.4byte	0x1de
+ 1363 03bd 02       		.byte	0x2
+ 1364 03be 23       		.byte	0x23
+ 1365 03bf 10       		.uleb128 0x10
+ 1366 03c0 0B       		.uleb128 0xb
+ 1367 03c1 A7070000 		.4byte	.LASF81
+ 1368 03c5 06       		.byte	0x6
+ 1369 03c6 AA01     		.2byte	0x1aa
+ 1370 03c8 DE010000 		.4byte	0x1de
+ 1371 03cc 02       		.byte	0x2
+ 1372 03cd 23       		.byte	0x23
+ 1373 03ce 14       		.uleb128 0x14
+ 1374 03cf 0B       		.uleb128 0xb
+ 1375 03d0 AB050000 		.4byte	.LASF82
+ 1376 03d4 06       		.byte	0x6
+ 1377 03d5 AB01     		.2byte	0x1ab
+ 1378 03d7 DE010000 		.4byte	0x1de
+ 1379 03db 02       		.byte	0x2
+ 1380 03dc 23       		.byte	0x23
+ 1381 03dd 18       		.uleb128 0x18
+ 1382 03de 0B       		.uleb128 0xb
+ 1383 03df A3060000 		.4byte	.LASF83
+ 1384 03e3 06       		.byte	0x6
+ 1385 03e4 AC01     		.2byte	0x1ac
+ 1386 03e6 DE010000 		.4byte	0x1de
+ 1387 03ea 02       		.byte	0x2
+ 1388 03eb 23       		.byte	0x23
+ 1389 03ec 1C       		.uleb128 0x1c
+ 1390 03ed 0B       		.uleb128 0xb
+ 1391 03ee 38070000 		.4byte	.LASF84
+ 1392 03f2 06       		.byte	0x6
+ 1393 03f3 AD01     		.2byte	0x1ad
+ 1394 03f5 DE010000 		.4byte	0x1de
+ARM GAS  /tmp/ccAUAHaM.s 			page 36
+
+
+ 1395 03f9 02       		.byte	0x2
+ 1396 03fa 23       		.byte	0x23
+ 1397 03fb 20       		.uleb128 0x20
+ 1398 03fc 0C       		.uleb128 0xc
+ 1399 03fd 43535200 		.ascii	"CSR\000"
+ 1400 0401 06       		.byte	0x6
+ 1401 0402 AE01     		.2byte	0x1ae
+ 1402 0404 DE010000 		.4byte	0x1de
+ 1403 0408 02       		.byte	0x2
+ 1404 0409 23       		.byte	0x23
+ 1405 040a 24       		.uleb128 0x24
+ 1406 040b 00       		.byte	0
+ 1407 040c 0D       		.uleb128 0xd
+ 1408 040d 9A020000 		.4byte	.LASF85
+ 1409 0411 06       		.byte	0x6
+ 1410 0412 B101     		.2byte	0x1b1
+ 1411 0414 6D030000 		.4byte	0x36d
+ 1412 0418 05       		.uleb128 0x5
+ 1413 0419 08       		.byte	0x8
+ 1414 041a 04       		.byte	0x4
+ 1415 041b 2E060000 		.4byte	.LASF86
+ 1416 041f 02       		.uleb128 0x2
+ 1417 0420 01       		.byte	0x1
+ 1418 0421 5E010000 		.4byte	0x15e
+ 1419 0425 07       		.byte	0x7
+ 1420 0426 2A       		.byte	0x2a
+ 1421 0427 44040000 		.4byte	0x444
+ 1422 042b 04       		.uleb128 0x4
+ 1423 042c B9020000 		.4byte	.LASF87
+ 1424 0430 00       		.byte	0
+ 1425 0431 04       		.uleb128 0x4
+ 1426 0432 24060000 		.4byte	.LASF88
+ 1427 0436 01       		.byte	0x1
+ 1428 0437 04       		.uleb128 0x4
+ 1429 0438 72000000 		.4byte	.LASF89
+ 1430 043c 02       		.byte	0x2
+ 1431 043d 04       		.uleb128 0x4
+ 1432 043e 31020000 		.4byte	.LASF90
+ 1433 0442 03       		.byte	0x3
+ 1434 0443 00       		.byte	0
+ 1435 0444 06       		.uleb128 0x6
+ 1436 0445 37030000 		.4byte	.LASF91
+ 1437 0449 07       		.byte	0x7
+ 1438 044a 2F       		.byte	0x2f
+ 1439 044b 1F040000 		.4byte	0x41f
+ 1440 044f 02       		.uleb128 0x2
+ 1441 0450 01       		.byte	0x1
+ 1442 0451 5E010000 		.4byte	0x15e
+ 1443 0455 08       		.byte	0x8
+ 1444 0456 33       		.byte	0x33
+ 1445 0457 74040000 		.4byte	0x474
+ 1446 045b 04       		.uleb128 0x4
+ 1447 045c 72010000 		.4byte	.LASF92
+ 1448 0460 64       		.byte	0x64
+ 1449 0461 04       		.uleb128 0x4
+ 1450 0462 1D020000 		.4byte	.LASF93
+ 1451 0466 0A       		.byte	0xa
+ARM GAS  /tmp/ccAUAHaM.s 			page 37
+
+
+ 1452 0467 04       		.uleb128 0x4
+ 1453 0468 A6020000 		.4byte	.LASF94
+ 1454 046c 01       		.byte	0x1
+ 1455 046d 04       		.uleb128 0x4
+ 1456 046e 08040000 		.4byte	.LASF95
+ 1457 0472 01       		.byte	0x1
+ 1458 0473 00       		.byte	0
+ 1459 0474 06       		.uleb128 0x6
+ 1460 0475 12000000 		.4byte	.LASF96
+ 1461 0479 08       		.byte	0x8
+ 1462 047a 38       		.byte	0x38
+ 1463 047b 4F040000 		.4byte	0x44f
+ 1464 047f 0F       		.uleb128 0xf
+ 1465 0480 3F060000 		.4byte	.LASF97
+ 1466 0484 08       		.byte	0x8
+ 1467 0485 3D       		.byte	0x3d
+ 1468 0486 D3010000 		.4byte	0x1d3
+ 1469 048a 01       		.byte	0x1
+ 1470 048b 01       		.byte	0x1
+ 1471 048c 0F       		.uleb128 0xf
+ 1472 048d 76020000 		.4byte	.LASF98
+ 1473 0491 08       		.byte	0x8
+ 1474 0492 3E       		.byte	0x3e
+ 1475 0493 74040000 		.4byte	0x474
+ 1476 0497 01       		.byte	0x1
+ 1477 0498 01       		.byte	0x1
+ 1478 0499 12       		.uleb128 0x12
+ 1479 049a 81020000 		.4byte	.LASF99
+ 1480 049e 01       		.byte	0x1
+ 1481 049f 4F       		.byte	0x4f
+ 1482 04a0 DE010000 		.4byte	0x1de
+ 1483 04a4 01       		.byte	0x1
+ 1484 04a5 05       		.byte	0x5
+ 1485 04a6 03       		.byte	0x3
+ 1486 04a7 00000000 		.4byte	uwTick
+ 1487 04ab 13       		.uleb128 0x13
+ 1488 04ac 7F040000 		.4byte	0x47f
+ 1489 04b0 01       		.byte	0x1
+ 1490 04b1 50       		.byte	0x50
+ 1491 04b2 05       		.byte	0x5
+ 1492 04b3 03       		.byte	0x3
+ 1493 04b4 00000000 		.4byte	uwTickPrio
+ 1494 04b8 13       		.uleb128 0x13
+ 1495 04b9 8C040000 		.4byte	0x48c
+ 1496 04bd 01       		.byte	0x1
+ 1497 04be 51       		.byte	0x51
+ 1498 04bf 05       		.byte	0x5
+ 1499 04c0 03       		.byte	0x3
+ 1500 04c1 00000000 		.4byte	uwTickFreq
+ 1501 04c5 14       		.uleb128 0x14
+ 1502 04c6 01       		.byte	0x1
+ 1503 04c7 0D050000 		.4byte	.LASF100
+ 1504 04cb 01       		.byte	0x1
+ 1505 04cc 3E02     		.2byte	0x23e
+ 1506 04ce 01       		.byte	0x1
+ 1507 04cf C4010000 		.4byte	.LFB89
+ 1508 04d3 D4010000 		.4byte	.LFE89
+ARM GAS  /tmp/ccAUAHaM.s 			page 38
+
+
+ 1509 04d7 02       		.byte	0x2
+ 1510 04d8 7D       		.byte	0x7d
+ 1511 04d9 00       		.sleb128 0
+ 1512 04da 01       		.byte	0x1
+ 1513 04db 14       		.uleb128 0x14
+ 1514 04dc 01       		.byte	0x1
+ 1515 04dd 03010000 		.4byte	.LASF101
+ 1516 04e1 01       		.byte	0x1
+ 1517 04e2 2E02     		.2byte	0x22e
+ 1518 04e4 01       		.byte	0x1
+ 1519 04e5 B4010000 		.4byte	.LFB88
+ 1520 04e9 C4010000 		.4byte	.LFE88
+ 1521 04ed 02       		.byte	0x2
+ 1522 04ee 7D       		.byte	0x7d
+ 1523 04ef 00       		.sleb128 0
+ 1524 04f0 01       		.byte	0x1
+ 1525 04f1 14       		.uleb128 0x14
+ 1526 04f2 01       		.byte	0x1
+ 1527 04f3 3D020000 		.4byte	.LASF102
+ 1528 04f7 01       		.byte	0x1
+ 1529 04f8 1E02     		.2byte	0x21e
+ 1530 04fa 01       		.byte	0x1
+ 1531 04fb A4010000 		.4byte	.LFB87
+ 1532 04ff B4010000 		.4byte	.LFE87
+ 1533 0503 02       		.byte	0x2
+ 1534 0504 7D       		.byte	0x7d
+ 1535 0505 00       		.sleb128 0
+ 1536 0506 01       		.byte	0x1
+ 1537 0507 14       		.uleb128 0x14
+ 1538 0508 01       		.byte	0x1
+ 1539 0509 D9020000 		.4byte	.LASF103
+ 1540 050d 01       		.byte	0x1
+ 1541 050e 0E02     		.2byte	0x20e
+ 1542 0510 01       		.byte	0x1
+ 1543 0511 94010000 		.4byte	.LFB86
+ 1544 0515 A4010000 		.4byte	.LFE86
+ 1545 0519 02       		.byte	0x2
+ 1546 051a 7D       		.byte	0x7d
+ 1547 051b 00       		.sleb128 0
+ 1548 051c 01       		.byte	0x1
+ 1549 051d 14       		.uleb128 0x14
+ 1550 051e 01       		.byte	0x1
+ 1551 051f D1010000 		.4byte	.LASF104
+ 1552 0523 01       		.byte	0x1
+ 1553 0524 F001     		.2byte	0x1f0
+ 1554 0526 01       		.byte	0x1
+ 1555 0527 84010000 		.4byte	.LFB85
+ 1556 052b 94010000 		.4byte	.LFE85
+ 1557 052f 02       		.byte	0x2
+ 1558 0530 7D       		.byte	0x7d
+ 1559 0531 00       		.sleb128 0
+ 1560 0532 01       		.byte	0x1
+ 1561 0533 14       		.uleb128 0x14
+ 1562 0534 01       		.byte	0x1
+ 1563 0535 C3050000 		.4byte	.LASF105
+ 1564 0539 01       		.byte	0x1
+ 1565 053a E001     		.2byte	0x1e0
+ARM GAS  /tmp/ccAUAHaM.s 			page 39
+
+
+ 1566 053c 01       		.byte	0x1
+ 1567 053d 74010000 		.4byte	.LFB84
+ 1568 0541 84010000 		.4byte	.LFE84
+ 1569 0545 02       		.byte	0x2
+ 1570 0546 7D       		.byte	0x7d
+ 1571 0547 00       		.sleb128 0
+ 1572 0548 01       		.byte	0x1
+ 1573 0549 15       		.uleb128 0x15
+ 1574 054a 01       		.byte	0x1
+ 1575 054b 71030000 		.4byte	.LASF106
+ 1576 054f 01       		.byte	0x1
+ 1577 0550 D701     		.2byte	0x1d7
+ 1578 0552 01       		.byte	0x1
+ 1579 0553 D3010000 		.4byte	0x1d3
+ 1580 0557 68010000 		.4byte	.LFB83
+ 1581 055b 74010000 		.4byte	.LFE83
+ 1582 055f 02       		.byte	0x2
+ 1583 0560 7D       		.byte	0x7d
+ 1584 0561 00       		.sleb128 0
+ 1585 0562 01       		.byte	0x1
+ 1586 0563 15       		.uleb128 0x15
+ 1587 0564 01       		.byte	0x1
+ 1588 0565 64030000 		.4byte	.LASF107
+ 1589 0569 01       		.byte	0x1
+ 1590 056a CE01     		.2byte	0x1ce
+ 1591 056c 01       		.byte	0x1
+ 1592 056d D3010000 		.4byte	0x1d3
+ 1593 0571 5C010000 		.4byte	.LFB82
+ 1594 0575 68010000 		.4byte	.LFE82
+ 1595 0579 02       		.byte	0x2
+ 1596 057a 7D       		.byte	0x7d
+ 1597 057b 00       		.sleb128 0
+ 1598 057c 01       		.byte	0x1
+ 1599 057d 15       		.uleb128 0x15
+ 1600 057e 01       		.byte	0x1
+ 1601 057f 57030000 		.4byte	.LASF108
+ 1602 0583 01       		.byte	0x1
+ 1603 0584 C501     		.2byte	0x1c5
+ 1604 0586 01       		.byte	0x1
+ 1605 0587 D3010000 		.4byte	0x1d3
+ 1606 058b 50010000 		.4byte	.LFB81
+ 1607 058f 5C010000 		.4byte	.LFE81
+ 1608 0593 02       		.byte	0x2
+ 1609 0594 7D       		.byte	0x7d
+ 1610 0595 00       		.sleb128 0
+ 1611 0596 01       		.byte	0x1
+ 1612 0597 15       		.uleb128 0x15
+ 1613 0598 01       		.byte	0x1
+ 1614 0599 59070000 		.4byte	.LASF109
+ 1615 059d 01       		.byte	0x1
+ 1616 059e BC01     		.2byte	0x1bc
+ 1617 05a0 01       		.byte	0x1
+ 1618 05a1 D3010000 		.4byte	0x1d3
+ 1619 05a5 40010000 		.4byte	.LFB80
+ 1620 05a9 50010000 		.4byte	.LFE80
+ 1621 05ad 02       		.byte	0x2
+ 1622 05ae 7D       		.byte	0x7d
+ARM GAS  /tmp/ccAUAHaM.s 			page 40
+
+
+ 1623 05af 00       		.sleb128 0
+ 1624 05b0 01       		.byte	0x1
+ 1625 05b1 15       		.uleb128 0x15
+ 1626 05b2 01       		.byte	0x1
+ 1627 05b3 FB050000 		.4byte	.LASF110
+ 1628 05b7 01       		.byte	0x1
+ 1629 05b8 AC01     		.2byte	0x1ac
+ 1630 05ba 01       		.byte	0x1
+ 1631 05bb D3010000 		.4byte	0x1d3
+ 1632 05bf 34010000 		.4byte	.LFB79
+ 1633 05c3 40010000 		.4byte	.LFE79
+ 1634 05c7 02       		.byte	0x2
+ 1635 05c8 7D       		.byte	0x7d
+ 1636 05c9 00       		.sleb128 0
+ 1637 05ca 01       		.byte	0x1
+ 1638 05cb 15       		.uleb128 0x15
+ 1639 05cc 01       		.byte	0x1
+ 1640 05cd 00000000 		.4byte	.LASF111
+ 1641 05d1 01       		.byte	0x1
+ 1642 05d2 9C01     		.2byte	0x19c
+ 1643 05d4 01       		.byte	0x1
+ 1644 05d5 D3010000 		.4byte	0x1d3
+ 1645 05d9 2C010000 		.4byte	.LFB78
+ 1646 05dd 34010000 		.4byte	.LFE78
+ 1647 05e1 02       		.byte	0x2
+ 1648 05e2 7D       		.byte	0x7d
+ 1649 05e3 00       		.sleb128 0
+ 1650 05e4 01       		.byte	0x1
+ 1651 05e5 14       		.uleb128 0x14
+ 1652 05e6 01       		.byte	0x1
+ 1653 05e7 27040000 		.4byte	.LASF112
+ 1654 05eb 01       		.byte	0x1
+ 1655 05ec 9201     		.2byte	0x192
+ 1656 05ee 01       		.byte	0x1
+ 1657 05ef 1C010000 		.4byte	.LFB77
+ 1658 05f3 2C010000 		.4byte	.LFE77
+ 1659 05f7 02       		.byte	0x2
+ 1660 05f8 7D       		.byte	0x7d
+ 1661 05f9 00       		.sleb128 0
+ 1662 05fa 01       		.byte	0x1
+ 1663 05fb 14       		.uleb128 0x14
+ 1664 05fc 01       		.byte	0x1
+ 1665 05fd B3050000 		.4byte	.LASF113
+ 1666 0601 01       		.byte	0x1
+ 1667 0602 8201     		.2byte	0x182
+ 1668 0604 01       		.byte	0x1
+ 1669 0605 0C010000 		.4byte	.LFB76
+ 1670 0609 1C010000 		.4byte	.LFE76
+ 1671 060d 02       		.byte	0x2
+ 1672 060e 7D       		.byte	0x7d
+ 1673 060f 00       		.sleb128 0
+ 1674 0610 01       		.byte	0x1
+ 1675 0611 16       		.uleb128 0x16
+ 1676 0612 01       		.byte	0x1
+ 1677 0613 4A060000 		.4byte	.LASF132
+ 1678 0617 01       		.byte	0x1
+ 1679 0618 6801     		.2byte	0x168
+ARM GAS  /tmp/ccAUAHaM.s 			page 41
+
+
+ 1680 061a 01       		.byte	0x1
+ 1681 061b E8000000 		.4byte	.LFB75
+ 1682 061f 0C010000 		.4byte	.LFE75
+ 1683 0623 00000000 		.4byte	.LLST8
+ 1684 0627 01       		.byte	0x1
+ 1685 0628 6F060000 		.4byte	0x66f
+ 1686 062c 17       		.uleb128 0x17
+ 1687 062d ED030000 		.4byte	.LASF117
+ 1688 0631 01       		.byte	0x1
+ 1689 0632 6801     		.2byte	0x168
+ 1690 0634 D3010000 		.4byte	0x1d3
+ 1691 0638 20000000 		.4byte	.LLST9
+ 1692 063c 18       		.uleb128 0x18
+ 1693 063d 2E050000 		.4byte	.LASF114
+ 1694 0641 01       		.byte	0x1
+ 1695 0642 6A01     		.2byte	0x16a
+ 1696 0644 D3010000 		.4byte	0x1d3
+ 1697 0648 4C000000 		.4byte	.LLST10
+ 1698 064c 18       		.uleb128 0x18
+ 1699 064d 23010000 		.4byte	.LASF115
+ 1700 0651 01       		.byte	0x1
+ 1701 0652 6B01     		.2byte	0x16b
+ 1702 0654 D3010000 		.4byte	0x1d3
+ 1703 0658 6A000000 		.4byte	.LLST11
+ 1704 065c 19       		.uleb128 0x19
+ 1705 065d F0000000 		.4byte	.LVL18
+ 1706 0661 EC060000 		.4byte	0x6ec
+ 1707 0665 19       		.uleb128 0x19
+ 1708 0666 00010000 		.4byte	.LVL21
+ 1709 066a EC060000 		.4byte	0x6ec
+ 1710 066e 00       		.byte	0
+ 1711 066f 15       		.uleb128 0x15
+ 1712 0670 01       		.byte	0x1
+ 1713 0671 62060000 		.4byte	.LASF116
+ 1714 0675 01       		.byte	0x1
+ 1715 0676 5801     		.2byte	0x158
+ 1716 0678 01       		.byte	0x1
+ 1717 0679 74040000 		.4byte	0x474
+ 1718 067d DC000000 		.4byte	.LFB74
+ 1719 0681 E8000000 		.4byte	.LFE74
+ 1720 0685 02       		.byte	0x2
+ 1721 0686 7D       		.byte	0x7d
+ 1722 0687 00       		.sleb128 0
+ 1723 0688 01       		.byte	0x1
+ 1724 0689 1A       		.uleb128 0x1a
+ 1725 068a 01       		.byte	0x1
+ 1726 068b 7B000000 		.4byte	.LASF123
+ 1727 068f 01       		.byte	0x1
+ 1728 0690 4201     		.2byte	0x142
+ 1729 0692 01       		.byte	0x1
+ 1730 0693 44040000 		.4byte	0x444
+ 1731 0697 BC000000 		.4byte	.LFB73
+ 1732 069b DC000000 		.4byte	.LFE73
+ 1733 069f 7D000000 		.4byte	.LLST5
+ 1734 06a3 01       		.byte	0x1
+ 1735 06a4 D2060000 		.4byte	0x6d2
+ 1736 06a8 17       		.uleb128 0x17
+ARM GAS  /tmp/ccAUAHaM.s 			page 42
+
+
+ 1737 06a9 08050000 		.4byte	.LASF118
+ 1738 06ad 01       		.byte	0x1
+ 1739 06ae 4201     		.2byte	0x142
+ 1740 06b0 74040000 		.4byte	0x474
+ 1741 06b4 9D000000 		.4byte	.LLST6
+ 1742 06b8 18       		.uleb128 0x18
+ 1743 06b9 31070000 		.4byte	.LASF119
+ 1744 06bd 01       		.byte	0x1
+ 1745 06be 4401     		.2byte	0x144
+ 1746 06c0 44040000 		.4byte	0x444
+ 1747 06c4 D7000000 		.4byte	.LLST7
+ 1748 06c8 19       		.uleb128 0x19
+ 1749 06c9 CE000000 		.4byte	.LVL14
+ 1750 06cd 1C070000 		.4byte	0x71c
+ 1751 06d1 00       		.byte	0
+ 1752 06d2 15       		.uleb128 0x15
+ 1753 06d3 01       		.byte	0x1
+ 1754 06d4 3A010000 		.4byte	.LASF120
+ 1755 06d8 01       		.byte	0x1
+ 1756 06d9 3901     		.2byte	0x139
+ 1757 06db 01       		.byte	0x1
+ 1758 06dc D3010000 		.4byte	0x1d3
+ 1759 06e0 B0000000 		.4byte	.LFB72
+ 1760 06e4 BC000000 		.4byte	.LFE72
+ 1761 06e8 02       		.byte	0x2
+ 1762 06e9 7D       		.byte	0x7d
+ 1763 06ea 00       		.sleb128 0
+ 1764 06eb 01       		.byte	0x1
+ 1765 06ec 15       		.uleb128 0x15
+ 1766 06ed 01       		.byte	0x1
+ 1767 06ee D5030000 		.4byte	.LASF121
+ 1768 06f2 01       		.byte	0x1
+ 1769 06f3 3001     		.2byte	0x130
+ 1770 06f5 01       		.byte	0x1
+ 1771 06f6 D3010000 		.4byte	0x1d3
+ 1772 06fa A4000000 		.4byte	.LFB71
+ 1773 06fe B0000000 		.4byte	.LFE71
+ 1774 0702 02       		.byte	0x2
+ 1775 0703 7D       		.byte	0x7d
+ 1776 0704 00       		.sleb128 0
+ 1777 0705 01       		.byte	0x1
+ 1778 0706 14       		.uleb128 0x14
+ 1779 0707 01       		.byte	0x1
+ 1780 0708 EA060000 		.4byte	.LASF122
+ 1781 070c 01       		.byte	0x1
+ 1782 070d 2501     		.2byte	0x125
+ 1783 070f 01       		.byte	0x1
+ 1784 0710 8C000000 		.4byte	.LFB70
+ 1785 0714 A4000000 		.4byte	.LFE70
+ 1786 0718 02       		.byte	0x2
+ 1787 0719 7D       		.byte	0x7d
+ 1788 071a 00       		.sleb128 0
+ 1789 071b 01       		.byte	0x1
+ 1790 071c 1B       		.uleb128 0x1b
+ 1791 071d 01       		.byte	0x1
+ 1792 071e 5F040000 		.4byte	.LASF133
+ 1793 0722 01       		.byte	0x1
+ARM GAS  /tmp/ccAUAHaM.s 			page 43
+
+
+ 1794 0723 EA       		.byte	0xea
+ 1795 0724 01       		.byte	0x1
+ 1796 0725 44040000 		.4byte	0x444
+ 1797 0729 01       		.byte	0x1
+ 1798 072a 3A070000 		.4byte	0x73a
+ 1799 072e 1C       		.uleb128 0x1c
+ 1800 072f 4E000000 		.4byte	.LASF134
+ 1801 0733 01       		.byte	0x1
+ 1802 0734 EA       		.byte	0xea
+ 1803 0735 D3010000 		.4byte	0x1d3
+ 1804 0739 00       		.byte	0
+ 1805 073a 1D       		.uleb128 0x1d
+ 1806 073b 01       		.byte	0x1
+ 1807 073c C3010000 		.4byte	.LASF135
+ 1808 0740 01       		.byte	0x1
+ 1809 0741 D3       		.byte	0xd3
+ 1810 0742 01       		.byte	0x1
+ 1811 0743 01       		.byte	0x1
+ 1812 0744 1E       		.uleb128 0x1e
+ 1813 0745 01       		.byte	0x1
+ 1814 0746 14030000 		.4byte	.LASF136
+ 1815 074a 01       		.byte	0x1
+ 1816 074b C8       		.byte	0xc8
+ 1817 074c 01       		.byte	0x1
+ 1818 074d 1F       		.uleb128 0x1f
+ 1819 074e 01       		.byte	0x1
+ 1820 074f 5B020000 		.4byte	.LASF124
+ 1821 0753 01       		.byte	0x1
+ 1822 0754 AF       		.byte	0xaf
+ 1823 0755 01       		.byte	0x1
+ 1824 0756 44040000 		.4byte	0x444
+ 1825 075a 04000000 		.4byte	.LFB66
+ 1826 075e 24000000 		.4byte	.LFE66
+ 1827 0762 0D010000 		.4byte	.LLST0
+ 1828 0766 01       		.byte	0x1
+ 1829 0767 75070000 		.4byte	0x775
+ 1830 076b 19       		.uleb128 0x19
+ 1831 076c 1A000000 		.4byte	.LVL0
+ 1832 0770 3A070000 		.4byte	0x73a
+ 1833 0774 00       		.byte	0
+ 1834 0775 1F       		.uleb128 0x1f
+ 1835 0776 01       		.byte	0x1
+ 1836 0777 AB030000 		.4byte	.LASF125
+ 1837 077b 01       		.byte	0x1
+ 1838 077c 8E       		.byte	0x8e
+ 1839 077d 01       		.byte	0x1
+ 1840 077e 44040000 		.4byte	0x444
+ 1841 0782 68000000 		.4byte	.LFB65
+ 1842 0786 8C000000 		.4byte	.LFE65
+ 1843 078a 2D010000 		.4byte	.LLST4
+ 1844 078e 01       		.byte	0x1
+ 1845 078f C3070000 		.4byte	0x7c3
+ 1846 0793 20       		.uleb128 0x20
+ 1847 0794 7A000000 		.4byte	.LVL9
+ 1848 0798 30080000 		.4byte	0x830
+ 1849 079c A6070000 		.4byte	0x7a6
+ 1850 07a0 21       		.uleb128 0x21
+ARM GAS  /tmp/ccAUAHaM.s 			page 44
+
+
+ 1851 07a1 01       		.byte	0x1
+ 1852 07a2 50       		.byte	0x50
+ 1853 07a3 01       		.byte	0x1
+ 1854 07a4 33       		.byte	0x33
+ 1855 07a5 00       		.byte	0
+ 1856 07a6 20       		.uleb128 0x20
+ 1857 07a7 80000000 		.4byte	.LVL10
+ 1858 07ab 1C070000 		.4byte	0x71c
+ 1859 07af B9070000 		.4byte	0x7b9
+ 1860 07b3 21       		.uleb128 0x21
+ 1861 07b4 01       		.byte	0x1
+ 1862 07b5 50       		.byte	0x50
+ 1863 07b6 01       		.byte	0x1
+ 1864 07b7 3F       		.byte	0x3f
+ 1865 07b8 00       		.byte	0
+ 1866 07b9 19       		.uleb128 0x19
+ 1867 07ba 84000000 		.4byte	.LVL11
+ 1868 07be 44070000 		.4byte	0x744
+ 1869 07c2 00       		.byte	0
+ 1870 07c3 22       		.uleb128 0x22
+ 1871 07c4 3A070000 		.4byte	0x73a
+ 1872 07c8 02000000 		.4byte	.LFB68
+ 1873 07cc 04000000 		.4byte	.LFE68
+ 1874 07d0 02       		.byte	0x2
+ 1875 07d1 7D       		.byte	0x7d
+ 1876 07d2 00       		.sleb128 0
+ 1877 07d3 01       		.byte	0x1
+ 1878 07d4 23       		.uleb128 0x23
+ 1879 07d5 1C070000 		.4byte	0x71c
+ 1880 07d9 24000000 		.4byte	.LFB69
+ 1881 07dd 68000000 		.4byte	.LFE69
+ 1882 07e1 4D010000 		.4byte	.LLST1
+ 1883 07e5 01       		.byte	0x1
+ 1884 07e6 30080000 		.4byte	0x830
+ 1885 07ea 24       		.uleb128 0x24
+ 1886 07eb 2E070000 		.4byte	0x72e
+ 1887 07ef 6D010000 		.4byte	.LLST2
+ 1888 07f3 25       		.uleb128 0x25
+ 1889 07f4 48000000 		.4byte	.LBB4
+ 1890 07f8 5A000000 		.4byte	.LBE4
+ 1891 07fc 26080000 		.4byte	0x826
+ 1892 0800 24       		.uleb128 0x24
+ 1893 0801 2E070000 		.4byte	0x72e
+ 1894 0805 99010000 		.4byte	.LLST3
+ 1895 0809 26       		.uleb128 0x26
+ 1896 080a 54000000 		.4byte	.LVL5
+ 1897 080e 3E080000 		.4byte	0x83e
+ 1898 0812 21       		.uleb128 0x21
+ 1899 0813 01       		.byte	0x1
+ 1900 0814 50       		.byte	0x50
+ 1901 0815 02       		.byte	0x2
+ 1902 0816 09       		.byte	0x9
+ 1903 0817 FF       		.byte	0xff
+ 1904 0818 21       		.uleb128 0x21
+ 1905 0819 01       		.byte	0x1
+ 1906 081a 51       		.byte	0x51
+ 1907 081b 02       		.byte	0x2
+ARM GAS  /tmp/ccAUAHaM.s 			page 45
+
+
+ 1908 081c 75       		.byte	0x75
+ 1909 081d 00       		.sleb128 0
+ 1910 081e 21       		.uleb128 0x21
+ 1911 081f 01       		.byte	0x1
+ 1912 0820 52       		.byte	0x52
+ 1913 0821 02       		.byte	0x2
+ 1914 0822 74       		.byte	0x74
+ 1915 0823 00       		.sleb128 0
+ 1916 0824 00       		.byte	0
+ 1917 0825 00       		.byte	0
+ 1918 0826 19       		.uleb128 0x19
+ 1919 0827 40000000 		.4byte	.LVL3
+ 1920 082b 4C080000 		.4byte	0x84c
+ 1921 082f 00       		.byte	0
+ 1922 0830 27       		.uleb128 0x27
+ 1923 0831 01       		.byte	0x1
+ 1924 0832 01       		.byte	0x1
+ 1925 0833 F6060000 		.4byte	.LASF126
+ 1926 0837 F6060000 		.4byte	.LASF126
+ 1927 083b 09       		.byte	0x9
+ 1928 083c 0601     		.2byte	0x106
+ 1929 083e 27       		.uleb128 0x27
+ 1930 083f 01       		.byte	0x1
+ 1931 0840 01       		.byte	0x1
+ 1932 0841 F3030000 		.4byte	.LASF127
+ 1933 0845 F3030000 		.4byte	.LASF127
+ 1934 0849 09       		.byte	0x9
+ 1935 084a 0701     		.2byte	0x107
+ 1936 084c 27       		.uleb128 0x27
+ 1937 084d 01       		.byte	0x1
+ 1938 084e 01       		.byte	0x1
+ 1939 084f EB040000 		.4byte	.LASF128
+ 1940 0853 EB040000 		.4byte	.LASF128
+ 1941 0857 09       		.byte	0x9
+ 1942 0858 0B01     		.2byte	0x10b
+ 1943 085a 00       		.byte	0
+ 1944              		.section	.debug_abbrev,"",%progbits
+ 1945              	.Ldebug_abbrev0:
+ 1946 0000 01       		.uleb128 0x1
+ 1947 0001 11       		.uleb128 0x11
+ 1948 0002 01       		.byte	0x1
+ 1949 0003 25       		.uleb128 0x25
+ 1950 0004 0E       		.uleb128 0xe
+ 1951 0005 13       		.uleb128 0x13
+ 1952 0006 0B       		.uleb128 0xb
+ 1953 0007 03       		.uleb128 0x3
+ 1954 0008 0E       		.uleb128 0xe
+ 1955 0009 1B       		.uleb128 0x1b
+ 1956 000a 0E       		.uleb128 0xe
+ 1957 000b 11       		.uleb128 0x11
+ 1958 000c 01       		.uleb128 0x1
+ 1959 000d 12       		.uleb128 0x12
+ 1960 000e 01       		.uleb128 0x1
+ 1961 000f 10       		.uleb128 0x10
+ 1962 0010 06       		.uleb128 0x6
+ 1963 0011 00       		.byte	0
+ 1964 0012 00       		.byte	0
+ARM GAS  /tmp/ccAUAHaM.s 			page 46
+
+
+ 1965 0013 02       		.uleb128 0x2
+ 1966 0014 04       		.uleb128 0x4
+ 1967 0015 01       		.byte	0x1
+ 1968 0016 0B       		.uleb128 0xb
+ 1969 0017 0B       		.uleb128 0xb
+ 1970 0018 49       		.uleb128 0x49
+ 1971 0019 13       		.uleb128 0x13
+ 1972 001a 3A       		.uleb128 0x3a
+ 1973 001b 0B       		.uleb128 0xb
+ 1974 001c 3B       		.uleb128 0x3b
+ 1975 001d 0B       		.uleb128 0xb
+ 1976 001e 01       		.uleb128 0x1
+ 1977 001f 13       		.uleb128 0x13
+ 1978 0020 00       		.byte	0
+ 1979 0021 00       		.byte	0
+ 1980 0022 03       		.uleb128 0x3
+ 1981 0023 28       		.uleb128 0x28
+ 1982 0024 00       		.byte	0
+ 1983 0025 03       		.uleb128 0x3
+ 1984 0026 0E       		.uleb128 0xe
+ 1985 0027 1C       		.uleb128 0x1c
+ 1986 0028 0D       		.uleb128 0xd
+ 1987 0029 00       		.byte	0
+ 1988 002a 00       		.byte	0
+ 1989 002b 04       		.uleb128 0x4
+ 1990 002c 28       		.uleb128 0x28
+ 1991 002d 00       		.byte	0
+ 1992 002e 03       		.uleb128 0x3
+ 1993 002f 0E       		.uleb128 0xe
+ 1994 0030 1C       		.uleb128 0x1c
+ 1995 0031 0B       		.uleb128 0xb
+ 1996 0032 00       		.byte	0
+ 1997 0033 00       		.byte	0
+ 1998 0034 05       		.uleb128 0x5
+ 1999 0035 24       		.uleb128 0x24
+ 2000 0036 00       		.byte	0
+ 2001 0037 0B       		.uleb128 0xb
+ 2002 0038 0B       		.uleb128 0xb
+ 2003 0039 3E       		.uleb128 0x3e
+ 2004 003a 0B       		.uleb128 0xb
+ 2005 003b 03       		.uleb128 0x3
+ 2006 003c 0E       		.uleb128 0xe
+ 2007 003d 00       		.byte	0
+ 2008 003e 00       		.byte	0
+ 2009 003f 06       		.uleb128 0x6
+ 2010 0040 16       		.uleb128 0x16
+ 2011 0041 00       		.byte	0
+ 2012 0042 03       		.uleb128 0x3
+ 2013 0043 0E       		.uleb128 0xe
+ 2014 0044 3A       		.uleb128 0x3a
+ 2015 0045 0B       		.uleb128 0xb
+ 2016 0046 3B       		.uleb128 0x3b
+ 2017 0047 0B       		.uleb128 0xb
+ 2018 0048 49       		.uleb128 0x49
+ 2019 0049 13       		.uleb128 0x13
+ 2020 004a 00       		.byte	0
+ 2021 004b 00       		.byte	0
+ARM GAS  /tmp/ccAUAHaM.s 			page 47
+
+
+ 2022 004c 07       		.uleb128 0x7
+ 2023 004d 24       		.uleb128 0x24
+ 2024 004e 00       		.byte	0
+ 2025 004f 0B       		.uleb128 0xb
+ 2026 0050 0B       		.uleb128 0xb
+ 2027 0051 3E       		.uleb128 0x3e
+ 2028 0052 0B       		.uleb128 0xb
+ 2029 0053 03       		.uleb128 0x3
+ 2030 0054 08       		.uleb128 0x8
+ 2031 0055 00       		.byte	0
+ 2032 0056 00       		.byte	0
+ 2033 0057 08       		.uleb128 0x8
+ 2034 0058 26       		.uleb128 0x26
+ 2035 0059 00       		.byte	0
+ 2036 005a 49       		.uleb128 0x49
+ 2037 005b 13       		.uleb128 0x13
+ 2038 005c 00       		.byte	0
+ 2039 005d 00       		.byte	0
+ 2040 005e 09       		.uleb128 0x9
+ 2041 005f 35       		.uleb128 0x35
+ 2042 0060 00       		.byte	0
+ 2043 0061 49       		.uleb128 0x49
+ 2044 0062 13       		.uleb128 0x13
+ 2045 0063 00       		.byte	0
+ 2046 0064 00       		.byte	0
+ 2047 0065 0A       		.uleb128 0xa
+ 2048 0066 13       		.uleb128 0x13
+ 2049 0067 01       		.byte	0x1
+ 2050 0068 0B       		.uleb128 0xb
+ 2051 0069 0B       		.uleb128 0xb
+ 2052 006a 3A       		.uleb128 0x3a
+ 2053 006b 0B       		.uleb128 0xb
+ 2054 006c 3B       		.uleb128 0x3b
+ 2055 006d 05       		.uleb128 0x5
+ 2056 006e 01       		.uleb128 0x1
+ 2057 006f 13       		.uleb128 0x13
+ 2058 0070 00       		.byte	0
+ 2059 0071 00       		.byte	0
+ 2060 0072 0B       		.uleb128 0xb
+ 2061 0073 0D       		.uleb128 0xd
+ 2062 0074 00       		.byte	0
+ 2063 0075 03       		.uleb128 0x3
+ 2064 0076 0E       		.uleb128 0xe
+ 2065 0077 3A       		.uleb128 0x3a
+ 2066 0078 0B       		.uleb128 0xb
+ 2067 0079 3B       		.uleb128 0x3b
+ 2068 007a 05       		.uleb128 0x5
+ 2069 007b 49       		.uleb128 0x49
+ 2070 007c 13       		.uleb128 0x13
+ 2071 007d 38       		.uleb128 0x38
+ 2072 007e 0A       		.uleb128 0xa
+ 2073 007f 00       		.byte	0
+ 2074 0080 00       		.byte	0
+ 2075 0081 0C       		.uleb128 0xc
+ 2076 0082 0D       		.uleb128 0xd
+ 2077 0083 00       		.byte	0
+ 2078 0084 03       		.uleb128 0x3
+ARM GAS  /tmp/ccAUAHaM.s 			page 48
+
+
+ 2079 0085 08       		.uleb128 0x8
+ 2080 0086 3A       		.uleb128 0x3a
+ 2081 0087 0B       		.uleb128 0xb
+ 2082 0088 3B       		.uleb128 0x3b
+ 2083 0089 05       		.uleb128 0x5
+ 2084 008a 49       		.uleb128 0x49
+ 2085 008b 13       		.uleb128 0x13
+ 2086 008c 38       		.uleb128 0x38
+ 2087 008d 0A       		.uleb128 0xa
+ 2088 008e 00       		.byte	0
+ 2089 008f 00       		.byte	0
+ 2090 0090 0D       		.uleb128 0xd
+ 2091 0091 16       		.uleb128 0x16
+ 2092 0092 00       		.byte	0
+ 2093 0093 03       		.uleb128 0x3
+ 2094 0094 0E       		.uleb128 0xe
+ 2095 0095 3A       		.uleb128 0x3a
+ 2096 0096 0B       		.uleb128 0xb
+ 2097 0097 3B       		.uleb128 0x3b
+ 2098 0098 05       		.uleb128 0x5
+ 2099 0099 49       		.uleb128 0x49
+ 2100 009a 13       		.uleb128 0x13
+ 2101 009b 00       		.byte	0
+ 2102 009c 00       		.byte	0
+ 2103 009d 0E       		.uleb128 0xe
+ 2104 009e 34       		.uleb128 0x34
+ 2105 009f 00       		.byte	0
+ 2106 00a0 03       		.uleb128 0x3
+ 2107 00a1 0E       		.uleb128 0xe
+ 2108 00a2 3A       		.uleb128 0x3a
+ 2109 00a3 0B       		.uleb128 0xb
+ 2110 00a4 3B       		.uleb128 0x3b
+ 2111 00a5 05       		.uleb128 0x5
+ 2112 00a6 49       		.uleb128 0x49
+ 2113 00a7 13       		.uleb128 0x13
+ 2114 00a8 3F       		.uleb128 0x3f
+ 2115 00a9 0C       		.uleb128 0xc
+ 2116 00aa 3C       		.uleb128 0x3c
+ 2117 00ab 0C       		.uleb128 0xc
+ 2118 00ac 00       		.byte	0
+ 2119 00ad 00       		.byte	0
+ 2120 00ae 0F       		.uleb128 0xf
+ 2121 00af 34       		.uleb128 0x34
+ 2122 00b0 00       		.byte	0
+ 2123 00b1 03       		.uleb128 0x3
+ 2124 00b2 0E       		.uleb128 0xe
+ 2125 00b3 3A       		.uleb128 0x3a
+ 2126 00b4 0B       		.uleb128 0xb
+ 2127 00b5 3B       		.uleb128 0x3b
+ 2128 00b6 0B       		.uleb128 0xb
+ 2129 00b7 49       		.uleb128 0x49
+ 2130 00b8 13       		.uleb128 0x13
+ 2131 00b9 3F       		.uleb128 0x3f
+ 2132 00ba 0C       		.uleb128 0xc
+ 2133 00bb 3C       		.uleb128 0x3c
+ 2134 00bc 0C       		.uleb128 0xc
+ 2135 00bd 00       		.byte	0
+ARM GAS  /tmp/ccAUAHaM.s 			page 49
+
+
+ 2136 00be 00       		.byte	0
+ 2137 00bf 10       		.uleb128 0x10
+ 2138 00c0 01       		.uleb128 0x1
+ 2139 00c1 01       		.byte	0x1
+ 2140 00c2 49       		.uleb128 0x49
+ 2141 00c3 13       		.uleb128 0x13
+ 2142 00c4 01       		.uleb128 0x1
+ 2143 00c5 13       		.uleb128 0x13
+ 2144 00c6 00       		.byte	0
+ 2145 00c7 00       		.byte	0
+ 2146 00c8 11       		.uleb128 0x11
+ 2147 00c9 21       		.uleb128 0x21
+ 2148 00ca 00       		.byte	0
+ 2149 00cb 49       		.uleb128 0x49
+ 2150 00cc 13       		.uleb128 0x13
+ 2151 00cd 2F       		.uleb128 0x2f
+ 2152 00ce 0B       		.uleb128 0xb
+ 2153 00cf 00       		.byte	0
+ 2154 00d0 00       		.byte	0
+ 2155 00d1 12       		.uleb128 0x12
+ 2156 00d2 34       		.uleb128 0x34
+ 2157 00d3 00       		.byte	0
+ 2158 00d4 03       		.uleb128 0x3
+ 2159 00d5 0E       		.uleb128 0xe
+ 2160 00d6 3A       		.uleb128 0x3a
+ 2161 00d7 0B       		.uleb128 0xb
+ 2162 00d8 3B       		.uleb128 0x3b
+ 2163 00d9 0B       		.uleb128 0xb
+ 2164 00da 49       		.uleb128 0x49
+ 2165 00db 13       		.uleb128 0x13
+ 2166 00dc 3F       		.uleb128 0x3f
+ 2167 00dd 0C       		.uleb128 0xc
+ 2168 00de 02       		.uleb128 0x2
+ 2169 00df 0A       		.uleb128 0xa
+ 2170 00e0 00       		.byte	0
+ 2171 00e1 00       		.byte	0
+ 2172 00e2 13       		.uleb128 0x13
+ 2173 00e3 34       		.uleb128 0x34
+ 2174 00e4 00       		.byte	0
+ 2175 00e5 47       		.uleb128 0x47
+ 2176 00e6 13       		.uleb128 0x13
+ 2177 00e7 3A       		.uleb128 0x3a
+ 2178 00e8 0B       		.uleb128 0xb
+ 2179 00e9 3B       		.uleb128 0x3b
+ 2180 00ea 0B       		.uleb128 0xb
+ 2181 00eb 02       		.uleb128 0x2
+ 2182 00ec 0A       		.uleb128 0xa
+ 2183 00ed 00       		.byte	0
+ 2184 00ee 00       		.byte	0
+ 2185 00ef 14       		.uleb128 0x14
+ 2186 00f0 2E       		.uleb128 0x2e
+ 2187 00f1 00       		.byte	0
+ 2188 00f2 3F       		.uleb128 0x3f
+ 2189 00f3 0C       		.uleb128 0xc
+ 2190 00f4 03       		.uleb128 0x3
+ 2191 00f5 0E       		.uleb128 0xe
+ 2192 00f6 3A       		.uleb128 0x3a
+ARM GAS  /tmp/ccAUAHaM.s 			page 50
+
+
+ 2193 00f7 0B       		.uleb128 0xb
+ 2194 00f8 3B       		.uleb128 0x3b
+ 2195 00f9 05       		.uleb128 0x5
+ 2196 00fa 27       		.uleb128 0x27
+ 2197 00fb 0C       		.uleb128 0xc
+ 2198 00fc 11       		.uleb128 0x11
+ 2199 00fd 01       		.uleb128 0x1
+ 2200 00fe 12       		.uleb128 0x12
+ 2201 00ff 01       		.uleb128 0x1
+ 2202 0100 40       		.uleb128 0x40
+ 2203 0101 0A       		.uleb128 0xa
+ 2204 0102 9742     		.uleb128 0x2117
+ 2205 0104 0C       		.uleb128 0xc
+ 2206 0105 00       		.byte	0
+ 2207 0106 00       		.byte	0
+ 2208 0107 15       		.uleb128 0x15
+ 2209 0108 2E       		.uleb128 0x2e
+ 2210 0109 00       		.byte	0
+ 2211 010a 3F       		.uleb128 0x3f
+ 2212 010b 0C       		.uleb128 0xc
+ 2213 010c 03       		.uleb128 0x3
+ 2214 010d 0E       		.uleb128 0xe
+ 2215 010e 3A       		.uleb128 0x3a
+ 2216 010f 0B       		.uleb128 0xb
+ 2217 0110 3B       		.uleb128 0x3b
+ 2218 0111 05       		.uleb128 0x5
+ 2219 0112 27       		.uleb128 0x27
+ 2220 0113 0C       		.uleb128 0xc
+ 2221 0114 49       		.uleb128 0x49
+ 2222 0115 13       		.uleb128 0x13
+ 2223 0116 11       		.uleb128 0x11
+ 2224 0117 01       		.uleb128 0x1
+ 2225 0118 12       		.uleb128 0x12
+ 2226 0119 01       		.uleb128 0x1
+ 2227 011a 40       		.uleb128 0x40
+ 2228 011b 0A       		.uleb128 0xa
+ 2229 011c 9742     		.uleb128 0x2117
+ 2230 011e 0C       		.uleb128 0xc
+ 2231 011f 00       		.byte	0
+ 2232 0120 00       		.byte	0
+ 2233 0121 16       		.uleb128 0x16
+ 2234 0122 2E       		.uleb128 0x2e
+ 2235 0123 01       		.byte	0x1
+ 2236 0124 3F       		.uleb128 0x3f
+ 2237 0125 0C       		.uleb128 0xc
+ 2238 0126 03       		.uleb128 0x3
+ 2239 0127 0E       		.uleb128 0xe
+ 2240 0128 3A       		.uleb128 0x3a
+ 2241 0129 0B       		.uleb128 0xb
+ 2242 012a 3B       		.uleb128 0x3b
+ 2243 012b 05       		.uleb128 0x5
+ 2244 012c 27       		.uleb128 0x27
+ 2245 012d 0C       		.uleb128 0xc
+ 2246 012e 11       		.uleb128 0x11
+ 2247 012f 01       		.uleb128 0x1
+ 2248 0130 12       		.uleb128 0x12
+ 2249 0131 01       		.uleb128 0x1
+ARM GAS  /tmp/ccAUAHaM.s 			page 51
+
+
+ 2250 0132 40       		.uleb128 0x40
+ 2251 0133 06       		.uleb128 0x6
+ 2252 0134 9742     		.uleb128 0x2117
+ 2253 0136 0C       		.uleb128 0xc
+ 2254 0137 01       		.uleb128 0x1
+ 2255 0138 13       		.uleb128 0x13
+ 2256 0139 00       		.byte	0
+ 2257 013a 00       		.byte	0
+ 2258 013b 17       		.uleb128 0x17
+ 2259 013c 05       		.uleb128 0x5
+ 2260 013d 00       		.byte	0
+ 2261 013e 03       		.uleb128 0x3
+ 2262 013f 0E       		.uleb128 0xe
+ 2263 0140 3A       		.uleb128 0x3a
+ 2264 0141 0B       		.uleb128 0xb
+ 2265 0142 3B       		.uleb128 0x3b
+ 2266 0143 05       		.uleb128 0x5
+ 2267 0144 49       		.uleb128 0x49
+ 2268 0145 13       		.uleb128 0x13
+ 2269 0146 02       		.uleb128 0x2
+ 2270 0147 06       		.uleb128 0x6
+ 2271 0148 00       		.byte	0
+ 2272 0149 00       		.byte	0
+ 2273 014a 18       		.uleb128 0x18
+ 2274 014b 34       		.uleb128 0x34
+ 2275 014c 00       		.byte	0
+ 2276 014d 03       		.uleb128 0x3
+ 2277 014e 0E       		.uleb128 0xe
+ 2278 014f 3A       		.uleb128 0x3a
+ 2279 0150 0B       		.uleb128 0xb
+ 2280 0151 3B       		.uleb128 0x3b
+ 2281 0152 05       		.uleb128 0x5
+ 2282 0153 49       		.uleb128 0x49
+ 2283 0154 13       		.uleb128 0x13
+ 2284 0155 02       		.uleb128 0x2
+ 2285 0156 06       		.uleb128 0x6
+ 2286 0157 00       		.byte	0
+ 2287 0158 00       		.byte	0
+ 2288 0159 19       		.uleb128 0x19
+ 2289 015a 898201   		.uleb128 0x4109
+ 2290 015d 00       		.byte	0
+ 2291 015e 11       		.uleb128 0x11
+ 2292 015f 01       		.uleb128 0x1
+ 2293 0160 31       		.uleb128 0x31
+ 2294 0161 13       		.uleb128 0x13
+ 2295 0162 00       		.byte	0
+ 2296 0163 00       		.byte	0
+ 2297 0164 1A       		.uleb128 0x1a
+ 2298 0165 2E       		.uleb128 0x2e
+ 2299 0166 01       		.byte	0x1
+ 2300 0167 3F       		.uleb128 0x3f
+ 2301 0168 0C       		.uleb128 0xc
+ 2302 0169 03       		.uleb128 0x3
+ 2303 016a 0E       		.uleb128 0xe
+ 2304 016b 3A       		.uleb128 0x3a
+ 2305 016c 0B       		.uleb128 0xb
+ 2306 016d 3B       		.uleb128 0x3b
+ARM GAS  /tmp/ccAUAHaM.s 			page 52
+
+
+ 2307 016e 05       		.uleb128 0x5
+ 2308 016f 27       		.uleb128 0x27
+ 2309 0170 0C       		.uleb128 0xc
+ 2310 0171 49       		.uleb128 0x49
+ 2311 0172 13       		.uleb128 0x13
+ 2312 0173 11       		.uleb128 0x11
+ 2313 0174 01       		.uleb128 0x1
+ 2314 0175 12       		.uleb128 0x12
+ 2315 0176 01       		.uleb128 0x1
+ 2316 0177 40       		.uleb128 0x40
+ 2317 0178 06       		.uleb128 0x6
+ 2318 0179 9742     		.uleb128 0x2117
+ 2319 017b 0C       		.uleb128 0xc
+ 2320 017c 01       		.uleb128 0x1
+ 2321 017d 13       		.uleb128 0x13
+ 2322 017e 00       		.byte	0
+ 2323 017f 00       		.byte	0
+ 2324 0180 1B       		.uleb128 0x1b
+ 2325 0181 2E       		.uleb128 0x2e
+ 2326 0182 01       		.byte	0x1
+ 2327 0183 3F       		.uleb128 0x3f
+ 2328 0184 0C       		.uleb128 0xc
+ 2329 0185 03       		.uleb128 0x3
+ 2330 0186 0E       		.uleb128 0xe
+ 2331 0187 3A       		.uleb128 0x3a
+ 2332 0188 0B       		.uleb128 0xb
+ 2333 0189 3B       		.uleb128 0x3b
+ 2334 018a 0B       		.uleb128 0xb
+ 2335 018b 27       		.uleb128 0x27
+ 2336 018c 0C       		.uleb128 0xc
+ 2337 018d 49       		.uleb128 0x49
+ 2338 018e 13       		.uleb128 0x13
+ 2339 018f 20       		.uleb128 0x20
+ 2340 0190 0B       		.uleb128 0xb
+ 2341 0191 01       		.uleb128 0x1
+ 2342 0192 13       		.uleb128 0x13
+ 2343 0193 00       		.byte	0
+ 2344 0194 00       		.byte	0
+ 2345 0195 1C       		.uleb128 0x1c
+ 2346 0196 05       		.uleb128 0x5
+ 2347 0197 00       		.byte	0
+ 2348 0198 03       		.uleb128 0x3
+ 2349 0199 0E       		.uleb128 0xe
+ 2350 019a 3A       		.uleb128 0x3a
+ 2351 019b 0B       		.uleb128 0xb
+ 2352 019c 3B       		.uleb128 0x3b
+ 2353 019d 0B       		.uleb128 0xb
+ 2354 019e 49       		.uleb128 0x49
+ 2355 019f 13       		.uleb128 0x13
+ 2356 01a0 00       		.byte	0
+ 2357 01a1 00       		.byte	0
+ 2358 01a2 1D       		.uleb128 0x1d
+ 2359 01a3 2E       		.uleb128 0x2e
+ 2360 01a4 00       		.byte	0
+ 2361 01a5 3F       		.uleb128 0x3f
+ 2362 01a6 0C       		.uleb128 0xc
+ 2363 01a7 03       		.uleb128 0x3
+ARM GAS  /tmp/ccAUAHaM.s 			page 53
+
+
+ 2364 01a8 0E       		.uleb128 0xe
+ 2365 01a9 3A       		.uleb128 0x3a
+ 2366 01aa 0B       		.uleb128 0xb
+ 2367 01ab 3B       		.uleb128 0x3b
+ 2368 01ac 0B       		.uleb128 0xb
+ 2369 01ad 27       		.uleb128 0x27
+ 2370 01ae 0C       		.uleb128 0xc
+ 2371 01af 20       		.uleb128 0x20
+ 2372 01b0 0B       		.uleb128 0xb
+ 2373 01b1 00       		.byte	0
+ 2374 01b2 00       		.byte	0
+ 2375 01b3 1E       		.uleb128 0x1e
+ 2376 01b4 2E       		.uleb128 0x2e
+ 2377 01b5 00       		.byte	0
+ 2378 01b6 3F       		.uleb128 0x3f
+ 2379 01b7 0C       		.uleb128 0xc
+ 2380 01b8 03       		.uleb128 0x3
+ 2381 01b9 0E       		.uleb128 0xe
+ 2382 01ba 3A       		.uleb128 0x3a
+ 2383 01bb 0B       		.uleb128 0xb
+ 2384 01bc 3B       		.uleb128 0x3b
+ 2385 01bd 0B       		.uleb128 0xb
+ 2386 01be 27       		.uleb128 0x27
+ 2387 01bf 0C       		.uleb128 0xc
+ 2388 01c0 00       		.byte	0
+ 2389 01c1 00       		.byte	0
+ 2390 01c2 1F       		.uleb128 0x1f
+ 2391 01c3 2E       		.uleb128 0x2e
+ 2392 01c4 01       		.byte	0x1
+ 2393 01c5 3F       		.uleb128 0x3f
+ 2394 01c6 0C       		.uleb128 0xc
+ 2395 01c7 03       		.uleb128 0x3
+ 2396 01c8 0E       		.uleb128 0xe
+ 2397 01c9 3A       		.uleb128 0x3a
+ 2398 01ca 0B       		.uleb128 0xb
+ 2399 01cb 3B       		.uleb128 0x3b
+ 2400 01cc 0B       		.uleb128 0xb
+ 2401 01cd 27       		.uleb128 0x27
+ 2402 01ce 0C       		.uleb128 0xc
+ 2403 01cf 49       		.uleb128 0x49
+ 2404 01d0 13       		.uleb128 0x13
+ 2405 01d1 11       		.uleb128 0x11
+ 2406 01d2 01       		.uleb128 0x1
+ 2407 01d3 12       		.uleb128 0x12
+ 2408 01d4 01       		.uleb128 0x1
+ 2409 01d5 40       		.uleb128 0x40
+ 2410 01d6 06       		.uleb128 0x6
+ 2411 01d7 9742     		.uleb128 0x2117
+ 2412 01d9 0C       		.uleb128 0xc
+ 2413 01da 01       		.uleb128 0x1
+ 2414 01db 13       		.uleb128 0x13
+ 2415 01dc 00       		.byte	0
+ 2416 01dd 00       		.byte	0
+ 2417 01de 20       		.uleb128 0x20
+ 2418 01df 898201   		.uleb128 0x4109
+ 2419 01e2 01       		.byte	0x1
+ 2420 01e3 11       		.uleb128 0x11
+ARM GAS  /tmp/ccAUAHaM.s 			page 54
+
+
+ 2421 01e4 01       		.uleb128 0x1
+ 2422 01e5 31       		.uleb128 0x31
+ 2423 01e6 13       		.uleb128 0x13
+ 2424 01e7 01       		.uleb128 0x1
+ 2425 01e8 13       		.uleb128 0x13
+ 2426 01e9 00       		.byte	0
+ 2427 01ea 00       		.byte	0
+ 2428 01eb 21       		.uleb128 0x21
+ 2429 01ec 8A8201   		.uleb128 0x410a
+ 2430 01ef 00       		.byte	0
+ 2431 01f0 02       		.uleb128 0x2
+ 2432 01f1 0A       		.uleb128 0xa
+ 2433 01f2 9142     		.uleb128 0x2111
+ 2434 01f4 0A       		.uleb128 0xa
+ 2435 01f5 00       		.byte	0
+ 2436 01f6 00       		.byte	0
+ 2437 01f7 22       		.uleb128 0x22
+ 2438 01f8 2E       		.uleb128 0x2e
+ 2439 01f9 00       		.byte	0
+ 2440 01fa 31       		.uleb128 0x31
+ 2441 01fb 13       		.uleb128 0x13
+ 2442 01fc 11       		.uleb128 0x11
+ 2443 01fd 01       		.uleb128 0x1
+ 2444 01fe 12       		.uleb128 0x12
+ 2445 01ff 01       		.uleb128 0x1
+ 2446 0200 40       		.uleb128 0x40
+ 2447 0201 0A       		.uleb128 0xa
+ 2448 0202 9742     		.uleb128 0x2117
+ 2449 0204 0C       		.uleb128 0xc
+ 2450 0205 00       		.byte	0
+ 2451 0206 00       		.byte	0
+ 2452 0207 23       		.uleb128 0x23
+ 2453 0208 2E       		.uleb128 0x2e
+ 2454 0209 01       		.byte	0x1
+ 2455 020a 31       		.uleb128 0x31
+ 2456 020b 13       		.uleb128 0x13
+ 2457 020c 11       		.uleb128 0x11
+ 2458 020d 01       		.uleb128 0x1
+ 2459 020e 12       		.uleb128 0x12
+ 2460 020f 01       		.uleb128 0x1
+ 2461 0210 40       		.uleb128 0x40
+ 2462 0211 06       		.uleb128 0x6
+ 2463 0212 9742     		.uleb128 0x2117
+ 2464 0214 0C       		.uleb128 0xc
+ 2465 0215 01       		.uleb128 0x1
+ 2466 0216 13       		.uleb128 0x13
+ 2467 0217 00       		.byte	0
+ 2468 0218 00       		.byte	0
+ 2469 0219 24       		.uleb128 0x24
+ 2470 021a 05       		.uleb128 0x5
+ 2471 021b 00       		.byte	0
+ 2472 021c 31       		.uleb128 0x31
+ 2473 021d 13       		.uleb128 0x13
+ 2474 021e 02       		.uleb128 0x2
+ 2475 021f 06       		.uleb128 0x6
+ 2476 0220 00       		.byte	0
+ 2477 0221 00       		.byte	0
+ARM GAS  /tmp/ccAUAHaM.s 			page 55
+
+
+ 2478 0222 25       		.uleb128 0x25
+ 2479 0223 0B       		.uleb128 0xb
+ 2480 0224 01       		.byte	0x1
+ 2481 0225 11       		.uleb128 0x11
+ 2482 0226 01       		.uleb128 0x1
+ 2483 0227 12       		.uleb128 0x12
+ 2484 0228 01       		.uleb128 0x1
+ 2485 0229 01       		.uleb128 0x1
+ 2486 022a 13       		.uleb128 0x13
+ 2487 022b 00       		.byte	0
+ 2488 022c 00       		.byte	0
+ 2489 022d 26       		.uleb128 0x26
+ 2490 022e 898201   		.uleb128 0x4109
+ 2491 0231 01       		.byte	0x1
+ 2492 0232 11       		.uleb128 0x11
+ 2493 0233 01       		.uleb128 0x1
+ 2494 0234 31       		.uleb128 0x31
+ 2495 0235 13       		.uleb128 0x13
+ 2496 0236 00       		.byte	0
+ 2497 0237 00       		.byte	0
+ 2498 0238 27       		.uleb128 0x27
+ 2499 0239 2E       		.uleb128 0x2e
+ 2500 023a 00       		.byte	0
+ 2501 023b 3F       		.uleb128 0x3f
+ 2502 023c 0C       		.uleb128 0xc
+ 2503 023d 3C       		.uleb128 0x3c
+ 2504 023e 0C       		.uleb128 0xc
+ 2505 023f 8740     		.uleb128 0x2007
+ 2506 0241 0E       		.uleb128 0xe
+ 2507 0242 03       		.uleb128 0x3
+ 2508 0243 0E       		.uleb128 0xe
+ 2509 0244 3A       		.uleb128 0x3a
+ 2510 0245 0B       		.uleb128 0xb
+ 2511 0246 3B       		.uleb128 0x3b
+ 2512 0247 05       		.uleb128 0x5
+ 2513 0248 00       		.byte	0
+ 2514 0249 00       		.byte	0
+ 2515 024a 00       		.byte	0
+ 2516              		.section	.debug_loc,"",%progbits
+ 2517              	.Ldebug_loc0:
+ 2518              	.LLST8:
+ 2519 0000 E8000000 		.4byte	.LFB75-.Ltext0
+ 2520 0004 EA000000 		.4byte	.LCFI4-.Ltext0
+ 2521 0008 0200     		.2byte	0x2
+ 2522 000a 7D       		.byte	0x7d
+ 2523 000b 00       		.sleb128 0
+ 2524 000c EA000000 		.4byte	.LCFI4-.Ltext0
+ 2525 0010 0C010000 		.4byte	.LFE75-.Ltext0
+ 2526 0014 0200     		.2byte	0x2
+ 2527 0016 7D       		.byte	0x7d
+ 2528 0017 10       		.sleb128 16
+ 2529 0018 00000000 		.4byte	0
+ 2530 001c 00000000 		.4byte	0
+ 2531              	.LLST9:
+ 2532 0020 E8000000 		.4byte	.LVL17-.Ltext0
+ 2533 0024 EF000000 		.4byte	.LVL18-1-.Ltext0
+ 2534 0028 0100     		.2byte	0x1
+ARM GAS  /tmp/ccAUAHaM.s 			page 56
+
+
+ 2535 002a 50       		.byte	0x50
+ 2536 002b EF000000 		.4byte	.LVL18-1-.Ltext0
+ 2537 002f FC000000 		.4byte	.LVL20-.Ltext0
+ 2538 0033 0100     		.2byte	0x1
+ 2539 0035 54       		.byte	0x54
+ 2540 0036 FC000000 		.4byte	.LVL20-.Ltext0
+ 2541 003a 0C010000 		.4byte	.LFE75-.Ltext0
+ 2542 003e 0400     		.2byte	0x4
+ 2543 0040 F3       		.byte	0xf3
+ 2544 0041 01       		.uleb128 0x1
+ 2545 0042 50       		.byte	0x50
+ 2546 0043 9F       		.byte	0x9f
+ 2547 0044 00000000 		.4byte	0
+ 2548 0048 00000000 		.4byte	0
+ 2549              	.LLST10:
+ 2550 004c F2000000 		.4byte	.LVL19-.Ltext0
+ 2551 0050 FC000000 		.4byte	.LVL20-.Ltext0
+ 2552 0054 0100     		.2byte	0x1
+ 2553 0056 50       		.byte	0x50
+ 2554 0057 FC000000 		.4byte	.LVL20-.Ltext0
+ 2555 005b 08010000 		.4byte	.LVL22-.Ltext0
+ 2556 005f 0100     		.2byte	0x1
+ 2557 0061 55       		.byte	0x55
+ 2558 0062 00000000 		.4byte	0
+ 2559 0066 00000000 		.4byte	0
+ 2560              	.LLST11:
+ 2561 006a F2000000 		.4byte	.LVL19-.Ltext0
+ 2562 006e 08010000 		.4byte	.LVL22-.Ltext0
+ 2563 0072 0100     		.2byte	0x1
+ 2564 0074 54       		.byte	0x54
+ 2565 0075 00000000 		.4byte	0
+ 2566 0079 00000000 		.4byte	0
+ 2567              	.LLST5:
+ 2568 007d BC000000 		.4byte	.LFB73-.Ltext0
+ 2569 0081 BE000000 		.4byte	.LCFI3-.Ltext0
+ 2570 0085 0200     		.2byte	0x2
+ 2571 0087 7D       		.byte	0x7d
+ 2572 0088 00       		.sleb128 0
+ 2573 0089 BE000000 		.4byte	.LCFI3-.Ltext0
+ 2574 008d DC000000 		.4byte	.LFE73-.Ltext0
+ 2575 0091 0200     		.2byte	0x2
+ 2576 0093 7D       		.byte	0x7d
+ 2577 0094 10       		.sleb128 16
+ 2578 0095 00000000 		.4byte	0
+ 2579 0099 00000000 		.4byte	0
+ 2580              	.LLST6:
+ 2581 009d BC000000 		.4byte	.LVL12-.Ltext0
+ 2582 00a1 CA000000 		.4byte	.LVL13-.Ltext0
+ 2583 00a5 0100     		.2byte	0x1
+ 2584 00a7 50       		.byte	0x50
+ 2585 00a8 CA000000 		.4byte	.LVL13-.Ltext0
+ 2586 00ac D4000000 		.4byte	.LVL15-.Ltext0
+ 2587 00b0 0400     		.2byte	0x4
+ 2588 00b2 F3       		.byte	0xf3
+ 2589 00b3 01       		.uleb128 0x1
+ 2590 00b4 50       		.byte	0x50
+ 2591 00b5 9F       		.byte	0x9f
+ARM GAS  /tmp/ccAUAHaM.s 			page 57
+
+
+ 2592 00b6 D4000000 		.4byte	.LVL15-.Ltext0
+ 2593 00ba D6000000 		.4byte	.LVL16-.Ltext0
+ 2594 00be 0100     		.2byte	0x1
+ 2595 00c0 50       		.byte	0x50
+ 2596 00c1 D6000000 		.4byte	.LVL16-.Ltext0
+ 2597 00c5 DC000000 		.4byte	.LFE73-.Ltext0
+ 2598 00c9 0400     		.2byte	0x4
+ 2599 00cb F3       		.byte	0xf3
+ 2600 00cc 01       		.uleb128 0x1
+ 2601 00cd 50       		.byte	0x50
+ 2602 00ce 9F       		.byte	0x9f
+ 2603 00cf 00000000 		.4byte	0
+ 2604 00d3 00000000 		.4byte	0
+ 2605              	.LLST7:
+ 2606 00d7 BC000000 		.4byte	.LVL12-.Ltext0
+ 2607 00db CE000000 		.4byte	.LVL14-.Ltext0
+ 2608 00df 0200     		.2byte	0x2
+ 2609 00e1 30       		.byte	0x30
+ 2610 00e2 9F       		.byte	0x9f
+ 2611 00e3 CE000000 		.4byte	.LVL14-.Ltext0
+ 2612 00e7 D4000000 		.4byte	.LVL15-.Ltext0
+ 2613 00eb 0100     		.2byte	0x1
+ 2614 00ed 50       		.byte	0x50
+ 2615 00ee D4000000 		.4byte	.LVL15-.Ltext0
+ 2616 00f2 D6000000 		.4byte	.LVL16-.Ltext0
+ 2617 00f6 0200     		.2byte	0x2
+ 2618 00f8 30       		.byte	0x30
+ 2619 00f9 9F       		.byte	0x9f
+ 2620 00fa D6000000 		.4byte	.LVL16-.Ltext0
+ 2621 00fe DC000000 		.4byte	.LFE73-.Ltext0
+ 2622 0102 0100     		.2byte	0x1
+ 2623 0104 50       		.byte	0x50
+ 2624 0105 00000000 		.4byte	0
+ 2625 0109 00000000 		.4byte	0
+ 2626              	.LLST0:
+ 2627 010d 04000000 		.4byte	.LFB66-.Ltext0
+ 2628 0111 06000000 		.4byte	.LCFI0-.Ltext0
+ 2629 0115 0200     		.2byte	0x2
+ 2630 0117 7D       		.byte	0x7d
+ 2631 0118 00       		.sleb128 0
+ 2632 0119 06000000 		.4byte	.LCFI0-.Ltext0
+ 2633 011d 24000000 		.4byte	.LFE66-.Ltext0
+ 2634 0121 0200     		.2byte	0x2
+ 2635 0123 7D       		.byte	0x7d
+ 2636 0124 08       		.sleb128 8
+ 2637 0125 00000000 		.4byte	0
+ 2638 0129 00000000 		.4byte	0
+ 2639              	.LLST4:
+ 2640 012d 68000000 		.4byte	.LFB65-.Ltext0
+ 2641 0131 6C000000 		.4byte	.LCFI2-.Ltext0
+ 2642 0135 0200     		.2byte	0x2
+ 2643 0137 7D       		.byte	0x7d
+ 2644 0138 00       		.sleb128 0
+ 2645 0139 6C000000 		.4byte	.LCFI2-.Ltext0
+ 2646 013d 8C000000 		.4byte	.LFE65-.Ltext0
+ 2647 0141 0200     		.2byte	0x2
+ 2648 0143 7D       		.byte	0x7d
+ARM GAS  /tmp/ccAUAHaM.s 			page 58
+
+
+ 2649 0144 08       		.sleb128 8
+ 2650 0145 00000000 		.4byte	0
+ 2651 0149 00000000 		.4byte	0
+ 2652              	.LLST1:
+ 2653 014d 24000000 		.4byte	.LFB69-.Ltext0
+ 2654 0151 2A000000 		.4byte	.LCFI1-.Ltext0
+ 2655 0155 0200     		.2byte	0x2
+ 2656 0157 7D       		.byte	0x7d
+ 2657 0158 00       		.sleb128 0
+ 2658 0159 2A000000 		.4byte	.LCFI1-.Ltext0
+ 2659 015d 68000000 		.4byte	.LFE69-.Ltext0
+ 2660 0161 0200     		.2byte	0x2
+ 2661 0163 7D       		.byte	0x7d
+ 2662 0164 10       		.sleb128 16
+ 2663 0165 00000000 		.4byte	0
+ 2664 0169 00000000 		.4byte	0
+ 2665              	.LLST2:
+ 2666 016d 24000000 		.4byte	.LVL1-.Ltext0
+ 2667 0171 30000000 		.4byte	.LVL2-.Ltext0
+ 2668 0175 0100     		.2byte	0x1
+ 2669 0177 50       		.byte	0x50
+ 2670 0178 30000000 		.4byte	.LVL2-.Ltext0
+ 2671 017c 5E000000 		.4byte	.LVL8-.Ltext0
+ 2672 0180 0100     		.2byte	0x1
+ 2673 0182 55       		.byte	0x55
+ 2674 0183 5E000000 		.4byte	.LVL8-.Ltext0
+ 2675 0187 68000000 		.4byte	.LFE69-.Ltext0
+ 2676 018b 0400     		.2byte	0x4
+ 2677 018d F3       		.byte	0xf3
+ 2678 018e 01       		.uleb128 0x1
+ 2679 018f 50       		.byte	0x50
+ 2680 0190 9F       		.byte	0x9f
+ 2681 0191 00000000 		.4byte	0
+ 2682 0195 00000000 		.4byte	0
+ 2683              	.LLST3:
+ 2684 0199 48000000 		.4byte	.LVL4-.Ltext0
+ 2685 019d 56000000 		.4byte	.LVL6-.Ltext0
+ 2686 01a1 0100     		.2byte	0x1
+ 2687 01a3 55       		.byte	0x55
+ 2688 01a4 00000000 		.4byte	0
+ 2689 01a8 00000000 		.4byte	0
+ 2690              		.section	.debug_aranges,"",%progbits
+ 2691 0000 1C000000 		.4byte	0x1c
+ 2692 0004 0200     		.2byte	0x2
+ 2693 0006 00000000 		.4byte	.Ldebug_info0
+ 2694 000a 04       		.byte	0x4
+ 2695 000b 00       		.byte	0
+ 2696 000c 0000     		.2byte	0
+ 2697 000e 0000     		.2byte	0
+ 2698 0010 00000000 		.4byte	.Ltext0
+ 2699 0014 D4010000 		.4byte	.Letext0-.Ltext0
+ 2700 0018 00000000 		.4byte	0
+ 2701 001c 00000000 		.4byte	0
+ 2702              		.section	.debug_line,"",%progbits
+ 2703              	.Ldebug_line0:
+ 2704 0000 C3010000 		.section	.debug_str,"MS",%progbits,1
+ 2704      02002501 
+ARM GAS  /tmp/ccAUAHaM.s 			page 59
+
+
+ 2704      00000201 
+ 2704      FB0E0D00 
+ 2704      01010101 
+ 2705              	.LASF111:
+ 2706 0000 48414C5F 		.ascii	"HAL_GetHalVersion\000"
+ 2706      47657448 
+ 2706      616C5665 
+ 2706      7273696F 
+ 2706      6E00
+ 2707              	.LASF96:
+ 2708 0012 48414C5F 		.ascii	"HAL_TickFreqTypeDef\000"
+ 2708      5469636B 
+ 2708      46726571 
+ 2708      54797065 
+ 2708      44656600 
+ 2709              	.LASF10:
+ 2710 0026 5056445F 		.ascii	"PVD_IRQn\000"
+ 2710      4952516E 
+ 2710      00
+ 2711              	.LASF35:
+ 2712 002f 54494D31 		.ascii	"TIM1_TRG_COM_IRQn\000"
+ 2712      5F545247 
+ 2712      5F434F4D 
+ 2712      5F495251 
+ 2712      6E00
+ 2713              	.LASF32:
+ 2714 0041 45585449 		.ascii	"EXTI9_5_IRQn\000"
+ 2714      395F355F 
+ 2714      4952516E 
+ 2714      00
+ 2715              	.LASF134:
+ 2716 004e 5469636B 		.ascii	"TickPriority\000"
+ 2716      5072696F 
+ 2716      72697479 
+ 2716      00
+ 2717              	.LASF39:
+ 2718 005b 49324331 		.ascii	"I2C1_EV_IRQn\000"
+ 2718      5F45565F 
+ 2718      4952516E 
+ 2718      00
+ 2719              	.LASF51:
+ 2720 0068 5F5F7569 		.ascii	"__uint8_t\000"
+ 2720      6E74385F 
+ 2720      7400
+ 2721              	.LASF89:
+ 2722 0072 48414C5F 		.ascii	"HAL_BUSY\000"
+ 2722      42555359 
+ 2722      00
+ 2723              	.LASF123:
+ 2724 007b 48414C5F 		.ascii	"HAL_SetTickFreq\000"
+ 2724      53657454 
+ 2724      69636B46 
+ 2724      72657100 
+ 2725              	.LASF70:
+ 2726 008b 41504250 		.ascii	"APBPrescTable\000"
+ 2726      72657363 
+ 2726      5461626C 
+ARM GAS  /tmp/ccAUAHaM.s 			page 60
+
+
+ 2726      6500
+ 2727              	.LASF30:
+ 2728 0099 43414E31 		.ascii	"CAN1_RX1_IRQn\000"
+ 2728      5F525831 
+ 2728      5F495251 
+ 2728      6E00
+ 2729              	.LASF57:
+ 2730 00a7 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2730      206C6F6E 
+ 2730      6720756E 
+ 2730      7369676E 
+ 2730      65642069 
+ 2731              	.LASF71:
+ 2732 00be 4944434F 		.ascii	"IDCODE\000"
+ 2732      444500
+ 2733              	.LASF45:
+ 2734 00c5 5254435F 		.ascii	"RTC_Alarm_IRQn\000"
+ 2734      416C6172 
+ 2734      6D5F4952 
+ 2734      516E00
+ 2735              	.LASF17:
+ 2736 00d4 45585449 		.ascii	"EXTI2_IRQn\000"
+ 2736      325F4952 
+ 2736      516E00
+ 2737              	.LASF9:
+ 2738 00df 57574447 		.ascii	"WWDG_IRQn\000"
+ 2738      5F495251 
+ 2738      6E00
+ 2739              	.LASF56:
+ 2740 00e9 6C6F6E67 		.ascii	"long long int\000"
+ 2740      206C6F6E 
+ 2740      6720696E 
+ 2740      7400
+ 2741              	.LASF47:
+ 2742 00f7 7369676E 		.ascii	"signed char\000"
+ 2742      65642063 
+ 2742      68617200 
+ 2743              	.LASF101:
+ 2744 0103 48414C5F 		.ascii	"HAL_DBGMCU_EnableDBGStandbyMode\000"
+ 2744      4442474D 
+ 2744      43555F45 
+ 2744      6E61626C 
+ 2744      65444247 
+ 2745              	.LASF115:
+ 2746 0123 77616974 		.ascii	"wait\000"
+ 2746      00
+ 2747              	.LASF53:
+ 2748 0128 6C6F6E67 		.ascii	"long int\000"
+ 2748      20696E74 
+ 2748      00
+ 2749              	.LASF79:
+ 2750 0131 41504232 		.ascii	"APB2RSTR\000"
+ 2750      52535452 
+ 2750      00
+ 2751              	.LASF120:
+ 2752 013a 48414C5F 		.ascii	"HAL_GetTickPrio\000"
+ 2752      47657454 
+ARM GAS  /tmp/ccAUAHaM.s 			page 61
+
+
+ 2752      69636B50 
+ 2752      72696F00 
+ 2753              	.LASF58:
+ 2754 014a 756E7369 		.ascii	"unsigned int\000"
+ 2754      676E6564 
+ 2754      20696E74 
+ 2754      00
+ 2755              	.LASF22:
+ 2756 0157 444D4131 		.ascii	"DMA1_Channel3_IRQn\000"
+ 2756      5F436861 
+ 2756      6E6E656C 
+ 2756      335F4952 
+ 2756      516E00
+ 2757              	.LASF74:
+ 2758 016a 4F50544B 		.ascii	"OPTKEYR\000"
+ 2758      45595200 
+ 2759              	.LASF92:
+ 2760 0172 48414C5F 		.ascii	"HAL_TICK_FREQ_10HZ\000"
+ 2760      5449434B 
+ 2760      5F465245 
+ 2760      515F3130 
+ 2760      485A00
+ 2761              	.LASF27:
+ 2762 0185 41444331 		.ascii	"ADC1_2_IRQn\000"
+ 2762      5F325F49 
+ 2762      52516E00 
+ 2763              	.LASF7:
+ 2764 0191 50656E64 		.ascii	"PendSV_IRQn\000"
+ 2764      53565F49 
+ 2764      52516E00 
+ 2765              	.LASF50:
+ 2766 019d 73686F72 		.ascii	"short unsigned int\000"
+ 2766      7420756E 
+ 2766      7369676E 
+ 2766      65642069 
+ 2766      6E7400
+ 2767              	.LASF23:
+ 2768 01b0 444D4131 		.ascii	"DMA1_Channel4_IRQn\000"
+ 2768      5F436861 
+ 2768      6E6E656C 
+ 2768      345F4952 
+ 2768      516E00
+ 2769              	.LASF135:
+ 2770 01c3 48414C5F 		.ascii	"HAL_MspDeInit\000"
+ 2770      4D737044 
+ 2770      65496E69 
+ 2770      7400
+ 2771              	.LASF104:
+ 2772 01d1 48414C5F 		.ascii	"HAL_DBGMCU_DisableDBGSleepMode\000"
+ 2772      4442474D 
+ 2772      43555F44 
+ 2772      69736162 
+ 2772      6C654442 
+ 2773              	.LASF54:
+ 2774 01f0 5F5F7569 		.ascii	"__uint32_t\000"
+ 2774      6E743332 
+ 2774      5F7400
+ARM GAS  /tmp/ccAUAHaM.s 			page 62
+
+
+ 2775              	.LASF130:
+ 2776 01fb 7372632F 		.ascii	"src/stm32f1xx_hal.c\000"
+ 2776      73746D33 
+ 2776      32663178 
+ 2776      785F6861 
+ 2776      6C2E6300 
+ 2777              	.LASF3:
+ 2778 020f 42757346 		.ascii	"BusFault_IRQn\000"
+ 2778      61756C74 
+ 2778      5F495251 
+ 2778      6E00
+ 2779              	.LASF93:
+ 2780 021d 48414C5F 		.ascii	"HAL_TICK_FREQ_100HZ\000"
+ 2780      5449434B 
+ 2780      5F465245 
+ 2780      515F3130 
+ 2780      30485A00 
+ 2781              	.LASF90:
+ 2782 0231 48414C5F 		.ascii	"HAL_TIMEOUT\000"
+ 2782      54494D45 
+ 2782      4F555400 
+ 2783              	.LASF102:
+ 2784 023d 48414C5F 		.ascii	"HAL_DBGMCU_DisableDBGStopMode\000"
+ 2784      4442474D 
+ 2784      43555F44 
+ 2784      69736162 
+ 2784      6C654442 
+ 2785              	.LASF124:
+ 2786 025b 48414C5F 		.ascii	"HAL_DeInit\000"
+ 2786      4465496E 
+ 2786      697400
+ 2787              	.LASF68:
+ 2788 0266 53797374 		.ascii	"SystemCoreClock\000"
+ 2788      656D436F 
+ 2788      7265436C 
+ 2788      6F636B00 
+ 2789              	.LASF98:
+ 2790 0276 75775469 		.ascii	"uwTickFreq\000"
+ 2790      636B4672 
+ 2790      657100
+ 2791              	.LASF99:
+ 2792 0281 75775469 		.ascii	"uwTick\000"
+ 2792      636B00
+ 2793              	.LASF55:
+ 2794 0288 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2794      20756E73 
+ 2794      69676E65 
+ 2794      6420696E 
+ 2794      7400
+ 2795              	.LASF85:
+ 2796 029a 5243435F 		.ascii	"RCC_TypeDef\000"
+ 2796      54797065 
+ 2796      44656600 
+ 2797              	.LASF94:
+ 2798 02a6 48414C5F 		.ascii	"HAL_TICK_FREQ_1KHZ\000"
+ 2798      5449434B 
+ 2798      5F465245 
+ARM GAS  /tmp/ccAUAHaM.s 			page 63
+
+
+ 2798      515F314B 
+ 2798      485A00
+ 2799              	.LASF87:
+ 2800 02b9 48414C5F 		.ascii	"HAL_OK\000"
+ 2800      4F4B00
+ 2801              	.LASF24:
+ 2802 02c0 444D4131 		.ascii	"DMA1_Channel5_IRQn\000"
+ 2802      5F436861 
+ 2802      6E6E656C 
+ 2802      355F4952 
+ 2802      516E00
+ 2803              	.LASF65:
+ 2804 02d3 43414C49 		.ascii	"CALIB\000"
+ 2804      4200
+ 2805              	.LASF103:
+ 2806 02d9 48414C5F 		.ascii	"HAL_DBGMCU_EnableDBGStopMode\000"
+ 2806      4442474D 
+ 2806      43555F45 
+ 2806      6E61626C 
+ 2806      65444247 
+ 2807              	.LASF1:
+ 2808 02f6 48617264 		.ascii	"HardFault_IRQn\000"
+ 2808      4661756C 
+ 2808      745F4952 
+ 2808      516E00
+ 2809              	.LASF44:
+ 2810 0305 45585449 		.ascii	"EXTI15_10_IRQn\000"
+ 2810      31355F31 
+ 2810      305F4952 
+ 2810      516E00
+ 2811              	.LASF136:
+ 2812 0314 48414C5F 		.ascii	"HAL_MspInit\000"
+ 2812      4D737049 
+ 2812      6E697400 
+ 2813              	.LASF41:
+ 2814 0320 53504931 		.ascii	"SPI1_IRQn\000"
+ 2814      5F495251 
+ 2814      6E00
+ 2815              	.LASF66:
+ 2816 032a 53797354 		.ascii	"SysTick_Type\000"
+ 2816      69636B5F 
+ 2816      54797065 
+ 2816      00
+ 2817              	.LASF91:
+ 2818 0337 48414C5F 		.ascii	"HAL_StatusTypeDef\000"
+ 2818      53746174 
+ 2818      75735479 
+ 2818      70654465 
+ 2818      6600
+ 2819              	.LASF69:
+ 2820 0349 41484250 		.ascii	"AHBPrescTable\000"
+ 2820      72657363 
+ 2820      5461626C 
+ 2820      6500
+ 2821              	.LASF108:
+ 2822 0357 48414C5F 		.ascii	"HAL_GetUIDw0\000"
+ 2822      47657455 
+ARM GAS  /tmp/ccAUAHaM.s 			page 64
+
+
+ 2822      49447730 
+ 2822      00
+ 2823              	.LASF107:
+ 2824 0364 48414C5F 		.ascii	"HAL_GetUIDw1\000"
+ 2824      47657455 
+ 2824      49447731 
+ 2824      00
+ 2825              	.LASF106:
+ 2826 0371 48414C5F 		.ascii	"HAL_GetUIDw2\000"
+ 2826      47657455 
+ 2826      49447732 
+ 2826      00
+ 2827              	.LASF26:
+ 2828 037e 444D4131 		.ascii	"DMA1_Channel7_IRQn\000"
+ 2828      5F436861 
+ 2828      6E6E656C 
+ 2828      375F4952 
+ 2828      516E00
+ 2829              	.LASF8:
+ 2830 0391 53797354 		.ascii	"SysTick_IRQn\000"
+ 2830      69636B5F 
+ 2830      4952516E 
+ 2830      00
+ 2831              	.LASF36:
+ 2832 039e 54494D31 		.ascii	"TIM1_CC_IRQn\000"
+ 2832      5F43435F 
+ 2832      4952516E 
+ 2832      00
+ 2833              	.LASF125:
+ 2834 03ab 48414C5F 		.ascii	"HAL_Init\000"
+ 2834      496E6974 
+ 2834      00
+ 2835              	.LASF21:
+ 2836 03b4 444D4131 		.ascii	"DMA1_Channel2_IRQn\000"
+ 2836      5F436861 
+ 2836      6E6E656C 
+ 2836      325F4952 
+ 2836      516E00
+ 2837              	.LASF62:
+ 2838 03c7 73697A65 		.ascii	"sizetype\000"
+ 2838      74797065 
+ 2838      00
+ 2839              	.LASF64:
+ 2840 03d0 4C4F4144 		.ascii	"LOAD\000"
+ 2840      00
+ 2841              	.LASF121:
+ 2842 03d5 48414C5F 		.ascii	"HAL_GetTick\000"
+ 2842      47657454 
+ 2842      69636B00 
+ 2843              	.LASF5:
+ 2844 03e1 53564361 		.ascii	"SVCall_IRQn\000"
+ 2844      6C6C5F49 
+ 2844      52516E00 
+ 2845              	.LASF117:
+ 2846 03ed 44656C61 		.ascii	"Delay\000"
+ 2846      7900
+ 2847              	.LASF127:
+ARM GAS  /tmp/ccAUAHaM.s 			page 65
+
+
+ 2848 03f3 48414C5F 		.ascii	"HAL_NVIC_SetPriority\000"
+ 2848      4E564943 
+ 2848      5F536574 
+ 2848      5072696F 
+ 2848      72697479 
+ 2849              	.LASF95:
+ 2850 0408 48414C5F 		.ascii	"HAL_TICK_FREQ_DEFAULT\000"
+ 2850      5449434B 
+ 2850      5F465245 
+ 2850      515F4445 
+ 2850      4641554C 
+ 2851              	.LASF80:
+ 2852 041e 41504231 		.ascii	"APB1RSTR\000"
+ 2852      52535452 
+ 2852      00
+ 2853              	.LASF112:
+ 2854 0427 48414C5F 		.ascii	"HAL_ResumeTick\000"
+ 2854      52657375 
+ 2854      6D655469 
+ 2854      636B00
+ 2855              	.LASF20:
+ 2856 0436 444D4131 		.ascii	"DMA1_Channel1_IRQn\000"
+ 2856      5F436861 
+ 2856      6E6E656C 
+ 2856      315F4952 
+ 2856      516E00
+ 2857              	.LASF2:
+ 2858 0449 4D656D6F 		.ascii	"MemoryManagement_IRQn\000"
+ 2858      72794D61 
+ 2858      6E616765 
+ 2858      6D656E74 
+ 2858      5F495251 
+ 2859              	.LASF133:
+ 2860 045f 48414C5F 		.ascii	"HAL_InitTick\000"
+ 2860      496E6974 
+ 2860      5469636B 
+ 2860      00
+ 2861              	.LASF73:
+ 2862 046c 4B455952 		.ascii	"KEYR\000"
+ 2862      00
+ 2863              	.LASF42:
+ 2864 0471 55534152 		.ascii	"USART1_IRQn\000"
+ 2864      54315F49 
+ 2864      52516E00 
+ 2865              	.LASF131:
+ 2866 047d 2F686F6D 		.ascii	"/home/berndoj/git/stm32tctst/lib/stm32f1hal\000"
+ 2866      652F6265 
+ 2866      726E646F 
+ 2866      6A2F6769 
+ 2866      742F7374 
+ 2867              	.LASF60:
+ 2868 04a9 696E7433 		.ascii	"int32_t\000"
+ 2868      325F7400 
+ 2869              	.LASF48:
+ 2870 04b1 756E7369 		.ascii	"unsigned char\000"
+ 2870      676E6564 
+ 2870      20636861 
+ARM GAS  /tmp/ccAUAHaM.s 			page 66
+
+
+ 2870      7200
+ 2871              	.LASF28:
+ 2872 04bf 5553425F 		.ascii	"USB_HP_CAN1_TX_IRQn\000"
+ 2872      48505F43 
+ 2872      414E315F 
+ 2872      54585F49 
+ 2872      52516E00 
+ 2873              	.LASF67:
+ 2874 04d3 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 2874      52784275 
+ 2874      66666572 
+ 2874      00
+ 2875              	.LASF19:
+ 2876 04e0 45585449 		.ascii	"EXTI4_IRQn\000"
+ 2876      345F4952 
+ 2876      516E00
+ 2877              	.LASF128:
+ 2878 04eb 48414C5F 		.ascii	"HAL_SYSTICK_Config\000"
+ 2878      53595354 
+ 2878      49434B5F 
+ 2878      436F6E66 
+ 2878      696700
+ 2879              	.LASF49:
+ 2880 04fe 73686F72 		.ascii	"short int\000"
+ 2880      7420696E 
+ 2880      7400
+ 2881              	.LASF118:
+ 2882 0508 46726571 		.ascii	"Freq\000"
+ 2882      00
+ 2883              	.LASF100:
+ 2884 050d 48414C5F 		.ascii	"HAL_DBGMCU_DisableDBGStandbyMode\000"
+ 2884      4442474D 
+ 2884      43555F44 
+ 2884      69736162 
+ 2884      6C654442 
+ 2885              	.LASF114:
+ 2886 052e 7469636B 		.ascii	"tickstart\000"
+ 2886      73746172 
+ 2886      7400
+ 2887              	.LASF75:
+ 2888 0538 52455345 		.ascii	"RESERVED\000"
+ 2888      52564544 
+ 2888      00
+ 2889              	.LASF29:
+ 2890 0541 5553425F 		.ascii	"USB_LP_CAN1_RX0_IRQn\000"
+ 2890      4C505F43 
+ 2890      414E315F 
+ 2890      5258305F 
+ 2890      4952516E 
+ 2891              	.LASF129:
+ 2892 0556 474E5520 		.ascii	"GNU C11 6.3.1 20170620 -mcpu=cortex-m3 -mthumb -g -"
+ 2892      43313120 
+ 2892      362E332E 
+ 2892      31203230 
+ 2892      31373036 
+ 2893 0589 67647761 		.ascii	"gdwarf-2 -Os -fomit-frame-pointer\000"
+ 2893      72662D32 
+ARM GAS  /tmp/ccAUAHaM.s 			page 67
+
+
+ 2893      202D4F73 
+ 2893      202D666F 
+ 2893      6D69742D 
+ 2894              	.LASF82:
+ 2895 05ab 41504232 		.ascii	"APB2ENR\000"
+ 2895      454E5200 
+ 2896              	.LASF113:
+ 2897 05b3 48414C5F 		.ascii	"HAL_SuspendTick\000"
+ 2897      53757370 
+ 2897      656E6454 
+ 2897      69636B00 
+ 2898              	.LASF105:
+ 2899 05c3 48414C5F 		.ascii	"HAL_DBGMCU_EnableDBGSleepMode\000"
+ 2899      4442474D 
+ 2899      43555F45 
+ 2899      6E61626C 
+ 2899      65444247 
+ 2900              	.LASF13:
+ 2901 05e1 464C4153 		.ascii	"FLASH_IRQn\000"
+ 2901      485F4952 
+ 2901      516E00
+ 2902              	.LASF72:
+ 2903 05ec 4442474D 		.ascii	"DBGMCU_TypeDef\000"
+ 2903      43555F54 
+ 2903      79706544 
+ 2903      656600
+ 2904              	.LASF110:
+ 2905 05fb 48414C5F 		.ascii	"HAL_GetREVID\000"
+ 2905      47657452 
+ 2905      45564944 
+ 2905      00
+ 2906              	.LASF43:
+ 2907 0608 55534152 		.ascii	"USART2_IRQn\000"
+ 2907      54325F49 
+ 2907      52516E00 
+ 2908              	.LASF4:
+ 2909 0614 55736167 		.ascii	"UsageFault_IRQn\000"
+ 2909      65466175 
+ 2909      6C745F49 
+ 2909      52516E00 
+ 2910              	.LASF88:
+ 2911 0624 48414C5F 		.ascii	"HAL_ERROR\000"
+ 2911      4552524F 
+ 2911      5200
+ 2912              	.LASF86:
+ 2913 062e 6C6F6E67 		.ascii	"long double\000"
+ 2913      20646F75 
+ 2913      626C6500 
+ 2914              	.LASF76:
+ 2915 063a 57525052 		.ascii	"WRPR\000"
+ 2915      00
+ 2916              	.LASF97:
+ 2917 063f 75775469 		.ascii	"uwTickPrio\000"
+ 2917      636B5072 
+ 2917      696F00
+ 2918              	.LASF132:
+ 2919 064a 48414C5F 		.ascii	"HAL_Delay\000"
+ARM GAS  /tmp/ccAUAHaM.s 			page 68
+
+
+ 2919      44656C61 
+ 2919      7900
+ 2920              	.LASF33:
+ 2921 0654 54494D31 		.ascii	"TIM1_BRK_IRQn\000"
+ 2921      5F42524B 
+ 2921      5F495251 
+ 2921      6E00
+ 2922              	.LASF116:
+ 2923 0662 48414C5F 		.ascii	"HAL_GetTickFreq\000"
+ 2923      47657454 
+ 2923      69636B46 
+ 2923      72657100 
+ 2924              	.LASF0:
+ 2925 0672 4E6F6E4D 		.ascii	"NonMaskableInt_IRQn\000"
+ 2925      61736B61 
+ 2925      626C6549 
+ 2925      6E745F49 
+ 2925      52516E00 
+ 2926              	.LASF52:
+ 2927 0686 5F5F696E 		.ascii	"__int32_t\000"
+ 2927      7433325F 
+ 2927      7400
+ 2928              	.LASF25:
+ 2929 0690 444D4131 		.ascii	"DMA1_Channel6_IRQn\000"
+ 2929      5F436861 
+ 2929      6E6E656C 
+ 2929      365F4952 
+ 2929      516E00
+ 2930              	.LASF83:
+ 2931 06a3 41504231 		.ascii	"APB1ENR\000"
+ 2931      454E5200 
+ 2932              	.LASF11:
+ 2933 06ab 54414D50 		.ascii	"TAMPER_IRQn\000"
+ 2933      45525F49 
+ 2933      52516E00 
+ 2934              	.LASF34:
+ 2935 06b7 54494D31 		.ascii	"TIM1_UP_IRQn\000"
+ 2935      5F55505F 
+ 2935      4952516E 
+ 2935      00
+ 2936              	.LASF46:
+ 2937 06c4 55534257 		.ascii	"USBWakeUp_IRQn\000"
+ 2937      616B6555 
+ 2937      705F4952 
+ 2937      516E00
+ 2938              	.LASF6:
+ 2939 06d3 44656275 		.ascii	"DebugMonitor_IRQn\000"
+ 2939      674D6F6E 
+ 2939      69746F72 
+ 2939      5F495251 
+ 2939      6E00
+ 2940              	.LASF63:
+ 2941 06e5 4354524C 		.ascii	"CTRL\000"
+ 2941      00
+ 2942              	.LASF122:
+ 2943 06ea 48414C5F 		.ascii	"HAL_IncTick\000"
+ 2943      496E6354 
+ARM GAS  /tmp/ccAUAHaM.s 			page 69
+
+
+ 2943      69636B00 
+ 2944              	.LASF126:
+ 2945 06f6 48414C5F 		.ascii	"HAL_NVIC_SetPriorityGrouping\000"
+ 2945      4E564943 
+ 2945      5F536574 
+ 2945      5072696F 
+ 2945      72697479 
+ 2946              	.LASF61:
+ 2947 0713 75696E74 		.ascii	"uint32_t\000"
+ 2947      33325F74 
+ 2947      00
+ 2948              	.LASF37:
+ 2949 071c 54494D32 		.ascii	"TIM2_IRQn\000"
+ 2949      5F495251 
+ 2949      6E00
+ 2950              	.LASF15:
+ 2951 0726 45585449 		.ascii	"EXTI0_IRQn\000"
+ 2951      305F4952 
+ 2951      516E00
+ 2952              	.LASF119:
+ 2953 0731 73746174 		.ascii	"status\000"
+ 2953      757300
+ 2954              	.LASF84:
+ 2955 0738 42444352 		.ascii	"BDCR\000"
+ 2955      00
+ 2956              	.LASF18:
+ 2957 073d 45585449 		.ascii	"EXTI3_IRQn\000"
+ 2957      335F4952 
+ 2957      516E00
+ 2958              	.LASF59:
+ 2959 0748 75696E74 		.ascii	"uint8_t\000"
+ 2959      385F7400 
+ 2960              	.LASF14:
+ 2961 0750 5243435F 		.ascii	"RCC_IRQn\000"
+ 2961      4952516E 
+ 2961      00
+ 2962              	.LASF109:
+ 2963 0759 48414C5F 		.ascii	"HAL_GetDEVID\000"
+ 2963      47657444 
+ 2963      45564944 
+ 2963      00
+ 2964              	.LASF78:
+ 2965 0766 43464752 		.ascii	"CFGR\000"
+ 2965      00
+ 2966              	.LASF40:
+ 2967 076b 49324331 		.ascii	"I2C1_ER_IRQn\000"
+ 2967      5F45525F 
+ 2967      4952516E 
+ 2967      00
+ 2968              	.LASF77:
+ 2969 0778 464C4153 		.ascii	"FLASH_TypeDef\000"
+ 2969      485F5479 
+ 2969      70654465 
+ 2969      6600
+ 2970              	.LASF12:
+ 2971 0786 5254435F 		.ascii	"RTC_IRQn\000"
+ 2971      4952516E 
+ARM GAS  /tmp/ccAUAHaM.s 			page 70
+
+
+ 2971      00
+ 2972              	.LASF31:
+ 2973 078f 43414E31 		.ascii	"CAN1_SCE_IRQn\000"
+ 2973      5F534345 
+ 2973      5F495251 
+ 2973      6E00
+ 2974              	.LASF38:
+ 2975 079d 54494D33 		.ascii	"TIM3_IRQn\000"
+ 2975      5F495251 
+ 2975      6E00
+ 2976              	.LASF81:
+ 2977 07a7 41484245 		.ascii	"AHBENR\000"
+ 2977      4E5200
+ 2978              	.LASF16:
+ 2979 07ae 45585449 		.ascii	"EXTI1_IRQn\000"
+ 2979      315F4952 
+ 2979      516E00
+ 2980              		.ident	"GCC: (15:6.3.1+svn253039-1build1) 6.3.1 20170620"
+ARM GAS  /tmp/ccAUAHaM.s 			page 71
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 stm32f1xx_hal.c
+     /tmp/ccAUAHaM.s:69     .text:0000000000000000 $t
+     /tmp/ccAUAHaM.s:76     .text:0000000000000000 HAL_MspInit
+     /tmp/ccAUAHaM.s:93     .text:0000000000000002 HAL_MspDeInit
+     /tmp/ccAUAHaM.s:112    .text:0000000000000004 HAL_DeInit
+     /tmp/ccAUAHaM.s:146    .text:0000000000000020 $d
+     /tmp/ccAUAHaM.s:150    .text:0000000000000024 $t
+     /tmp/ccAUAHaM.s:157    .text:0000000000000024 HAL_InitTick
+     /tmp/ccAUAHaM.s:218    .text:0000000000000060 $d
+     /tmp/ccAUAHaM.s:223    .text:0000000000000068 $t
+     /tmp/ccAUAHaM.s:230    .text:0000000000000068 HAL_Init
+     /tmp/ccAUAHaM.s:267    .text:0000000000000088 $d
+     /tmp/ccAUAHaM.s:271    .text:000000000000008c $t
+     /tmp/ccAUAHaM.s:278    .text:000000000000008c HAL_IncTick
+     /tmp/ccAUAHaM.s:296    .text:000000000000009c $d
+                            *COM*:0000000000000004 uwTick
+     /tmp/ccAUAHaM.s:301    .text:00000000000000a4 $t
+     /tmp/ccAUAHaM.s:308    .text:00000000000000a4 HAL_GetTick
+     /tmp/ccAUAHaM.s:323    .text:00000000000000ac $d
+     /tmp/ccAUAHaM.s:327    .text:00000000000000b0 $t
+     /tmp/ccAUAHaM.s:334    .text:00000000000000b0 HAL_GetTickPrio
+     /tmp/ccAUAHaM.s:348    .text:00000000000000b8 $d
+     /tmp/ccAUAHaM.s:352    .text:00000000000000bc $t
+     /tmp/ccAUAHaM.s:359    .text:00000000000000bc HAL_SetTickFreq
+     /tmp/ccAUAHaM.s:402    .text:00000000000000d8 $d
+     /tmp/ccAUAHaM.s:406    .text:00000000000000dc $t
+     /tmp/ccAUAHaM.s:413    .text:00000000000000dc HAL_GetTickFreq
+     /tmp/ccAUAHaM.s:427    .text:00000000000000e4 $d
+     /tmp/ccAUAHaM.s:431    .text:00000000000000e8 $t
+     /tmp/ccAUAHaM.s:438    .text:00000000000000e8 HAL_Delay
+     /tmp/ccAUAHaM.s:480    .text:0000000000000108 $d
+     /tmp/ccAUAHaM.s:484    .text:000000000000010c $t
+     /tmp/ccAUAHaM.s:491    .text:000000000000010c HAL_SuspendTick
+     /tmp/ccAUAHaM.s:507    .text:0000000000000118 $d
+     /tmp/ccAUAHaM.s:511    .text:000000000000011c $t
+     /tmp/ccAUAHaM.s:518    .text:000000000000011c HAL_ResumeTick
+     /tmp/ccAUAHaM.s:534    .text:0000000000000128 $d
+     /tmp/ccAUAHaM.s:538    .text:000000000000012c $t
+     /tmp/ccAUAHaM.s:545    .text:000000000000012c HAL_GetHalVersion
+     /tmp/ccAUAHaM.s:558    .text:0000000000000130 $d
+     /tmp/ccAUAHaM.s:562    .text:0000000000000134 $t
+     /tmp/ccAUAHaM.s:569    .text:0000000000000134 HAL_GetREVID
+     /tmp/ccAUAHaM.s:585    .text:000000000000013c $d
+     /tmp/ccAUAHaM.s:589    .text:0000000000000140 $t
+     /tmp/ccAUAHaM.s:596    .text:0000000000000140 HAL_GetDEVID
+     /tmp/ccAUAHaM.s:612    .text:000000000000014c $d
+     /tmp/ccAUAHaM.s:616    .text:0000000000000150 $t
+     /tmp/ccAUAHaM.s:623    .text:0000000000000150 HAL_GetUIDw0
+     /tmp/ccAUAHaM.s:637    .text:0000000000000158 $d
+     /tmp/ccAUAHaM.s:641    .text:000000000000015c $t
+     /tmp/ccAUAHaM.s:648    .text:000000000000015c HAL_GetUIDw1
+     /tmp/ccAUAHaM.s:662    .text:0000000000000164 $d
+     /tmp/ccAUAHaM.s:666    .text:0000000000000168 $t
+     /tmp/ccAUAHaM.s:673    .text:0000000000000168 HAL_GetUIDw2
+     /tmp/ccAUAHaM.s:687    .text:0000000000000170 $d
+     /tmp/ccAUAHaM.s:691    .text:0000000000000174 $t
+ARM GAS  /tmp/ccAUAHaM.s 			page 72
+
+
+     /tmp/ccAUAHaM.s:698    .text:0000000000000174 HAL_DBGMCU_EnableDBGSleepMode
+     /tmp/ccAUAHaM.s:714    .text:0000000000000180 $d
+     /tmp/ccAUAHaM.s:718    .text:0000000000000184 $t
+     /tmp/ccAUAHaM.s:725    .text:0000000000000184 HAL_DBGMCU_DisableDBGSleepMode
+     /tmp/ccAUAHaM.s:741    .text:0000000000000190 $d
+     /tmp/ccAUAHaM.s:745    .text:0000000000000194 $t
+     /tmp/ccAUAHaM.s:752    .text:0000000000000194 HAL_DBGMCU_EnableDBGStopMode
+     /tmp/ccAUAHaM.s:768    .text:00000000000001a0 $d
+     /tmp/ccAUAHaM.s:772    .text:00000000000001a4 $t
+     /tmp/ccAUAHaM.s:779    .text:00000000000001a4 HAL_DBGMCU_DisableDBGStopMode
+     /tmp/ccAUAHaM.s:795    .text:00000000000001b0 $d
+     /tmp/ccAUAHaM.s:799    .text:00000000000001b4 $t
+     /tmp/ccAUAHaM.s:806    .text:00000000000001b4 HAL_DBGMCU_EnableDBGStandbyMode
+     /tmp/ccAUAHaM.s:822    .text:00000000000001c0 $d
+     /tmp/ccAUAHaM.s:826    .text:00000000000001c4 $t
+     /tmp/ccAUAHaM.s:833    .text:00000000000001c4 HAL_DBGMCU_DisableDBGStandbyMode
+     /tmp/ccAUAHaM.s:849    .text:00000000000001d0 $d
+     /tmp/ccAUAHaM.s:861    .data:0000000000000000 uwTickFreq
+     /tmp/ccAUAHaM.s:866    .data:0000000000000004 uwTickPrio
+     /tmp/ccAUAHaM.s:857    .data:0000000000000000 $d
+                     .debug_frame:0000000000000010 $d
+
+UNDEFINED SYMBOLS
+HAL_SYSTICK_Config
+HAL_NVIC_SetPriority
+SystemCoreClock
+HAL_NVIC_SetPriorityGrouping

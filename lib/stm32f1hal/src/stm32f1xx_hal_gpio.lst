@@ -1,0 +1,3817 @@
+ARM GAS  /tmp/ccQyBaoj.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1	@ Tag_ABI_FP_denormal
+   3              		.eabi_attribute 21, 1	@ Tag_ABI_FP_exceptions
+   4              		.eabi_attribute 23, 3	@ Tag_ABI_FP_number_model
+   5              		.eabi_attribute 24, 1	@ Tag_ABI_align8_needed
+   6              		.eabi_attribute 25, 1	@ Tag_ABI_align8_preserved
+   7              		.eabi_attribute 26, 1	@ Tag_ABI_enum_size
+   8              		.eabi_attribute 30, 4	@ Tag_ABI_optimization_goals
+   9              		.eabi_attribute 34, 1	@ Tag_CPU_unaligned_access
+  10              		.eabi_attribute 18, 4	@ Tag_ABI_PCS_wchar_t
+  11              		.file	"stm32f1xx_hal_gpio.c"
+  12              	@ GNU C11 (15:6.3.1+svn253039-1build1) version 6.3.1 20170620 (arm-none-eabi)
+  13              	@	compiled by GNU C version 7.2.0, GMP version 6.1.2, MPFR version 4.0.1-rc1, MPC version 1.1.0, is
+  14              	@ warning: MPFR header version 4.0.1-rc1 differs from library version 4.0.1.
+  15              	@ GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+  16              	@ options passed:  -I ./inc -I ./inc/Legacy -I ../cmsisstm32f1xx/inc
+  17              	@ -I ../cmsiscore/inc -imultilib thumb/v7-m -D__USES_INITFINI__
+  18              	@ -D STM32F103x6 -D RUN_FROM_FLASH=1 -D __c src/stm32f1xx_hal_gpio.c
+  19              	@ -mcpu=cortex-m3 -mthumb -auxbase-strip bin/stm32f1xx_hal_gpio.o -g
+  20              	@ -gdwarf-2 -Os -Wall -fomit-frame-pointer -fverbose-asm
+  21              	@ options enabled:  -faggressive-loop-optimizations -falign-jumps
+  22              	@ -falign-labels -falign-loops -fauto-inc-dec -fbranch-count-reg
+  23              	@ -fcaller-saves -fchkp-check-incomplete-type -fchkp-check-read
+  24              	@ -fchkp-check-write -fchkp-instrument-calls -fchkp-narrow-bounds
+  25              	@ -fchkp-optimize -fchkp-store-bounds -fchkp-use-static-bounds
+  26              	@ -fchkp-use-static-const-bounds -fchkp-use-wrappers
+  27              	@ -fcombine-stack-adjustments -fcommon -fcompare-elim -fcprop-registers
+  28              	@ -fcrossjumping -fcse-follow-jumps -fdefer-pop
+  29              	@ -fdelete-null-pointer-checks -fdevirtualize -fdevirtualize-speculatively
+  30              	@ -fdwarf2-cfi-asm -fearly-inlining -feliminate-unused-debug-types
+  31              	@ -fexpensive-optimizations -fforward-propagate -ffunction-cse -fgcse
+  32              	@ -fgcse-lm -fgnu-runtime -fgnu-unique -fguess-branch-probability
+  33              	@ -fhoist-adjacent-loads -fident -fif-conversion -fif-conversion2
+  34              	@ -findirect-inlining -finline -finline-atomics -finline-functions
+  35              	@ -finline-functions-called-once -finline-small-functions -fipa-cp
+  36              	@ -fipa-cp-alignment -fipa-icf -fipa-icf-functions -fipa-icf-variables
+  37              	@ -fipa-profile -fipa-pure-const -fipa-ra -fipa-reference -fipa-sra
+  38              	@ -fira-hoist-pressure -fira-share-save-slots -fira-share-spill-slots
+  39              	@ -fisolate-erroneous-paths-dereference -fivopts -fkeep-static-consts
+  40              	@ -fleading-underscore -flifetime-dse -flra-remat -flto-odr-type-merging
+  41              	@ -fmath-errno -fmerge-constants -fmerge-debug-strings
+  42              	@ -fmove-loop-invariants -fomit-frame-pointer -foptimize-sibling-calls
+  43              	@ -fpartial-inlining -fpeephole -fpeephole2 -fplt -fprefetch-loop-arrays
+  44              	@ -freg-struct-return -freorder-blocks -freorder-functions
+  45              	@ -frerun-cse-after-loop -fsched-critical-path-heuristic
+  46              	@ -fsched-dep-count-heuristic -fsched-group-heuristic -fsched-interblock
+  47              	@ -fsched-last-insn-heuristic -fsched-pressure -fsched-rank-heuristic
+  48              	@ -fsched-spec -fsched-spec-insn-heuristic -fsched-stalled-insns-dep
+  49              	@ -fschedule-insns2 -fsection-anchors -fsemantic-interposition
+  50              	@ -fshow-column -fsigned-zeros -fsplit-ivs-in-unroller -fsplit-wide-types
+  51              	@ -fssa-backprop -fssa-phiopt -fstdarg-opt -fstrict-aliasing
+  52              	@ -fstrict-overflow -fstrict-volatile-bitfields -fsync-libcalls
+  53              	@ -fthread-jumps -ftoplevel-reorder -ftrapping-math -ftree-bit-ccp
+  54              	@ -ftree-builtin-call-dce -ftree-ccp -ftree-ch -ftree-coalesce-vars
+  55              	@ -ftree-copy-prop -ftree-cselim -ftree-dce -ftree-dominator-opts
+  56              	@ -ftree-dse -ftree-forwprop -ftree-fre -ftree-loop-if-convert
+  57              	@ -ftree-loop-im -ftree-loop-ivcanon -ftree-loop-optimize
+ARM GAS  /tmp/ccQyBaoj.s 			page 2
+
+
+  58              	@ -ftree-parallelize-loops= -ftree-phiprop -ftree-pre -ftree-pta
+  59              	@ -ftree-reassoc -ftree-scev-cprop -ftree-sink -ftree-slsr -ftree-sra
+  60              	@ -ftree-switch-conversion -ftree-tail-merge -ftree-ter -ftree-vrp
+  61              	@ -funit-at-a-time -fvar-tracking -fvar-tracking-assignments -fverbose-asm
+  62              	@ -fzero-initialized-in-bss -masm-syntax-unified -mfix-cortex-m3-ldrd
+  63              	@ -mlittle-endian -mpic-data-is-text-relative -msched-prolog -mthumb
+  64              	@ -munaligned-access -mvectorize-with-neon-quad
+  65              	
+  66              		.text
+  67              	.Ltext0:
+  68              		.cfi_sections	.debug_frame
+  69              		.align	1
+  70              		.global	HAL_GPIO_Init
+  71              		.syntax unified
+  72              		.thumb
+  73              		.thumb_func
+  74              		.fpu softvfp
+  75              		.type	HAL_GPIO_Init, %function
+  76              	HAL_GPIO_Init:
+  77              	.LFB65:
+  78              		.file 1 "src/stm32f1xx_hal_gpio.c"
+   1:src/stm32f1xx_hal_gpio.c **** /**
+   2:src/stm32f1xx_hal_gpio.c ****   ******************************************************************************
+   3:src/stm32f1xx_hal_gpio.c ****   * @file    stm32f1xx_hal_gpio.c
+   4:src/stm32f1xx_hal_gpio.c ****   * @author  MCD Application Team
+   5:src/stm32f1xx_hal_gpio.c ****   * @brief   GPIO HAL module driver.
+   6:src/stm32f1xx_hal_gpio.c ****   *          This file provides firmware functions to manage the following
+   7:src/stm32f1xx_hal_gpio.c ****   *          functionalities of the General Purpose Input/Output (GPIO) peripheral:
+   8:src/stm32f1xx_hal_gpio.c ****   *           + Initialization and de-initialization functions
+   9:src/stm32f1xx_hal_gpio.c ****   *           + IO operation functions
+  10:src/stm32f1xx_hal_gpio.c ****   *
+  11:src/stm32f1xx_hal_gpio.c ****   @verbatim
+  12:src/stm32f1xx_hal_gpio.c ****   ==============================================================================
+  13:src/stm32f1xx_hal_gpio.c ****                     ##### GPIO Peripheral features #####
+  14:src/stm32f1xx_hal_gpio.c ****   ==============================================================================
+  15:src/stm32f1xx_hal_gpio.c ****   [..]
+  16:src/stm32f1xx_hal_gpio.c ****   Subject to the specific hardware characteristics of each I/O port listed in the datasheet, each
+  17:src/stm32f1xx_hal_gpio.c ****   port bit of the General Purpose IO (GPIO) Ports, can be individually configured by software
+  18:src/stm32f1xx_hal_gpio.c ****   in several modes:
+  19:src/stm32f1xx_hal_gpio.c ****   (+) Input mode
+  20:src/stm32f1xx_hal_gpio.c ****   (+) Analog mode
+  21:src/stm32f1xx_hal_gpio.c ****   (+) Output mode
+  22:src/stm32f1xx_hal_gpio.c ****   (+) Alternate function mode
+  23:src/stm32f1xx_hal_gpio.c ****   (+) External interrupt/event lines
+  24:src/stm32f1xx_hal_gpio.c **** 
+  25:src/stm32f1xx_hal_gpio.c ****   [..]
+  26:src/stm32f1xx_hal_gpio.c ****   During and just after reset, the alternate functions and external interrupt
+  27:src/stm32f1xx_hal_gpio.c ****   lines are not active and the I/O ports are configured in input floating mode.
+  28:src/stm32f1xx_hal_gpio.c **** 
+  29:src/stm32f1xx_hal_gpio.c ****   [..]
+  30:src/stm32f1xx_hal_gpio.c ****   All GPIO pins have weak internal pull-up and pull-down resistors, which can be
+  31:src/stm32f1xx_hal_gpio.c ****   activated or not.
+  32:src/stm32f1xx_hal_gpio.c **** 
+  33:src/stm32f1xx_hal_gpio.c ****   [..]
+  34:src/stm32f1xx_hal_gpio.c ****   In Output or Alternate mode, each IO can be configured on open-drain or push-pull
+  35:src/stm32f1xx_hal_gpio.c ****   type and the IO speed can be selected depending on the VDD value.
+  36:src/stm32f1xx_hal_gpio.c **** 
+ARM GAS  /tmp/ccQyBaoj.s 			page 3
+
+
+  37:src/stm32f1xx_hal_gpio.c ****   [..]
+  38:src/stm32f1xx_hal_gpio.c ****   All ports have external interrupt/event capability. To use external interrupt
+  39:src/stm32f1xx_hal_gpio.c ****   lines, the port must be configured in input mode. All available GPIO pins are
+  40:src/stm32f1xx_hal_gpio.c ****   connected to the 16 external interrupt/event lines from EXTI0 to EXTI15.
+  41:src/stm32f1xx_hal_gpio.c **** 
+  42:src/stm32f1xx_hal_gpio.c ****   [..]
+  43:src/stm32f1xx_hal_gpio.c ****   The external interrupt/event controller consists of up to 20 edge detectors in connectivity
+  44:src/stm32f1xx_hal_gpio.c ****   line devices, or 19 edge detectors in other devices for generating event/interrupt requests.
+  45:src/stm32f1xx_hal_gpio.c ****   Each input line can be independently configured to select the type (event or interrupt) and
+  46:src/stm32f1xx_hal_gpio.c ****   the corresponding trigger event (rising or falling or both). Each line can also masked
+  47:src/stm32f1xx_hal_gpio.c ****   independently. A pending register maintains the status line of the interrupt requests
+  48:src/stm32f1xx_hal_gpio.c **** 
+  49:src/stm32f1xx_hal_gpio.c ****                      ##### How to use this driver #####
+  50:src/stm32f1xx_hal_gpio.c ****   ==============================================================================
+  51:src/stm32f1xx_hal_gpio.c ****  [..]
+  52:src/stm32f1xx_hal_gpio.c ****    (#) Enable the GPIO APB2 clock using the following function : __HAL_RCC_GPIOx_CLK_ENABLE().
+  53:src/stm32f1xx_hal_gpio.c **** 
+  54:src/stm32f1xx_hal_gpio.c ****    (#) Configure the GPIO pin(s) using HAL_GPIO_Init().
+  55:src/stm32f1xx_hal_gpio.c ****        (++) Configure the IO mode using "Mode" member from GPIO_InitTypeDef structure
+  56:src/stm32f1xx_hal_gpio.c ****        (++) Activate Pull-up, Pull-down resistor using "Pull" member from GPIO_InitTypeDef
+  57:src/stm32f1xx_hal_gpio.c ****             structure.
+  58:src/stm32f1xx_hal_gpio.c ****        (++) In case of Output or alternate function mode selection: the speed is
+  59:src/stm32f1xx_hal_gpio.c ****             configured through "Speed" member from GPIO_InitTypeDef structure
+  60:src/stm32f1xx_hal_gpio.c ****        (++) Analog mode is required when a pin is to be used as ADC channel
+  61:src/stm32f1xx_hal_gpio.c ****             or DAC output.
+  62:src/stm32f1xx_hal_gpio.c ****        (++) In case of external interrupt/event selection the "Mode" member from
+  63:src/stm32f1xx_hal_gpio.c ****             GPIO_InitTypeDef structure select the type (interrupt or event) and
+  64:src/stm32f1xx_hal_gpio.c ****             the corresponding trigger event (rising or falling or both).
+  65:src/stm32f1xx_hal_gpio.c **** 
+  66:src/stm32f1xx_hal_gpio.c ****    (#) In case of external interrupt/event mode selection, configure NVIC IRQ priority
+  67:src/stm32f1xx_hal_gpio.c ****        mapped to the EXTI line using HAL_NVIC_SetPriority() and enable it using
+  68:src/stm32f1xx_hal_gpio.c ****        HAL_NVIC_EnableIRQ().
+  69:src/stm32f1xx_hal_gpio.c **** 
+  70:src/stm32f1xx_hal_gpio.c ****    (#) To get the level of a pin configured in input mode use HAL_GPIO_ReadPin().
+  71:src/stm32f1xx_hal_gpio.c **** 
+  72:src/stm32f1xx_hal_gpio.c ****    (#) To set/reset the level of a pin configured in output mode use
+  73:src/stm32f1xx_hal_gpio.c ****        HAL_GPIO_WritePin()/HAL_GPIO_TogglePin().
+  74:src/stm32f1xx_hal_gpio.c **** 
+  75:src/stm32f1xx_hal_gpio.c ****    (#) To lock pin configuration until next reset use HAL_GPIO_LockPin().
+  76:src/stm32f1xx_hal_gpio.c **** 
+  77:src/stm32f1xx_hal_gpio.c ****    (#) During and just after reset, the alternate functions are not
+  78:src/stm32f1xx_hal_gpio.c ****        active and the GPIO pins are configured in input floating mode (except JTAG
+  79:src/stm32f1xx_hal_gpio.c ****        pins).
+  80:src/stm32f1xx_hal_gpio.c **** 
+  81:src/stm32f1xx_hal_gpio.c ****    (#) The LSE oscillator pins OSC32_IN and OSC32_OUT can be used as general purpose
+  82:src/stm32f1xx_hal_gpio.c ****        (PC14 and PC15, respectively) when the LSE oscillator is off. The LSE has
+  83:src/stm32f1xx_hal_gpio.c ****        priority over the GPIO function.
+  84:src/stm32f1xx_hal_gpio.c **** 
+  85:src/stm32f1xx_hal_gpio.c ****    (#) The HSE oscillator pins OSC_IN/OSC_OUT can be used as
+  86:src/stm32f1xx_hal_gpio.c ****        general purpose PD0 and PD1, respectively, when the HSE oscillator is off.
+  87:src/stm32f1xx_hal_gpio.c ****        The HSE has priority over the GPIO function.
+  88:src/stm32f1xx_hal_gpio.c **** 
+  89:src/stm32f1xx_hal_gpio.c ****   @endverbatim
+  90:src/stm32f1xx_hal_gpio.c ****   ******************************************************************************
+  91:src/stm32f1xx_hal_gpio.c ****   * @attention
+  92:src/stm32f1xx_hal_gpio.c ****   *
+  93:src/stm32f1xx_hal_gpio.c ****   * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics.
+ARM GAS  /tmp/ccQyBaoj.s 			page 4
+
+
+  94:src/stm32f1xx_hal_gpio.c ****   * All rights reserved.</center></h2>
+  95:src/stm32f1xx_hal_gpio.c ****   *
+  96:src/stm32f1xx_hal_gpio.c ****   * This software component is licensed by ST under BSD 3-Clause license,
+  97:src/stm32f1xx_hal_gpio.c ****   * the "License"; You may not use this file except in compliance with the
+  98:src/stm32f1xx_hal_gpio.c ****   * License. You may obtain a copy of the License at:
+  99:src/stm32f1xx_hal_gpio.c ****   *                        opensource.org/licenses/BSD-3-Clause
+ 100:src/stm32f1xx_hal_gpio.c ****   *
+ 101:src/stm32f1xx_hal_gpio.c ****   ******************************************************************************
+ 102:src/stm32f1xx_hal_gpio.c ****   */
+ 103:src/stm32f1xx_hal_gpio.c **** 
+ 104:src/stm32f1xx_hal_gpio.c **** /* Includes ------------------------------------------------------------------*/
+ 105:src/stm32f1xx_hal_gpio.c **** #include "stm32f1xx_hal.h"
+ 106:src/stm32f1xx_hal_gpio.c **** 
+ 107:src/stm32f1xx_hal_gpio.c **** /** @addtogroup STM32F1xx_HAL_Driver
+ 108:src/stm32f1xx_hal_gpio.c ****   * @{
+ 109:src/stm32f1xx_hal_gpio.c ****   */
+ 110:src/stm32f1xx_hal_gpio.c **** 
+ 111:src/stm32f1xx_hal_gpio.c **** /** @defgroup GPIO GPIO
+ 112:src/stm32f1xx_hal_gpio.c ****   * @brief GPIO HAL module driver
+ 113:src/stm32f1xx_hal_gpio.c ****   * @{
+ 114:src/stm32f1xx_hal_gpio.c ****   */
+ 115:src/stm32f1xx_hal_gpio.c **** 
+ 116:src/stm32f1xx_hal_gpio.c **** #ifdef HAL_GPIO_MODULE_ENABLED
+ 117:src/stm32f1xx_hal_gpio.c **** 
+ 118:src/stm32f1xx_hal_gpio.c **** /* Private typedef -----------------------------------------------------------*/
+ 119:src/stm32f1xx_hal_gpio.c **** /* Private define ------------------------------------------------------------*/
+ 120:src/stm32f1xx_hal_gpio.c **** /** @addtogroup GPIO_Private_Constants GPIO Private Constants
+ 121:src/stm32f1xx_hal_gpio.c ****   * @{
+ 122:src/stm32f1xx_hal_gpio.c ****   */
+ 123:src/stm32f1xx_hal_gpio.c **** #define GPIO_MODE             0x00000003u
+ 124:src/stm32f1xx_hal_gpio.c **** #define EXTI_MODE             0x10000000u
+ 125:src/stm32f1xx_hal_gpio.c **** #define GPIO_MODE_IT          0x00010000u
+ 126:src/stm32f1xx_hal_gpio.c **** #define GPIO_MODE_EVT         0x00020000u
+ 127:src/stm32f1xx_hal_gpio.c **** #define RISING_EDGE           0x00100000u
+ 128:src/stm32f1xx_hal_gpio.c **** #define FALLING_EDGE          0x00200000u
+ 129:src/stm32f1xx_hal_gpio.c **** #define GPIO_OUTPUT_TYPE      0x00000010u
+ 130:src/stm32f1xx_hal_gpio.c **** 
+ 131:src/stm32f1xx_hal_gpio.c **** #define GPIO_NUMBER           16u
+ 132:src/stm32f1xx_hal_gpio.c **** 
+ 133:src/stm32f1xx_hal_gpio.c **** /* Definitions for bit manipulation of CRL and CRH register */
+ 134:src/stm32f1xx_hal_gpio.c **** #define  GPIO_CR_MODE_INPUT         0x00000000u /*!< 00: Input mode (reset state)  */
+ 135:src/stm32f1xx_hal_gpio.c **** #define  GPIO_CR_CNF_ANALOG         0x00000000u /*!< 00: Analog mode  */
+ 136:src/stm32f1xx_hal_gpio.c **** #define  GPIO_CR_CNF_INPUT_FLOATING 0x00000004u /*!< 01: Floating input (reset state)  */
+ 137:src/stm32f1xx_hal_gpio.c **** #define  GPIO_CR_CNF_INPUT_PU_PD    0x00000008u /*!< 10: Input with pull-up / pull-down  */
+ 138:src/stm32f1xx_hal_gpio.c **** #define  GPIO_CR_CNF_GP_OUTPUT_PP   0x00000000u /*!< 00: General purpose output push-pull  */
+ 139:src/stm32f1xx_hal_gpio.c **** #define  GPIO_CR_CNF_GP_OUTPUT_OD   0x00000004u /*!< 01: General purpose output Open-drain  */
+ 140:src/stm32f1xx_hal_gpio.c **** #define  GPIO_CR_CNF_AF_OUTPUT_PP   0x00000008u /*!< 10: Alternate function output Push-pull  */
+ 141:src/stm32f1xx_hal_gpio.c **** #define  GPIO_CR_CNF_AF_OUTPUT_OD   0x0000000Cu /*!< 11: Alternate function output Open-drain  */
+ 142:src/stm32f1xx_hal_gpio.c **** 
+ 143:src/stm32f1xx_hal_gpio.c **** /**
+ 144:src/stm32f1xx_hal_gpio.c ****   * @}
+ 145:src/stm32f1xx_hal_gpio.c ****   */
+ 146:src/stm32f1xx_hal_gpio.c **** /* Private macro -------------------------------------------------------------*/
+ 147:src/stm32f1xx_hal_gpio.c **** /* Private variables ---------------------------------------------------------*/
+ 148:src/stm32f1xx_hal_gpio.c **** /* Private function prototypes -----------------------------------------------*/
+ 149:src/stm32f1xx_hal_gpio.c **** /* Private functions ---------------------------------------------------------*/
+ 150:src/stm32f1xx_hal_gpio.c **** /* Exported functions --------------------------------------------------------*/
+ARM GAS  /tmp/ccQyBaoj.s 			page 5
+
+
+ 151:src/stm32f1xx_hal_gpio.c **** /** @defgroup GPIO_Exported_Functions GPIO Exported Functions
+ 152:src/stm32f1xx_hal_gpio.c ****   * @{
+ 153:src/stm32f1xx_hal_gpio.c ****   */
+ 154:src/stm32f1xx_hal_gpio.c **** 
+ 155:src/stm32f1xx_hal_gpio.c **** /** @defgroup GPIO_Exported_Functions_Group1 Initialization and de-initialization functions
+ 156:src/stm32f1xx_hal_gpio.c ****  *  @brief    Initialization and Configuration functions
+ 157:src/stm32f1xx_hal_gpio.c ****  *
+ 158:src/stm32f1xx_hal_gpio.c **** @verbatim
+ 159:src/stm32f1xx_hal_gpio.c ****  ===============================================================================
+ 160:src/stm32f1xx_hal_gpio.c ****               ##### Initialization and de-initialization functions #####
+ 161:src/stm32f1xx_hal_gpio.c ****  ===============================================================================
+ 162:src/stm32f1xx_hal_gpio.c ****   [..]
+ 163:src/stm32f1xx_hal_gpio.c ****     This section provides functions allowing to initialize and de-initialize the GPIOs
+ 164:src/stm32f1xx_hal_gpio.c ****     to be ready for use.
+ 165:src/stm32f1xx_hal_gpio.c **** 
+ 166:src/stm32f1xx_hal_gpio.c **** @endverbatim
+ 167:src/stm32f1xx_hal_gpio.c ****   * @{
+ 168:src/stm32f1xx_hal_gpio.c ****   */
+ 169:src/stm32f1xx_hal_gpio.c **** 
+ 170:src/stm32f1xx_hal_gpio.c **** 
+ 171:src/stm32f1xx_hal_gpio.c **** /**
+ 172:src/stm32f1xx_hal_gpio.c ****   * @brief  Initializes the GPIOx peripheral according to the specified parameters in the GPIO_Init
+ 173:src/stm32f1xx_hal_gpio.c ****   * @param  GPIOx: where x can be (A..G depending on device used) to select the GPIO peripheral
+ 174:src/stm32f1xx_hal_gpio.c ****   * @param  GPIO_Init: pointer to a GPIO_InitTypeDef structure that contains
+ 175:src/stm32f1xx_hal_gpio.c ****   *         the configuration information for the specified GPIO peripheral.
+ 176:src/stm32f1xx_hal_gpio.c ****   * @retval None
+ 177:src/stm32f1xx_hal_gpio.c ****   */
+ 178:src/stm32f1xx_hal_gpio.c **** void HAL_GPIO_Init(GPIO_TypeDef  *GPIOx, GPIO_InitTypeDef *GPIO_Init)
+ 179:src/stm32f1xx_hal_gpio.c **** {
+  79              		.loc 1 179 0
+  80              		.cfi_startproc
+  81              		@ args = 0, pretend = 0, frame = 8
+  82              		@ frame_needed = 0, uses_anonymous_args = 0
+  83              	.LVL0:
+  84 0000 2DE9F74F 		push	{r0, r1, r2, r4, r5, r6, r7, r8, r9, r10, fp, lr}	@
+  85              	.LCFI0:
+  86              		.cfi_def_cfa_offset 48
+  87              		.cfi_offset 4, -36
+  88              		.cfi_offset 5, -32
+  89              		.cfi_offset 6, -28
+  90              		.cfi_offset 7, -24
+  91              		.cfi_offset 8, -20
+  92              		.cfi_offset 9, -16
+  93              		.cfi_offset 10, -12
+  94              		.cfi_offset 11, -8
+  95              		.cfi_offset 14, -4
+ 180:src/stm32f1xx_hal_gpio.c ****   uint32_t position = 0x00u;
+ 181:src/stm32f1xx_hal_gpio.c ****   uint32_t ioposition;
+ 182:src/stm32f1xx_hal_gpio.c ****   uint32_t iocurrent;
+ 183:src/stm32f1xx_hal_gpio.c ****   uint32_t temp;
+ 184:src/stm32f1xx_hal_gpio.c ****   uint32_t config = 0x00u;
+  96              		.loc 1 184 0
+  97 0004 0024     		movs	r4, #0	@ config,
+ 180:src/stm32f1xx_hal_gpio.c ****   uint32_t position = 0x00u;
+  98              		.loc 1 180 0
+  99 0006 2646     		mov	r6, r4	@ position, config
+ 100 0008 624B     		ldr	r3, .L43	@ tmp238,
+ARM GAS  /tmp/ccQyBaoj.s 			page 6
+
+
+ 185:src/stm32f1xx_hal_gpio.c ****   __IO uint32_t *configregister; /* Store the address of CRL or CRH register based on pin number */
+ 186:src/stm32f1xx_hal_gpio.c ****   uint32_t registeroffset;       /* offset used during computation of CNF and MODE bits placement i
+ 187:src/stm32f1xx_hal_gpio.c **** 
+ 188:src/stm32f1xx_hal_gpio.c ****   /* Check the parameters */
+ 189:src/stm32f1xx_hal_gpio.c ****   assert_param(IS_GPIO_ALL_INSTANCE(GPIOx));
+ 190:src/stm32f1xx_hal_gpio.c ****   assert_param(IS_GPIO_PIN(GPIO_Init->Pin));
+ 191:src/stm32f1xx_hal_gpio.c ****   assert_param(IS_GPIO_MODE(GPIO_Init->Mode));
+ 192:src/stm32f1xx_hal_gpio.c **** 
+ 193:src/stm32f1xx_hal_gpio.c ****   /* Configure the port pins */
+ 194:src/stm32f1xx_hal_gpio.c ****   while (((GPIO_Init->Pin) >> position) != 0x00u)
+ 195:src/stm32f1xx_hal_gpio.c ****   {
+ 196:src/stm32f1xx_hal_gpio.c ****     /* Get the IO position */
+ 197:src/stm32f1xx_hal_gpio.c ****     ioposition = (0x01uL << position);
+ 198:src/stm32f1xx_hal_gpio.c **** 
+ 199:src/stm32f1xx_hal_gpio.c ****     /* Get the current IO position */
+ 200:src/stm32f1xx_hal_gpio.c ****     iocurrent = (uint32_t)(GPIO_Init->Pin) & ioposition;
+ 201:src/stm32f1xx_hal_gpio.c **** 
+ 202:src/stm32f1xx_hal_gpio.c ****     if (iocurrent == ioposition)
+ 203:src/stm32f1xx_hal_gpio.c ****     {
+ 204:src/stm32f1xx_hal_gpio.c ****       /* Check the Alternate function parameters */
+ 205:src/stm32f1xx_hal_gpio.c ****       assert_param(IS_GPIO_AF_INSTANCE(GPIOx));
+ 206:src/stm32f1xx_hal_gpio.c **** 
+ 207:src/stm32f1xx_hal_gpio.c ****       /* Based on the required mode, filling config variable with MODEy[1:0] and CNFy[3:2] correspo
+ 208:src/stm32f1xx_hal_gpio.c ****       switch (GPIO_Init->Mode)
+ 101              		.loc 1 208 0
+ 102 000a DFF89CE1 		ldr	lr, .L43+20	@ tmp243,
+ 103 000e DFF89CC1 		ldr	ip, .L43+24	@ tmp244,
+ 104              	.LVL1:
+ 105              	.L2:
+ 194:src/stm32f1xx_hal_gpio.c ****   {
+ 106              		.loc 1 194 0
+ 107 0012 0A68     		ldr	r2, [r1]	@ _16, GPIO_Init_15(D)->Pin
+ 108 0014 32FA06F5 		lsrs	r5, r2, r6	@ tmp245, _16, position
+ 109 0018 02D1     		bne	.L25	@,
+ 209:src/stm32f1xx_hal_gpio.c ****       {
+ 210:src/stm32f1xx_hal_gpio.c ****         /* If we are configuring the pin in OUTPUT push-pull mode */
+ 211:src/stm32f1xx_hal_gpio.c ****         case GPIO_MODE_OUTPUT_PP:
+ 212:src/stm32f1xx_hal_gpio.c ****           /* Check the GPIO speed parameter */
+ 213:src/stm32f1xx_hal_gpio.c ****           assert_param(IS_GPIO_SPEED(GPIO_Init->Speed));
+ 214:src/stm32f1xx_hal_gpio.c ****           config = GPIO_Init->Speed + GPIO_CR_CNF_GP_OUTPUT_PP;
+ 215:src/stm32f1xx_hal_gpio.c ****           break;
+ 216:src/stm32f1xx_hal_gpio.c **** 
+ 217:src/stm32f1xx_hal_gpio.c ****         /* If we are configuring the pin in OUTPUT open-drain mode */
+ 218:src/stm32f1xx_hal_gpio.c ****         case GPIO_MODE_OUTPUT_OD:
+ 219:src/stm32f1xx_hal_gpio.c ****           /* Check the GPIO speed parameter */
+ 220:src/stm32f1xx_hal_gpio.c ****           assert_param(IS_GPIO_SPEED(GPIO_Init->Speed));
+ 221:src/stm32f1xx_hal_gpio.c ****           config = GPIO_Init->Speed + GPIO_CR_CNF_GP_OUTPUT_OD;
+ 222:src/stm32f1xx_hal_gpio.c ****           break;
+ 223:src/stm32f1xx_hal_gpio.c **** 
+ 224:src/stm32f1xx_hal_gpio.c ****         /* If we are configuring the pin in ALTERNATE FUNCTION push-pull mode */
+ 225:src/stm32f1xx_hal_gpio.c ****         case GPIO_MODE_AF_PP:
+ 226:src/stm32f1xx_hal_gpio.c ****           /* Check the GPIO speed parameter */
+ 227:src/stm32f1xx_hal_gpio.c ****           assert_param(IS_GPIO_SPEED(GPIO_Init->Speed));
+ 228:src/stm32f1xx_hal_gpio.c ****           config = GPIO_Init->Speed + GPIO_CR_CNF_AF_OUTPUT_PP;
+ 229:src/stm32f1xx_hal_gpio.c ****           break;
+ 230:src/stm32f1xx_hal_gpio.c **** 
+ 231:src/stm32f1xx_hal_gpio.c ****         /* If we are configuring the pin in ALTERNATE FUNCTION open-drain mode */
+ARM GAS  /tmp/ccQyBaoj.s 			page 7
+
+
+ 232:src/stm32f1xx_hal_gpio.c ****         case GPIO_MODE_AF_OD:
+ 233:src/stm32f1xx_hal_gpio.c ****           /* Check the GPIO speed parameter */
+ 234:src/stm32f1xx_hal_gpio.c ****           assert_param(IS_GPIO_SPEED(GPIO_Init->Speed));
+ 235:src/stm32f1xx_hal_gpio.c ****           config = GPIO_Init->Speed + GPIO_CR_CNF_AF_OUTPUT_OD;
+ 236:src/stm32f1xx_hal_gpio.c ****           break;
+ 237:src/stm32f1xx_hal_gpio.c **** 
+ 238:src/stm32f1xx_hal_gpio.c ****         /* If we are configuring the pin in INPUT (also applicable to EVENT and IT mode) */
+ 239:src/stm32f1xx_hal_gpio.c ****         case GPIO_MODE_INPUT:
+ 240:src/stm32f1xx_hal_gpio.c ****         case GPIO_MODE_IT_RISING:
+ 241:src/stm32f1xx_hal_gpio.c ****         case GPIO_MODE_IT_FALLING:
+ 242:src/stm32f1xx_hal_gpio.c ****         case GPIO_MODE_IT_RISING_FALLING:
+ 243:src/stm32f1xx_hal_gpio.c ****         case GPIO_MODE_EVT_RISING:
+ 244:src/stm32f1xx_hal_gpio.c ****         case GPIO_MODE_EVT_FALLING:
+ 245:src/stm32f1xx_hal_gpio.c ****         case GPIO_MODE_EVT_RISING_FALLING:
+ 246:src/stm32f1xx_hal_gpio.c ****           /* Check the GPIO pull parameter */
+ 247:src/stm32f1xx_hal_gpio.c ****           assert_param(IS_GPIO_PULL(GPIO_Init->Pull));
+ 248:src/stm32f1xx_hal_gpio.c ****           if (GPIO_Init->Pull == GPIO_NOPULL)
+ 249:src/stm32f1xx_hal_gpio.c ****           {
+ 250:src/stm32f1xx_hal_gpio.c ****             config = GPIO_CR_MODE_INPUT + GPIO_CR_CNF_INPUT_FLOATING;
+ 251:src/stm32f1xx_hal_gpio.c ****           }
+ 252:src/stm32f1xx_hal_gpio.c ****           else if (GPIO_Init->Pull == GPIO_PULLUP)
+ 253:src/stm32f1xx_hal_gpio.c ****           {
+ 254:src/stm32f1xx_hal_gpio.c ****             config = GPIO_CR_MODE_INPUT + GPIO_CR_CNF_INPUT_PU_PD;
+ 255:src/stm32f1xx_hal_gpio.c **** 
+ 256:src/stm32f1xx_hal_gpio.c ****             /* Set the corresponding ODR bit */
+ 257:src/stm32f1xx_hal_gpio.c ****             GPIOx->BSRR = ioposition;
+ 258:src/stm32f1xx_hal_gpio.c ****           }
+ 259:src/stm32f1xx_hal_gpio.c ****           else /* GPIO_PULLDOWN */
+ 260:src/stm32f1xx_hal_gpio.c ****           {
+ 261:src/stm32f1xx_hal_gpio.c ****             config = GPIO_CR_MODE_INPUT + GPIO_CR_CNF_INPUT_PU_PD;
+ 262:src/stm32f1xx_hal_gpio.c **** 
+ 263:src/stm32f1xx_hal_gpio.c ****             /* Reset the corresponding ODR bit */
+ 264:src/stm32f1xx_hal_gpio.c ****             GPIOx->BRR = ioposition;
+ 265:src/stm32f1xx_hal_gpio.c ****           }
+ 266:src/stm32f1xx_hal_gpio.c ****           break;
+ 267:src/stm32f1xx_hal_gpio.c **** 
+ 268:src/stm32f1xx_hal_gpio.c ****         /* If we are configuring the pin in INPUT analog mode */
+ 269:src/stm32f1xx_hal_gpio.c ****         case GPIO_MODE_ANALOG:
+ 270:src/stm32f1xx_hal_gpio.c ****           config = GPIO_CR_MODE_INPUT + GPIO_CR_CNF_ANALOG;
+ 271:src/stm32f1xx_hal_gpio.c ****           break;
+ 272:src/stm32f1xx_hal_gpio.c **** 
+ 273:src/stm32f1xx_hal_gpio.c ****         /* Parameters are checked with assert_param */
+ 274:src/stm32f1xx_hal_gpio.c ****         default:
+ 275:src/stm32f1xx_hal_gpio.c ****           break;
+ 276:src/stm32f1xx_hal_gpio.c ****       }
+ 277:src/stm32f1xx_hal_gpio.c **** 
+ 278:src/stm32f1xx_hal_gpio.c ****       /* Check if the current bit belongs to first half or last half of the pin count number
+ 279:src/stm32f1xx_hal_gpio.c ****        in order to address CRH or CRL register*/
+ 280:src/stm32f1xx_hal_gpio.c ****       configregister = (iocurrent < GPIO_PIN_8) ? &GPIOx->CRL     : &GPIOx->CRH;
+ 281:src/stm32f1xx_hal_gpio.c ****       registeroffset = (iocurrent < GPIO_PIN_8) ? (position << 2u) : ((position - 8u) << 2u);
+ 282:src/stm32f1xx_hal_gpio.c **** 
+ 283:src/stm32f1xx_hal_gpio.c ****       /* Apply the new configuration of the pin to the register */
+ 284:src/stm32f1xx_hal_gpio.c ****       MODIFY_REG((*configregister), ((GPIO_CRL_MODE0 | GPIO_CRL_CNF0) << registeroffset), (config <
+ 285:src/stm32f1xx_hal_gpio.c **** 
+ 286:src/stm32f1xx_hal_gpio.c ****       /*--------------------- EXTI Mode Configuration ------------------------*/
+ 287:src/stm32f1xx_hal_gpio.c ****       /* Configure the External Interrupt or event for the current IO */
+ 288:src/stm32f1xx_hal_gpio.c ****       if ((GPIO_Init->Mode & EXTI_MODE) == EXTI_MODE)
+ARM GAS  /tmp/ccQyBaoj.s 			page 8
+
+
+ 289:src/stm32f1xx_hal_gpio.c ****       {
+ 290:src/stm32f1xx_hal_gpio.c ****         /* Enable AFIO Clock */
+ 291:src/stm32f1xx_hal_gpio.c ****         __HAL_RCC_AFIO_CLK_ENABLE();
+ 292:src/stm32f1xx_hal_gpio.c ****         temp = AFIO->EXTICR[position >> 2u];
+ 293:src/stm32f1xx_hal_gpio.c ****         CLEAR_BIT(temp, (0x0Fu) << (4u * (position & 0x03u)));
+ 294:src/stm32f1xx_hal_gpio.c ****         SET_BIT(temp, (GPIO_GET_INDEX(GPIOx)) << (4u * (position & 0x03u)));
+ 295:src/stm32f1xx_hal_gpio.c ****         AFIO->EXTICR[position >> 2u] = temp;
+ 296:src/stm32f1xx_hal_gpio.c **** 
+ 297:src/stm32f1xx_hal_gpio.c **** 
+ 298:src/stm32f1xx_hal_gpio.c ****         /* Configure the interrupt mask */
+ 299:src/stm32f1xx_hal_gpio.c ****         if ((GPIO_Init->Mode & GPIO_MODE_IT) == GPIO_MODE_IT)
+ 300:src/stm32f1xx_hal_gpio.c ****         {
+ 301:src/stm32f1xx_hal_gpio.c ****           SET_BIT(EXTI->IMR, iocurrent);
+ 302:src/stm32f1xx_hal_gpio.c ****         }
+ 303:src/stm32f1xx_hal_gpio.c ****         else
+ 304:src/stm32f1xx_hal_gpio.c ****         {
+ 305:src/stm32f1xx_hal_gpio.c ****           CLEAR_BIT(EXTI->IMR, iocurrent);
+ 306:src/stm32f1xx_hal_gpio.c ****         }
+ 307:src/stm32f1xx_hal_gpio.c **** 
+ 308:src/stm32f1xx_hal_gpio.c ****         /* Configure the event mask */
+ 309:src/stm32f1xx_hal_gpio.c ****         if ((GPIO_Init->Mode & GPIO_MODE_EVT) == GPIO_MODE_EVT)
+ 310:src/stm32f1xx_hal_gpio.c ****         {
+ 311:src/stm32f1xx_hal_gpio.c ****           SET_BIT(EXTI->EMR, iocurrent);
+ 312:src/stm32f1xx_hal_gpio.c ****         }
+ 313:src/stm32f1xx_hal_gpio.c ****         else
+ 314:src/stm32f1xx_hal_gpio.c ****         {
+ 315:src/stm32f1xx_hal_gpio.c ****           CLEAR_BIT(EXTI->EMR, iocurrent);
+ 316:src/stm32f1xx_hal_gpio.c ****         }
+ 317:src/stm32f1xx_hal_gpio.c **** 
+ 318:src/stm32f1xx_hal_gpio.c ****         /* Enable or disable the rising trigger */
+ 319:src/stm32f1xx_hal_gpio.c ****         if ((GPIO_Init->Mode & RISING_EDGE) == RISING_EDGE)
+ 320:src/stm32f1xx_hal_gpio.c ****         {
+ 321:src/stm32f1xx_hal_gpio.c ****           SET_BIT(EXTI->RTSR, iocurrent);
+ 322:src/stm32f1xx_hal_gpio.c ****         }
+ 323:src/stm32f1xx_hal_gpio.c ****         else
+ 324:src/stm32f1xx_hal_gpio.c ****         {
+ 325:src/stm32f1xx_hal_gpio.c ****           CLEAR_BIT(EXTI->RTSR, iocurrent);
+ 326:src/stm32f1xx_hal_gpio.c ****         }
+ 327:src/stm32f1xx_hal_gpio.c **** 
+ 328:src/stm32f1xx_hal_gpio.c ****         /* Enable or disable the falling trigger */
+ 329:src/stm32f1xx_hal_gpio.c ****         if ((GPIO_Init->Mode & FALLING_EDGE) == FALLING_EDGE)
+ 330:src/stm32f1xx_hal_gpio.c ****         {
+ 331:src/stm32f1xx_hal_gpio.c ****           SET_BIT(EXTI->FTSR, iocurrent);
+ 332:src/stm32f1xx_hal_gpio.c ****         }
+ 333:src/stm32f1xx_hal_gpio.c ****         else
+ 334:src/stm32f1xx_hal_gpio.c ****         {
+ 335:src/stm32f1xx_hal_gpio.c ****           CLEAR_BIT(EXTI->FTSR, iocurrent);
+ 336:src/stm32f1xx_hal_gpio.c ****         }
+ 337:src/stm32f1xx_hal_gpio.c ****       }
+ 338:src/stm32f1xx_hal_gpio.c ****     }
+ 339:src/stm32f1xx_hal_gpio.c **** 
+ 340:src/stm32f1xx_hal_gpio.c **** 	position++;
+ 341:src/stm32f1xx_hal_gpio.c ****   }
+ 342:src/stm32f1xx_hal_gpio.c **** }
+ 110              		.loc 1 342 0
+ 111 001a 03B0     		add	sp, sp, #12	@,,
+ 112              	.LCFI1:
+ARM GAS  /tmp/ccQyBaoj.s 			page 9
+
+
+ 113              		.cfi_remember_state
+ 114              		.cfi_def_cfa_offset 36
+ 115              		@ sp needed	@
+ 116 001c BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}	@
+ 117              	.LVL2:
+ 118              	.L25:
+ 119              	.LCFI2:
+ 120              		.cfi_restore_state
+ 197:src/stm32f1xx_hal_gpio.c **** 
+ 121              		.loc 1 197 0
+ 122 0020 4FF00108 		mov	r8, #1	@ tmp175,
+ 123 0024 08FA06F8 		lsl	r8, r8, r6	@ ioposition, tmp175, position
+ 124              	.LVL3:
+ 200:src/stm32f1xx_hal_gpio.c **** 
+ 125              		.loc 1 200 0
+ 126 0028 02EA0802 		and	r2, r2, r8	@ iocurrent, _16, ioposition
+ 127              	.LVL4:
+ 202:src/stm32f1xx_hal_gpio.c ****     {
+ 128              		.loc 1 202 0
+ 129 002c 9045     		cmp	r8, r2	@ ioposition, iocurrent
+ 130 002e 7AD1     		bne	.L3	@,
+ 208:src/stm32f1xx_hal_gpio.c ****       {
+ 131              		.loc 1 208 0
+ 132 0030 4D68     		ldr	r5, [r1, #4]	@ _20, GPIO_Init_15(D)->Mode
+ 133 0032 122D     		cmp	r5, #18	@ _20,
+ 134 0034 00F0A580 		beq	.L5	@,
+ 135 0038 7ED8     		bhi	.L6	@,
+ 136 003a 022D     		cmp	r5, #2	@ _20,
+ 137 003c 00F09E80 		beq	.L7	@,
+ 138 0040 73D8     		bhi	.L8	@,
+ 139 0042 002D     		cmp	r5, #0	@ _20
+ 140 0044 00F08580 		beq	.L9	@
+ 141 0048 012D     		cmp	r5, #1	@ _20,
+ 142 004a 00F09580 		beq	.L10	@,
+ 143              	.LVL5:
+ 144              	.L4:
+ 284:src/stm32f1xx_hal_gpio.c **** 
+ 145              		.loc 1 284 0
+ 146 004e 4FF00F09 		mov	r9, #15	@ tmp190,
+ 280:src/stm32f1xx_hal_gpio.c ****       registeroffset = (iocurrent < GPIO_PIN_8) ? (position << 2u) : ((position - 8u) << 2u);
+ 147              		.loc 1 280 0
+ 148 0052 FF2A     		cmp	r2, #255	@ iocurrent,
+ 149 0054 93BF     		iteet	ls
+ 150 0056 8246     		movls	r10, r0	@ iftmp.0_130, GPIOx
+ 151 0058 06F18045 		addhi	r5, r6, #1073741824	@ tmp187, position,
+ 152 005c 083D     		subhi	r5, r5, #8	@ tmp187, tmp187,
+ 153 005e D0F800B0 		ldrls	fp, [r0]	@ _131, MEM[(volatile uint32_t *)GPIOx_29(D)]
+ 154              	.LVL6:
+ 155 0062 92BF     		itee	ls
+ 156 0064 B500     		lslls	r5, r6, #2	@ iftmp.1_6, position,
+ 157 0066 D0F804B0 		ldrhi	fp, [r0, #4]	@ _131, MEM[(volatile uint32_t *)GPIOx_29(D) + 4B]
+ 158 006a AD00     		lslhi	r5, r5, #2	@ iftmp.1_6, tmp187,
+ 284:src/stm32f1xx_hal_gpio.c **** 
+ 159              		.loc 1 284 0
+ 160 006c 09FA05F8 		lsl	r8, r9, r5	@ tmp189, tmp190, iftmp.1_6
+ 161              	.LVL7:
+ 162 0070 2BEA0808 		bic	r8, fp, r8	@ tmp192, _131, tmp189
+ARM GAS  /tmp/ccQyBaoj.s 			page 10
+
+
+ 163 0074 04FA05F5 		lsl	r5, r4, r5	@ tmp193, config, iftmp.1_6
+ 280:src/stm32f1xx_hal_gpio.c ****       registeroffset = (iocurrent < GPIO_PIN_8) ? (position << 2u) : ((position - 8u) << 2u);
+ 164              		.loc 1 280 0
+ 165 0078 88BF     		it	hi
+ 166 007a 00F1040A 		addhi	r10, r0, #4	@ iftmp.0_130, GPIOx,
+ 167              	.LVL8:
+ 284:src/stm32f1xx_hal_gpio.c **** 
+ 168              		.loc 1 284 0
+ 169 007e 48EA0505 		orr	r5, r8, r5	@ _42, tmp192, tmp193
+ 170 0082 CAF80050 		str	r5, [r10]	@ _42, *iftmp.0_130
+ 288:src/stm32f1xx_hal_gpio.c ****       {
+ 171              		.loc 1 288 0
+ 172 0086 D1F804A0 		ldr	r10, [r1, #4]	@ _44, GPIO_Init_15(D)->Mode
+ 173              	.LVL9:
+ 174 008a 1AF0805F 		tst	r10, #268435456	@ _44,
+ 175 008e 4AD0     		beq	.L3	@,
+ 176              	.LBB2:
+ 291:src/stm32f1xx_hal_gpio.c ****         temp = AFIO->EXTICR[position >> 2u];
+ 177              		.loc 1 291 0
+ 178 0090 414D     		ldr	r5, .L43+4	@ tmp253,
+ 179 0092 414F     		ldr	r7, .L43+4	@ tmp252,
+ 180 0094 AD69     		ldr	r5, [r5, #24]	@ _46, MEM[(struct RCC_TypeDef *)1073876992B].APB2ENR
+ 181 0096 26F00308 		bic	r8, r6, #3	@ tmp199, position,
+ 182 009a 45F00105 		orr	r5, r5, #1	@ _47, _46,
+ 183 009e BD61     		str	r5, [r7, #24]	@ _47, MEM[(struct RCC_TypeDef *)1073876992B].APB2ENR
+ 184 00a0 BD69     		ldr	r5, [r7, #24]	@ _49, MEM[(struct RCC_TypeDef *)1073876992B].APB2ENR
+ 185 00a2 08F18048 		add	r8, r8, #1073741824	@ _126, tmp199,
+ 186 00a6 05F00105 		and	r5, r5, #1	@ tmpreg.2_50, _49,
+ 187 00aa 0195     		str	r5, [sp, #4]	@ tmpreg.2_50, tmpreg
+ 188 00ac 08F58038 		add	r8, r8, #65536	@ _126, _126,
+ 189              	.LBE2:
+ 293:src/stm32f1xx_hal_gpio.c ****         SET_BIT(temp, (GPIO_GET_INDEX(GPIOx)) << (4u * (position & 0x03u)));
+ 190              		.loc 1 293 0
+ 191 00b0 06F0030B 		and	fp, r6, #3	@ tmp201, position,
+ 192              	.LBB3:
+ 291:src/stm32f1xx_hal_gpio.c ****         temp = AFIO->EXTICR[position >> 2u];
+ 193              		.loc 1 291 0
+ 194 00b4 019D     		ldr	r5, [sp, #4]	@ vol.3_52, tmpreg
+ 195              	.LBE3:
+ 293:src/stm32f1xx_hal_gpio.c ****         SET_BIT(temp, (GPIO_GET_INDEX(GPIOx)) << (4u * (position & 0x03u)));
+ 196              		.loc 1 293 0
+ 197 00b6 4FEA8B0B 		lsl	fp, fp, #2	@ _56, tmp201,
+ 292:src/stm32f1xx_hal_gpio.c ****         CLEAR_BIT(temp, (0x0Fu) << (4u * (position & 0x03u)));
+ 198              		.loc 1 292 0
+ 199 00ba D8F80850 		ldr	r5, [r8, #8]	@ temp, MEM[(struct AFIO_TypeDef *)_126 + 8B]
+ 200              	.LVL10:
+ 293:src/stm32f1xx_hal_gpio.c ****         SET_BIT(temp, (GPIO_GET_INDEX(GPIOx)) << (4u * (position & 0x03u)));
+ 201              		.loc 1 293 0
+ 202 00be 09FA0BF9 		lsl	r9, r9, fp	@ tmp202, tmp190, _56
+ 203 00c2 25EA0909 		bic	r9, r5, r9	@ temp, temp, tmp202
+ 204              	.LVL11:
+ 294:src/stm32f1xx_hal_gpio.c ****         AFIO->EXTICR[position >> 2u] = temp;
+ 205              		.loc 1 294 0
+ 206 00c6 354D     		ldr	r5, .L43+8	@ tmp248,
+ 207 00c8 A842     		cmp	r0, r5	@ GPIOx, tmp248
+ 208 00ca 5FD0     		beq	.L27	@,
+ 294:src/stm32f1xx_hal_gpio.c ****         AFIO->EXTICR[position >> 2u] = temp;
+ARM GAS  /tmp/ccQyBaoj.s 			page 11
+
+
+ 209              		.loc 1 294 0 is_stmt 0 discriminator 1
+ 210 00cc 05F58065 		add	r5, r5, #1024	@ tmp249, tmp249,
+ 211 00d0 A842     		cmp	r0, r5	@ GPIOx, tmp249
+ 212 00d2 5DD0     		beq	.L28	@,
+ 294:src/stm32f1xx_hal_gpio.c ****         AFIO->EXTICR[position >> 2u] = temp;
+ 213              		.loc 1 294 0 discriminator 3
+ 214 00d4 05F58065 		add	r5, r5, #1024	@ tmp250, tmp250,
+ 215 00d8 A842     		cmp	r0, r5	@ GPIOx, tmp250
+ 216 00da 0CBF     		ite	eq	@
+ 217 00dc 0225     		moveq	r5, #2	@, iftmp.4_7,
+ 218 00de 0325     		movne	r5, #3	@, iftmp.4_7,
+ 219              	.L17:
+ 294:src/stm32f1xx_hal_gpio.c ****         AFIO->EXTICR[position >> 2u] = temp;
+ 220              		.loc 1 294 0 discriminator 12
+ 221 00e0 05FA0BF5 		lsl	r5, r5, fp	@ tmp208, iftmp.4_7, _56
+ 222 00e4 45EA0905 		orr	r5, r5, r9	@ temp, tmp208, temp
+ 223              	.LVL12:
+ 295:src/stm32f1xx_hal_gpio.c **** 
+ 224              		.loc 1 295 0 is_stmt 1 discriminator 12
+ 225 00e8 C8F80850 		str	r5, [r8, #8]	@ temp, MEM[(struct AFIO_TypeDef *)_126 + 8B]
+ 301:src/stm32f1xx_hal_gpio.c ****         }
+ 226              		.loc 1 301 0 discriminator 12
+ 227 00ec 1D68     		ldr	r5, [r3]	@ _64,
+ 228              	.LVL13:
+ 299:src/stm32f1xx_hal_gpio.c ****         {
+ 229              		.loc 1 299 0 discriminator 12
+ 230 00ee 1AF4803F 		tst	r10, #65536	@ _44,
+ 301:src/stm32f1xx_hal_gpio.c ****         }
+ 231              		.loc 1 301 0 discriminator 12
+ 232 00f2 14BF     		ite	ne
+ 233 00f4 1543     		orrne	r5, r5, r2	@ _65, _64, iocurrent
+ 305:src/stm32f1xx_hal_gpio.c ****         }
+ 234              		.loc 1 305 0 discriminator 12
+ 235 00f6 9543     		biceq	r5, r5, r2	@ _69, _67, iocurrent
+ 236 00f8 1D60     		str	r5, [r3]	@ _69,
+ 237              	.LVL14:
+ 311:src/stm32f1xx_hal_gpio.c ****         }
+ 238              		.loc 1 311 0 discriminator 12
+ 239 00fa 5D68     		ldr	r5, [r3, #4]	@ _72,
+ 309:src/stm32f1xx_hal_gpio.c ****         {
+ 240              		.loc 1 309 0 discriminator 12
+ 241 00fc 1AF4003F 		tst	r10, #131072	@ _44,
+ 311:src/stm32f1xx_hal_gpio.c ****         }
+ 242              		.loc 1 311 0 discriminator 12
+ 243 0100 14BF     		ite	ne
+ 244 0102 1543     		orrne	r5, r5, r2	@ _73, _72, iocurrent
+ 315:src/stm32f1xx_hal_gpio.c ****         }
+ 245              		.loc 1 315 0 discriminator 12
+ 246 0104 9543     		biceq	r5, r5, r2	@ _77, _75, iocurrent
+ 247 0106 5D60     		str	r5, [r3, #4]	@ _77,
+ 321:src/stm32f1xx_hal_gpio.c ****         }
+ 248              		.loc 1 321 0 discriminator 12
+ 249 0108 9D68     		ldr	r5, [r3, #8]	@ _80,
+ 319:src/stm32f1xx_hal_gpio.c ****         {
+ 250              		.loc 1 319 0 discriminator 12
+ 251 010a 1AF4801F 		tst	r10, #1048576	@ _44,
+ 321:src/stm32f1xx_hal_gpio.c ****         }
+ARM GAS  /tmp/ccQyBaoj.s 			page 12
+
+
+ 252              		.loc 1 321 0 discriminator 12
+ 253 010e 14BF     		ite	ne
+ 254 0110 1543     		orrne	r5, r5, r2	@ _81, _80, iocurrent
+ 325:src/stm32f1xx_hal_gpio.c ****         }
+ 255              		.loc 1 325 0 discriminator 12
+ 256 0112 9543     		biceq	r5, r5, r2	@ _85, _83, iocurrent
+ 257 0114 9D60     		str	r5, [r3, #8]	@ _85,
+ 331:src/stm32f1xx_hal_gpio.c ****         }
+ 258              		.loc 1 331 0 discriminator 12
+ 259 0116 DD68     		ldr	r5, [r3, #12]	@ _88,
+ 329:src/stm32f1xx_hal_gpio.c ****         {
+ 260              		.loc 1 329 0 discriminator 12
+ 261 0118 1AF4001F 		tst	r10, #2097152	@ _44,
+ 331:src/stm32f1xx_hal_gpio.c ****         }
+ 262              		.loc 1 331 0 discriminator 12
+ 263 011c 14BF     		ite	ne
+ 264 011e 2A43     		orrne	r2, r2, r5	@ _89, iocurrent, _88
+ 265              	.LVL15:
+ 335:src/stm32f1xx_hal_gpio.c ****         }
+ 266              		.loc 1 335 0 discriminator 12
+ 267 0120 25EA0202 		biceq	r2, r5, r2	@ _93, _91, iocurrent
+ 268 0124 DA60     		str	r2, [r3, #12]	@ _93,
+ 269              	.L3:
+ 340:src/stm32f1xx_hal_gpio.c ****   }
+ 270              		.loc 1 340 0
+ 271 0126 0136     		adds	r6, r6, #1	@ position, position,
+ 272              	.LVL16:
+ 273 0128 73E7     		b	.L2	@
+ 274              	.LVL17:
+ 275              	.L8:
+ 208:src/stm32f1xx_hal_gpio.c ****       {
+ 276              		.loc 1 208 0
+ 277 012a 032D     		cmp	r5, #3	@ _20,
+ 278 012c 22D0     		beq	.L11	@,
+ 279 012e 112D     		cmp	r5, #17	@ _20,
+ 280 0130 8DD1     		bne	.L4	@,
+ 221:src/stm32f1xx_hal_gpio.c ****           break;
+ 281              		.loc 1 221 0
+ 282 0132 CC68     		ldr	r4, [r1, #12]	@ GPIO_Init_15(D)->Speed, GPIO_Init_15(D)->Speed
+ 283              	.LVL18:
+ 284 0134 0434     		adds	r4, r4, #4	@ config, GPIO_Init_15(D)->Speed,
+ 285              	.LVL19:
+ 222:src/stm32f1xx_hal_gpio.c **** 
+ 286              		.loc 1 222 0
+ 287 0136 8AE7     		b	.L4	@
+ 288              	.L6:
+ 208:src/stm32f1xx_hal_gpio.c ****       {
+ 289              		.loc 1 208 0
+ 290 0138 194F     		ldr	r7, .L43+12	@ tmp246,
+ 291 013a BD42     		cmp	r5, r7	@ _20, tmp246
+ 292 013c 09D0     		beq	.L9	@,
+ 293 013e 12D8     		bhi	.L13	@,
+ 294 0140 DFF86C90 		ldr	r9, .L43+28	@ tmp179,
+ 295 0144 4D45     		cmp	r5, r9	@ _20, tmp179
+ 296 0146 04D0     		beq	.L9	@,
+ 297 0148 09F58039 		add	r9, r9, #65536	@ tmp180, tmp180,
+ 298 014c 4D45     		cmp	r5, r9	@ _20, tmp180
+ARM GAS  /tmp/ccQyBaoj.s 			page 13
+
+
+ 299              	.L37:
+ 300 014e 7FF47EAF 		bne	.L4	@,
+ 301              	.L9:
+ 248:src/stm32f1xx_hal_gpio.c ****           {
+ 302              		.loc 1 248 0
+ 303 0152 8C68     		ldr	r4, [r1, #8]	@ _28, GPIO_Init_15(D)->Pull
+ 304              	.LVL20:
+ 305 0154 C4B1     		cbz	r4, .L26	@ _28,
+ 252:src/stm32f1xx_hal_gpio.c ****           {
+ 306              		.loc 1 252 0
+ 307 0156 012C     		cmp	r4, #1	@ _28,
+ 308              	.LVL21:
+ 257:src/stm32f1xx_hal_gpio.c ****           }
+ 309              		.loc 1 257 0
+ 310 0158 0CBF     		ite	eq
+ 311 015a C0F81080 		streq	r8, [r0, #16]	@ ioposition, GPIOx_29(D)->BSRR
+ 264:src/stm32f1xx_hal_gpio.c ****           }
+ 312              		.loc 1 264 0
+ 313 015e C0F81480 		strne	r8, [r0, #20]	@ ioposition, GPIOx_29(D)->BRR
+ 261:src/stm32f1xx_hal_gpio.c **** 
+ 314              		.loc 1 261 0
+ 315 0162 0824     		movs	r4, #8	@ config,
+ 316 0164 73E7     		b	.L4	@
+ 317              	.LVL22:
+ 318              	.L13:
+ 208:src/stm32f1xx_hal_gpio.c ****       {
+ 319              		.loc 1 208 0
+ 320 0166 0F4F     		ldr	r7, .L43+16	@ tmp247,
+ 321 0168 BD42     		cmp	r5, r7	@ _20, tmp247
+ 322 016a F2D0     		beq	.L9	@,
+ 323 016c 7545     		cmp	r5, lr	@ _20, tmp243
+ 324 016e F0D0     		beq	.L9	@,
+ 325 0170 6545     		cmp	r5, ip	@ _20, tmp244
+ 326 0172 ECE7     		b	.L37	@
+ 327              	.L11:
+ 270:src/stm32f1xx_hal_gpio.c ****           break;
+ 328              		.loc 1 270 0
+ 329 0174 0024     		movs	r4, #0	@ config,
+ 330              	.LVL23:
+ 331 0176 6AE7     		b	.L4	@
+ 332              	.LVL24:
+ 333              	.L10:
+ 214:src/stm32f1xx_hal_gpio.c ****           break;
+ 334              		.loc 1 214 0
+ 335 0178 CC68     		ldr	r4, [r1, #12]	@ config, GPIO_Init_15(D)->Speed
+ 336              	.LVL25:
+ 215:src/stm32f1xx_hal_gpio.c **** 
+ 337              		.loc 1 215 0
+ 338 017a 68E7     		b	.L4	@
+ 339              	.L7:
+ 228:src/stm32f1xx_hal_gpio.c ****           break;
+ 340              		.loc 1 228 0
+ 341 017c CC68     		ldr	r4, [r1, #12]	@ GPIO_Init_15(D)->Speed, GPIO_Init_15(D)->Speed
+ 342              	.LVL26:
+ 343 017e 0834     		adds	r4, r4, #8	@ config, GPIO_Init_15(D)->Speed,
+ 344              	.LVL27:
+ 229:src/stm32f1xx_hal_gpio.c **** 
+ARM GAS  /tmp/ccQyBaoj.s 			page 14
+
+
+ 345              		.loc 1 229 0
+ 346 0180 65E7     		b	.L4	@
+ 347              	.L5:
+ 235:src/stm32f1xx_hal_gpio.c ****           break;
+ 348              		.loc 1 235 0
+ 349 0182 CC68     		ldr	r4, [r1, #12]	@ GPIO_Init_15(D)->Speed, GPIO_Init_15(D)->Speed
+ 350              	.LVL28:
+ 351 0184 0C34     		adds	r4, r4, #12	@ config, GPIO_Init_15(D)->Speed,
+ 352              	.LVL29:
+ 236:src/stm32f1xx_hal_gpio.c **** 
+ 353              		.loc 1 236 0
+ 354 0186 62E7     		b	.L4	@
+ 355              	.LVL30:
+ 356              	.L26:
+ 250:src/stm32f1xx_hal_gpio.c ****           }
+ 357              		.loc 1 250 0
+ 358 0188 0424     		movs	r4, #4	@ config,
+ 359 018a 60E7     		b	.L4	@
+ 360              	.LVL31:
+ 361              	.L27:
+ 294:src/stm32f1xx_hal_gpio.c ****         AFIO->EXTICR[position >> 2u] = temp;
+ 362              		.loc 1 294 0
+ 363 018c 0025     		movs	r5, #0	@ iftmp.4_7,
+ 364 018e A7E7     		b	.L17	@
+ 365              	.L28:
+ 366 0190 0125     		movs	r5, #1	@ iftmp.4_7,
+ 367              	.LVL32:
+ 368 0192 A5E7     		b	.L17	@
+ 369              	.L44:
+ 370              		.align	2
+ 371              	.L43:
+ 372 0194 00040140 		.word	1073808384
+ 373 0198 00100240 		.word	1073876992
+ 374 019c 00080140 		.word	1073809408
+ 375 01a0 00002110 		.word	270598144
+ 376 01a4 00003110 		.word	271646720
+ 377 01a8 00003210 		.word	271712256
+ 378 01ac 00002210 		.word	270663680
+ 379 01b0 00001110 		.word	269549568
+ 380              		.cfi_endproc
+ 381              	.LFE65:
+ 382              		.size	HAL_GPIO_Init, .-HAL_GPIO_Init
+ 383              		.align	1
+ 384              		.global	HAL_GPIO_DeInit
+ 385              		.syntax unified
+ 386              		.thumb
+ 387              		.thumb_func
+ 388              		.fpu softvfp
+ 389              		.type	HAL_GPIO_DeInit, %function
+ 390              	HAL_GPIO_DeInit:
+ 391              	.LFB66:
+ 343:src/stm32f1xx_hal_gpio.c **** 
+ 344:src/stm32f1xx_hal_gpio.c **** /**
+ 345:src/stm32f1xx_hal_gpio.c ****   * @brief  De-initializes the GPIOx peripheral registers to their default reset values.
+ 346:src/stm32f1xx_hal_gpio.c ****   * @param  GPIOx: where x can be (A..G depending on device used) to select the GPIO peripheral
+ 347:src/stm32f1xx_hal_gpio.c ****   * @param  GPIO_Pin: specifies the port bit to be written.
+ 348:src/stm32f1xx_hal_gpio.c ****   *         This parameter can be one of GPIO_PIN_x where x can be (0..15).
+ARM GAS  /tmp/ccQyBaoj.s 			page 15
+
+
+ 349:src/stm32f1xx_hal_gpio.c ****   * @retval None
+ 350:src/stm32f1xx_hal_gpio.c ****   */
+ 351:src/stm32f1xx_hal_gpio.c **** void HAL_GPIO_DeInit(GPIO_TypeDef  *GPIOx, uint32_t GPIO_Pin)
+ 352:src/stm32f1xx_hal_gpio.c **** {
+ 392              		.loc 1 352 0
+ 393              		.cfi_startproc
+ 394              		@ args = 0, pretend = 0, frame = 0
+ 395              		@ frame_needed = 0, uses_anonymous_args = 0
+ 396              	.LVL33:
+ 397 01b4 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}	@
+ 398              	.LCFI3:
+ 399              		.cfi_def_cfa_offset 36
+ 400              		.cfi_offset 4, -36
+ 401              		.cfi_offset 5, -32
+ 402              		.cfi_offset 6, -28
+ 403              		.cfi_offset 7, -24
+ 404              		.cfi_offset 8, -20
+ 405              		.cfi_offset 9, -16
+ 406              		.cfi_offset 10, -12
+ 407              		.cfi_offset 11, -8
+ 408              		.cfi_offset 14, -4
+ 353:src/stm32f1xx_hal_gpio.c ****   uint32_t position = 0x00u;
+ 354:src/stm32f1xx_hal_gpio.c ****   uint32_t iocurrent;
+ 355:src/stm32f1xx_hal_gpio.c ****   uint32_t tmp;
+ 356:src/stm32f1xx_hal_gpio.c ****   __IO uint32_t *configregister; /* Store the address of CRL or CRH register based on pin number */
+ 357:src/stm32f1xx_hal_gpio.c ****   uint32_t registeroffset;
+ 358:src/stm32f1xx_hal_gpio.c **** 
+ 359:src/stm32f1xx_hal_gpio.c ****   /* Check the parameters */
+ 360:src/stm32f1xx_hal_gpio.c ****   assert_param(IS_GPIO_ALL_INSTANCE(GPIOx));
+ 361:src/stm32f1xx_hal_gpio.c ****   assert_param(IS_GPIO_PIN(GPIO_Pin));
+ 362:src/stm32f1xx_hal_gpio.c **** 
+ 363:src/stm32f1xx_hal_gpio.c ****   /* Configure the port pins */
+ 364:src/stm32f1xx_hal_gpio.c ****   while ((GPIO_Pin >> position) != 0u)
+ 365:src/stm32f1xx_hal_gpio.c ****   {
+ 366:src/stm32f1xx_hal_gpio.c ****     /* Get current io position */
+ 367:src/stm32f1xx_hal_gpio.c ****     iocurrent = (GPIO_Pin) & (1uL << position);
+ 368:src/stm32f1xx_hal_gpio.c **** 
+ 369:src/stm32f1xx_hal_gpio.c ****     if (iocurrent)
+ 370:src/stm32f1xx_hal_gpio.c ****     {
+ 371:src/stm32f1xx_hal_gpio.c ****       /*------------------------- EXTI Mode Configuration --------------------*/
+ 372:src/stm32f1xx_hal_gpio.c ****       /* Clear the External Interrupt or Event for the current IO */
+ 373:src/stm32f1xx_hal_gpio.c **** 
+ 374:src/stm32f1xx_hal_gpio.c ****       tmp = AFIO->EXTICR[position >> 2u];
+ 375:src/stm32f1xx_hal_gpio.c ****       tmp &= 0x0FuL << (4u * (position & 0x03u));
+ 376:src/stm32f1xx_hal_gpio.c ****       if (tmp == (GPIO_GET_INDEX(GPIOx) << (4u * (position & 0x03u))))
+ 377:src/stm32f1xx_hal_gpio.c ****       {
+ 378:src/stm32f1xx_hal_gpio.c ****         tmp = 0x0FuL << (4u * (position & 0x03u));
+ 379:src/stm32f1xx_hal_gpio.c ****         CLEAR_BIT(AFIO->EXTICR[position >> 2u], tmp);
+ 380:src/stm32f1xx_hal_gpio.c **** 
+ 381:src/stm32f1xx_hal_gpio.c ****         /* Clear EXTI line configuration */
+ 382:src/stm32f1xx_hal_gpio.c ****         CLEAR_BIT(EXTI->IMR, (uint32_t)iocurrent);
+ 383:src/stm32f1xx_hal_gpio.c ****         CLEAR_BIT(EXTI->EMR, (uint32_t)iocurrent);
+ 384:src/stm32f1xx_hal_gpio.c **** 
+ 385:src/stm32f1xx_hal_gpio.c ****         /* Clear Rising Falling edge configuration */
+ 386:src/stm32f1xx_hal_gpio.c ****         CLEAR_BIT(EXTI->RTSR, (uint32_t)iocurrent);
+ 387:src/stm32f1xx_hal_gpio.c ****         CLEAR_BIT(EXTI->FTSR, (uint32_t)iocurrent);
+ 388:src/stm32f1xx_hal_gpio.c ****       }
+ARM GAS  /tmp/ccQyBaoj.s 			page 16
+
+
+ 389:src/stm32f1xx_hal_gpio.c ****       /*------------------------- GPIO Mode Configuration --------------------*/
+ 390:src/stm32f1xx_hal_gpio.c ****       /* Check if the current bit belongs to first half or last half of the pin count number
+ 391:src/stm32f1xx_hal_gpio.c ****        in order to address CRH or CRL register */
+ 392:src/stm32f1xx_hal_gpio.c ****       configregister = (iocurrent < GPIO_PIN_8) ? &GPIOx->CRL     : &GPIOx->CRH;
+ 393:src/stm32f1xx_hal_gpio.c ****       registeroffset = (iocurrent < GPIO_PIN_8) ? (position << 2u) : ((position - 8u) << 2u);
+ 394:src/stm32f1xx_hal_gpio.c **** 
+ 395:src/stm32f1xx_hal_gpio.c ****       /* CRL/CRH default value is floating input(0x04) shifted to correct position */
+ 396:src/stm32f1xx_hal_gpio.c ****       MODIFY_REG(*configregister, ((GPIO_CRL_MODE0 | GPIO_CRL_CNF0) << registeroffset), GPIO_CRL_CN
+ 409              		.loc 1 396 0
+ 410 01b8 4FF0040B 		mov	fp, #4	@ tmp184,
+ 353:src/stm32f1xx_hal_gpio.c ****   uint32_t position = 0x00u;
+ 411              		.loc 1 353 0
+ 412 01bc 0023     		movs	r3, #0	@ position,
+ 367:src/stm32f1xx_hal_gpio.c **** 
+ 413              		.loc 1 367 0
+ 414 01be 4FF0010A 		mov	r10, #1	@ tmp181,
+ 375:src/stm32f1xx_hal_gpio.c ****       if (tmp == (GPIO_GET_INDEX(GPIOx) << (4u * (position & 0x03u))))
+ 415              		.loc 1 375 0
+ 416 01c2 4FF00F0C 		mov	ip, #15	@ tmp182,
+ 382:src/stm32f1xx_hal_gpio.c ****         CLEAR_BIT(EXTI->EMR, (uint32_t)iocurrent);
+ 417              		.loc 1 382 0
+ 418 01c6 2D4A     		ldr	r2, .L59	@ tmp187,
+ 392:src/stm32f1xx_hal_gpio.c ****       registeroffset = (iocurrent < GPIO_PIN_8) ? (position << 2u) : ((position - 8u) << 2u);
+ 419              		.loc 1 392 0
+ 420 01c8 00EB0B09 		add	r9, r0, fp	@ iftmp.10_75, GPIOx,
+ 421              	.LVL34:
+ 422              	.L46:
+ 364:src/stm32f1xx_hal_gpio.c ****   {
+ 423              		.loc 1 364 0
+ 424 01cc 31FA03F4 		lsrs	r4, r1, r3	@ tmp190, GPIO_Pin, position
+ 425 01d0 01D1     		bne	.L52	@,
+ 397:src/stm32f1xx_hal_gpio.c **** 
+ 398:src/stm32f1xx_hal_gpio.c ****       /* ODR default value is 0 */
+ 399:src/stm32f1xx_hal_gpio.c ****       CLEAR_BIT(GPIOx->ODR, iocurrent);
+ 400:src/stm32f1xx_hal_gpio.c ****     }
+ 401:src/stm32f1xx_hal_gpio.c **** 
+ 402:src/stm32f1xx_hal_gpio.c ****     position++;
+ 403:src/stm32f1xx_hal_gpio.c ****   }
+ 404:src/stm32f1xx_hal_gpio.c **** }
+ 426              		.loc 1 404 0
+ 427 01d2 BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}	@
+ 428              	.L52:
+ 367:src/stm32f1xx_hal_gpio.c **** 
+ 429              		.loc 1 367 0
+ 430 01d6 0AFA03F5 		lsl	r5, r10, r3	@ tmp150, tmp181, position
+ 431              	.LVL35:
+ 369:src/stm32f1xx_hal_gpio.c ****     {
+ 432              		.loc 1 369 0
+ 433 01da 0D40     		ands	r5, r5, r1	@ iocurrent, tmp150, GPIO_Pin
+ 434              	.LVL36:
+ 435 01dc 48D0     		beq	.L47	@,
+ 436 01de 23F00304 		bic	r4, r3, #3	@ tmp153, position,
+ 437 01e2 04F18044 		add	r4, r4, #1073741824	@ _71, tmp153,
+ 438 01e6 04F58034 		add	r4, r4, #65536	@ _71, _71,
+ 375:src/stm32f1xx_hal_gpio.c ****       if (tmp == (GPIO_GET_INDEX(GPIOx) << (4u * (position & 0x03u))))
+ 439              		.loc 1 375 0
+ 440 01ea 03F00307 		and	r7, r3, #3	@ tmp155, position,
+ARM GAS  /tmp/ccQyBaoj.s 			page 17
+
+
+ 374:src/stm32f1xx_hal_gpio.c ****       tmp &= 0x0FuL << (4u * (position & 0x03u));
+ 441              		.loc 1 374 0
+ 442 01ee A668     		ldr	r6, [r4, #8]	@ tmp, MEM[(struct AFIO_TypeDef *)_71 + 8B]
+ 443              	.LVL37:
+ 375:src/stm32f1xx_hal_gpio.c ****       if (tmp == (GPIO_GET_INDEX(GPIOx) << (4u * (position & 0x03u))))
+ 444              		.loc 1 375 0
+ 445 01f0 BF00     		lsls	r7, r7, #2	@ _16, tmp155,
+ 446 01f2 0CFA07F8 		lsl	r8, ip, r7	@ _17, tmp182, _16
+ 447 01f6 06EA080E 		and	lr, r6, r8	@ tmp, tmp, _17
+ 448              	.LVL38:
+ 376:src/stm32f1xx_hal_gpio.c ****       {
+ 449              		.loc 1 376 0
+ 450 01fa 214E     		ldr	r6, .L59+4	@ tmp191,
+ 451 01fc B042     		cmp	r0, r6	@ GPIOx, tmp191
+ 452 01fe 39D0     		beq	.L53	@,
+ 376:src/stm32f1xx_hal_gpio.c ****       {
+ 453              		.loc 1 376 0 is_stmt 0 discriminator 1
+ 454 0200 06F58066 		add	r6, r6, #1024	@ tmp192, tmp192,
+ 455 0204 B042     		cmp	r0, r6	@ GPIOx, tmp192
+ 456 0206 37D0     		beq	.L54	@,
+ 376:src/stm32f1xx_hal_gpio.c ****       {
+ 457              		.loc 1 376 0 discriminator 3
+ 458 0208 06F58066 		add	r6, r6, #1024	@ tmp193, tmp193,
+ 459 020c B042     		cmp	r0, r6	@ GPIOx, tmp193
+ 460 020e 0CBF     		ite	eq	@
+ 461 0210 0226     		moveq	r6, #2	@, iftmp.7_2,
+ 462 0212 0326     		movne	r6, #3	@, iftmp.7_2,
+ 463              	.L48:
+ 376:src/stm32f1xx_hal_gpio.c ****       {
+ 464              		.loc 1 376 0 discriminator 12
+ 465 0214 BE40     		lsls	r6, r6, r7	@ tmp160, iftmp.7_2, _16
+ 466 0216 B645     		cmp	lr, r6	@ tmp, tmp160
+ 467 0218 6FEA0506 		mvn	r6, r5	@ _26, iocurrent
+ 468 021c 0FD1     		bne	.L49	@,
+ 469              	.LVL39:
+ 379:src/stm32f1xx_hal_gpio.c **** 
+ 470              		.loc 1 379 0 is_stmt 1
+ 471 021e A768     		ldr	r7, [r4, #8]	@ _21, MEM[(struct AFIO_TypeDef *)_71 + 8B]
+ 472 0220 27EA0807 		bic	r7, r7, r8	@ _23, _21, _17
+ 473 0224 A760     		str	r7, [r4, #8]	@ _23, MEM[(struct AFIO_TypeDef *)_71 + 8B]
+ 382:src/stm32f1xx_hal_gpio.c ****         CLEAR_BIT(EXTI->EMR, (uint32_t)iocurrent);
+ 474              		.loc 1 382 0
+ 475 0226 1468     		ldr	r4, [r2]	@ _25, MEM[(struct EXTI_TypeDef *)1073808384B].IMR
+ 476 0228 3440     		ands	r4, r4, r6	@, _27, _25, _26
+ 477 022a 1460     		str	r4, [r2]	@ _27, MEM[(struct EXTI_TypeDef *)1073808384B].IMR
+ 383:src/stm32f1xx_hal_gpio.c **** 
+ 478              		.loc 1 383 0
+ 479 022c 5468     		ldr	r4, [r2, #4]	@ _29, MEM[(struct EXTI_TypeDef *)1073808384B].EMR
+ 480 022e 3440     		ands	r4, r4, r6	@, _30, _29, _26
+ 481 0230 5460     		str	r4, [r2, #4]	@ _30, MEM[(struct EXTI_TypeDef *)1073808384B].EMR
+ 386:src/stm32f1xx_hal_gpio.c ****         CLEAR_BIT(EXTI->FTSR, (uint32_t)iocurrent);
+ 482              		.loc 1 386 0
+ 483 0232 9468     		ldr	r4, [r2, #8]	@ _32, MEM[(struct EXTI_TypeDef *)1073808384B].RTSR
+ 484 0234 3440     		ands	r4, r4, r6	@, _33, _32, _26
+ 485 0236 9460     		str	r4, [r2, #8]	@ _33, MEM[(struct EXTI_TypeDef *)1073808384B].RTSR
+ 387:src/stm32f1xx_hal_gpio.c ****       }
+ 486              		.loc 1 387 0
+ARM GAS  /tmp/ccQyBaoj.s 			page 18
+
+
+ 487 0238 D468     		ldr	r4, [r2, #12]	@ _35, MEM[(struct EXTI_TypeDef *)1073808384B].FTSR
+ 488 023a 3440     		ands	r4, r4, r6	@, _36, _35, _26
+ 489 023c D460     		str	r4, [r2, #12]	@ _36, MEM[(struct EXTI_TypeDef *)1073808384B].FTSR
+ 490              	.LVL40:
+ 491              	.L49:
+ 392:src/stm32f1xx_hal_gpio.c ****       registeroffset = (iocurrent < GPIO_PIN_8) ? (position << 2u) : ((position - 8u) << 2u);
+ 492              		.loc 1 392 0
+ 493 023e FF2D     		cmp	r5, #255	@ iocurrent,
+ 494 0240 91BF     		iteee	ls
+ 495 0242 0746     		movls	r7, r0	@ iftmp.10_75, GPIOx
+ 496 0244 4F46     		movhi	r7, r9	@ iftmp.10_75, iftmp.10_75
+ 497 0246 03F18044 		addhi	r4, r3, #1073741824	@ tmp170, position,
+ 498 024a 083C     		subhi	r4, r4, #8	@ tmp170, tmp170,
+ 499 024c 95BF     		itete	ls
+ 500 024e D0F800E0 		ldrls	lr, [r0]	@ _76, MEM[(volatile uint32_t *)GPIOx_19(D)]
+ 501              	.LVL41:
+ 502 0252 D0F804E0 		ldrhi	lr, [r0, #4]	@ _76, MEM[(volatile uint32_t *)GPIOx_19(D) + 4B]
+ 503              	.LVL42:
+ 504 0256 9C00     		lslls	r4, r3, #2	@ iftmp.11_4, position,
+ 505 0258 A400     		lslhi	r4, r4, #2	@ iftmp.11_4, tmp170,
+ 506              	.LVL43:
+ 396:src/stm32f1xx_hal_gpio.c **** 
+ 507              		.loc 1 396 0
+ 508 025a 0CFA04F5 		lsl	r5, ip, r4	@ tmp172, tmp182, iftmp.11_4
+ 509              	.LVL44:
+ 510 025e 2EEA0505 		bic	r5, lr, r5	@ tmp175, _76, tmp172
+ 511 0262 0BFA04F4 		lsl	r4, fp, r4	@ tmp176, tmp184, iftmp.11_4
+ 512              	.LVL45:
+ 513 0266 2543     		orrs	r5, r5, r4	@, _48, tmp175, tmp176
+ 514 0268 3D60     		str	r5, [r7]	@ _48, *iftmp.10_75
+ 399:src/stm32f1xx_hal_gpio.c ****     }
+ 515              		.loc 1 399 0
+ 516 026a C468     		ldr	r4, [r0, #12]	@ _50, GPIOx_19(D)->ODR
+ 517 026c 2640     		ands	r6, r6, r4	@, _52, _26, _50
+ 518              	.LVL46:
+ 519 026e C660     		str	r6, [r0, #12]	@ _52, GPIOx_19(D)->ODR
+ 520              	.LVL47:
+ 521              	.L47:
+ 402:src/stm32f1xx_hal_gpio.c ****   }
+ 522              		.loc 1 402 0
+ 523 0270 0133     		adds	r3, r3, #1	@ position, position,
+ 524              	.LVL48:
+ 525 0272 ABE7     		b	.L46	@
+ 526              	.LVL49:
+ 527              	.L53:
+ 376:src/stm32f1xx_hal_gpio.c ****       {
+ 528              		.loc 1 376 0
+ 529 0274 0026     		movs	r6, #0	@ iftmp.7_2,
+ 530 0276 CDE7     		b	.L48	@
+ 531              	.L54:
+ 532 0278 0126     		movs	r6, #1	@ iftmp.7_2,
+ 533 027a CBE7     		b	.L48	@
+ 534              	.L60:
+ 535              		.align	2
+ 536              	.L59:
+ 537 027c 00040140 		.word	1073808384
+ 538 0280 00080140 		.word	1073809408
+ARM GAS  /tmp/ccQyBaoj.s 			page 19
+
+
+ 539              		.cfi_endproc
+ 540              	.LFE66:
+ 541              		.size	HAL_GPIO_DeInit, .-HAL_GPIO_DeInit
+ 542              		.align	1
+ 543              		.global	HAL_GPIO_ReadPin
+ 544              		.syntax unified
+ 545              		.thumb
+ 546              		.thumb_func
+ 547              		.fpu softvfp
+ 548              		.type	HAL_GPIO_ReadPin, %function
+ 549              	HAL_GPIO_ReadPin:
+ 550              	.LFB67:
+ 405:src/stm32f1xx_hal_gpio.c **** 
+ 406:src/stm32f1xx_hal_gpio.c **** /**
+ 407:src/stm32f1xx_hal_gpio.c ****   * @}
+ 408:src/stm32f1xx_hal_gpio.c ****   */
+ 409:src/stm32f1xx_hal_gpio.c **** 
+ 410:src/stm32f1xx_hal_gpio.c **** /** @defgroup GPIO_Exported_Functions_Group2 IO operation functions
+ 411:src/stm32f1xx_hal_gpio.c ****  *  @brief   GPIO Read and Write
+ 412:src/stm32f1xx_hal_gpio.c ****  *
+ 413:src/stm32f1xx_hal_gpio.c **** @verbatim
+ 414:src/stm32f1xx_hal_gpio.c ****  ===============================================================================
+ 415:src/stm32f1xx_hal_gpio.c ****                        ##### IO operation functions #####
+ 416:src/stm32f1xx_hal_gpio.c ****  ===============================================================================
+ 417:src/stm32f1xx_hal_gpio.c ****   [..]
+ 418:src/stm32f1xx_hal_gpio.c ****     This subsection provides a set of functions allowing to manage the GPIOs.
+ 419:src/stm32f1xx_hal_gpio.c **** 
+ 420:src/stm32f1xx_hal_gpio.c **** @endverbatim
+ 421:src/stm32f1xx_hal_gpio.c ****   * @{
+ 422:src/stm32f1xx_hal_gpio.c ****   */
+ 423:src/stm32f1xx_hal_gpio.c **** 
+ 424:src/stm32f1xx_hal_gpio.c **** /**
+ 425:src/stm32f1xx_hal_gpio.c ****   * @brief  Reads the specified input port pin.
+ 426:src/stm32f1xx_hal_gpio.c ****   * @param  GPIOx: where x can be (A..G depending on device used) to select the GPIO peripheral
+ 427:src/stm32f1xx_hal_gpio.c ****   * @param  GPIO_Pin: specifies the port bit to read.
+ 428:src/stm32f1xx_hal_gpio.c ****   *         This parameter can be GPIO_PIN_x where x can be (0..15).
+ 429:src/stm32f1xx_hal_gpio.c ****   * @retval The input port pin value.
+ 430:src/stm32f1xx_hal_gpio.c ****   */
+ 431:src/stm32f1xx_hal_gpio.c **** GPIO_PinState HAL_GPIO_ReadPin(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)
+ 432:src/stm32f1xx_hal_gpio.c **** {
+ 551              		.loc 1 432 0
+ 552              		.cfi_startproc
+ 553              		@ args = 0, pretend = 0, frame = 0
+ 554              		@ frame_needed = 0, uses_anonymous_args = 0
+ 555              		@ link register save eliminated.
+ 556              	.LVL50:
+ 433:src/stm32f1xx_hal_gpio.c ****   GPIO_PinState bitstatus;
+ 434:src/stm32f1xx_hal_gpio.c **** 
+ 435:src/stm32f1xx_hal_gpio.c ****   /* Check the parameters */
+ 436:src/stm32f1xx_hal_gpio.c ****   assert_param(IS_GPIO_PIN(GPIO_Pin));
+ 437:src/stm32f1xx_hal_gpio.c **** 
+ 438:src/stm32f1xx_hal_gpio.c ****   if ((GPIOx->IDR & GPIO_Pin) != (uint32_t)GPIO_PIN_RESET)
+ 557              		.loc 1 438 0
+ 558 0284 8368     		ldr	r3, [r0, #8]	@ _4, GPIOx_3(D)->IDR
+ 559              	.LVL51:
+ 560 0286 1942     		tst	r1, r3	@ GPIO_Pin, _4
+ 439:src/stm32f1xx_hal_gpio.c ****   {
+ARM GAS  /tmp/ccQyBaoj.s 			page 20
+
+
+ 440:src/stm32f1xx_hal_gpio.c ****     bitstatus = GPIO_PIN_SET;
+ 441:src/stm32f1xx_hal_gpio.c ****   }
+ 442:src/stm32f1xx_hal_gpio.c ****   else
+ 443:src/stm32f1xx_hal_gpio.c ****   {
+ 444:src/stm32f1xx_hal_gpio.c ****     bitstatus = GPIO_PIN_RESET;
+ 445:src/stm32f1xx_hal_gpio.c ****   }
+ 446:src/stm32f1xx_hal_gpio.c ****   return bitstatus;
+ 447:src/stm32f1xx_hal_gpio.c **** }
+ 561              		.loc 1 447 0
+ 562 0288 14BF     		ite	ne
+ 563 028a 0120     		movne	r0, #1	@,
+ 564              	.LVL52:
+ 565 028c 0020     		moveq	r0, #0	@,
+ 566 028e 7047     		bx	lr	@
+ 567              		.cfi_endproc
+ 568              	.LFE67:
+ 569              		.size	HAL_GPIO_ReadPin, .-HAL_GPIO_ReadPin
+ 570              		.align	1
+ 571              		.global	HAL_GPIO_WritePin
+ 572              		.syntax unified
+ 573              		.thumb
+ 574              		.thumb_func
+ 575              		.fpu softvfp
+ 576              		.type	HAL_GPIO_WritePin, %function
+ 577              	HAL_GPIO_WritePin:
+ 578              	.LFB68:
+ 448:src/stm32f1xx_hal_gpio.c **** 
+ 449:src/stm32f1xx_hal_gpio.c **** /**
+ 450:src/stm32f1xx_hal_gpio.c ****   * @brief  Sets or clears the selected data port bit.
+ 451:src/stm32f1xx_hal_gpio.c ****   *
+ 452:src/stm32f1xx_hal_gpio.c ****   * @note   This function uses GPIOx_BSRR register to allow atomic read/modify
+ 453:src/stm32f1xx_hal_gpio.c ****   *         accesses. In this way, there is no risk of an IRQ occurring between
+ 454:src/stm32f1xx_hal_gpio.c ****   *         the read and the modify access.
+ 455:src/stm32f1xx_hal_gpio.c ****   *
+ 456:src/stm32f1xx_hal_gpio.c ****   * @param  GPIOx: where x can be (A..G depending on device used) to select the GPIO peripheral
+ 457:src/stm32f1xx_hal_gpio.c ****   * @param  GPIO_Pin: specifies the port bit to be written.
+ 458:src/stm32f1xx_hal_gpio.c ****   *          This parameter can be one of GPIO_PIN_x where x can be (0..15).
+ 459:src/stm32f1xx_hal_gpio.c ****   * @param  PinState: specifies the value to be written to the selected bit.
+ 460:src/stm32f1xx_hal_gpio.c ****   *          This parameter can be one of the GPIO_PinState enum values:
+ 461:src/stm32f1xx_hal_gpio.c ****   *            @arg GPIO_PIN_RESET: to clear the port pin
+ 462:src/stm32f1xx_hal_gpio.c ****   *            @arg GPIO_PIN_SET: to set the port pin
+ 463:src/stm32f1xx_hal_gpio.c ****   * @retval None
+ 464:src/stm32f1xx_hal_gpio.c ****   */
+ 465:src/stm32f1xx_hal_gpio.c **** void HAL_GPIO_WritePin(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin, GPIO_PinState PinState)
+ 466:src/stm32f1xx_hal_gpio.c **** {
+ 579              		.loc 1 466 0
+ 580              		.cfi_startproc
+ 581              		@ args = 0, pretend = 0, frame = 0
+ 582              		@ frame_needed = 0, uses_anonymous_args = 0
+ 583              		@ link register save eliminated.
+ 584              	.LVL53:
+ 467:src/stm32f1xx_hal_gpio.c ****   /* Check the parameters */
+ 468:src/stm32f1xx_hal_gpio.c ****   assert_param(IS_GPIO_PIN(GPIO_Pin));
+ 469:src/stm32f1xx_hal_gpio.c ****   assert_param(IS_GPIO_PIN_ACTION(PinState));
+ 470:src/stm32f1xx_hal_gpio.c **** 
+ 471:src/stm32f1xx_hal_gpio.c ****   if (PinState != GPIO_PIN_RESET)
+ 585              		.loc 1 471 0
+ARM GAS  /tmp/ccQyBaoj.s 			page 21
+
+
+ 586 0290 0AB1     		cbz	r2, .L63	@ PinState,
+ 587              	.LVL54:
+ 588              	.L65:
+ 472:src/stm32f1xx_hal_gpio.c ****   {
+ 473:src/stm32f1xx_hal_gpio.c ****     GPIOx->BSRR = GPIO_Pin;
+ 474:src/stm32f1xx_hal_gpio.c ****   }
+ 475:src/stm32f1xx_hal_gpio.c ****   else
+ 476:src/stm32f1xx_hal_gpio.c ****   {
+ 477:src/stm32f1xx_hal_gpio.c ****     GPIOx->BSRR = (uint32_t)GPIO_Pin << 16u;
+ 589              		.loc 1 477 0
+ 590 0292 0161     		str	r1, [r0, #16]	@ _9,
+ 591 0294 7047     		bx	lr	@
+ 592              	.LVL55:
+ 593              	.L63:
+ 594 0296 0904     		lsls	r1, r1, #16	@ _9, GPIO_Pin,
+ 595              	.LVL56:
+ 596 0298 FBE7     		b	.L65	@
+ 597              		.cfi_endproc
+ 598              	.LFE68:
+ 599              		.size	HAL_GPIO_WritePin, .-HAL_GPIO_WritePin
+ 600              		.align	1
+ 601              		.global	HAL_GPIO_TogglePin
+ 602              		.syntax unified
+ 603              		.thumb
+ 604              		.thumb_func
+ 605              		.fpu softvfp
+ 606              		.type	HAL_GPIO_TogglePin, %function
+ 607              	HAL_GPIO_TogglePin:
+ 608              	.LFB69:
+ 478:src/stm32f1xx_hal_gpio.c ****   }
+ 479:src/stm32f1xx_hal_gpio.c **** }
+ 480:src/stm32f1xx_hal_gpio.c **** 
+ 481:src/stm32f1xx_hal_gpio.c **** /**
+ 482:src/stm32f1xx_hal_gpio.c ****   * @brief  Toggles the specified GPIO pin
+ 483:src/stm32f1xx_hal_gpio.c ****   * @param  GPIOx: where x can be (A..G depending on device used) to select the GPIO peripheral
+ 484:src/stm32f1xx_hal_gpio.c ****   * @param  GPIO_Pin: Specifies the pins to be toggled.
+ 485:src/stm32f1xx_hal_gpio.c ****   * @retval None
+ 486:src/stm32f1xx_hal_gpio.c ****   */
+ 487:src/stm32f1xx_hal_gpio.c **** void HAL_GPIO_TogglePin(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)
+ 488:src/stm32f1xx_hal_gpio.c **** {
+ 609              		.loc 1 488 0
+ 610              		.cfi_startproc
+ 611              		@ args = 0, pretend = 0, frame = 0
+ 612              		@ frame_needed = 0, uses_anonymous_args = 0
+ 613              		@ link register save eliminated.
+ 614              	.LVL57:
+ 489:src/stm32f1xx_hal_gpio.c ****   /* Check the parameters */
+ 490:src/stm32f1xx_hal_gpio.c ****   assert_param(IS_GPIO_PIN(GPIO_Pin));
+ 491:src/stm32f1xx_hal_gpio.c **** 
+ 492:src/stm32f1xx_hal_gpio.c ****   if ((GPIOx->ODR & GPIO_Pin) != 0x00u)
+ 615              		.loc 1 492 0
+ 616 029a C368     		ldr	r3, [r0, #12]	@ _4, GPIOx_3(D)->ODR
+ 617 029c 0B42     		tst	r3, r1	@ _4, GPIO_Pin
+ 493:src/stm32f1xx_hal_gpio.c ****   {
+ 494:src/stm32f1xx_hal_gpio.c ****     GPIOx->BRR = (uint32_t)GPIO_Pin;
+ 618              		.loc 1 494 0
+ 619 029e 14BF     		ite	ne
+ARM GAS  /tmp/ccQyBaoj.s 			page 22
+
+
+ 620 02a0 4161     		strne	r1, [r0, #20]	@ GPIO_Pin, GPIOx_3(D)->BRR
+ 495:src/stm32f1xx_hal_gpio.c ****   }
+ 496:src/stm32f1xx_hal_gpio.c ****   else
+ 497:src/stm32f1xx_hal_gpio.c ****   {
+ 498:src/stm32f1xx_hal_gpio.c ****     GPIOx->BSRR = (uint32_t)GPIO_Pin;
+ 621              		.loc 1 498 0
+ 622 02a2 0161     		streq	r1, [r0, #16]	@ GPIO_Pin, GPIOx_3(D)->BSRR
+ 623 02a4 7047     		bx	lr	@
+ 624              		.cfi_endproc
+ 625              	.LFE69:
+ 626              		.size	HAL_GPIO_TogglePin, .-HAL_GPIO_TogglePin
+ 627              		.align	1
+ 628              		.global	HAL_GPIO_LockPin
+ 629              		.syntax unified
+ 630              		.thumb
+ 631              		.thumb_func
+ 632              		.fpu softvfp
+ 633              		.type	HAL_GPIO_LockPin, %function
+ 634              	HAL_GPIO_LockPin:
+ 635              	.LFB70:
+ 499:src/stm32f1xx_hal_gpio.c ****   }
+ 500:src/stm32f1xx_hal_gpio.c **** }
+ 501:src/stm32f1xx_hal_gpio.c **** 
+ 502:src/stm32f1xx_hal_gpio.c **** /**
+ 503:src/stm32f1xx_hal_gpio.c **** * @brief  Locks GPIO Pins configuration registers.
+ 504:src/stm32f1xx_hal_gpio.c **** * @note   The locking mechanism allows the IO configuration to be frozen. When the LOCK sequence
+ 505:src/stm32f1xx_hal_gpio.c **** *         has been applied on a port bit, it is no longer possible to modify the value of the port 
+ 506:src/stm32f1xx_hal_gpio.c **** *         the next reset.
+ 507:src/stm32f1xx_hal_gpio.c **** * @param  GPIOx: where x can be (A..G depending on device used) to select the GPIO peripheral
+ 508:src/stm32f1xx_hal_gpio.c **** * @param  GPIO_Pin: specifies the port bit to be locked.
+ 509:src/stm32f1xx_hal_gpio.c **** *         This parameter can be any combination of GPIO_Pin_x where x can be (0..15).
+ 510:src/stm32f1xx_hal_gpio.c **** * @retval None
+ 511:src/stm32f1xx_hal_gpio.c **** */
+ 512:src/stm32f1xx_hal_gpio.c **** HAL_StatusTypeDef HAL_GPIO_LockPin(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)
+ 513:src/stm32f1xx_hal_gpio.c **** {
+ 636              		.loc 1 513 0
+ 637              		.cfi_startproc
+ 638              		@ args = 0, pretend = 0, frame = 8
+ 639              		@ frame_needed = 0, uses_anonymous_args = 0
+ 640              		@ link register save eliminated.
+ 641              	.LVL58:
+ 514:src/stm32f1xx_hal_gpio.c ****   __IO uint32_t tmp = GPIO_LCKR_LCKK;
+ 642              		.loc 1 514 0
+ 643 02a6 4FF48033 		mov	r3, #65536	@ tmp122,
+ 513:src/stm32f1xx_hal_gpio.c ****   __IO uint32_t tmp = GPIO_LCKR_LCKK;
+ 644              		.loc 1 513 0
+ 645 02aa 82B0     		sub	sp, sp, #8	@,,
+ 646              	.LCFI4:
+ 647              		.cfi_def_cfa_offset 8
+ 648              		.loc 1 514 0
+ 649 02ac 0193     		str	r3, [sp, #4]	@ tmp122, tmp
+ 515:src/stm32f1xx_hal_gpio.c **** 
+ 516:src/stm32f1xx_hal_gpio.c ****   /* Check the parameters */
+ 517:src/stm32f1xx_hal_gpio.c ****   assert_param(IS_GPIO_LOCK_INSTANCE(GPIOx));
+ 518:src/stm32f1xx_hal_gpio.c ****   assert_param(IS_GPIO_PIN(GPIO_Pin));
+ 519:src/stm32f1xx_hal_gpio.c **** 
+ 520:src/stm32f1xx_hal_gpio.c ****   /* Apply lock key write sequence */
+ARM GAS  /tmp/ccQyBaoj.s 			page 23
+
+
+ 521:src/stm32f1xx_hal_gpio.c ****   SET_BIT(tmp, GPIO_Pin);
+ 650              		.loc 1 521 0
+ 651 02ae 019B     		ldr	r3, [sp, #4]	@ tmp.12_6, tmp
+ 652 02b0 0B43     		orrs	r3, r3, r1	@, tmp.13_7, tmp.12_6, GPIO_Pin
+ 653 02b2 0193     		str	r3, [sp, #4]	@ tmp.13_7, tmp
+ 522:src/stm32f1xx_hal_gpio.c ****   /* Set LCKx bit(s): LCKK='1' + LCK[15-0] */
+ 523:src/stm32f1xx_hal_gpio.c ****   GPIOx->LCKR = tmp;
+ 654              		.loc 1 523 0
+ 655 02b4 019B     		ldr	r3, [sp, #4]	@ tmp.14_9, tmp
+ 656 02b6 8361     		str	r3, [r0, #24]	@ tmp.14_9, GPIOx_10(D)->LCKR
+ 524:src/stm32f1xx_hal_gpio.c ****   /* Reset LCKx bit(s): LCKK='0' + LCK[15-0] */
+ 525:src/stm32f1xx_hal_gpio.c ****   GPIOx->LCKR = GPIO_Pin;
+ 657              		.loc 1 525 0
+ 658 02b8 8161     		str	r1, [r0, #24]	@ GPIO_Pin, GPIOx_10(D)->LCKR
+ 526:src/stm32f1xx_hal_gpio.c ****   /* Set LCKx bit(s): LCKK='1' + LCK[15-0] */
+ 527:src/stm32f1xx_hal_gpio.c ****   GPIOx->LCKR = tmp;
+ 659              		.loc 1 527 0
+ 660 02ba 019B     		ldr	r3, [sp, #4]	@ tmp.15_13, tmp
+ 661 02bc 8361     		str	r3, [r0, #24]	@ tmp.15_13, GPIOx_10(D)->LCKR
+ 528:src/stm32f1xx_hal_gpio.c ****   /* Read LCKK register. This read is mandatory to complete key lock sequence */
+ 529:src/stm32f1xx_hal_gpio.c ****   tmp = GPIOx->LCKR;
+ 662              		.loc 1 529 0
+ 663 02be 8369     		ldr	r3, [r0, #24]	@ tmp.16_15, GPIOx_10(D)->LCKR
+ 664 02c0 0193     		str	r3, [sp, #4]	@ tmp.16_15, tmp
+ 530:src/stm32f1xx_hal_gpio.c **** 
+ 531:src/stm32f1xx_hal_gpio.c ****   /* read again in order to confirm lock is active */
+ 532:src/stm32f1xx_hal_gpio.c ****   if ((uint32_t)(GPIOx->LCKR & GPIO_LCKR_LCKK))
+ 665              		.loc 1 532 0
+ 666 02c2 8069     		ldr	r0, [r0, #24]	@ _17, GPIOx_10(D)->LCKR
+ 667              	.LVL59:
+ 668 02c4 80F48030 		eor	r0, r0, #65536	@ tmp125, _17,
+ 533:src/stm32f1xx_hal_gpio.c ****   {
+ 534:src/stm32f1xx_hal_gpio.c ****     return HAL_OK;
+ 535:src/stm32f1xx_hal_gpio.c ****   }
+ 536:src/stm32f1xx_hal_gpio.c ****   else
+ 537:src/stm32f1xx_hal_gpio.c ****   {
+ 538:src/stm32f1xx_hal_gpio.c ****     return HAL_ERROR;
+ 539:src/stm32f1xx_hal_gpio.c ****   }
+ 540:src/stm32f1xx_hal_gpio.c **** }
+ 669              		.loc 1 540 0
+ 670 02c8 C0F30040 		ubfx	r0, r0, #16, #1	@, tmp125,,
+ 671 02cc 02B0     		add	sp, sp, #8	@,,
+ 672              	.LCFI5:
+ 673              		.cfi_def_cfa_offset 0
+ 674              		@ sp needed	@
+ 675 02ce 7047     		bx	lr	@
+ 676              		.cfi_endproc
+ 677              	.LFE70:
+ 678              		.size	HAL_GPIO_LockPin, .-HAL_GPIO_LockPin
+ 679              		.align	1
+ 680              		.weak	HAL_GPIO_EXTI_Callback
+ 681              		.syntax unified
+ 682              		.thumb
+ 683              		.thumb_func
+ 684              		.fpu softvfp
+ 685              		.type	HAL_GPIO_EXTI_Callback, %function
+ 686              	HAL_GPIO_EXTI_Callback:
+ARM GAS  /tmp/ccQyBaoj.s 			page 24
+
+
+ 687              	.LFB72:
+ 541:src/stm32f1xx_hal_gpio.c **** 
+ 542:src/stm32f1xx_hal_gpio.c **** /**
+ 543:src/stm32f1xx_hal_gpio.c ****   * @brief  This function handles EXTI interrupt request.
+ 544:src/stm32f1xx_hal_gpio.c ****   * @param  GPIO_Pin: Specifies the pins connected EXTI line
+ 545:src/stm32f1xx_hal_gpio.c ****   * @retval None
+ 546:src/stm32f1xx_hal_gpio.c ****   */
+ 547:src/stm32f1xx_hal_gpio.c **** void HAL_GPIO_EXTI_IRQHandler(uint16_t GPIO_Pin)
+ 548:src/stm32f1xx_hal_gpio.c **** {
+ 549:src/stm32f1xx_hal_gpio.c ****   /* EXTI line interrupt detected */
+ 550:src/stm32f1xx_hal_gpio.c ****   if (__HAL_GPIO_EXTI_GET_IT(GPIO_Pin) != 0x00u)
+ 551:src/stm32f1xx_hal_gpio.c ****   {
+ 552:src/stm32f1xx_hal_gpio.c ****     __HAL_GPIO_EXTI_CLEAR_IT(GPIO_Pin);
+ 553:src/stm32f1xx_hal_gpio.c ****     HAL_GPIO_EXTI_Callback(GPIO_Pin);
+ 554:src/stm32f1xx_hal_gpio.c ****   }
+ 555:src/stm32f1xx_hal_gpio.c **** }
+ 556:src/stm32f1xx_hal_gpio.c **** 
+ 557:src/stm32f1xx_hal_gpio.c **** /**
+ 558:src/stm32f1xx_hal_gpio.c ****   * @brief  EXTI line detection callbacks.
+ 559:src/stm32f1xx_hal_gpio.c ****   * @param  GPIO_Pin: Specifies the pins connected EXTI line
+ 560:src/stm32f1xx_hal_gpio.c ****   * @retval None
+ 561:src/stm32f1xx_hal_gpio.c ****   */
+ 562:src/stm32f1xx_hal_gpio.c **** __weak void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+ 563:src/stm32f1xx_hal_gpio.c **** {
+ 688              		.loc 1 563 0
+ 689              		.cfi_startproc
+ 690              		@ args = 0, pretend = 0, frame = 0
+ 691              		@ frame_needed = 0, uses_anonymous_args = 0
+ 692              		@ link register save eliminated.
+ 693              	.LVL60:
+ 694 02d0 7047     		bx	lr	@
+ 695              		.cfi_endproc
+ 696              	.LFE72:
+ 697              		.size	HAL_GPIO_EXTI_Callback, .-HAL_GPIO_EXTI_Callback
+ 698              		.align	1
+ 699              		.global	HAL_GPIO_EXTI_IRQHandler
+ 700              		.syntax unified
+ 701              		.thumb
+ 702              		.thumb_func
+ 703              		.fpu softvfp
+ 704              		.type	HAL_GPIO_EXTI_IRQHandler, %function
+ 705              	HAL_GPIO_EXTI_IRQHandler:
+ 706              	.LFB71:
+ 548:src/stm32f1xx_hal_gpio.c ****   /* EXTI line interrupt detected */
+ 707              		.loc 1 548 0
+ 708              		.cfi_startproc
+ 709              		@ args = 0, pretend = 0, frame = 0
+ 710              		@ frame_needed = 0, uses_anonymous_args = 0
+ 711              	.LVL61:
+ 548:src/stm32f1xx_hal_gpio.c ****   /* EXTI line interrupt detected */
+ 712              		.loc 1 548 0
+ 713 02d2 08B5     		push	{r3, lr}	@
+ 714              	.LCFI6:
+ 715              		.cfi_def_cfa_offset 8
+ 716              		.cfi_offset 3, -8
+ 717              		.cfi_offset 14, -4
+ 550:src/stm32f1xx_hal_gpio.c ****   {
+ARM GAS  /tmp/ccQyBaoj.s 			page 25
+
+
+ 718              		.loc 1 550 0
+ 719 02d4 034B     		ldr	r3, .L76	@ tmp114,
+ 720 02d6 5969     		ldr	r1, [r3, #20]	@ _3, MEM[(struct EXTI_TypeDef *)1073808384B].PR
+ 721 02d8 0142     		tst	r1, r0	@ _3, GPIO_Pin
+ 722 02da 02D0     		beq	.L71	@,
+ 552:src/stm32f1xx_hal_gpio.c ****     HAL_GPIO_EXTI_Callback(GPIO_Pin);
+ 723              		.loc 1 552 0
+ 724 02dc 5861     		str	r0, [r3, #20]	@ GPIO_Pin, MEM[(struct EXTI_TypeDef *)1073808384B].PR
+ 553:src/stm32f1xx_hal_gpio.c ****   }
+ 725              		.loc 1 553 0
+ 726 02de FFF7FEFF 		bl	HAL_GPIO_EXTI_Callback	@
+ 727              	.LVL62:
+ 728              	.L71:
+ 729 02e2 08BD     		pop	{r3, pc}	@
+ 730              	.L77:
+ 731              		.align	2
+ 732              	.L76:
+ 733 02e4 00040140 		.word	1073808384
+ 734              		.cfi_endproc
+ 735              	.LFE71:
+ 736              		.size	HAL_GPIO_EXTI_IRQHandler, .-HAL_GPIO_EXTI_IRQHandler
+ 737              	.Letext0:
+ 738              		.file 2 "/usr/include/newlib/machine/_default_types.h"
+ 739              		.file 3 "/usr/include/newlib/sys/_stdint.h"
+ 740              		.file 4 "../cmsiscore/inc/core_cm3.h"
+ 741              		.file 5 "../cmsisstm32f1xx/inc/system_stm32f1xx.h"
+ 742              		.file 6 "../cmsisstm32f1xx/inc/stm32f103x6.h"
+ 743              		.file 7 "./inc/stm32f1xx_hal_def.h"
+ 744              		.file 8 "./inc/stm32f1xx_hal_gpio.h"
+ 745              		.file 9 "./inc/stm32f1xx_hal.h"
+ 746              		.section	.debug_info,"",%progbits
+ 747              	.Ldebug_info0:
+ 748 0000 FD060000 		.4byte	0x6fd
+ 749 0004 0200     		.2byte	0x2
+ 750 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 751 000a 04       		.byte	0x4
+ 752 000b 01       		.uleb128 0x1
+ 753 000c CD000000 		.4byte	.LASF84
+ 754 0010 0C       		.byte	0xc
+ 755 0011 07020000 		.4byte	.LASF85
+ 756 0015 79020000 		.4byte	.LASF86
+ 757 0019 00000000 		.4byte	.Ltext0
+ 758 001d E8020000 		.4byte	.Letext0
+ 759 0021 00000000 		.4byte	.Ldebug_line0
+ 760 0025 02       		.uleb128 0x2
+ 761 0026 01       		.byte	0x1
+ 762 0027 06       		.byte	0x6
+ 763 0028 68010000 		.4byte	.LASF0
+ 764 002c 03       		.uleb128 0x3
+ 765 002d FD010000 		.4byte	.LASF3
+ 766 0031 02       		.byte	0x2
+ 767 0032 1D       		.byte	0x1d
+ 768 0033 37000000 		.4byte	0x37
+ 769 0037 02       		.uleb128 0x2
+ 770 0038 01       		.byte	0x1
+ 771 0039 08       		.byte	0x8
+ 772 003a 6B020000 		.4byte	.LASF1
+ARM GAS  /tmp/ccQyBaoj.s 			page 26
+
+
+ 773 003e 02       		.uleb128 0x2
+ 774 003f 02       		.byte	0x2
+ 775 0040 05       		.byte	0x5
+ 776 0041 68000000 		.4byte	.LASF2
+ 777 0045 03       		.uleb128 0x3
+ 778 0046 B2000000 		.4byte	.LASF4
+ 779 004a 02       		.byte	0x2
+ 780 004b 2B       		.byte	0x2b
+ 781 004c 50000000 		.4byte	0x50
+ 782 0050 02       		.uleb128 0x2
+ 783 0051 02       		.byte	0x2
+ 784 0052 07       		.byte	0x7
+ 785 0053 5A030000 		.4byte	.LASF5
+ 786 0057 03       		.uleb128 0x3
+ 787 0058 DE030000 		.4byte	.LASF6
+ 788 005c 02       		.byte	0x2
+ 789 005d 3F       		.byte	0x3f
+ 790 005e 62000000 		.4byte	0x62
+ 791 0062 02       		.uleb128 0x2
+ 792 0063 04       		.byte	0x4
+ 793 0064 05       		.byte	0x5
+ 794 0065 D3010000 		.4byte	.LASF7
+ 795 0069 03       		.uleb128 0x3
+ 796 006a 9E000000 		.4byte	.LASF8
+ 797 006e 02       		.byte	0x2
+ 798 006f 41       		.byte	0x41
+ 799 0070 74000000 		.4byte	0x74
+ 800 0074 02       		.uleb128 0x2
+ 801 0075 04       		.byte	0x4
+ 802 0076 07       		.byte	0x7
+ 803 0077 AF030000 		.4byte	.LASF9
+ 804 007b 02       		.uleb128 0x2
+ 805 007c 08       		.byte	0x8
+ 806 007d 05       		.byte	0x5
+ 807 007e 90000000 		.4byte	.LASF10
+ 808 0082 02       		.uleb128 0x2
+ 809 0083 08       		.byte	0x8
+ 810 0084 07       		.byte	0x7
+ 811 0085 8D010000 		.4byte	.LASF11
+ 812 0089 04       		.uleb128 0x4
+ 813 008a 04       		.byte	0x4
+ 814 008b 05       		.byte	0x5
+ 815 008c 696E7400 		.ascii	"int\000"
+ 816 0090 02       		.uleb128 0x2
+ 817 0091 04       		.byte	0x4
+ 818 0092 07       		.byte	0x7
+ 819 0093 FC020000 		.4byte	.LASF12
+ 820 0097 03       		.uleb128 0x3
+ 821 0098 3A010000 		.4byte	.LASF13
+ 822 009c 03       		.byte	0x3
+ 823 009d 18       		.byte	0x18
+ 824 009e 2C000000 		.4byte	0x2c
+ 825 00a2 05       		.uleb128 0x5
+ 826 00a3 97000000 		.4byte	0x97
+ 827 00a7 03       		.uleb128 0x3
+ 828 00a8 49030000 		.4byte	.LASF14
+ 829 00ac 03       		.byte	0x3
+ARM GAS  /tmp/ccQyBaoj.s 			page 27
+
+
+ 830 00ad 24       		.byte	0x24
+ 831 00ae 45000000 		.4byte	0x45
+ 832 00b2 03       		.uleb128 0x3
+ 833 00b3 52030000 		.4byte	.LASF15
+ 834 00b7 03       		.byte	0x3
+ 835 00b8 2C       		.byte	0x2c
+ 836 00b9 57000000 		.4byte	0x57
+ 837 00bd 06       		.uleb128 0x6
+ 838 00be B2000000 		.4byte	0xb2
+ 839 00c2 03       		.uleb128 0x3
+ 840 00c3 D7020000 		.4byte	.LASF16
+ 841 00c7 03       		.byte	0x3
+ 842 00c8 30       		.byte	0x30
+ 843 00c9 69000000 		.4byte	0x69
+ 844 00cd 06       		.uleb128 0x6
+ 845 00ce C2000000 		.4byte	0xc2
+ 846 00d2 02       		.uleb128 0x2
+ 847 00d3 04       		.byte	0x4
+ 848 00d4 07       		.byte	0x7
+ 849 00d5 72000000 		.4byte	.LASF17
+ 850 00d9 07       		.uleb128 0x7
+ 851 00da 1B040000 		.4byte	.LASF18
+ 852 00de 04       		.byte	0x4
+ 853 00df 4807     		.2byte	0x748
+ 854 00e1 BD000000 		.4byte	0xbd
+ 855 00e5 01       		.byte	0x1
+ 856 00e6 01       		.byte	0x1
+ 857 00e7 08       		.uleb128 0x8
+ 858 00e8 7B030000 		.4byte	.LASF19
+ 859 00ec 05       		.byte	0x5
+ 860 00ed 33       		.byte	0x33
+ 861 00ee C2000000 		.4byte	0xc2
+ 862 00f2 01       		.byte	0x1
+ 863 00f3 01       		.byte	0x1
+ 864 00f4 09       		.uleb128 0x9
+ 865 00f5 A2000000 		.4byte	0xa2
+ 866 00f9 04010000 		.4byte	0x104
+ 867 00fd 0A       		.uleb128 0xa
+ 868 00fe D2000000 		.4byte	0xd2
+ 869 0102 0F       		.byte	0xf
+ 870 0103 00       		.byte	0
+ 871 0104 05       		.uleb128 0x5
+ 872 0105 F4000000 		.4byte	0xf4
+ 873 0109 08       		.uleb128 0x8
+ 874 010a 51010000 		.4byte	.LASF20
+ 875 010e 05       		.byte	0x5
+ 876 010f 34       		.byte	0x34
+ 877 0110 04010000 		.4byte	0x104
+ 878 0114 01       		.byte	0x1
+ 879 0115 01       		.byte	0x1
+ 880 0116 09       		.uleb128 0x9
+ 881 0117 A2000000 		.4byte	0xa2
+ 882 011b 26010000 		.4byte	0x126
+ 883 011f 0A       		.uleb128 0xa
+ 884 0120 D2000000 		.4byte	0xd2
+ 885 0124 07       		.byte	0x7
+ 886 0125 00       		.byte	0
+ARM GAS  /tmp/ccQyBaoj.s 			page 28
+
+
+ 887 0126 05       		.uleb128 0x5
+ 888 0127 16010000 		.4byte	0x116
+ 889 012b 08       		.uleb128 0x8
+ 890 012c A4010000 		.4byte	.LASF21
+ 891 0130 05       		.byte	0x5
+ 892 0131 35       		.byte	0x35
+ 893 0132 26010000 		.4byte	0x126
+ 894 0136 01       		.byte	0x1
+ 895 0137 01       		.byte	0x1
+ 896 0138 0B       		.uleb128 0xb
+ 897 0139 18       		.byte	0x18
+ 898 013a 06       		.byte	0x6
+ 899 013b 3201     		.2byte	0x132
+ 900 013d 9B010000 		.4byte	0x19b
+ 901 0141 0C       		.uleb128 0xc
+ 902 0142 494D5200 		.ascii	"IMR\000"
+ 903 0146 06       		.byte	0x6
+ 904 0147 3401     		.2byte	0x134
+ 905 0149 CD000000 		.4byte	0xcd
+ 906 014d 02       		.byte	0x2
+ 907 014e 23       		.byte	0x23
+ 908 014f 00       		.uleb128 0
+ 909 0150 0C       		.uleb128 0xc
+ 910 0151 454D5200 		.ascii	"EMR\000"
+ 911 0155 06       		.byte	0x6
+ 912 0156 3501     		.2byte	0x135
+ 913 0158 CD000000 		.4byte	0xcd
+ 914 015c 02       		.byte	0x2
+ 915 015d 23       		.byte	0x23
+ 916 015e 04       		.uleb128 0x4
+ 917 015f 0D       		.uleb128 0xd
+ 918 0160 6D030000 		.4byte	.LASF22
+ 919 0164 06       		.byte	0x6
+ 920 0165 3601     		.2byte	0x136
+ 921 0167 CD000000 		.4byte	0xcd
+ 922 016b 02       		.byte	0x2
+ 923 016c 23       		.byte	0x23
+ 924 016d 08       		.uleb128 0x8
+ 925 016e 0D       		.uleb128 0xd
+ 926 016f 09030000 		.4byte	.LASF23
+ 927 0173 06       		.byte	0x6
+ 928 0174 3701     		.2byte	0x137
+ 929 0176 CD000000 		.4byte	0xcd
+ 930 017a 02       		.byte	0x2
+ 931 017b 23       		.byte	0x23
+ 932 017c 0C       		.uleb128 0xc
+ 933 017d 0D       		.uleb128 0xd
+ 934 017e 60040000 		.4byte	.LASF24
+ 935 0182 06       		.byte	0x6
+ 936 0183 3801     		.2byte	0x138
+ 937 0185 CD000000 		.4byte	0xcd
+ 938 0189 02       		.byte	0x2
+ 939 018a 23       		.byte	0x23
+ 940 018b 10       		.uleb128 0x10
+ 941 018c 0C       		.uleb128 0xc
+ 942 018d 505200   		.ascii	"PR\000"
+ 943 0190 06       		.byte	0x6
+ARM GAS  /tmp/ccQyBaoj.s 			page 29
+
+
+ 944 0191 3901     		.2byte	0x139
+ 945 0193 CD000000 		.4byte	0xcd
+ 946 0197 02       		.byte	0x2
+ 947 0198 23       		.byte	0x23
+ 948 0199 14       		.uleb128 0x14
+ 949 019a 00       		.byte	0
+ 950 019b 0E       		.uleb128 0xe
+ 951 019c C6010000 		.4byte	.LASF25
+ 952 01a0 06       		.byte	0x6
+ 953 01a1 3A01     		.2byte	0x13a
+ 954 01a3 38010000 		.4byte	0x138
+ 955 01a7 0B       		.uleb128 0xb
+ 956 01a8 1C       		.byte	0x1c
+ 957 01a9 06       		.byte	0x6
+ 958 01aa 6101     		.2byte	0x161
+ 959 01ac 1A020000 		.4byte	0x21a
+ 960 01b0 0C       		.uleb128 0xc
+ 961 01b1 43524C00 		.ascii	"CRL\000"
+ 962 01b5 06       		.byte	0x6
+ 963 01b6 6301     		.2byte	0x163
+ 964 01b8 CD000000 		.4byte	0xcd
+ 965 01bc 02       		.byte	0x2
+ 966 01bd 23       		.byte	0x23
+ 967 01be 00       		.uleb128 0
+ 968 01bf 0C       		.uleb128 0xc
+ 969 01c0 43524800 		.ascii	"CRH\000"
+ 970 01c4 06       		.byte	0x6
+ 971 01c5 6401     		.2byte	0x164
+ 972 01c7 CD000000 		.4byte	0xcd
+ 973 01cb 02       		.byte	0x2
+ 974 01cc 23       		.byte	0x23
+ 975 01cd 04       		.uleb128 0x4
+ 976 01ce 0C       		.uleb128 0xc
+ 977 01cf 49445200 		.ascii	"IDR\000"
+ 978 01d3 06       		.byte	0x6
+ 979 01d4 6501     		.2byte	0x165
+ 980 01d6 CD000000 		.4byte	0xcd
+ 981 01da 02       		.byte	0x2
+ 982 01db 23       		.byte	0x23
+ 983 01dc 08       		.uleb128 0x8
+ 984 01dd 0C       		.uleb128 0xc
+ 985 01de 4F445200 		.ascii	"ODR\000"
+ 986 01e2 06       		.byte	0x6
+ 987 01e3 6601     		.2byte	0x166
+ 988 01e5 CD000000 		.4byte	0xcd
+ 989 01e9 02       		.byte	0x2
+ 990 01ea 23       		.byte	0x23
+ 991 01eb 0C       		.uleb128 0xc
+ 992 01ec 0D       		.uleb128 0xd
+ 993 01ed BD000000 		.4byte	.LASF26
+ 994 01f1 06       		.byte	0x6
+ 995 01f2 6701     		.2byte	0x167
+ 996 01f4 CD000000 		.4byte	0xcd
+ 997 01f8 02       		.byte	0x2
+ 998 01f9 23       		.byte	0x23
+ 999 01fa 10       		.uleb128 0x10
+ 1000 01fb 0C       		.uleb128 0xc
+ARM GAS  /tmp/ccQyBaoj.s 			page 30
+
+
+ 1001 01fc 42525200 		.ascii	"BRR\000"
+ 1002 0200 06       		.byte	0x6
+ 1003 0201 6801     		.2byte	0x168
+ 1004 0203 CD000000 		.4byte	0xcd
+ 1005 0207 02       		.byte	0x2
+ 1006 0208 23       		.byte	0x23
+ 1007 0209 14       		.uleb128 0x14
+ 1008 020a 0D       		.uleb128 0xd
+ 1009 020b 36040000 		.4byte	.LASF27
+ 1010 020f 06       		.byte	0x6
+ 1011 0210 6901     		.2byte	0x169
+ 1012 0212 CD000000 		.4byte	0xcd
+ 1013 0216 02       		.byte	0x2
+ 1014 0217 23       		.byte	0x23
+ 1015 0218 18       		.uleb128 0x18
+ 1016 0219 00       		.byte	0
+ 1017 021a 0E       		.uleb128 0xe
+ 1018 021b 00000000 		.4byte	.LASF28
+ 1019 021f 06       		.byte	0x6
+ 1020 0220 6A01     		.2byte	0x16a
+ 1021 0222 A7010000 		.4byte	0x1a7
+ 1022 0226 0B       		.uleb128 0xb
+ 1023 0227 20       		.byte	0x20
+ 1024 0228 06       		.byte	0x6
+ 1025 0229 7001     		.2byte	0x170
+ 1026 022b 7B020000 		.4byte	0x27b
+ 1027 022f 0D       		.uleb128 0xd
+ 1028 0230 D9030000 		.4byte	.LASF29
+ 1029 0234 06       		.byte	0x6
+ 1030 0235 7201     		.2byte	0x172
+ 1031 0237 CD000000 		.4byte	0xcd
+ 1032 023b 02       		.byte	0x2
+ 1033 023c 23       		.byte	0x23
+ 1034 023d 00       		.uleb128 0
+ 1035 023e 0D       		.uleb128 0xd
+ 1036 023f CE030000 		.4byte	.LASF30
+ 1037 0243 06       		.byte	0x6
+ 1038 0244 7301     		.2byte	0x173
+ 1039 0246 CD000000 		.4byte	0xcd
+ 1040 024a 02       		.byte	0x2
+ 1041 024b 23       		.byte	0x23
+ 1042 024c 04       		.uleb128 0x4
+ 1043 024d 0D       		.uleb128 0xd
+ 1044 024e 42010000 		.4byte	.LASF31
+ 1045 0252 06       		.byte	0x6
+ 1046 0253 7401     		.2byte	0x174
+ 1047 0255 8B020000 		.4byte	0x28b
+ 1048 0259 02       		.byte	0x2
+ 1049 025a 23       		.byte	0x23
+ 1050 025b 08       		.uleb128 0x8
+ 1051 025c 0D       		.uleb128 0xd
+ 1052 025d A5030000 		.4byte	.LASF32
+ 1053 0261 06       		.byte	0x6
+ 1054 0262 7501     		.2byte	0x175
+ 1055 0264 C2000000 		.4byte	0xc2
+ 1056 0268 02       		.byte	0x2
+ 1057 0269 23       		.byte	0x23
+ARM GAS  /tmp/ccQyBaoj.s 			page 31
+
+
+ 1058 026a 18       		.uleb128 0x18
+ 1059 026b 0D       		.uleb128 0xd
+ 1060 026c 9F030000 		.4byte	.LASF33
+ 1061 0270 06       		.byte	0x6
+ 1062 0271 7601     		.2byte	0x176
+ 1063 0273 CD000000 		.4byte	0xcd
+ 1064 0277 02       		.byte	0x2
+ 1065 0278 23       		.byte	0x23
+ 1066 0279 1C       		.uleb128 0x1c
+ 1067 027a 00       		.byte	0
+ 1068 027b 09       		.uleb128 0x9
+ 1069 027c CD000000 		.4byte	0xcd
+ 1070 0280 8B020000 		.4byte	0x28b
+ 1071 0284 0A       		.uleb128 0xa
+ 1072 0285 D2000000 		.4byte	0xd2
+ 1073 0289 03       		.byte	0x3
+ 1074 028a 00       		.byte	0
+ 1075 028b 06       		.uleb128 0x6
+ 1076 028c 7B020000 		.4byte	0x27b
+ 1077 0290 0E       		.uleb128 0xe
+ 1078 0291 C1030000 		.4byte	.LASF34
+ 1079 0295 06       		.byte	0x6
+ 1080 0296 7701     		.2byte	0x177
+ 1081 0298 26020000 		.4byte	0x226
+ 1082 029c 0B       		.uleb128 0xb
+ 1083 029d 28       		.byte	0x28
+ 1084 029e 06       		.byte	0x6
+ 1085 029f A301     		.2byte	0x1a3
+ 1086 02a1 3B030000 		.4byte	0x33b
+ 1087 02a5 0C       		.uleb128 0xc
+ 1088 02a6 435200   		.ascii	"CR\000"
+ 1089 02a9 06       		.byte	0x6
+ 1090 02aa A501     		.2byte	0x1a5
+ 1091 02ac CD000000 		.4byte	0xcd
+ 1092 02b0 02       		.byte	0x2
+ 1093 02b1 23       		.byte	0x23
+ 1094 02b2 00       		.uleb128 0
+ 1095 02b3 0D       		.uleb128 0xd
+ 1096 02b4 0E030000 		.4byte	.LASF35
+ 1097 02b8 06       		.byte	0x6
+ 1098 02b9 A601     		.2byte	0x1a6
+ 1099 02bb CD000000 		.4byte	0xcd
+ 1100 02bf 02       		.byte	0x2
+ 1101 02c0 23       		.byte	0x23
+ 1102 02c1 04       		.uleb128 0x4
+ 1103 02c2 0C       		.uleb128 0xc
+ 1104 02c3 43495200 		.ascii	"CIR\000"
+ 1105 02c7 06       		.byte	0x6
+ 1106 02c8 A701     		.2byte	0x1a7
+ 1107 02ca CD000000 		.4byte	0xcd
+ 1108 02ce 02       		.byte	0x2
+ 1109 02cf 23       		.byte	0x23
+ 1110 02d0 08       		.uleb128 0x8
+ 1111 02d1 0D       		.uleb128 0xd
+ 1112 02d2 F4010000 		.4byte	.LASF36
+ 1113 02d6 06       		.byte	0x6
+ 1114 02d7 A801     		.2byte	0x1a8
+ARM GAS  /tmp/ccQyBaoj.s 			page 32
+
+
+ 1115 02d9 CD000000 		.4byte	0xcd
+ 1116 02dd 02       		.byte	0x2
+ 1117 02de 23       		.byte	0x23
+ 1118 02df 0C       		.uleb128 0xc
+ 1119 02e0 0D       		.uleb128 0xd
+ 1120 02e1 A9000000 		.4byte	.LASF37
+ 1121 02e5 06       		.byte	0x6
+ 1122 02e6 A901     		.2byte	0x1a9
+ 1123 02e8 CD000000 		.4byte	0xcd
+ 1124 02ec 02       		.byte	0x2
+ 1125 02ed 23       		.byte	0x23
+ 1126 02ee 10       		.uleb128 0x10
+ 1127 02ef 0D       		.uleb128 0xd
+ 1128 02f0 ED010000 		.4byte	.LASF38
+ 1129 02f4 06       		.byte	0x6
+ 1130 02f5 AA01     		.2byte	0x1aa
+ 1131 02f7 CD000000 		.4byte	0xcd
+ 1132 02fb 02       		.byte	0x2
+ 1133 02fc 23       		.byte	0x23
+ 1134 02fd 14       		.uleb128 0x14
+ 1135 02fe 0D       		.uleb128 0xd
+ 1136 02ff A5020000 		.4byte	.LASF39
+ 1137 0303 06       		.byte	0x6
+ 1138 0304 AB01     		.2byte	0x1ab
+ 1139 0306 CD000000 		.4byte	0xcd
+ 1140 030a 02       		.byte	0x2
+ 1141 030b 23       		.byte	0x23
+ 1142 030c 18       		.uleb128 0x18
+ 1143 030d 0D       		.uleb128 0xd
+ 1144 030e 49010000 		.4byte	.LASF40
+ 1145 0312 06       		.byte	0x6
+ 1146 0313 AC01     		.2byte	0x1ac
+ 1147 0315 CD000000 		.4byte	0xcd
+ 1148 0319 02       		.byte	0x2
+ 1149 031a 23       		.byte	0x23
+ 1150 031b 1C       		.uleb128 0x1c
+ 1151 031c 0D       		.uleb128 0xd
+ 1152 031d 7B000000 		.4byte	.LASF41
+ 1153 0321 06       		.byte	0x6
+ 1154 0322 AD01     		.2byte	0x1ad
+ 1155 0324 CD000000 		.4byte	0xcd
+ 1156 0328 02       		.byte	0x2
+ 1157 0329 23       		.byte	0x23
+ 1158 032a 20       		.uleb128 0x20
+ 1159 032b 0C       		.uleb128 0xc
+ 1160 032c 43535200 		.ascii	"CSR\000"
+ 1161 0330 06       		.byte	0x6
+ 1162 0331 AE01     		.2byte	0x1ae
+ 1163 0333 CD000000 		.4byte	0xcd
+ 1164 0337 02       		.byte	0x2
+ 1165 0338 23       		.byte	0x23
+ 1166 0339 24       		.uleb128 0x24
+ 1167 033a 00       		.byte	0
+ 1168 033b 0E       		.uleb128 0xe
+ 1169 033c 74010000 		.4byte	.LASF42
+ 1170 0340 06       		.byte	0x6
+ 1171 0341 B101     		.2byte	0x1b1
+ARM GAS  /tmp/ccQyBaoj.s 			page 33
+
+
+ 1172 0343 9C020000 		.4byte	0x29c
+ 1173 0347 02       		.uleb128 0x2
+ 1174 0348 08       		.byte	0x8
+ 1175 0349 04       		.byte	0x4
+ 1176 034a 43020000 		.4byte	.LASF43
+ 1177 034e 0F       		.uleb128 0xf
+ 1178 034f 01       		.byte	0x1
+ 1179 0350 37000000 		.4byte	0x37
+ 1180 0354 07       		.byte	0x7
+ 1181 0355 2A       		.byte	0x2a
+ 1182 0356 73030000 		.4byte	0x373
+ 1183 035a 10       		.uleb128 0x10
+ 1184 035b 29010000 		.4byte	.LASF44
+ 1185 035f 00       		.byte	0
+ 1186 0360 10       		.uleb128 0x10
+ 1187 0361 4F020000 		.4byte	.LASF45
+ 1188 0365 01       		.byte	0x1
+ 1189 0366 10       		.uleb128 0x10
+ 1190 0367 5F010000 		.4byte	.LASF46
+ 1191 036b 02       		.byte	0x2
+ 1192 036c 10       		.uleb128 0x10
+ 1193 036d 16000000 		.4byte	.LASF47
+ 1194 0371 03       		.byte	0x3
+ 1195 0372 00       		.byte	0
+ 1196 0373 03       		.uleb128 0x3
+ 1197 0374 20020000 		.4byte	.LASF48
+ 1198 0378 07       		.byte	0x7
+ 1199 0379 2F       		.byte	0x2f
+ 1200 037a 4E030000 		.4byte	0x34e
+ 1201 037e 11       		.uleb128 0x11
+ 1202 037f 10       		.byte	0x10
+ 1203 0380 08       		.byte	0x8
+ 1204 0381 2F       		.byte	0x2f
+ 1205 0382 BF030000 		.4byte	0x3bf
+ 1206 0386 12       		.uleb128 0x12
+ 1207 0387 50696E00 		.ascii	"Pin\000"
+ 1208 038b 08       		.byte	0x8
+ 1209 038c 31       		.byte	0x31
+ 1210 038d C2000000 		.4byte	0xc2
+ 1211 0391 02       		.byte	0x2
+ 1212 0392 23       		.byte	0x23
+ 1213 0393 00       		.uleb128 0
+ 1214 0394 13       		.uleb128 0x13
+ 1215 0395 EE030000 		.4byte	.LASF49
+ 1216 0399 08       		.byte	0x8
+ 1217 039a 34       		.byte	0x34
+ 1218 039b C2000000 		.4byte	0xc2
+ 1219 039f 02       		.byte	0x2
+ 1220 03a0 23       		.byte	0x23
+ 1221 03a1 04       		.uleb128 0x4
+ 1222 03a2 13       		.uleb128 0x13
+ 1223 03a3 8B000000 		.4byte	.LASF50
+ 1224 03a7 08       		.byte	0x8
+ 1225 03a8 37       		.byte	0x37
+ 1226 03a9 C2000000 		.4byte	0xc2
+ 1227 03ad 02       		.byte	0x2
+ 1228 03ae 23       		.byte	0x23
+ARM GAS  /tmp/ccQyBaoj.s 			page 34
+
+
+ 1229 03af 08       		.uleb128 0x8
+ 1230 03b0 13       		.uleb128 0x13
+ 1231 03b1 E8030000 		.4byte	.LASF51
+ 1232 03b5 08       		.byte	0x8
+ 1233 03b6 3A       		.byte	0x3a
+ 1234 03b7 C2000000 		.4byte	0xc2
+ 1235 03bb 02       		.byte	0x2
+ 1236 03bc 23       		.byte	0x23
+ 1237 03bd 0C       		.uleb128 0xc
+ 1238 03be 00       		.byte	0
+ 1239 03bf 03       		.uleb128 0x3
+ 1240 03c0 E0020000 		.4byte	.LASF52
+ 1241 03c4 08       		.byte	0x8
+ 1242 03c5 3C       		.byte	0x3c
+ 1243 03c6 7E030000 		.4byte	0x37e
+ 1244 03ca 0F       		.uleb128 0xf
+ 1245 03cb 01       		.byte	0x1
+ 1246 03cc 37000000 		.4byte	0x37
+ 1247 03d0 08       		.byte	0x8
+ 1248 03d1 42       		.byte	0x42
+ 1249 03d2 E3030000 		.4byte	0x3e3
+ 1250 03d6 10       		.uleb128 0x10
+ 1251 03d7 30000000 		.4byte	.LASF53
+ 1252 03db 00       		.byte	0
+ 1253 03dc 10       		.uleb128 0x10
+ 1254 03dd 80010000 		.4byte	.LASF54
+ 1255 03e1 01       		.byte	0x1
+ 1256 03e2 00       		.byte	0
+ 1257 03e3 03       		.uleb128 0x3
+ 1258 03e4 28040000 		.4byte	.LASF55
+ 1259 03e8 08       		.byte	0x8
+ 1260 03e9 45       		.byte	0x45
+ 1261 03ea CA030000 		.4byte	0x3ca
+ 1262 03ee 0F       		.uleb128 0xf
+ 1263 03ef 01       		.byte	0x1
+ 1264 03f0 37000000 		.4byte	0x37
+ 1265 03f4 09       		.byte	0x9
+ 1266 03f5 33       		.byte	0x33
+ 1267 03f6 13040000 		.4byte	0x413
+ 1268 03fa 10       		.uleb128 0x10
+ 1269 03fb 3F000000 		.4byte	.LASF56
+ 1270 03ff 64       		.byte	0x64
+ 1271 0400 10       		.uleb128 0x10
+ 1272 0401 8B030000 		.4byte	.LASF57
+ 1273 0405 0A       		.byte	0xa
+ 1274 0406 10       		.uleb128 0x10
+ 1275 0407 13030000 		.4byte	.LASF58
+ 1276 040b 01       		.byte	0x1
+ 1277 040c 10       		.uleb128 0x10
+ 1278 040d 4A040000 		.4byte	.LASF59
+ 1279 0411 01       		.byte	0x1
+ 1280 0412 00       		.byte	0
+ 1281 0413 03       		.uleb128 0x3
+ 1282 0414 B2010000 		.4byte	.LASF60
+ 1283 0418 09       		.byte	0x9
+ 1284 0419 38       		.byte	0x38
+ 1285 041a EE030000 		.4byte	0x3ee
+ARM GAS  /tmp/ccQyBaoj.s 			page 35
+
+
+ 1286 041e 08       		.uleb128 0x8
+ 1287 041f C2000000 		.4byte	.LASF61
+ 1288 0423 09       		.byte	0x9
+ 1289 0424 3D       		.byte	0x3d
+ 1290 0425 C2000000 		.4byte	0xc2
+ 1291 0429 01       		.byte	0x1
+ 1292 042a 01       		.byte	0x1
+ 1293 042b 08       		.uleb128 0x8
+ 1294 042c F1020000 		.4byte	.LASF62
+ 1295 0430 09       		.byte	0x9
+ 1296 0431 3E       		.byte	0x3e
+ 1297 0432 13040000 		.4byte	0x413
+ 1298 0436 01       		.byte	0x1
+ 1299 0437 01       		.byte	0x1
+ 1300 0438 14       		.uleb128 0x14
+ 1301 0439 01       		.byte	0x1
+ 1302 043a AD020000 		.4byte	.LASF63
+ 1303 043e 01       		.byte	0x1
+ 1304 043f 3202     		.2byte	0x232
+ 1305 0441 01       		.byte	0x1
+ 1306 0442 D0020000 		.4byte	.LFB72
+ 1307 0446 D2020000 		.4byte	.LFE72
+ 1308 044a 02       		.byte	0x2
+ 1309 044b 7D       		.byte	0x7d
+ 1310 044c 00       		.sleb128 0
+ 1311 044d 01       		.byte	0x1
+ 1312 044e 61040000 		.4byte	0x461
+ 1313 0452 15       		.uleb128 0x15
+ 1314 0453 0D000000 		.4byte	.LASF65
+ 1315 0457 01       		.byte	0x1
+ 1316 0458 3202     		.2byte	0x232
+ 1317 045a A7000000 		.4byte	0xa7
+ 1318 045e 01       		.byte	0x1
+ 1319 045f 50       		.byte	0x50
+ 1320 0460 00       		.byte	0
+ 1321 0461 16       		.uleb128 0x16
+ 1322 0462 01       		.byte	0x1
+ 1323 0463 26030000 		.4byte	.LASF64
+ 1324 0467 01       		.byte	0x1
+ 1325 0468 2302     		.2byte	0x223
+ 1326 046a 01       		.byte	0x1
+ 1327 046b D2020000 		.4byte	.LFB71
+ 1328 046f E8020000 		.4byte	.LFE71
+ 1329 0473 00000000 		.4byte	.LLST17
+ 1330 0477 01       		.byte	0x1
+ 1331 0478 96040000 		.4byte	0x496
+ 1332 047c 17       		.uleb128 0x17
+ 1333 047d 0D000000 		.4byte	.LASF65
+ 1334 0481 01       		.byte	0x1
+ 1335 0482 2302     		.2byte	0x223
+ 1336 0484 A7000000 		.4byte	0xa7
+ 1337 0488 20000000 		.4byte	.LLST18
+ 1338 048c 18       		.uleb128 0x18
+ 1339 048d E2020000 		.4byte	.LVL62
+ 1340 0491 38040000 		.4byte	0x438
+ 1341 0495 00       		.byte	0
+ 1342 0496 19       		.uleb128 0x19
+ARM GAS  /tmp/ccQyBaoj.s 			page 36
+
+
+ 1343 0497 01       		.byte	0x1
+ 1344 0498 52000000 		.4byte	.LASF70
+ 1345 049c 01       		.byte	0x1
+ 1346 049d 0002     		.2byte	0x200
+ 1347 049f 01       		.byte	0x1
+ 1348 04a0 73030000 		.4byte	0x373
+ 1349 04a4 A6020000 		.4byte	.LFB70
+ 1350 04a8 D0020000 		.4byte	.LFE70
+ 1351 04ac 41000000 		.4byte	.LLST15
+ 1352 04b0 01       		.byte	0x1
+ 1353 04b1 E3040000 		.4byte	0x4e3
+ 1354 04b5 17       		.uleb128 0x17
+ 1355 04b6 D3030000 		.4byte	.LASF66
+ 1356 04ba 01       		.byte	0x1
+ 1357 04bb 0002     		.2byte	0x200
+ 1358 04bd E3040000 		.4byte	0x4e3
+ 1359 04c1 6D000000 		.4byte	.LLST16
+ 1360 04c5 15       		.uleb128 0x15
+ 1361 04c6 0D000000 		.4byte	.LASF65
+ 1362 04ca 01       		.byte	0x1
+ 1363 04cb 0002     		.2byte	0x200
+ 1364 04cd A7000000 		.4byte	0xa7
+ 1365 04d1 01       		.byte	0x1
+ 1366 04d2 51       		.byte	0x51
+ 1367 04d3 1A       		.uleb128 0x1a
+ 1368 04d4 746D7000 		.ascii	"tmp\000"
+ 1369 04d8 01       		.byte	0x1
+ 1370 04d9 0202     		.2byte	0x202
+ 1371 04db CD000000 		.4byte	0xcd
+ 1372 04df 02       		.byte	0x2
+ 1373 04e0 91       		.byte	0x91
+ 1374 04e1 7C       		.sleb128 -4
+ 1375 04e2 00       		.byte	0
+ 1376 04e3 1B       		.uleb128 0x1b
+ 1377 04e4 04       		.byte	0x4
+ 1378 04e5 1A020000 		.4byte	0x21a
+ 1379 04e9 14       		.uleb128 0x14
+ 1380 04ea 01       		.byte	0x1
+ 1381 04eb C4020000 		.4byte	.LASF67
+ 1382 04ef 01       		.byte	0x1
+ 1383 04f0 E701     		.2byte	0x1e7
+ 1384 04f2 01       		.byte	0x1
+ 1385 04f3 9A020000 		.4byte	.LFB69
+ 1386 04f7 A6020000 		.4byte	.LFE69
+ 1387 04fb 02       		.byte	0x2
+ 1388 04fc 7D       		.byte	0x7d
+ 1389 04fd 00       		.sleb128 0
+ 1390 04fe 01       		.byte	0x1
+ 1391 04ff 20050000 		.4byte	0x520
+ 1392 0503 15       		.uleb128 0x15
+ 1393 0504 D3030000 		.4byte	.LASF66
+ 1394 0508 01       		.byte	0x1
+ 1395 0509 E701     		.2byte	0x1e7
+ 1396 050b E3040000 		.4byte	0x4e3
+ 1397 050f 01       		.byte	0x1
+ 1398 0510 50       		.byte	0x50
+ 1399 0511 15       		.uleb128 0x15
+ARM GAS  /tmp/ccQyBaoj.s 			page 37
+
+
+ 1400 0512 0D000000 		.4byte	.LASF65
+ 1401 0516 01       		.byte	0x1
+ 1402 0517 E701     		.2byte	0x1e7
+ 1403 0519 A7000000 		.4byte	0xa7
+ 1404 051d 01       		.byte	0x1
+ 1405 051e 51       		.byte	0x51
+ 1406 051f 00       		.byte	0
+ 1407 0520 14       		.uleb128 0x14
+ 1408 0521 01       		.byte	0x1
+ 1409 0522 59020000 		.4byte	.LASF68
+ 1410 0526 01       		.byte	0x1
+ 1411 0527 D101     		.2byte	0x1d1
+ 1412 0529 01       		.byte	0x1
+ 1413 052a 90020000 		.4byte	.LFB68
+ 1414 052e 9A020000 		.4byte	.LFE68
+ 1415 0532 02       		.byte	0x2
+ 1416 0533 7D       		.byte	0x7d
+ 1417 0534 00       		.sleb128 0
+ 1418 0535 01       		.byte	0x1
+ 1419 0536 67050000 		.4byte	0x567
+ 1420 053a 15       		.uleb128 0x15
+ 1421 053b D3030000 		.4byte	.LASF66
+ 1422 053f 01       		.byte	0x1
+ 1423 0540 D101     		.2byte	0x1d1
+ 1424 0542 E3040000 		.4byte	0x4e3
+ 1425 0546 01       		.byte	0x1
+ 1426 0547 50       		.byte	0x50
+ 1427 0548 17       		.uleb128 0x17
+ 1428 0549 0D000000 		.4byte	.LASF65
+ 1429 054d 01       		.byte	0x1
+ 1430 054e D101     		.2byte	0x1d1
+ 1431 0550 A7000000 		.4byte	0xa7
+ 1432 0554 8E000000 		.4byte	.LLST14
+ 1433 0558 15       		.uleb128 0x15
+ 1434 0559 72030000 		.4byte	.LASF69
+ 1435 055d 01       		.byte	0x1
+ 1436 055e D101     		.2byte	0x1d1
+ 1437 0560 E3030000 		.4byte	0x3e3
+ 1438 0564 01       		.byte	0x1
+ 1439 0565 52       		.byte	0x52
+ 1440 0566 00       		.byte	0
+ 1441 0567 1C       		.uleb128 0x1c
+ 1442 0568 01       		.byte	0x1
+ 1443 0569 DC010000 		.4byte	.LASF71
+ 1444 056d 01       		.byte	0x1
+ 1445 056e AF01     		.2byte	0x1af
+ 1446 0570 01       		.byte	0x1
+ 1447 0571 E3030000 		.4byte	0x3e3
+ 1448 0575 84020000 		.4byte	.LFB67
+ 1449 0579 90020000 		.4byte	.LFE67
+ 1450 057d 02       		.byte	0x2
+ 1451 057e 7D       		.byte	0x7d
+ 1452 057f 00       		.sleb128 0
+ 1453 0580 01       		.byte	0x1
+ 1454 0581 BD050000 		.4byte	0x5bd
+ 1455 0585 17       		.uleb128 0x17
+ 1456 0586 D3030000 		.4byte	.LASF66
+ARM GAS  /tmp/ccQyBaoj.s 			page 38
+
+
+ 1457 058a 01       		.byte	0x1
+ 1458 058b AF01     		.2byte	0x1af
+ 1459 058d E3040000 		.4byte	0x4e3
+ 1460 0591 C8000000 		.4byte	.LLST13
+ 1461 0595 15       		.uleb128 0x15
+ 1462 0596 0D000000 		.4byte	.LASF65
+ 1463 059a 01       		.byte	0x1
+ 1464 059b AF01     		.2byte	0x1af
+ 1465 059d A7000000 		.4byte	0xa7
+ 1466 05a1 01       		.byte	0x1
+ 1467 05a2 51       		.byte	0x51
+ 1468 05a3 1D       		.uleb128 0x1d
+ 1469 05a4 39020000 		.4byte	.LASF72
+ 1470 05a8 01       		.byte	0x1
+ 1471 05a9 B101     		.2byte	0x1b1
+ 1472 05ab E3030000 		.4byte	0x3e3
+ 1473 05af 0C       		.byte	0xc
+ 1474 05b0 71       		.byte	0x71
+ 1475 05b1 00       		.sleb128 0
+ 1476 05b2 0A       		.byte	0xa
+ 1477 05b3 FFFF     		.2byte	0xffff
+ 1478 05b5 1A       		.byte	0x1a
+ 1479 05b6 73       		.byte	0x73
+ 1480 05b7 00       		.sleb128 0
+ 1481 05b8 1A       		.byte	0x1a
+ 1482 05b9 30       		.byte	0x30
+ 1483 05ba 2E       		.byte	0x2e
+ 1484 05bb 9F       		.byte	0x9f
+ 1485 05bc 00       		.byte	0
+ 1486 05bd 16       		.uleb128 0x16
+ 1487 05be 01       		.byte	0x1
+ 1488 05bf 0B040000 		.4byte	.LASF73
+ 1489 05c3 01       		.byte	0x1
+ 1490 05c4 5F01     		.2byte	0x15f
+ 1491 05c6 01       		.byte	0x1
+ 1492 05c7 B4010000 		.4byte	.LFB66
+ 1493 05cb 84020000 		.4byte	.LFE66
+ 1494 05cf E9000000 		.4byte	.LLST7
+ 1495 05d3 01       		.byte	0x1
+ 1496 05d4 45060000 		.4byte	0x645
+ 1497 05d8 15       		.uleb128 0x15
+ 1498 05d9 D3030000 		.4byte	.LASF66
+ 1499 05dd 01       		.byte	0x1
+ 1500 05de 5F01     		.2byte	0x15f
+ 1501 05e0 E3040000 		.4byte	0x4e3
+ 1502 05e4 01       		.byte	0x1
+ 1503 05e5 50       		.byte	0x50
+ 1504 05e6 15       		.uleb128 0x15
+ 1505 05e7 0D000000 		.4byte	.LASF65
+ 1506 05eb 01       		.byte	0x1
+ 1507 05ec 5F01     		.2byte	0x15f
+ 1508 05ee C2000000 		.4byte	0xc2
+ 1509 05f2 01       		.byte	0x1
+ 1510 05f3 51       		.byte	0x51
+ 1511 05f4 1E       		.uleb128 0x1e
+ 1512 05f5 02040000 		.4byte	.LASF74
+ 1513 05f9 01       		.byte	0x1
+ARM GAS  /tmp/ccQyBaoj.s 			page 39
+
+
+ 1514 05fa 6101     		.2byte	0x161
+ 1515 05fc C2000000 		.4byte	0xc2
+ 1516 0600 09010000 		.4byte	.LLST8
+ 1517 0604 1E       		.uleb128 0x1e
+ 1518 0605 3F030000 		.4byte	.LASF75
+ 1519 0609 01       		.byte	0x1
+ 1520 060a 6201     		.2byte	0x162
+ 1521 060c C2000000 		.4byte	0xc2
+ 1522 0610 28010000 		.4byte	.LLST9
+ 1523 0614 1F       		.uleb128 0x1f
+ 1524 0615 746D7000 		.ascii	"tmp\000"
+ 1525 0619 01       		.byte	0x1
+ 1526 061a 6301     		.2byte	0x163
+ 1527 061c C2000000 		.4byte	0xc2
+ 1528 0620 8A010000 		.4byte	.LLST10
+ 1529 0624 1E       		.uleb128 0x1e
+ 1530 0625 3B040000 		.4byte	.LASF76
+ 1531 0629 01       		.byte	0x1
+ 1532 062a 6401     		.2byte	0x164
+ 1533 062c 45060000 		.4byte	0x645
+ 1534 0630 BE010000 		.4byte	.LLST11
+ 1535 0634 1E       		.uleb128 0x1e
+ 1536 0635 F3030000 		.4byte	.LASF77
+ 1537 0639 01       		.byte	0x1
+ 1538 063a 6501     		.2byte	0x165
+ 1539 063c C2000000 		.4byte	0xc2
+ 1540 0640 DC010000 		.4byte	.LLST12
+ 1541 0644 00       		.byte	0
+ 1542 0645 1B       		.uleb128 0x1b
+ 1543 0646 04       		.byte	0x4
+ 1544 0647 CD000000 		.4byte	0xcd
+ 1545 064b 20       		.uleb128 0x20
+ 1546 064c 01       		.byte	0x1
+ 1547 064d 22000000 		.4byte	.LASF78
+ 1548 0651 01       		.byte	0x1
+ 1549 0652 B2       		.byte	0xb2
+ 1550 0653 01       		.byte	0x1
+ 1551 0654 00000000 		.4byte	.LFB65
+ 1552 0658 B4010000 		.4byte	.LFE65
+ 1553 065c EF010000 		.4byte	.LLST0
+ 1554 0660 01       		.byte	0x1
+ 1555 0661 FA060000 		.4byte	0x6fa
+ 1556 0665 21       		.uleb128 0x21
+ 1557 0666 D3030000 		.4byte	.LASF66
+ 1558 066a 01       		.byte	0x1
+ 1559 066b B2       		.byte	0xb2
+ 1560 066c E3040000 		.4byte	0x4e3
+ 1561 0670 01       		.byte	0x1
+ 1562 0671 50       		.byte	0x50
+ 1563 0672 21       		.uleb128 0x21
+ 1564 0673 30010000 		.4byte	.LASF79
+ 1565 0677 01       		.byte	0x1
+ 1566 0678 B2       		.byte	0xb2
+ 1567 0679 FA060000 		.4byte	0x6fa
+ 1568 067d 01       		.byte	0x1
+ 1569 067e 51       		.byte	0x51
+ 1570 067f 22       		.uleb128 0x22
+ARM GAS  /tmp/ccQyBaoj.s 			page 40
+
+
+ 1571 0680 02040000 		.4byte	.LASF74
+ 1572 0684 01       		.byte	0x1
+ 1573 0685 B4       		.byte	0xb4
+ 1574 0686 C2000000 		.4byte	0xc2
+ 1575 068a 27020000 		.4byte	.LLST1
+ 1576 068e 22       		.uleb128 0x22
+ 1577 068f 80000000 		.4byte	.LASF80
+ 1578 0693 01       		.byte	0x1
+ 1579 0694 B5       		.byte	0xb5
+ 1580 0695 C2000000 		.4byte	0xc2
+ 1581 0699 46020000 		.4byte	.LLST2
+ 1582 069d 22       		.uleb128 0x22
+ 1583 069e 3F030000 		.4byte	.LASF75
+ 1584 06a2 01       		.byte	0x1
+ 1585 06a3 B6       		.byte	0xb6
+ 1586 06a4 C2000000 		.4byte	0xc2
+ 1587 06a8 A1020000 		.4byte	.LLST3
+ 1588 06ac 22       		.uleb128 0x22
+ 1589 06ad 63000000 		.4byte	.LASF81
+ 1590 06b1 01       		.byte	0x1
+ 1591 06b2 B7       		.byte	0xb7
+ 1592 06b3 C2000000 		.4byte	0xc2
+ 1593 06b7 BF020000 		.4byte	.LLST4
+ 1594 06bb 22       		.uleb128 0x22
+ 1595 06bc 22010000 		.4byte	.LASF82
+ 1596 06c0 01       		.byte	0x1
+ 1597 06c1 B8       		.byte	0xb8
+ 1598 06c2 C2000000 		.4byte	0xc2
+ 1599 06c6 FF020000 		.4byte	.LLST5
+ 1600 06ca 22       		.uleb128 0x22
+ 1601 06cb 3B040000 		.4byte	.LASF76
+ 1602 06cf 01       		.byte	0x1
+ 1603 06d0 B9       		.byte	0xb9
+ 1604 06d1 45060000 		.4byte	0x645
+ 1605 06d5 6C030000 		.4byte	.LLST6
+ 1606 06d9 23       		.uleb128 0x23
+ 1607 06da F3030000 		.4byte	.LASF77
+ 1608 06de 01       		.byte	0x1
+ 1609 06df BA       		.byte	0xba
+ 1610 06e0 C2000000 		.4byte	0xc2
+ 1611 06e4 24       		.uleb128 0x24
+ 1612 06e5 00000000 		.4byte	.Ldebug_ranges0+0
+ 1613 06e9 1D       		.uleb128 0x1d
+ 1614 06ea 32020000 		.4byte	.LASF83
+ 1615 06ee 01       		.byte	0x1
+ 1616 06ef 2301     		.2byte	0x123
+ 1617 06f1 CD000000 		.4byte	0xcd
+ 1618 06f5 02       		.byte	0x2
+ 1619 06f6 91       		.byte	0x91
+ 1620 06f7 54       		.sleb128 -44
+ 1621 06f8 00       		.byte	0
+ 1622 06f9 00       		.byte	0
+ 1623 06fa 1B       		.uleb128 0x1b
+ 1624 06fb 04       		.byte	0x4
+ 1625 06fc BF030000 		.4byte	0x3bf
+ 1626 0700 00       		.byte	0
+ 1627              		.section	.debug_abbrev,"",%progbits
+ARM GAS  /tmp/ccQyBaoj.s 			page 41
+
+
+ 1628              	.Ldebug_abbrev0:
+ 1629 0000 01       		.uleb128 0x1
+ 1630 0001 11       		.uleb128 0x11
+ 1631 0002 01       		.byte	0x1
+ 1632 0003 25       		.uleb128 0x25
+ 1633 0004 0E       		.uleb128 0xe
+ 1634 0005 13       		.uleb128 0x13
+ 1635 0006 0B       		.uleb128 0xb
+ 1636 0007 03       		.uleb128 0x3
+ 1637 0008 0E       		.uleb128 0xe
+ 1638 0009 1B       		.uleb128 0x1b
+ 1639 000a 0E       		.uleb128 0xe
+ 1640 000b 11       		.uleb128 0x11
+ 1641 000c 01       		.uleb128 0x1
+ 1642 000d 12       		.uleb128 0x12
+ 1643 000e 01       		.uleb128 0x1
+ 1644 000f 10       		.uleb128 0x10
+ 1645 0010 06       		.uleb128 0x6
+ 1646 0011 00       		.byte	0
+ 1647 0012 00       		.byte	0
+ 1648 0013 02       		.uleb128 0x2
+ 1649 0014 24       		.uleb128 0x24
+ 1650 0015 00       		.byte	0
+ 1651 0016 0B       		.uleb128 0xb
+ 1652 0017 0B       		.uleb128 0xb
+ 1653 0018 3E       		.uleb128 0x3e
+ 1654 0019 0B       		.uleb128 0xb
+ 1655 001a 03       		.uleb128 0x3
+ 1656 001b 0E       		.uleb128 0xe
+ 1657 001c 00       		.byte	0
+ 1658 001d 00       		.byte	0
+ 1659 001e 03       		.uleb128 0x3
+ 1660 001f 16       		.uleb128 0x16
+ 1661 0020 00       		.byte	0
+ 1662 0021 03       		.uleb128 0x3
+ 1663 0022 0E       		.uleb128 0xe
+ 1664 0023 3A       		.uleb128 0x3a
+ 1665 0024 0B       		.uleb128 0xb
+ 1666 0025 3B       		.uleb128 0x3b
+ 1667 0026 0B       		.uleb128 0xb
+ 1668 0027 49       		.uleb128 0x49
+ 1669 0028 13       		.uleb128 0x13
+ 1670 0029 00       		.byte	0
+ 1671 002a 00       		.byte	0
+ 1672 002b 04       		.uleb128 0x4
+ 1673 002c 24       		.uleb128 0x24
+ 1674 002d 00       		.byte	0
+ 1675 002e 0B       		.uleb128 0xb
+ 1676 002f 0B       		.uleb128 0xb
+ 1677 0030 3E       		.uleb128 0x3e
+ 1678 0031 0B       		.uleb128 0xb
+ 1679 0032 03       		.uleb128 0x3
+ 1680 0033 08       		.uleb128 0x8
+ 1681 0034 00       		.byte	0
+ 1682 0035 00       		.byte	0
+ 1683 0036 05       		.uleb128 0x5
+ 1684 0037 26       		.uleb128 0x26
+ARM GAS  /tmp/ccQyBaoj.s 			page 42
+
+
+ 1685 0038 00       		.byte	0
+ 1686 0039 49       		.uleb128 0x49
+ 1687 003a 13       		.uleb128 0x13
+ 1688 003b 00       		.byte	0
+ 1689 003c 00       		.byte	0
+ 1690 003d 06       		.uleb128 0x6
+ 1691 003e 35       		.uleb128 0x35
+ 1692 003f 00       		.byte	0
+ 1693 0040 49       		.uleb128 0x49
+ 1694 0041 13       		.uleb128 0x13
+ 1695 0042 00       		.byte	0
+ 1696 0043 00       		.byte	0
+ 1697 0044 07       		.uleb128 0x7
+ 1698 0045 34       		.uleb128 0x34
+ 1699 0046 00       		.byte	0
+ 1700 0047 03       		.uleb128 0x3
+ 1701 0048 0E       		.uleb128 0xe
+ 1702 0049 3A       		.uleb128 0x3a
+ 1703 004a 0B       		.uleb128 0xb
+ 1704 004b 3B       		.uleb128 0x3b
+ 1705 004c 05       		.uleb128 0x5
+ 1706 004d 49       		.uleb128 0x49
+ 1707 004e 13       		.uleb128 0x13
+ 1708 004f 3F       		.uleb128 0x3f
+ 1709 0050 0C       		.uleb128 0xc
+ 1710 0051 3C       		.uleb128 0x3c
+ 1711 0052 0C       		.uleb128 0xc
+ 1712 0053 00       		.byte	0
+ 1713 0054 00       		.byte	0
+ 1714 0055 08       		.uleb128 0x8
+ 1715 0056 34       		.uleb128 0x34
+ 1716 0057 00       		.byte	0
+ 1717 0058 03       		.uleb128 0x3
+ 1718 0059 0E       		.uleb128 0xe
+ 1719 005a 3A       		.uleb128 0x3a
+ 1720 005b 0B       		.uleb128 0xb
+ 1721 005c 3B       		.uleb128 0x3b
+ 1722 005d 0B       		.uleb128 0xb
+ 1723 005e 49       		.uleb128 0x49
+ 1724 005f 13       		.uleb128 0x13
+ 1725 0060 3F       		.uleb128 0x3f
+ 1726 0061 0C       		.uleb128 0xc
+ 1727 0062 3C       		.uleb128 0x3c
+ 1728 0063 0C       		.uleb128 0xc
+ 1729 0064 00       		.byte	0
+ 1730 0065 00       		.byte	0
+ 1731 0066 09       		.uleb128 0x9
+ 1732 0067 01       		.uleb128 0x1
+ 1733 0068 01       		.byte	0x1
+ 1734 0069 49       		.uleb128 0x49
+ 1735 006a 13       		.uleb128 0x13
+ 1736 006b 01       		.uleb128 0x1
+ 1737 006c 13       		.uleb128 0x13
+ 1738 006d 00       		.byte	0
+ 1739 006e 00       		.byte	0
+ 1740 006f 0A       		.uleb128 0xa
+ 1741 0070 21       		.uleb128 0x21
+ARM GAS  /tmp/ccQyBaoj.s 			page 43
+
+
+ 1742 0071 00       		.byte	0
+ 1743 0072 49       		.uleb128 0x49
+ 1744 0073 13       		.uleb128 0x13
+ 1745 0074 2F       		.uleb128 0x2f
+ 1746 0075 0B       		.uleb128 0xb
+ 1747 0076 00       		.byte	0
+ 1748 0077 00       		.byte	0
+ 1749 0078 0B       		.uleb128 0xb
+ 1750 0079 13       		.uleb128 0x13
+ 1751 007a 01       		.byte	0x1
+ 1752 007b 0B       		.uleb128 0xb
+ 1753 007c 0B       		.uleb128 0xb
+ 1754 007d 3A       		.uleb128 0x3a
+ 1755 007e 0B       		.uleb128 0xb
+ 1756 007f 3B       		.uleb128 0x3b
+ 1757 0080 05       		.uleb128 0x5
+ 1758 0081 01       		.uleb128 0x1
+ 1759 0082 13       		.uleb128 0x13
+ 1760 0083 00       		.byte	0
+ 1761 0084 00       		.byte	0
+ 1762 0085 0C       		.uleb128 0xc
+ 1763 0086 0D       		.uleb128 0xd
+ 1764 0087 00       		.byte	0
+ 1765 0088 03       		.uleb128 0x3
+ 1766 0089 08       		.uleb128 0x8
+ 1767 008a 3A       		.uleb128 0x3a
+ 1768 008b 0B       		.uleb128 0xb
+ 1769 008c 3B       		.uleb128 0x3b
+ 1770 008d 05       		.uleb128 0x5
+ 1771 008e 49       		.uleb128 0x49
+ 1772 008f 13       		.uleb128 0x13
+ 1773 0090 38       		.uleb128 0x38
+ 1774 0091 0A       		.uleb128 0xa
+ 1775 0092 00       		.byte	0
+ 1776 0093 00       		.byte	0
+ 1777 0094 0D       		.uleb128 0xd
+ 1778 0095 0D       		.uleb128 0xd
+ 1779 0096 00       		.byte	0
+ 1780 0097 03       		.uleb128 0x3
+ 1781 0098 0E       		.uleb128 0xe
+ 1782 0099 3A       		.uleb128 0x3a
+ 1783 009a 0B       		.uleb128 0xb
+ 1784 009b 3B       		.uleb128 0x3b
+ 1785 009c 05       		.uleb128 0x5
+ 1786 009d 49       		.uleb128 0x49
+ 1787 009e 13       		.uleb128 0x13
+ 1788 009f 38       		.uleb128 0x38
+ 1789 00a0 0A       		.uleb128 0xa
+ 1790 00a1 00       		.byte	0
+ 1791 00a2 00       		.byte	0
+ 1792 00a3 0E       		.uleb128 0xe
+ 1793 00a4 16       		.uleb128 0x16
+ 1794 00a5 00       		.byte	0
+ 1795 00a6 03       		.uleb128 0x3
+ 1796 00a7 0E       		.uleb128 0xe
+ 1797 00a8 3A       		.uleb128 0x3a
+ 1798 00a9 0B       		.uleb128 0xb
+ARM GAS  /tmp/ccQyBaoj.s 			page 44
+
+
+ 1799 00aa 3B       		.uleb128 0x3b
+ 1800 00ab 05       		.uleb128 0x5
+ 1801 00ac 49       		.uleb128 0x49
+ 1802 00ad 13       		.uleb128 0x13
+ 1803 00ae 00       		.byte	0
+ 1804 00af 00       		.byte	0
+ 1805 00b0 0F       		.uleb128 0xf
+ 1806 00b1 04       		.uleb128 0x4
+ 1807 00b2 01       		.byte	0x1
+ 1808 00b3 0B       		.uleb128 0xb
+ 1809 00b4 0B       		.uleb128 0xb
+ 1810 00b5 49       		.uleb128 0x49
+ 1811 00b6 13       		.uleb128 0x13
+ 1812 00b7 3A       		.uleb128 0x3a
+ 1813 00b8 0B       		.uleb128 0xb
+ 1814 00b9 3B       		.uleb128 0x3b
+ 1815 00ba 0B       		.uleb128 0xb
+ 1816 00bb 01       		.uleb128 0x1
+ 1817 00bc 13       		.uleb128 0x13
+ 1818 00bd 00       		.byte	0
+ 1819 00be 00       		.byte	0
+ 1820 00bf 10       		.uleb128 0x10
+ 1821 00c0 28       		.uleb128 0x28
+ 1822 00c1 00       		.byte	0
+ 1823 00c2 03       		.uleb128 0x3
+ 1824 00c3 0E       		.uleb128 0xe
+ 1825 00c4 1C       		.uleb128 0x1c
+ 1826 00c5 0B       		.uleb128 0xb
+ 1827 00c6 00       		.byte	0
+ 1828 00c7 00       		.byte	0
+ 1829 00c8 11       		.uleb128 0x11
+ 1830 00c9 13       		.uleb128 0x13
+ 1831 00ca 01       		.byte	0x1
+ 1832 00cb 0B       		.uleb128 0xb
+ 1833 00cc 0B       		.uleb128 0xb
+ 1834 00cd 3A       		.uleb128 0x3a
+ 1835 00ce 0B       		.uleb128 0xb
+ 1836 00cf 3B       		.uleb128 0x3b
+ 1837 00d0 0B       		.uleb128 0xb
+ 1838 00d1 01       		.uleb128 0x1
+ 1839 00d2 13       		.uleb128 0x13
+ 1840 00d3 00       		.byte	0
+ 1841 00d4 00       		.byte	0
+ 1842 00d5 12       		.uleb128 0x12
+ 1843 00d6 0D       		.uleb128 0xd
+ 1844 00d7 00       		.byte	0
+ 1845 00d8 03       		.uleb128 0x3
+ 1846 00d9 08       		.uleb128 0x8
+ 1847 00da 3A       		.uleb128 0x3a
+ 1848 00db 0B       		.uleb128 0xb
+ 1849 00dc 3B       		.uleb128 0x3b
+ 1850 00dd 0B       		.uleb128 0xb
+ 1851 00de 49       		.uleb128 0x49
+ 1852 00df 13       		.uleb128 0x13
+ 1853 00e0 38       		.uleb128 0x38
+ 1854 00e1 0A       		.uleb128 0xa
+ 1855 00e2 00       		.byte	0
+ARM GAS  /tmp/ccQyBaoj.s 			page 45
+
+
+ 1856 00e3 00       		.byte	0
+ 1857 00e4 13       		.uleb128 0x13
+ 1858 00e5 0D       		.uleb128 0xd
+ 1859 00e6 00       		.byte	0
+ 1860 00e7 03       		.uleb128 0x3
+ 1861 00e8 0E       		.uleb128 0xe
+ 1862 00e9 3A       		.uleb128 0x3a
+ 1863 00ea 0B       		.uleb128 0xb
+ 1864 00eb 3B       		.uleb128 0x3b
+ 1865 00ec 0B       		.uleb128 0xb
+ 1866 00ed 49       		.uleb128 0x49
+ 1867 00ee 13       		.uleb128 0x13
+ 1868 00ef 38       		.uleb128 0x38
+ 1869 00f0 0A       		.uleb128 0xa
+ 1870 00f1 00       		.byte	0
+ 1871 00f2 00       		.byte	0
+ 1872 00f3 14       		.uleb128 0x14
+ 1873 00f4 2E       		.uleb128 0x2e
+ 1874 00f5 01       		.byte	0x1
+ 1875 00f6 3F       		.uleb128 0x3f
+ 1876 00f7 0C       		.uleb128 0xc
+ 1877 00f8 03       		.uleb128 0x3
+ 1878 00f9 0E       		.uleb128 0xe
+ 1879 00fa 3A       		.uleb128 0x3a
+ 1880 00fb 0B       		.uleb128 0xb
+ 1881 00fc 3B       		.uleb128 0x3b
+ 1882 00fd 05       		.uleb128 0x5
+ 1883 00fe 27       		.uleb128 0x27
+ 1884 00ff 0C       		.uleb128 0xc
+ 1885 0100 11       		.uleb128 0x11
+ 1886 0101 01       		.uleb128 0x1
+ 1887 0102 12       		.uleb128 0x12
+ 1888 0103 01       		.uleb128 0x1
+ 1889 0104 40       		.uleb128 0x40
+ 1890 0105 0A       		.uleb128 0xa
+ 1891 0106 9742     		.uleb128 0x2117
+ 1892 0108 0C       		.uleb128 0xc
+ 1893 0109 01       		.uleb128 0x1
+ 1894 010a 13       		.uleb128 0x13
+ 1895 010b 00       		.byte	0
+ 1896 010c 00       		.byte	0
+ 1897 010d 15       		.uleb128 0x15
+ 1898 010e 05       		.uleb128 0x5
+ 1899 010f 00       		.byte	0
+ 1900 0110 03       		.uleb128 0x3
+ 1901 0111 0E       		.uleb128 0xe
+ 1902 0112 3A       		.uleb128 0x3a
+ 1903 0113 0B       		.uleb128 0xb
+ 1904 0114 3B       		.uleb128 0x3b
+ 1905 0115 05       		.uleb128 0x5
+ 1906 0116 49       		.uleb128 0x49
+ 1907 0117 13       		.uleb128 0x13
+ 1908 0118 02       		.uleb128 0x2
+ 1909 0119 0A       		.uleb128 0xa
+ 1910 011a 00       		.byte	0
+ 1911 011b 00       		.byte	0
+ 1912 011c 16       		.uleb128 0x16
+ARM GAS  /tmp/ccQyBaoj.s 			page 46
+
+
+ 1913 011d 2E       		.uleb128 0x2e
+ 1914 011e 01       		.byte	0x1
+ 1915 011f 3F       		.uleb128 0x3f
+ 1916 0120 0C       		.uleb128 0xc
+ 1917 0121 03       		.uleb128 0x3
+ 1918 0122 0E       		.uleb128 0xe
+ 1919 0123 3A       		.uleb128 0x3a
+ 1920 0124 0B       		.uleb128 0xb
+ 1921 0125 3B       		.uleb128 0x3b
+ 1922 0126 05       		.uleb128 0x5
+ 1923 0127 27       		.uleb128 0x27
+ 1924 0128 0C       		.uleb128 0xc
+ 1925 0129 11       		.uleb128 0x11
+ 1926 012a 01       		.uleb128 0x1
+ 1927 012b 12       		.uleb128 0x12
+ 1928 012c 01       		.uleb128 0x1
+ 1929 012d 40       		.uleb128 0x40
+ 1930 012e 06       		.uleb128 0x6
+ 1931 012f 9742     		.uleb128 0x2117
+ 1932 0131 0C       		.uleb128 0xc
+ 1933 0132 01       		.uleb128 0x1
+ 1934 0133 13       		.uleb128 0x13
+ 1935 0134 00       		.byte	0
+ 1936 0135 00       		.byte	0
+ 1937 0136 17       		.uleb128 0x17
+ 1938 0137 05       		.uleb128 0x5
+ 1939 0138 00       		.byte	0
+ 1940 0139 03       		.uleb128 0x3
+ 1941 013a 0E       		.uleb128 0xe
+ 1942 013b 3A       		.uleb128 0x3a
+ 1943 013c 0B       		.uleb128 0xb
+ 1944 013d 3B       		.uleb128 0x3b
+ 1945 013e 05       		.uleb128 0x5
+ 1946 013f 49       		.uleb128 0x49
+ 1947 0140 13       		.uleb128 0x13
+ 1948 0141 02       		.uleb128 0x2
+ 1949 0142 06       		.uleb128 0x6
+ 1950 0143 00       		.byte	0
+ 1951 0144 00       		.byte	0
+ 1952 0145 18       		.uleb128 0x18
+ 1953 0146 898201   		.uleb128 0x4109
+ 1954 0149 00       		.byte	0
+ 1955 014a 11       		.uleb128 0x11
+ 1956 014b 01       		.uleb128 0x1
+ 1957 014c 31       		.uleb128 0x31
+ 1958 014d 13       		.uleb128 0x13
+ 1959 014e 00       		.byte	0
+ 1960 014f 00       		.byte	0
+ 1961 0150 19       		.uleb128 0x19
+ 1962 0151 2E       		.uleb128 0x2e
+ 1963 0152 01       		.byte	0x1
+ 1964 0153 3F       		.uleb128 0x3f
+ 1965 0154 0C       		.uleb128 0xc
+ 1966 0155 03       		.uleb128 0x3
+ 1967 0156 0E       		.uleb128 0xe
+ 1968 0157 3A       		.uleb128 0x3a
+ 1969 0158 0B       		.uleb128 0xb
+ARM GAS  /tmp/ccQyBaoj.s 			page 47
+
+
+ 1970 0159 3B       		.uleb128 0x3b
+ 1971 015a 05       		.uleb128 0x5
+ 1972 015b 27       		.uleb128 0x27
+ 1973 015c 0C       		.uleb128 0xc
+ 1974 015d 49       		.uleb128 0x49
+ 1975 015e 13       		.uleb128 0x13
+ 1976 015f 11       		.uleb128 0x11
+ 1977 0160 01       		.uleb128 0x1
+ 1978 0161 12       		.uleb128 0x12
+ 1979 0162 01       		.uleb128 0x1
+ 1980 0163 40       		.uleb128 0x40
+ 1981 0164 06       		.uleb128 0x6
+ 1982 0165 9742     		.uleb128 0x2117
+ 1983 0167 0C       		.uleb128 0xc
+ 1984 0168 01       		.uleb128 0x1
+ 1985 0169 13       		.uleb128 0x13
+ 1986 016a 00       		.byte	0
+ 1987 016b 00       		.byte	0
+ 1988 016c 1A       		.uleb128 0x1a
+ 1989 016d 34       		.uleb128 0x34
+ 1990 016e 00       		.byte	0
+ 1991 016f 03       		.uleb128 0x3
+ 1992 0170 08       		.uleb128 0x8
+ 1993 0171 3A       		.uleb128 0x3a
+ 1994 0172 0B       		.uleb128 0xb
+ 1995 0173 3B       		.uleb128 0x3b
+ 1996 0174 05       		.uleb128 0x5
+ 1997 0175 49       		.uleb128 0x49
+ 1998 0176 13       		.uleb128 0x13
+ 1999 0177 02       		.uleb128 0x2
+ 2000 0178 0A       		.uleb128 0xa
+ 2001 0179 00       		.byte	0
+ 2002 017a 00       		.byte	0
+ 2003 017b 1B       		.uleb128 0x1b
+ 2004 017c 0F       		.uleb128 0xf
+ 2005 017d 00       		.byte	0
+ 2006 017e 0B       		.uleb128 0xb
+ 2007 017f 0B       		.uleb128 0xb
+ 2008 0180 49       		.uleb128 0x49
+ 2009 0181 13       		.uleb128 0x13
+ 2010 0182 00       		.byte	0
+ 2011 0183 00       		.byte	0
+ 2012 0184 1C       		.uleb128 0x1c
+ 2013 0185 2E       		.uleb128 0x2e
+ 2014 0186 01       		.byte	0x1
+ 2015 0187 3F       		.uleb128 0x3f
+ 2016 0188 0C       		.uleb128 0xc
+ 2017 0189 03       		.uleb128 0x3
+ 2018 018a 0E       		.uleb128 0xe
+ 2019 018b 3A       		.uleb128 0x3a
+ 2020 018c 0B       		.uleb128 0xb
+ 2021 018d 3B       		.uleb128 0x3b
+ 2022 018e 05       		.uleb128 0x5
+ 2023 018f 27       		.uleb128 0x27
+ 2024 0190 0C       		.uleb128 0xc
+ 2025 0191 49       		.uleb128 0x49
+ 2026 0192 13       		.uleb128 0x13
+ARM GAS  /tmp/ccQyBaoj.s 			page 48
+
+
+ 2027 0193 11       		.uleb128 0x11
+ 2028 0194 01       		.uleb128 0x1
+ 2029 0195 12       		.uleb128 0x12
+ 2030 0196 01       		.uleb128 0x1
+ 2031 0197 40       		.uleb128 0x40
+ 2032 0198 0A       		.uleb128 0xa
+ 2033 0199 9742     		.uleb128 0x2117
+ 2034 019b 0C       		.uleb128 0xc
+ 2035 019c 01       		.uleb128 0x1
+ 2036 019d 13       		.uleb128 0x13
+ 2037 019e 00       		.byte	0
+ 2038 019f 00       		.byte	0
+ 2039 01a0 1D       		.uleb128 0x1d
+ 2040 01a1 34       		.uleb128 0x34
+ 2041 01a2 00       		.byte	0
+ 2042 01a3 03       		.uleb128 0x3
+ 2043 01a4 0E       		.uleb128 0xe
+ 2044 01a5 3A       		.uleb128 0x3a
+ 2045 01a6 0B       		.uleb128 0xb
+ 2046 01a7 3B       		.uleb128 0x3b
+ 2047 01a8 05       		.uleb128 0x5
+ 2048 01a9 49       		.uleb128 0x49
+ 2049 01aa 13       		.uleb128 0x13
+ 2050 01ab 02       		.uleb128 0x2
+ 2051 01ac 0A       		.uleb128 0xa
+ 2052 01ad 00       		.byte	0
+ 2053 01ae 00       		.byte	0
+ 2054 01af 1E       		.uleb128 0x1e
+ 2055 01b0 34       		.uleb128 0x34
+ 2056 01b1 00       		.byte	0
+ 2057 01b2 03       		.uleb128 0x3
+ 2058 01b3 0E       		.uleb128 0xe
+ 2059 01b4 3A       		.uleb128 0x3a
+ 2060 01b5 0B       		.uleb128 0xb
+ 2061 01b6 3B       		.uleb128 0x3b
+ 2062 01b7 05       		.uleb128 0x5
+ 2063 01b8 49       		.uleb128 0x49
+ 2064 01b9 13       		.uleb128 0x13
+ 2065 01ba 02       		.uleb128 0x2
+ 2066 01bb 06       		.uleb128 0x6
+ 2067 01bc 00       		.byte	0
+ 2068 01bd 00       		.byte	0
+ 2069 01be 1F       		.uleb128 0x1f
+ 2070 01bf 34       		.uleb128 0x34
+ 2071 01c0 00       		.byte	0
+ 2072 01c1 03       		.uleb128 0x3
+ 2073 01c2 08       		.uleb128 0x8
+ 2074 01c3 3A       		.uleb128 0x3a
+ 2075 01c4 0B       		.uleb128 0xb
+ 2076 01c5 3B       		.uleb128 0x3b
+ 2077 01c6 05       		.uleb128 0x5
+ 2078 01c7 49       		.uleb128 0x49
+ 2079 01c8 13       		.uleb128 0x13
+ 2080 01c9 02       		.uleb128 0x2
+ 2081 01ca 06       		.uleb128 0x6
+ 2082 01cb 00       		.byte	0
+ 2083 01cc 00       		.byte	0
+ARM GAS  /tmp/ccQyBaoj.s 			page 49
+
+
+ 2084 01cd 20       		.uleb128 0x20
+ 2085 01ce 2E       		.uleb128 0x2e
+ 2086 01cf 01       		.byte	0x1
+ 2087 01d0 3F       		.uleb128 0x3f
+ 2088 01d1 0C       		.uleb128 0xc
+ 2089 01d2 03       		.uleb128 0x3
+ 2090 01d3 0E       		.uleb128 0xe
+ 2091 01d4 3A       		.uleb128 0x3a
+ 2092 01d5 0B       		.uleb128 0xb
+ 2093 01d6 3B       		.uleb128 0x3b
+ 2094 01d7 0B       		.uleb128 0xb
+ 2095 01d8 27       		.uleb128 0x27
+ 2096 01d9 0C       		.uleb128 0xc
+ 2097 01da 11       		.uleb128 0x11
+ 2098 01db 01       		.uleb128 0x1
+ 2099 01dc 12       		.uleb128 0x12
+ 2100 01dd 01       		.uleb128 0x1
+ 2101 01de 40       		.uleb128 0x40
+ 2102 01df 06       		.uleb128 0x6
+ 2103 01e0 9742     		.uleb128 0x2117
+ 2104 01e2 0C       		.uleb128 0xc
+ 2105 01e3 01       		.uleb128 0x1
+ 2106 01e4 13       		.uleb128 0x13
+ 2107 01e5 00       		.byte	0
+ 2108 01e6 00       		.byte	0
+ 2109 01e7 21       		.uleb128 0x21
+ 2110 01e8 05       		.uleb128 0x5
+ 2111 01e9 00       		.byte	0
+ 2112 01ea 03       		.uleb128 0x3
+ 2113 01eb 0E       		.uleb128 0xe
+ 2114 01ec 3A       		.uleb128 0x3a
+ 2115 01ed 0B       		.uleb128 0xb
+ 2116 01ee 3B       		.uleb128 0x3b
+ 2117 01ef 0B       		.uleb128 0xb
+ 2118 01f0 49       		.uleb128 0x49
+ 2119 01f1 13       		.uleb128 0x13
+ 2120 01f2 02       		.uleb128 0x2
+ 2121 01f3 0A       		.uleb128 0xa
+ 2122 01f4 00       		.byte	0
+ 2123 01f5 00       		.byte	0
+ 2124 01f6 22       		.uleb128 0x22
+ 2125 01f7 34       		.uleb128 0x34
+ 2126 01f8 00       		.byte	0
+ 2127 01f9 03       		.uleb128 0x3
+ 2128 01fa 0E       		.uleb128 0xe
+ 2129 01fb 3A       		.uleb128 0x3a
+ 2130 01fc 0B       		.uleb128 0xb
+ 2131 01fd 3B       		.uleb128 0x3b
+ 2132 01fe 0B       		.uleb128 0xb
+ 2133 01ff 49       		.uleb128 0x49
+ 2134 0200 13       		.uleb128 0x13
+ 2135 0201 02       		.uleb128 0x2
+ 2136 0202 06       		.uleb128 0x6
+ 2137 0203 00       		.byte	0
+ 2138 0204 00       		.byte	0
+ 2139 0205 23       		.uleb128 0x23
+ 2140 0206 34       		.uleb128 0x34
+ARM GAS  /tmp/ccQyBaoj.s 			page 50
+
+
+ 2141 0207 00       		.byte	0
+ 2142 0208 03       		.uleb128 0x3
+ 2143 0209 0E       		.uleb128 0xe
+ 2144 020a 3A       		.uleb128 0x3a
+ 2145 020b 0B       		.uleb128 0xb
+ 2146 020c 3B       		.uleb128 0x3b
+ 2147 020d 0B       		.uleb128 0xb
+ 2148 020e 49       		.uleb128 0x49
+ 2149 020f 13       		.uleb128 0x13
+ 2150 0210 00       		.byte	0
+ 2151 0211 00       		.byte	0
+ 2152 0212 24       		.uleb128 0x24
+ 2153 0213 0B       		.uleb128 0xb
+ 2154 0214 01       		.byte	0x1
+ 2155 0215 55       		.uleb128 0x55
+ 2156 0216 06       		.uleb128 0x6
+ 2157 0217 00       		.byte	0
+ 2158 0218 00       		.byte	0
+ 2159 0219 00       		.byte	0
+ 2160              		.section	.debug_loc,"",%progbits
+ 2161              	.Ldebug_loc0:
+ 2162              	.LLST17:
+ 2163 0000 D2020000 		.4byte	.LFB71-.Ltext0
+ 2164 0004 D4020000 		.4byte	.LCFI6-.Ltext0
+ 2165 0008 0200     		.2byte	0x2
+ 2166 000a 7D       		.byte	0x7d
+ 2167 000b 00       		.sleb128 0
+ 2168 000c D4020000 		.4byte	.LCFI6-.Ltext0
+ 2169 0010 E8020000 		.4byte	.LFE71-.Ltext0
+ 2170 0014 0200     		.2byte	0x2
+ 2171 0016 7D       		.byte	0x7d
+ 2172 0017 08       		.sleb128 8
+ 2173 0018 00000000 		.4byte	0
+ 2174 001c 00000000 		.4byte	0
+ 2175              	.LLST18:
+ 2176 0020 D2020000 		.4byte	.LVL61-.Ltext0
+ 2177 0024 E1020000 		.4byte	.LVL62-1-.Ltext0
+ 2178 0028 0100     		.2byte	0x1
+ 2179 002a 50       		.byte	0x50
+ 2180 002b E1020000 		.4byte	.LVL62-1-.Ltext0
+ 2181 002f E8020000 		.4byte	.LFE71-.Ltext0
+ 2182 0033 0400     		.2byte	0x4
+ 2183 0035 F3       		.byte	0xf3
+ 2184 0036 01       		.uleb128 0x1
+ 2185 0037 50       		.byte	0x50
+ 2186 0038 9F       		.byte	0x9f
+ 2187 0039 00000000 		.4byte	0
+ 2188 003d 00000000 		.4byte	0
+ 2189              	.LLST15:
+ 2190 0041 A6020000 		.4byte	.LFB70-.Ltext0
+ 2191 0045 AC020000 		.4byte	.LCFI4-.Ltext0
+ 2192 0049 0200     		.2byte	0x2
+ 2193 004b 7D       		.byte	0x7d
+ 2194 004c 00       		.sleb128 0
+ 2195 004d AC020000 		.4byte	.LCFI4-.Ltext0
+ 2196 0051 CE020000 		.4byte	.LCFI5-.Ltext0
+ 2197 0055 0200     		.2byte	0x2
+ARM GAS  /tmp/ccQyBaoj.s 			page 51
+
+
+ 2198 0057 7D       		.byte	0x7d
+ 2199 0058 08       		.sleb128 8
+ 2200 0059 CE020000 		.4byte	.LCFI5-.Ltext0
+ 2201 005d D0020000 		.4byte	.LFE70-.Ltext0
+ 2202 0061 0200     		.2byte	0x2
+ 2203 0063 7D       		.byte	0x7d
+ 2204 0064 00       		.sleb128 0
+ 2205 0065 00000000 		.4byte	0
+ 2206 0069 00000000 		.4byte	0
+ 2207              	.LLST16:
+ 2208 006d A6020000 		.4byte	.LVL58-.Ltext0
+ 2209 0071 C4020000 		.4byte	.LVL59-.Ltext0
+ 2210 0075 0100     		.2byte	0x1
+ 2211 0077 50       		.byte	0x50
+ 2212 0078 C4020000 		.4byte	.LVL59-.Ltext0
+ 2213 007c D0020000 		.4byte	.LFE70-.Ltext0
+ 2214 0080 0400     		.2byte	0x4
+ 2215 0082 F3       		.byte	0xf3
+ 2216 0083 01       		.uleb128 0x1
+ 2217 0084 50       		.byte	0x50
+ 2218 0085 9F       		.byte	0x9f
+ 2219 0086 00000000 		.4byte	0
+ 2220 008a 00000000 		.4byte	0
+ 2221              	.LLST14:
+ 2222 008e 90020000 		.4byte	.LVL53-.Ltext0
+ 2223 0092 92020000 		.4byte	.LVL54-.Ltext0
+ 2224 0096 0100     		.2byte	0x1
+ 2225 0098 51       		.byte	0x51
+ 2226 0099 92020000 		.4byte	.LVL54-.Ltext0
+ 2227 009d 96020000 		.4byte	.LVL55-.Ltext0
+ 2228 00a1 0400     		.2byte	0x4
+ 2229 00a3 F3       		.byte	0xf3
+ 2230 00a4 01       		.uleb128 0x1
+ 2231 00a5 51       		.byte	0x51
+ 2232 00a6 9F       		.byte	0x9f
+ 2233 00a7 96020000 		.4byte	.LVL55-.Ltext0
+ 2234 00ab 98020000 		.4byte	.LVL56-.Ltext0
+ 2235 00af 0100     		.2byte	0x1
+ 2236 00b1 51       		.byte	0x51
+ 2237 00b2 98020000 		.4byte	.LVL56-.Ltext0
+ 2238 00b6 9A020000 		.4byte	.LFE68-.Ltext0
+ 2239 00ba 0400     		.2byte	0x4
+ 2240 00bc F3       		.byte	0xf3
+ 2241 00bd 01       		.uleb128 0x1
+ 2242 00be 51       		.byte	0x51
+ 2243 00bf 9F       		.byte	0x9f
+ 2244 00c0 00000000 		.4byte	0
+ 2245 00c4 00000000 		.4byte	0
+ 2246              	.LLST13:
+ 2247 00c8 84020000 		.4byte	.LVL50-.Ltext0
+ 2248 00cc 8C020000 		.4byte	.LVL52-.Ltext0
+ 2249 00d0 0100     		.2byte	0x1
+ 2250 00d2 50       		.byte	0x50
+ 2251 00d3 8C020000 		.4byte	.LVL52-.Ltext0
+ 2252 00d7 90020000 		.4byte	.LFE67-.Ltext0
+ 2253 00db 0400     		.2byte	0x4
+ 2254 00dd F3       		.byte	0xf3
+ARM GAS  /tmp/ccQyBaoj.s 			page 52
+
+
+ 2255 00de 01       		.uleb128 0x1
+ 2256 00df 50       		.byte	0x50
+ 2257 00e0 9F       		.byte	0x9f
+ 2258 00e1 00000000 		.4byte	0
+ 2259 00e5 00000000 		.4byte	0
+ 2260              	.LLST7:
+ 2261 00e9 B4010000 		.4byte	.LFB66-.Ltext0
+ 2262 00ed B8010000 		.4byte	.LCFI3-.Ltext0
+ 2263 00f1 0200     		.2byte	0x2
+ 2264 00f3 7D       		.byte	0x7d
+ 2265 00f4 00       		.sleb128 0
+ 2266 00f5 B8010000 		.4byte	.LCFI3-.Ltext0
+ 2267 00f9 84020000 		.4byte	.LFE66-.Ltext0
+ 2268 00fd 0200     		.2byte	0x2
+ 2269 00ff 7D       		.byte	0x7d
+ 2270 0100 24       		.sleb128 36
+ 2271 0101 00000000 		.4byte	0
+ 2272 0105 00000000 		.4byte	0
+ 2273              	.LLST8:
+ 2274 0109 B4010000 		.4byte	.LVL33-.Ltext0
+ 2275 010d CC010000 		.4byte	.LVL34-.Ltext0
+ 2276 0111 0200     		.2byte	0x2
+ 2277 0113 30       		.byte	0x30
+ 2278 0114 9F       		.byte	0x9f
+ 2279 0115 CC010000 		.4byte	.LVL34-.Ltext0
+ 2280 0119 84020000 		.4byte	.LFE66-.Ltext0
+ 2281 011d 0100     		.2byte	0x1
+ 2282 011f 53       		.byte	0x53
+ 2283 0120 00000000 		.4byte	0
+ 2284 0124 00000000 		.4byte	0
+ 2285              	.LLST9:
+ 2286 0128 DA010000 		.4byte	.LVL35-.Ltext0
+ 2287 012c DC010000 		.4byte	.LVL36-.Ltext0
+ 2288 0130 0600     		.2byte	0x6
+ 2289 0132 75       		.byte	0x75
+ 2290 0133 00       		.sleb128 0
+ 2291 0134 71       		.byte	0x71
+ 2292 0135 00       		.sleb128 0
+ 2293 0136 1A       		.byte	0x1a
+ 2294 0137 9F       		.byte	0x9f
+ 2295 0138 DC010000 		.4byte	.LVL36-.Ltext0
+ 2296 013c 5E020000 		.4byte	.LVL44-.Ltext0
+ 2297 0140 0100     		.2byte	0x1
+ 2298 0142 55       		.byte	0x55
+ 2299 0143 5E020000 		.4byte	.LVL44-.Ltext0
+ 2300 0147 6E020000 		.4byte	.LVL46-.Ltext0
+ 2301 014b 0400     		.2byte	0x4
+ 2302 014d 76       		.byte	0x76
+ 2303 014e 00       		.sleb128 0
+ 2304 014f 20       		.byte	0x20
+ 2305 0150 9F       		.byte	0x9f
+ 2306 0151 6E020000 		.4byte	.LVL46-.Ltext0
+ 2307 0155 72020000 		.4byte	.LVL48-.Ltext0
+ 2308 0159 0900     		.2byte	0x9
+ 2309 015b 7A       		.byte	0x7a
+ 2310 015c 00       		.sleb128 0
+ 2311 015d 73       		.byte	0x73
+ARM GAS  /tmp/ccQyBaoj.s 			page 53
+
+
+ 2312 015e 00       		.sleb128 0
+ 2313 015f 24       		.byte	0x24
+ 2314 0160 71       		.byte	0x71
+ 2315 0161 00       		.sleb128 0
+ 2316 0162 1A       		.byte	0x1a
+ 2317 0163 9F       		.byte	0x9f
+ 2318 0164 72020000 		.4byte	.LVL48-.Ltext0
+ 2319 0168 74020000 		.4byte	.LVL49-.Ltext0
+ 2320 016c 0900     		.2byte	0x9
+ 2321 016e 7A       		.byte	0x7a
+ 2322 016f 00       		.sleb128 0
+ 2323 0170 73       		.byte	0x73
+ 2324 0171 7F       		.sleb128 -1
+ 2325 0172 24       		.byte	0x24
+ 2326 0173 71       		.byte	0x71
+ 2327 0174 00       		.sleb128 0
+ 2328 0175 1A       		.byte	0x1a
+ 2329 0176 9F       		.byte	0x9f
+ 2330 0177 74020000 		.4byte	.LVL49-.Ltext0
+ 2331 017b 84020000 		.4byte	.LFE66-.Ltext0
+ 2332 017f 0100     		.2byte	0x1
+ 2333 0181 55       		.byte	0x55
+ 2334 0182 00000000 		.4byte	0
+ 2335 0186 00000000 		.4byte	0
+ 2336              	.LLST10:
+ 2337 018a F0010000 		.4byte	.LVL37-.Ltext0
+ 2338 018e FA010000 		.4byte	.LVL38-.Ltext0
+ 2339 0192 0100     		.2byte	0x1
+ 2340 0194 56       		.byte	0x56
+ 2341 0195 FA010000 		.4byte	.LVL38-.Ltext0
+ 2342 0199 1E020000 		.4byte	.LVL39-.Ltext0
+ 2343 019d 0100     		.2byte	0x1
+ 2344 019f 5E       		.byte	0x5e
+ 2345 01a0 1E020000 		.4byte	.LVL39-.Ltext0
+ 2346 01a4 3E020000 		.4byte	.LVL40-.Ltext0
+ 2347 01a8 0100     		.2byte	0x1
+ 2348 01aa 58       		.byte	0x58
+ 2349 01ab 74020000 		.4byte	.LVL49-.Ltext0
+ 2350 01af 84020000 		.4byte	.LFE66-.Ltext0
+ 2351 01b3 0100     		.2byte	0x1
+ 2352 01b5 5E       		.byte	0x5e
+ 2353 01b6 00000000 		.4byte	0
+ 2354 01ba 00000000 		.4byte	0
+ 2355              	.LLST11:
+ 2356 01be 52020000 		.4byte	.LVL41-.Ltext0
+ 2357 01c2 56020000 		.4byte	.LVL42-.Ltext0
+ 2358 01c6 0100     		.2byte	0x1
+ 2359 01c8 50       		.byte	0x50
+ 2360 01c9 56020000 		.4byte	.LVL42-.Ltext0
+ 2361 01cd 70020000 		.4byte	.LVL47-.Ltext0
+ 2362 01d1 0100     		.2byte	0x1
+ 2363 01d3 59       		.byte	0x59
+ 2364 01d4 00000000 		.4byte	0
+ 2365 01d8 00000000 		.4byte	0
+ 2366              	.LLST12:
+ 2367 01dc 5A020000 		.4byte	.LVL43-.Ltext0
+ 2368 01e0 66020000 		.4byte	.LVL45-.Ltext0
+ARM GAS  /tmp/ccQyBaoj.s 			page 54
+
+
+ 2369 01e4 0100     		.2byte	0x1
+ 2370 01e6 54       		.byte	0x54
+ 2371 01e7 00000000 		.4byte	0
+ 2372 01eb 00000000 		.4byte	0
+ 2373              	.LLST0:
+ 2374 01ef 00000000 		.4byte	.LFB65-.Ltext0
+ 2375 01f3 04000000 		.4byte	.LCFI0-.Ltext0
+ 2376 01f7 0200     		.2byte	0x2
+ 2377 01f9 7D       		.byte	0x7d
+ 2378 01fa 00       		.sleb128 0
+ 2379 01fb 04000000 		.4byte	.LCFI0-.Ltext0
+ 2380 01ff 1C000000 		.4byte	.LCFI1-.Ltext0
+ 2381 0203 0200     		.2byte	0x2
+ 2382 0205 7D       		.byte	0x7d
+ 2383 0206 30       		.sleb128 48
+ 2384 0207 1C000000 		.4byte	.LCFI1-.Ltext0
+ 2385 020b 20000000 		.4byte	.LCFI2-.Ltext0
+ 2386 020f 0200     		.2byte	0x2
+ 2387 0211 7D       		.byte	0x7d
+ 2388 0212 24       		.sleb128 36
+ 2389 0213 20000000 		.4byte	.LCFI2-.Ltext0
+ 2390 0217 B4010000 		.4byte	.LFE65-.Ltext0
+ 2391 021b 0200     		.2byte	0x2
+ 2392 021d 7D       		.byte	0x7d
+ 2393 021e 30       		.sleb128 48
+ 2394 021f 00000000 		.4byte	0
+ 2395 0223 00000000 		.4byte	0
+ 2396              	.LLST1:
+ 2397 0227 00000000 		.4byte	.LVL0-.Ltext0
+ 2398 022b 12000000 		.4byte	.LVL1-.Ltext0
+ 2399 022f 0200     		.2byte	0x2
+ 2400 0231 30       		.byte	0x30
+ 2401 0232 9F       		.byte	0x9f
+ 2402 0233 12000000 		.4byte	.LVL1-.Ltext0
+ 2403 0237 B4010000 		.4byte	.LFE65-.Ltext0
+ 2404 023b 0100     		.2byte	0x1
+ 2405 023d 56       		.byte	0x56
+ 2406 023e 00000000 		.4byte	0
+ 2407 0242 00000000 		.4byte	0
+ 2408              	.LLST2:
+ 2409 0246 28000000 		.4byte	.LVL3-.Ltext0
+ 2410 024a 70000000 		.4byte	.LVL7-.Ltext0
+ 2411 024e 0100     		.2byte	0x1
+ 2412 0250 58       		.byte	0x58
+ 2413 0251 70000000 		.4byte	.LVL7-.Ltext0
+ 2414 0255 28010000 		.4byte	.LVL16-.Ltext0
+ 2415 0259 0500     		.2byte	0x5
+ 2416 025b 31       		.byte	0x31
+ 2417 025c 76       		.byte	0x76
+ 2418 025d 00       		.sleb128 0
+ 2419 025e 24       		.byte	0x24
+ 2420 025f 9F       		.byte	0x9f
+ 2421 0260 28010000 		.4byte	.LVL16-.Ltext0
+ 2422 0264 2A010000 		.4byte	.LVL17-.Ltext0
+ 2423 0268 0500     		.2byte	0x5
+ 2424 026a 31       		.byte	0x31
+ 2425 026b 76       		.byte	0x76
+ARM GAS  /tmp/ccQyBaoj.s 			page 55
+
+
+ 2426 026c 7F       		.sleb128 -1
+ 2427 026d 24       		.byte	0x24
+ 2428 026e 9F       		.byte	0x9f
+ 2429 026f 2A010000 		.4byte	.LVL17-.Ltext0
+ 2430 0273 8C010000 		.4byte	.LVL31-.Ltext0
+ 2431 0277 0100     		.2byte	0x1
+ 2432 0279 58       		.byte	0x58
+ 2433 027a 8C010000 		.4byte	.LVL31-.Ltext0
+ 2434 027e 92010000 		.4byte	.LVL32-.Ltext0
+ 2435 0282 0500     		.2byte	0x5
+ 2436 0284 31       		.byte	0x31
+ 2437 0285 76       		.byte	0x76
+ 2438 0286 00       		.sleb128 0
+ 2439 0287 24       		.byte	0x24
+ 2440 0288 9F       		.byte	0x9f
+ 2441 0289 92010000 		.4byte	.LVL32-.Ltext0
+ 2442 028d B4010000 		.4byte	.LFE65-.Ltext0
+ 2443 0291 0600     		.2byte	0x6
+ 2444 0293 75       		.byte	0x75
+ 2445 0294 00       		.sleb128 0
+ 2446 0295 76       		.byte	0x76
+ 2447 0296 00       		.sleb128 0
+ 2448 0297 24       		.byte	0x24
+ 2449 0298 9F       		.byte	0x9f
+ 2450 0299 00000000 		.4byte	0
+ 2451 029d 00000000 		.4byte	0
+ 2452              	.LLST3:
+ 2453 02a1 2C000000 		.4byte	.LVL4-.Ltext0
+ 2454 02a5 20010000 		.4byte	.LVL15-.Ltext0
+ 2455 02a9 0100     		.2byte	0x1
+ 2456 02ab 52       		.byte	0x52
+ 2457 02ac 2A010000 		.4byte	.LVL17-.Ltext0
+ 2458 02b0 B4010000 		.4byte	.LFE65-.Ltext0
+ 2459 02b4 0100     		.2byte	0x1
+ 2460 02b6 52       		.byte	0x52
+ 2461 02b7 00000000 		.4byte	0
+ 2462 02bb 00000000 		.4byte	0
+ 2463              	.LLST4:
+ 2464 02bf BE000000 		.4byte	.LVL10-.Ltext0
+ 2465 02c3 C6000000 		.4byte	.LVL11-.Ltext0
+ 2466 02c7 0100     		.2byte	0x1
+ 2467 02c9 55       		.byte	0x55
+ 2468 02ca C6000000 		.4byte	.LVL11-.Ltext0
+ 2469 02ce E8000000 		.4byte	.LVL12-.Ltext0
+ 2470 02d2 0100     		.2byte	0x1
+ 2471 02d4 59       		.byte	0x59
+ 2472 02d5 E8000000 		.4byte	.LVL12-.Ltext0
+ 2473 02d9 EE000000 		.4byte	.LVL13-.Ltext0
+ 2474 02dd 0100     		.2byte	0x1
+ 2475 02df 55       		.byte	0x55
+ 2476 02e0 EE000000 		.4byte	.LVL13-.Ltext0
+ 2477 02e4 FA000000 		.4byte	.LVL14-.Ltext0
+ 2478 02e8 0200     		.2byte	0x2
+ 2479 02ea 78       		.byte	0x78
+ 2480 02eb 08       		.sleb128 8
+ 2481 02ec 8C010000 		.4byte	.LVL31-.Ltext0
+ 2482 02f0 B4010000 		.4byte	.LFE65-.Ltext0
+ARM GAS  /tmp/ccQyBaoj.s 			page 56
+
+
+ 2483 02f4 0100     		.2byte	0x1
+ 2484 02f6 59       		.byte	0x59
+ 2485 02f7 00000000 		.4byte	0
+ 2486 02fb 00000000 		.4byte	0
+ 2487              	.LLST5:
+ 2488 02ff 00000000 		.4byte	.LVL0-.Ltext0
+ 2489 0303 12000000 		.4byte	.LVL1-.Ltext0
+ 2490 0307 0200     		.2byte	0x2
+ 2491 0309 30       		.byte	0x30
+ 2492 030a 9F       		.byte	0x9f
+ 2493 030b 12000000 		.4byte	.LVL1-.Ltext0
+ 2494 030f 34010000 		.4byte	.LVL18-.Ltext0
+ 2495 0313 0100     		.2byte	0x1
+ 2496 0315 54       		.byte	0x54
+ 2497 0316 36010000 		.4byte	.LVL19-.Ltext0
+ 2498 031a 54010000 		.4byte	.LVL20-.Ltext0
+ 2499 031e 0100     		.2byte	0x1
+ 2500 0320 54       		.byte	0x54
+ 2501 0321 58010000 		.4byte	.LVL21-.Ltext0
+ 2502 0325 66010000 		.4byte	.LVL22-.Ltext0
+ 2503 0329 0200     		.2byte	0x2
+ 2504 032b 38       		.byte	0x38
+ 2505 032c 9F       		.byte	0x9f
+ 2506 032d 66010000 		.4byte	.LVL22-.Ltext0
+ 2507 0331 76010000 		.4byte	.LVL23-.Ltext0
+ 2508 0335 0100     		.2byte	0x1
+ 2509 0337 54       		.byte	0x54
+ 2510 0338 78010000 		.4byte	.LVL24-.Ltext0
+ 2511 033c 7E010000 		.4byte	.LVL26-.Ltext0
+ 2512 0340 0100     		.2byte	0x1
+ 2513 0342 54       		.byte	0x54
+ 2514 0343 80010000 		.4byte	.LVL27-.Ltext0
+ 2515 0347 84010000 		.4byte	.LVL28-.Ltext0
+ 2516 034b 0100     		.2byte	0x1
+ 2517 034d 54       		.byte	0x54
+ 2518 034e 86010000 		.4byte	.LVL29-.Ltext0
+ 2519 0352 88010000 		.4byte	.LVL30-.Ltext0
+ 2520 0356 0100     		.2byte	0x1
+ 2521 0358 54       		.byte	0x54
+ 2522 0359 8C010000 		.4byte	.LVL31-.Ltext0
+ 2523 035d B4010000 		.4byte	.LFE65-.Ltext0
+ 2524 0361 0100     		.2byte	0x1
+ 2525 0363 54       		.byte	0x54
+ 2526 0364 00000000 		.4byte	0
+ 2527 0368 00000000 		.4byte	0
+ 2528              	.LLST6:
+ 2529 036c 62000000 		.4byte	.LVL6-.Ltext0
+ 2530 0370 7E000000 		.4byte	.LVL8-.Ltext0
+ 2531 0374 0100     		.2byte	0x1
+ 2532 0376 50       		.byte	0x50
+ 2533 0377 7E000000 		.4byte	.LVL8-.Ltext0
+ 2534 037b 8A000000 		.4byte	.LVL9-.Ltext0
+ 2535 037f 0100     		.2byte	0x1
+ 2536 0381 5A       		.byte	0x5a
+ 2537 0382 00000000 		.4byte	0
+ 2538 0386 00000000 		.4byte	0
+ 2539              		.section	.debug_aranges,"",%progbits
+ARM GAS  /tmp/ccQyBaoj.s 			page 57
+
+
+ 2540 0000 1C000000 		.4byte	0x1c
+ 2541 0004 0200     		.2byte	0x2
+ 2542 0006 00000000 		.4byte	.Ldebug_info0
+ 2543 000a 04       		.byte	0x4
+ 2544 000b 00       		.byte	0
+ 2545 000c 0000     		.2byte	0
+ 2546 000e 0000     		.2byte	0
+ 2547 0010 00000000 		.4byte	.Ltext0
+ 2548 0014 E8020000 		.4byte	.Letext0-.Ltext0
+ 2549 0018 00000000 		.4byte	0
+ 2550 001c 00000000 		.4byte	0
+ 2551              		.section	.debug_ranges,"",%progbits
+ 2552              	.Ldebug_ranges0:
+ 2553 0000 90000000 		.4byte	.LBB2-.Ltext0
+ 2554 0004 B0000000 		.4byte	.LBE2-.Ltext0
+ 2555 0008 B4000000 		.4byte	.LBB3-.Ltext0
+ 2556 000c B6000000 		.4byte	.LBE3-.Ltext0
+ 2557 0010 00000000 		.4byte	0
+ 2558 0014 00000000 		.4byte	0
+ 2559              		.section	.debug_line,"",%progbits
+ 2560              	.Ldebug_line0:
+ 2561 0000 56020000 		.section	.debug_str,"MS",%progbits,1
+ 2561      02002801 
+ 2561      00000201 
+ 2561      FB0E0D00 
+ 2561      01010101 
+ 2562              	.LASF28:
+ 2563 0000 4750494F 		.ascii	"GPIO_TypeDef\000"
+ 2563      5F547970 
+ 2563      65446566 
+ 2563      00
+ 2564              	.LASF65:
+ 2565 000d 4750494F 		.ascii	"GPIO_Pin\000"
+ 2565      5F50696E 
+ 2565      00
+ 2566              	.LASF47:
+ 2567 0016 48414C5F 		.ascii	"HAL_TIMEOUT\000"
+ 2567      54494D45 
+ 2567      4F555400 
+ 2568              	.LASF78:
+ 2569 0022 48414C5F 		.ascii	"HAL_GPIO_Init\000"
+ 2569      4750494F 
+ 2569      5F496E69 
+ 2569      7400
+ 2570              	.LASF53:
+ 2571 0030 4750494F 		.ascii	"GPIO_PIN_RESET\000"
+ 2571      5F50494E 
+ 2571      5F524553 
+ 2571      455400
+ 2572              	.LASF56:
+ 2573 003f 48414C5F 		.ascii	"HAL_TICK_FREQ_10HZ\000"
+ 2573      5449434B 
+ 2573      5F465245 
+ 2573      515F3130 
+ 2573      485A00
+ 2574              	.LASF70:
+ 2575 0052 48414C5F 		.ascii	"HAL_GPIO_LockPin\000"
+ARM GAS  /tmp/ccQyBaoj.s 			page 58
+
+
+ 2575      4750494F 
+ 2575      5F4C6F63 
+ 2575      6B50696E 
+ 2575      00
+ 2576              	.LASF81:
+ 2577 0063 74656D70 		.ascii	"temp\000"
+ 2577      00
+ 2578              	.LASF2:
+ 2579 0068 73686F72 		.ascii	"short int\000"
+ 2579      7420696E 
+ 2579      7400
+ 2580              	.LASF17:
+ 2581 0072 73697A65 		.ascii	"sizetype\000"
+ 2581      74797065 
+ 2581      00
+ 2582              	.LASF41:
+ 2583 007b 42444352 		.ascii	"BDCR\000"
+ 2583      00
+ 2584              	.LASF80:
+ 2585 0080 696F706F 		.ascii	"ioposition\000"
+ 2585      73697469 
+ 2585      6F6E00
+ 2586              	.LASF50:
+ 2587 008b 50756C6C 		.ascii	"Pull\000"
+ 2587      00
+ 2588              	.LASF10:
+ 2589 0090 6C6F6E67 		.ascii	"long long int\000"
+ 2589      206C6F6E 
+ 2589      6720696E 
+ 2589      7400
+ 2590              	.LASF8:
+ 2591 009e 5F5F7569 		.ascii	"__uint32_t\000"
+ 2591      6E743332 
+ 2591      5F7400
+ 2592              	.LASF37:
+ 2593 00a9 41504231 		.ascii	"APB1RSTR\000"
+ 2593      52535452 
+ 2593      00
+ 2594              	.LASF4:
+ 2595 00b2 5F5F7569 		.ascii	"__uint16_t\000"
+ 2595      6E743136 
+ 2595      5F7400
+ 2596              	.LASF26:
+ 2597 00bd 42535252 		.ascii	"BSRR\000"
+ 2597      00
+ 2598              	.LASF61:
+ 2599 00c2 75775469 		.ascii	"uwTickPrio\000"
+ 2599      636B5072 
+ 2599      696F00
+ 2600              	.LASF84:
+ 2601 00cd 474E5520 		.ascii	"GNU C11 6.3.1 20170620 -mcpu=cortex-m3 -mthumb -g -"
+ 2601      43313120 
+ 2601      362E332E 
+ 2601      31203230 
+ 2601      31373036 
+ 2602 0100 67647761 		.ascii	"gdwarf-2 -Os -fomit-frame-pointer\000"
+ 2602      72662D32 
+ARM GAS  /tmp/ccQyBaoj.s 			page 59
+
+
+ 2602      202D4F73 
+ 2602      202D666F 
+ 2602      6D69742D 
+ 2603              	.LASF82:
+ 2604 0122 636F6E66 		.ascii	"config\000"
+ 2604      696700
+ 2605              	.LASF44:
+ 2606 0129 48414C5F 		.ascii	"HAL_OK\000"
+ 2606      4F4B00
+ 2607              	.LASF79:
+ 2608 0130 4750494F 		.ascii	"GPIO_Init\000"
+ 2608      5F496E69 
+ 2608      7400
+ 2609              	.LASF13:
+ 2610 013a 75696E74 		.ascii	"uint8_t\000"
+ 2610      385F7400 
+ 2611              	.LASF31:
+ 2612 0142 45585449 		.ascii	"EXTICR\000"
+ 2612      435200
+ 2613              	.LASF40:
+ 2614 0149 41504231 		.ascii	"APB1ENR\000"
+ 2614      454E5200 
+ 2615              	.LASF20:
+ 2616 0151 41484250 		.ascii	"AHBPrescTable\000"
+ 2616      72657363 
+ 2616      5461626C 
+ 2616      6500
+ 2617              	.LASF46:
+ 2618 015f 48414C5F 		.ascii	"HAL_BUSY\000"
+ 2618      42555359 
+ 2618      00
+ 2619              	.LASF0:
+ 2620 0168 7369676E 		.ascii	"signed char\000"
+ 2620      65642063 
+ 2620      68617200 
+ 2621              	.LASF42:
+ 2622 0174 5243435F 		.ascii	"RCC_TypeDef\000"
+ 2622      54797065 
+ 2622      44656600 
+ 2623              	.LASF54:
+ 2624 0180 4750494F 		.ascii	"GPIO_PIN_SET\000"
+ 2624      5F50494E 
+ 2624      5F534554 
+ 2624      00
+ 2625              	.LASF11:
+ 2626 018d 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2626      206C6F6E 
+ 2626      6720756E 
+ 2626      7369676E 
+ 2626      65642069 
+ 2627              	.LASF21:
+ 2628 01a4 41504250 		.ascii	"APBPrescTable\000"
+ 2628      72657363 
+ 2628      5461626C 
+ 2628      6500
+ 2629              	.LASF60:
+ 2630 01b2 48414C5F 		.ascii	"HAL_TickFreqTypeDef\000"
+ARM GAS  /tmp/ccQyBaoj.s 			page 60
+
+
+ 2630      5469636B 
+ 2630      46726571 
+ 2630      54797065 
+ 2630      44656600 
+ 2631              	.LASF25:
+ 2632 01c6 45585449 		.ascii	"EXTI_TypeDef\000"
+ 2632      5F547970 
+ 2632      65446566 
+ 2632      00
+ 2633              	.LASF7:
+ 2634 01d3 6C6F6E67 		.ascii	"long int\000"
+ 2634      20696E74 
+ 2634      00
+ 2635              	.LASF71:
+ 2636 01dc 48414C5F 		.ascii	"HAL_GPIO_ReadPin\000"
+ 2636      4750494F 
+ 2636      5F526561 
+ 2636      6450696E 
+ 2636      00
+ 2637              	.LASF38:
+ 2638 01ed 41484245 		.ascii	"AHBENR\000"
+ 2638      4E5200
+ 2639              	.LASF36:
+ 2640 01f4 41504232 		.ascii	"APB2RSTR\000"
+ 2640      52535452 
+ 2640      00
+ 2641              	.LASF3:
+ 2642 01fd 5F5F7569 		.ascii	"__uint8_t\000"
+ 2642      6E74385F 
+ 2642      7400
+ 2643              	.LASF85:
+ 2644 0207 7372632F 		.ascii	"src/stm32f1xx_hal_gpio.c\000"
+ 2644      73746D33 
+ 2644      32663178 
+ 2644      785F6861 
+ 2644      6C5F6770 
+ 2645              	.LASF48:
+ 2646 0220 48414C5F 		.ascii	"HAL_StatusTypeDef\000"
+ 2646      53746174 
+ 2646      75735479 
+ 2646      70654465 
+ 2646      6600
+ 2647              	.LASF83:
+ 2648 0232 746D7072 		.ascii	"tmpreg\000"
+ 2648      656700
+ 2649              	.LASF72:
+ 2650 0239 62697473 		.ascii	"bitstatus\000"
+ 2650      74617475 
+ 2650      7300
+ 2651              	.LASF43:
+ 2652 0243 6C6F6E67 		.ascii	"long double\000"
+ 2652      20646F75 
+ 2652      626C6500 
+ 2653              	.LASF45:
+ 2654 024f 48414C5F 		.ascii	"HAL_ERROR\000"
+ 2654      4552524F 
+ 2654      5200
+ARM GAS  /tmp/ccQyBaoj.s 			page 61
+
+
+ 2655              	.LASF68:
+ 2656 0259 48414C5F 		.ascii	"HAL_GPIO_WritePin\000"
+ 2656      4750494F 
+ 2656      5F577269 
+ 2656      74655069 
+ 2656      6E00
+ 2657              	.LASF1:
+ 2658 026b 756E7369 		.ascii	"unsigned char\000"
+ 2658      676E6564 
+ 2658      20636861 
+ 2658      7200
+ 2659              	.LASF86:
+ 2660 0279 2F686F6D 		.ascii	"/home/berndoj/git/stm32tctst/lib/stm32f1hal\000"
+ 2660      652F6265 
+ 2660      726E646F 
+ 2660      6A2F6769 
+ 2660      742F7374 
+ 2661              	.LASF39:
+ 2662 02a5 41504232 		.ascii	"APB2ENR\000"
+ 2662      454E5200 
+ 2663              	.LASF63:
+ 2664 02ad 48414C5F 		.ascii	"HAL_GPIO_EXTI_Callback\000"
+ 2664      4750494F 
+ 2664      5F455854 
+ 2664      495F4361 
+ 2664      6C6C6261 
+ 2665              	.LASF67:
+ 2666 02c4 48414C5F 		.ascii	"HAL_GPIO_TogglePin\000"
+ 2666      4750494F 
+ 2666      5F546F67 
+ 2666      676C6550 
+ 2666      696E00
+ 2667              	.LASF16:
+ 2668 02d7 75696E74 		.ascii	"uint32_t\000"
+ 2668      33325F74 
+ 2668      00
+ 2669              	.LASF52:
+ 2670 02e0 4750494F 		.ascii	"GPIO_InitTypeDef\000"
+ 2670      5F496E69 
+ 2670      74547970 
+ 2670      65446566 
+ 2670      00
+ 2671              	.LASF62:
+ 2672 02f1 75775469 		.ascii	"uwTickFreq\000"
+ 2672      636B4672 
+ 2672      657100
+ 2673              	.LASF12:
+ 2674 02fc 756E7369 		.ascii	"unsigned int\000"
+ 2674      676E6564 
+ 2674      20696E74 
+ 2674      00
+ 2675              	.LASF23:
+ 2676 0309 46545352 		.ascii	"FTSR\000"
+ 2676      00
+ 2677              	.LASF35:
+ 2678 030e 43464752 		.ascii	"CFGR\000"
+ 2678      00
+ARM GAS  /tmp/ccQyBaoj.s 			page 62
+
+
+ 2679              	.LASF58:
+ 2680 0313 48414C5F 		.ascii	"HAL_TICK_FREQ_1KHZ\000"
+ 2680      5449434B 
+ 2680      5F465245 
+ 2680      515F314B 
+ 2680      485A00
+ 2681              	.LASF64:
+ 2682 0326 48414C5F 		.ascii	"HAL_GPIO_EXTI_IRQHandler\000"
+ 2682      4750494F 
+ 2682      5F455854 
+ 2682      495F4952 
+ 2682      5148616E 
+ 2683              	.LASF75:
+ 2684 033f 696F6375 		.ascii	"iocurrent\000"
+ 2684      7272656E 
+ 2684      7400
+ 2685              	.LASF14:
+ 2686 0349 75696E74 		.ascii	"uint16_t\000"
+ 2686      31365F74 
+ 2686      00
+ 2687              	.LASF15:
+ 2688 0352 696E7433 		.ascii	"int32_t\000"
+ 2688      325F7400 
+ 2689              	.LASF5:
+ 2690 035a 73686F72 		.ascii	"short unsigned int\000"
+ 2690      7420756E 
+ 2690      7369676E 
+ 2690      65642069 
+ 2690      6E7400
+ 2691              	.LASF22:
+ 2692 036d 52545352 		.ascii	"RTSR\000"
+ 2692      00
+ 2693              	.LASF69:
+ 2694 0372 50696E53 		.ascii	"PinState\000"
+ 2694      74617465 
+ 2694      00
+ 2695              	.LASF19:
+ 2696 037b 53797374 		.ascii	"SystemCoreClock\000"
+ 2696      656D436F 
+ 2696      7265436C 
+ 2696      6F636B00 
+ 2697              	.LASF57:
+ 2698 038b 48414C5F 		.ascii	"HAL_TICK_FREQ_100HZ\000"
+ 2698      5449434B 
+ 2698      5F465245 
+ 2698      515F3130 
+ 2698      30485A00 
+ 2699              	.LASF33:
+ 2700 039f 4D415052 		.ascii	"MAPR2\000"
+ 2700      3200
+ 2701              	.LASF32:
+ 2702 03a5 52455345 		.ascii	"RESERVED0\000"
+ 2702      52564544 
+ 2702      3000
+ 2703              	.LASF9:
+ 2704 03af 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2704      20756E73 
+ARM GAS  /tmp/ccQyBaoj.s 			page 63
+
+
+ 2704      69676E65 
+ 2704      6420696E 
+ 2704      7400
+ 2705              	.LASF34:
+ 2706 03c1 4146494F 		.ascii	"AFIO_TypeDef\000"
+ 2706      5F547970 
+ 2706      65446566 
+ 2706      00
+ 2707              	.LASF30:
+ 2708 03ce 4D415052 		.ascii	"MAPR\000"
+ 2708      00
+ 2709              	.LASF66:
+ 2710 03d3 4750494F 		.ascii	"GPIOx\000"
+ 2710      7800
+ 2711              	.LASF29:
+ 2712 03d9 45564352 		.ascii	"EVCR\000"
+ 2712      00
+ 2713              	.LASF6:
+ 2714 03de 5F5F696E 		.ascii	"__int32_t\000"
+ 2714      7433325F 
+ 2714      7400
+ 2715              	.LASF51:
+ 2716 03e8 53706565 		.ascii	"Speed\000"
+ 2716      6400
+ 2717              	.LASF49:
+ 2718 03ee 4D6F6465 		.ascii	"Mode\000"
+ 2718      00
+ 2719              	.LASF77:
+ 2720 03f3 72656769 		.ascii	"registeroffset\000"
+ 2720      73746572 
+ 2720      6F666673 
+ 2720      657400
+ 2721              	.LASF74:
+ 2722 0402 706F7369 		.ascii	"position\000"
+ 2722      74696F6E 
+ 2722      00
+ 2723              	.LASF73:
+ 2724 040b 48414C5F 		.ascii	"HAL_GPIO_DeInit\000"
+ 2724      4750494F 
+ 2724      5F446549 
+ 2724      6E697400 
+ 2725              	.LASF18:
+ 2726 041b 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 2726      52784275 
+ 2726      66666572 
+ 2726      00
+ 2727              	.LASF55:
+ 2728 0428 4750494F 		.ascii	"GPIO_PinState\000"
+ 2728      5F50696E 
+ 2728      53746174 
+ 2728      6500
+ 2729              	.LASF27:
+ 2730 0436 4C434B52 		.ascii	"LCKR\000"
+ 2730      00
+ 2731              	.LASF76:
+ 2732 043b 636F6E66 		.ascii	"configregister\000"
+ 2732      69677265 
+ARM GAS  /tmp/ccQyBaoj.s 			page 64
+
+
+ 2732      67697374 
+ 2732      657200
+ 2733              	.LASF59:
+ 2734 044a 48414C5F 		.ascii	"HAL_TICK_FREQ_DEFAULT\000"
+ 2734      5449434B 
+ 2734      5F465245 
+ 2734      515F4445 
+ 2734      4641554C 
+ 2735              	.LASF24:
+ 2736 0460 53574945 		.ascii	"SWIER\000"
+ 2736      5200
+ 2737              		.ident	"GCC: (15:6.3.1+svn253039-1build1) 6.3.1 20170620"
+ARM GAS  /tmp/ccQyBaoj.s 			page 65
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 stm32f1xx_hal_gpio.c
+     /tmp/ccQyBaoj.s:69     .text:0000000000000000 $t
+     /tmp/ccQyBaoj.s:76     .text:0000000000000000 HAL_GPIO_Init
+     /tmp/ccQyBaoj.s:372    .text:0000000000000194 $d
+     /tmp/ccQyBaoj.s:383    .text:00000000000001b4 $t
+     /tmp/ccQyBaoj.s:390    .text:00000000000001b4 HAL_GPIO_DeInit
+     /tmp/ccQyBaoj.s:537    .text:000000000000027c $d
+     /tmp/ccQyBaoj.s:542    .text:0000000000000284 $t
+     /tmp/ccQyBaoj.s:549    .text:0000000000000284 HAL_GPIO_ReadPin
+     /tmp/ccQyBaoj.s:577    .text:0000000000000290 HAL_GPIO_WritePin
+     /tmp/ccQyBaoj.s:607    .text:000000000000029a HAL_GPIO_TogglePin
+     /tmp/ccQyBaoj.s:634    .text:00000000000002a6 HAL_GPIO_LockPin
+     /tmp/ccQyBaoj.s:686    .text:00000000000002d0 HAL_GPIO_EXTI_Callback
+     /tmp/ccQyBaoj.s:705    .text:00000000000002d2 HAL_GPIO_EXTI_IRQHandler
+     /tmp/ccQyBaoj.s:733    .text:00000000000002e4 $d
+                     .debug_frame:0000000000000010 $d
+
+NO UNDEFINED SYMBOLS

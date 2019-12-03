@@ -1,0 +1,884 @@
+ARM GAS  /tmp/cceaDMlx.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1	@ Tag_ABI_FP_denormal
+   3              		.eabi_attribute 21, 1	@ Tag_ABI_FP_exceptions
+   4              		.eabi_attribute 23, 3	@ Tag_ABI_FP_number_model
+   5              		.eabi_attribute 24, 1	@ Tag_ABI_align8_needed
+   6              		.eabi_attribute 25, 1	@ Tag_ABI_align8_preserved
+   7              		.eabi_attribute 26, 1	@ Tag_ABI_enum_size
+   8              		.eabi_attribute 30, 4	@ Tag_ABI_optimization_goals
+   9              		.eabi_attribute 34, 1	@ Tag_CPU_unaligned_access
+  10              		.eabi_attribute 18, 4	@ Tag_ABI_PCS_wchar_t
+  11              		.file	"stm32f1xx_hal_msp_template.c"
+  12              	@ GNU C11 (15:6.3.1+svn253039-1build1) version 6.3.1 20170620 (arm-none-eabi)
+  13              	@	compiled by GNU C version 7.2.0, GMP version 6.1.2, MPFR version 4.0.1-rc1, MPC version 1.1.0, is
+  14              	@ warning: MPFR header version 4.0.1-rc1 differs from library version 4.0.1.
+  15              	@ GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+  16              	@ options passed:  -I ./inc -I ./inc/Legacy -I ../cmsisstm32f1xx/inc
+  17              	@ -I ../cmsiscore/inc -imultilib thumb/v7-m -D__USES_INITFINI__
+  18              	@ -D STM32F103x6 -D RUN_FROM_FLASH=1 -D __c
+  19              	@ src/stm32f1xx_hal_msp_template.c -mcpu=cortex-m3 -mthumb
+  20              	@ -auxbase-strip bin/stm32f1xx_hal_msp_template.o -g -gdwarf-2 -Os -Wall
+  21              	@ -fomit-frame-pointer -fverbose-asm
+  22              	@ options enabled:  -faggressive-loop-optimizations -falign-jumps
+  23              	@ -falign-labels -falign-loops -fauto-inc-dec -fbranch-count-reg
+  24              	@ -fcaller-saves -fchkp-check-incomplete-type -fchkp-check-read
+  25              	@ -fchkp-check-write -fchkp-instrument-calls -fchkp-narrow-bounds
+  26              	@ -fchkp-optimize -fchkp-store-bounds -fchkp-use-static-bounds
+  27              	@ -fchkp-use-static-const-bounds -fchkp-use-wrappers
+  28              	@ -fcombine-stack-adjustments -fcommon -fcompare-elim -fcprop-registers
+  29              	@ -fcrossjumping -fcse-follow-jumps -fdefer-pop
+  30              	@ -fdelete-null-pointer-checks -fdevirtualize -fdevirtualize-speculatively
+  31              	@ -fdwarf2-cfi-asm -fearly-inlining -feliminate-unused-debug-types
+  32              	@ -fexpensive-optimizations -fforward-propagate -ffunction-cse -fgcse
+  33              	@ -fgcse-lm -fgnu-runtime -fgnu-unique -fguess-branch-probability
+  34              	@ -fhoist-adjacent-loads -fident -fif-conversion -fif-conversion2
+  35              	@ -findirect-inlining -finline -finline-atomics -finline-functions
+  36              	@ -finline-functions-called-once -finline-small-functions -fipa-cp
+  37              	@ -fipa-cp-alignment -fipa-icf -fipa-icf-functions -fipa-icf-variables
+  38              	@ -fipa-profile -fipa-pure-const -fipa-ra -fipa-reference -fipa-sra
+  39              	@ -fira-hoist-pressure -fira-share-save-slots -fira-share-spill-slots
+  40              	@ -fisolate-erroneous-paths-dereference -fivopts -fkeep-static-consts
+  41              	@ -fleading-underscore -flifetime-dse -flra-remat -flto-odr-type-merging
+  42              	@ -fmath-errno -fmerge-constants -fmerge-debug-strings
+  43              	@ -fmove-loop-invariants -fomit-frame-pointer -foptimize-sibling-calls
+  44              	@ -fpartial-inlining -fpeephole -fpeephole2 -fplt -fprefetch-loop-arrays
+  45              	@ -freg-struct-return -freorder-blocks -freorder-functions
+  46              	@ -frerun-cse-after-loop -fsched-critical-path-heuristic
+  47              	@ -fsched-dep-count-heuristic -fsched-group-heuristic -fsched-interblock
+  48              	@ -fsched-last-insn-heuristic -fsched-pressure -fsched-rank-heuristic
+  49              	@ -fsched-spec -fsched-spec-insn-heuristic -fsched-stalled-insns-dep
+  50              	@ -fschedule-insns2 -fsection-anchors -fsemantic-interposition
+  51              	@ -fshow-column -fsigned-zeros -fsplit-ivs-in-unroller -fsplit-wide-types
+  52              	@ -fssa-backprop -fssa-phiopt -fstdarg-opt -fstrict-aliasing
+  53              	@ -fstrict-overflow -fstrict-volatile-bitfields -fsync-libcalls
+  54              	@ -fthread-jumps -ftoplevel-reorder -ftrapping-math -ftree-bit-ccp
+  55              	@ -ftree-builtin-call-dce -ftree-ccp -ftree-ch -ftree-coalesce-vars
+  56              	@ -ftree-copy-prop -ftree-cselim -ftree-dce -ftree-dominator-opts
+  57              	@ -ftree-dse -ftree-forwprop -ftree-fre -ftree-loop-if-convert
+ARM GAS  /tmp/cceaDMlx.s 			page 2
+
+
+  58              	@ -ftree-loop-im -ftree-loop-ivcanon -ftree-loop-optimize
+  59              	@ -ftree-parallelize-loops= -ftree-phiprop -ftree-pre -ftree-pta
+  60              	@ -ftree-reassoc -ftree-scev-cprop -ftree-sink -ftree-slsr -ftree-sra
+  61              	@ -ftree-switch-conversion -ftree-tail-merge -ftree-ter -ftree-vrp
+  62              	@ -funit-at-a-time -fvar-tracking -fvar-tracking-assignments -fverbose-asm
+  63              	@ -fzero-initialized-in-bss -masm-syntax-unified -mfix-cortex-m3-ldrd
+  64              	@ -mlittle-endian -mpic-data-is-text-relative -msched-prolog -mthumb
+  65              	@ -munaligned-access -mvectorize-with-neon-quad
+  66              	
+  67              		.text
+  68              	.Ltext0:
+  69              		.cfi_sections	.debug_frame
+  70              		.align	1
+  71              		.global	HAL_MspInit
+  72              		.syntax unified
+  73              		.thumb
+  74              		.thumb_func
+  75              		.fpu softvfp
+  76              		.type	HAL_MspInit, %function
+  77              	HAL_MspInit:
+  78              	.LFB74:
+  79              		.cfi_startproc
+  80              		@ args = 0, pretend = 0, frame = 0
+  81              		@ frame_needed = 0, uses_anonymous_args = 0
+  82              		@ link register save eliminated.
+  83 0000 7047     		bx	lr	@
+  84              		.cfi_endproc
+  85              	.LFE74:
+  86              		.size	HAL_MspInit, .-HAL_MspInit
+  87              		.align	1
+  88              		.global	HAL_MspDeInit
+  89              		.syntax unified
+  90              		.thumb
+  91              		.thumb_func
+  92              		.fpu softvfp
+  93              		.type	HAL_MspDeInit, %function
+  94              	HAL_MspDeInit:
+  95              	.LFB72:
+  96              		.cfi_startproc
+  97              		@ args = 0, pretend = 0, frame = 0
+  98              		@ frame_needed = 0, uses_anonymous_args = 0
+  99              		@ link register save eliminated.
+ 100 0002 7047     		bx	lr	@
+ 101              		.cfi_endproc
+ 102              	.LFE72:
+ 103              		.size	HAL_MspDeInit, .-HAL_MspDeInit
+ 104              		.align	1
+ 105              		.global	HAL_PPP_MspInit
+ 106              		.syntax unified
+ 107              		.thumb
+ 108              		.thumb_func
+ 109              		.fpu softvfp
+ 110              		.type	HAL_PPP_MspInit, %function
+ 111              	HAL_PPP_MspInit:
+ 112              	.LFB70:
+ 113              		.cfi_startproc
+ 114              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  /tmp/cceaDMlx.s 			page 3
+
+
+ 115              		@ frame_needed = 0, uses_anonymous_args = 0
+ 116              		@ link register save eliminated.
+ 117 0004 7047     		bx	lr	@
+ 118              		.cfi_endproc
+ 119              	.LFE70:
+ 120              		.size	HAL_PPP_MspInit, .-HAL_PPP_MspInit
+ 121              		.align	1
+ 122              		.global	HAL_PPP_MspDeInit
+ 123              		.syntax unified
+ 124              		.thumb
+ 125              		.thumb_func
+ 126              		.fpu softvfp
+ 127              		.type	HAL_PPP_MspDeInit, %function
+ 128              	HAL_PPP_MspDeInit:
+ 129              	.LFB68:
+ 130              		.file 1 "src/stm32f1xx_hal_msp_template.c"
+   1:src/stm32f1xx_hal_msp_template.c **** /**
+   2:src/stm32f1xx_hal_msp_template.c ****   ******************************************************************************
+   3:src/stm32f1xx_hal_msp_template.c ****   * @file    stm32f1xx_hal_msp_template.c
+   4:src/stm32f1xx_hal_msp_template.c ****   * @author  MCD Application Team
+   5:src/stm32f1xx_hal_msp_template.c ****   * @brief   HAL BSP module.
+   6:src/stm32f1xx_hal_msp_template.c ****   *          This file template is located in the HAL folder and should be copied
+   7:src/stm32f1xx_hal_msp_template.c ****   *          to the user folder.
+   8:src/stm32f1xx_hal_msp_template.c ****   ******************************************************************************
+   9:src/stm32f1xx_hal_msp_template.c ****   * @attention
+  10:src/stm32f1xx_hal_msp_template.c ****   *
+  11:src/stm32f1xx_hal_msp_template.c ****   * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics.
+  12:src/stm32f1xx_hal_msp_template.c ****   * All rights reserved.</center></h2>
+  13:src/stm32f1xx_hal_msp_template.c ****   *
+  14:src/stm32f1xx_hal_msp_template.c ****   * This software component is licensed by ST under BSD 3-Clause license,
+  15:src/stm32f1xx_hal_msp_template.c ****   * the "License"; You may not use this file except in compliance with the
+  16:src/stm32f1xx_hal_msp_template.c ****   * License. You may obtain a copy of the License at:
+  17:src/stm32f1xx_hal_msp_template.c ****   *                        opensource.org/licenses/BSD-3-Clause
+  18:src/stm32f1xx_hal_msp_template.c ****   *
+  19:src/stm32f1xx_hal_msp_template.c ****   ******************************************************************************
+  20:src/stm32f1xx_hal_msp_template.c ****   */
+  21:src/stm32f1xx_hal_msp_template.c **** 
+  22:src/stm32f1xx_hal_msp_template.c **** /* Includes ------------------------------------------------------------------*/
+  23:src/stm32f1xx_hal_msp_template.c **** #include "stm32f1xx_hal.h"
+  24:src/stm32f1xx_hal_msp_template.c **** 
+  25:src/stm32f1xx_hal_msp_template.c **** /** @addtogroup STM32F1xx_HAL_Driver
+  26:src/stm32f1xx_hal_msp_template.c ****   * @{
+  27:src/stm32f1xx_hal_msp_template.c ****   */
+  28:src/stm32f1xx_hal_msp_template.c **** 
+  29:src/stm32f1xx_hal_msp_template.c **** /** @defgroup HAL_MSP HAL_MSP
+  30:src/stm32f1xx_hal_msp_template.c ****   * @brief HAL MSP module.
+  31:src/stm32f1xx_hal_msp_template.c ****   * @{
+  32:src/stm32f1xx_hal_msp_template.c ****   */
+  33:src/stm32f1xx_hal_msp_template.c **** 
+  34:src/stm32f1xx_hal_msp_template.c **** /* Private typedef -----------------------------------------------------------*/
+  35:src/stm32f1xx_hal_msp_template.c **** /* Private define ------------------------------------------------------------*/
+  36:src/stm32f1xx_hal_msp_template.c **** /* Private macro -------------------------------------------------------------*/
+  37:src/stm32f1xx_hal_msp_template.c **** /* Private variables ---------------------------------------------------------*/
+  38:src/stm32f1xx_hal_msp_template.c **** /* Private function prototypes -----------------------------------------------*/
+  39:src/stm32f1xx_hal_msp_template.c **** /* Private functions ---------------------------------------------------------*/
+  40:src/stm32f1xx_hal_msp_template.c **** 
+  41:src/stm32f1xx_hal_msp_template.c **** /** @defgroup HAL_MSP_Exported_Functions HAL MSP Exported Functions
+ARM GAS  /tmp/cceaDMlx.s 			page 4
+
+
+  42:src/stm32f1xx_hal_msp_template.c ****   * @{
+  43:src/stm32f1xx_hal_msp_template.c ****   */
+  44:src/stm32f1xx_hal_msp_template.c **** 
+  45:src/stm32f1xx_hal_msp_template.c **** /**
+  46:src/stm32f1xx_hal_msp_template.c ****   * @brief  Initializes the Global MSP.
+  47:src/stm32f1xx_hal_msp_template.c ****   * @retval None
+  48:src/stm32f1xx_hal_msp_template.c ****   */
+  49:src/stm32f1xx_hal_msp_template.c **** void HAL_MspInit(void)
+  50:src/stm32f1xx_hal_msp_template.c **** {
+  51:src/stm32f1xx_hal_msp_template.c **** 
+  52:src/stm32f1xx_hal_msp_template.c **** }
+  53:src/stm32f1xx_hal_msp_template.c **** 
+  54:src/stm32f1xx_hal_msp_template.c **** /**
+  55:src/stm32f1xx_hal_msp_template.c ****   * @brief  DeInitializes the Global MSP.
+  56:src/stm32f1xx_hal_msp_template.c ****   * @retval None
+  57:src/stm32f1xx_hal_msp_template.c ****   */
+  58:src/stm32f1xx_hal_msp_template.c **** void HAL_MspDeInit(void)
+  59:src/stm32f1xx_hal_msp_template.c **** {
+  60:src/stm32f1xx_hal_msp_template.c **** 
+  61:src/stm32f1xx_hal_msp_template.c **** }
+  62:src/stm32f1xx_hal_msp_template.c **** 
+  63:src/stm32f1xx_hal_msp_template.c **** /**
+  64:src/stm32f1xx_hal_msp_template.c ****   * @brief  Initializes the PPP MSP.
+  65:src/stm32f1xx_hal_msp_template.c ****   * @retval None
+  66:src/stm32f1xx_hal_msp_template.c ****   */
+  67:src/stm32f1xx_hal_msp_template.c **** void HAL_PPP_MspInit(void)
+  68:src/stm32f1xx_hal_msp_template.c **** {
+  69:src/stm32f1xx_hal_msp_template.c **** 
+  70:src/stm32f1xx_hal_msp_template.c **** }
+  71:src/stm32f1xx_hal_msp_template.c **** 
+  72:src/stm32f1xx_hal_msp_template.c **** /**
+  73:src/stm32f1xx_hal_msp_template.c ****   * @brief  DeInitializes the PPP MSP.
+  74:src/stm32f1xx_hal_msp_template.c ****   * @retval None
+  75:src/stm32f1xx_hal_msp_template.c ****   */
+  76:src/stm32f1xx_hal_msp_template.c **** void HAL_PPP_MspDeInit(void)
+  77:src/stm32f1xx_hal_msp_template.c **** {
+ 131              		.loc 1 77 0
+ 132              		.cfi_startproc
+ 133              		@ args = 0, pretend = 0, frame = 0
+ 134              		@ frame_needed = 0, uses_anonymous_args = 0
+ 135              		@ link register save eliminated.
+ 136 0006 7047     		bx	lr	@
+ 137              		.cfi_endproc
+ 138              	.LFE68:
+ 139              		.size	HAL_PPP_MspDeInit, .-HAL_PPP_MspDeInit
+ 140              	.Letext0:
+ 141              		.file 2 "/usr/include/newlib/machine/_default_types.h"
+ 142              		.file 3 "/usr/include/newlib/sys/_stdint.h"
+ 143              		.file 4 "../cmsiscore/inc/core_cm3.h"
+ 144              		.file 5 "../cmsisstm32f1xx/inc/system_stm32f1xx.h"
+ 145              		.file 6 "./inc/stm32f1xx_hal.h"
+ 146              		.section	.debug_info,"",%progbits
+ 147              	.Ldebug_info0:
+ 148 0000 A1010000 		.4byte	0x1a1
+ 149 0004 0200     		.2byte	0x2
+ 150 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 151 000a 04       		.byte	0x4
+ARM GAS  /tmp/cceaDMlx.s 			page 5
+
+
+ 152 000b 01       		.uleb128 0x1
+ 153 000c 2B010000 		.4byte	.LASF31
+ 154 0010 0C       		.byte	0xc
+ 155 0011 DD000000 		.4byte	.LASF32
+ 156 0015 21000000 		.4byte	.LASF33
+ 157 0019 00000000 		.4byte	.Ltext0
+ 158 001d 08000000 		.4byte	.Letext0
+ 159 0021 00000000 		.4byte	.Ldebug_line0
+ 160 0025 02       		.uleb128 0x2
+ 161 0026 01       		.byte	0x1
+ 162 0027 06       		.byte	0x6
+ 163 0028 37020000 		.4byte	.LASF0
+ 164 002c 03       		.uleb128 0x3
+ 165 002d 00000000 		.4byte	.LASF4
+ 166 0031 02       		.byte	0x2
+ 167 0032 1D       		.byte	0x1d
+ 168 0033 37000000 		.4byte	0x37
+ 169 0037 02       		.uleb128 0x2
+ 170 0038 01       		.byte	0x1
+ 171 0039 08       		.byte	0x8
+ 172 003a 72000000 		.4byte	.LASF1
+ 173 003e 02       		.uleb128 0x2
+ 174 003f 02       		.byte	0x2
+ 175 0040 05       		.byte	0x5
+ 176 0041 08020000 		.4byte	.LASF2
+ 177 0045 02       		.uleb128 0x2
+ 178 0046 02       		.byte	0x2
+ 179 0047 07       		.byte	0x7
+ 180 0048 A0000000 		.4byte	.LASF3
+ 181 004c 03       		.uleb128 0x3
+ 182 004d 0A000000 		.4byte	.LASF5
+ 183 0051 02       		.byte	0x2
+ 184 0052 3F       		.byte	0x3f
+ 185 0053 57000000 		.4byte	0x57
+ 186 0057 02       		.uleb128 0x2
+ 187 0058 04       		.byte	0x4
+ 188 0059 05       		.byte	0x5
+ 189 005a 22020000 		.4byte	.LASF6
+ 190 005e 03       		.uleb128 0x3
+ 191 005f FE000000 		.4byte	.LASF7
+ 192 0063 02       		.byte	0x2
+ 193 0064 41       		.byte	0x41
+ 194 0065 69000000 		.4byte	0x69
+ 195 0069 02       		.uleb128 0x2
+ 196 006a 04       		.byte	0x4
+ 197 006b 07       		.byte	0x7
+ 198 006c 8E000000 		.4byte	.LASF8
+ 199 0070 02       		.uleb128 0x2
+ 200 0071 08       		.byte	0x8
+ 201 0072 05       		.byte	0x5
+ 202 0073 C9010000 		.4byte	.LASF9
+ 203 0077 02       		.uleb128 0x2
+ 204 0078 08       		.byte	0x8
+ 205 0079 07       		.byte	0x7
+ 206 007a 99010000 		.4byte	.LASF10
+ 207 007e 04       		.uleb128 0x4
+ 208 007f 04       		.byte	0x4
+ARM GAS  /tmp/cceaDMlx.s 			page 6
+
+
+ 209 0080 05       		.byte	0x5
+ 210 0081 696E7400 		.ascii	"int\000"
+ 211 0085 02       		.uleb128 0x2
+ 212 0086 04       		.byte	0x4
+ 213 0087 07       		.byte	0x7
+ 214 0088 14000000 		.4byte	.LASF11
+ 215 008c 03       		.uleb128 0x3
+ 216 008d B0010000 		.4byte	.LASF12
+ 217 0091 03       		.byte	0x3
+ 218 0092 18       		.byte	0x18
+ 219 0093 2C000000 		.4byte	0x2c
+ 220 0097 05       		.uleb128 0x5
+ 221 0098 8C000000 		.4byte	0x8c
+ 222 009c 03       		.uleb128 0x3
+ 223 009d B8010000 		.4byte	.LASF13
+ 224 00a1 03       		.byte	0x3
+ 225 00a2 2C       		.byte	0x2c
+ 226 00a3 4C000000 		.4byte	0x4c
+ 227 00a7 06       		.uleb128 0x6
+ 228 00a8 9C000000 		.4byte	0x9c
+ 229 00ac 03       		.uleb128 0x3
+ 230 00ad B3000000 		.4byte	.LASF14
+ 231 00b1 03       		.byte	0x3
+ 232 00b2 30       		.byte	0x30
+ 233 00b3 5E000000 		.4byte	0x5e
+ 234 00b7 02       		.uleb128 0x2
+ 235 00b8 04       		.byte	0x4
+ 236 00b9 07       		.byte	0x7
+ 237 00ba C0010000 		.4byte	.LASF15
+ 238 00be 07       		.uleb128 0x7
+ 239 00bf BC000000 		.4byte	.LASF16
+ 240 00c3 04       		.byte	0x4
+ 241 00c4 4807     		.2byte	0x748
+ 242 00c6 A7000000 		.4byte	0xa7
+ 243 00ca 01       		.byte	0x1
+ 244 00cb 01       		.byte	0x1
+ 245 00cc 08       		.uleb128 0x8
+ 246 00cd D7010000 		.4byte	.LASF17
+ 247 00d1 05       		.byte	0x5
+ 248 00d2 33       		.byte	0x33
+ 249 00d3 AC000000 		.4byte	0xac
+ 250 00d7 01       		.byte	0x1
+ 251 00d8 01       		.byte	0x1
+ 252 00d9 09       		.uleb128 0x9
+ 253 00da 97000000 		.4byte	0x97
+ 254 00de E9000000 		.4byte	0xe9
+ 255 00e2 0A       		.uleb128 0xa
+ 256 00e3 B7000000 		.4byte	0xb7
+ 257 00e7 0F       		.byte	0xf
+ 258 00e8 00       		.byte	0
+ 259 00e9 05       		.uleb128 0x5
+ 260 00ea D9000000 		.4byte	0xd9
+ 261 00ee 08       		.uleb128 0x8
+ 262 00ef 80000000 		.4byte	.LASF18
+ 263 00f3 05       		.byte	0x5
+ 264 00f4 34       		.byte	0x34
+ 265 00f5 E9000000 		.4byte	0xe9
+ARM GAS  /tmp/cceaDMlx.s 			page 7
+
+
+ 266 00f9 01       		.byte	0x1
+ 267 00fa 01       		.byte	0x1
+ 268 00fb 09       		.uleb128 0x9
+ 269 00fc 97000000 		.4byte	0x97
+ 270 0100 0B010000 		.4byte	0x10b
+ 271 0104 0A       		.uleb128 0xa
+ 272 0105 B7000000 		.4byte	0xb7
+ 273 0109 07       		.byte	0x7
+ 274 010a 00       		.byte	0
+ 275 010b 05       		.uleb128 0x5
+ 276 010c FB000000 		.4byte	0xfb
+ 277 0110 08       		.uleb128 0x8
+ 278 0111 1D010000 		.4byte	.LASF19
+ 279 0115 05       		.byte	0x5
+ 280 0116 35       		.byte	0x35
+ 281 0117 0B010000 		.4byte	0x10b
+ 282 011b 01       		.byte	0x1
+ 283 011c 01       		.byte	0x1
+ 284 011d 02       		.uleb128 0x2
+ 285 011e 08       		.byte	0x8
+ 286 011f 04       		.byte	0x4
+ 287 0120 2B020000 		.4byte	.LASF20
+ 288 0124 0B       		.uleb128 0xb
+ 289 0125 01       		.byte	0x1
+ 290 0126 37000000 		.4byte	0x37
+ 291 012a 06       		.byte	0x6
+ 292 012b 33       		.byte	0x33
+ 293 012c 49010000 		.4byte	0x149
+ 294 0130 0C       		.uleb128 0xc
+ 295 0131 43020000 		.4byte	.LASF21
+ 296 0135 64       		.byte	0x64
+ 297 0136 0C       		.uleb128 0xc
+ 298 0137 C9000000 		.4byte	.LASF22
+ 299 013b 0A       		.byte	0xa
+ 300 013c 0C       		.uleb128 0xc
+ 301 013d 4D000000 		.4byte	.LASF23
+ 302 0141 01       		.byte	0x1
+ 303 0142 0C       		.uleb128 0xc
+ 304 0143 F2010000 		.4byte	.LASF24
+ 305 0147 01       		.byte	0x1
+ 306 0148 00       		.byte	0
+ 307 0149 03       		.uleb128 0x3
+ 308 014a 09010000 		.4byte	.LASF25
+ 309 014e 06       		.byte	0x6
+ 310 014f 38       		.byte	0x38
+ 311 0150 24010000 		.4byte	0x124
+ 312 0154 08       		.uleb128 0x8
+ 313 0155 E7010000 		.4byte	.LASF26
+ 314 0159 06       		.byte	0x6
+ 315 015a 3D       		.byte	0x3d
+ 316 015b AC000000 		.4byte	0xac
+ 317 015f 01       		.byte	0x1
+ 318 0160 01       		.byte	0x1
+ 319 0161 08       		.uleb128 0x8
+ 320 0162 80010000 		.4byte	.LASF27
+ 321 0166 06       		.byte	0x6
+ 322 0167 3E       		.byte	0x3e
+ARM GAS  /tmp/cceaDMlx.s 			page 8
+
+
+ 323 0168 49010000 		.4byte	0x149
+ 324 016c 01       		.byte	0x1
+ 325 016d 01       		.byte	0x1
+ 326 016e 0D       		.uleb128 0xd
+ 327 016f 01       		.byte	0x1
+ 328 0170 60000000 		.4byte	.LASF34
+ 329 0174 01       		.byte	0x1
+ 330 0175 4C       		.byte	0x4c
+ 331 0176 01       		.byte	0x1
+ 332 0177 01       		.byte	0x1
+ 333 0178 0E       		.uleb128 0xe
+ 334 0179 01       		.byte	0x1
+ 335 017a 12020000 		.4byte	.LASF28
+ 336 017e 01       		.byte	0x1
+ 337 017f 43       		.byte	0x43
+ 338 0180 01       		.byte	0x1
+ 339 0181 0E       		.uleb128 0xe
+ 340 0182 01       		.byte	0x1
+ 341 0183 8B010000 		.4byte	.LASF29
+ 342 0187 01       		.byte	0x1
+ 343 0188 3A       		.byte	0x3a
+ 344 0189 01       		.byte	0x1
+ 345 018a 0E       		.uleb128 0xe
+ 346 018b 01       		.byte	0x1
+ 347 018c 56020000 		.4byte	.LASF30
+ 348 0190 01       		.byte	0x1
+ 349 0191 31       		.byte	0x31
+ 350 0192 01       		.byte	0x1
+ 351 0193 0F       		.uleb128 0xf
+ 352 0194 6E010000 		.4byte	0x16e
+ 353 0198 06000000 		.4byte	.LFB68
+ 354 019c 08000000 		.4byte	.LFE68
+ 355 01a0 02       		.byte	0x2
+ 356 01a1 7D       		.byte	0x7d
+ 357 01a2 00       		.sleb128 0
+ 358 01a3 01       		.byte	0x1
+ 359 01a4 00       		.byte	0
+ 360              		.section	.debug_abbrev,"",%progbits
+ 361              	.Ldebug_abbrev0:
+ 362 0000 01       		.uleb128 0x1
+ 363 0001 11       		.uleb128 0x11
+ 364 0002 01       		.byte	0x1
+ 365 0003 25       		.uleb128 0x25
+ 366 0004 0E       		.uleb128 0xe
+ 367 0005 13       		.uleb128 0x13
+ 368 0006 0B       		.uleb128 0xb
+ 369 0007 03       		.uleb128 0x3
+ 370 0008 0E       		.uleb128 0xe
+ 371 0009 1B       		.uleb128 0x1b
+ 372 000a 0E       		.uleb128 0xe
+ 373 000b 11       		.uleb128 0x11
+ 374 000c 01       		.uleb128 0x1
+ 375 000d 12       		.uleb128 0x12
+ 376 000e 01       		.uleb128 0x1
+ 377 000f 10       		.uleb128 0x10
+ 378 0010 06       		.uleb128 0x6
+ 379 0011 00       		.byte	0
+ARM GAS  /tmp/cceaDMlx.s 			page 9
+
+
+ 380 0012 00       		.byte	0
+ 381 0013 02       		.uleb128 0x2
+ 382 0014 24       		.uleb128 0x24
+ 383 0015 00       		.byte	0
+ 384 0016 0B       		.uleb128 0xb
+ 385 0017 0B       		.uleb128 0xb
+ 386 0018 3E       		.uleb128 0x3e
+ 387 0019 0B       		.uleb128 0xb
+ 388 001a 03       		.uleb128 0x3
+ 389 001b 0E       		.uleb128 0xe
+ 390 001c 00       		.byte	0
+ 391 001d 00       		.byte	0
+ 392 001e 03       		.uleb128 0x3
+ 393 001f 16       		.uleb128 0x16
+ 394 0020 00       		.byte	0
+ 395 0021 03       		.uleb128 0x3
+ 396 0022 0E       		.uleb128 0xe
+ 397 0023 3A       		.uleb128 0x3a
+ 398 0024 0B       		.uleb128 0xb
+ 399 0025 3B       		.uleb128 0x3b
+ 400 0026 0B       		.uleb128 0xb
+ 401 0027 49       		.uleb128 0x49
+ 402 0028 13       		.uleb128 0x13
+ 403 0029 00       		.byte	0
+ 404 002a 00       		.byte	0
+ 405 002b 04       		.uleb128 0x4
+ 406 002c 24       		.uleb128 0x24
+ 407 002d 00       		.byte	0
+ 408 002e 0B       		.uleb128 0xb
+ 409 002f 0B       		.uleb128 0xb
+ 410 0030 3E       		.uleb128 0x3e
+ 411 0031 0B       		.uleb128 0xb
+ 412 0032 03       		.uleb128 0x3
+ 413 0033 08       		.uleb128 0x8
+ 414 0034 00       		.byte	0
+ 415 0035 00       		.byte	0
+ 416 0036 05       		.uleb128 0x5
+ 417 0037 26       		.uleb128 0x26
+ 418 0038 00       		.byte	0
+ 419 0039 49       		.uleb128 0x49
+ 420 003a 13       		.uleb128 0x13
+ 421 003b 00       		.byte	0
+ 422 003c 00       		.byte	0
+ 423 003d 06       		.uleb128 0x6
+ 424 003e 35       		.uleb128 0x35
+ 425 003f 00       		.byte	0
+ 426 0040 49       		.uleb128 0x49
+ 427 0041 13       		.uleb128 0x13
+ 428 0042 00       		.byte	0
+ 429 0043 00       		.byte	0
+ 430 0044 07       		.uleb128 0x7
+ 431 0045 34       		.uleb128 0x34
+ 432 0046 00       		.byte	0
+ 433 0047 03       		.uleb128 0x3
+ 434 0048 0E       		.uleb128 0xe
+ 435 0049 3A       		.uleb128 0x3a
+ 436 004a 0B       		.uleb128 0xb
+ARM GAS  /tmp/cceaDMlx.s 			page 10
+
+
+ 437 004b 3B       		.uleb128 0x3b
+ 438 004c 05       		.uleb128 0x5
+ 439 004d 49       		.uleb128 0x49
+ 440 004e 13       		.uleb128 0x13
+ 441 004f 3F       		.uleb128 0x3f
+ 442 0050 0C       		.uleb128 0xc
+ 443 0051 3C       		.uleb128 0x3c
+ 444 0052 0C       		.uleb128 0xc
+ 445 0053 00       		.byte	0
+ 446 0054 00       		.byte	0
+ 447 0055 08       		.uleb128 0x8
+ 448 0056 34       		.uleb128 0x34
+ 449 0057 00       		.byte	0
+ 450 0058 03       		.uleb128 0x3
+ 451 0059 0E       		.uleb128 0xe
+ 452 005a 3A       		.uleb128 0x3a
+ 453 005b 0B       		.uleb128 0xb
+ 454 005c 3B       		.uleb128 0x3b
+ 455 005d 0B       		.uleb128 0xb
+ 456 005e 49       		.uleb128 0x49
+ 457 005f 13       		.uleb128 0x13
+ 458 0060 3F       		.uleb128 0x3f
+ 459 0061 0C       		.uleb128 0xc
+ 460 0062 3C       		.uleb128 0x3c
+ 461 0063 0C       		.uleb128 0xc
+ 462 0064 00       		.byte	0
+ 463 0065 00       		.byte	0
+ 464 0066 09       		.uleb128 0x9
+ 465 0067 01       		.uleb128 0x1
+ 466 0068 01       		.byte	0x1
+ 467 0069 49       		.uleb128 0x49
+ 468 006a 13       		.uleb128 0x13
+ 469 006b 01       		.uleb128 0x1
+ 470 006c 13       		.uleb128 0x13
+ 471 006d 00       		.byte	0
+ 472 006e 00       		.byte	0
+ 473 006f 0A       		.uleb128 0xa
+ 474 0070 21       		.uleb128 0x21
+ 475 0071 00       		.byte	0
+ 476 0072 49       		.uleb128 0x49
+ 477 0073 13       		.uleb128 0x13
+ 478 0074 2F       		.uleb128 0x2f
+ 479 0075 0B       		.uleb128 0xb
+ 480 0076 00       		.byte	0
+ 481 0077 00       		.byte	0
+ 482 0078 0B       		.uleb128 0xb
+ 483 0079 04       		.uleb128 0x4
+ 484 007a 01       		.byte	0x1
+ 485 007b 0B       		.uleb128 0xb
+ 486 007c 0B       		.uleb128 0xb
+ 487 007d 49       		.uleb128 0x49
+ 488 007e 13       		.uleb128 0x13
+ 489 007f 3A       		.uleb128 0x3a
+ 490 0080 0B       		.uleb128 0xb
+ 491 0081 3B       		.uleb128 0x3b
+ 492 0082 0B       		.uleb128 0xb
+ 493 0083 01       		.uleb128 0x1
+ARM GAS  /tmp/cceaDMlx.s 			page 11
+
+
+ 494 0084 13       		.uleb128 0x13
+ 495 0085 00       		.byte	0
+ 496 0086 00       		.byte	0
+ 497 0087 0C       		.uleb128 0xc
+ 498 0088 28       		.uleb128 0x28
+ 499 0089 00       		.byte	0
+ 500 008a 03       		.uleb128 0x3
+ 501 008b 0E       		.uleb128 0xe
+ 502 008c 1C       		.uleb128 0x1c
+ 503 008d 0B       		.uleb128 0xb
+ 504 008e 00       		.byte	0
+ 505 008f 00       		.byte	0
+ 506 0090 0D       		.uleb128 0xd
+ 507 0091 2E       		.uleb128 0x2e
+ 508 0092 00       		.byte	0
+ 509 0093 3F       		.uleb128 0x3f
+ 510 0094 0C       		.uleb128 0xc
+ 511 0095 03       		.uleb128 0x3
+ 512 0096 0E       		.uleb128 0xe
+ 513 0097 3A       		.uleb128 0x3a
+ 514 0098 0B       		.uleb128 0xb
+ 515 0099 3B       		.uleb128 0x3b
+ 516 009a 0B       		.uleb128 0xb
+ 517 009b 27       		.uleb128 0x27
+ 518 009c 0C       		.uleb128 0xc
+ 519 009d 20       		.uleb128 0x20
+ 520 009e 0B       		.uleb128 0xb
+ 521 009f 00       		.byte	0
+ 522 00a0 00       		.byte	0
+ 523 00a1 0E       		.uleb128 0xe
+ 524 00a2 2E       		.uleb128 0x2e
+ 525 00a3 00       		.byte	0
+ 526 00a4 3F       		.uleb128 0x3f
+ 527 00a5 0C       		.uleb128 0xc
+ 528 00a6 03       		.uleb128 0x3
+ 529 00a7 0E       		.uleb128 0xe
+ 530 00a8 3A       		.uleb128 0x3a
+ 531 00a9 0B       		.uleb128 0xb
+ 532 00aa 3B       		.uleb128 0x3b
+ 533 00ab 0B       		.uleb128 0xb
+ 534 00ac 27       		.uleb128 0x27
+ 535 00ad 0C       		.uleb128 0xc
+ 536 00ae 00       		.byte	0
+ 537 00af 00       		.byte	0
+ 538 00b0 0F       		.uleb128 0xf
+ 539 00b1 2E       		.uleb128 0x2e
+ 540 00b2 00       		.byte	0
+ 541 00b3 31       		.uleb128 0x31
+ 542 00b4 13       		.uleb128 0x13
+ 543 00b5 11       		.uleb128 0x11
+ 544 00b6 01       		.uleb128 0x1
+ 545 00b7 12       		.uleb128 0x12
+ 546 00b8 01       		.uleb128 0x1
+ 547 00b9 40       		.uleb128 0x40
+ 548 00ba 0A       		.uleb128 0xa
+ 549 00bb 9742     		.uleb128 0x2117
+ 550 00bd 0C       		.uleb128 0xc
+ARM GAS  /tmp/cceaDMlx.s 			page 12
+
+
+ 551 00be 00       		.byte	0
+ 552 00bf 00       		.byte	0
+ 553 00c0 00       		.byte	0
+ 554              		.section	.debug_aranges,"",%progbits
+ 555 0000 1C000000 		.4byte	0x1c
+ 556 0004 0200     		.2byte	0x2
+ 557 0006 00000000 		.4byte	.Ldebug_info0
+ 558 000a 04       		.byte	0x4
+ 559 000b 00       		.byte	0
+ 560 000c 0000     		.2byte	0
+ 561 000e 0000     		.2byte	0
+ 562 0010 00000000 		.4byte	.Ltext0
+ 563 0014 08000000 		.4byte	.Letext0-.Ltext0
+ 564 0018 00000000 		.4byte	0
+ 565 001c 00000000 		.4byte	0
+ 566              		.section	.debug_line,"",%progbits
+ 567              	.Ldebug_line0:
+ 568 0000 06010000 		.section	.debug_str,"MS",%progbits,1
+ 568      0200F000 
+ 568      00000201 
+ 568      FB0E0D00 
+ 568      01010101 
+ 569              	.LASF4:
+ 570 0000 5F5F7569 		.ascii	"__uint8_t\000"
+ 570      6E74385F 
+ 570      7400
+ 571              	.LASF5:
+ 572 000a 5F5F696E 		.ascii	"__int32_t\000"
+ 572      7433325F 
+ 572      7400
+ 573              	.LASF11:
+ 574 0014 756E7369 		.ascii	"unsigned int\000"
+ 574      676E6564 
+ 574      20696E74 
+ 574      00
+ 575              	.LASF33:
+ 576 0021 2F686F6D 		.ascii	"/home/berndoj/git/stm32tctst/lib/stm32f1hal\000"
+ 576      652F6265 
+ 576      726E646F 
+ 576      6A2F6769 
+ 576      742F7374 
+ 577              	.LASF23:
+ 578 004d 48414C5F 		.ascii	"HAL_TICK_FREQ_1KHZ\000"
+ 578      5449434B 
+ 578      5F465245 
+ 578      515F314B 
+ 578      485A00
+ 579              	.LASF34:
+ 580 0060 48414C5F 		.ascii	"HAL_PPP_MspDeInit\000"
+ 580      5050505F 
+ 580      4D737044 
+ 580      65496E69 
+ 580      7400
+ 581              	.LASF1:
+ 582 0072 756E7369 		.ascii	"unsigned char\000"
+ 582      676E6564 
+ 582      20636861 
+ARM GAS  /tmp/cceaDMlx.s 			page 13
+
+
+ 582      7200
+ 583              	.LASF18:
+ 584 0080 41484250 		.ascii	"AHBPrescTable\000"
+ 584      72657363 
+ 584      5461626C 
+ 584      6500
+ 585              	.LASF8:
+ 586 008e 6C6F6E67 		.ascii	"long unsigned int\000"
+ 586      20756E73 
+ 586      69676E65 
+ 586      6420696E 
+ 586      7400
+ 587              	.LASF3:
+ 588 00a0 73686F72 		.ascii	"short unsigned int\000"
+ 588      7420756E 
+ 588      7369676E 
+ 588      65642069 
+ 588      6E7400
+ 589              	.LASF14:
+ 590 00b3 75696E74 		.ascii	"uint32_t\000"
+ 590      33325F74 
+ 590      00
+ 591              	.LASF16:
+ 592 00bc 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 592      52784275 
+ 592      66666572 
+ 592      00
+ 593              	.LASF22:
+ 594 00c9 48414C5F 		.ascii	"HAL_TICK_FREQ_100HZ\000"
+ 594      5449434B 
+ 594      5F465245 
+ 594      515F3130 
+ 594      30485A00 
+ 595              	.LASF32:
+ 596 00dd 7372632F 		.ascii	"src/stm32f1xx_hal_msp_template.c\000"
+ 596      73746D33 
+ 596      32663178 
+ 596      785F6861 
+ 596      6C5F6D73 
+ 597              	.LASF7:
+ 598 00fe 5F5F7569 		.ascii	"__uint32_t\000"
+ 598      6E743332 
+ 598      5F7400
+ 599              	.LASF25:
+ 600 0109 48414C5F 		.ascii	"HAL_TickFreqTypeDef\000"
+ 600      5469636B 
+ 600      46726571 
+ 600      54797065 
+ 600      44656600 
+ 601              	.LASF19:
+ 602 011d 41504250 		.ascii	"APBPrescTable\000"
+ 602      72657363 
+ 602      5461626C 
+ 602      6500
+ 603              	.LASF31:
+ 604 012b 474E5520 		.ascii	"GNU C11 6.3.1 20170620 -mcpu=cortex-m3 -mthumb -g -"
+ 604      43313120 
+ARM GAS  /tmp/cceaDMlx.s 			page 14
+
+
+ 604      362E332E 
+ 604      31203230 
+ 604      31373036 
+ 605 015e 67647761 		.ascii	"gdwarf-2 -Os -fomit-frame-pointer\000"
+ 605      72662D32 
+ 605      202D4F73 
+ 605      202D666F 
+ 605      6D69742D 
+ 606              	.LASF27:
+ 607 0180 75775469 		.ascii	"uwTickFreq\000"
+ 607      636B4672 
+ 607      657100
+ 608              	.LASF29:
+ 609 018b 48414C5F 		.ascii	"HAL_MspDeInit\000"
+ 609      4D737044 
+ 609      65496E69 
+ 609      7400
+ 610              	.LASF10:
+ 611 0199 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 611      206C6F6E 
+ 611      6720756E 
+ 611      7369676E 
+ 611      65642069 
+ 612              	.LASF12:
+ 613 01b0 75696E74 		.ascii	"uint8_t\000"
+ 613      385F7400 
+ 614              	.LASF13:
+ 615 01b8 696E7433 		.ascii	"int32_t\000"
+ 615      325F7400 
+ 616              	.LASF15:
+ 617 01c0 73697A65 		.ascii	"sizetype\000"
+ 617      74797065 
+ 617      00
+ 618              	.LASF9:
+ 619 01c9 6C6F6E67 		.ascii	"long long int\000"
+ 619      206C6F6E 
+ 619      6720696E 
+ 619      7400
+ 620              	.LASF17:
+ 621 01d7 53797374 		.ascii	"SystemCoreClock\000"
+ 621      656D436F 
+ 621      7265436C 
+ 621      6F636B00 
+ 622              	.LASF26:
+ 623 01e7 75775469 		.ascii	"uwTickPrio\000"
+ 623      636B5072 
+ 623      696F00
+ 624              	.LASF24:
+ 625 01f2 48414C5F 		.ascii	"HAL_TICK_FREQ_DEFAULT\000"
+ 625      5449434B 
+ 625      5F465245 
+ 625      515F4445 
+ 625      4641554C 
+ 626              	.LASF2:
+ 627 0208 73686F72 		.ascii	"short int\000"
+ 627      7420696E 
+ 627      7400
+ARM GAS  /tmp/cceaDMlx.s 			page 15
+
+
+ 628              	.LASF28:
+ 629 0212 48414C5F 		.ascii	"HAL_PPP_MspInit\000"
+ 629      5050505F 
+ 629      4D737049 
+ 629      6E697400 
+ 630              	.LASF6:
+ 631 0222 6C6F6E67 		.ascii	"long int\000"
+ 631      20696E74 
+ 631      00
+ 632              	.LASF20:
+ 633 022b 6C6F6E67 		.ascii	"long double\000"
+ 633      20646F75 
+ 633      626C6500 
+ 634              	.LASF0:
+ 635 0237 7369676E 		.ascii	"signed char\000"
+ 635      65642063 
+ 635      68617200 
+ 636              	.LASF21:
+ 637 0243 48414C5F 		.ascii	"HAL_TICK_FREQ_10HZ\000"
+ 637      5449434B 
+ 637      5F465245 
+ 637      515F3130 
+ 637      485A00
+ 638              	.LASF30:
+ 639 0256 48414C5F 		.ascii	"HAL_MspInit\000"
+ 639      4D737049 
+ 639      6E697400 
+ 640              		.ident	"GCC: (15:6.3.1+svn253039-1build1) 6.3.1 20170620"
+ARM GAS  /tmp/cceaDMlx.s 			page 16
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 stm32f1xx_hal_msp_template.c
+     /tmp/cceaDMlx.s:70     .text:0000000000000000 $t
+     /tmp/cceaDMlx.s:77     .text:0000000000000000 HAL_MspInit
+     /tmp/cceaDMlx.s:94     .text:0000000000000002 HAL_MspDeInit
+     /tmp/cceaDMlx.s:111    .text:0000000000000004 HAL_PPP_MspInit
+     /tmp/cceaDMlx.s:128    .text:0000000000000006 HAL_PPP_MspDeInit
+                     .debug_frame:0000000000000010 $d
+
+NO UNDEFINED SYMBOLS

@@ -1,0 +1,3544 @@
+ARM GAS  /tmp/ccA2fVch.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1	@ Tag_ABI_FP_denormal
+   3              		.eabi_attribute 21, 1	@ Tag_ABI_FP_exceptions
+   4              		.eabi_attribute 23, 3	@ Tag_ABI_FP_number_model
+   5              		.eabi_attribute 24, 1	@ Tag_ABI_align8_needed
+   6              		.eabi_attribute 25, 1	@ Tag_ABI_align8_preserved
+   7              		.eabi_attribute 26, 1	@ Tag_ABI_enum_size
+   8              		.eabi_attribute 30, 4	@ Tag_ABI_optimization_goals
+   9              		.eabi_attribute 34, 1	@ Tag_CPU_unaligned_access
+  10              		.eabi_attribute 18, 4	@ Tag_ABI_PCS_wchar_t
+  11              		.file	"stm32f1xx_hal_exti.c"
+  12              	@ GNU C11 (15:6.3.1+svn253039-1build1) version 6.3.1 20170620 (arm-none-eabi)
+  13              	@	compiled by GNU C version 7.2.0, GMP version 6.1.2, MPFR version 4.0.1-rc1, MPC version 1.1.0, is
+  14              	@ warning: MPFR header version 4.0.1-rc1 differs from library version 4.0.1.
+  15              	@ GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+  16              	@ options passed:  -I ./inc -I ./inc/Legacy -I ../cmsisstm32f1xx/inc
+  17              	@ -I ../cmsiscore/inc -imultilib thumb/v7-m -D__USES_INITFINI__
+  18              	@ -D STM32F103x6 -D RUN_FROM_FLASH=1 -D __c src/stm32f1xx_hal_exti.c
+  19              	@ -mcpu=cortex-m3 -mthumb -auxbase-strip bin/stm32f1xx_hal_exti.o -g
+  20              	@ -gdwarf-2 -Os -Wall -fomit-frame-pointer -fverbose-asm
+  21              	@ options enabled:  -faggressive-loop-optimizations -falign-jumps
+  22              	@ -falign-labels -falign-loops -fauto-inc-dec -fbranch-count-reg
+  23              	@ -fcaller-saves -fchkp-check-incomplete-type -fchkp-check-read
+  24              	@ -fchkp-check-write -fchkp-instrument-calls -fchkp-narrow-bounds
+  25              	@ -fchkp-optimize -fchkp-store-bounds -fchkp-use-static-bounds
+  26              	@ -fchkp-use-static-const-bounds -fchkp-use-wrappers
+  27              	@ -fcombine-stack-adjustments -fcommon -fcompare-elim -fcprop-registers
+  28              	@ -fcrossjumping -fcse-follow-jumps -fdefer-pop
+  29              	@ -fdelete-null-pointer-checks -fdevirtualize -fdevirtualize-speculatively
+  30              	@ -fdwarf2-cfi-asm -fearly-inlining -feliminate-unused-debug-types
+  31              	@ -fexpensive-optimizations -fforward-propagate -ffunction-cse -fgcse
+  32              	@ -fgcse-lm -fgnu-runtime -fgnu-unique -fguess-branch-probability
+  33              	@ -fhoist-adjacent-loads -fident -fif-conversion -fif-conversion2
+  34              	@ -findirect-inlining -finline -finline-atomics -finline-functions
+  35              	@ -finline-functions-called-once -finline-small-functions -fipa-cp
+  36              	@ -fipa-cp-alignment -fipa-icf -fipa-icf-functions -fipa-icf-variables
+  37              	@ -fipa-profile -fipa-pure-const -fipa-ra -fipa-reference -fipa-sra
+  38              	@ -fira-hoist-pressure -fira-share-save-slots -fira-share-spill-slots
+  39              	@ -fisolate-erroneous-paths-dereference -fivopts -fkeep-static-consts
+  40              	@ -fleading-underscore -flifetime-dse -flra-remat -flto-odr-type-merging
+  41              	@ -fmath-errno -fmerge-constants -fmerge-debug-strings
+  42              	@ -fmove-loop-invariants -fomit-frame-pointer -foptimize-sibling-calls
+  43              	@ -fpartial-inlining -fpeephole -fpeephole2 -fplt -fprefetch-loop-arrays
+  44              	@ -freg-struct-return -freorder-blocks -freorder-functions
+  45              	@ -frerun-cse-after-loop -fsched-critical-path-heuristic
+  46              	@ -fsched-dep-count-heuristic -fsched-group-heuristic -fsched-interblock
+  47              	@ -fsched-last-insn-heuristic -fsched-pressure -fsched-rank-heuristic
+  48              	@ -fsched-spec -fsched-spec-insn-heuristic -fsched-stalled-insns-dep
+  49              	@ -fschedule-insns2 -fsection-anchors -fsemantic-interposition
+  50              	@ -fshow-column -fsigned-zeros -fsplit-ivs-in-unroller -fsplit-wide-types
+  51              	@ -fssa-backprop -fssa-phiopt -fstdarg-opt -fstrict-aliasing
+  52              	@ -fstrict-overflow -fstrict-volatile-bitfields -fsync-libcalls
+  53              	@ -fthread-jumps -ftoplevel-reorder -ftrapping-math -ftree-bit-ccp
+  54              	@ -ftree-builtin-call-dce -ftree-ccp -ftree-ch -ftree-coalesce-vars
+  55              	@ -ftree-copy-prop -ftree-cselim -ftree-dce -ftree-dominator-opts
+  56              	@ -ftree-dse -ftree-forwprop -ftree-fre -ftree-loop-if-convert
+  57              	@ -ftree-loop-im -ftree-loop-ivcanon -ftree-loop-optimize
+ARM GAS  /tmp/ccA2fVch.s 			page 2
+
+
+  58              	@ -ftree-parallelize-loops= -ftree-phiprop -ftree-pre -ftree-pta
+  59              	@ -ftree-reassoc -ftree-scev-cprop -ftree-sink -ftree-slsr -ftree-sra
+  60              	@ -ftree-switch-conversion -ftree-tail-merge -ftree-ter -ftree-vrp
+  61              	@ -funit-at-a-time -fvar-tracking -fvar-tracking-assignments -fverbose-asm
+  62              	@ -fzero-initialized-in-bss -masm-syntax-unified -mfix-cortex-m3-ldrd
+  63              	@ -mlittle-endian -mpic-data-is-text-relative -msched-prolog -mthumb
+  64              	@ -munaligned-access -mvectorize-with-neon-quad
+  65              	
+  66              		.text
+  67              	.Ltext0:
+  68              		.cfi_sections	.debug_frame
+  69              		.align	1
+  70              		.global	HAL_EXTI_SetConfigLine
+  71              		.syntax unified
+  72              		.thumb
+  73              		.thumb_func
+  74              		.fpu softvfp
+  75              		.type	HAL_EXTI_SetConfigLine, %function
+  76              	HAL_EXTI_SetConfigLine:
+  77              	.LFB65:
+  78              		.file 1 "src/stm32f1xx_hal_exti.c"
+   1:src/stm32f1xx_hal_exti.c **** /**
+   2:src/stm32f1xx_hal_exti.c ****   ******************************************************************************
+   3:src/stm32f1xx_hal_exti.c ****   * @file    stm32f1xx_hal_exti.c
+   4:src/stm32f1xx_hal_exti.c ****   * @author  MCD Application Team
+   5:src/stm32f1xx_hal_exti.c ****   * @brief   EXTI HAL module driver.
+   6:src/stm32f1xx_hal_exti.c ****   *          This file provides firmware functions to manage the following
+   7:src/stm32f1xx_hal_exti.c ****   *          functionalities of the Extended Interrupts and events controller (EXTI) peripheral:
+   8:src/stm32f1xx_hal_exti.c ****   *           + Initialization and de-initialization functions
+   9:src/stm32f1xx_hal_exti.c ****   *           + IO operation functions
+  10:src/stm32f1xx_hal_exti.c ****   *
+  11:src/stm32f1xx_hal_exti.c ****   @verbatim
+  12:src/stm32f1xx_hal_exti.c ****   ==============================================================================
+  13:src/stm32f1xx_hal_exti.c ****                     ##### EXTI Peripheral features #####
+  14:src/stm32f1xx_hal_exti.c ****   ==============================================================================
+  15:src/stm32f1xx_hal_exti.c ****   [..]
+  16:src/stm32f1xx_hal_exti.c ****     (+) Each Exti line can be configured within this driver.
+  17:src/stm32f1xx_hal_exti.c **** 
+  18:src/stm32f1xx_hal_exti.c ****     (+) Exti line can be configured in 3 different modes
+  19:src/stm32f1xx_hal_exti.c ****         (++) Interrupt
+  20:src/stm32f1xx_hal_exti.c ****         (++) Event
+  21:src/stm32f1xx_hal_exti.c ****         (++) Both of them
+  22:src/stm32f1xx_hal_exti.c **** 
+  23:src/stm32f1xx_hal_exti.c ****     (+) Configurable Exti lines can be configured with 3 different triggers
+  24:src/stm32f1xx_hal_exti.c ****         (++) Rising
+  25:src/stm32f1xx_hal_exti.c ****         (++) Falling
+  26:src/stm32f1xx_hal_exti.c ****         (++) Both of them
+  27:src/stm32f1xx_hal_exti.c **** 
+  28:src/stm32f1xx_hal_exti.c ****     (+) When set in interrupt mode, configurable Exti lines have two different
+  29:src/stm32f1xx_hal_exti.c ****         interrupts pending registers which allow to distinguish which transition
+  30:src/stm32f1xx_hal_exti.c ****         occurs:
+  31:src/stm32f1xx_hal_exti.c ****         (++) Rising edge pending interrupt
+  32:src/stm32f1xx_hal_exti.c ****         (++) Falling
+  33:src/stm32f1xx_hal_exti.c **** 
+  34:src/stm32f1xx_hal_exti.c ****     (+) Exti lines 0 to 15 are linked to gpio pin number 0 to 15. Gpio port can
+  35:src/stm32f1xx_hal_exti.c ****         be selected through multiplexer.
+  36:src/stm32f1xx_hal_exti.c **** 
+ARM GAS  /tmp/ccA2fVch.s 			page 3
+
+
+  37:src/stm32f1xx_hal_exti.c ****                      ##### How to use this driver #####
+  38:src/stm32f1xx_hal_exti.c ****   ==============================================================================
+  39:src/stm32f1xx_hal_exti.c ****   [..]
+  40:src/stm32f1xx_hal_exti.c **** 
+  41:src/stm32f1xx_hal_exti.c ****     (#) Configure the EXTI line using HAL_EXTI_SetConfigLine().
+  42:src/stm32f1xx_hal_exti.c ****         (++) Choose the interrupt line number by setting "Line" member from
+  43:src/stm32f1xx_hal_exti.c ****              EXTI_ConfigTypeDef structure.
+  44:src/stm32f1xx_hal_exti.c ****         (++) Configure the interrupt and/or event mode using "Mode" member from
+  45:src/stm32f1xx_hal_exti.c ****              EXTI_ConfigTypeDef structure.
+  46:src/stm32f1xx_hal_exti.c ****         (++) For configurable lines, configure rising and/or falling trigger
+  47:src/stm32f1xx_hal_exti.c ****              "Trigger" member from EXTI_ConfigTypeDef structure.
+  48:src/stm32f1xx_hal_exti.c ****         (++) For Exti lines linked to gpio, choose gpio port using "GPIOSel"
+  49:src/stm32f1xx_hal_exti.c ****              member from GPIO_InitTypeDef structure.
+  50:src/stm32f1xx_hal_exti.c **** 
+  51:src/stm32f1xx_hal_exti.c ****     (#) Get current Exti configuration of a dedicated line using
+  52:src/stm32f1xx_hal_exti.c ****         HAL_EXTI_GetConfigLine().
+  53:src/stm32f1xx_hal_exti.c ****         (++) Provide exiting handle as parameter.
+  54:src/stm32f1xx_hal_exti.c ****         (++) Provide pointer on EXTI_ConfigTypeDef structure as second parameter.
+  55:src/stm32f1xx_hal_exti.c **** 
+  56:src/stm32f1xx_hal_exti.c ****     (#) Clear Exti configuration of a dedicated line using HAL_EXTI_GetConfigLine().
+  57:src/stm32f1xx_hal_exti.c ****         (++) Provide exiting handle as parameter.
+  58:src/stm32f1xx_hal_exti.c **** 
+  59:src/stm32f1xx_hal_exti.c ****     (#) Register callback to treat Exti interrupts using HAL_EXTI_RegisterCallback().
+  60:src/stm32f1xx_hal_exti.c ****         (++) Provide exiting handle as first parameter.
+  61:src/stm32f1xx_hal_exti.c ****         (++) Provide which callback will be registered using one value from
+  62:src/stm32f1xx_hal_exti.c ****              EXTI_CallbackIDTypeDef.
+  63:src/stm32f1xx_hal_exti.c ****         (++) Provide callback function pointer.
+  64:src/stm32f1xx_hal_exti.c **** 
+  65:src/stm32f1xx_hal_exti.c ****     (#) Get interrupt pending bit using HAL_EXTI_GetPending().
+  66:src/stm32f1xx_hal_exti.c **** 
+  67:src/stm32f1xx_hal_exti.c ****     (#) Clear interrupt pending bit using HAL_EXTI_GetPending().
+  68:src/stm32f1xx_hal_exti.c **** 
+  69:src/stm32f1xx_hal_exti.c ****     (#) Generate software interrupt using HAL_EXTI_GenerateSWI().
+  70:src/stm32f1xx_hal_exti.c **** 
+  71:src/stm32f1xx_hal_exti.c ****   @endverbatim
+  72:src/stm32f1xx_hal_exti.c ****   ******************************************************************************
+  73:src/stm32f1xx_hal_exti.c ****   * @attention
+  74:src/stm32f1xx_hal_exti.c ****   *
+  75:src/stm32f1xx_hal_exti.c ****   * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
+  76:src/stm32f1xx_hal_exti.c ****   * All rights reserved.</center></h2>
+  77:src/stm32f1xx_hal_exti.c ****   *
+  78:src/stm32f1xx_hal_exti.c ****   * This software component is licensed by ST under BSD 3-Clause license,
+  79:src/stm32f1xx_hal_exti.c ****   * the "License"; You may not use this file except in compliance with the
+  80:src/stm32f1xx_hal_exti.c ****   * License. You may obtain a copy of the License at:
+  81:src/stm32f1xx_hal_exti.c ****   *                        opensource.org/licenses/BSD-3-Clause
+  82:src/stm32f1xx_hal_exti.c ****   *
+  83:src/stm32f1xx_hal_exti.c ****   ******************************************************************************
+  84:src/stm32f1xx_hal_exti.c ****   */
+  85:src/stm32f1xx_hal_exti.c **** 
+  86:src/stm32f1xx_hal_exti.c **** /* Includes ------------------------------------------------------------------*/
+  87:src/stm32f1xx_hal_exti.c **** #include "stm32f1xx_hal.h"
+  88:src/stm32f1xx_hal_exti.c **** 
+  89:src/stm32f1xx_hal_exti.c **** /** @addtogroup STM32F1xx_HAL_Driver
+  90:src/stm32f1xx_hal_exti.c ****   * @{
+  91:src/stm32f1xx_hal_exti.c ****   */
+  92:src/stm32f1xx_hal_exti.c **** 
+  93:src/stm32f1xx_hal_exti.c **** /** @addtogroup EXTI
+ARM GAS  /tmp/ccA2fVch.s 			page 4
+
+
+  94:src/stm32f1xx_hal_exti.c ****   * @{
+  95:src/stm32f1xx_hal_exti.c ****   */
+  96:src/stm32f1xx_hal_exti.c **** /** MISRA C:2012 deviation rule has been granted for following rule:
+  97:src/stm32f1xx_hal_exti.c ****   * Rule-18.1_b - Medium: Array `EXTICR' 1st subscript interval [0,7] may be out
+  98:src/stm32f1xx_hal_exti.c ****   * of bounds [0,3] in following API :
+  99:src/stm32f1xx_hal_exti.c ****   * HAL_EXTI_SetConfigLine
+ 100:src/stm32f1xx_hal_exti.c ****   * HAL_EXTI_GetConfigLine
+ 101:src/stm32f1xx_hal_exti.c ****   * HAL_EXTI_ClearConfigLine
+ 102:src/stm32f1xx_hal_exti.c ****   */
+ 103:src/stm32f1xx_hal_exti.c **** 
+ 104:src/stm32f1xx_hal_exti.c **** #ifdef HAL_EXTI_MODULE_ENABLED
+ 105:src/stm32f1xx_hal_exti.c **** 
+ 106:src/stm32f1xx_hal_exti.c **** /* Private typedef -----------------------------------------------------------*/
+ 107:src/stm32f1xx_hal_exti.c **** /* Private defines -----------------------------------------------------------*/
+ 108:src/stm32f1xx_hal_exti.c **** /** @defgroup EXTI_Private_Constants EXTI Private Constants
+ 109:src/stm32f1xx_hal_exti.c ****   * @{
+ 110:src/stm32f1xx_hal_exti.c ****   */
+ 111:src/stm32f1xx_hal_exti.c **** 
+ 112:src/stm32f1xx_hal_exti.c **** /**
+ 113:src/stm32f1xx_hal_exti.c ****   * @}
+ 114:src/stm32f1xx_hal_exti.c ****   */
+ 115:src/stm32f1xx_hal_exti.c **** 
+ 116:src/stm32f1xx_hal_exti.c **** /* Private macros ------------------------------------------------------------*/
+ 117:src/stm32f1xx_hal_exti.c **** /* Private variables ---------------------------------------------------------*/
+ 118:src/stm32f1xx_hal_exti.c **** /* Private function prototypes -----------------------------------------------*/
+ 119:src/stm32f1xx_hal_exti.c **** /* Exported functions --------------------------------------------------------*/
+ 120:src/stm32f1xx_hal_exti.c **** 
+ 121:src/stm32f1xx_hal_exti.c **** /** @addtogroup EXTI_Exported_Functions
+ 122:src/stm32f1xx_hal_exti.c ****   * @{
+ 123:src/stm32f1xx_hal_exti.c ****   */
+ 124:src/stm32f1xx_hal_exti.c **** 
+ 125:src/stm32f1xx_hal_exti.c **** /** @addtogroup EXTI_Exported_Functions_Group1
+ 126:src/stm32f1xx_hal_exti.c ****   *  @brief    Configuration functions
+ 127:src/stm32f1xx_hal_exti.c ****   *
+ 128:src/stm32f1xx_hal_exti.c **** @verbatim
+ 129:src/stm32f1xx_hal_exti.c ****  ===============================================================================
+ 130:src/stm32f1xx_hal_exti.c ****               ##### Configuration functions #####
+ 131:src/stm32f1xx_hal_exti.c ****  ===============================================================================
+ 132:src/stm32f1xx_hal_exti.c **** 
+ 133:src/stm32f1xx_hal_exti.c **** @endverbatim
+ 134:src/stm32f1xx_hal_exti.c ****   * @{
+ 135:src/stm32f1xx_hal_exti.c ****   */
+ 136:src/stm32f1xx_hal_exti.c **** 
+ 137:src/stm32f1xx_hal_exti.c **** /**
+ 138:src/stm32f1xx_hal_exti.c ****   * @brief  Set configuration of a dedicated Exti line.
+ 139:src/stm32f1xx_hal_exti.c ****   * @param  hexti Exti handle.
+ 140:src/stm32f1xx_hal_exti.c ****   * @param  pExtiConfig Pointer on EXTI configuration to be set.
+ 141:src/stm32f1xx_hal_exti.c ****   * @retval HAL Status.
+ 142:src/stm32f1xx_hal_exti.c ****   */
+ 143:src/stm32f1xx_hal_exti.c **** HAL_StatusTypeDef HAL_EXTI_SetConfigLine(EXTI_HandleTypeDef *hexti, EXTI_ConfigTypeDef *pExtiConfig
+ 144:src/stm32f1xx_hal_exti.c **** {
+  79              		.loc 1 144 0
+  80              		.cfi_startproc
+  81              		@ args = 0, pretend = 0, frame = 0
+  82              		@ frame_needed = 0, uses_anonymous_args = 0
+  83              	.LVL0:
+  84 0000 70B5     		push	{r4, r5, r6, lr}	@
+ARM GAS  /tmp/ccA2fVch.s 			page 5
+
+
+  85              	.LCFI0:
+  86              		.cfi_def_cfa_offset 16
+  87              		.cfi_offset 4, -16
+  88              		.cfi_offset 5, -12
+  89              		.cfi_offset 6, -8
+  90              		.cfi_offset 14, -4
+ 145:src/stm32f1xx_hal_exti.c ****   uint32_t regval;
+ 146:src/stm32f1xx_hal_exti.c ****   uint32_t linepos;
+ 147:src/stm32f1xx_hal_exti.c ****   uint32_t maskline;
+ 148:src/stm32f1xx_hal_exti.c **** 
+ 149:src/stm32f1xx_hal_exti.c ****   /* Check null pointer */
+ 150:src/stm32f1xx_hal_exti.c ****   if ((hexti == NULL) || (pExtiConfig == NULL))
+  91              		.loc 1 150 0
+  92 0002 0028     		cmp	r0, #0	@ hexti
+  93 0004 45D0     		beq	.L14	@
+  94              		.loc 1 150 0 is_stmt 0 discriminator 1
+  95 0006 0029     		cmp	r1, #0	@ pExtiConfig
+  96 0008 43D0     		beq	.L14	@
+ 151:src/stm32f1xx_hal_exti.c ****   {
+ 152:src/stm32f1xx_hal_exti.c ****     return HAL_ERROR;
+ 153:src/stm32f1xx_hal_exti.c ****   }
+ 154:src/stm32f1xx_hal_exti.c **** 
+ 155:src/stm32f1xx_hal_exti.c ****   /* Check parameters */
+ 156:src/stm32f1xx_hal_exti.c ****   assert_param(IS_EXTI_LINE(pExtiConfig->Line));
+ 157:src/stm32f1xx_hal_exti.c ****   assert_param(IS_EXTI_MODE(pExtiConfig->Mode));
+ 158:src/stm32f1xx_hal_exti.c **** 
+ 159:src/stm32f1xx_hal_exti.c ****   /* Assign line number to handle */
+ 160:src/stm32f1xx_hal_exti.c ****   hexti->Line = pExtiConfig->Line;
+ 161:src/stm32f1xx_hal_exti.c **** 
+ 162:src/stm32f1xx_hal_exti.c ****   /* Compute line mask */
+ 163:src/stm32f1xx_hal_exti.c ****   linepos = (pExtiConfig->Line & EXTI_PIN_MASK);
+ 164:src/stm32f1xx_hal_exti.c ****   maskline = (1uL << linepos);
+  97              		.loc 1 164 0 is_stmt 1
+  98 000a 0122     		movs	r2, #1	@ tmp156,
+ 160:src/stm32f1xx_hal_exti.c **** 
+  99              		.loc 1 160 0
+ 100 000c 0C68     		ldr	r4, [r1]	@ _10, pExtiConfig_8(D)->Line
+ 101 000e 224B     		ldr	r3, .L18	@ tmp194,
+ 102 0010 0460     		str	r4, [r0]	@ _10, hexti_7(D)->Line
+ 165:src/stm32f1xx_hal_exti.c **** 
+ 166:src/stm32f1xx_hal_exti.c ****   /* Configure triggers for configurable lines */
+ 167:src/stm32f1xx_hal_exti.c ****   if ((pExtiConfig->Line & EXTI_CONFIG) != 0x00u)
+ 103              		.loc 1 167 0
+ 104 0012 14F0007F 		tst	r4, #33554432	@ _10,
+ 163:src/stm32f1xx_hal_exti.c ****   maskline = (1uL << linepos);
+ 105              		.loc 1 163 0
+ 106 0016 04F01F00 		and	r0, r4, #31	@ linepos, _10,
+ 107              	.LVL1:
+ 164:src/stm32f1xx_hal_exti.c **** 
+ 108              		.loc 1 164 0
+ 109 001a 02FA00F2 		lsl	r2, r2, r0	@ maskline, tmp156, linepos
+ 110              	.LVL2:
+ 111              		.loc 1 167 0
+ 112 001e 25D0     		beq	.L4	@,
+ 168:src/stm32f1xx_hal_exti.c ****   {
+ 169:src/stm32f1xx_hal_exti.c ****     assert_param(IS_EXTI_TRIGGER(pExtiConfig->Trigger));
+ 170:src/stm32f1xx_hal_exti.c **** 
+ARM GAS  /tmp/ccA2fVch.s 			page 6
+
+
+ 171:src/stm32f1xx_hal_exti.c ****     /* Configure rising trigger */
+ 172:src/stm32f1xx_hal_exti.c ****     /* Mask or set line */
+ 173:src/stm32f1xx_hal_exti.c ****     if ((pExtiConfig->Trigger & EXTI_TRIGGER_RISING) != 0x00u)
+ 113              		.loc 1 173 0
+ 114 0020 8E68     		ldr	r6, [r1, #8]	@ _15, pExtiConfig_8(D)->Trigger
+ 174:src/stm32f1xx_hal_exti.c ****     {
+ 175:src/stm32f1xx_hal_exti.c ****       EXTI->RTSR |= maskline;
+ 115              		.loc 1 175 0
+ 116 0022 9D68     		ldr	r5, [r3, #8]	@ _17,
+ 173:src/stm32f1xx_hal_exti.c ****     {
+ 117              		.loc 1 173 0
+ 118 0024 16F0010F 		tst	r6, #1	@ _15,
+ 119              		.loc 1 175 0
+ 120 0028 14BF     		ite	ne
+ 121 002a 1543     		orrne	r5, r5, r2	@ _18, _17, maskline
+ 176:src/stm32f1xx_hal_exti.c ****     }
+ 177:src/stm32f1xx_hal_exti.c ****     else
+ 178:src/stm32f1xx_hal_exti.c ****     {
+ 179:src/stm32f1xx_hal_exti.c ****       EXTI->RTSR &= ~maskline;
+ 122              		.loc 1 179 0
+ 123 002c 9543     		biceq	r5, r5, r2	@ _22, _20, maskline
+ 124 002e 9D60     		str	r5, [r3, #8]	@ _22,
+ 180:src/stm32f1xx_hal_exti.c ****     }
+ 181:src/stm32f1xx_hal_exti.c **** 
+ 182:src/stm32f1xx_hal_exti.c ****     /* Configure falling trigger */
+ 183:src/stm32f1xx_hal_exti.c ****     /* Mask or set line */
+ 184:src/stm32f1xx_hal_exti.c ****     if ((pExtiConfig->Trigger & EXTI_TRIGGER_FALLING) != 0x00u)
+ 185:src/stm32f1xx_hal_exti.c ****     {
+ 186:src/stm32f1xx_hal_exti.c ****       EXTI->FTSR |= maskline;
+ 125              		.loc 1 186 0
+ 126 0030 DD68     		ldr	r5, [r3, #12]	@ _25,
+ 184:src/stm32f1xx_hal_exti.c ****     {
+ 127              		.loc 1 184 0
+ 128 0032 B607     		lsls	r6, r6, #30	@, _15,
+ 129              		.loc 1 186 0
+ 130 0034 4CBF     		ite	mi
+ 131 0036 1543     		orrmi	r5, r5, r2	@ _26, _25, maskline
+ 187:src/stm32f1xx_hal_exti.c ****     }
+ 188:src/stm32f1xx_hal_exti.c ****     else
+ 189:src/stm32f1xx_hal_exti.c ****     {
+ 190:src/stm32f1xx_hal_exti.c ****       EXTI->FTSR &= ~maskline;
+ 132              		.loc 1 190 0
+ 133 0038 9543     		bicpl	r5, r5, r2	@ _30, _28, maskline
+ 134 003a DD60     		str	r5, [r3, #12]	@ _30,
+ 191:src/stm32f1xx_hal_exti.c ****     }
+ 192:src/stm32f1xx_hal_exti.c **** 
+ 193:src/stm32f1xx_hal_exti.c **** 
+ 194:src/stm32f1xx_hal_exti.c ****     /* Configure gpio port selection in case of gpio exti line */
+ 195:src/stm32f1xx_hal_exti.c ****     if ((pExtiConfig->Line & EXTI_GPIO) == EXTI_GPIO)
+ 135              		.loc 1 195 0
+ 136 003c 04F0C065 		and	r5, r4, #100663296	@ tmp170, _10,
+ 137 0040 B5F1C06F 		cmp	r5, #100663296	@ tmp170,
+ 138 0044 12D1     		bne	.L4	@,
+ 196:src/stm32f1xx_hal_exti.c ****     {
+ 197:src/stm32f1xx_hal_exti.c ****       assert_param(IS_EXTI_GPIO_PORT(pExtiConfig->GPIOSel));
+ 198:src/stm32f1xx_hal_exti.c ****       assert_param(IS_EXTI_GPIO_PIN(linepos));
+ 199:src/stm32f1xx_hal_exti.c ****       
+ARM GAS  /tmp/ccA2fVch.s 			page 7
+
+
+ 200:src/stm32f1xx_hal_exti.c ****       regval = AFIO->EXTICR[linepos >> 2u];
+ 201:src/stm32f1xx_hal_exti.c ****       regval &= ~(AFIO_EXTICR1_EXTI0 << (AFIO_EXTICR1_EXTI1_Pos * (linepos & 0x03u)));
+ 139              		.loc 1 201 0
+ 140 0046 0F25     		movs	r5, #15	@ tmp176,
+ 141 0048 00F01C00 		and	r0, r0, #28	@ tmp172, linepos,
+ 142              	.LVL3:
+ 143 004c 00F18040 		add	r0, r0, #1073741824	@ _69, tmp172,
+ 144 0050 00F58030 		add	r0, r0, #65536	@ _69, _69,
+ 145 0054 04F00304 		and	r4, r4, #3	@ tmp174, _10,
+ 146              	.LVL4:
+ 200:src/stm32f1xx_hal_exti.c ****       regval &= ~(AFIO_EXTICR1_EXTI0 << (AFIO_EXTICR1_EXTI1_Pos * (linepos & 0x03u)));
+ 147              		.loc 1 200 0
+ 148 0058 8668     		ldr	r6, [r0, #8]	@ regval, MEM[(struct AFIO_TypeDef *)_69 + 8B]
+ 149              	.LVL5:
+ 150              		.loc 1 201 0
+ 151 005a A400     		lsls	r4, r4, #2	@ _36, tmp174,
+ 152 005c A540     		lsls	r5, r5, r4	@ tmp175, tmp176, _36
+ 153 005e 26EA0506 		bic	r6, r6, r5	@ regval, regval, tmp175
+ 154              	.LVL6:
+ 202:src/stm32f1xx_hal_exti.c ****       regval |= (pExtiConfig->GPIOSel << (AFIO_EXTICR1_EXTI1_Pos * (linepos & 0x03u)));
+ 155              		.loc 1 202 0
+ 156 0062 CD68     		ldr	r5, [r1, #12]	@ pExtiConfig_8(D)->GPIOSel, pExtiConfig_8(D)->GPIOSel
+ 157 0064 05FA04F4 		lsl	r4, r5, r4	@ tmp178, pExtiConfig_8(D)->GPIOSel, _36
+ 158 0068 3443     		orrs	r4, r4, r6	@, regval, tmp178, regval
+ 159              	.LVL7:
+ 203:src/stm32f1xx_hal_exti.c ****       AFIO->EXTICR[linepos >> 2u] = regval;
+ 160              		.loc 1 203 0
+ 161 006a 8460     		str	r4, [r0, #8]	@ regval, MEM[(struct AFIO_TypeDef *)_69 + 8B]
+ 162              	.LVL8:
+ 163              	.L4:
+ 204:src/stm32f1xx_hal_exti.c ****     }
+ 205:src/stm32f1xx_hal_exti.c ****   }
+ 206:src/stm32f1xx_hal_exti.c **** 
+ 207:src/stm32f1xx_hal_exti.c ****   /* Configure interrupt mode : read current mode */
+ 208:src/stm32f1xx_hal_exti.c ****   /* Mask or set line */
+ 209:src/stm32f1xx_hal_exti.c ****   if ((pExtiConfig->Mode & EXTI_MODE_INTERRUPT) != 0x00u)
+ 164              		.loc 1 209 0
+ 165 006c 4868     		ldr	r0, [r1, #4]	@ _44, pExtiConfig_8(D)->Mode
+ 210:src/stm32f1xx_hal_exti.c ****   {
+ 211:src/stm32f1xx_hal_exti.c ****     EXTI->IMR |= maskline;
+ 166              		.loc 1 211 0
+ 167 006e 1968     		ldr	r1, [r3]	@ _46,
+ 168              	.LVL9:
+ 209:src/stm32f1xx_hal_exti.c ****   {
+ 169              		.loc 1 209 0
+ 170 0070 C407     		lsls	r4, r0, #31	@, _44,
+ 171              		.loc 1 211 0
+ 172 0072 4CBF     		ite	mi
+ 173 0074 1143     		orrmi	r1, r1, r2	@ _47, _46, maskline
+ 212:src/stm32f1xx_hal_exti.c ****   }
+ 213:src/stm32f1xx_hal_exti.c ****   else
+ 214:src/stm32f1xx_hal_exti.c ****   {
+ 215:src/stm32f1xx_hal_exti.c ****     EXTI->IMR &= ~maskline;
+ 174              		.loc 1 215 0
+ 175 0076 9143     		bicpl	r1, r1, r2	@ _51, _49, maskline
+ 176 0078 1960     		str	r1, [r3]	@ _51,
+ 216:src/stm32f1xx_hal_exti.c ****   }
+ARM GAS  /tmp/ccA2fVch.s 			page 8
+
+
+ 217:src/stm32f1xx_hal_exti.c **** 
+ 218:src/stm32f1xx_hal_exti.c ****   /* Configure event mode : read current mode */
+ 219:src/stm32f1xx_hal_exti.c ****   /* Mask or set line */
+ 220:src/stm32f1xx_hal_exti.c ****   if ((pExtiConfig->Mode & EXTI_MODE_EVENT) != 0x00u)
+ 221:src/stm32f1xx_hal_exti.c ****   {
+ 222:src/stm32f1xx_hal_exti.c ****     EXTI->EMR |= maskline;
+ 177              		.loc 1 222 0
+ 178 007a 5968     		ldr	r1, [r3, #4]	@ _54,
+ 220:src/stm32f1xx_hal_exti.c ****   {
+ 179              		.loc 1 220 0
+ 180 007c 10F00200 		ands	r0, r0, #2	@ tmp186, _44,
+ 181              		.loc 1 222 0
+ 182 0080 17BF     		itett	ne
+ 183 0082 0A43     		orrne	r2, r2, r1	@ _55, maskline, _54
+ 184              	.LVL10:
+ 223:src/stm32f1xx_hal_exti.c ****   }
+ 224:src/stm32f1xx_hal_exti.c ****   else
+ 225:src/stm32f1xx_hal_exti.c ****   {
+ 226:src/stm32f1xx_hal_exti.c ****     EXTI->EMR &= ~maskline;
+ 185              		.loc 1 226 0
+ 186 0084 21EA0202 		biceq	r2, r1, r2	@ _59, _57, maskline
+ 227:src/stm32f1xx_hal_exti.c ****   }
+ 228:src/stm32f1xx_hal_exti.c **** 
+ 229:src/stm32f1xx_hal_exti.c ****   return HAL_OK;
+ 187              		.loc 1 229 0
+ 188 0088 0020     		movne	r0, #0	@ <retval>,
+ 222:src/stm32f1xx_hal_exti.c ****   }
+ 189              		.loc 1 222 0
+ 190 008a 5A60     		strne	r2, [r3, #4]	@ _55, MEM[(struct EXTI_TypeDef *)1073808384B].EMR
+ 226:src/stm32f1xx_hal_exti.c ****   }
+ 191              		.loc 1 226 0
+ 192 008c 08BF     		it	eq
+ 193 008e 5A60     		streq	r2, [r3, #4]	@ _59, MEM[(struct EXTI_TypeDef *)1073808384B].EMR
+ 194 0090 70BD     		pop	{r4, r5, r6, pc}	@
+ 195              	.LVL11:
+ 196              	.L14:
+ 152:src/stm32f1xx_hal_exti.c ****   }
+ 197              		.loc 1 152 0
+ 198 0092 0120     		movs	r0, #1	@ <retval>,
+ 199              	.LVL12:
+ 230:src/stm32f1xx_hal_exti.c **** }
+ 200              		.loc 1 230 0
+ 201 0094 70BD     		pop	{r4, r5, r6, pc}	@
+ 202              	.L19:
+ 203 0096 00BF     		.align	2
+ 204              	.L18:
+ 205 0098 00040140 		.word	1073808384
+ 206              		.cfi_endproc
+ 207              	.LFE65:
+ 208              		.size	HAL_EXTI_SetConfigLine, .-HAL_EXTI_SetConfigLine
+ 209              		.align	1
+ 210              		.global	HAL_EXTI_GetConfigLine
+ 211              		.syntax unified
+ 212              		.thumb
+ 213              		.thumb_func
+ 214              		.fpu softvfp
+ 215              		.type	HAL_EXTI_GetConfigLine, %function
+ARM GAS  /tmp/ccA2fVch.s 			page 9
+
+
+ 216              	HAL_EXTI_GetConfigLine:
+ 217              	.LFB66:
+ 231:src/stm32f1xx_hal_exti.c **** 
+ 232:src/stm32f1xx_hal_exti.c **** /**
+ 233:src/stm32f1xx_hal_exti.c ****   * @brief  Get configuration of a dedicated Exti line.
+ 234:src/stm32f1xx_hal_exti.c ****   * @param  hexti Exti handle.
+ 235:src/stm32f1xx_hal_exti.c ****   * @param  pExtiConfig Pointer on structure to store Exti configuration.
+ 236:src/stm32f1xx_hal_exti.c ****   * @retval HAL Status.
+ 237:src/stm32f1xx_hal_exti.c ****   */
+ 238:src/stm32f1xx_hal_exti.c **** HAL_StatusTypeDef HAL_EXTI_GetConfigLine(EXTI_HandleTypeDef *hexti, EXTI_ConfigTypeDef *pExtiConfig
+ 239:src/stm32f1xx_hal_exti.c **** {
+ 218              		.loc 1 239 0
+ 219              		.cfi_startproc
+ 220              		@ args = 0, pretend = 0, frame = 0
+ 221              		@ frame_needed = 0, uses_anonymous_args = 0
+ 222              	.LVL13:
+ 223 009c 70B5     		push	{r4, r5, r6, lr}	@
+ 224              	.LCFI1:
+ 225              		.cfi_def_cfa_offset 16
+ 226              		.cfi_offset 4, -16
+ 227              		.cfi_offset 5, -12
+ 228              		.cfi_offset 6, -8
+ 229              		.cfi_offset 14, -4
+ 240:src/stm32f1xx_hal_exti.c ****   uint32_t regval;
+ 241:src/stm32f1xx_hal_exti.c ****   uint32_t linepos;
+ 242:src/stm32f1xx_hal_exti.c ****   uint32_t maskline;
+ 243:src/stm32f1xx_hal_exti.c **** 
+ 244:src/stm32f1xx_hal_exti.c ****   /* Check null pointer */
+ 245:src/stm32f1xx_hal_exti.c ****   if ((hexti == NULL) || (pExtiConfig == NULL))
+ 230              		.loc 1 245 0
+ 231 009e 0028     		cmp	r0, #0	@ hexti
+ 232 00a0 3CD0     		beq	.L31	@
+ 233              		.loc 1 245 0 is_stmt 0 discriminator 1
+ 234 00a2 0029     		cmp	r1, #0	@ pExtiConfig
+ 235 00a4 3AD0     		beq	.L31	@
+ 246:src/stm32f1xx_hal_exti.c ****   {
+ 247:src/stm32f1xx_hal_exti.c ****     return HAL_ERROR;
+ 248:src/stm32f1xx_hal_exti.c ****   }
+ 249:src/stm32f1xx_hal_exti.c **** 
+ 250:src/stm32f1xx_hal_exti.c ****   /* Check the parameter */
+ 251:src/stm32f1xx_hal_exti.c ****   assert_param(IS_EXTI_LINE(hexti->Line));
+ 252:src/stm32f1xx_hal_exti.c **** 
+ 253:src/stm32f1xx_hal_exti.c ****   /* Store handle line number to configuration structure */
+ 254:src/stm32f1xx_hal_exti.c ****   pExtiConfig->Line = hexti->Line;
+ 236              		.loc 1 254 0 is_stmt 1
+ 237 00a6 0468     		ldr	r4, [r0]	@ _10, hexti_7(D)->Line
+ 255:src/stm32f1xx_hal_exti.c **** 
+ 256:src/stm32f1xx_hal_exti.c ****   /* Compute line mask */
+ 257:src/stm32f1xx_hal_exti.c ****   linepos = (pExtiConfig->Line & EXTI_PIN_MASK);
+ 258:src/stm32f1xx_hal_exti.c ****   maskline = (1uL << linepos);
+ 238              		.loc 1 258 0
+ 239 00a8 0120     		movs	r0, #1	@ tmp137,
+ 240              	.LVL14:
+ 259:src/stm32f1xx_hal_exti.c **** 
+ 260:src/stm32f1xx_hal_exti.c ****   /* 1] Get core mode : interrupt */
+ 261:src/stm32f1xx_hal_exti.c **** 
+ 262:src/stm32f1xx_hal_exti.c ****   /* Check if selected line is enable */
+ARM GAS  /tmp/ccA2fVch.s 			page 10
+
+
+ 263:src/stm32f1xx_hal_exti.c ****   if ((EXTI->IMR & maskline) != 0x00u)
+ 241              		.loc 1 263 0
+ 242 00aa 1D4E     		ldr	r6, .L39	@ tmp138,
+ 254:src/stm32f1xx_hal_exti.c **** 
+ 243              		.loc 1 254 0
+ 244 00ac 0C60     		str	r4, [r1]	@ _10, pExtiConfig_8(D)->Line
+ 245              		.loc 1 263 0
+ 246 00ae 3268     		ldr	r2, [r6]	@ _14, MEM[(struct EXTI_TypeDef *)1073808384B].IMR
+ 257:src/stm32f1xx_hal_exti.c ****   maskline = (1uL << linepos);
+ 247              		.loc 1 257 0
+ 248 00b0 04F01F03 		and	r3, r4, #31	@ linepos, _10,
+ 249              	.LVL15:
+ 258:src/stm32f1xx_hal_exti.c **** 
+ 250              		.loc 1 258 0
+ 251 00b4 00FA03F5 		lsl	r5, r0, r3	@ maskline, tmp137, linepos
+ 252              	.LVL16:
+ 264:src/stm32f1xx_hal_exti.c ****   {
+ 265:src/stm32f1xx_hal_exti.c ****     pExtiConfig->Mode = EXTI_MODE_INTERRUPT;
+ 253              		.loc 1 265 0
+ 254 00b8 2A40     		ands	r2, r5, r2	@ tmp139, maskline, _14
+ 255 00ba 18BF     		it	ne
+ 256 00bc 0246     		movne	r2, r0	@ tmp169, tmp137
+ 257 00be 4A60     		str	r2, [r1, #4]	@ tmp169, pExtiConfig_8(D)->Mode
+ 266:src/stm32f1xx_hal_exti.c ****   }
+ 267:src/stm32f1xx_hal_exti.c ****   else
+ 268:src/stm32f1xx_hal_exti.c ****   {
+ 269:src/stm32f1xx_hal_exti.c ****     pExtiConfig->Mode = EXTI_MODE_NONE;
+ 270:src/stm32f1xx_hal_exti.c ****   }
+ 271:src/stm32f1xx_hal_exti.c **** 
+ 272:src/stm32f1xx_hal_exti.c ****   /* Get event mode */
+ 273:src/stm32f1xx_hal_exti.c ****   /* Check if selected line is enable */
+ 274:src/stm32f1xx_hal_exti.c ****   if ((EXTI->EMR & maskline) != 0x00u)
+ 258              		.loc 1 274 0
+ 259 00c0 7068     		ldr	r0, [r6, #4]	@ _18, MEM[(struct EXTI_TypeDef *)1073808384B].EMR
+ 260 00c2 0542     		tst	r5, r0	@ maskline, _18
+ 275:src/stm32f1xx_hal_exti.c ****   {
+ 276:src/stm32f1xx_hal_exti.c ****     pExtiConfig->Mode |= EXTI_MODE_EVENT;
+ 261              		.loc 1 276 0
+ 262 00c4 1CBF     		itt	ne
+ 263 00c6 42F00202 		orrne	r2, r2, #2	@ tmp144, tmp169,
+ 264 00ca 4A60     		strne	r2, [r1, #4]	@ tmp144, pExtiConfig_8(D)->Mode
+ 277:src/stm32f1xx_hal_exti.c ****   }
+ 278:src/stm32f1xx_hal_exti.c **** 
+ 279:src/stm32f1xx_hal_exti.c ****   /* 2] Get trigger for configurable lines : rising */
+ 280:src/stm32f1xx_hal_exti.c ****   if ((pExtiConfig->Line & EXTI_CONFIG) != 0x00u)
+ 265              		.loc 1 280 0
+ 266 00cc 14F00070 		ands	r0, r4, #33554432	@ tmp146, _10,
+ 267 00d0 22D0     		beq	.L25	@,
+ 281:src/stm32f1xx_hal_exti.c ****   {
+ 282:src/stm32f1xx_hal_exti.c ****     /* Check if configuration of selected line is enable */
+ 283:src/stm32f1xx_hal_exti.c ****     if ((EXTI->RTSR & maskline) != 0x00u)
+ 268              		.loc 1 283 0
+ 269 00d2 B268     		ldr	r2, [r6, #8]	@ _24, MEM[(struct EXTI_TypeDef *)1073808384B].RTSR
+ 284:src/stm32f1xx_hal_exti.c ****     {
+ 285:src/stm32f1xx_hal_exti.c ****       pExtiConfig->Trigger = EXTI_TRIGGER_RISING;
+ 286:src/stm32f1xx_hal_exti.c ****     }
+ 287:src/stm32f1xx_hal_exti.c ****     else
+ARM GAS  /tmp/ccA2fVch.s 			page 11
+
+
+ 288:src/stm32f1xx_hal_exti.c ****     {
+ 289:src/stm32f1xx_hal_exti.c ****       pExtiConfig->Trigger = EXTI_TRIGGER_NONE;
+ 290:src/stm32f1xx_hal_exti.c ****     }
+ 291:src/stm32f1xx_hal_exti.c **** 
+ 292:src/stm32f1xx_hal_exti.c ****     /* Get falling configuration */
+ 293:src/stm32f1xx_hal_exti.c ****     /* Check if configuration of selected line is enable */
+ 294:src/stm32f1xx_hal_exti.c ****     if ((EXTI->FTSR & maskline) != 0x00u)
+ 295:src/stm32f1xx_hal_exti.c ****     {
+ 296:src/stm32f1xx_hal_exti.c ****       pExtiConfig->Trigger |= EXTI_TRIGGER_FALLING;
+ 297:src/stm32f1xx_hal_exti.c ****     }
+ 298:src/stm32f1xx_hal_exti.c **** 
+ 299:src/stm32f1xx_hal_exti.c ****     /* Get Gpio port selection for gpio lines */
+ 300:src/stm32f1xx_hal_exti.c ****     if ((pExtiConfig->Line & EXTI_GPIO) == EXTI_GPIO)
+ 270              		.loc 1 300 0
+ 271 00d4 04F0C064 		and	r4, r4, #100663296	@ tmp155, _10,
+ 283:src/stm32f1xx_hal_exti.c ****     {
+ 272              		.loc 1 283 0
+ 273 00d8 2A40     		ands	r2, r5, r2	@ tmp148, maskline, _24
+ 285:src/stm32f1xx_hal_exti.c ****     }
+ 274              		.loc 1 285 0
+ 275 00da 18BF     		it	ne
+ 276 00dc 0122     		movne	r2, #1	@ tmp149,
+ 289:src/stm32f1xx_hal_exti.c ****     }
+ 277              		.loc 1 289 0
+ 278 00de 8A60     		str	r2, [r1, #8]	@ tmp148, pExtiConfig_8(D)->Trigger
+ 294:src/stm32f1xx_hal_exti.c ****     {
+ 279              		.loc 1 294 0
+ 280 00e0 F268     		ldr	r2, [r6, #12]	@ _28, MEM[(struct EXTI_TypeDef *)1073808384B].FTSR
+ 281 00e2 1542     		tst	r5, r2	@ maskline, _28
+ 296:src/stm32f1xx_hal_exti.c ****     }
+ 282              		.loc 1 296 0
+ 283 00e4 1EBF     		ittt	ne
+ 284 00e6 8A68     		ldrne	r2, [r1, #8]	@ pExtiConfig_8(D)->Trigger, pExtiConfig_8(D)->Trigger
+ 285 00e8 42F00202 		orrne	r2, r2, #2	@ tmp153, pExtiConfig_8(D)->Trigger,
+ 286 00ec 8A60     		strne	r2, [r1, #8]	@ tmp153, pExtiConfig_8(D)->Trigger
+ 287              		.loc 1 300 0
+ 288 00ee B4F1C06F 		cmp	r4, #100663296	@ tmp155,
+ 289 00f2 0ED1     		bne	.L29	@,
+ 301:src/stm32f1xx_hal_exti.c ****     {
+ 302:src/stm32f1xx_hal_exti.c ****       assert_param(IS_EXTI_GPIO_PIN(linepos));
+ 303:src/stm32f1xx_hal_exti.c **** 
+ 304:src/stm32f1xx_hal_exti.c ****       regval = AFIO->EXTICR[linepos >> 2u];
+ 290              		.loc 1 304 0
+ 291 00f4 9A08     		lsrs	r2, r3, #2	@ _35, linepos,
+ 305:src/stm32f1xx_hal_exti.c ****       pExtiConfig->GPIOSel = ((regval << (AFIO_EXTICR1_EXTI1_Pos * (3uL - (linepos & 0x03u)))) >> 2
+ 292              		.loc 1 305 0
+ 293 00f6 DB43     		mvns	r3, r3	@ tmp158, linepos
+ 294              	.LVL17:
+ 304:src/stm32f1xx_hal_exti.c ****       pExtiConfig->GPIOSel = ((regval << (AFIO_EXTICR1_EXTI1_Pos * (3uL - (linepos & 0x03u)))) >> 2
+ 295              		.loc 1 304 0
+ 296 00f8 0A48     		ldr	r0, .L39+4	@ tmp156,
+ 297 00fa 0232     		adds	r2, r2, #2	@ tmp157, _35,
+ 298 00fc 50F82220 		ldr	r2, [r0, r2, lsl #2]	@ regval, MEM[(struct AFIO_TypeDef *)1073807360B].EXTICR
+ 299              	.LVL18:
+ 300              		.loc 1 305 0
+ 301 0100 03F00303 		and	r3, r3, #3	@ tmp159, tmp158,
+ 302              	.LVL19:
+ARM GAS  /tmp/ccA2fVch.s 			page 12
+
+
+ 303 0104 9B00     		lsls	r3, r3, #2	@ tmp160, tmp159,
+ 304 0106 02FA03F3 		lsl	r3, r2, r3	@ tmp161, regval, tmp160
+ 305 010a 1B0E     		lsrs	r3, r3, #24	@ tmp162, tmp161,
+ 306 010c CB60     		str	r3, [r1, #12]	@ tmp162, pExtiConfig_8(D)->GPIOSel
+ 306:src/stm32f1xx_hal_exti.c ****     }
+ 307:src/stm32f1xx_hal_exti.c ****     else
+ 308:src/stm32f1xx_hal_exti.c ****     {
+ 309:src/stm32f1xx_hal_exti.c ****       pExtiConfig->GPIOSel = 0x00u;
+ 310:src/stm32f1xx_hal_exti.c ****     }
+ 311:src/stm32f1xx_hal_exti.c ****   }
+ 312:src/stm32f1xx_hal_exti.c ****   else
+ 313:src/stm32f1xx_hal_exti.c ****   {
+ 314:src/stm32f1xx_hal_exti.c ****     /* No Trigger selected */
+ 315:src/stm32f1xx_hal_exti.c ****     pExtiConfig->Trigger = EXTI_TRIGGER_NONE;
+ 316:src/stm32f1xx_hal_exti.c ****     pExtiConfig->GPIOSel = 0x00u;
+ 317:src/stm32f1xx_hal_exti.c ****   }
+ 318:src/stm32f1xx_hal_exti.c **** 
+ 319:src/stm32f1xx_hal_exti.c ****   return HAL_OK;
+ 307              		.loc 1 319 0
+ 308 010e 0020     		movs	r0, #0	@ <retval>,
+ 309 0110 70BD     		pop	{r4, r5, r6, pc}	@
+ 310              	.LVL20:
+ 311              	.L29:
+ 309:src/stm32f1xx_hal_exti.c ****     }
+ 312              		.loc 1 309 0
+ 313 0112 0020     		movs	r0, #0	@ tmp163,
+ 314              	.L38:
+ 316:src/stm32f1xx_hal_exti.c ****   }
+ 315              		.loc 1 316 0
+ 316 0114 C860     		str	r0, [r1, #12]	@ tmp146, pExtiConfig_8(D)->GPIOSel
+ 317 0116 70BD     		pop	{r4, r5, r6, pc}	@
+ 318              	.LVL21:
+ 319              	.L25:
+ 315:src/stm32f1xx_hal_exti.c ****     pExtiConfig->GPIOSel = 0x00u;
+ 320              		.loc 1 315 0
+ 321 0118 8860     		str	r0, [r1, #8]	@ tmp146, pExtiConfig_8(D)->Trigger
+ 322 011a FBE7     		b	.L38	@
+ 323              	.LVL22:
+ 324              	.L31:
+ 247:src/stm32f1xx_hal_exti.c ****   }
+ 325              		.loc 1 247 0
+ 326 011c 0120     		movs	r0, #1	@ <retval>,
+ 327              	.LVL23:
+ 320:src/stm32f1xx_hal_exti.c **** }
+ 328              		.loc 1 320 0
+ 329 011e 70BD     		pop	{r4, r5, r6, pc}	@
+ 330              	.L40:
+ 331              		.align	2
+ 332              	.L39:
+ 333 0120 00040140 		.word	1073808384
+ 334 0124 00000140 		.word	1073807360
+ 335              		.cfi_endproc
+ 336              	.LFE66:
+ 337              		.size	HAL_EXTI_GetConfigLine, .-HAL_EXTI_GetConfigLine
+ 338              		.align	1
+ 339              		.global	HAL_EXTI_ClearConfigLine
+ 340              		.syntax unified
+ARM GAS  /tmp/ccA2fVch.s 			page 13
+
+
+ 341              		.thumb
+ 342              		.thumb_func
+ 343              		.fpu softvfp
+ 344              		.type	HAL_EXTI_ClearConfigLine, %function
+ 345              	HAL_EXTI_ClearConfigLine:
+ 346              	.LFB67:
+ 321:src/stm32f1xx_hal_exti.c **** 
+ 322:src/stm32f1xx_hal_exti.c **** /**
+ 323:src/stm32f1xx_hal_exti.c ****   * @brief  Clear whole configuration of a dedicated Exti line.
+ 324:src/stm32f1xx_hal_exti.c ****   * @param  hexti Exti handle.
+ 325:src/stm32f1xx_hal_exti.c ****   * @retval HAL Status.
+ 326:src/stm32f1xx_hal_exti.c ****   */
+ 327:src/stm32f1xx_hal_exti.c **** HAL_StatusTypeDef HAL_EXTI_ClearConfigLine(EXTI_HandleTypeDef *hexti)
+ 328:src/stm32f1xx_hal_exti.c **** {
+ 347              		.loc 1 328 0
+ 348              		.cfi_startproc
+ 349              		@ args = 0, pretend = 0, frame = 0
+ 350              		@ frame_needed = 0, uses_anonymous_args = 0
+ 351              	.LVL24:
+ 352 0128 10B5     		push	{r4, lr}	@
+ 353              	.LCFI2:
+ 354              		.cfi_def_cfa_offset 8
+ 355              		.cfi_offset 4, -8
+ 356              		.cfi_offset 14, -4
+ 329:src/stm32f1xx_hal_exti.c ****   uint32_t regval;
+ 330:src/stm32f1xx_hal_exti.c ****   uint32_t linepos;
+ 331:src/stm32f1xx_hal_exti.c ****   uint32_t maskline;
+ 332:src/stm32f1xx_hal_exti.c **** 
+ 333:src/stm32f1xx_hal_exti.c ****   /* Check null pointer */
+ 334:src/stm32f1xx_hal_exti.c ****   if (hexti == NULL)
+ 357              		.loc 1 334 0
+ 358 012a 60B3     		cbz	r0, .L45	@ hexti,
+ 335:src/stm32f1xx_hal_exti.c ****   {
+ 336:src/stm32f1xx_hal_exti.c ****     return HAL_ERROR;
+ 337:src/stm32f1xx_hal_exti.c ****   }
+ 338:src/stm32f1xx_hal_exti.c **** 
+ 339:src/stm32f1xx_hal_exti.c ****   /* Check the parameter */
+ 340:src/stm32f1xx_hal_exti.c ****   assert_param(IS_EXTI_LINE(hexti->Line));
+ 341:src/stm32f1xx_hal_exti.c **** 
+ 342:src/stm32f1xx_hal_exti.c ****   /* compute line mask */
+ 343:src/stm32f1xx_hal_exti.c ****   linepos = (hexti->Line & EXTI_PIN_MASK);
+ 344:src/stm32f1xx_hal_exti.c ****   maskline = (1uL << linepos);
+ 359              		.loc 1 344 0
+ 360 012c 0123     		movs	r3, #1	@ tmp137,
+ 343:src/stm32f1xx_hal_exti.c ****   maskline = (1uL << linepos);
+ 361              		.loc 1 343 0
+ 362 012e 0168     		ldr	r1, [r0]	@ _5, hexti_3(D)->Line
+ 345:src/stm32f1xx_hal_exti.c **** 
+ 346:src/stm32f1xx_hal_exti.c ****   /* 1] Clear interrupt mode */
+ 347:src/stm32f1xx_hal_exti.c ****   EXTI->IMR = (EXTI->IMR & ~maskline);
+ 363              		.loc 1 347 0
+ 364 0130 1648     		ldr	r0, .L47	@ tmp135,
+ 365              	.LVL25:
+ 343:src/stm32f1xx_hal_exti.c ****   maskline = (1uL << linepos);
+ 366              		.loc 1 343 0
+ 367 0132 01F01F02 		and	r2, r1, #31	@ linepos, _5,
+ 368              	.LVL26:
+ARM GAS  /tmp/ccA2fVch.s 			page 14
+
+
+ 344:src/stm32f1xx_hal_exti.c **** 
+ 369              		.loc 1 344 0
+ 370 0136 9340     		lsls	r3, r3, r2	@ maskline, tmp137, linepos
+ 371              	.LVL27:
+ 372              		.loc 1 347 0
+ 373 0138 DB43     		mvns	r3, r3	@ _9, maskline
+ 374              	.LVL28:
+ 375 013a 0468     		ldr	r4, [r0]	@ _8, MEM[(struct EXTI_TypeDef *)1073808384B].IMR
+ 376 013c 1C40     		ands	r4, r4, r3	@, _10, _8, _9
+ 377 013e 0460     		str	r4, [r0]	@ _10, MEM[(struct EXTI_TypeDef *)1073808384B].IMR
+ 348:src/stm32f1xx_hal_exti.c **** 
+ 349:src/stm32f1xx_hal_exti.c ****   /* 2] Clear event mode */
+ 350:src/stm32f1xx_hal_exti.c ****   EXTI->EMR = (EXTI->EMR & ~maskline);
+ 378              		.loc 1 350 0
+ 379 0140 4468     		ldr	r4, [r0, #4]	@ _12, MEM[(struct EXTI_TypeDef *)1073808384B].EMR
+ 380 0142 1C40     		ands	r4, r4, r3	@, _13, _12, _9
+ 381 0144 4460     		str	r4, [r0, #4]	@ _13, MEM[(struct EXTI_TypeDef *)1073808384B].EMR
+ 351:src/stm32f1xx_hal_exti.c **** 
+ 352:src/stm32f1xx_hal_exti.c ****   /* 3] Clear triggers in case of configurable lines */
+ 353:src/stm32f1xx_hal_exti.c ****   if ((hexti->Line & EXTI_CONFIG) != 0x00u)
+ 382              		.loc 1 353 0
+ 383 0146 8C01     		lsls	r4, r1, #6	@, _5,
+ 384 0148 01D4     		bmi	.L43	@,
+ 385              	.LVL29:
+ 386              	.L46:
+ 354:src/stm32f1xx_hal_exti.c ****   {
+ 355:src/stm32f1xx_hal_exti.c ****     EXTI->RTSR = (EXTI->RTSR & ~maskline);
+ 356:src/stm32f1xx_hal_exti.c ****     EXTI->FTSR = (EXTI->FTSR & ~maskline);
+ 357:src/stm32f1xx_hal_exti.c **** 
+ 358:src/stm32f1xx_hal_exti.c ****     /* Get Gpio port selection for gpio lines */
+ 359:src/stm32f1xx_hal_exti.c ****     if ((hexti->Line & EXTI_GPIO) == EXTI_GPIO)
+ 360:src/stm32f1xx_hal_exti.c ****     {
+ 361:src/stm32f1xx_hal_exti.c ****       assert_param(IS_EXTI_GPIO_PIN(linepos));
+ 362:src/stm32f1xx_hal_exti.c **** 
+ 363:src/stm32f1xx_hal_exti.c ****       regval = AFIO->EXTICR[linepos >> 2u];
+ 364:src/stm32f1xx_hal_exti.c ****       regval &= ~(AFIO_EXTICR1_EXTI0 << (AFIO_EXTICR1_EXTI1_Pos * (linepos & 0x03u)));
+ 365:src/stm32f1xx_hal_exti.c ****       AFIO->EXTICR[linepos >> 2u] = regval;
+ 366:src/stm32f1xx_hal_exti.c ****     }
+ 367:src/stm32f1xx_hal_exti.c ****   }
+ 368:src/stm32f1xx_hal_exti.c **** 
+ 369:src/stm32f1xx_hal_exti.c ****   return HAL_OK;
+ 387              		.loc 1 369 0
+ 388 014a 0020     		movs	r0, #0	@ <retval>,
+ 389 014c 10BD     		pop	{r4, pc}	@
+ 390              	.LVL30:
+ 391              	.L43:
+ 355:src/stm32f1xx_hal_exti.c ****     EXTI->FTSR = (EXTI->FTSR & ~maskline);
+ 392              		.loc 1 355 0
+ 393 014e 8468     		ldr	r4, [r0, #8]	@ _16, MEM[(struct EXTI_TypeDef *)1073808384B].RTSR
+ 394 0150 1C40     		ands	r4, r4, r3	@, _17, _16, _9
+ 395 0152 8460     		str	r4, [r0, #8]	@ _17, MEM[(struct EXTI_TypeDef *)1073808384B].RTSR
+ 356:src/stm32f1xx_hal_exti.c **** 
+ 396              		.loc 1 356 0
+ 397 0154 C468     		ldr	r4, [r0, #12]	@ _19, MEM[(struct EXTI_TypeDef *)1073808384B].FTSR
+ 398 0156 2340     		ands	r3, r3, r4	@, _20, _9, _19
+ 399              	.LVL31:
+ 400 0158 C360     		str	r3, [r0, #12]	@ _20, MEM[(struct EXTI_TypeDef *)1073808384B].FTSR
+ARM GAS  /tmp/ccA2fVch.s 			page 15
+
+
+ 359:src/stm32f1xx_hal_exti.c ****     {
+ 401              		.loc 1 359 0
+ 402 015a 01F0C063 		and	r3, r1, #100663296	@ tmp146, _5,
+ 403 015e B3F1C06F 		cmp	r3, #100663296	@ tmp146,
+ 404 0162 F2D1     		bne	.L46	@,
+ 364:src/stm32f1xx_hal_exti.c ****       AFIO->EXTICR[linepos >> 2u] = regval;
+ 405              		.loc 1 364 0
+ 406 0164 0F20     		movs	r0, #15	@ tmp153,
+ 407 0166 02F01C03 		and	r3, r2, #28	@ tmp148, linepos,
+ 408 016a 03F18043 		add	r3, r3, #1073741824	@ _33, tmp148,
+ 409 016e 03F58033 		add	r3, r3, #65536	@ _33, _33,
+ 410 0172 01F00301 		and	r1, r1, #3	@ tmp150, _5,
+ 363:src/stm32f1xx_hal_exti.c ****       regval &= ~(AFIO_EXTICR1_EXTI0 << (AFIO_EXTICR1_EXTI1_Pos * (linepos & 0x03u)));
+ 411              		.loc 1 363 0
+ 412 0176 9A68     		ldr	r2, [r3, #8]	@ regval, MEM[(struct AFIO_TypeDef *)_33 + 8B]
+ 413              	.LVL32:
+ 364:src/stm32f1xx_hal_exti.c ****       AFIO->EXTICR[linepos >> 2u] = regval;
+ 414              		.loc 1 364 0
+ 415 0178 8900     		lsls	r1, r1, #2	@ tmp151, tmp150,
+ 416 017a 00FA01F1 		lsl	r1, r0, r1	@ tmp152, tmp153, tmp151
+ 417 017e 22EA0101 		bic	r1, r2, r1	@ regval, regval, tmp152
+ 418              	.LVL33:
+ 365:src/stm32f1xx_hal_exti.c ****     }
+ 419              		.loc 1 365 0
+ 420 0182 9960     		str	r1, [r3, #8]	@ regval, MEM[(struct AFIO_TypeDef *)_33 + 8B]
+ 421 0184 E1E7     		b	.L46	@
+ 422              	.LVL34:
+ 423              	.L45:
+ 336:src/stm32f1xx_hal_exti.c ****   }
+ 424              		.loc 1 336 0
+ 425 0186 0120     		movs	r0, #1	@ <retval>,
+ 426              	.LVL35:
+ 370:src/stm32f1xx_hal_exti.c **** }
+ 427              		.loc 1 370 0
+ 428 0188 10BD     		pop	{r4, pc}	@
+ 429              	.L48:
+ 430 018a 00BF     		.align	2
+ 431              	.L47:
+ 432 018c 00040140 		.word	1073808384
+ 433              		.cfi_endproc
+ 434              	.LFE67:
+ 435              		.size	HAL_EXTI_ClearConfigLine, .-HAL_EXTI_ClearConfigLine
+ 436              		.align	1
+ 437              		.global	HAL_EXTI_RegisterCallback
+ 438              		.syntax unified
+ 439              		.thumb
+ 440              		.thumb_func
+ 441              		.fpu softvfp
+ 442              		.type	HAL_EXTI_RegisterCallback, %function
+ 443              	HAL_EXTI_RegisterCallback:
+ 444              	.LFB68:
+ 371:src/stm32f1xx_hal_exti.c **** 
+ 372:src/stm32f1xx_hal_exti.c **** /**
+ 373:src/stm32f1xx_hal_exti.c ****   * @brief  Register callback for a dedicated Exti line.
+ 374:src/stm32f1xx_hal_exti.c ****   * @param  hexti Exti handle.
+ 375:src/stm32f1xx_hal_exti.c ****   * @param  CallbackID User callback identifier.
+ 376:src/stm32f1xx_hal_exti.c ****   *         This parameter can be one of @arg @ref EXTI_CallbackIDTypeDef values.
+ARM GAS  /tmp/ccA2fVch.s 			page 16
+
+
+ 377:src/stm32f1xx_hal_exti.c ****   * @param  pPendingCbfn function pointer to be stored as callback.
+ 378:src/stm32f1xx_hal_exti.c ****   * @retval HAL Status.
+ 379:src/stm32f1xx_hal_exti.c ****   */
+ 380:src/stm32f1xx_hal_exti.c **** HAL_StatusTypeDef HAL_EXTI_RegisterCallback(EXTI_HandleTypeDef *hexti, EXTI_CallbackIDTypeDef Callb
+ 381:src/stm32f1xx_hal_exti.c **** {
+ 445              		.loc 1 381 0
+ 446              		.cfi_startproc
+ 447              		@ args = 0, pretend = 0, frame = 0
+ 448              		@ frame_needed = 0, uses_anonymous_args = 0
+ 449              		@ link register save eliminated.
+ 450              	.LVL36:
+ 382:src/stm32f1xx_hal_exti.c ****   HAL_StatusTypeDef status = HAL_OK;
+ 383:src/stm32f1xx_hal_exti.c **** 
+ 384:src/stm32f1xx_hal_exti.c ****   switch (CallbackID)
+ 451              		.loc 1 384 0
+ 452 0190 11B9     		cbnz	r1, .L53	@ CallbackID,
+ 385:src/stm32f1xx_hal_exti.c ****   {
+ 386:src/stm32f1xx_hal_exti.c ****     case  HAL_EXTI_COMMON_CB_ID:
+ 387:src/stm32f1xx_hal_exti.c ****       hexti->PendingCallback = pPendingCbfn;
+ 453              		.loc 1 387 0
+ 454 0192 4260     		str	r2, [r0, #4]	@ pPendingCbfn, hexti_5(D)->PendingCallback
+ 382:src/stm32f1xx_hal_exti.c ****   HAL_StatusTypeDef status = HAL_OK;
+ 455              		.loc 1 382 0
+ 456 0194 0846     		mov	r0, r1	@ <retval>, CallbackID
+ 457              	.LVL37:
+ 388:src/stm32f1xx_hal_exti.c ****       break;
+ 458              		.loc 1 388 0
+ 459 0196 7047     		bx	lr	@
+ 460              	.LVL38:
+ 461              	.L53:
+ 389:src/stm32f1xx_hal_exti.c **** 
+ 390:src/stm32f1xx_hal_exti.c ****     default:
+ 391:src/stm32f1xx_hal_exti.c ****       status = HAL_ERROR;
+ 462              		.loc 1 391 0
+ 463 0198 0120     		movs	r0, #1	@ <retval>,
+ 464              	.LVL39:
+ 392:src/stm32f1xx_hal_exti.c ****       break;
+ 393:src/stm32f1xx_hal_exti.c ****   }
+ 394:src/stm32f1xx_hal_exti.c **** 
+ 395:src/stm32f1xx_hal_exti.c ****   return status;
+ 396:src/stm32f1xx_hal_exti.c **** }
+ 465              		.loc 1 396 0
+ 466 019a 7047     		bx	lr	@
+ 467              		.cfi_endproc
+ 468              	.LFE68:
+ 469              		.size	HAL_EXTI_RegisterCallback, .-HAL_EXTI_RegisterCallback
+ 470              		.align	1
+ 471              		.global	HAL_EXTI_GetHandle
+ 472              		.syntax unified
+ 473              		.thumb
+ 474              		.thumb_func
+ 475              		.fpu softvfp
+ 476              		.type	HAL_EXTI_GetHandle, %function
+ 477              	HAL_EXTI_GetHandle:
+ 478              	.LFB69:
+ 397:src/stm32f1xx_hal_exti.c **** 
+ 398:src/stm32f1xx_hal_exti.c **** /**
+ARM GAS  /tmp/ccA2fVch.s 			page 17
+
+
+ 399:src/stm32f1xx_hal_exti.c ****   * @brief  Store line number as handle private field.
+ 400:src/stm32f1xx_hal_exti.c ****   * @param  hexti Exti handle.
+ 401:src/stm32f1xx_hal_exti.c ****   * @param  ExtiLine Exti line number.
+ 402:src/stm32f1xx_hal_exti.c ****   *         This parameter can be from 0 to @ref EXTI_LINE_NB.
+ 403:src/stm32f1xx_hal_exti.c ****   * @retval HAL Status.
+ 404:src/stm32f1xx_hal_exti.c ****   */
+ 405:src/stm32f1xx_hal_exti.c **** HAL_StatusTypeDef HAL_EXTI_GetHandle(EXTI_HandleTypeDef *hexti, uint32_t ExtiLine)
+ 406:src/stm32f1xx_hal_exti.c **** {
+ 479              		.loc 1 406 0
+ 480              		.cfi_startproc
+ 481              		@ args = 0, pretend = 0, frame = 0
+ 482              		@ frame_needed = 0, uses_anonymous_args = 0
+ 483              		@ link register save eliminated.
+ 484              	.LVL40:
+ 407:src/stm32f1xx_hal_exti.c ****   /* Check the parameters */
+ 408:src/stm32f1xx_hal_exti.c ****   assert_param(IS_EXTI_LINE(ExtiLine));
+ 409:src/stm32f1xx_hal_exti.c **** 
+ 410:src/stm32f1xx_hal_exti.c ****   /* Check null pointer */
+ 411:src/stm32f1xx_hal_exti.c ****   if (hexti == NULL)
+ 485              		.loc 1 411 0
+ 486 019c 10B1     		cbz	r0, .L56	@ hexti,
+ 412:src/stm32f1xx_hal_exti.c ****   {
+ 413:src/stm32f1xx_hal_exti.c ****     return HAL_ERROR;
+ 414:src/stm32f1xx_hal_exti.c ****   }
+ 415:src/stm32f1xx_hal_exti.c ****   else
+ 416:src/stm32f1xx_hal_exti.c ****   {
+ 417:src/stm32f1xx_hal_exti.c ****     /* Store line number as handle private field */
+ 418:src/stm32f1xx_hal_exti.c ****     hexti->Line = ExtiLine;
+ 487              		.loc 1 418 0
+ 488 019e 0160     		str	r1, [r0]	@ ExtiLine, hexti_3(D)->Line
+ 419:src/stm32f1xx_hal_exti.c **** 
+ 420:src/stm32f1xx_hal_exti.c ****     return HAL_OK;
+ 489              		.loc 1 420 0
+ 490 01a0 0020     		movs	r0, #0	@ <retval>,
+ 491              	.LVL41:
+ 492 01a2 7047     		bx	lr	@
+ 493              	.LVL42:
+ 494              	.L56:
+ 413:src/stm32f1xx_hal_exti.c ****   }
+ 495              		.loc 1 413 0
+ 496 01a4 0120     		movs	r0, #1	@ <retval>,
+ 497              	.LVL43:
+ 421:src/stm32f1xx_hal_exti.c ****   }
+ 422:src/stm32f1xx_hal_exti.c **** }
+ 498              		.loc 1 422 0
+ 499 01a6 7047     		bx	lr	@
+ 500              		.cfi_endproc
+ 501              	.LFE69:
+ 502              		.size	HAL_EXTI_GetHandle, .-HAL_EXTI_GetHandle
+ 503              		.align	1
+ 504              		.global	HAL_EXTI_IRQHandler
+ 505              		.syntax unified
+ 506              		.thumb
+ 507              		.thumb_func
+ 508              		.fpu softvfp
+ 509              		.type	HAL_EXTI_IRQHandler, %function
+ 510              	HAL_EXTI_IRQHandler:
+ARM GAS  /tmp/ccA2fVch.s 			page 18
+
+
+ 511              	.LFB70:
+ 423:src/stm32f1xx_hal_exti.c **** 
+ 424:src/stm32f1xx_hal_exti.c **** /**
+ 425:src/stm32f1xx_hal_exti.c ****   * @}
+ 426:src/stm32f1xx_hal_exti.c ****   */
+ 427:src/stm32f1xx_hal_exti.c **** 
+ 428:src/stm32f1xx_hal_exti.c **** /** @addtogroup EXTI_Exported_Functions_Group2
+ 429:src/stm32f1xx_hal_exti.c ****   *  @brief EXTI IO functions.
+ 430:src/stm32f1xx_hal_exti.c ****   *
+ 431:src/stm32f1xx_hal_exti.c **** @verbatim
+ 432:src/stm32f1xx_hal_exti.c ****  ===============================================================================
+ 433:src/stm32f1xx_hal_exti.c ****                        ##### IO operation functions #####
+ 434:src/stm32f1xx_hal_exti.c ****  ===============================================================================
+ 435:src/stm32f1xx_hal_exti.c **** 
+ 436:src/stm32f1xx_hal_exti.c **** @endverbatim
+ 437:src/stm32f1xx_hal_exti.c ****   * @{
+ 438:src/stm32f1xx_hal_exti.c ****   */
+ 439:src/stm32f1xx_hal_exti.c **** 
+ 440:src/stm32f1xx_hal_exti.c **** /**
+ 441:src/stm32f1xx_hal_exti.c ****   * @brief  Handle EXTI interrupt request.
+ 442:src/stm32f1xx_hal_exti.c ****   * @param  hexti Exti handle.
+ 443:src/stm32f1xx_hal_exti.c ****   * @retval none.
+ 444:src/stm32f1xx_hal_exti.c ****   */
+ 445:src/stm32f1xx_hal_exti.c **** void HAL_EXTI_IRQHandler(EXTI_HandleTypeDef *hexti)
+ 446:src/stm32f1xx_hal_exti.c **** {
+ 512              		.loc 1 446 0
+ 513              		.cfi_startproc
+ 514              		@ args = 0, pretend = 0, frame = 0
+ 515              		@ frame_needed = 0, uses_anonymous_args = 0
+ 516              		@ link register save eliminated.
+ 517              	.LVL44:
+ 447:src/stm32f1xx_hal_exti.c ****   uint32_t regval;
+ 448:src/stm32f1xx_hal_exti.c ****   uint32_t maskline;
+ 449:src/stm32f1xx_hal_exti.c **** 
+ 450:src/stm32f1xx_hal_exti.c ****   /* Compute line mask */
+ 451:src/stm32f1xx_hal_exti.c ****   maskline = (1uL << (hexti->Line & EXTI_PIN_MASK));
+ 518              		.loc 1 451 0
+ 519 01a8 0368     		ldr	r3, [r0]	@ hexti_3(D)->Line, hexti_3(D)->Line
+ 520 01aa 03F01F02 		and	r2, r3, #31	@ tmp117, hexti_3(D)->Line,
+ 521 01ae 0123     		movs	r3, #1	@ tmp119,
+ 522 01b0 9340     		lsls	r3, r3, r2	@ maskline, tmp119, tmp117
+ 523              	.LVL45:
+ 452:src/stm32f1xx_hal_exti.c **** 
+ 453:src/stm32f1xx_hal_exti.c ****   /* Get pending bit  */
+ 454:src/stm32f1xx_hal_exti.c ****   regval = (EXTI->PR & maskline);
+ 524              		.loc 1 454 0
+ 525 01b2 044A     		ldr	r2, .L64	@ tmp120,
+ 526 01b4 5169     		ldr	r1, [r2, #20]	@ _7, MEM[(struct EXTI_TypeDef *)1073808384B].PR
+ 527              	.LVL46:
+ 455:src/stm32f1xx_hal_exti.c ****   if (regval != 0x00u)
+ 528              		.loc 1 455 0
+ 529 01b6 0B42     		tst	r3, r1	@ maskline, _7
+ 530 01b8 03D0     		beq	.L57	@,
+ 456:src/stm32f1xx_hal_exti.c ****   {
+ 457:src/stm32f1xx_hal_exti.c ****     /* Clear pending bit */
+ 458:src/stm32f1xx_hal_exti.c ****     EXTI->PR = maskline;
+ 531              		.loc 1 458 0
+ARM GAS  /tmp/ccA2fVch.s 			page 19
+
+
+ 532 01ba 5361     		str	r3, [r2, #20]	@ maskline, MEM[(struct EXTI_TypeDef *)1073808384B].PR
+ 459:src/stm32f1xx_hal_exti.c **** 
+ 460:src/stm32f1xx_hal_exti.c ****     /* Call callback */
+ 461:src/stm32f1xx_hal_exti.c ****     if (hexti->PendingCallback != NULL)
+ 533              		.loc 1 461 0
+ 534 01bc 4368     		ldr	r3, [r0, #4]	@ _10, hexti_3(D)->PendingCallback
+ 535              	.LVL47:
+ 536 01be 03B1     		cbz	r3, .L57	@ _10,
+ 462:src/stm32f1xx_hal_exti.c ****     {
+ 463:src/stm32f1xx_hal_exti.c ****       hexti->PendingCallback();
+ 537              		.loc 1 463 0
+ 538 01c0 1847     		bx	r3	@ indirect register sibling call	@ _10
+ 539              	.LVL48:
+ 540              	.L57:
+ 541 01c2 7047     		bx	lr	@
+ 542              	.L65:
+ 543              		.align	2
+ 544              	.L64:
+ 545 01c4 00040140 		.word	1073808384
+ 546              		.cfi_endproc
+ 547              	.LFE70:
+ 548              		.size	HAL_EXTI_IRQHandler, .-HAL_EXTI_IRQHandler
+ 549              		.align	1
+ 550              		.global	HAL_EXTI_GetPending
+ 551              		.syntax unified
+ 552              		.thumb
+ 553              		.thumb_func
+ 554              		.fpu softvfp
+ 555              		.type	HAL_EXTI_GetPending, %function
+ 556              	HAL_EXTI_GetPending:
+ 557              	.LFB71:
+ 464:src/stm32f1xx_hal_exti.c ****     }
+ 465:src/stm32f1xx_hal_exti.c ****   }
+ 466:src/stm32f1xx_hal_exti.c **** }
+ 467:src/stm32f1xx_hal_exti.c **** 
+ 468:src/stm32f1xx_hal_exti.c **** /**
+ 469:src/stm32f1xx_hal_exti.c ****   * @brief  Get interrupt pending bit of a dedicated line.
+ 470:src/stm32f1xx_hal_exti.c ****   * @param  hexti Exti handle.
+ 471:src/stm32f1xx_hal_exti.c ****   * @param  Edge Specify which pending edge as to be checked.
+ 472:src/stm32f1xx_hal_exti.c ****   *         This parameter can be one of the following values:
+ 473:src/stm32f1xx_hal_exti.c ****   *           @arg @ref EXTI_TRIGGER_RISING_FALLING
+ 474:src/stm32f1xx_hal_exti.c ****   *         This parameter is kept for compatibility with other series.
+ 475:src/stm32f1xx_hal_exti.c ****   * @retval 1 if interrupt is pending else 0.
+ 476:src/stm32f1xx_hal_exti.c ****   */
+ 477:src/stm32f1xx_hal_exti.c **** uint32_t HAL_EXTI_GetPending(EXTI_HandleTypeDef *hexti, uint32_t Edge)
+ 478:src/stm32f1xx_hal_exti.c **** {
+ 558              		.loc 1 478 0
+ 559              		.cfi_startproc
+ 560              		@ args = 0, pretend = 0, frame = 0
+ 561              		@ frame_needed = 0, uses_anonymous_args = 0
+ 562              		@ link register save eliminated.
+ 563              	.LVL49:
+ 479:src/stm32f1xx_hal_exti.c ****   uint32_t regval;
+ 480:src/stm32f1xx_hal_exti.c ****   uint32_t maskline;
+ 481:src/stm32f1xx_hal_exti.c ****   uint32_t linepos;
+ 482:src/stm32f1xx_hal_exti.c **** 
+ 483:src/stm32f1xx_hal_exti.c ****   /* Check parameters */
+ARM GAS  /tmp/ccA2fVch.s 			page 20
+
+
+ 484:src/stm32f1xx_hal_exti.c ****   assert_param(IS_EXTI_LINE(hexti->Line));
+ 485:src/stm32f1xx_hal_exti.c ****   assert_param(IS_EXTI_CONFIG_LINE(hexti->Line));
+ 486:src/stm32f1xx_hal_exti.c ****   assert_param(IS_EXTI_PENDING_EDGE(Edge));
+ 487:src/stm32f1xx_hal_exti.c **** 
+ 488:src/stm32f1xx_hal_exti.c ****   /* Compute line mask */
+ 489:src/stm32f1xx_hal_exti.c ****   linepos = (hexti->Line & EXTI_PIN_MASK);
+ 490:src/stm32f1xx_hal_exti.c ****   maskline = (1uL << linepos);
+ 491:src/stm32f1xx_hal_exti.c **** 
+ 492:src/stm32f1xx_hal_exti.c ****   /* return 1 if bit is set else 0 */
+ 493:src/stm32f1xx_hal_exti.c ****   regval = ((EXTI->PR & maskline) >> linepos);
+ 564              		.loc 1 493 0
+ 565 01c8 054B     		ldr	r3, .L67	@ tmp119,
+ 489:src/stm32f1xx_hal_exti.c ****   maskline = (1uL << linepos);
+ 566              		.loc 1 489 0
+ 567 01ca 0068     		ldr	r0, [r0]	@ hexti_2(D)->Line, hexti_2(D)->Line
+ 568              	.LVL50:
+ 569              		.loc 1 493 0
+ 570 01cc 5A69     		ldr	r2, [r3, #20]	@ _6, MEM[(struct EXTI_TypeDef *)1073808384B].PR
+ 490:src/stm32f1xx_hal_exti.c **** 
+ 571              		.loc 1 490 0
+ 572 01ce 0123     		movs	r3, #1	@ tmp122,
+ 489:src/stm32f1xx_hal_exti.c ****   maskline = (1uL << linepos);
+ 573              		.loc 1 489 0
+ 574 01d0 00F01F00 		and	r0, r0, #31	@ linepos, hexti_2(D)->Line,
+ 575              	.LVL51:
+ 490:src/stm32f1xx_hal_exti.c **** 
+ 576              		.loc 1 490 0
+ 577 01d4 8340     		lsls	r3, r3, r0	@ maskline, tmp122, linepos
+ 578              	.LVL52:
+ 579              		.loc 1 493 0
+ 580 01d6 1340     		ands	r3, r3, r2	@, tmp123, maskline, _6
+ 581              	.LVL53:
+ 494:src/stm32f1xx_hal_exti.c ****   return regval;
+ 495:src/stm32f1xx_hal_exti.c **** }
+ 582              		.loc 1 495 0
+ 583 01d8 23FA00F0 		lsr	r0, r3, r0	@, tmp123, linepos
+ 584              	.LVL54:
+ 585 01dc 7047     		bx	lr	@
+ 586              	.L68:
+ 587 01de 00BF     		.align	2
+ 588              	.L67:
+ 589 01e0 00040140 		.word	1073808384
+ 590              		.cfi_endproc
+ 591              	.LFE71:
+ 592              		.size	HAL_EXTI_GetPending, .-HAL_EXTI_GetPending
+ 593              		.align	1
+ 594              		.global	HAL_EXTI_ClearPending
+ 595              		.syntax unified
+ 596              		.thumb
+ 597              		.thumb_func
+ 598              		.fpu softvfp
+ 599              		.type	HAL_EXTI_ClearPending, %function
+ 600              	HAL_EXTI_ClearPending:
+ 601              	.LFB72:
+ 496:src/stm32f1xx_hal_exti.c **** 
+ 497:src/stm32f1xx_hal_exti.c **** /**
+ 498:src/stm32f1xx_hal_exti.c ****   * @brief  Clear interrupt pending bit of a dedicated line.
+ARM GAS  /tmp/ccA2fVch.s 			page 21
+
+
+ 499:src/stm32f1xx_hal_exti.c ****   * @param  hexti Exti handle.
+ 500:src/stm32f1xx_hal_exti.c ****   * @param  Edge Specify which pending edge as to be clear.
+ 501:src/stm32f1xx_hal_exti.c ****   *         This parameter can be one of the following values:
+ 502:src/stm32f1xx_hal_exti.c ****   *           @arg @ref EXTI_TRIGGER_RISING_FALLING
+ 503:src/stm32f1xx_hal_exti.c ****   *         This parameter is kept for compatibility with other series.
+ 504:src/stm32f1xx_hal_exti.c ****   * @retval None.
+ 505:src/stm32f1xx_hal_exti.c ****   */
+ 506:src/stm32f1xx_hal_exti.c **** void HAL_EXTI_ClearPending(EXTI_HandleTypeDef *hexti, uint32_t Edge)
+ 507:src/stm32f1xx_hal_exti.c **** {
+ 602              		.loc 1 507 0
+ 603              		.cfi_startproc
+ 604              		@ args = 0, pretend = 0, frame = 0
+ 605              		@ frame_needed = 0, uses_anonymous_args = 0
+ 606              		@ link register save eliminated.
+ 607              	.LVL55:
+ 508:src/stm32f1xx_hal_exti.c ****   uint32_t maskline;
+ 509:src/stm32f1xx_hal_exti.c **** 
+ 510:src/stm32f1xx_hal_exti.c ****   /* Check parameters */
+ 511:src/stm32f1xx_hal_exti.c ****   assert_param(IS_EXTI_LINE(hexti->Line));
+ 512:src/stm32f1xx_hal_exti.c ****   assert_param(IS_EXTI_CONFIG_LINE(hexti->Line));
+ 513:src/stm32f1xx_hal_exti.c ****   assert_param(IS_EXTI_PENDING_EDGE(Edge));
+ 514:src/stm32f1xx_hal_exti.c **** 
+ 515:src/stm32f1xx_hal_exti.c ****   /* Compute line mask */
+ 516:src/stm32f1xx_hal_exti.c ****   maskline = (1uL << (hexti->Line & EXTI_PIN_MASK));
+ 608              		.loc 1 516 0
+ 609 01e4 0123     		movs	r3, #1	@ tmp117,
+ 610 01e6 0268     		ldr	r2, [r0]	@ hexti_2(D)->Line, hexti_2(D)->Line
+ 611 01e8 02F01F02 		and	r2, r2, #31	@ tmp115, hexti_2(D)->Line,
+ 612 01ec 9340     		lsls	r3, r3, r2	@ maskline, tmp117, tmp115
+ 613              	.LVL56:
+ 517:src/stm32f1xx_hal_exti.c **** 
+ 518:src/stm32f1xx_hal_exti.c ****   /* Clear Pending bit */
+ 519:src/stm32f1xx_hal_exti.c ****   EXTI->PR =  maskline;
+ 614              		.loc 1 519 0
+ 615 01ee 014A     		ldr	r2, .L70	@ tmp118,
+ 616 01f0 5361     		str	r3, [r2, #20]	@ maskline, MEM[(struct EXTI_TypeDef *)1073808384B].PR
+ 617 01f2 7047     		bx	lr	@
+ 618              	.L71:
+ 619              		.align	2
+ 620              	.L70:
+ 621 01f4 00040140 		.word	1073808384
+ 622              		.cfi_endproc
+ 623              	.LFE72:
+ 624              		.size	HAL_EXTI_ClearPending, .-HAL_EXTI_ClearPending
+ 625              		.align	1
+ 626              		.global	HAL_EXTI_GenerateSWI
+ 627              		.syntax unified
+ 628              		.thumb
+ 629              		.thumb_func
+ 630              		.fpu softvfp
+ 631              		.type	HAL_EXTI_GenerateSWI, %function
+ 632              	HAL_EXTI_GenerateSWI:
+ 633              	.LFB73:
+ 520:src/stm32f1xx_hal_exti.c **** }
+ 521:src/stm32f1xx_hal_exti.c **** 
+ 522:src/stm32f1xx_hal_exti.c **** /**
+ 523:src/stm32f1xx_hal_exti.c ****   * @brief  Generate a software interrupt for a dedicated line.
+ARM GAS  /tmp/ccA2fVch.s 			page 22
+
+
+ 524:src/stm32f1xx_hal_exti.c ****   * @param  hexti Exti handle.
+ 525:src/stm32f1xx_hal_exti.c ****   * @retval None.
+ 526:src/stm32f1xx_hal_exti.c ****   */
+ 527:src/stm32f1xx_hal_exti.c **** void HAL_EXTI_GenerateSWI(EXTI_HandleTypeDef *hexti)
+ 528:src/stm32f1xx_hal_exti.c **** {
+ 634              		.loc 1 528 0
+ 635              		.cfi_startproc
+ 636              		@ args = 0, pretend = 0, frame = 0
+ 637              		@ frame_needed = 0, uses_anonymous_args = 0
+ 638              		@ link register save eliminated.
+ 639              	.LVL57:
+ 529:src/stm32f1xx_hal_exti.c ****   uint32_t maskline;
+ 530:src/stm32f1xx_hal_exti.c **** 
+ 531:src/stm32f1xx_hal_exti.c ****   /* Check parameters */
+ 532:src/stm32f1xx_hal_exti.c ****   assert_param(IS_EXTI_LINE(hexti->Line));
+ 533:src/stm32f1xx_hal_exti.c ****   assert_param(IS_EXTI_CONFIG_LINE(hexti->Line));
+ 534:src/stm32f1xx_hal_exti.c **** 
+ 535:src/stm32f1xx_hal_exti.c ****   /* Compute line mask */
+ 536:src/stm32f1xx_hal_exti.c ****   maskline = (1uL << (hexti->Line & EXTI_PIN_MASK));
+ 640              		.loc 1 536 0
+ 641 01f8 0123     		movs	r3, #1	@ tmp116,
+ 642 01fa 0268     		ldr	r2, [r0]	@ hexti_2(D)->Line, hexti_2(D)->Line
+ 643 01fc 02F01F02 		and	r2, r2, #31	@ tmp114, hexti_2(D)->Line,
+ 644 0200 9340     		lsls	r3, r3, r2	@ maskline, tmp116, tmp114
+ 645              	.LVL58:
+ 537:src/stm32f1xx_hal_exti.c **** 
+ 538:src/stm32f1xx_hal_exti.c ****   /* Generate Software interrupt */
+ 539:src/stm32f1xx_hal_exti.c ****   EXTI->SWIER = maskline;
+ 646              		.loc 1 539 0
+ 647 0202 014A     		ldr	r2, .L73	@ tmp117,
+ 648 0204 1361     		str	r3, [r2, #16]	@ maskline, MEM[(struct EXTI_TypeDef *)1073808384B].SWIER
+ 649 0206 7047     		bx	lr	@
+ 650              	.L74:
+ 651              		.align	2
+ 652              	.L73:
+ 653 0208 00040140 		.word	1073808384
+ 654              		.cfi_endproc
+ 655              	.LFE73:
+ 656              		.size	HAL_EXTI_GenerateSWI, .-HAL_EXTI_GenerateSWI
+ 657              	.Letext0:
+ 658              		.file 2 "/usr/include/newlib/machine/_default_types.h"
+ 659              		.file 3 "/usr/include/newlib/sys/_stdint.h"
+ 660              		.file 4 "../cmsiscore/inc/core_cm3.h"
+ 661              		.file 5 "../cmsisstm32f1xx/inc/system_stm32f1xx.h"
+ 662              		.file 6 "../cmsisstm32f1xx/inc/stm32f103x6.h"
+ 663              		.file 7 "./inc/stm32f1xx_hal_def.h"
+ 664              		.file 8 "./inc/stm32f1xx_hal_exti.h"
+ 665              		.file 9 "./inc/stm32f1xx_hal.h"
+ 666              		.section	.debug_info,"",%progbits
+ 667              	.Ldebug_info0:
+ 668 0000 2C060000 		.4byte	0x62c
+ 669 0004 0200     		.2byte	0x2
+ 670 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 671 000a 04       		.byte	0x4
+ 672 000b 01       		.uleb128 0x1
+ 673 000c 77000000 		.4byte	.LASF70
+ 674 0010 0C       		.byte	0xc
+ARM GAS  /tmp/ccA2fVch.s 			page 23
+
+
+ 675 0011 4B030000 		.4byte	.LASF71
+ 676 0015 D7010000 		.4byte	.LASF72
+ 677 0019 00000000 		.4byte	.Ltext0
+ 678 001d 0C020000 		.4byte	.Letext0
+ 679 0021 00000000 		.4byte	.Ldebug_line0
+ 680 0025 02       		.uleb128 0x2
+ 681 0026 01       		.byte	0x1
+ 682 0027 06       		.byte	0x6
+ 683 0028 11020000 		.4byte	.LASF0
+ 684 002c 03       		.uleb128 0x3
+ 685 002d 6D010000 		.4byte	.LASF4
+ 686 0031 02       		.byte	0x2
+ 687 0032 1D       		.byte	0x1d
+ 688 0033 37000000 		.4byte	0x37
+ 689 0037 02       		.uleb128 0x2
+ 690 0038 01       		.byte	0x1
+ 691 0039 08       		.byte	0x8
+ 692 003a C9010000 		.4byte	.LASF1
+ 693 003e 02       		.uleb128 0x2
+ 694 003f 02       		.byte	0x2
+ 695 0040 05       		.byte	0x5
+ 696 0041 2D000000 		.4byte	.LASF2
+ 697 0045 02       		.uleb128 0x2
+ 698 0046 02       		.byte	0x2
+ 699 0047 07       		.byte	0x7
+ 700 0048 6D020000 		.4byte	.LASF3
+ 701 004c 03       		.uleb128 0x3
+ 702 004d 8F020000 		.4byte	.LASF5
+ 703 0051 02       		.byte	0x2
+ 704 0052 3F       		.byte	0x3f
+ 705 0053 57000000 		.4byte	0x57
+ 706 0057 02       		.uleb128 0x2
+ 707 0058 04       		.byte	0x4
+ 708 0059 05       		.byte	0x5
+ 709 005a 4A010000 		.4byte	.LASF6
+ 710 005e 03       		.uleb128 0x3
+ 711 005f 5B000000 		.4byte	.LASF7
+ 712 0063 02       		.byte	0x2
+ 713 0064 41       		.byte	0x41
+ 714 0065 69000000 		.4byte	0x69
+ 715 0069 02       		.uleb128 0x2
+ 716 006a 04       		.byte	0x4
+ 717 006b 07       		.byte	0x7
+ 718 006c 08030000 		.4byte	.LASF8
+ 719 0070 02       		.uleb128 0x2
+ 720 0071 08       		.byte	0x8
+ 721 0072 05       		.byte	0x5
+ 722 0073 21010000 		.4byte	.LASF9
+ 723 0077 02       		.uleb128 0x2
+ 724 0078 08       		.byte	0x8
+ 725 0079 07       		.byte	0x7
+ 726 007a 1D020000 		.4byte	.LASF10
+ 727 007e 04       		.uleb128 0x4
+ 728 007f 04       		.byte	0x4
+ 729 0080 05       		.byte	0x5
+ 730 0081 696E7400 		.ascii	"int\000"
+ 731 0085 02       		.uleb128 0x2
+ARM GAS  /tmp/ccA2fVch.s 			page 24
+
+
+ 732 0086 04       		.byte	0x4
+ 733 0087 07       		.byte	0x7
+ 734 0088 48020000 		.4byte	.LASF11
+ 735 008c 03       		.uleb128 0x3
+ 736 008d D3000000 		.4byte	.LASF12
+ 737 0091 03       		.byte	0x3
+ 738 0092 18       		.byte	0x18
+ 739 0093 2C000000 		.4byte	0x2c
+ 740 0097 05       		.uleb128 0x5
+ 741 0098 8C000000 		.4byte	0x8c
+ 742 009c 03       		.uleb128 0x3
+ 743 009d 87020000 		.4byte	.LASF13
+ 744 00a1 03       		.byte	0x3
+ 745 00a2 2C       		.byte	0x2c
+ 746 00a3 4C000000 		.4byte	0x4c
+ 747 00a7 06       		.uleb128 0x6
+ 748 00a8 9C000000 		.4byte	0x9c
+ 749 00ac 03       		.uleb128 0x3
+ 750 00ad 34020000 		.4byte	.LASF14
+ 751 00b1 03       		.byte	0x3
+ 752 00b2 30       		.byte	0x30
+ 753 00b3 5E000000 		.4byte	0x5e
+ 754 00b7 06       		.uleb128 0x6
+ 755 00b8 AC000000 		.4byte	0xac
+ 756 00bc 02       		.uleb128 0x2
+ 757 00bd 04       		.byte	0x4
+ 758 00be 07       		.byte	0x7
+ 759 00bf 40000000 		.4byte	.LASF15
+ 760 00c3 07       		.uleb128 0x7
+ 761 00c4 E4030000 		.4byte	.LASF16
+ 762 00c8 04       		.byte	0x4
+ 763 00c9 4807     		.2byte	0x748
+ 764 00cb A7000000 		.4byte	0xa7
+ 765 00cf 01       		.byte	0x1
+ 766 00d0 01       		.byte	0x1
+ 767 00d1 08       		.uleb128 0x8
+ 768 00d2 9E020000 		.4byte	.LASF17
+ 769 00d6 05       		.byte	0x5
+ 770 00d7 33       		.byte	0x33
+ 771 00d8 AC000000 		.4byte	0xac
+ 772 00dc 01       		.byte	0x1
+ 773 00dd 01       		.byte	0x1
+ 774 00de 09       		.uleb128 0x9
+ 775 00df 97000000 		.4byte	0x97
+ 776 00e3 EE000000 		.4byte	0xee
+ 777 00e7 0A       		.uleb128 0xa
+ 778 00e8 BC000000 		.4byte	0xbc
+ 779 00ec 0F       		.byte	0xf
+ 780 00ed 00       		.byte	0
+ 781 00ee 05       		.uleb128 0x5
+ 782 00ef DE000000 		.4byte	0xde
+ 783 00f3 08       		.uleb128 0x8
+ 784 00f4 E2000000 		.4byte	.LASF18
+ 785 00f8 05       		.byte	0x5
+ 786 00f9 34       		.byte	0x34
+ 787 00fa EE000000 		.4byte	0xee
+ 788 00fe 01       		.byte	0x1
+ARM GAS  /tmp/ccA2fVch.s 			page 25
+
+
+ 789 00ff 01       		.byte	0x1
+ 790 0100 09       		.uleb128 0x9
+ 791 0101 97000000 		.4byte	0x97
+ 792 0105 10010000 		.4byte	0x110
+ 793 0109 0A       		.uleb128 0xa
+ 794 010a BC000000 		.4byte	0xbc
+ 795 010e 07       		.byte	0x7
+ 796 010f 00       		.byte	0
+ 797 0110 05       		.uleb128 0x5
+ 798 0111 00010000 		.4byte	0x100
+ 799 0115 08       		.uleb128 0x8
+ 800 0116 03020000 		.4byte	.LASF19
+ 801 011a 05       		.byte	0x5
+ 802 011b 35       		.byte	0x35
+ 803 011c 10010000 		.4byte	0x110
+ 804 0120 01       		.byte	0x1
+ 805 0121 01       		.byte	0x1
+ 806 0122 0B       		.uleb128 0xb
+ 807 0123 18       		.byte	0x18
+ 808 0124 06       		.byte	0x6
+ 809 0125 3201     		.2byte	0x132
+ 810 0127 85010000 		.4byte	0x185
+ 811 012b 0C       		.uleb128 0xc
+ 812 012c 494D5200 		.ascii	"IMR\000"
+ 813 0130 06       		.byte	0x6
+ 814 0131 3401     		.2byte	0x134
+ 815 0133 B7000000 		.4byte	0xb7
+ 816 0137 02       		.byte	0x2
+ 817 0138 23       		.byte	0x23
+ 818 0139 00       		.uleb128 0
+ 819 013a 0C       		.uleb128 0xc
+ 820 013b 454D5200 		.ascii	"EMR\000"
+ 821 013f 06       		.byte	0x6
+ 822 0140 3501     		.2byte	0x135
+ 823 0142 B7000000 		.4byte	0xb7
+ 824 0146 02       		.byte	0x2
+ 825 0147 23       		.byte	0x23
+ 826 0148 04       		.uleb128 0x4
+ 827 0149 0D       		.uleb128 0xd
+ 828 014a 99020000 		.4byte	.LASF20
+ 829 014e 06       		.byte	0x6
+ 830 014f 3601     		.2byte	0x136
+ 831 0151 B7000000 		.4byte	0xb7
+ 832 0155 02       		.byte	0x2
+ 833 0156 23       		.byte	0x23
+ 834 0157 08       		.uleb128 0x8
+ 835 0158 0D       		.uleb128 0xd
+ 836 0159 55020000 		.4byte	.LASF21
+ 837 015d 06       		.byte	0x6
+ 838 015e 3701     		.2byte	0x137
+ 839 0160 B7000000 		.4byte	0xb7
+ 840 0164 02       		.byte	0x2
+ 841 0165 23       		.byte	0x23
+ 842 0166 0C       		.uleb128 0xc
+ 843 0167 0D       		.uleb128 0xd
+ 844 0168 1F040000 		.4byte	.LASF22
+ 845 016c 06       		.byte	0x6
+ARM GAS  /tmp/ccA2fVch.s 			page 26
+
+
+ 846 016d 3801     		.2byte	0x138
+ 847 016f B7000000 		.4byte	0xb7
+ 848 0173 02       		.byte	0x2
+ 849 0174 23       		.byte	0x23
+ 850 0175 10       		.uleb128 0x10
+ 851 0176 0C       		.uleb128 0xc
+ 852 0177 505200   		.ascii	"PR\000"
+ 853 017a 06       		.byte	0x6
+ 854 017b 3901     		.2byte	0x139
+ 855 017d B7000000 		.4byte	0xb7
+ 856 0181 02       		.byte	0x2
+ 857 0182 23       		.byte	0x23
+ 858 0183 14       		.uleb128 0x14
+ 859 0184 00       		.byte	0
+ 860 0185 0E       		.uleb128 0xe
+ 861 0186 3D010000 		.4byte	.LASF23
+ 862 018a 06       		.byte	0x6
+ 863 018b 3A01     		.2byte	0x13a
+ 864 018d 22010000 		.4byte	0x122
+ 865 0191 0B       		.uleb128 0xb
+ 866 0192 20       		.byte	0x20
+ 867 0193 06       		.byte	0x6
+ 868 0194 7001     		.2byte	0x170
+ 869 0196 E6010000 		.4byte	0x1e6
+ 870 019a 0D       		.uleb128 0xd
+ 871 019b 78030000 		.4byte	.LASF24
+ 872 019f 06       		.byte	0x6
+ 873 01a0 7201     		.2byte	0x172
+ 874 01a2 B7000000 		.4byte	0xb7
+ 875 01a6 02       		.byte	0x2
+ 876 01a7 23       		.byte	0x23
+ 877 01a8 00       		.uleb128 0
+ 878 01a9 0D       		.uleb128 0xd
+ 879 01aa EA020000 		.4byte	.LASF25
+ 880 01ae 06       		.byte	0x6
+ 881 01af 7301     		.2byte	0x173
+ 882 01b1 B7000000 		.4byte	0xb7
+ 883 01b5 02       		.byte	0x2
+ 884 01b6 23       		.byte	0x23
+ 885 01b7 04       		.uleb128 0x4
+ 886 01b8 0D       		.uleb128 0xd
+ 887 01b9 DB000000 		.4byte	.LASF26
+ 888 01bd 06       		.byte	0x6
+ 889 01be 7401     		.2byte	0x174
+ 890 01c0 F6010000 		.4byte	0x1f6
+ 891 01c4 02       		.byte	0x2
+ 892 01c5 23       		.byte	0x23
+ 893 01c6 08       		.uleb128 0x8
+ 894 01c7 0D       		.uleb128 0xd
+ 895 01c8 E0020000 		.4byte	.LASF27
+ 896 01cc 06       		.byte	0x6
+ 897 01cd 7501     		.2byte	0x175
+ 898 01cf AC000000 		.4byte	0xac
+ 899 01d3 02       		.byte	0x2
+ 900 01d4 23       		.byte	0x23
+ 901 01d5 18       		.uleb128 0x18
+ 902 01d6 0D       		.uleb128 0xd
+ARM GAS  /tmp/ccA2fVch.s 			page 27
+
+
+ 903 01d7 37010000 		.4byte	.LASF28
+ 904 01db 06       		.byte	0x6
+ 905 01dc 7601     		.2byte	0x176
+ 906 01de B7000000 		.4byte	0xb7
+ 907 01e2 02       		.byte	0x2
+ 908 01e3 23       		.byte	0x23
+ 909 01e4 1C       		.uleb128 0x1c
+ 910 01e5 00       		.byte	0
+ 911 01e6 09       		.uleb128 0x9
+ 912 01e7 B7000000 		.4byte	0xb7
+ 913 01eb F6010000 		.4byte	0x1f6
+ 914 01ef 0A       		.uleb128 0xa
+ 915 01f0 BC000000 		.4byte	0xbc
+ 916 01f4 03       		.byte	0x3
+ 917 01f5 00       		.byte	0
+ 918 01f6 06       		.uleb128 0x6
+ 919 01f7 E6010000 		.4byte	0x1e6
+ 920 01fb 0E       		.uleb128 0xe
+ 921 01fc 1A030000 		.4byte	.LASF29
+ 922 0200 06       		.byte	0x6
+ 923 0201 7701     		.2byte	0x177
+ 924 0203 91010000 		.4byte	0x191
+ 925 0207 02       		.uleb128 0x2
+ 926 0208 08       		.byte	0x8
+ 927 0209 04       		.byte	0x4
+ 928 020a 0D010000 		.4byte	.LASF30
+ 929 020e 0F       		.uleb128 0xf
+ 930 020f 01       		.byte	0x1
+ 931 0210 37000000 		.4byte	0x37
+ 932 0214 07       		.byte	0x7
+ 933 0215 2A       		.byte	0x2a
+ 934 0216 33020000 		.4byte	0x233
+ 935 021a 10       		.uleb128 0x10
+ 936 021b CC000000 		.4byte	.LASF31
+ 937 021f 00       		.byte	0
+ 938 0220 10       		.uleb128 0x10
+ 939 0221 00000000 		.4byte	.LASF32
+ 940 0225 01       		.byte	0x1
+ 941 0226 10       		.uleb128 0x10
+ 942 0227 F0000000 		.4byte	.LASF33
+ 943 022b 02       		.byte	0x2
+ 944 022c 10       		.uleb128 0x10
+ 945 022d 0A000000 		.4byte	.LASF34
+ 946 0231 03       		.byte	0x3
+ 947 0232 00       		.byte	0
+ 948 0233 03       		.uleb128 0x3
+ 949 0234 8A010000 		.4byte	.LASF35
+ 950 0238 07       		.byte	0x7
+ 951 0239 2F       		.byte	0x2f
+ 952 023a 0E020000 		.4byte	0x20e
+ 953 023e 0F       		.uleb128 0xf
+ 954 023f 01       		.byte	0x1
+ 955 0240 37000000 		.4byte	0x37
+ 956 0244 08       		.byte	0x8
+ 957 0245 32       		.byte	0x32
+ 958 0246 51020000 		.4byte	0x251
+ 959 024a 10       		.uleb128 0x10
+ARM GAS  /tmp/ccA2fVch.s 			page 28
+
+
+ 960 024b B3010000 		.4byte	.LASF36
+ 961 024f 00       		.byte	0
+ 962 0250 00       		.byte	0
+ 963 0251 03       		.uleb128 0x3
+ 964 0252 25040000 		.4byte	.LASF37
+ 965 0256 08       		.byte	0x8
+ 966 0257 34       		.byte	0x34
+ 967 0258 3E020000 		.4byte	0x23e
+ 968 025c 11       		.uleb128 0x11
+ 969 025d 08       		.byte	0x8
+ 970 025e 08       		.byte	0x8
+ 971 025f 39       		.byte	0x39
+ 972 0260 81020000 		.4byte	0x281
+ 973 0264 12       		.uleb128 0x12
+ 974 0265 1A040000 		.4byte	.LASF38
+ 975 0269 08       		.byte	0x8
+ 976 026a 3B       		.byte	0x3b
+ 977 026b AC000000 		.4byte	0xac
+ 978 026f 02       		.byte	0x2
+ 979 0270 23       		.byte	0x23
+ 980 0271 00       		.uleb128 0
+ 981 0272 12       		.uleb128 0x12
+ 982 0273 3B030000 		.4byte	.LASF39
+ 983 0277 08       		.byte	0x8
+ 984 0278 3C       		.byte	0x3c
+ 985 0279 83020000 		.4byte	0x283
+ 986 027d 02       		.byte	0x2
+ 987 027e 23       		.byte	0x23
+ 988 027f 04       		.uleb128 0x4
+ 989 0280 00       		.byte	0
+ 990 0281 13       		.uleb128 0x13
+ 991 0282 01       		.byte	0x1
+ 992 0283 14       		.uleb128 0x14
+ 993 0284 04       		.byte	0x4
+ 994 0285 81020000 		.4byte	0x281
+ 995 0289 03       		.uleb128 0x3
+ 996 028a 77010000 		.4byte	.LASF40
+ 997 028e 08       		.byte	0x8
+ 998 028f 3D       		.byte	0x3d
+ 999 0290 5C020000 		.4byte	0x25c
+ 1000 0294 11       		.uleb128 0x11
+ 1001 0295 10       		.byte	0x10
+ 1002 0296 08       		.byte	0x8
+ 1003 0297 42       		.byte	0x42
+ 1004 0298 D5020000 		.4byte	0x2d5
+ 1005 029c 12       		.uleb128 0x12
+ 1006 029d 1A040000 		.4byte	.LASF38
+ 1007 02a1 08       		.byte	0x8
+ 1008 02a2 44       		.byte	0x44
+ 1009 02a3 AC000000 		.4byte	0xac
+ 1010 02a7 02       		.byte	0x2
+ 1011 02a8 23       		.byte	0x23
+ 1012 02a9 00       		.uleb128 0
+ 1013 02aa 12       		.uleb128 0x12
+ 1014 02ab 49000000 		.4byte	.LASF41
+ 1015 02af 08       		.byte	0x8
+ 1016 02b0 46       		.byte	0x46
+ARM GAS  /tmp/ccA2fVch.s 			page 29
+
+
+ 1017 02b1 AC000000 		.4byte	0xac
+ 1018 02b5 02       		.byte	0x2
+ 1019 02b6 23       		.byte	0x23
+ 1020 02b7 04       		.uleb128 0x4
+ 1021 02b8 12       		.uleb128 0x12
+ 1022 02b9 19010000 		.4byte	.LASF42
+ 1023 02bd 08       		.byte	0x8
+ 1024 02be 48       		.byte	0x48
+ 1025 02bf AC000000 		.4byte	0xac
+ 1026 02c3 02       		.byte	0x2
+ 1027 02c4 23       		.byte	0x23
+ 1028 02c5 08       		.uleb128 0x8
+ 1029 02c6 12       		.uleb128 0x12
+ 1030 02c7 2F010000 		.4byte	.LASF43
+ 1031 02cb 08       		.byte	0x8
+ 1032 02cc 4A       		.byte	0x4a
+ 1033 02cd AC000000 		.4byte	0xac
+ 1034 02d1 02       		.byte	0x2
+ 1035 02d2 23       		.byte	0x23
+ 1036 02d3 0C       		.uleb128 0xc
+ 1037 02d4 00       		.byte	0
+ 1038 02d5 03       		.uleb128 0x3
+ 1039 02d6 F1030000 		.4byte	.LASF44
+ 1040 02da 08       		.byte	0x8
+ 1041 02db 4D       		.byte	0x4d
+ 1042 02dc 94020000 		.4byte	0x294
+ 1043 02e0 0F       		.uleb128 0xf
+ 1044 02e1 01       		.byte	0x1
+ 1045 02e2 37000000 		.4byte	0x37
+ 1046 02e6 09       		.byte	0x9
+ 1047 02e7 33       		.byte	0x33
+ 1048 02e8 05030000 		.4byte	0x305
+ 1049 02ec 10       		.uleb128 0x10
+ 1050 02ed C2020000 		.4byte	.LASF45
+ 1051 02f1 64       		.byte	0x64
+ 1052 02f2 10       		.uleb128 0x10
+ 1053 02f3 AE020000 		.4byte	.LASF46
+ 1054 02f7 0A       		.byte	0xa
+ 1055 02f8 10       		.uleb128 0x10
+ 1056 02f9 5A020000 		.4byte	.LASF47
+ 1057 02fd 01       		.byte	0x1
+ 1058 02fe 10       		.uleb128 0x10
+ 1059 02ff 04040000 		.4byte	.LASF48
+ 1060 0303 01       		.byte	0x1
+ 1061 0304 00       		.byte	0
+ 1062 0305 03       		.uleb128 0x3
+ 1063 0306 64030000 		.4byte	.LASF49
+ 1064 030a 09       		.byte	0x9
+ 1065 030b 38       		.byte	0x38
+ 1066 030c E0020000 		.4byte	0x2e0
+ 1067 0310 08       		.uleb128 0x8
+ 1068 0311 6C000000 		.4byte	.LASF50
+ 1069 0315 09       		.byte	0x9
+ 1070 0316 3D       		.byte	0x3d
+ 1071 0317 AC000000 		.4byte	0xac
+ 1072 031b 01       		.byte	0x1
+ 1073 031c 01       		.byte	0x1
+ARM GAS  /tmp/ccA2fVch.s 			page 30
+
+
+ 1074 031d 08       		.uleb128 0x8
+ 1075 031e 3D020000 		.4byte	.LASF51
+ 1076 0322 09       		.byte	0x9
+ 1077 0323 3E       		.byte	0x3e
+ 1078 0324 05030000 		.4byte	0x305
+ 1079 0328 01       		.byte	0x1
+ 1080 0329 01       		.byte	0x1
+ 1081 032a 15       		.uleb128 0x15
+ 1082 032b 01       		.byte	0x1
+ 1083 032c BC030000 		.4byte	.LASF52
+ 1084 0330 01       		.byte	0x1
+ 1085 0331 0F02     		.2byte	0x20f
+ 1086 0333 01       		.byte	0x1
+ 1087 0334 F8010000 		.4byte	.LFB73
+ 1088 0338 0C020000 		.4byte	.LFE73
+ 1089 033c 02       		.byte	0x2
+ 1090 033d 7D       		.byte	0x7d
+ 1091 033e 00       		.sleb128 0
+ 1092 033f 01       		.byte	0x1
+ 1093 0340 61030000 		.4byte	0x361
+ 1094 0344 16       		.uleb128 0x16
+ 1095 0345 66000000 		.4byte	.LASF54
+ 1096 0349 01       		.byte	0x1
+ 1097 034a 0F02     		.2byte	0x20f
+ 1098 034c 61030000 		.4byte	0x361
+ 1099 0350 01       		.byte	0x1
+ 1100 0351 50       		.byte	0x50
+ 1101 0352 17       		.uleb128 0x17
+ 1102 0353 37000000 		.4byte	.LASF56
+ 1103 0357 01       		.byte	0x1
+ 1104 0358 1102     		.2byte	0x211
+ 1105 035a AC000000 		.4byte	0xac
+ 1106 035e 01       		.byte	0x1
+ 1107 035f 53       		.byte	0x53
+ 1108 0360 00       		.byte	0
+ 1109 0361 14       		.uleb128 0x14
+ 1110 0362 04       		.byte	0x4
+ 1111 0363 89020000 		.4byte	0x289
+ 1112 0367 15       		.uleb128 0x15
+ 1113 0368 01       		.byte	0x1
+ 1114 0369 8D030000 		.4byte	.LASF53
+ 1115 036d 01       		.byte	0x1
+ 1116 036e FA01     		.2byte	0x1fa
+ 1117 0370 01       		.byte	0x1
+ 1118 0371 E4010000 		.4byte	.LFB72
+ 1119 0375 F8010000 		.4byte	.LFE72
+ 1120 0379 02       		.byte	0x2
+ 1121 037a 7D       		.byte	0x7d
+ 1122 037b 00       		.sleb128 0
+ 1123 037c 01       		.byte	0x1
+ 1124 037d AC030000 		.4byte	0x3ac
+ 1125 0381 16       		.uleb128 0x16
+ 1126 0382 66000000 		.4byte	.LASF54
+ 1127 0386 01       		.byte	0x1
+ 1128 0387 FA01     		.2byte	0x1fa
+ 1129 0389 61030000 		.4byte	0x361
+ 1130 038d 01       		.byte	0x1
+ARM GAS  /tmp/ccA2fVch.s 			page 31
+
+
+ 1131 038e 50       		.byte	0x50
+ 1132 038f 16       		.uleb128 0x16
+ 1133 0390 B7030000 		.4byte	.LASF55
+ 1134 0394 01       		.byte	0x1
+ 1135 0395 FA01     		.2byte	0x1fa
+ 1136 0397 AC000000 		.4byte	0xac
+ 1137 039b 01       		.byte	0x1
+ 1138 039c 51       		.byte	0x51
+ 1139 039d 17       		.uleb128 0x17
+ 1140 039e 37000000 		.4byte	.LASF56
+ 1141 03a2 01       		.byte	0x1
+ 1142 03a3 FC01     		.2byte	0x1fc
+ 1143 03a5 AC000000 		.4byte	0xac
+ 1144 03a9 01       		.byte	0x1
+ 1145 03aa 53       		.byte	0x53
+ 1146 03ab 00       		.byte	0
+ 1147 03ac 18       		.uleb128 0x18
+ 1148 03ad 01       		.byte	0x1
+ 1149 03ae 27030000 		.4byte	.LASF59
+ 1150 03b2 01       		.byte	0x1
+ 1151 03b3 DD01     		.2byte	0x1dd
+ 1152 03b5 01       		.byte	0x1
+ 1153 03b6 AC000000 		.4byte	0xac
+ 1154 03ba C8010000 		.4byte	.LFB71
+ 1155 03be E4010000 		.4byte	.LFE71
+ 1156 03c2 02       		.byte	0x2
+ 1157 03c3 7D       		.byte	0x7d
+ 1158 03c4 00       		.sleb128 0
+ 1159 03c5 01       		.byte	0x1
+ 1160 03c6 19040000 		.4byte	0x419
+ 1161 03ca 19       		.uleb128 0x19
+ 1162 03cb 66000000 		.4byte	.LASF54
+ 1163 03cf 01       		.byte	0x1
+ 1164 03d0 DD01     		.2byte	0x1dd
+ 1165 03d2 61030000 		.4byte	0x361
+ 1166 03d6 00000000 		.4byte	.LLST22
+ 1167 03da 16       		.uleb128 0x16
+ 1168 03db B7030000 		.4byte	.LASF55
+ 1169 03df 01       		.byte	0x1
+ 1170 03e0 DD01     		.2byte	0x1dd
+ 1171 03e2 AC000000 		.4byte	0xac
+ 1172 03e6 01       		.byte	0x1
+ 1173 03e7 51       		.byte	0x51
+ 1174 03e8 1A       		.uleb128 0x1a
+ 1175 03e9 7D030000 		.4byte	.LASF57
+ 1176 03ed 01       		.byte	0x1
+ 1177 03ee DF01     		.2byte	0x1df
+ 1178 03f0 AC000000 		.4byte	0xac
+ 1179 03f4 21000000 		.4byte	.LLST23
+ 1180 03f8 1A       		.uleb128 0x1a
+ 1181 03f9 37000000 		.4byte	.LASF56
+ 1182 03fd 01       		.byte	0x1
+ 1183 03fe E001     		.2byte	0x1e0
+ 1184 0400 AC000000 		.4byte	0xac
+ 1185 0404 49000000 		.4byte	.LLST24
+ 1186 0408 1A       		.uleb128 0x1a
+ 1187 0409 F9000000 		.4byte	.LASF58
+ARM GAS  /tmp/ccA2fVch.s 			page 32
+
+
+ 1188 040d 01       		.byte	0x1
+ 1189 040e E101     		.2byte	0x1e1
+ 1190 0410 AC000000 		.4byte	0xac
+ 1191 0414 8D000000 		.4byte	.LLST25
+ 1192 0418 00       		.byte	0
+ 1193 0419 1B       		.uleb128 0x1b
+ 1194 041a 01       		.byte	0x1
+ 1195 041b A3030000 		.4byte	.LASF73
+ 1196 041f 01       		.byte	0x1
+ 1197 0420 BD01     		.2byte	0x1bd
+ 1198 0422 01       		.byte	0x1
+ 1199 0423 A8010000 		.4byte	.LFB70
+ 1200 0427 C8010000 		.4byte	.LFE70
+ 1201 042b 02       		.byte	0x2
+ 1202 042c 7D       		.byte	0x7d
+ 1203 042d 00       		.sleb128 0
+ 1204 042e 63040000 		.4byte	0x463
+ 1205 0432 19       		.uleb128 0x19
+ 1206 0433 66000000 		.4byte	.LASF54
+ 1207 0437 01       		.byte	0x1
+ 1208 0438 BD01     		.2byte	0x1bd
+ 1209 043a 61030000 		.4byte	0x361
+ 1210 043e B1000000 		.4byte	.LLST19
+ 1211 0442 1A       		.uleb128 0x1a
+ 1212 0443 7D030000 		.4byte	.LASF57
+ 1213 0447 01       		.byte	0x1
+ 1214 0448 BF01     		.2byte	0x1bf
+ 1215 044a AC000000 		.4byte	0xac
+ 1216 044e DD000000 		.4byte	.LLST20
+ 1217 0452 1A       		.uleb128 0x1a
+ 1218 0453 37000000 		.4byte	.LASF56
+ 1219 0457 01       		.byte	0x1
+ 1220 0458 C001     		.2byte	0x1c0
+ 1221 045a AC000000 		.4byte	0xac
+ 1222 045e 06010000 		.4byte	.LLST21
+ 1223 0462 00       		.byte	0
+ 1224 0463 18       		.uleb128 0x18
+ 1225 0464 01       		.byte	0x1
+ 1226 0465 D1030000 		.4byte	.LASF60
+ 1227 0469 01       		.byte	0x1
+ 1228 046a 9501     		.2byte	0x195
+ 1229 046c 01       		.byte	0x1
+ 1230 046d 33020000 		.4byte	0x233
+ 1231 0471 9C010000 		.4byte	.LFB69
+ 1232 0475 A8010000 		.4byte	.LFE69
+ 1233 0479 02       		.byte	0x2
+ 1234 047a 7D       		.byte	0x7d
+ 1235 047b 00       		.sleb128 0
+ 1236 047c 01       		.byte	0x1
+ 1237 047d A0040000 		.4byte	0x4a0
+ 1238 0481 19       		.uleb128 0x19
+ 1239 0482 66000000 		.4byte	.LASF54
+ 1240 0486 01       		.byte	0x1
+ 1241 0487 9501     		.2byte	0x195
+ 1242 0489 61030000 		.4byte	0x361
+ 1243 048d 25010000 		.4byte	.LLST18
+ 1244 0491 16       		.uleb128 0x16
+ARM GAS  /tmp/ccA2fVch.s 			page 33
+
+
+ 1245 0492 84030000 		.4byte	.LASF61
+ 1246 0496 01       		.byte	0x1
+ 1247 0497 9501     		.2byte	0x195
+ 1248 0499 AC000000 		.4byte	0xac
+ 1249 049d 01       		.byte	0x1
+ 1250 049e 51       		.byte	0x51
+ 1251 049f 00       		.byte	0
+ 1252 04a0 18       		.uleb128 0x18
+ 1253 04a1 01       		.byte	0x1
+ 1254 04a2 53010000 		.4byte	.LASF62
+ 1255 04a6 01       		.byte	0x1
+ 1256 04a7 7C01     		.2byte	0x17c
+ 1257 04a9 01       		.byte	0x1
+ 1258 04aa 33020000 		.4byte	0x233
+ 1259 04ae 90010000 		.4byte	.LFB68
+ 1260 04b2 9C010000 		.4byte	.LFE68
+ 1261 04b6 02       		.byte	0x2
+ 1262 04b7 7D       		.byte	0x7d
+ 1263 04b8 00       		.sleb128 0
+ 1264 04b9 01       		.byte	0x1
+ 1265 04ba FB040000 		.4byte	0x4fb
+ 1266 04be 19       		.uleb128 0x19
+ 1267 04bf 66000000 		.4byte	.LASF54
+ 1268 04c3 01       		.byte	0x1
+ 1269 04c4 7C01     		.2byte	0x17c
+ 1270 04c6 61030000 		.4byte	0x361
+ 1271 04ca 5F010000 		.4byte	.LLST16
+ 1272 04ce 16       		.uleb128 0x16
+ 1273 04cf D5020000 		.4byte	.LASF63
+ 1274 04d3 01       		.byte	0x1
+ 1275 04d4 7C01     		.2byte	0x17c
+ 1276 04d6 51020000 		.4byte	0x251
+ 1277 04da 01       		.byte	0x1
+ 1278 04db 51       		.byte	0x51
+ 1279 04dc 16       		.uleb128 0x16
+ 1280 04dd 4E000000 		.4byte	.LASF64
+ 1281 04e1 01       		.byte	0x1
+ 1282 04e2 7C01     		.2byte	0x17c
+ 1283 04e4 83020000 		.4byte	0x283
+ 1284 04e8 01       		.byte	0x1
+ 1285 04e9 52       		.byte	0x52
+ 1286 04ea 1A       		.uleb128 0x1a
+ 1287 04eb 80020000 		.4byte	.LASF65
+ 1288 04ef 01       		.byte	0x1
+ 1289 04f0 7E01     		.2byte	0x17e
+ 1290 04f2 33020000 		.4byte	0x233
+ 1291 04f6 99010000 		.4byte	.LLST17
+ 1292 04fa 00       		.byte	0
+ 1293 04fb 1C       		.uleb128 0x1c
+ 1294 04fc 01       		.byte	0x1
+ 1295 04fd EF020000 		.4byte	.LASF66
+ 1296 0501 01       		.byte	0x1
+ 1297 0502 4701     		.2byte	0x147
+ 1298 0504 01       		.byte	0x1
+ 1299 0505 33020000 		.4byte	0x233
+ 1300 0509 28010000 		.4byte	.LFB67
+ 1301 050d 90010000 		.4byte	.LFE67
+ARM GAS  /tmp/ccA2fVch.s 			page 34
+
+
+ 1302 0511 B8010000 		.4byte	.LLST11
+ 1303 0515 01       		.byte	0x1
+ 1304 0516 5B050000 		.4byte	0x55b
+ 1305 051a 19       		.uleb128 0x19
+ 1306 051b 66000000 		.4byte	.LASF54
+ 1307 051f 01       		.byte	0x1
+ 1308 0520 4701     		.2byte	0x147
+ 1309 0522 61030000 		.4byte	0x361
+ 1310 0526 D8010000 		.4byte	.LLST12
+ 1311 052a 1A       		.uleb128 0x1a
+ 1312 052b 7D030000 		.4byte	.LASF57
+ 1313 052f 01       		.byte	0x1
+ 1314 0530 4901     		.2byte	0x149
+ 1315 0532 AC000000 		.4byte	0xac
+ 1316 0536 12020000 		.4byte	.LLST13
+ 1317 053a 1A       		.uleb128 0x1a
+ 1318 053b F9000000 		.4byte	.LASF58
+ 1319 053f 01       		.byte	0x1
+ 1320 0540 4A01     		.2byte	0x14a
+ 1321 0542 AC000000 		.4byte	0xac
+ 1322 0546 30020000 		.4byte	.LLST14
+ 1323 054a 1A       		.uleb128 0x1a
+ 1324 054b 37000000 		.4byte	.LASF56
+ 1325 054f 01       		.byte	0x1
+ 1326 0550 4B01     		.2byte	0x14b
+ 1327 0552 AC000000 		.4byte	0xac
+ 1328 0556 4E020000 		.4byte	.LLST15
+ 1329 055a 00       		.byte	0
+ 1330 055b 1D       		.uleb128 0x1d
+ 1331 055c 01       		.byte	0x1
+ 1332 055d 16000000 		.4byte	.LASF67
+ 1333 0561 01       		.byte	0x1
+ 1334 0562 EE       		.byte	0xee
+ 1335 0563 01       		.byte	0x1
+ 1336 0564 33020000 		.4byte	0x233
+ 1337 0568 9C000000 		.4byte	.LFB66
+ 1338 056c 28010000 		.4byte	.LFE66
+ 1339 0570 9B020000 		.4byte	.LLST6
+ 1340 0574 01       		.byte	0x1
+ 1341 0575 C3050000 		.4byte	0x5c3
+ 1342 0579 1E       		.uleb128 0x1e
+ 1343 057a 66000000 		.4byte	.LASF54
+ 1344 057e 01       		.byte	0x1
+ 1345 057f EE       		.byte	0xee
+ 1346 0580 61030000 		.4byte	0x361
+ 1347 0584 BB020000 		.4byte	.LLST7
+ 1348 0588 1F       		.uleb128 0x1f
+ 1349 0589 01010000 		.4byte	.LASF68
+ 1350 058d 01       		.byte	0x1
+ 1351 058e EE       		.byte	0xee
+ 1352 058f C3050000 		.4byte	0x5c3
+ 1353 0593 01       		.byte	0x1
+ 1354 0594 51       		.byte	0x51
+ 1355 0595 20       		.uleb128 0x20
+ 1356 0596 7D030000 		.4byte	.LASF57
+ 1357 059a 01       		.byte	0x1
+ 1358 059b F0       		.byte	0xf0
+ARM GAS  /tmp/ccA2fVch.s 			page 35
+
+
+ 1359 059c AC000000 		.4byte	0xac
+ 1360 05a0 F5020000 		.4byte	.LLST8
+ 1361 05a4 20       		.uleb128 0x20
+ 1362 05a5 F9000000 		.4byte	.LASF58
+ 1363 05a9 01       		.byte	0x1
+ 1364 05aa F1       		.byte	0xf1
+ 1365 05ab AC000000 		.4byte	0xac
+ 1366 05af 08030000 		.4byte	.LLST9
+ 1367 05b3 20       		.uleb128 0x20
+ 1368 05b4 37000000 		.4byte	.LASF56
+ 1369 05b8 01       		.byte	0x1
+ 1370 05b9 F2       		.byte	0xf2
+ 1371 05ba AC000000 		.4byte	0xac
+ 1372 05be 44030000 		.4byte	.LLST10
+ 1373 05c2 00       		.byte	0
+ 1374 05c3 14       		.uleb128 0x14
+ 1375 05c4 04       		.byte	0x4
+ 1376 05c5 D5020000 		.4byte	0x2d5
+ 1377 05c9 21       		.uleb128 0x21
+ 1378 05ca 01       		.byte	0x1
+ 1379 05cb 9C010000 		.4byte	.LASF69
+ 1380 05cf 01       		.byte	0x1
+ 1381 05d0 8F       		.byte	0x8f
+ 1382 05d1 01       		.byte	0x1
+ 1383 05d2 33020000 		.4byte	0x233
+ 1384 05d6 00000000 		.4byte	.LFB65
+ 1385 05da 9C000000 		.4byte	.LFE65
+ 1386 05de 57030000 		.4byte	.LLST0
+ 1387 05e2 01       		.byte	0x1
+ 1388 05e3 1E       		.uleb128 0x1e
+ 1389 05e4 66000000 		.4byte	.LASF54
+ 1390 05e8 01       		.byte	0x1
+ 1391 05e9 8F       		.byte	0x8f
+ 1392 05ea 61030000 		.4byte	0x361
+ 1393 05ee 77030000 		.4byte	.LLST1
+ 1394 05f2 1E       		.uleb128 0x1e
+ 1395 05f3 01010000 		.4byte	.LASF68
+ 1396 05f7 01       		.byte	0x1
+ 1397 05f8 8F       		.byte	0x8f
+ 1398 05f9 C3050000 		.4byte	0x5c3
+ 1399 05fd B1030000 		.4byte	.LLST2
+ 1400 0601 20       		.uleb128 0x20
+ 1401 0602 7D030000 		.4byte	.LASF57
+ 1402 0606 01       		.byte	0x1
+ 1403 0607 91       		.byte	0x91
+ 1404 0608 AC000000 		.4byte	0xac
+ 1405 060c DD030000 		.4byte	.LLST3
+ 1406 0610 20       		.uleb128 0x20
+ 1407 0611 F9000000 		.4byte	.LASF58
+ 1408 0615 01       		.byte	0x1
+ 1409 0616 92       		.byte	0x92
+ 1410 0617 AC000000 		.4byte	0xac
+ 1411 061b FB030000 		.4byte	.LLST4
+ 1412 061f 20       		.uleb128 0x20
+ 1413 0620 37000000 		.4byte	.LASF56
+ 1414 0624 01       		.byte	0x1
+ 1415 0625 93       		.byte	0x93
+ARM GAS  /tmp/ccA2fVch.s 			page 36
+
+
+ 1416 0626 AC000000 		.4byte	0xac
+ 1417 062a 1D040000 		.4byte	.LLST5
+ 1418 062e 00       		.byte	0
+ 1419 062f 00       		.byte	0
+ 1420              		.section	.debug_abbrev,"",%progbits
+ 1421              	.Ldebug_abbrev0:
+ 1422 0000 01       		.uleb128 0x1
+ 1423 0001 11       		.uleb128 0x11
+ 1424 0002 01       		.byte	0x1
+ 1425 0003 25       		.uleb128 0x25
+ 1426 0004 0E       		.uleb128 0xe
+ 1427 0005 13       		.uleb128 0x13
+ 1428 0006 0B       		.uleb128 0xb
+ 1429 0007 03       		.uleb128 0x3
+ 1430 0008 0E       		.uleb128 0xe
+ 1431 0009 1B       		.uleb128 0x1b
+ 1432 000a 0E       		.uleb128 0xe
+ 1433 000b 11       		.uleb128 0x11
+ 1434 000c 01       		.uleb128 0x1
+ 1435 000d 12       		.uleb128 0x12
+ 1436 000e 01       		.uleb128 0x1
+ 1437 000f 10       		.uleb128 0x10
+ 1438 0010 06       		.uleb128 0x6
+ 1439 0011 00       		.byte	0
+ 1440 0012 00       		.byte	0
+ 1441 0013 02       		.uleb128 0x2
+ 1442 0014 24       		.uleb128 0x24
+ 1443 0015 00       		.byte	0
+ 1444 0016 0B       		.uleb128 0xb
+ 1445 0017 0B       		.uleb128 0xb
+ 1446 0018 3E       		.uleb128 0x3e
+ 1447 0019 0B       		.uleb128 0xb
+ 1448 001a 03       		.uleb128 0x3
+ 1449 001b 0E       		.uleb128 0xe
+ 1450 001c 00       		.byte	0
+ 1451 001d 00       		.byte	0
+ 1452 001e 03       		.uleb128 0x3
+ 1453 001f 16       		.uleb128 0x16
+ 1454 0020 00       		.byte	0
+ 1455 0021 03       		.uleb128 0x3
+ 1456 0022 0E       		.uleb128 0xe
+ 1457 0023 3A       		.uleb128 0x3a
+ 1458 0024 0B       		.uleb128 0xb
+ 1459 0025 3B       		.uleb128 0x3b
+ 1460 0026 0B       		.uleb128 0xb
+ 1461 0027 49       		.uleb128 0x49
+ 1462 0028 13       		.uleb128 0x13
+ 1463 0029 00       		.byte	0
+ 1464 002a 00       		.byte	0
+ 1465 002b 04       		.uleb128 0x4
+ 1466 002c 24       		.uleb128 0x24
+ 1467 002d 00       		.byte	0
+ 1468 002e 0B       		.uleb128 0xb
+ 1469 002f 0B       		.uleb128 0xb
+ 1470 0030 3E       		.uleb128 0x3e
+ 1471 0031 0B       		.uleb128 0xb
+ 1472 0032 03       		.uleb128 0x3
+ARM GAS  /tmp/ccA2fVch.s 			page 37
+
+
+ 1473 0033 08       		.uleb128 0x8
+ 1474 0034 00       		.byte	0
+ 1475 0035 00       		.byte	0
+ 1476 0036 05       		.uleb128 0x5
+ 1477 0037 26       		.uleb128 0x26
+ 1478 0038 00       		.byte	0
+ 1479 0039 49       		.uleb128 0x49
+ 1480 003a 13       		.uleb128 0x13
+ 1481 003b 00       		.byte	0
+ 1482 003c 00       		.byte	0
+ 1483 003d 06       		.uleb128 0x6
+ 1484 003e 35       		.uleb128 0x35
+ 1485 003f 00       		.byte	0
+ 1486 0040 49       		.uleb128 0x49
+ 1487 0041 13       		.uleb128 0x13
+ 1488 0042 00       		.byte	0
+ 1489 0043 00       		.byte	0
+ 1490 0044 07       		.uleb128 0x7
+ 1491 0045 34       		.uleb128 0x34
+ 1492 0046 00       		.byte	0
+ 1493 0047 03       		.uleb128 0x3
+ 1494 0048 0E       		.uleb128 0xe
+ 1495 0049 3A       		.uleb128 0x3a
+ 1496 004a 0B       		.uleb128 0xb
+ 1497 004b 3B       		.uleb128 0x3b
+ 1498 004c 05       		.uleb128 0x5
+ 1499 004d 49       		.uleb128 0x49
+ 1500 004e 13       		.uleb128 0x13
+ 1501 004f 3F       		.uleb128 0x3f
+ 1502 0050 0C       		.uleb128 0xc
+ 1503 0051 3C       		.uleb128 0x3c
+ 1504 0052 0C       		.uleb128 0xc
+ 1505 0053 00       		.byte	0
+ 1506 0054 00       		.byte	0
+ 1507 0055 08       		.uleb128 0x8
+ 1508 0056 34       		.uleb128 0x34
+ 1509 0057 00       		.byte	0
+ 1510 0058 03       		.uleb128 0x3
+ 1511 0059 0E       		.uleb128 0xe
+ 1512 005a 3A       		.uleb128 0x3a
+ 1513 005b 0B       		.uleb128 0xb
+ 1514 005c 3B       		.uleb128 0x3b
+ 1515 005d 0B       		.uleb128 0xb
+ 1516 005e 49       		.uleb128 0x49
+ 1517 005f 13       		.uleb128 0x13
+ 1518 0060 3F       		.uleb128 0x3f
+ 1519 0061 0C       		.uleb128 0xc
+ 1520 0062 3C       		.uleb128 0x3c
+ 1521 0063 0C       		.uleb128 0xc
+ 1522 0064 00       		.byte	0
+ 1523 0065 00       		.byte	0
+ 1524 0066 09       		.uleb128 0x9
+ 1525 0067 01       		.uleb128 0x1
+ 1526 0068 01       		.byte	0x1
+ 1527 0069 49       		.uleb128 0x49
+ 1528 006a 13       		.uleb128 0x13
+ 1529 006b 01       		.uleb128 0x1
+ARM GAS  /tmp/ccA2fVch.s 			page 38
+
+
+ 1530 006c 13       		.uleb128 0x13
+ 1531 006d 00       		.byte	0
+ 1532 006e 00       		.byte	0
+ 1533 006f 0A       		.uleb128 0xa
+ 1534 0070 21       		.uleb128 0x21
+ 1535 0071 00       		.byte	0
+ 1536 0072 49       		.uleb128 0x49
+ 1537 0073 13       		.uleb128 0x13
+ 1538 0074 2F       		.uleb128 0x2f
+ 1539 0075 0B       		.uleb128 0xb
+ 1540 0076 00       		.byte	0
+ 1541 0077 00       		.byte	0
+ 1542 0078 0B       		.uleb128 0xb
+ 1543 0079 13       		.uleb128 0x13
+ 1544 007a 01       		.byte	0x1
+ 1545 007b 0B       		.uleb128 0xb
+ 1546 007c 0B       		.uleb128 0xb
+ 1547 007d 3A       		.uleb128 0x3a
+ 1548 007e 0B       		.uleb128 0xb
+ 1549 007f 3B       		.uleb128 0x3b
+ 1550 0080 05       		.uleb128 0x5
+ 1551 0081 01       		.uleb128 0x1
+ 1552 0082 13       		.uleb128 0x13
+ 1553 0083 00       		.byte	0
+ 1554 0084 00       		.byte	0
+ 1555 0085 0C       		.uleb128 0xc
+ 1556 0086 0D       		.uleb128 0xd
+ 1557 0087 00       		.byte	0
+ 1558 0088 03       		.uleb128 0x3
+ 1559 0089 08       		.uleb128 0x8
+ 1560 008a 3A       		.uleb128 0x3a
+ 1561 008b 0B       		.uleb128 0xb
+ 1562 008c 3B       		.uleb128 0x3b
+ 1563 008d 05       		.uleb128 0x5
+ 1564 008e 49       		.uleb128 0x49
+ 1565 008f 13       		.uleb128 0x13
+ 1566 0090 38       		.uleb128 0x38
+ 1567 0091 0A       		.uleb128 0xa
+ 1568 0092 00       		.byte	0
+ 1569 0093 00       		.byte	0
+ 1570 0094 0D       		.uleb128 0xd
+ 1571 0095 0D       		.uleb128 0xd
+ 1572 0096 00       		.byte	0
+ 1573 0097 03       		.uleb128 0x3
+ 1574 0098 0E       		.uleb128 0xe
+ 1575 0099 3A       		.uleb128 0x3a
+ 1576 009a 0B       		.uleb128 0xb
+ 1577 009b 3B       		.uleb128 0x3b
+ 1578 009c 05       		.uleb128 0x5
+ 1579 009d 49       		.uleb128 0x49
+ 1580 009e 13       		.uleb128 0x13
+ 1581 009f 38       		.uleb128 0x38
+ 1582 00a0 0A       		.uleb128 0xa
+ 1583 00a1 00       		.byte	0
+ 1584 00a2 00       		.byte	0
+ 1585 00a3 0E       		.uleb128 0xe
+ 1586 00a4 16       		.uleb128 0x16
+ARM GAS  /tmp/ccA2fVch.s 			page 39
+
+
+ 1587 00a5 00       		.byte	0
+ 1588 00a6 03       		.uleb128 0x3
+ 1589 00a7 0E       		.uleb128 0xe
+ 1590 00a8 3A       		.uleb128 0x3a
+ 1591 00a9 0B       		.uleb128 0xb
+ 1592 00aa 3B       		.uleb128 0x3b
+ 1593 00ab 05       		.uleb128 0x5
+ 1594 00ac 49       		.uleb128 0x49
+ 1595 00ad 13       		.uleb128 0x13
+ 1596 00ae 00       		.byte	0
+ 1597 00af 00       		.byte	0
+ 1598 00b0 0F       		.uleb128 0xf
+ 1599 00b1 04       		.uleb128 0x4
+ 1600 00b2 01       		.byte	0x1
+ 1601 00b3 0B       		.uleb128 0xb
+ 1602 00b4 0B       		.uleb128 0xb
+ 1603 00b5 49       		.uleb128 0x49
+ 1604 00b6 13       		.uleb128 0x13
+ 1605 00b7 3A       		.uleb128 0x3a
+ 1606 00b8 0B       		.uleb128 0xb
+ 1607 00b9 3B       		.uleb128 0x3b
+ 1608 00ba 0B       		.uleb128 0xb
+ 1609 00bb 01       		.uleb128 0x1
+ 1610 00bc 13       		.uleb128 0x13
+ 1611 00bd 00       		.byte	0
+ 1612 00be 00       		.byte	0
+ 1613 00bf 10       		.uleb128 0x10
+ 1614 00c0 28       		.uleb128 0x28
+ 1615 00c1 00       		.byte	0
+ 1616 00c2 03       		.uleb128 0x3
+ 1617 00c3 0E       		.uleb128 0xe
+ 1618 00c4 1C       		.uleb128 0x1c
+ 1619 00c5 0B       		.uleb128 0xb
+ 1620 00c6 00       		.byte	0
+ 1621 00c7 00       		.byte	0
+ 1622 00c8 11       		.uleb128 0x11
+ 1623 00c9 13       		.uleb128 0x13
+ 1624 00ca 01       		.byte	0x1
+ 1625 00cb 0B       		.uleb128 0xb
+ 1626 00cc 0B       		.uleb128 0xb
+ 1627 00cd 3A       		.uleb128 0x3a
+ 1628 00ce 0B       		.uleb128 0xb
+ 1629 00cf 3B       		.uleb128 0x3b
+ 1630 00d0 0B       		.uleb128 0xb
+ 1631 00d1 01       		.uleb128 0x1
+ 1632 00d2 13       		.uleb128 0x13
+ 1633 00d3 00       		.byte	0
+ 1634 00d4 00       		.byte	0
+ 1635 00d5 12       		.uleb128 0x12
+ 1636 00d6 0D       		.uleb128 0xd
+ 1637 00d7 00       		.byte	0
+ 1638 00d8 03       		.uleb128 0x3
+ 1639 00d9 0E       		.uleb128 0xe
+ 1640 00da 3A       		.uleb128 0x3a
+ 1641 00db 0B       		.uleb128 0xb
+ 1642 00dc 3B       		.uleb128 0x3b
+ 1643 00dd 0B       		.uleb128 0xb
+ARM GAS  /tmp/ccA2fVch.s 			page 40
+
+
+ 1644 00de 49       		.uleb128 0x49
+ 1645 00df 13       		.uleb128 0x13
+ 1646 00e0 38       		.uleb128 0x38
+ 1647 00e1 0A       		.uleb128 0xa
+ 1648 00e2 00       		.byte	0
+ 1649 00e3 00       		.byte	0
+ 1650 00e4 13       		.uleb128 0x13
+ 1651 00e5 15       		.uleb128 0x15
+ 1652 00e6 00       		.byte	0
+ 1653 00e7 27       		.uleb128 0x27
+ 1654 00e8 0C       		.uleb128 0xc
+ 1655 00e9 00       		.byte	0
+ 1656 00ea 00       		.byte	0
+ 1657 00eb 14       		.uleb128 0x14
+ 1658 00ec 0F       		.uleb128 0xf
+ 1659 00ed 00       		.byte	0
+ 1660 00ee 0B       		.uleb128 0xb
+ 1661 00ef 0B       		.uleb128 0xb
+ 1662 00f0 49       		.uleb128 0x49
+ 1663 00f1 13       		.uleb128 0x13
+ 1664 00f2 00       		.byte	0
+ 1665 00f3 00       		.byte	0
+ 1666 00f4 15       		.uleb128 0x15
+ 1667 00f5 2E       		.uleb128 0x2e
+ 1668 00f6 01       		.byte	0x1
+ 1669 00f7 3F       		.uleb128 0x3f
+ 1670 00f8 0C       		.uleb128 0xc
+ 1671 00f9 03       		.uleb128 0x3
+ 1672 00fa 0E       		.uleb128 0xe
+ 1673 00fb 3A       		.uleb128 0x3a
+ 1674 00fc 0B       		.uleb128 0xb
+ 1675 00fd 3B       		.uleb128 0x3b
+ 1676 00fe 05       		.uleb128 0x5
+ 1677 00ff 27       		.uleb128 0x27
+ 1678 0100 0C       		.uleb128 0xc
+ 1679 0101 11       		.uleb128 0x11
+ 1680 0102 01       		.uleb128 0x1
+ 1681 0103 12       		.uleb128 0x12
+ 1682 0104 01       		.uleb128 0x1
+ 1683 0105 40       		.uleb128 0x40
+ 1684 0106 0A       		.uleb128 0xa
+ 1685 0107 9742     		.uleb128 0x2117
+ 1686 0109 0C       		.uleb128 0xc
+ 1687 010a 01       		.uleb128 0x1
+ 1688 010b 13       		.uleb128 0x13
+ 1689 010c 00       		.byte	0
+ 1690 010d 00       		.byte	0
+ 1691 010e 16       		.uleb128 0x16
+ 1692 010f 05       		.uleb128 0x5
+ 1693 0110 00       		.byte	0
+ 1694 0111 03       		.uleb128 0x3
+ 1695 0112 0E       		.uleb128 0xe
+ 1696 0113 3A       		.uleb128 0x3a
+ 1697 0114 0B       		.uleb128 0xb
+ 1698 0115 3B       		.uleb128 0x3b
+ 1699 0116 05       		.uleb128 0x5
+ 1700 0117 49       		.uleb128 0x49
+ARM GAS  /tmp/ccA2fVch.s 			page 41
+
+
+ 1701 0118 13       		.uleb128 0x13
+ 1702 0119 02       		.uleb128 0x2
+ 1703 011a 0A       		.uleb128 0xa
+ 1704 011b 00       		.byte	0
+ 1705 011c 00       		.byte	0
+ 1706 011d 17       		.uleb128 0x17
+ 1707 011e 34       		.uleb128 0x34
+ 1708 011f 00       		.byte	0
+ 1709 0120 03       		.uleb128 0x3
+ 1710 0121 0E       		.uleb128 0xe
+ 1711 0122 3A       		.uleb128 0x3a
+ 1712 0123 0B       		.uleb128 0xb
+ 1713 0124 3B       		.uleb128 0x3b
+ 1714 0125 05       		.uleb128 0x5
+ 1715 0126 49       		.uleb128 0x49
+ 1716 0127 13       		.uleb128 0x13
+ 1717 0128 02       		.uleb128 0x2
+ 1718 0129 0A       		.uleb128 0xa
+ 1719 012a 00       		.byte	0
+ 1720 012b 00       		.byte	0
+ 1721 012c 18       		.uleb128 0x18
+ 1722 012d 2E       		.uleb128 0x2e
+ 1723 012e 01       		.byte	0x1
+ 1724 012f 3F       		.uleb128 0x3f
+ 1725 0130 0C       		.uleb128 0xc
+ 1726 0131 03       		.uleb128 0x3
+ 1727 0132 0E       		.uleb128 0xe
+ 1728 0133 3A       		.uleb128 0x3a
+ 1729 0134 0B       		.uleb128 0xb
+ 1730 0135 3B       		.uleb128 0x3b
+ 1731 0136 05       		.uleb128 0x5
+ 1732 0137 27       		.uleb128 0x27
+ 1733 0138 0C       		.uleb128 0xc
+ 1734 0139 49       		.uleb128 0x49
+ 1735 013a 13       		.uleb128 0x13
+ 1736 013b 11       		.uleb128 0x11
+ 1737 013c 01       		.uleb128 0x1
+ 1738 013d 12       		.uleb128 0x12
+ 1739 013e 01       		.uleb128 0x1
+ 1740 013f 40       		.uleb128 0x40
+ 1741 0140 0A       		.uleb128 0xa
+ 1742 0141 9742     		.uleb128 0x2117
+ 1743 0143 0C       		.uleb128 0xc
+ 1744 0144 01       		.uleb128 0x1
+ 1745 0145 13       		.uleb128 0x13
+ 1746 0146 00       		.byte	0
+ 1747 0147 00       		.byte	0
+ 1748 0148 19       		.uleb128 0x19
+ 1749 0149 05       		.uleb128 0x5
+ 1750 014a 00       		.byte	0
+ 1751 014b 03       		.uleb128 0x3
+ 1752 014c 0E       		.uleb128 0xe
+ 1753 014d 3A       		.uleb128 0x3a
+ 1754 014e 0B       		.uleb128 0xb
+ 1755 014f 3B       		.uleb128 0x3b
+ 1756 0150 05       		.uleb128 0x5
+ 1757 0151 49       		.uleb128 0x49
+ARM GAS  /tmp/ccA2fVch.s 			page 42
+
+
+ 1758 0152 13       		.uleb128 0x13
+ 1759 0153 02       		.uleb128 0x2
+ 1760 0154 06       		.uleb128 0x6
+ 1761 0155 00       		.byte	0
+ 1762 0156 00       		.byte	0
+ 1763 0157 1A       		.uleb128 0x1a
+ 1764 0158 34       		.uleb128 0x34
+ 1765 0159 00       		.byte	0
+ 1766 015a 03       		.uleb128 0x3
+ 1767 015b 0E       		.uleb128 0xe
+ 1768 015c 3A       		.uleb128 0x3a
+ 1769 015d 0B       		.uleb128 0xb
+ 1770 015e 3B       		.uleb128 0x3b
+ 1771 015f 05       		.uleb128 0x5
+ 1772 0160 49       		.uleb128 0x49
+ 1773 0161 13       		.uleb128 0x13
+ 1774 0162 02       		.uleb128 0x2
+ 1775 0163 06       		.uleb128 0x6
+ 1776 0164 00       		.byte	0
+ 1777 0165 00       		.byte	0
+ 1778 0166 1B       		.uleb128 0x1b
+ 1779 0167 2E       		.uleb128 0x2e
+ 1780 0168 01       		.byte	0x1
+ 1781 0169 3F       		.uleb128 0x3f
+ 1782 016a 0C       		.uleb128 0xc
+ 1783 016b 03       		.uleb128 0x3
+ 1784 016c 0E       		.uleb128 0xe
+ 1785 016d 3A       		.uleb128 0x3a
+ 1786 016e 0B       		.uleb128 0xb
+ 1787 016f 3B       		.uleb128 0x3b
+ 1788 0170 05       		.uleb128 0x5
+ 1789 0171 27       		.uleb128 0x27
+ 1790 0172 0C       		.uleb128 0xc
+ 1791 0173 11       		.uleb128 0x11
+ 1792 0174 01       		.uleb128 0x1
+ 1793 0175 12       		.uleb128 0x12
+ 1794 0176 01       		.uleb128 0x1
+ 1795 0177 40       		.uleb128 0x40
+ 1796 0178 0A       		.uleb128 0xa
+ 1797 0179 01       		.uleb128 0x1
+ 1798 017a 13       		.uleb128 0x13
+ 1799 017b 00       		.byte	0
+ 1800 017c 00       		.byte	0
+ 1801 017d 1C       		.uleb128 0x1c
+ 1802 017e 2E       		.uleb128 0x2e
+ 1803 017f 01       		.byte	0x1
+ 1804 0180 3F       		.uleb128 0x3f
+ 1805 0181 0C       		.uleb128 0xc
+ 1806 0182 03       		.uleb128 0x3
+ 1807 0183 0E       		.uleb128 0xe
+ 1808 0184 3A       		.uleb128 0x3a
+ 1809 0185 0B       		.uleb128 0xb
+ 1810 0186 3B       		.uleb128 0x3b
+ 1811 0187 05       		.uleb128 0x5
+ 1812 0188 27       		.uleb128 0x27
+ 1813 0189 0C       		.uleb128 0xc
+ 1814 018a 49       		.uleb128 0x49
+ARM GAS  /tmp/ccA2fVch.s 			page 43
+
+
+ 1815 018b 13       		.uleb128 0x13
+ 1816 018c 11       		.uleb128 0x11
+ 1817 018d 01       		.uleb128 0x1
+ 1818 018e 12       		.uleb128 0x12
+ 1819 018f 01       		.uleb128 0x1
+ 1820 0190 40       		.uleb128 0x40
+ 1821 0191 06       		.uleb128 0x6
+ 1822 0192 9742     		.uleb128 0x2117
+ 1823 0194 0C       		.uleb128 0xc
+ 1824 0195 01       		.uleb128 0x1
+ 1825 0196 13       		.uleb128 0x13
+ 1826 0197 00       		.byte	0
+ 1827 0198 00       		.byte	0
+ 1828 0199 1D       		.uleb128 0x1d
+ 1829 019a 2E       		.uleb128 0x2e
+ 1830 019b 01       		.byte	0x1
+ 1831 019c 3F       		.uleb128 0x3f
+ 1832 019d 0C       		.uleb128 0xc
+ 1833 019e 03       		.uleb128 0x3
+ 1834 019f 0E       		.uleb128 0xe
+ 1835 01a0 3A       		.uleb128 0x3a
+ 1836 01a1 0B       		.uleb128 0xb
+ 1837 01a2 3B       		.uleb128 0x3b
+ 1838 01a3 0B       		.uleb128 0xb
+ 1839 01a4 27       		.uleb128 0x27
+ 1840 01a5 0C       		.uleb128 0xc
+ 1841 01a6 49       		.uleb128 0x49
+ 1842 01a7 13       		.uleb128 0x13
+ 1843 01a8 11       		.uleb128 0x11
+ 1844 01a9 01       		.uleb128 0x1
+ 1845 01aa 12       		.uleb128 0x12
+ 1846 01ab 01       		.uleb128 0x1
+ 1847 01ac 40       		.uleb128 0x40
+ 1848 01ad 06       		.uleb128 0x6
+ 1849 01ae 9742     		.uleb128 0x2117
+ 1850 01b0 0C       		.uleb128 0xc
+ 1851 01b1 01       		.uleb128 0x1
+ 1852 01b2 13       		.uleb128 0x13
+ 1853 01b3 00       		.byte	0
+ 1854 01b4 00       		.byte	0
+ 1855 01b5 1E       		.uleb128 0x1e
+ 1856 01b6 05       		.uleb128 0x5
+ 1857 01b7 00       		.byte	0
+ 1858 01b8 03       		.uleb128 0x3
+ 1859 01b9 0E       		.uleb128 0xe
+ 1860 01ba 3A       		.uleb128 0x3a
+ 1861 01bb 0B       		.uleb128 0xb
+ 1862 01bc 3B       		.uleb128 0x3b
+ 1863 01bd 0B       		.uleb128 0xb
+ 1864 01be 49       		.uleb128 0x49
+ 1865 01bf 13       		.uleb128 0x13
+ 1866 01c0 02       		.uleb128 0x2
+ 1867 01c1 06       		.uleb128 0x6
+ 1868 01c2 00       		.byte	0
+ 1869 01c3 00       		.byte	0
+ 1870 01c4 1F       		.uleb128 0x1f
+ 1871 01c5 05       		.uleb128 0x5
+ARM GAS  /tmp/ccA2fVch.s 			page 44
+
+
+ 1872 01c6 00       		.byte	0
+ 1873 01c7 03       		.uleb128 0x3
+ 1874 01c8 0E       		.uleb128 0xe
+ 1875 01c9 3A       		.uleb128 0x3a
+ 1876 01ca 0B       		.uleb128 0xb
+ 1877 01cb 3B       		.uleb128 0x3b
+ 1878 01cc 0B       		.uleb128 0xb
+ 1879 01cd 49       		.uleb128 0x49
+ 1880 01ce 13       		.uleb128 0x13
+ 1881 01cf 02       		.uleb128 0x2
+ 1882 01d0 0A       		.uleb128 0xa
+ 1883 01d1 00       		.byte	0
+ 1884 01d2 00       		.byte	0
+ 1885 01d3 20       		.uleb128 0x20
+ 1886 01d4 34       		.uleb128 0x34
+ 1887 01d5 00       		.byte	0
+ 1888 01d6 03       		.uleb128 0x3
+ 1889 01d7 0E       		.uleb128 0xe
+ 1890 01d8 3A       		.uleb128 0x3a
+ 1891 01d9 0B       		.uleb128 0xb
+ 1892 01da 3B       		.uleb128 0x3b
+ 1893 01db 0B       		.uleb128 0xb
+ 1894 01dc 49       		.uleb128 0x49
+ 1895 01dd 13       		.uleb128 0x13
+ 1896 01de 02       		.uleb128 0x2
+ 1897 01df 06       		.uleb128 0x6
+ 1898 01e0 00       		.byte	0
+ 1899 01e1 00       		.byte	0
+ 1900 01e2 21       		.uleb128 0x21
+ 1901 01e3 2E       		.uleb128 0x2e
+ 1902 01e4 01       		.byte	0x1
+ 1903 01e5 3F       		.uleb128 0x3f
+ 1904 01e6 0C       		.uleb128 0xc
+ 1905 01e7 03       		.uleb128 0x3
+ 1906 01e8 0E       		.uleb128 0xe
+ 1907 01e9 3A       		.uleb128 0x3a
+ 1908 01ea 0B       		.uleb128 0xb
+ 1909 01eb 3B       		.uleb128 0x3b
+ 1910 01ec 0B       		.uleb128 0xb
+ 1911 01ed 27       		.uleb128 0x27
+ 1912 01ee 0C       		.uleb128 0xc
+ 1913 01ef 49       		.uleb128 0x49
+ 1914 01f0 13       		.uleb128 0x13
+ 1915 01f1 11       		.uleb128 0x11
+ 1916 01f2 01       		.uleb128 0x1
+ 1917 01f3 12       		.uleb128 0x12
+ 1918 01f4 01       		.uleb128 0x1
+ 1919 01f5 40       		.uleb128 0x40
+ 1920 01f6 06       		.uleb128 0x6
+ 1921 01f7 9742     		.uleb128 0x2117
+ 1922 01f9 0C       		.uleb128 0xc
+ 1923 01fa 00       		.byte	0
+ 1924 01fb 00       		.byte	0
+ 1925 01fc 00       		.byte	0
+ 1926              		.section	.debug_loc,"",%progbits
+ 1927              	.Ldebug_loc0:
+ 1928              	.LLST22:
+ARM GAS  /tmp/ccA2fVch.s 			page 45
+
+
+ 1929 0000 C8010000 		.4byte	.LVL49-.Ltext0
+ 1930 0004 CC010000 		.4byte	.LVL50-.Ltext0
+ 1931 0008 0100     		.2byte	0x1
+ 1932 000a 50       		.byte	0x50
+ 1933 000b CC010000 		.4byte	.LVL50-.Ltext0
+ 1934 000f E4010000 		.4byte	.LFE71-.Ltext0
+ 1935 0013 0400     		.2byte	0x4
+ 1936 0015 F3       		.byte	0xf3
+ 1937 0016 01       		.uleb128 0x1
+ 1938 0017 50       		.byte	0x50
+ 1939 0018 9F       		.byte	0x9f
+ 1940 0019 00000000 		.4byte	0
+ 1941 001d 00000000 		.4byte	0
+ 1942              	.LLST23:
+ 1943 0021 D4010000 		.4byte	.LVL51-.Ltext0
+ 1944 0025 DC010000 		.4byte	.LVL54-.Ltext0
+ 1945 0029 0B00     		.2byte	0xb
+ 1946 002b 31       		.byte	0x31
+ 1947 002c 70       		.byte	0x70
+ 1948 002d 00       		.sleb128 0
+ 1949 002e 24       		.byte	0x24
+ 1950 002f 72       		.byte	0x72
+ 1951 0030 00       		.sleb128 0
+ 1952 0031 1A       		.byte	0x1a
+ 1953 0032 70       		.byte	0x70
+ 1954 0033 00       		.sleb128 0
+ 1955 0034 25       		.byte	0x25
+ 1956 0035 9F       		.byte	0x9f
+ 1957 0036 DC010000 		.4byte	.LVL54-.Ltext0
+ 1958 003a E4010000 		.4byte	.LFE71-.Ltext0
+ 1959 003e 0100     		.2byte	0x1
+ 1960 0040 50       		.byte	0x50
+ 1961 0041 00000000 		.4byte	0
+ 1962 0045 00000000 		.4byte	0
+ 1963              	.LLST24:
+ 1964 0049 D4010000 		.4byte	.LVL51-.Ltext0
+ 1965 004d D6010000 		.4byte	.LVL52-.Ltext0
+ 1966 0051 0500     		.2byte	0x5
+ 1967 0053 31       		.byte	0x31
+ 1968 0054 70       		.byte	0x70
+ 1969 0055 00       		.sleb128 0
+ 1970 0056 24       		.byte	0x24
+ 1971 0057 9F       		.byte	0x9f
+ 1972 0058 D6010000 		.4byte	.LVL52-.Ltext0
+ 1973 005c D8010000 		.4byte	.LVL53-.Ltext0
+ 1974 0060 0100     		.2byte	0x1
+ 1975 0062 53       		.byte	0x53
+ 1976 0063 D8010000 		.4byte	.LVL53-.Ltext0
+ 1977 0067 DC010000 		.4byte	.LVL54-.Ltext0
+ 1978 006b 0500     		.2byte	0x5
+ 1979 006d 31       		.byte	0x31
+ 1980 006e 70       		.byte	0x70
+ 1981 006f 00       		.sleb128 0
+ 1982 0070 24       		.byte	0x24
+ 1983 0071 9F       		.byte	0x9f
+ 1984 0072 DC010000 		.4byte	.LVL54-.Ltext0
+ 1985 0076 E4010000 		.4byte	.LFE71-.Ltext0
+ARM GAS  /tmp/ccA2fVch.s 			page 46
+
+
+ 1986 007a 0900     		.2byte	0x9
+ 1987 007c 31       		.byte	0x31
+ 1988 007d F3       		.byte	0xf3
+ 1989 007e 01       		.uleb128 0x1
+ 1990 007f 50       		.byte	0x50
+ 1991 0080 06       		.byte	0x6
+ 1992 0081 4F       		.byte	0x4f
+ 1993 0082 1A       		.byte	0x1a
+ 1994 0083 24       		.byte	0x24
+ 1995 0084 9F       		.byte	0x9f
+ 1996 0085 00000000 		.4byte	0
+ 1997 0089 00000000 		.4byte	0
+ 1998              	.LLST25:
+ 1999 008d D4010000 		.4byte	.LVL51-.Ltext0
+ 2000 0091 DC010000 		.4byte	.LVL54-.Ltext0
+ 2001 0095 0100     		.2byte	0x1
+ 2002 0097 50       		.byte	0x50
+ 2003 0098 DC010000 		.4byte	.LVL54-.Ltext0
+ 2004 009c E4010000 		.4byte	.LFE71-.Ltext0
+ 2005 00a0 0700     		.2byte	0x7
+ 2006 00a2 F3       		.byte	0xf3
+ 2007 00a3 01       		.uleb128 0x1
+ 2008 00a4 50       		.byte	0x50
+ 2009 00a5 06       		.byte	0x6
+ 2010 00a6 4F       		.byte	0x4f
+ 2011 00a7 1A       		.byte	0x1a
+ 2012 00a8 9F       		.byte	0x9f
+ 2013 00a9 00000000 		.4byte	0
+ 2014 00ad 00000000 		.4byte	0
+ 2015              	.LLST19:
+ 2016 00b1 A8010000 		.4byte	.LVL44-.Ltext0
+ 2017 00b5 C1010000 		.4byte	.LVL48-1-.Ltext0
+ 2018 00b9 0100     		.2byte	0x1
+ 2019 00bb 50       		.byte	0x50
+ 2020 00bc C1010000 		.4byte	.LVL48-1-.Ltext0
+ 2021 00c0 C2010000 		.4byte	.LVL48-.Ltext0
+ 2022 00c4 0400     		.2byte	0x4
+ 2023 00c6 F3       		.byte	0xf3
+ 2024 00c7 01       		.uleb128 0x1
+ 2025 00c8 50       		.byte	0x50
+ 2026 00c9 9F       		.byte	0x9f
+ 2027 00ca C2010000 		.4byte	.LVL48-.Ltext0
+ 2028 00ce C8010000 		.4byte	.LFE70-.Ltext0
+ 2029 00d2 0100     		.2byte	0x1
+ 2030 00d4 50       		.byte	0x50
+ 2031 00d5 00000000 		.4byte	0
+ 2032 00d9 00000000 		.4byte	0
+ 2033              	.LLST20:
+ 2034 00dd B6010000 		.4byte	.LVL46-.Ltext0
+ 2035 00e1 BE010000 		.4byte	.LVL47-.Ltext0
+ 2036 00e5 0600     		.2byte	0x6
+ 2037 00e7 73       		.byte	0x73
+ 2038 00e8 00       		.sleb128 0
+ 2039 00e9 71       		.byte	0x71
+ 2040 00ea 00       		.sleb128 0
+ 2041 00eb 1A       		.byte	0x1a
+ 2042 00ec 9F       		.byte	0x9f
+ARM GAS  /tmp/ccA2fVch.s 			page 47
+
+
+ 2043 00ed BE010000 		.4byte	.LVL47-.Ltext0
+ 2044 00f1 C1010000 		.4byte	.LVL48-1-.Ltext0
+ 2045 00f5 0700     		.2byte	0x7
+ 2046 00f7 72       		.byte	0x72
+ 2047 00f8 14       		.sleb128 20
+ 2048 00f9 06       		.byte	0x6
+ 2049 00fa 71       		.byte	0x71
+ 2050 00fb 00       		.sleb128 0
+ 2051 00fc 1A       		.byte	0x1a
+ 2052 00fd 9F       		.byte	0x9f
+ 2053 00fe 00000000 		.4byte	0
+ 2054 0102 00000000 		.4byte	0
+ 2055              	.LLST21:
+ 2056 0106 B2010000 		.4byte	.LVL45-.Ltext0
+ 2057 010a BE010000 		.4byte	.LVL47-.Ltext0
+ 2058 010e 0100     		.2byte	0x1
+ 2059 0110 53       		.byte	0x53
+ 2060 0111 BE010000 		.4byte	.LVL47-.Ltext0
+ 2061 0115 C1010000 		.4byte	.LVL48-1-.Ltext0
+ 2062 0119 0200     		.2byte	0x2
+ 2063 011b 72       		.byte	0x72
+ 2064 011c 14       		.sleb128 20
+ 2065 011d 00000000 		.4byte	0
+ 2066 0121 00000000 		.4byte	0
+ 2067              	.LLST18:
+ 2068 0125 9C010000 		.4byte	.LVL40-.Ltext0
+ 2069 0129 A2010000 		.4byte	.LVL41-.Ltext0
+ 2070 012d 0100     		.2byte	0x1
+ 2071 012f 50       		.byte	0x50
+ 2072 0130 A2010000 		.4byte	.LVL41-.Ltext0
+ 2073 0134 A4010000 		.4byte	.LVL42-.Ltext0
+ 2074 0138 0400     		.2byte	0x4
+ 2075 013a F3       		.byte	0xf3
+ 2076 013b 01       		.uleb128 0x1
+ 2077 013c 50       		.byte	0x50
+ 2078 013d 9F       		.byte	0x9f
+ 2079 013e A4010000 		.4byte	.LVL42-.Ltext0
+ 2080 0142 A6010000 		.4byte	.LVL43-.Ltext0
+ 2081 0146 0100     		.2byte	0x1
+ 2082 0148 50       		.byte	0x50
+ 2083 0149 A6010000 		.4byte	.LVL43-.Ltext0
+ 2084 014d A8010000 		.4byte	.LFE69-.Ltext0
+ 2085 0151 0400     		.2byte	0x4
+ 2086 0153 F3       		.byte	0xf3
+ 2087 0154 01       		.uleb128 0x1
+ 2088 0155 50       		.byte	0x50
+ 2089 0156 9F       		.byte	0x9f
+ 2090 0157 00000000 		.4byte	0
+ 2091 015b 00000000 		.4byte	0
+ 2092              	.LLST16:
+ 2093 015f 90010000 		.4byte	.LVL36-.Ltext0
+ 2094 0163 96010000 		.4byte	.LVL37-.Ltext0
+ 2095 0167 0100     		.2byte	0x1
+ 2096 0169 50       		.byte	0x50
+ 2097 016a 96010000 		.4byte	.LVL37-.Ltext0
+ 2098 016e 98010000 		.4byte	.LVL38-.Ltext0
+ 2099 0172 0400     		.2byte	0x4
+ARM GAS  /tmp/ccA2fVch.s 			page 48
+
+
+ 2100 0174 F3       		.byte	0xf3
+ 2101 0175 01       		.uleb128 0x1
+ 2102 0176 50       		.byte	0x50
+ 2103 0177 9F       		.byte	0x9f
+ 2104 0178 98010000 		.4byte	.LVL38-.Ltext0
+ 2105 017c 9A010000 		.4byte	.LVL39-.Ltext0
+ 2106 0180 0100     		.2byte	0x1
+ 2107 0182 50       		.byte	0x50
+ 2108 0183 9A010000 		.4byte	.LVL39-.Ltext0
+ 2109 0187 9C010000 		.4byte	.LFE68-.Ltext0
+ 2110 018b 0400     		.2byte	0x4
+ 2111 018d F3       		.byte	0xf3
+ 2112 018e 01       		.uleb128 0x1
+ 2113 018f 50       		.byte	0x50
+ 2114 0190 9F       		.byte	0x9f
+ 2115 0191 00000000 		.4byte	0
+ 2116 0195 00000000 		.4byte	0
+ 2117              	.LLST17:
+ 2118 0199 90010000 		.4byte	.LVL36-.Ltext0
+ 2119 019d 9A010000 		.4byte	.LVL39-.Ltext0
+ 2120 01a1 0200     		.2byte	0x2
+ 2121 01a3 30       		.byte	0x30
+ 2122 01a4 9F       		.byte	0x9f
+ 2123 01a5 9A010000 		.4byte	.LVL39-.Ltext0
+ 2124 01a9 9C010000 		.4byte	.LFE68-.Ltext0
+ 2125 01ad 0100     		.2byte	0x1
+ 2126 01af 50       		.byte	0x50
+ 2127 01b0 00000000 		.4byte	0
+ 2128 01b4 00000000 		.4byte	0
+ 2129              	.LLST11:
+ 2130 01b8 28010000 		.4byte	.LFB67-.Ltext0
+ 2131 01bc 2A010000 		.4byte	.LCFI2-.Ltext0
+ 2132 01c0 0200     		.2byte	0x2
+ 2133 01c2 7D       		.byte	0x7d
+ 2134 01c3 00       		.sleb128 0
+ 2135 01c4 2A010000 		.4byte	.LCFI2-.Ltext0
+ 2136 01c8 90010000 		.4byte	.LFE67-.Ltext0
+ 2137 01cc 0200     		.2byte	0x2
+ 2138 01ce 7D       		.byte	0x7d
+ 2139 01cf 08       		.sleb128 8
+ 2140 01d0 00000000 		.4byte	0
+ 2141 01d4 00000000 		.4byte	0
+ 2142              	.LLST12:
+ 2143 01d8 28010000 		.4byte	.LVL24-.Ltext0
+ 2144 01dc 32010000 		.4byte	.LVL25-.Ltext0
+ 2145 01e0 0100     		.2byte	0x1
+ 2146 01e2 50       		.byte	0x50
+ 2147 01e3 32010000 		.4byte	.LVL25-.Ltext0
+ 2148 01e7 86010000 		.4byte	.LVL34-.Ltext0
+ 2149 01eb 0400     		.2byte	0x4
+ 2150 01ed F3       		.byte	0xf3
+ 2151 01ee 01       		.uleb128 0x1
+ 2152 01ef 50       		.byte	0x50
+ 2153 01f0 9F       		.byte	0x9f
+ 2154 01f1 86010000 		.4byte	.LVL34-.Ltext0
+ 2155 01f5 88010000 		.4byte	.LVL35-.Ltext0
+ 2156 01f9 0100     		.2byte	0x1
+ARM GAS  /tmp/ccA2fVch.s 			page 49
+
+
+ 2157 01fb 50       		.byte	0x50
+ 2158 01fc 88010000 		.4byte	.LVL35-.Ltext0
+ 2159 0200 90010000 		.4byte	.LFE67-.Ltext0
+ 2160 0204 0400     		.2byte	0x4
+ 2161 0206 F3       		.byte	0xf3
+ 2162 0207 01       		.uleb128 0x1
+ 2163 0208 50       		.byte	0x50
+ 2164 0209 9F       		.byte	0x9f
+ 2165 020a 00000000 		.4byte	0
+ 2166 020e 00000000 		.4byte	0
+ 2167              	.LLST13:
+ 2168 0212 78010000 		.4byte	.LVL32-.Ltext0
+ 2169 0216 82010000 		.4byte	.LVL33-.Ltext0
+ 2170 021a 0100     		.2byte	0x1
+ 2171 021c 52       		.byte	0x52
+ 2172 021d 82010000 		.4byte	.LVL33-.Ltext0
+ 2173 0221 86010000 		.4byte	.LVL34-.Ltext0
+ 2174 0225 0100     		.2byte	0x1
+ 2175 0227 51       		.byte	0x51
+ 2176 0228 00000000 		.4byte	0
+ 2177 022c 00000000 		.4byte	0
+ 2178              	.LLST14:
+ 2179 0230 36010000 		.4byte	.LVL26-.Ltext0
+ 2180 0234 4A010000 		.4byte	.LVL29-.Ltext0
+ 2181 0238 0100     		.2byte	0x1
+ 2182 023a 52       		.byte	0x52
+ 2183 023b 4E010000 		.4byte	.LVL30-.Ltext0
+ 2184 023f 78010000 		.4byte	.LVL32-.Ltext0
+ 2185 0243 0100     		.2byte	0x1
+ 2186 0245 52       		.byte	0x52
+ 2187 0246 00000000 		.4byte	0
+ 2188 024a 00000000 		.4byte	0
+ 2189              	.LLST15:
+ 2190 024e 36010000 		.4byte	.LVL26-.Ltext0
+ 2191 0252 38010000 		.4byte	.LVL27-.Ltext0
+ 2192 0256 0500     		.2byte	0x5
+ 2193 0258 31       		.byte	0x31
+ 2194 0259 72       		.byte	0x72
+ 2195 025a 00       		.sleb128 0
+ 2196 025b 24       		.byte	0x24
+ 2197 025c 9F       		.byte	0x9f
+ 2198 025d 38010000 		.4byte	.LVL27-.Ltext0
+ 2199 0261 3A010000 		.4byte	.LVL28-.Ltext0
+ 2200 0265 0100     		.2byte	0x1
+ 2201 0267 53       		.byte	0x53
+ 2202 0268 3A010000 		.4byte	.LVL28-.Ltext0
+ 2203 026c 4A010000 		.4byte	.LVL29-.Ltext0
+ 2204 0270 0400     		.2byte	0x4
+ 2205 0272 73       		.byte	0x73
+ 2206 0273 00       		.sleb128 0
+ 2207 0274 20       		.byte	0x20
+ 2208 0275 9F       		.byte	0x9f
+ 2209 0276 4E010000 		.4byte	.LVL30-.Ltext0
+ 2210 027a 58010000 		.4byte	.LVL31-.Ltext0
+ 2211 027e 0400     		.2byte	0x4
+ 2212 0280 73       		.byte	0x73
+ 2213 0281 00       		.sleb128 0
+ARM GAS  /tmp/ccA2fVch.s 			page 50
+
+
+ 2214 0282 20       		.byte	0x20
+ 2215 0283 9F       		.byte	0x9f
+ 2216 0284 58010000 		.4byte	.LVL31-.Ltext0
+ 2217 0288 78010000 		.4byte	.LVL32-.Ltext0
+ 2218 028c 0500     		.2byte	0x5
+ 2219 028e 31       		.byte	0x31
+ 2220 028f 72       		.byte	0x72
+ 2221 0290 00       		.sleb128 0
+ 2222 0291 24       		.byte	0x24
+ 2223 0292 9F       		.byte	0x9f
+ 2224 0293 00000000 		.4byte	0
+ 2225 0297 00000000 		.4byte	0
+ 2226              	.LLST6:
+ 2227 029b 9C000000 		.4byte	.LFB66-.Ltext0
+ 2228 029f 9E000000 		.4byte	.LCFI1-.Ltext0
+ 2229 02a3 0200     		.2byte	0x2
+ 2230 02a5 7D       		.byte	0x7d
+ 2231 02a6 00       		.sleb128 0
+ 2232 02a7 9E000000 		.4byte	.LCFI1-.Ltext0
+ 2233 02ab 28010000 		.4byte	.LFE66-.Ltext0
+ 2234 02af 0200     		.2byte	0x2
+ 2235 02b1 7D       		.byte	0x7d
+ 2236 02b2 10       		.sleb128 16
+ 2237 02b3 00000000 		.4byte	0
+ 2238 02b7 00000000 		.4byte	0
+ 2239              	.LLST7:
+ 2240 02bb 9C000000 		.4byte	.LVL13-.Ltext0
+ 2241 02bf AA000000 		.4byte	.LVL14-.Ltext0
+ 2242 02c3 0100     		.2byte	0x1
+ 2243 02c5 50       		.byte	0x50
+ 2244 02c6 AA000000 		.4byte	.LVL14-.Ltext0
+ 2245 02ca 1C010000 		.4byte	.LVL22-.Ltext0
+ 2246 02ce 0400     		.2byte	0x4
+ 2247 02d0 F3       		.byte	0xf3
+ 2248 02d1 01       		.uleb128 0x1
+ 2249 02d2 50       		.byte	0x50
+ 2250 02d3 9F       		.byte	0x9f
+ 2251 02d4 1C010000 		.4byte	.LVL22-.Ltext0
+ 2252 02d8 1E010000 		.4byte	.LVL23-.Ltext0
+ 2253 02dc 0100     		.2byte	0x1
+ 2254 02de 50       		.byte	0x50
+ 2255 02df 1E010000 		.4byte	.LVL23-.Ltext0
+ 2256 02e3 28010000 		.4byte	.LFE66-.Ltext0
+ 2257 02e7 0400     		.2byte	0x4
+ 2258 02e9 F3       		.byte	0xf3
+ 2259 02ea 01       		.uleb128 0x1
+ 2260 02eb 50       		.byte	0x50
+ 2261 02ec 9F       		.byte	0x9f
+ 2262 02ed 00000000 		.4byte	0
+ 2263 02f1 00000000 		.4byte	0
+ 2264              	.LLST8:
+ 2265 02f5 00010000 		.4byte	.LVL18-.Ltext0
+ 2266 02f9 12010000 		.4byte	.LVL20-.Ltext0
+ 2267 02fd 0100     		.2byte	0x1
+ 2268 02ff 52       		.byte	0x52
+ 2269 0300 00000000 		.4byte	0
+ 2270 0304 00000000 		.4byte	0
+ARM GAS  /tmp/ccA2fVch.s 			page 51
+
+
+ 2271              	.LLST9:
+ 2272 0308 B4000000 		.4byte	.LVL15-.Ltext0
+ 2273 030c F8000000 		.4byte	.LVL17-.Ltext0
+ 2274 0310 0100     		.2byte	0x1
+ 2275 0312 53       		.byte	0x53
+ 2276 0313 F8000000 		.4byte	.LVL17-.Ltext0
+ 2277 0317 04010000 		.4byte	.LVL19-.Ltext0
+ 2278 031b 0400     		.2byte	0x4
+ 2279 031d 73       		.byte	0x73
+ 2280 031e 00       		.sleb128 0
+ 2281 031f 20       		.byte	0x20
+ 2282 0320 9F       		.byte	0x9f
+ 2283 0321 04010000 		.4byte	.LVL19-.Ltext0
+ 2284 0325 12010000 		.4byte	.LVL20-.Ltext0
+ 2285 0329 0600     		.2byte	0x6
+ 2286 032b 71       		.byte	0x71
+ 2287 032c 00       		.sleb128 0
+ 2288 032d 06       		.byte	0x6
+ 2289 032e 4F       		.byte	0x4f
+ 2290 032f 1A       		.byte	0x1a
+ 2291 0330 9F       		.byte	0x9f
+ 2292 0331 12010000 		.4byte	.LVL20-.Ltext0
+ 2293 0335 1C010000 		.4byte	.LVL22-.Ltext0
+ 2294 0339 0100     		.2byte	0x1
+ 2295 033b 53       		.byte	0x53
+ 2296 033c 00000000 		.4byte	0
+ 2297 0340 00000000 		.4byte	0
+ 2298              	.LLST10:
+ 2299 0344 B8000000 		.4byte	.LVL16-.Ltext0
+ 2300 0348 1C010000 		.4byte	.LVL22-.Ltext0
+ 2301 034c 0100     		.2byte	0x1
+ 2302 034e 55       		.byte	0x55
+ 2303 034f 00000000 		.4byte	0
+ 2304 0353 00000000 		.4byte	0
+ 2305              	.LLST0:
+ 2306 0357 00000000 		.4byte	.LFB65-.Ltext0
+ 2307 035b 02000000 		.4byte	.LCFI0-.Ltext0
+ 2308 035f 0200     		.2byte	0x2
+ 2309 0361 7D       		.byte	0x7d
+ 2310 0362 00       		.sleb128 0
+ 2311 0363 02000000 		.4byte	.LCFI0-.Ltext0
+ 2312 0367 9C000000 		.4byte	.LFE65-.Ltext0
+ 2313 036b 0200     		.2byte	0x2
+ 2314 036d 7D       		.byte	0x7d
+ 2315 036e 10       		.sleb128 16
+ 2316 036f 00000000 		.4byte	0
+ 2317 0373 00000000 		.4byte	0
+ 2318              	.LLST1:
+ 2319 0377 00000000 		.4byte	.LVL0-.Ltext0
+ 2320 037b 1A000000 		.4byte	.LVL1-.Ltext0
+ 2321 037f 0100     		.2byte	0x1
+ 2322 0381 50       		.byte	0x50
+ 2323 0382 1A000000 		.4byte	.LVL1-.Ltext0
+ 2324 0386 92000000 		.4byte	.LVL11-.Ltext0
+ 2325 038a 0400     		.2byte	0x4
+ 2326 038c F3       		.byte	0xf3
+ 2327 038d 01       		.uleb128 0x1
+ARM GAS  /tmp/ccA2fVch.s 			page 52
+
+
+ 2328 038e 50       		.byte	0x50
+ 2329 038f 9F       		.byte	0x9f
+ 2330 0390 92000000 		.4byte	.LVL11-.Ltext0
+ 2331 0394 94000000 		.4byte	.LVL12-.Ltext0
+ 2332 0398 0100     		.2byte	0x1
+ 2333 039a 50       		.byte	0x50
+ 2334 039b 94000000 		.4byte	.LVL12-.Ltext0
+ 2335 039f 9C000000 		.4byte	.LFE65-.Ltext0
+ 2336 03a3 0400     		.2byte	0x4
+ 2337 03a5 F3       		.byte	0xf3
+ 2338 03a6 01       		.uleb128 0x1
+ 2339 03a7 50       		.byte	0x50
+ 2340 03a8 9F       		.byte	0x9f
+ 2341 03a9 00000000 		.4byte	0
+ 2342 03ad 00000000 		.4byte	0
+ 2343              	.LLST2:
+ 2344 03b1 00000000 		.4byte	.LVL0-.Ltext0
+ 2345 03b5 70000000 		.4byte	.LVL9-.Ltext0
+ 2346 03b9 0100     		.2byte	0x1
+ 2347 03bb 51       		.byte	0x51
+ 2348 03bc 70000000 		.4byte	.LVL9-.Ltext0
+ 2349 03c0 92000000 		.4byte	.LVL11-.Ltext0
+ 2350 03c4 0400     		.2byte	0x4
+ 2351 03c6 F3       		.byte	0xf3
+ 2352 03c7 01       		.uleb128 0x1
+ 2353 03c8 51       		.byte	0x51
+ 2354 03c9 9F       		.byte	0x9f
+ 2355 03ca 92000000 		.4byte	.LVL11-.Ltext0
+ 2356 03ce 9C000000 		.4byte	.LFE65-.Ltext0
+ 2357 03d2 0100     		.2byte	0x1
+ 2358 03d4 51       		.byte	0x51
+ 2359 03d5 00000000 		.4byte	0
+ 2360 03d9 00000000 		.4byte	0
+ 2361              	.LLST3:
+ 2362 03dd 5A000000 		.4byte	.LVL5-.Ltext0
+ 2363 03e1 6A000000 		.4byte	.LVL7-.Ltext0
+ 2364 03e5 0100     		.2byte	0x1
+ 2365 03e7 56       		.byte	0x56
+ 2366 03e8 6A000000 		.4byte	.LVL7-.Ltext0
+ 2367 03ec 6C000000 		.4byte	.LVL8-.Ltext0
+ 2368 03f0 0100     		.2byte	0x1
+ 2369 03f2 54       		.byte	0x54
+ 2370 03f3 00000000 		.4byte	0
+ 2371 03f7 00000000 		.4byte	0
+ 2372              	.LLST4:
+ 2373 03fb 1A000000 		.4byte	.LVL1-.Ltext0
+ 2374 03ff 4C000000 		.4byte	.LVL3-.Ltext0
+ 2375 0403 0100     		.2byte	0x1
+ 2376 0405 50       		.byte	0x50
+ 2377 0406 4C000000 		.4byte	.LVL3-.Ltext0
+ 2378 040a 58000000 		.4byte	.LVL4-.Ltext0
+ 2379 040e 0500     		.2byte	0x5
+ 2380 0410 74       		.byte	0x74
+ 2381 0411 00       		.sleb128 0
+ 2382 0412 4F       		.byte	0x4f
+ 2383 0413 1A       		.byte	0x1a
+ 2384 0414 9F       		.byte	0x9f
+ARM GAS  /tmp/ccA2fVch.s 			page 53
+
+
+ 2385 0415 00000000 		.4byte	0
+ 2386 0419 00000000 		.4byte	0
+ 2387              	.LLST5:
+ 2388 041d 1E000000 		.4byte	.LVL2-.Ltext0
+ 2389 0421 84000000 		.4byte	.LVL10-.Ltext0
+ 2390 0425 0100     		.2byte	0x1
+ 2391 0427 52       		.byte	0x52
+ 2392 0428 00000000 		.4byte	0
+ 2393 042c 00000000 		.4byte	0
+ 2394              		.section	.debug_aranges,"",%progbits
+ 2395 0000 1C000000 		.4byte	0x1c
+ 2396 0004 0200     		.2byte	0x2
+ 2397 0006 00000000 		.4byte	.Ldebug_info0
+ 2398 000a 04       		.byte	0x4
+ 2399 000b 00       		.byte	0
+ 2400 000c 0000     		.2byte	0
+ 2401 000e 0000     		.2byte	0
+ 2402 0010 00000000 		.4byte	.Ltext0
+ 2403 0014 0C020000 		.4byte	.Letext0-.Ltext0
+ 2404 0018 00000000 		.4byte	0
+ 2405 001c 00000000 		.4byte	0
+ 2406              		.section	.debug_line,"",%progbits
+ 2407              	.Ldebug_line0:
+ 2408 0000 08020000 		.section	.debug_str,"MS",%progbits,1
+ 2408      02002801 
+ 2408      00000201 
+ 2408      FB0E0D00 
+ 2408      01010101 
+ 2409              	.LASF32:
+ 2410 0000 48414C5F 		.ascii	"HAL_ERROR\000"
+ 2410      4552524F 
+ 2410      5200
+ 2411              	.LASF34:
+ 2412 000a 48414C5F 		.ascii	"HAL_TIMEOUT\000"
+ 2412      54494D45 
+ 2412      4F555400 
+ 2413              	.LASF67:
+ 2414 0016 48414C5F 		.ascii	"HAL_EXTI_GetConfigLine\000"
+ 2414      45585449 
+ 2414      5F476574 
+ 2414      436F6E66 
+ 2414      69674C69 
+ 2415              	.LASF2:
+ 2416 002d 73686F72 		.ascii	"short int\000"
+ 2416      7420696E 
+ 2416      7400
+ 2417              	.LASF56:
+ 2418 0037 6D61736B 		.ascii	"maskline\000"
+ 2418      6C696E65 
+ 2418      00
+ 2419              	.LASF15:
+ 2420 0040 73697A65 		.ascii	"sizetype\000"
+ 2420      74797065 
+ 2420      00
+ 2421              	.LASF41:
+ 2422 0049 4D6F6465 		.ascii	"Mode\000"
+ 2422      00
+ARM GAS  /tmp/ccA2fVch.s 			page 54
+
+
+ 2423              	.LASF64:
+ 2424 004e 7050656E 		.ascii	"pPendingCbfn\000"
+ 2424      64696E67 
+ 2424      4362666E 
+ 2424      00
+ 2425              	.LASF7:
+ 2426 005b 5F5F7569 		.ascii	"__uint32_t\000"
+ 2426      6E743332 
+ 2426      5F7400
+ 2427              	.LASF54:
+ 2428 0066 68657874 		.ascii	"hexti\000"
+ 2428      6900
+ 2429              	.LASF50:
+ 2430 006c 75775469 		.ascii	"uwTickPrio\000"
+ 2430      636B5072 
+ 2430      696F00
+ 2431              	.LASF70:
+ 2432 0077 474E5520 		.ascii	"GNU C11 6.3.1 20170620 -mcpu=cortex-m3 -mthumb -g -"
+ 2432      43313120 
+ 2432      362E332E 
+ 2432      31203230 
+ 2432      31373036 
+ 2433 00aa 67647761 		.ascii	"gdwarf-2 -Os -fomit-frame-pointer\000"
+ 2433      72662D32 
+ 2433      202D4F73 
+ 2433      202D666F 
+ 2433      6D69742D 
+ 2434              	.LASF31:
+ 2435 00cc 48414C5F 		.ascii	"HAL_OK\000"
+ 2435      4F4B00
+ 2436              	.LASF12:
+ 2437 00d3 75696E74 		.ascii	"uint8_t\000"
+ 2437      385F7400 
+ 2438              	.LASF26:
+ 2439 00db 45585449 		.ascii	"EXTICR\000"
+ 2439      435200
+ 2440              	.LASF18:
+ 2441 00e2 41484250 		.ascii	"AHBPrescTable\000"
+ 2441      72657363 
+ 2441      5461626C 
+ 2441      6500
+ 2442              	.LASF33:
+ 2443 00f0 48414C5F 		.ascii	"HAL_BUSY\000"
+ 2443      42555359 
+ 2443      00
+ 2444              	.LASF58:
+ 2445 00f9 6C696E65 		.ascii	"linepos\000"
+ 2445      706F7300 
+ 2446              	.LASF68:
+ 2447 0101 70457874 		.ascii	"pExtiConfig\000"
+ 2447      69436F6E 
+ 2447      66696700 
+ 2448              	.LASF30:
+ 2449 010d 6C6F6E67 		.ascii	"long double\000"
+ 2449      20646F75 
+ 2449      626C6500 
+ 2450              	.LASF42:
+ARM GAS  /tmp/ccA2fVch.s 			page 55
+
+
+ 2451 0119 54726967 		.ascii	"Trigger\000"
+ 2451      67657200 
+ 2452              	.LASF9:
+ 2453 0121 6C6F6E67 		.ascii	"long long int\000"
+ 2453      206C6F6E 
+ 2453      6720696E 
+ 2453      7400
+ 2454              	.LASF43:
+ 2455 012f 4750494F 		.ascii	"GPIOSel\000"
+ 2455      53656C00 
+ 2456              	.LASF28:
+ 2457 0137 4D415052 		.ascii	"MAPR2\000"
+ 2457      3200
+ 2458              	.LASF23:
+ 2459 013d 45585449 		.ascii	"EXTI_TypeDef\000"
+ 2459      5F547970 
+ 2459      65446566 
+ 2459      00
+ 2460              	.LASF6:
+ 2461 014a 6C6F6E67 		.ascii	"long int\000"
+ 2461      20696E74 
+ 2461      00
+ 2462              	.LASF62:
+ 2463 0153 48414C5F 		.ascii	"HAL_EXTI_RegisterCallback\000"
+ 2463      45585449 
+ 2463      5F526567 
+ 2463      69737465 
+ 2463      7243616C 
+ 2464              	.LASF4:
+ 2465 016d 5F5F7569 		.ascii	"__uint8_t\000"
+ 2465      6E74385F 
+ 2465      7400
+ 2466              	.LASF40:
+ 2467 0177 45585449 		.ascii	"EXTI_HandleTypeDef\000"
+ 2467      5F48616E 
+ 2467      646C6554 
+ 2467      79706544 
+ 2467      656600
+ 2468              	.LASF35:
+ 2469 018a 48414C5F 		.ascii	"HAL_StatusTypeDef\000"
+ 2469      53746174 
+ 2469      75735479 
+ 2469      70654465 
+ 2469      6600
+ 2470              	.LASF69:
+ 2471 019c 48414C5F 		.ascii	"HAL_EXTI_SetConfigLine\000"
+ 2471      45585449 
+ 2471      5F536574 
+ 2471      436F6E66 
+ 2471      69674C69 
+ 2472              	.LASF36:
+ 2473 01b3 48414C5F 		.ascii	"HAL_EXTI_COMMON_CB_ID\000"
+ 2473      45585449 
+ 2473      5F434F4D 
+ 2473      4D4F4E5F 
+ 2473      43425F49 
+ 2474              	.LASF1:
+ARM GAS  /tmp/ccA2fVch.s 			page 56
+
+
+ 2475 01c9 756E7369 		.ascii	"unsigned char\000"
+ 2475      676E6564 
+ 2475      20636861 
+ 2475      7200
+ 2476              	.LASF72:
+ 2477 01d7 2F686F6D 		.ascii	"/home/berndoj/git/stm32tctst/lib/stm32f1hal\000"
+ 2477      652F6265 
+ 2477      726E646F 
+ 2477      6A2F6769 
+ 2477      742F7374 
+ 2478              	.LASF19:
+ 2479 0203 41504250 		.ascii	"APBPrescTable\000"
+ 2479      72657363 
+ 2479      5461626C 
+ 2479      6500
+ 2480              	.LASF0:
+ 2481 0211 7369676E 		.ascii	"signed char\000"
+ 2481      65642063 
+ 2481      68617200 
+ 2482              	.LASF10:
+ 2483 021d 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2483      206C6F6E 
+ 2483      6720756E 
+ 2483      7369676E 
+ 2483      65642069 
+ 2484              	.LASF14:
+ 2485 0234 75696E74 		.ascii	"uint32_t\000"
+ 2485      33325F74 
+ 2485      00
+ 2486              	.LASF51:
+ 2487 023d 75775469 		.ascii	"uwTickFreq\000"
+ 2487      636B4672 
+ 2487      657100
+ 2488              	.LASF11:
+ 2489 0248 756E7369 		.ascii	"unsigned int\000"
+ 2489      676E6564 
+ 2489      20696E74 
+ 2489      00
+ 2490              	.LASF21:
+ 2491 0255 46545352 		.ascii	"FTSR\000"
+ 2491      00
+ 2492              	.LASF47:
+ 2493 025a 48414C5F 		.ascii	"HAL_TICK_FREQ_1KHZ\000"
+ 2493      5449434B 
+ 2493      5F465245 
+ 2493      515F314B 
+ 2493      485A00
+ 2494              	.LASF3:
+ 2495 026d 73686F72 		.ascii	"short unsigned int\000"
+ 2495      7420756E 
+ 2495      7369676E 
+ 2495      65642069 
+ 2495      6E7400
+ 2496              	.LASF65:
+ 2497 0280 73746174 		.ascii	"status\000"
+ 2497      757300
+ 2498              	.LASF13:
+ARM GAS  /tmp/ccA2fVch.s 			page 57
+
+
+ 2499 0287 696E7433 		.ascii	"int32_t\000"
+ 2499      325F7400 
+ 2500              	.LASF5:
+ 2501 028f 5F5F696E 		.ascii	"__int32_t\000"
+ 2501      7433325F 
+ 2501      7400
+ 2502              	.LASF20:
+ 2503 0299 52545352 		.ascii	"RTSR\000"
+ 2503      00
+ 2504              	.LASF17:
+ 2505 029e 53797374 		.ascii	"SystemCoreClock\000"
+ 2505      656D436F 
+ 2505      7265436C 
+ 2505      6F636B00 
+ 2506              	.LASF46:
+ 2507 02ae 48414C5F 		.ascii	"HAL_TICK_FREQ_100HZ\000"
+ 2507      5449434B 
+ 2507      5F465245 
+ 2507      515F3130 
+ 2507      30485A00 
+ 2508              	.LASF45:
+ 2509 02c2 48414C5F 		.ascii	"HAL_TICK_FREQ_10HZ\000"
+ 2509      5449434B 
+ 2509      5F465245 
+ 2509      515F3130 
+ 2509      485A00
+ 2510              	.LASF63:
+ 2511 02d5 43616C6C 		.ascii	"CallbackID\000"
+ 2511      6261636B 
+ 2511      494400
+ 2512              	.LASF27:
+ 2513 02e0 52455345 		.ascii	"RESERVED0\000"
+ 2513      52564544 
+ 2513      3000
+ 2514              	.LASF25:
+ 2515 02ea 4D415052 		.ascii	"MAPR\000"
+ 2515      00
+ 2516              	.LASF66:
+ 2517 02ef 48414C5F 		.ascii	"HAL_EXTI_ClearConfigLine\000"
+ 2517      45585449 
+ 2517      5F436C65 
+ 2517      6172436F 
+ 2517      6E666967 
+ 2518              	.LASF8:
+ 2519 0308 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2519      20756E73 
+ 2519      69676E65 
+ 2519      6420696E 
+ 2519      7400
+ 2520              	.LASF29:
+ 2521 031a 4146494F 		.ascii	"AFIO_TypeDef\000"
+ 2521      5F547970 
+ 2521      65446566 
+ 2521      00
+ 2522              	.LASF59:
+ 2523 0327 48414C5F 		.ascii	"HAL_EXTI_GetPending\000"
+ 2523      45585449 
+ARM GAS  /tmp/ccA2fVch.s 			page 58
+
+
+ 2523      5F476574 
+ 2523      50656E64 
+ 2523      696E6700 
+ 2524              	.LASF39:
+ 2525 033b 50656E64 		.ascii	"PendingCallback\000"
+ 2525      696E6743 
+ 2525      616C6C62 
+ 2525      61636B00 
+ 2526              	.LASF71:
+ 2527 034b 7372632F 		.ascii	"src/stm32f1xx_hal_exti.c\000"
+ 2527      73746D33 
+ 2527      32663178 
+ 2527      785F6861 
+ 2527      6C5F6578 
+ 2528              	.LASF49:
+ 2529 0364 48414C5F 		.ascii	"HAL_TickFreqTypeDef\000"
+ 2529      5469636B 
+ 2529      46726571 
+ 2529      54797065 
+ 2529      44656600 
+ 2530              	.LASF24:
+ 2531 0378 45564352 		.ascii	"EVCR\000"
+ 2531      00
+ 2532              	.LASF57:
+ 2533 037d 72656776 		.ascii	"regval\000"
+ 2533      616C00
+ 2534              	.LASF61:
+ 2535 0384 45787469 		.ascii	"ExtiLine\000"
+ 2535      4C696E65 
+ 2535      00
+ 2536              	.LASF53:
+ 2537 038d 48414C5F 		.ascii	"HAL_EXTI_ClearPending\000"
+ 2537      45585449 
+ 2537      5F436C65 
+ 2537      61725065 
+ 2537      6E64696E 
+ 2538              	.LASF73:
+ 2539 03a3 48414C5F 		.ascii	"HAL_EXTI_IRQHandler\000"
+ 2539      45585449 
+ 2539      5F495251 
+ 2539      48616E64 
+ 2539      6C657200 
+ 2540              	.LASF55:
+ 2541 03b7 45646765 		.ascii	"Edge\000"
+ 2541      00
+ 2542              	.LASF52:
+ 2543 03bc 48414C5F 		.ascii	"HAL_EXTI_GenerateSWI\000"
+ 2543      45585449 
+ 2543      5F47656E 
+ 2543      65726174 
+ 2543      65535749 
+ 2544              	.LASF60:
+ 2545 03d1 48414C5F 		.ascii	"HAL_EXTI_GetHandle\000"
+ 2545      45585449 
+ 2545      5F476574 
+ 2545      48616E64 
+ 2545      6C6500
+ARM GAS  /tmp/ccA2fVch.s 			page 59
+
+
+ 2546              	.LASF16:
+ 2547 03e4 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 2547      52784275 
+ 2547      66666572 
+ 2547      00
+ 2548              	.LASF44:
+ 2549 03f1 45585449 		.ascii	"EXTI_ConfigTypeDef\000"
+ 2549      5F436F6E 
+ 2549      66696754 
+ 2549      79706544 
+ 2549      656600
+ 2550              	.LASF48:
+ 2551 0404 48414C5F 		.ascii	"HAL_TICK_FREQ_DEFAULT\000"
+ 2551      5449434B 
+ 2551      5F465245 
+ 2551      515F4445 
+ 2551      4641554C 
+ 2552              	.LASF38:
+ 2553 041a 4C696E65 		.ascii	"Line\000"
+ 2553      00
+ 2554              	.LASF22:
+ 2555 041f 53574945 		.ascii	"SWIER\000"
+ 2555      5200
+ 2556              	.LASF37:
+ 2557 0425 45585449 		.ascii	"EXTI_CallbackIDTypeDef\000"
+ 2557      5F43616C 
+ 2557      6C626163 
+ 2557      6B494454 
+ 2557      79706544 
+ 2558              		.ident	"GCC: (15:6.3.1+svn253039-1build1) 6.3.1 20170620"
+ARM GAS  /tmp/ccA2fVch.s 			page 60
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 stm32f1xx_hal_exti.c
+     /tmp/ccA2fVch.s:69     .text:0000000000000000 $t
+     /tmp/ccA2fVch.s:76     .text:0000000000000000 HAL_EXTI_SetConfigLine
+     /tmp/ccA2fVch.s:205    .text:0000000000000098 $d
+     /tmp/ccA2fVch.s:209    .text:000000000000009c $t
+     /tmp/ccA2fVch.s:216    .text:000000000000009c HAL_EXTI_GetConfigLine
+     /tmp/ccA2fVch.s:333    .text:0000000000000120 $d
+     /tmp/ccA2fVch.s:338    .text:0000000000000128 $t
+     /tmp/ccA2fVch.s:345    .text:0000000000000128 HAL_EXTI_ClearConfigLine
+     /tmp/ccA2fVch.s:432    .text:000000000000018c $d
+     /tmp/ccA2fVch.s:436    .text:0000000000000190 $t
+     /tmp/ccA2fVch.s:443    .text:0000000000000190 HAL_EXTI_RegisterCallback
+     /tmp/ccA2fVch.s:477    .text:000000000000019c HAL_EXTI_GetHandle
+     /tmp/ccA2fVch.s:510    .text:00000000000001a8 HAL_EXTI_IRQHandler
+     /tmp/ccA2fVch.s:545    .text:00000000000001c4 $d
+     /tmp/ccA2fVch.s:549    .text:00000000000001c8 $t
+     /tmp/ccA2fVch.s:556    .text:00000000000001c8 HAL_EXTI_GetPending
+     /tmp/ccA2fVch.s:589    .text:00000000000001e0 $d
+     /tmp/ccA2fVch.s:593    .text:00000000000001e4 $t
+     /tmp/ccA2fVch.s:600    .text:00000000000001e4 HAL_EXTI_ClearPending
+     /tmp/ccA2fVch.s:621    .text:00000000000001f4 $d
+     /tmp/ccA2fVch.s:625    .text:00000000000001f8 $t
+     /tmp/ccA2fVch.s:632    .text:00000000000001f8 HAL_EXTI_GenerateSWI
+     /tmp/ccA2fVch.s:653    .text:0000000000000208 $d
+                     .debug_frame:0000000000000010 $d
+
+NO UNDEFINED SYMBOLS

@@ -1,5 +1,5 @@
 #if !defined(__SYS_ISR_HPP__)
-#define __SYS_ISR_HPP__)
+#define __SYS_ISR_HPP__
 
 #ifdef __cplusplus
 extern "C" {

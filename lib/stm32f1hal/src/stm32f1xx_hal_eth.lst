@@ -1,0 +1,610 @@
+ARM GAS  /tmp/ccIctshy.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1	@ Tag_ABI_FP_denormal
+   3              		.eabi_attribute 21, 1	@ Tag_ABI_FP_exceptions
+   4              		.eabi_attribute 23, 3	@ Tag_ABI_FP_number_model
+   5              		.eabi_attribute 24, 1	@ Tag_ABI_align8_needed
+   6              		.eabi_attribute 25, 1	@ Tag_ABI_align8_preserved
+   7              		.eabi_attribute 26, 1	@ Tag_ABI_enum_size
+   8              		.eabi_attribute 30, 4	@ Tag_ABI_optimization_goals
+   9              		.eabi_attribute 34, 1	@ Tag_CPU_unaligned_access
+  10              		.eabi_attribute 18, 4	@ Tag_ABI_PCS_wchar_t
+  11              		.file	"stm32f1xx_hal_eth.c"
+  12              	@ GNU C11 (15:6.3.1+svn253039-1build1) version 6.3.1 20170620 (arm-none-eabi)
+  13              	@	compiled by GNU C version 7.2.0, GMP version 6.1.2, MPFR version 4.0.1-rc1, MPC version 1.1.0, is
+  14              	@ warning: MPFR header version 4.0.1-rc1 differs from library version 4.0.1.
+  15              	@ GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+  16              	@ options passed:  -I ./inc -I ./inc/Legacy -I ../cmsisstm32f1xx/inc
+  17              	@ -I ../cmsiscore/inc -imultilib thumb/v7-m -D__USES_INITFINI__
+  18              	@ -D STM32F103x6 -D RUN_FROM_FLASH=1 -D __c src/stm32f1xx_hal_eth.c
+  19              	@ -mcpu=cortex-m3 -mthumb -auxbase-strip bin/stm32f1xx_hal_eth.o -g
+  20              	@ -gdwarf-2 -Os -Wall -fomit-frame-pointer -fverbose-asm
+  21              	@ options enabled:  -faggressive-loop-optimizations -falign-jumps
+  22              	@ -falign-labels -falign-loops -fauto-inc-dec -fbranch-count-reg
+  23              	@ -fcaller-saves -fchkp-check-incomplete-type -fchkp-check-read
+  24              	@ -fchkp-check-write -fchkp-instrument-calls -fchkp-narrow-bounds
+  25              	@ -fchkp-optimize -fchkp-store-bounds -fchkp-use-static-bounds
+  26              	@ -fchkp-use-static-const-bounds -fchkp-use-wrappers
+  27              	@ -fcombine-stack-adjustments -fcommon -fcompare-elim -fcprop-registers
+  28              	@ -fcrossjumping -fcse-follow-jumps -fdefer-pop
+  29              	@ -fdelete-null-pointer-checks -fdevirtualize -fdevirtualize-speculatively
+  30              	@ -fdwarf2-cfi-asm -fearly-inlining -feliminate-unused-debug-types
+  31              	@ -fexpensive-optimizations -fforward-propagate -ffunction-cse -fgcse
+  32              	@ -fgcse-lm -fgnu-runtime -fgnu-unique -fguess-branch-probability
+  33              	@ -fhoist-adjacent-loads -fident -fif-conversion -fif-conversion2
+  34              	@ -findirect-inlining -finline -finline-atomics -finline-functions
+  35              	@ -finline-functions-called-once -finline-small-functions -fipa-cp
+  36              	@ -fipa-cp-alignment -fipa-icf -fipa-icf-functions -fipa-icf-variables
+  37              	@ -fipa-profile -fipa-pure-const -fipa-ra -fipa-reference -fipa-sra
+  38              	@ -fira-hoist-pressure -fira-share-save-slots -fira-share-spill-slots
+  39              	@ -fisolate-erroneous-paths-dereference -fivopts -fkeep-static-consts
+  40              	@ -fleading-underscore -flifetime-dse -flra-remat -flto-odr-type-merging
+  41              	@ -fmath-errno -fmerge-constants -fmerge-debug-strings
+  42              	@ -fmove-loop-invariants -fomit-frame-pointer -foptimize-sibling-calls
+  43              	@ -fpartial-inlining -fpeephole -fpeephole2 -fplt -fprefetch-loop-arrays
+  44              	@ -freg-struct-return -freorder-blocks -freorder-functions
+  45              	@ -frerun-cse-after-loop -fsched-critical-path-heuristic
+  46              	@ -fsched-dep-count-heuristic -fsched-group-heuristic -fsched-interblock
+  47              	@ -fsched-last-insn-heuristic -fsched-pressure -fsched-rank-heuristic
+  48              	@ -fsched-spec -fsched-spec-insn-heuristic -fsched-stalled-insns-dep
+  49              	@ -fschedule-insns2 -fsection-anchors -fsemantic-interposition
+  50              	@ -fshow-column -fsigned-zeros -fsplit-ivs-in-unroller -fsplit-wide-types
+  51              	@ -fssa-backprop -fssa-phiopt -fstdarg-opt -fstrict-aliasing
+  52              	@ -fstrict-overflow -fstrict-volatile-bitfields -fsync-libcalls
+  53              	@ -fthread-jumps -ftoplevel-reorder -ftrapping-math -ftree-bit-ccp
+  54              	@ -ftree-builtin-call-dce -ftree-ccp -ftree-ch -ftree-coalesce-vars
+  55              	@ -ftree-copy-prop -ftree-cselim -ftree-dce -ftree-dominator-opts
+  56              	@ -ftree-dse -ftree-forwprop -ftree-fre -ftree-loop-if-convert
+  57              	@ -ftree-loop-im -ftree-loop-ivcanon -ftree-loop-optimize
+ARM GAS  /tmp/ccIctshy.s 			page 2
+
+
+  58              	@ -ftree-parallelize-loops= -ftree-phiprop -ftree-pre -ftree-pta
+  59              	@ -ftree-reassoc -ftree-scev-cprop -ftree-sink -ftree-slsr -ftree-sra
+  60              	@ -ftree-switch-conversion -ftree-tail-merge -ftree-ter -ftree-vrp
+  61              	@ -funit-at-a-time -fvar-tracking -fvar-tracking-assignments -fverbose-asm
+  62              	@ -fzero-initialized-in-bss -masm-syntax-unified -mfix-cortex-m3-ldrd
+  63              	@ -mlittle-endian -mpic-data-is-text-relative -msched-prolog -mthumb
+  64              	@ -munaligned-access -mvectorize-with-neon-quad
+  65              	
+  66              		.text
+  67              	.Ltext0:
+  68              		.cfi_sections	.debug_frame
+  69              	.Letext0:
+  70              		.file 1 "/usr/include/newlib/machine/_default_types.h"
+  71              		.file 2 "/usr/include/newlib/sys/_stdint.h"
+  72              		.file 3 "../cmsiscore/inc/core_cm3.h"
+  73              		.file 4 "../cmsisstm32f1xx/inc/system_stm32f1xx.h"
+  74              		.file 5 "./inc/stm32f1xx_hal.h"
+  75              		.section	.debug_info,"",%progbits
+  76              	.Ldebug_info0:
+  77 0000 63010000 		.4byte	0x163
+  78 0004 0200     		.2byte	0x2
+  79 0006 00000000 		.4byte	.Ldebug_abbrev0
+  80 000a 04       		.byte	0x4
+  81 000b 01       		.uleb128 0x1
+  82 000c C3000000 		.4byte	.LASF28
+  83 0010 0C       		.byte	0xc
+  84 0011 42010000 		.4byte	.LASF29
+  85 0015 89010000 		.4byte	.LASF30
+  86 0019 00000000 		.4byte	.Ldebug_line0
+  87 001d 02       		.uleb128 0x2
+  88 001e 01       		.byte	0x1
+  89 001f 06       		.byte	0x6
+  90 0020 FE010000 		.4byte	.LASF0
+  91 0024 03       		.uleb128 0x3
+  92 0025 00000000 		.4byte	.LASF4
+  93 0029 01       		.byte	0x1
+  94 002a 1D       		.byte	0x1d
+  95 002b 2F000000 		.4byte	0x2f
+  96 002f 02       		.uleb128 0x2
+  97 0030 01       		.byte	0x1
+  98 0031 08       		.byte	0x8
+  99 0032 34000000 		.4byte	.LASF1
+ 100 0036 02       		.uleb128 0x2
+ 101 0037 02       		.byte	0x2
+ 102 0038 05       		.byte	0x5
+ 103 0039 D6010000 		.4byte	.LASF2
+ 104 003d 02       		.uleb128 0x2
+ 105 003e 02       		.byte	0x2
+ 106 003f 07       		.byte	0x7
+ 107 0040 62000000 		.4byte	.LASF3
+ 108 0044 03       		.uleb128 0x3
+ 109 0045 0A000000 		.4byte	.LASF5
+ 110 0049 01       		.byte	0x1
+ 111 004a 3F       		.byte	0x3f
+ 112 004b 4F000000 		.4byte	0x4f
+ 113 004f 02       		.uleb128 0x2
+ 114 0050 04       		.byte	0x4
+ARM GAS  /tmp/ccIctshy.s 			page 3
+
+
+ 115 0051 05       		.byte	0x5
+ 116 0052 E9010000 		.4byte	.LASF6
+ 117 0056 03       		.uleb128 0x3
+ 118 0057 96000000 		.4byte	.LASF7
+ 119 005b 01       		.byte	0x1
+ 120 005c 41       		.byte	0x41
+ 121 005d 61000000 		.4byte	0x61
+ 122 0061 02       		.uleb128 0x2
+ 123 0062 04       		.byte	0x4
+ 124 0063 07       		.byte	0x7
+ 125 0064 50000000 		.4byte	.LASF8
+ 126 0068 02       		.uleb128 0x2
+ 127 0069 08       		.byte	0x8
+ 128 006a 05       		.byte	0x5
+ 129 006b 6B010000 		.4byte	.LASF9
+ 130 006f 02       		.uleb128 0x2
+ 131 0070 08       		.byte	0x8
+ 132 0071 07       		.byte	0x7
+ 133 0072 23010000 		.4byte	.LASF10
+ 134 0076 04       		.uleb128 0x4
+ 135 0077 04       		.byte	0x4
+ 136 0078 05       		.byte	0x5
+ 137 0079 696E7400 		.ascii	"int\000"
+ 138 007d 02       		.uleb128 0x2
+ 139 007e 04       		.byte	0x4
+ 140 007f 07       		.byte	0x7
+ 141 0080 14000000 		.4byte	.LASF11
+ 142 0084 03       		.uleb128 0x3
+ 143 0085 3A010000 		.4byte	.LASF12
+ 144 0089 02       		.byte	0x2
+ 145 008a 18       		.byte	0x18
+ 146 008b 24000000 		.4byte	0x24
+ 147 008f 05       		.uleb128 0x5
+ 148 0090 84000000 		.4byte	0x84
+ 149 0094 03       		.uleb128 0x3
+ 150 0095 5A010000 		.4byte	.LASF13
+ 151 0099 02       		.byte	0x2
+ 152 009a 2C       		.byte	0x2c
+ 153 009b 44000000 		.4byte	0x44
+ 154 009f 06       		.uleb128 0x6
+ 155 00a0 94000000 		.4byte	0x94
+ 156 00a4 03       		.uleb128 0x3
+ 157 00a5 E0010000 		.4byte	.LASF14
+ 158 00a9 02       		.byte	0x2
+ 159 00aa 30       		.byte	0x30
+ 160 00ab 56000000 		.4byte	0x56
+ 161 00af 02       		.uleb128 0x2
+ 162 00b0 04       		.byte	0x4
+ 163 00b1 07       		.byte	0x7
+ 164 00b2 62010000 		.4byte	.LASF15
+ 165 00b6 07       		.uleb128 0x7
+ 166 00b7 75000000 		.4byte	.LASF16
+ 167 00bb 03       		.byte	0x3
+ 168 00bc 4807     		.2byte	0x748
+ 169 00be 9F000000 		.4byte	0x9f
+ 170 00c2 01       		.byte	0x1
+ 171 00c3 01       		.byte	0x1
+ARM GAS  /tmp/ccIctshy.s 			page 4
+
+
+ 172 00c4 08       		.uleb128 0x8
+ 173 00c5 79010000 		.4byte	.LASF17
+ 174 00c9 04       		.byte	0x4
+ 175 00ca 33       		.byte	0x33
+ 176 00cb A4000000 		.4byte	0xa4
+ 177 00cf 01       		.byte	0x1
+ 178 00d0 01       		.byte	0x1
+ 179 00d1 09       		.uleb128 0x9
+ 180 00d2 8F000000 		.4byte	0x8f
+ 181 00d6 E1000000 		.4byte	0xe1
+ 182 00da 0A       		.uleb128 0xa
+ 183 00db AF000000 		.4byte	0xaf
+ 184 00df 0F       		.byte	0xf
+ 185 00e0 00       		.byte	0
+ 186 00e1 05       		.uleb128 0x5
+ 187 00e2 D1000000 		.4byte	0xd1
+ 188 00e6 08       		.uleb128 0x8
+ 189 00e7 42000000 		.4byte	.LASF18
+ 190 00eb 04       		.byte	0x4
+ 191 00ec 34       		.byte	0x34
+ 192 00ed E1000000 		.4byte	0xe1
+ 193 00f1 01       		.byte	0x1
+ 194 00f2 01       		.byte	0x1
+ 195 00f3 09       		.uleb128 0x9
+ 196 00f4 8F000000 		.4byte	0x8f
+ 197 00f8 03010000 		.4byte	0x103
+ 198 00fc 0A       		.uleb128 0xa
+ 199 00fd AF000000 		.4byte	0xaf
+ 200 0101 07       		.byte	0x7
+ 201 0102 00       		.byte	0
+ 202 0103 05       		.uleb128 0x5
+ 203 0104 F3000000 		.4byte	0xf3
+ 204 0108 08       		.uleb128 0x8
+ 205 0109 B5000000 		.4byte	.LASF19
+ 206 010d 04       		.byte	0x4
+ 207 010e 35       		.byte	0x35
+ 208 010f 03010000 		.4byte	0x103
+ 209 0113 01       		.byte	0x1
+ 210 0114 01       		.byte	0x1
+ 211 0115 02       		.uleb128 0x2
+ 212 0116 08       		.byte	0x8
+ 213 0117 04       		.byte	0x4
+ 214 0118 F2010000 		.4byte	.LASF20
+ 215 011c 0B       		.uleb128 0xb
+ 216 011d 01       		.byte	0x1
+ 217 011e 2F000000 		.4byte	0x2f
+ 218 0122 05       		.byte	0x5
+ 219 0123 33       		.byte	0x33
+ 220 0124 41010000 		.4byte	0x141
+ 221 0128 0C       		.uleb128 0xc
+ 222 0129 0A020000 		.4byte	.LASF21
+ 223 012d 64       		.byte	0x64
+ 224 012e 0C       		.uleb128 0xc
+ 225 012f 82000000 		.4byte	.LASF22
+ 226 0133 0A       		.byte	0xa
+ 227 0134 0C       		.uleb128 0xc
+ 228 0135 21000000 		.4byte	.LASF23
+ARM GAS  /tmp/ccIctshy.s 			page 5
+
+
+ 229 0139 01       		.byte	0x1
+ 230 013a 0C       		.uleb128 0xc
+ 231 013b C0010000 		.4byte	.LASF24
+ 232 013f 01       		.byte	0x1
+ 233 0140 00       		.byte	0
+ 234 0141 03       		.uleb128 0x3
+ 235 0142 A1000000 		.4byte	.LASF25
+ 236 0146 05       		.byte	0x5
+ 237 0147 38       		.byte	0x38
+ 238 0148 1C010000 		.4byte	0x11c
+ 239 014c 08       		.uleb128 0x8
+ 240 014d B5010000 		.4byte	.LASF26
+ 241 0151 05       		.byte	0x5
+ 242 0152 3D       		.byte	0x3d
+ 243 0153 A4000000 		.4byte	0xa4
+ 244 0157 01       		.byte	0x1
+ 245 0158 01       		.byte	0x1
+ 246 0159 08       		.uleb128 0x8
+ 247 015a 18010000 		.4byte	.LASF27
+ 248 015e 05       		.byte	0x5
+ 249 015f 3E       		.byte	0x3e
+ 250 0160 41010000 		.4byte	0x141
+ 251 0164 01       		.byte	0x1
+ 252 0165 01       		.byte	0x1
+ 253 0166 00       		.byte	0
+ 254              		.section	.debug_abbrev,"",%progbits
+ 255              	.Ldebug_abbrev0:
+ 256 0000 01       		.uleb128 0x1
+ 257 0001 11       		.uleb128 0x11
+ 258 0002 01       		.byte	0x1
+ 259 0003 25       		.uleb128 0x25
+ 260 0004 0E       		.uleb128 0xe
+ 261 0005 13       		.uleb128 0x13
+ 262 0006 0B       		.uleb128 0xb
+ 263 0007 03       		.uleb128 0x3
+ 264 0008 0E       		.uleb128 0xe
+ 265 0009 1B       		.uleb128 0x1b
+ 266 000a 0E       		.uleb128 0xe
+ 267 000b 10       		.uleb128 0x10
+ 268 000c 06       		.uleb128 0x6
+ 269 000d 00       		.byte	0
+ 270 000e 00       		.byte	0
+ 271 000f 02       		.uleb128 0x2
+ 272 0010 24       		.uleb128 0x24
+ 273 0011 00       		.byte	0
+ 274 0012 0B       		.uleb128 0xb
+ 275 0013 0B       		.uleb128 0xb
+ 276 0014 3E       		.uleb128 0x3e
+ 277 0015 0B       		.uleb128 0xb
+ 278 0016 03       		.uleb128 0x3
+ 279 0017 0E       		.uleb128 0xe
+ 280 0018 00       		.byte	0
+ 281 0019 00       		.byte	0
+ 282 001a 03       		.uleb128 0x3
+ 283 001b 16       		.uleb128 0x16
+ 284 001c 00       		.byte	0
+ 285 001d 03       		.uleb128 0x3
+ARM GAS  /tmp/ccIctshy.s 			page 6
+
+
+ 286 001e 0E       		.uleb128 0xe
+ 287 001f 3A       		.uleb128 0x3a
+ 288 0020 0B       		.uleb128 0xb
+ 289 0021 3B       		.uleb128 0x3b
+ 290 0022 0B       		.uleb128 0xb
+ 291 0023 49       		.uleb128 0x49
+ 292 0024 13       		.uleb128 0x13
+ 293 0025 00       		.byte	0
+ 294 0026 00       		.byte	0
+ 295 0027 04       		.uleb128 0x4
+ 296 0028 24       		.uleb128 0x24
+ 297 0029 00       		.byte	0
+ 298 002a 0B       		.uleb128 0xb
+ 299 002b 0B       		.uleb128 0xb
+ 300 002c 3E       		.uleb128 0x3e
+ 301 002d 0B       		.uleb128 0xb
+ 302 002e 03       		.uleb128 0x3
+ 303 002f 08       		.uleb128 0x8
+ 304 0030 00       		.byte	0
+ 305 0031 00       		.byte	0
+ 306 0032 05       		.uleb128 0x5
+ 307 0033 26       		.uleb128 0x26
+ 308 0034 00       		.byte	0
+ 309 0035 49       		.uleb128 0x49
+ 310 0036 13       		.uleb128 0x13
+ 311 0037 00       		.byte	0
+ 312 0038 00       		.byte	0
+ 313 0039 06       		.uleb128 0x6
+ 314 003a 35       		.uleb128 0x35
+ 315 003b 00       		.byte	0
+ 316 003c 49       		.uleb128 0x49
+ 317 003d 13       		.uleb128 0x13
+ 318 003e 00       		.byte	0
+ 319 003f 00       		.byte	0
+ 320 0040 07       		.uleb128 0x7
+ 321 0041 34       		.uleb128 0x34
+ 322 0042 00       		.byte	0
+ 323 0043 03       		.uleb128 0x3
+ 324 0044 0E       		.uleb128 0xe
+ 325 0045 3A       		.uleb128 0x3a
+ 326 0046 0B       		.uleb128 0xb
+ 327 0047 3B       		.uleb128 0x3b
+ 328 0048 05       		.uleb128 0x5
+ 329 0049 49       		.uleb128 0x49
+ 330 004a 13       		.uleb128 0x13
+ 331 004b 3F       		.uleb128 0x3f
+ 332 004c 0C       		.uleb128 0xc
+ 333 004d 3C       		.uleb128 0x3c
+ 334 004e 0C       		.uleb128 0xc
+ 335 004f 00       		.byte	0
+ 336 0050 00       		.byte	0
+ 337 0051 08       		.uleb128 0x8
+ 338 0052 34       		.uleb128 0x34
+ 339 0053 00       		.byte	0
+ 340 0054 03       		.uleb128 0x3
+ 341 0055 0E       		.uleb128 0xe
+ 342 0056 3A       		.uleb128 0x3a
+ARM GAS  /tmp/ccIctshy.s 			page 7
+
+
+ 343 0057 0B       		.uleb128 0xb
+ 344 0058 3B       		.uleb128 0x3b
+ 345 0059 0B       		.uleb128 0xb
+ 346 005a 49       		.uleb128 0x49
+ 347 005b 13       		.uleb128 0x13
+ 348 005c 3F       		.uleb128 0x3f
+ 349 005d 0C       		.uleb128 0xc
+ 350 005e 3C       		.uleb128 0x3c
+ 351 005f 0C       		.uleb128 0xc
+ 352 0060 00       		.byte	0
+ 353 0061 00       		.byte	0
+ 354 0062 09       		.uleb128 0x9
+ 355 0063 01       		.uleb128 0x1
+ 356 0064 01       		.byte	0x1
+ 357 0065 49       		.uleb128 0x49
+ 358 0066 13       		.uleb128 0x13
+ 359 0067 01       		.uleb128 0x1
+ 360 0068 13       		.uleb128 0x13
+ 361 0069 00       		.byte	0
+ 362 006a 00       		.byte	0
+ 363 006b 0A       		.uleb128 0xa
+ 364 006c 21       		.uleb128 0x21
+ 365 006d 00       		.byte	0
+ 366 006e 49       		.uleb128 0x49
+ 367 006f 13       		.uleb128 0x13
+ 368 0070 2F       		.uleb128 0x2f
+ 369 0071 0B       		.uleb128 0xb
+ 370 0072 00       		.byte	0
+ 371 0073 00       		.byte	0
+ 372 0074 0B       		.uleb128 0xb
+ 373 0075 04       		.uleb128 0x4
+ 374 0076 01       		.byte	0x1
+ 375 0077 0B       		.uleb128 0xb
+ 376 0078 0B       		.uleb128 0xb
+ 377 0079 49       		.uleb128 0x49
+ 378 007a 13       		.uleb128 0x13
+ 379 007b 3A       		.uleb128 0x3a
+ 380 007c 0B       		.uleb128 0xb
+ 381 007d 3B       		.uleb128 0x3b
+ 382 007e 0B       		.uleb128 0xb
+ 383 007f 01       		.uleb128 0x1
+ 384 0080 13       		.uleb128 0x13
+ 385 0081 00       		.byte	0
+ 386 0082 00       		.byte	0
+ 387 0083 0C       		.uleb128 0xc
+ 388 0084 28       		.uleb128 0x28
+ 389 0085 00       		.byte	0
+ 390 0086 03       		.uleb128 0x3
+ 391 0087 0E       		.uleb128 0xe
+ 392 0088 1C       		.uleb128 0x1c
+ 393 0089 0B       		.uleb128 0xb
+ 394 008a 00       		.byte	0
+ 395 008b 00       		.byte	0
+ 396 008c 00       		.byte	0
+ 397              		.section	.debug_aranges,"",%progbits
+ 398 0000 14000000 		.4byte	0x14
+ 399 0004 0200     		.2byte	0x2
+ARM GAS  /tmp/ccIctshy.s 			page 8
+
+
+ 400 0006 00000000 		.4byte	.Ldebug_info0
+ 401 000a 04       		.byte	0x4
+ 402 000b 00       		.byte	0
+ 403 000c 0000     		.2byte	0
+ 404 000e 0000     		.2byte	0
+ 405 0010 00000000 		.4byte	0
+ 406 0014 00000000 		.4byte	0
+ 407              		.section	.debug_line,"",%progbits
+ 408              	.Ldebug_line0:
+ 409 0000 D2000000 		.section	.debug_str,"MS",%progbits,1
+ 409      0200CC00 
+ 409      00000201 
+ 409      FB0E0D00 
+ 409      01010101 
+ 410              	.LASF4:
+ 411 0000 5F5F7569 		.ascii	"__uint8_t\000"
+ 411      6E74385F 
+ 411      7400
+ 412              	.LASF5:
+ 413 000a 5F5F696E 		.ascii	"__int32_t\000"
+ 413      7433325F 
+ 413      7400
+ 414              	.LASF11:
+ 415 0014 756E7369 		.ascii	"unsigned int\000"
+ 415      676E6564 
+ 415      20696E74 
+ 415      00
+ 416              	.LASF23:
+ 417 0021 48414C5F 		.ascii	"HAL_TICK_FREQ_1KHZ\000"
+ 417      5449434B 
+ 417      5F465245 
+ 417      515F314B 
+ 417      485A00
+ 418              	.LASF1:
+ 419 0034 756E7369 		.ascii	"unsigned char\000"
+ 419      676E6564 
+ 419      20636861 
+ 419      7200
+ 420              	.LASF18:
+ 421 0042 41484250 		.ascii	"AHBPrescTable\000"
+ 421      72657363 
+ 421      5461626C 
+ 421      6500
+ 422              	.LASF8:
+ 423 0050 6C6F6E67 		.ascii	"long unsigned int\000"
+ 423      20756E73 
+ 423      69676E65 
+ 423      6420696E 
+ 423      7400
+ 424              	.LASF3:
+ 425 0062 73686F72 		.ascii	"short unsigned int\000"
+ 425      7420756E 
+ 425      7369676E 
+ 425      65642069 
+ 425      6E7400
+ 426              	.LASF16:
+ 427 0075 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ARM GAS  /tmp/ccIctshy.s 			page 9
+
+
+ 427      52784275 
+ 427      66666572 
+ 427      00
+ 428              	.LASF22:
+ 429 0082 48414C5F 		.ascii	"HAL_TICK_FREQ_100HZ\000"
+ 429      5449434B 
+ 429      5F465245 
+ 429      515F3130 
+ 429      30485A00 
+ 430              	.LASF7:
+ 431 0096 5F5F7569 		.ascii	"__uint32_t\000"
+ 431      6E743332 
+ 431      5F7400
+ 432              	.LASF25:
+ 433 00a1 48414C5F 		.ascii	"HAL_TickFreqTypeDef\000"
+ 433      5469636B 
+ 433      46726571 
+ 433      54797065 
+ 433      44656600 
+ 434              	.LASF19:
+ 435 00b5 41504250 		.ascii	"APBPrescTable\000"
+ 435      72657363 
+ 435      5461626C 
+ 435      6500
+ 436              	.LASF28:
+ 437 00c3 474E5520 		.ascii	"GNU C11 6.3.1 20170620 -mcpu=cortex-m3 -mthumb -g -"
+ 437      43313120 
+ 437      362E332E 
+ 437      31203230 
+ 437      31373036 
+ 438 00f6 67647761 		.ascii	"gdwarf-2 -Os -fomit-frame-pointer\000"
+ 438      72662D32 
+ 438      202D4F73 
+ 438      202D666F 
+ 438      6D69742D 
+ 439              	.LASF27:
+ 440 0118 75775469 		.ascii	"uwTickFreq\000"
+ 440      636B4672 
+ 440      657100
+ 441              	.LASF10:
+ 442 0123 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 442      206C6F6E 
+ 442      6720756E 
+ 442      7369676E 
+ 442      65642069 
+ 443              	.LASF12:
+ 444 013a 75696E74 		.ascii	"uint8_t\000"
+ 444      385F7400 
+ 445              	.LASF29:
+ 446 0142 7372632F 		.ascii	"src/stm32f1xx_hal_eth.c\000"
+ 446      73746D33 
+ 446      32663178 
+ 446      785F6861 
+ 446      6C5F6574 
+ 447              	.LASF13:
+ 448 015a 696E7433 		.ascii	"int32_t\000"
+ 448      325F7400 
+ARM GAS  /tmp/ccIctshy.s 			page 10
+
+
+ 449              	.LASF15:
+ 450 0162 73697A65 		.ascii	"sizetype\000"
+ 450      74797065 
+ 450      00
+ 451              	.LASF9:
+ 452 016b 6C6F6E67 		.ascii	"long long int\000"
+ 452      206C6F6E 
+ 452      6720696E 
+ 452      7400
+ 453              	.LASF17:
+ 454 0179 53797374 		.ascii	"SystemCoreClock\000"
+ 454      656D436F 
+ 454      7265436C 
+ 454      6F636B00 
+ 455              	.LASF30:
+ 456 0189 2F686F6D 		.ascii	"/home/berndoj/git/stm32tctst/lib/stm32f1hal\000"
+ 456      652F6265 
+ 456      726E646F 
+ 456      6A2F6769 
+ 456      742F7374 
+ 457              	.LASF26:
+ 458 01b5 75775469 		.ascii	"uwTickPrio\000"
+ 458      636B5072 
+ 458      696F00
+ 459              	.LASF24:
+ 460 01c0 48414C5F 		.ascii	"HAL_TICK_FREQ_DEFAULT\000"
+ 460      5449434B 
+ 460      5F465245 
+ 460      515F4445 
+ 460      4641554C 
+ 461              	.LASF2:
+ 462 01d6 73686F72 		.ascii	"short int\000"
+ 462      7420696E 
+ 462      7400
+ 463              	.LASF14:
+ 464 01e0 75696E74 		.ascii	"uint32_t\000"
+ 464      33325F74 
+ 464      00
+ 465              	.LASF6:
+ 466 01e9 6C6F6E67 		.ascii	"long int\000"
+ 466      20696E74 
+ 466      00
+ 467              	.LASF20:
+ 468 01f2 6C6F6E67 		.ascii	"long double\000"
+ 468      20646F75 
+ 468      626C6500 
+ 469              	.LASF0:
+ 470 01fe 7369676E 		.ascii	"signed char\000"
+ 470      65642063 
+ 470      68617200 
+ 471              	.LASF21:
+ 472 020a 48414C5F 		.ascii	"HAL_TICK_FREQ_10HZ\000"
+ 472      5449434B 
+ 472      5F465245 
+ 472      515F3130 
+ 472      485A00
+ 473              		.ident	"GCC: (15:6.3.1+svn253039-1build1) 6.3.1 20170620"
+ARM GAS  /tmp/ccIctshy.s 			page 11
+
+
+ARM GAS  /tmp/ccIctshy.s 			page 12
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 stm32f1xx_hal_eth.c
+
+NO UNDEFINED SYMBOLS

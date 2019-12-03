@@ -1,0 +1,4412 @@
+ARM GAS  /tmp/ccvdMV8w.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1	@ Tag_ABI_FP_denormal
+   3              		.eabi_attribute 21, 1	@ Tag_ABI_FP_exceptions
+   4              		.eabi_attribute 23, 3	@ Tag_ABI_FP_number_model
+   5              		.eabi_attribute 24, 1	@ Tag_ABI_align8_needed
+   6              		.eabi_attribute 25, 1	@ Tag_ABI_align8_preserved
+   7              		.eabi_attribute 26, 1	@ Tag_ABI_enum_size
+   8              		.eabi_attribute 30, 4	@ Tag_ABI_optimization_goals
+   9              		.eabi_attribute 34, 1	@ Tag_CPU_unaligned_access
+  10              		.eabi_attribute 18, 4	@ Tag_ABI_PCS_wchar_t
+  11              		.file	"stm32f1xx_hal_rtc_ex.c"
+  12              	@ GNU C11 (15:6.3.1+svn253039-1build1) version 6.3.1 20170620 (arm-none-eabi)
+  13              	@	compiled by GNU C version 7.2.0, GMP version 6.1.2, MPFR version 4.0.1-rc1, MPC version 1.1.0, is
+  14              	@ warning: MPFR header version 4.0.1-rc1 differs from library version 4.0.1.
+  15              	@ GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+  16              	@ options passed:  -I ./inc -I ./inc/Legacy -I ../cmsisstm32f1xx/inc
+  17              	@ -I ../cmsiscore/inc -imultilib thumb/v7-m -D__USES_INITFINI__
+  18              	@ -D STM32F103x6 -D RUN_FROM_FLASH=1 -D __c src/stm32f1xx_hal_rtc_ex.c
+  19              	@ -mcpu=cortex-m3 -mthumb -auxbase-strip bin/stm32f1xx_hal_rtc_ex.o -g
+  20              	@ -gdwarf-2 -Os -Wall -fomit-frame-pointer -fverbose-asm
+  21              	@ options enabled:  -faggressive-loop-optimizations -falign-jumps
+  22              	@ -falign-labels -falign-loops -fauto-inc-dec -fbranch-count-reg
+  23              	@ -fcaller-saves -fchkp-check-incomplete-type -fchkp-check-read
+  24              	@ -fchkp-check-write -fchkp-instrument-calls -fchkp-narrow-bounds
+  25              	@ -fchkp-optimize -fchkp-store-bounds -fchkp-use-static-bounds
+  26              	@ -fchkp-use-static-const-bounds -fchkp-use-wrappers
+  27              	@ -fcombine-stack-adjustments -fcommon -fcompare-elim -fcprop-registers
+  28              	@ -fcrossjumping -fcse-follow-jumps -fdefer-pop
+  29              	@ -fdelete-null-pointer-checks -fdevirtualize -fdevirtualize-speculatively
+  30              	@ -fdwarf2-cfi-asm -fearly-inlining -feliminate-unused-debug-types
+  31              	@ -fexpensive-optimizations -fforward-propagate -ffunction-cse -fgcse
+  32              	@ -fgcse-lm -fgnu-runtime -fgnu-unique -fguess-branch-probability
+  33              	@ -fhoist-adjacent-loads -fident -fif-conversion -fif-conversion2
+  34              	@ -findirect-inlining -finline -finline-atomics -finline-functions
+  35              	@ -finline-functions-called-once -finline-small-functions -fipa-cp
+  36              	@ -fipa-cp-alignment -fipa-icf -fipa-icf-functions -fipa-icf-variables
+  37              	@ -fipa-profile -fipa-pure-const -fipa-ra -fipa-reference -fipa-sra
+  38              	@ -fira-hoist-pressure -fira-share-save-slots -fira-share-spill-slots
+  39              	@ -fisolate-erroneous-paths-dereference -fivopts -fkeep-static-consts
+  40              	@ -fleading-underscore -flifetime-dse -flra-remat -flto-odr-type-merging
+  41              	@ -fmath-errno -fmerge-constants -fmerge-debug-strings
+  42              	@ -fmove-loop-invariants -fomit-frame-pointer -foptimize-sibling-calls
+  43              	@ -fpartial-inlining -fpeephole -fpeephole2 -fplt -fprefetch-loop-arrays
+  44              	@ -freg-struct-return -freorder-blocks -freorder-functions
+  45              	@ -frerun-cse-after-loop -fsched-critical-path-heuristic
+  46              	@ -fsched-dep-count-heuristic -fsched-group-heuristic -fsched-interblock
+  47              	@ -fsched-last-insn-heuristic -fsched-pressure -fsched-rank-heuristic
+  48              	@ -fsched-spec -fsched-spec-insn-heuristic -fsched-stalled-insns-dep
+  49              	@ -fschedule-insns2 -fsection-anchors -fsemantic-interposition
+  50              	@ -fshow-column -fsigned-zeros -fsplit-ivs-in-unroller -fsplit-wide-types
+  51              	@ -fssa-backprop -fssa-phiopt -fstdarg-opt -fstrict-aliasing
+  52              	@ -fstrict-overflow -fstrict-volatile-bitfields -fsync-libcalls
+  53              	@ -fthread-jumps -ftoplevel-reorder -ftrapping-math -ftree-bit-ccp
+  54              	@ -ftree-builtin-call-dce -ftree-ccp -ftree-ch -ftree-coalesce-vars
+  55              	@ -ftree-copy-prop -ftree-cselim -ftree-dce -ftree-dominator-opts
+  56              	@ -ftree-dse -ftree-forwprop -ftree-fre -ftree-loop-if-convert
+  57              	@ -ftree-loop-im -ftree-loop-ivcanon -ftree-loop-optimize
+ARM GAS  /tmp/ccvdMV8w.s 			page 2
+
+
+  58              	@ -ftree-parallelize-loops= -ftree-phiprop -ftree-pre -ftree-pta
+  59              	@ -ftree-reassoc -ftree-scev-cprop -ftree-sink -ftree-slsr -ftree-sra
+  60              	@ -ftree-switch-conversion -ftree-tail-merge -ftree-ter -ftree-vrp
+  61              	@ -funit-at-a-time -fvar-tracking -fvar-tracking-assignments -fverbose-asm
+  62              	@ -fzero-initialized-in-bss -masm-syntax-unified -mfix-cortex-m3-ldrd
+  63              	@ -mlittle-endian -mpic-data-is-text-relative -msched-prolog -mthumb
+  64              	@ -munaligned-access -mvectorize-with-neon-quad
+  65              	
+  66              		.text
+  67              	.Ltext0:
+  68              		.cfi_sections	.debug_frame
+  69              		.align	1
+  70              		.global	HAL_RTCEx_SetTamper
+  71              		.syntax unified
+  72              		.thumb
+  73              		.thumb_func
+  74              		.fpu softvfp
+  75              		.type	HAL_RTCEx_SetTamper, %function
+  76              	HAL_RTCEx_SetTamper:
+  77              	.LFB65:
+  78              		.file 1 "src/stm32f1xx_hal_rtc_ex.c"
+   1:src/stm32f1xx_hal_rtc_ex.c **** /**
+   2:src/stm32f1xx_hal_rtc_ex.c ****   ******************************************************************************
+   3:src/stm32f1xx_hal_rtc_ex.c ****   * @file    stm32f1xx_hal_rtc_ex.c
+   4:src/stm32f1xx_hal_rtc_ex.c ****   * @author  MCD Application Team
+   5:src/stm32f1xx_hal_rtc_ex.c ****   * @brief   Extended RTC HAL module driver.
+   6:src/stm32f1xx_hal_rtc_ex.c ****   *          This file provides firmware functions to manage the following
+   7:src/stm32f1xx_hal_rtc_ex.c ****   *          functionalities of the Real Time Clock (RTC) Extension peripheral:
+   8:src/stm32f1xx_hal_rtc_ex.c ****   *           + RTC Tamper functions
+   9:src/stm32f1xx_hal_rtc_ex.c ****   *           + Extension Control functions
+  10:src/stm32f1xx_hal_rtc_ex.c ****   *           + Extension RTC features functions
+  11:src/stm32f1xx_hal_rtc_ex.c ****   *
+  12:src/stm32f1xx_hal_rtc_ex.c ****   ******************************************************************************
+  13:src/stm32f1xx_hal_rtc_ex.c ****   * @attention
+  14:src/stm32f1xx_hal_rtc_ex.c ****   *
+  15:src/stm32f1xx_hal_rtc_ex.c ****   * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics.
+  16:src/stm32f1xx_hal_rtc_ex.c ****   * All rights reserved.</center></h2>
+  17:src/stm32f1xx_hal_rtc_ex.c ****   *
+  18:src/stm32f1xx_hal_rtc_ex.c ****   * This software component is licensed by ST under BSD 3-Clause license,
+  19:src/stm32f1xx_hal_rtc_ex.c ****   * the "License"; You may not use this file except in compliance with the
+  20:src/stm32f1xx_hal_rtc_ex.c ****   * License. You may obtain a copy of the License at:
+  21:src/stm32f1xx_hal_rtc_ex.c ****   *                        opensource.org/licenses/BSD-3-Clause
+  22:src/stm32f1xx_hal_rtc_ex.c ****   *
+  23:src/stm32f1xx_hal_rtc_ex.c ****   ******************************************************************************
+  24:src/stm32f1xx_hal_rtc_ex.c ****   */
+  25:src/stm32f1xx_hal_rtc_ex.c **** 
+  26:src/stm32f1xx_hal_rtc_ex.c **** /* Includes ------------------------------------------------------------------*/
+  27:src/stm32f1xx_hal_rtc_ex.c **** #include "stm32f1xx_hal.h"
+  28:src/stm32f1xx_hal_rtc_ex.c **** 
+  29:src/stm32f1xx_hal_rtc_ex.c **** /** @addtogroup STM32F1xx_HAL_Driver
+  30:src/stm32f1xx_hal_rtc_ex.c ****   * @{
+  31:src/stm32f1xx_hal_rtc_ex.c ****   */
+  32:src/stm32f1xx_hal_rtc_ex.c **** 
+  33:src/stm32f1xx_hal_rtc_ex.c **** #ifdef HAL_RTC_MODULE_ENABLED
+  34:src/stm32f1xx_hal_rtc_ex.c **** 
+  35:src/stm32f1xx_hal_rtc_ex.c **** /** @defgroup RTCEx RTCEx
+  36:src/stm32f1xx_hal_rtc_ex.c ****   * @brief RTC Extended HAL module driver
+ARM GAS  /tmp/ccvdMV8w.s 			page 3
+
+
+  37:src/stm32f1xx_hal_rtc_ex.c ****   * @{
+  38:src/stm32f1xx_hal_rtc_ex.c ****   */
+  39:src/stm32f1xx_hal_rtc_ex.c **** 
+  40:src/stm32f1xx_hal_rtc_ex.c **** /* Private typedef -----------------------------------------------------------*/
+  41:src/stm32f1xx_hal_rtc_ex.c **** /* Private define ------------------------------------------------------------*/
+  42:src/stm32f1xx_hal_rtc_ex.c **** /* Private macro -------------------------------------------------------------*/
+  43:src/stm32f1xx_hal_rtc_ex.c **** /** @defgroup RTCEx_Private_Macros RTCEx Private Macros
+  44:src/stm32f1xx_hal_rtc_ex.c ****   * @{
+  45:src/stm32f1xx_hal_rtc_ex.c ****   */
+  46:src/stm32f1xx_hal_rtc_ex.c **** /**
+  47:src/stm32f1xx_hal_rtc_ex.c ****   * @}
+  48:src/stm32f1xx_hal_rtc_ex.c ****   */
+  49:src/stm32f1xx_hal_rtc_ex.c **** 
+  50:src/stm32f1xx_hal_rtc_ex.c **** /* Private variables ---------------------------------------------------------*/
+  51:src/stm32f1xx_hal_rtc_ex.c **** /* Private function prototypes -----------------------------------------------*/
+  52:src/stm32f1xx_hal_rtc_ex.c **** /* Private functions ---------------------------------------------------------*/
+  53:src/stm32f1xx_hal_rtc_ex.c **** 
+  54:src/stm32f1xx_hal_rtc_ex.c **** /** @defgroup RTCEx_Exported_Functions RTCEx Exported Functions
+  55:src/stm32f1xx_hal_rtc_ex.c ****   * @{
+  56:src/stm32f1xx_hal_rtc_ex.c ****   */
+  57:src/stm32f1xx_hal_rtc_ex.c **** 
+  58:src/stm32f1xx_hal_rtc_ex.c **** /** @defgroup RTCEx_Exported_Functions_Group1 RTC Tamper functions
+  59:src/stm32f1xx_hal_rtc_ex.c ****   * @brief    RTC Tamper functions
+  60:src/stm32f1xx_hal_rtc_ex.c ****   *
+  61:src/stm32f1xx_hal_rtc_ex.c **** @verbatim
+  62:src/stm32f1xx_hal_rtc_ex.c ****  ===============================================================================
+  63:src/stm32f1xx_hal_rtc_ex.c ****                  ##### RTC Tamper functions #####
+  64:src/stm32f1xx_hal_rtc_ex.c ****  ===============================================================================
+  65:src/stm32f1xx_hal_rtc_ex.c **** 
+  66:src/stm32f1xx_hal_rtc_ex.c ****  [..] This section provides functions allowing to configure Tamper feature
+  67:src/stm32f1xx_hal_rtc_ex.c **** 
+  68:src/stm32f1xx_hal_rtc_ex.c **** @endverbatim
+  69:src/stm32f1xx_hal_rtc_ex.c ****   * @{
+  70:src/stm32f1xx_hal_rtc_ex.c ****   */
+  71:src/stm32f1xx_hal_rtc_ex.c **** 
+  72:src/stm32f1xx_hal_rtc_ex.c **** /**
+  73:src/stm32f1xx_hal_rtc_ex.c ****   * @brief  Sets Tamper
+  74:src/stm32f1xx_hal_rtc_ex.c ****   * @note   By calling this API we disable the tamper interrupt for all tampers.
+  75:src/stm32f1xx_hal_rtc_ex.c ****   * @param  hrtc: pointer to a RTC_HandleTypeDef structure that contains
+  76:src/stm32f1xx_hal_rtc_ex.c ****   *                the configuration information for RTC.
+  77:src/stm32f1xx_hal_rtc_ex.c ****   * @param  sTamper: Pointer to Tamper Structure.
+  78:src/stm32f1xx_hal_rtc_ex.c ****   * @note   Tamper can be enabled only if ASOE and CCO bit are reset
+  79:src/stm32f1xx_hal_rtc_ex.c ****   * @retval HAL status
+  80:src/stm32f1xx_hal_rtc_ex.c ****   */
+  81:src/stm32f1xx_hal_rtc_ex.c **** HAL_StatusTypeDef HAL_RTCEx_SetTamper(RTC_HandleTypeDef *hrtc, RTC_TamperTypeDef *sTamper)
+  82:src/stm32f1xx_hal_rtc_ex.c **** {
+  79              		.loc 1 82 0
+  80              		.cfi_startproc
+  81              		@ args = 0, pretend = 0, frame = 0
+  82              		@ frame_needed = 0, uses_anonymous_args = 0
+  83              	.LVL0:
+  84 0000 70B5     		push	{r4, r5, r6, lr}	@
+  85              	.LCFI0:
+  86              		.cfi_def_cfa_offset 16
+  87              		.cfi_offset 4, -16
+  88              		.cfi_offset 5, -12
+  89              		.cfi_offset 6, -8
+ARM GAS  /tmp/ccvdMV8w.s 			page 4
+
+
+  90              		.cfi_offset 14, -4
+  83:src/stm32f1xx_hal_rtc_ex.c ****   /* Check input parameters */
+  84:src/stm32f1xx_hal_rtc_ex.c ****   if ((hrtc == NULL) || (sTamper == NULL))
+  91              		.loc 1 84 0
+  92 0002 88B1     		cbz	r0, .L5	@ hrtc,
+  93              		.loc 1 84 0 is_stmt 0 discriminator 1
+  94 0004 81B1     		cbz	r1, .L5	@ sTamper,
+  85:src/stm32f1xx_hal_rtc_ex.c ****   {
+  86:src/stm32f1xx_hal_rtc_ex.c ****     return HAL_ERROR;
+  87:src/stm32f1xx_hal_rtc_ex.c ****   }
+  88:src/stm32f1xx_hal_rtc_ex.c **** 
+  89:src/stm32f1xx_hal_rtc_ex.c ****   /* Check the parameters */
+  90:src/stm32f1xx_hal_rtc_ex.c ****   assert_param(IS_RTC_TAMPER(sTamper->Tamper));
+  91:src/stm32f1xx_hal_rtc_ex.c ****   assert_param(IS_RTC_TAMPER_TRIGGER(sTamper->Trigger));
+  92:src/stm32f1xx_hal_rtc_ex.c **** 
+  93:src/stm32f1xx_hal_rtc_ex.c ****   /* Process Locked */
+  94:src/stm32f1xx_hal_rtc_ex.c ****   __HAL_LOCK(hrtc);
+  95              		.loc 1 94 0 is_stmt 1
+  96 0006 037C     		ldrb	r3, [r0, #16]	@ zero_extendqisi2	@ hrtc_3(D)->Lock, hrtc_3(D)->Lock
+  97 0008 012B     		cmp	r3, #1	@ hrtc_3(D)->Lock,
+  98 000a 4FF00203 		mov	r3, #2	@ <retval>,
+  99 000e 16D0     		beq	.L6	@,
+ 100              		.loc 1 94 0 is_stmt 0 discriminator 2
+ 101 0010 0124     		movs	r4, #1	@ tmp123,
+  95:src/stm32f1xx_hal_rtc_ex.c **** 
+  96:src/stm32f1xx_hal_rtc_ex.c ****   hrtc->State = HAL_RTC_STATE_BUSY;
+  97:src/stm32f1xx_hal_rtc_ex.c **** 
+  98:src/stm32f1xx_hal_rtc_ex.c ****   if (HAL_IS_BIT_SET(BKP->RTCCR, (BKP_RTCCR_CCO | BKP_RTCCR_ASOE)))
+ 102              		.loc 1 98 0 is_stmt 1 discriminator 2
+ 103 0012 0C4D     		ldr	r5, .L7	@ tmp127,
+  96:src/stm32f1xx_hal_rtc_ex.c **** 
+ 104              		.loc 1 96 0 discriminator 2
+ 105 0014 4374     		strb	r3, [r0, #17]	@ <retval>, hrtc_3(D)->State
+ 106              		.loc 1 98 0 discriminator 2
+ 107 0016 EB6A     		ldr	r3, [r5, #44]	@ _9, MEM[(struct BKP_TypeDef *)1073769472B].RTCCR
+  94:src/stm32f1xx_hal_rtc_ex.c **** 
+ 108              		.loc 1 94 0 discriminator 2
+ 109 0018 0474     		strb	r4, [r0, #16]	@ tmp123, hrtc_3(D)->Lock
+ 110              		.loc 1 98 0 discriminator 2
+ 111 001a 13F4C073 		ands	r3, r3, #384	@ tmp128, _9,
+ 112 001e 05D0     		beq	.L3	@,
+  99:src/stm32f1xx_hal_rtc_ex.c ****   {
+ 100:src/stm32f1xx_hal_rtc_ex.c ****     hrtc->State = HAL_RTC_STATE_ERROR;
+ 113              		.loc 1 100 0
+ 114 0020 0423     		movs	r3, #4	@ tmp129,
+ 115 0022 4374     		strb	r3, [r0, #17]	@ tmp129, hrtc_3(D)->State
+ 101:src/stm32f1xx_hal_rtc_ex.c **** 
+ 102:src/stm32f1xx_hal_rtc_ex.c ****     /* Process Unlocked */
+ 103:src/stm32f1xx_hal_rtc_ex.c ****     __HAL_UNLOCK(hrtc);
+ 116              		.loc 1 103 0
+ 117 0024 0023     		movs	r3, #0	@ tmp131,
+ 118 0026 0374     		strb	r3, [r0, #16]	@ tmp131, hrtc_3(D)->Lock
+ 119              	.L5:
+  86:src/stm32f1xx_hal_rtc_ex.c ****   }
+ 120              		.loc 1 86 0
+ 121 0028 0120     		movs	r0, #1	@ <retval>,
+ 122              	.LVL1:
+ARM GAS  /tmp/ccvdMV8w.s 			page 5
+
+
+ 123 002a 70BD     		pop	{r4, r5, r6, pc}	@
+ 124              	.LVL2:
+ 125              	.L3:
+ 104:src/stm32f1xx_hal_rtc_ex.c **** 
+ 105:src/stm32f1xx_hal_rtc_ex.c ****     return HAL_ERROR;
+ 106:src/stm32f1xx_hal_rtc_ex.c ****   }
+ 107:src/stm32f1xx_hal_rtc_ex.c **** 
+ 108:src/stm32f1xx_hal_rtc_ex.c ****   MODIFY_REG(BKP->CR, (BKP_CR_TPE | BKP_CR_TPAL), (sTamper->Tamper | (sTamper->Trigger)));
+ 126              		.loc 1 108 0
+ 127 002c 2E6B     		ldr	r6, [r5, #48]	@ _13, MEM[(struct BKP_TypeDef *)1073769472B].CR
+ 128 002e 06C9     		ldm	r1, {r1, r2}	@ sTamper,,
+ 129              	.LVL3:
+ 130 0030 0A43     		orrs	r2, r2, r1	@, tmp134, sTamper_4(D)->Tamper, sTamper_4(D)->Trigger
+ 131 0032 26F00301 		bic	r1, r6, #3	@ tmp137, _13,
+ 132 0036 0A43     		orrs	r2, r2, r1	@, _18, tmp134, tmp137
+ 133 0038 2A63     		str	r2, [r5, #48]	@ _18, MEM[(struct BKP_TypeDef *)1073769472B].CR
+ 109:src/stm32f1xx_hal_rtc_ex.c **** 
+ 110:src/stm32f1xx_hal_rtc_ex.c ****   hrtc->State = HAL_RTC_STATE_READY;
+ 134              		.loc 1 110 0
+ 135 003a 4474     		strb	r4, [r0, #17]	@ tmp123, hrtc_3(D)->State
+ 111:src/stm32f1xx_hal_rtc_ex.c **** 
+ 112:src/stm32f1xx_hal_rtc_ex.c ****   /* Process Unlocked */
+ 113:src/stm32f1xx_hal_rtc_ex.c ****   __HAL_UNLOCK(hrtc);
+ 136              		.loc 1 113 0
+ 137 003c 0374     		strb	r3, [r0, #16]	@ tmp128, hrtc_3(D)->Lock
+ 138              	.L6:
+  94:src/stm32f1xx_hal_rtc_ex.c **** 
+ 139              		.loc 1 94 0
+ 140 003e 1846     		mov	r0, r3	@ <retval>, <retval>
+ 141              	.LVL4:
+ 114:src/stm32f1xx_hal_rtc_ex.c **** 
+ 115:src/stm32f1xx_hal_rtc_ex.c ****   return HAL_OK;
+ 116:src/stm32f1xx_hal_rtc_ex.c **** }
+ 142              		.loc 1 116 0
+ 143 0040 70BD     		pop	{r4, r5, r6, pc}	@
+ 144              	.L8:
+ 145 0042 00BF     		.align	2
+ 146              	.L7:
+ 147 0044 006C0040 		.word	1073769472
+ 148              		.cfi_endproc
+ 149              	.LFE65:
+ 150              		.size	HAL_RTCEx_SetTamper, .-HAL_RTCEx_SetTamper
+ 151              		.align	1
+ 152              		.global	HAL_RTCEx_SetTamper_IT
+ 153              		.syntax unified
+ 154              		.thumb
+ 155              		.thumb_func
+ 156              		.fpu softvfp
+ 157              		.type	HAL_RTCEx_SetTamper_IT, %function
+ 158              	HAL_RTCEx_SetTamper_IT:
+ 159              	.LFB66:
+ 117:src/stm32f1xx_hal_rtc_ex.c **** 
+ 118:src/stm32f1xx_hal_rtc_ex.c **** /**
+ 119:src/stm32f1xx_hal_rtc_ex.c ****   * @brief  Sets Tamper with interrupt.
+ 120:src/stm32f1xx_hal_rtc_ex.c ****   * @note   By calling this API we force the tamper interrupt for all tampers.
+ 121:src/stm32f1xx_hal_rtc_ex.c ****   * @param  hrtc: pointer to a RTC_HandleTypeDef structure that contains
+ 122:src/stm32f1xx_hal_rtc_ex.c ****   *                the configuration information for RTC.
+ARM GAS  /tmp/ccvdMV8w.s 			page 6
+
+
+ 123:src/stm32f1xx_hal_rtc_ex.c ****   * @param  sTamper: Pointer to RTC Tamper.
+ 124:src/stm32f1xx_hal_rtc_ex.c ****   * @note   Tamper can be enabled only if ASOE and CCO bit are reset
+ 125:src/stm32f1xx_hal_rtc_ex.c ****   * @retval HAL status
+ 126:src/stm32f1xx_hal_rtc_ex.c ****   */
+ 127:src/stm32f1xx_hal_rtc_ex.c **** HAL_StatusTypeDef HAL_RTCEx_SetTamper_IT(RTC_HandleTypeDef *hrtc, RTC_TamperTypeDef *sTamper)
+ 128:src/stm32f1xx_hal_rtc_ex.c **** {
+ 160              		.loc 1 128 0
+ 161              		.cfi_startproc
+ 162              		@ args = 0, pretend = 0, frame = 0
+ 163              		@ frame_needed = 0, uses_anonymous_args = 0
+ 164              	.LVL5:
+ 165 0048 70B5     		push	{r4, r5, r6, lr}	@
+ 166              	.LCFI1:
+ 167              		.cfi_def_cfa_offset 16
+ 168              		.cfi_offset 4, -16
+ 169              		.cfi_offset 5, -12
+ 170              		.cfi_offset 6, -8
+ 171              		.cfi_offset 14, -4
+ 129:src/stm32f1xx_hal_rtc_ex.c ****   /* Check input parameters */
+ 130:src/stm32f1xx_hal_rtc_ex.c ****   if ((hrtc == NULL) || (sTamper == NULL))
+ 172              		.loc 1 130 0
+ 173 004a 88B1     		cbz	r0, .L13	@ hrtc,
+ 174              		.loc 1 130 0 is_stmt 0 discriminator 1
+ 175 004c 81B1     		cbz	r1, .L13	@ sTamper,
+ 131:src/stm32f1xx_hal_rtc_ex.c ****   {
+ 132:src/stm32f1xx_hal_rtc_ex.c ****     return HAL_ERROR;
+ 133:src/stm32f1xx_hal_rtc_ex.c ****   }
+ 134:src/stm32f1xx_hal_rtc_ex.c **** 
+ 135:src/stm32f1xx_hal_rtc_ex.c ****   /* Check the parameters */
+ 136:src/stm32f1xx_hal_rtc_ex.c ****   assert_param(IS_RTC_TAMPER(sTamper->Tamper));
+ 137:src/stm32f1xx_hal_rtc_ex.c ****   assert_param(IS_RTC_TAMPER_TRIGGER(sTamper->Trigger));
+ 138:src/stm32f1xx_hal_rtc_ex.c **** 
+ 139:src/stm32f1xx_hal_rtc_ex.c ****   /* Process Locked */
+ 140:src/stm32f1xx_hal_rtc_ex.c ****   __HAL_LOCK(hrtc);
+ 176              		.loc 1 140 0 is_stmt 1
+ 177 004e 037C     		ldrb	r3, [r0, #16]	@ zero_extendqisi2	@ hrtc_3(D)->Lock, hrtc_3(D)->Lock
+ 178 0050 012B     		cmp	r3, #1	@ hrtc_3(D)->Lock,
+ 179 0052 4FF00203 		mov	r3, #2	@ <retval>,
+ 180 0056 1AD0     		beq	.L14	@,
+ 181              		.loc 1 140 0 is_stmt 0 discriminator 2
+ 182 0058 0125     		movs	r5, #1	@ tmp125,
+ 141:src/stm32f1xx_hal_rtc_ex.c **** 
+ 142:src/stm32f1xx_hal_rtc_ex.c ****   hrtc->State = HAL_RTC_STATE_BUSY;
+ 143:src/stm32f1xx_hal_rtc_ex.c **** 
+ 144:src/stm32f1xx_hal_rtc_ex.c ****   if (HAL_IS_BIT_SET(BKP->RTCCR, (BKP_RTCCR_CCO | BKP_RTCCR_ASOE)))
+ 183              		.loc 1 144 0 is_stmt 1 discriminator 2
+ 184 005a 0E4A     		ldr	r2, .L15	@ tmp129,
+ 142:src/stm32f1xx_hal_rtc_ex.c **** 
+ 185              		.loc 1 142 0 discriminator 2
+ 186 005c 4374     		strb	r3, [r0, #17]	@ <retval>, hrtc_3(D)->State
+ 187              		.loc 1 144 0 discriminator 2
+ 188 005e D36A     		ldr	r3, [r2, #44]	@ _9, MEM[(struct BKP_TypeDef *)1073769472B].RTCCR
+ 140:src/stm32f1xx_hal_rtc_ex.c **** 
+ 189              		.loc 1 140 0 discriminator 2
+ 190 0060 0574     		strb	r5, [r0, #16]	@ tmp125, hrtc_3(D)->Lock
+ 191              		.loc 1 144 0 discriminator 2
+ 192 0062 13F4C073 		ands	r3, r3, #384	@ tmp130, _9,
+ARM GAS  /tmp/ccvdMV8w.s 			page 7
+
+
+ 193 0066 05D0     		beq	.L11	@,
+ 145:src/stm32f1xx_hal_rtc_ex.c ****   {
+ 146:src/stm32f1xx_hal_rtc_ex.c ****     hrtc->State = HAL_RTC_STATE_ERROR;
+ 194              		.loc 1 146 0
+ 195 0068 0423     		movs	r3, #4	@ tmp131,
+ 196 006a 4374     		strb	r3, [r0, #17]	@ tmp131, hrtc_3(D)->State
+ 147:src/stm32f1xx_hal_rtc_ex.c **** 
+ 148:src/stm32f1xx_hal_rtc_ex.c ****     /* Process Unlocked */
+ 149:src/stm32f1xx_hal_rtc_ex.c ****     __HAL_UNLOCK(hrtc);
+ 197              		.loc 1 149 0
+ 198 006c 0023     		movs	r3, #0	@ tmp133,
+ 199 006e 0374     		strb	r3, [r0, #16]	@ tmp133, hrtc_3(D)->Lock
+ 200              	.L13:
+ 132:src/stm32f1xx_hal_rtc_ex.c ****   }
+ 201              		.loc 1 132 0
+ 202 0070 0120     		movs	r0, #1	@ <retval>,
+ 203              	.LVL6:
+ 204 0072 70BD     		pop	{r4, r5, r6, pc}	@
+ 205              	.LVL7:
+ 206              	.L11:
+ 150:src/stm32f1xx_hal_rtc_ex.c **** 
+ 151:src/stm32f1xx_hal_rtc_ex.c ****     return HAL_ERROR;
+ 152:src/stm32f1xx_hal_rtc_ex.c ****   }
+ 153:src/stm32f1xx_hal_rtc_ex.c **** 
+ 154:src/stm32f1xx_hal_rtc_ex.c ****   MODIFY_REG(BKP->CR, (BKP_CR_TPE | BKP_CR_TPAL), (sTamper->Tamper | (sTamper->Trigger)));
+ 207              		.loc 1 154 0
+ 208 0074 166B     		ldr	r6, [r2, #48]	@ _13, MEM[(struct BKP_TypeDef *)1073769472B].CR
+ 209 0076 12C9     		ldm	r1, {r1, r4}	@ sTamper,,
+ 210              	.LVL8:
+ 211 0078 2143     		orrs	r1, r1, r4	@, tmp136, sTamper_4(D)->Trigger, sTamper_4(D)->Tamper
+ 212 007a 26F00304 		bic	r4, r6, #3	@ tmp139, _13,
+ 213 007e 2143     		orrs	r1, r1, r4	@, _18, tmp136, tmp139
+ 214 0080 1163     		str	r1, [r2, #48]	@ _18, MEM[(struct BKP_TypeDef *)1073769472B].CR
+ 155:src/stm32f1xx_hal_rtc_ex.c **** 
+ 156:src/stm32f1xx_hal_rtc_ex.c ****   /* Configure the Tamper Interrupt in the BKP->CSR */
+ 157:src/stm32f1xx_hal_rtc_ex.c ****   __HAL_RTC_TAMPER_ENABLE_IT(hrtc, RTC_IT_TAMP1);
+ 215              		.loc 1 157 0
+ 216 0082 516B     		ldr	r1, [r2, #52]	@ _20, MEM[(struct BKP_TypeDef *)1073769472B].CSR
+ 217 0084 41F00401 		orr	r1, r1, #4	@ _21, _20,
+ 218 0088 5163     		str	r1, [r2, #52]	@ _21, MEM[(struct BKP_TypeDef *)1073769472B].CSR
+ 158:src/stm32f1xx_hal_rtc_ex.c **** 
+ 159:src/stm32f1xx_hal_rtc_ex.c ****   hrtc->State = HAL_RTC_STATE_READY;
+ 219              		.loc 1 159 0
+ 220 008a 4574     		strb	r5, [r0, #17]	@ tmp125, hrtc_3(D)->State
+ 160:src/stm32f1xx_hal_rtc_ex.c **** 
+ 161:src/stm32f1xx_hal_rtc_ex.c ****   /* Process Unlocked */
+ 162:src/stm32f1xx_hal_rtc_ex.c ****   __HAL_UNLOCK(hrtc);
+ 221              		.loc 1 162 0
+ 222 008c 0374     		strb	r3, [r0, #16]	@ tmp130, hrtc_3(D)->Lock
+ 223              	.L14:
+ 140:src/stm32f1xx_hal_rtc_ex.c **** 
+ 224              		.loc 1 140 0
+ 225 008e 1846     		mov	r0, r3	@ <retval>, <retval>
+ 226              	.LVL9:
+ 163:src/stm32f1xx_hal_rtc_ex.c **** 
+ 164:src/stm32f1xx_hal_rtc_ex.c ****   return HAL_OK;
+ 165:src/stm32f1xx_hal_rtc_ex.c **** }
+ARM GAS  /tmp/ccvdMV8w.s 			page 8
+
+
+ 227              		.loc 1 165 0
+ 228 0090 70BD     		pop	{r4, r5, r6, pc}	@
+ 229              	.L16:
+ 230 0092 00BF     		.align	2
+ 231              	.L15:
+ 232 0094 006C0040 		.word	1073769472
+ 233              		.cfi_endproc
+ 234              	.LFE66:
+ 235              		.size	HAL_RTCEx_SetTamper_IT, .-HAL_RTCEx_SetTamper_IT
+ 236              		.align	1
+ 237              		.global	HAL_RTCEx_DeactivateTamper
+ 238              		.syntax unified
+ 239              		.thumb
+ 240              		.thumb_func
+ 241              		.fpu softvfp
+ 242              		.type	HAL_RTCEx_DeactivateTamper, %function
+ 243              	HAL_RTCEx_DeactivateTamper:
+ 244              	.LFB67:
+ 166:src/stm32f1xx_hal_rtc_ex.c **** 
+ 167:src/stm32f1xx_hal_rtc_ex.c **** /**
+ 168:src/stm32f1xx_hal_rtc_ex.c ****   * @brief  Deactivates Tamper.
+ 169:src/stm32f1xx_hal_rtc_ex.c ****   * @param  hrtc: pointer to a RTC_HandleTypeDef structure that contains
+ 170:src/stm32f1xx_hal_rtc_ex.c ****   *                the configuration information for RTC.
+ 171:src/stm32f1xx_hal_rtc_ex.c ****   * @param  Tamper: Selected tamper pin.
+ 172:src/stm32f1xx_hal_rtc_ex.c ****   *          This parameter can be a value of @ref RTCEx_Tamper_Pins_Definitions
+ 173:src/stm32f1xx_hal_rtc_ex.c ****   * @retval HAL status
+ 174:src/stm32f1xx_hal_rtc_ex.c ****   */
+ 175:src/stm32f1xx_hal_rtc_ex.c **** HAL_StatusTypeDef HAL_RTCEx_DeactivateTamper(RTC_HandleTypeDef *hrtc, uint32_t Tamper)
+ 176:src/stm32f1xx_hal_rtc_ex.c **** {
+ 245              		.loc 1 176 0
+ 246              		.cfi_startproc
+ 247              		@ args = 0, pretend = 0, frame = 0
+ 248              		@ frame_needed = 0, uses_anonymous_args = 0
+ 249              		@ link register save eliminated.
+ 250              	.LVL10:
+ 177:src/stm32f1xx_hal_rtc_ex.c ****   /* Check input parameters */
+ 178:src/stm32f1xx_hal_rtc_ex.c ****   if (hrtc == NULL)
+ 251              		.loc 1 178 0
+ 252 0098 E0B1     		cbz	r0, .L19	@ hrtc,
+ 179:src/stm32f1xx_hal_rtc_ex.c ****   {
+ 180:src/stm32f1xx_hal_rtc_ex.c ****     return HAL_ERROR;
+ 181:src/stm32f1xx_hal_rtc_ex.c ****   }
+ 182:src/stm32f1xx_hal_rtc_ex.c ****   /* Prevent unused argument(s) compilation warning */
+ 183:src/stm32f1xx_hal_rtc_ex.c ****   UNUSED(Tamper);
+ 184:src/stm32f1xx_hal_rtc_ex.c **** 
+ 185:src/stm32f1xx_hal_rtc_ex.c ****   assert_param(IS_RTC_TAMPER(Tamper));
+ 186:src/stm32f1xx_hal_rtc_ex.c **** 
+ 187:src/stm32f1xx_hal_rtc_ex.c ****   /* Process Locked */
+ 188:src/stm32f1xx_hal_rtc_ex.c ****   __HAL_LOCK(hrtc);
+ 253              		.loc 1 188 0
+ 254 009a 037C     		ldrb	r3, [r0, #16]	@ zero_extendqisi2	@ hrtc_3(D)->Lock, hrtc_3(D)->Lock
+ 255 009c 012B     		cmp	r3, #1	@ hrtc_3(D)->Lock,
+ 256 009e 4FF00203 		mov	r3, #2	@ <retval>,
+ 257 00a2 15D0     		beq	.L20	@,
+ 189:src/stm32f1xx_hal_rtc_ex.c **** 
+ 190:src/stm32f1xx_hal_rtc_ex.c ****   hrtc->State = HAL_RTC_STATE_BUSY;
+ 258              		.loc 1 190 0 discriminator 2
+ARM GAS  /tmp/ccvdMV8w.s 			page 9
+
+
+ 259 00a4 4374     		strb	r3, [r0, #17]	@ <retval>, hrtc_3(D)->State
+ 191:src/stm32f1xx_hal_rtc_ex.c **** 
+ 192:src/stm32f1xx_hal_rtc_ex.c ****   /* Disable the selected Tamper pin */
+ 193:src/stm32f1xx_hal_rtc_ex.c ****   CLEAR_BIT(BKP->CR, BKP_CR_TPE);
+ 260              		.loc 1 193 0 discriminator 2
+ 261 00a6 0C4B     		ldr	r3, .L21	@ tmp125,
+ 262 00a8 1A6B     		ldr	r2, [r3, #48]	@ _7, MEM[(struct BKP_TypeDef *)1073769472B].CR
+ 263 00aa 22F00102 		bic	r2, r2, #1	@ _8, _7,
+ 264 00ae 1A63     		str	r2, [r3, #48]	@ _8, MEM[(struct BKP_TypeDef *)1073769472B].CR
+ 194:src/stm32f1xx_hal_rtc_ex.c **** 
+ 195:src/stm32f1xx_hal_rtc_ex.c ****   /* Disable the Tamper Interrupt in the BKP->CSR */
+ 196:src/stm32f1xx_hal_rtc_ex.c ****   /* Configure the Tamper Interrupt in the BKP->CSR */
+ 197:src/stm32f1xx_hal_rtc_ex.c ****   __HAL_RTC_TAMPER_DISABLE_IT(hrtc, RTC_IT_TAMP1);
+ 265              		.loc 1 197 0 discriminator 2
+ 266 00b0 5A6B     		ldr	r2, [r3, #52]	@ _10, MEM[(struct BKP_TypeDef *)1073769472B].CSR
+ 267 00b2 22F00402 		bic	r2, r2, #4	@ _11, _10,
+ 268 00b6 5A63     		str	r2, [r3, #52]	@ _11, MEM[(struct BKP_TypeDef *)1073769472B].CSR
+ 198:src/stm32f1xx_hal_rtc_ex.c **** 
+ 199:src/stm32f1xx_hal_rtc_ex.c ****   /* Clear the Tamper interrupt pending bit */
+ 200:src/stm32f1xx_hal_rtc_ex.c ****   __HAL_RTC_TAMPER_CLEAR_FLAG(hrtc, RTC_FLAG_TAMP1F);
+ 269              		.loc 1 200 0 discriminator 2
+ 270 00b8 5A6B     		ldr	r2, [r3, #52]	@ _13, MEM[(struct BKP_TypeDef *)1073769472B].CSR
+ 271 00ba 42F00302 		orr	r2, r2, #3	@ _14, _13,
+ 272 00be 5A63     		str	r2, [r3, #52]	@ _14, MEM[(struct BKP_TypeDef *)1073769472B].CSR
+ 201:src/stm32f1xx_hal_rtc_ex.c ****   SET_BIT(BKP->CSR, BKP_CSR_CTE);
+ 273              		.loc 1 201 0 discriminator 2
+ 274 00c0 5A6B     		ldr	r2, [r3, #52]	@ _16, MEM[(struct BKP_TypeDef *)1073769472B].CSR
+ 275 00c2 42F00102 		orr	r2, r2, #1	@ _17, _16,
+ 276 00c6 5A63     		str	r2, [r3, #52]	@ _17, MEM[(struct BKP_TypeDef *)1073769472B].CSR
+ 202:src/stm32f1xx_hal_rtc_ex.c **** 
+ 203:src/stm32f1xx_hal_rtc_ex.c ****   hrtc->State = HAL_RTC_STATE_READY;
+ 277              		.loc 1 203 0 discriminator 2
+ 278 00c8 0123     		movs	r3, #1	@ tmp133,
+ 279 00ca 4374     		strb	r3, [r0, #17]	@ tmp133, hrtc_3(D)->State
+ 204:src/stm32f1xx_hal_rtc_ex.c **** 
+ 205:src/stm32f1xx_hal_rtc_ex.c ****   /* Process Unlocked */
+ 206:src/stm32f1xx_hal_rtc_ex.c ****   __HAL_UNLOCK(hrtc);
+ 280              		.loc 1 206 0 discriminator 2
+ 281 00cc 0023     		movs	r3, #0	@ tmp135,
+ 282 00ce 0374     		strb	r3, [r0, #16]	@ tmp135, hrtc_3(D)->Lock
+ 283              	.L20:
+ 188:src/stm32f1xx_hal_rtc_ex.c **** 
+ 284              		.loc 1 188 0
+ 285 00d0 1846     		mov	r0, r3	@ <retval>, <retval>
+ 286              	.LVL11:
+ 207:src/stm32f1xx_hal_rtc_ex.c **** 
+ 208:src/stm32f1xx_hal_rtc_ex.c ****   return HAL_OK;
+ 209:src/stm32f1xx_hal_rtc_ex.c **** }
+ 287              		.loc 1 209 0
+ 288 00d2 7047     		bx	lr	@
+ 289              	.LVL12:
+ 290              	.L19:
+ 180:src/stm32f1xx_hal_rtc_ex.c ****   }
+ 291              		.loc 1 180 0
+ 292 00d4 0120     		movs	r0, #1	@ <retval>,
+ 293              	.LVL13:
+ 294 00d6 7047     		bx	lr	@
+ARM GAS  /tmp/ccvdMV8w.s 			page 10
+
+
+ 295              	.L22:
+ 296              		.align	2
+ 297              	.L21:
+ 298 00d8 006C0040 		.word	1073769472
+ 299              		.cfi_endproc
+ 300              	.LFE67:
+ 301              		.size	HAL_RTCEx_DeactivateTamper, .-HAL_RTCEx_DeactivateTamper
+ 302              		.align	1
+ 303              		.weak	HAL_RTCEx_Tamper1EventCallback
+ 304              		.syntax unified
+ 305              		.thumb
+ 306              		.thumb_func
+ 307              		.fpu softvfp
+ 308              		.type	HAL_RTCEx_Tamper1EventCallback, %function
+ 309              	HAL_RTCEx_Tamper1EventCallback:
+ 310              	.LFB82:
+ 311              		.cfi_startproc
+ 312              		@ args = 0, pretend = 0, frame = 0
+ 313              		@ frame_needed = 0, uses_anonymous_args = 0
+ 314              		@ link register save eliminated.
+ 315 00dc 7047     		bx	lr	@
+ 316              		.cfi_endproc
+ 317              	.LFE82:
+ 318              		.size	HAL_RTCEx_Tamper1EventCallback, .-HAL_RTCEx_Tamper1EventCallback
+ 319              		.align	1
+ 320              		.global	HAL_RTCEx_TamperIRQHandler
+ 321              		.syntax unified
+ 322              		.thumb
+ 323              		.thumb_func
+ 324              		.fpu softvfp
+ 325              		.type	HAL_RTCEx_TamperIRQHandler, %function
+ 326              	HAL_RTCEx_TamperIRQHandler:
+ 327              	.LFB68:
+ 210:src/stm32f1xx_hal_rtc_ex.c **** 
+ 211:src/stm32f1xx_hal_rtc_ex.c **** /**
+ 212:src/stm32f1xx_hal_rtc_ex.c ****   * @brief  This function handles Tamper interrupt request.
+ 213:src/stm32f1xx_hal_rtc_ex.c ****   * @param  hrtc: pointer to a RTC_HandleTypeDef structure that contains
+ 214:src/stm32f1xx_hal_rtc_ex.c ****   *                the configuration information for RTC.
+ 215:src/stm32f1xx_hal_rtc_ex.c ****   * @retval None
+ 216:src/stm32f1xx_hal_rtc_ex.c ****   */
+ 217:src/stm32f1xx_hal_rtc_ex.c **** void HAL_RTCEx_TamperIRQHandler(RTC_HandleTypeDef *hrtc)
+ 218:src/stm32f1xx_hal_rtc_ex.c **** {
+ 328              		.loc 1 218 0
+ 329              		.cfi_startproc
+ 330              		@ args = 0, pretend = 0, frame = 0
+ 331              		@ frame_needed = 0, uses_anonymous_args = 0
+ 332              	.LVL14:
+ 333              		.loc 1 218 0
+ 334 00de 38B5     		push	{r3, r4, r5, lr}	@
+ 335              	.LCFI2:
+ 336              		.cfi_def_cfa_offset 16
+ 337              		.cfi_offset 3, -16
+ 338              		.cfi_offset 4, -12
+ 339              		.cfi_offset 5, -8
+ 340              		.cfi_offset 14, -4
+ 219:src/stm32f1xx_hal_rtc_ex.c ****   /* Get the status of the Interrupt */
+ 220:src/stm32f1xx_hal_rtc_ex.c ****   if (__HAL_RTC_TAMPER_GET_IT_SOURCE(hrtc, RTC_IT_TAMP1))
+ARM GAS  /tmp/ccvdMV8w.s 			page 11
+
+
+ 341              		.loc 1 220 0
+ 342 00e0 084C     		ldr	r4, .L32	@ tmp117,
+ 218:src/stm32f1xx_hal_rtc_ex.c ****   /* Get the status of the Interrupt */
+ 343              		.loc 1 218 0
+ 344 00e2 0546     		mov	r5, r0	@ hrtc, hrtc
+ 345              		.loc 1 220 0
+ 346 00e4 636B     		ldr	r3, [r4, #52]	@ _3, MEM[(struct BKP_TypeDef *)1073769472B].CSR
+ 347 00e6 5A07     		lsls	r2, r3, #29	@, _3,
+ 348 00e8 08D5     		bpl	.L25	@,
+ 221:src/stm32f1xx_hal_rtc_ex.c ****   {
+ 222:src/stm32f1xx_hal_rtc_ex.c ****     /* Get the TAMPER Interrupt enable bit and pending bit */
+ 223:src/stm32f1xx_hal_rtc_ex.c ****     if (__HAL_RTC_TAMPER_GET_FLAG(hrtc, RTC_FLAG_TAMP1F) != (uint32_t)RESET)
+ 349              		.loc 1 223 0
+ 350 00ea 636B     		ldr	r3, [r4, #52]	@ _5, MEM[(struct BKP_TypeDef *)1073769472B].CSR
+ 351 00ec DB05     		lsls	r3, r3, #23	@, _5,
+ 352 00ee 05D5     		bpl	.L25	@,
+ 224:src/stm32f1xx_hal_rtc_ex.c ****     {
+ 225:src/stm32f1xx_hal_rtc_ex.c ****       /* Tamper callback */
+ 226:src/stm32f1xx_hal_rtc_ex.c **** #if (USE_HAL_RTC_REGISTER_CALLBACKS == 1)
+ 227:src/stm32f1xx_hal_rtc_ex.c ****       hrtc->Tamper1EventCallback(hrtc);
+ 228:src/stm32f1xx_hal_rtc_ex.c **** #else
+ 229:src/stm32f1xx_hal_rtc_ex.c ****       HAL_RTCEx_Tamper1EventCallback(hrtc);
+ 353              		.loc 1 229 0
+ 354 00f0 FFF7FEFF 		bl	HAL_RTCEx_Tamper1EventCallback	@
+ 355              	.LVL15:
+ 230:src/stm32f1xx_hal_rtc_ex.c **** #endif /* USE_HAL_RTC_REGISTER_CALLBACKS */
+ 231:src/stm32f1xx_hal_rtc_ex.c **** 
+ 232:src/stm32f1xx_hal_rtc_ex.c ****       /* Clear the Tamper interrupt pending bit */
+ 233:src/stm32f1xx_hal_rtc_ex.c ****       __HAL_RTC_TAMPER_CLEAR_FLAG(hrtc, RTC_FLAG_TAMP1F);
+ 356              		.loc 1 233 0
+ 357 00f4 636B     		ldr	r3, [r4, #52]	@ _9, MEM[(struct BKP_TypeDef *)1073769472B].CSR
+ 358 00f6 43F00303 		orr	r3, r3, #3	@ _10, _9,
+ 359 00fa 6363     		str	r3, [r4, #52]	@ _10, MEM[(struct BKP_TypeDef *)1073769472B].CSR
+ 360              	.L25:
+ 234:src/stm32f1xx_hal_rtc_ex.c ****     }
+ 235:src/stm32f1xx_hal_rtc_ex.c ****   }
+ 236:src/stm32f1xx_hal_rtc_ex.c **** 
+ 237:src/stm32f1xx_hal_rtc_ex.c ****   /* Change RTC state */
+ 238:src/stm32f1xx_hal_rtc_ex.c ****   hrtc->State = HAL_RTC_STATE_READY;
+ 361              		.loc 1 238 0
+ 362 00fc 0123     		movs	r3, #1	@ tmp123,
+ 363 00fe 6B74     		strb	r3, [r5, #17]	@ tmp123, hrtc_7(D)->State
+ 364 0100 38BD     		pop	{r3, r4, r5, pc}	@
+ 365              	.LVL16:
+ 366              	.L33:
+ 367 0102 00BF     		.align	2
+ 368              	.L32:
+ 369 0104 006C0040 		.word	1073769472
+ 370              		.cfi_endproc
+ 371              	.LFE68:
+ 372              		.size	HAL_RTCEx_TamperIRQHandler, .-HAL_RTCEx_TamperIRQHandler
+ 373              		.align	1
+ 374              		.global	HAL_RTCEx_PollForTamper1Event
+ 375              		.syntax unified
+ 376              		.thumb
+ 377              		.thumb_func
+ 378              		.fpu softvfp
+ARM GAS  /tmp/ccvdMV8w.s 			page 12
+
+
+ 379              		.type	HAL_RTCEx_PollForTamper1Event, %function
+ 380              	HAL_RTCEx_PollForTamper1Event:
+ 381              	.LFB70:
+ 239:src/stm32f1xx_hal_rtc_ex.c **** }
+ 240:src/stm32f1xx_hal_rtc_ex.c **** 
+ 241:src/stm32f1xx_hal_rtc_ex.c **** /**
+ 242:src/stm32f1xx_hal_rtc_ex.c ****   * @brief  Tamper 1 callback.
+ 243:src/stm32f1xx_hal_rtc_ex.c ****   * @param  hrtc: pointer to a RTC_HandleTypeDef structure that contains
+ 244:src/stm32f1xx_hal_rtc_ex.c ****   *                the configuration information for RTC.
+ 245:src/stm32f1xx_hal_rtc_ex.c ****   * @retval None
+ 246:src/stm32f1xx_hal_rtc_ex.c ****   */
+ 247:src/stm32f1xx_hal_rtc_ex.c **** __weak void HAL_RTCEx_Tamper1EventCallback(RTC_HandleTypeDef *hrtc)
+ 248:src/stm32f1xx_hal_rtc_ex.c **** {
+ 249:src/stm32f1xx_hal_rtc_ex.c ****   /* Prevent unused argument(s) compilation warning */
+ 250:src/stm32f1xx_hal_rtc_ex.c ****   UNUSED(hrtc);
+ 251:src/stm32f1xx_hal_rtc_ex.c ****   /* NOTE : This function Should not be modified, when the callback is needed,
+ 252:src/stm32f1xx_hal_rtc_ex.c ****             the HAL_RTCEx_Tamper1EventCallback could be implemented in the user file
+ 253:src/stm32f1xx_hal_rtc_ex.c ****    */
+ 254:src/stm32f1xx_hal_rtc_ex.c **** }
+ 255:src/stm32f1xx_hal_rtc_ex.c **** 
+ 256:src/stm32f1xx_hal_rtc_ex.c **** /**
+ 257:src/stm32f1xx_hal_rtc_ex.c ****   * @brief  This function handles Tamper1 Polling.
+ 258:src/stm32f1xx_hal_rtc_ex.c ****   * @param  hrtc: pointer to a RTC_HandleTypeDef structure that contains
+ 259:src/stm32f1xx_hal_rtc_ex.c ****   *                the configuration information for RTC.
+ 260:src/stm32f1xx_hal_rtc_ex.c ****   * @param  Timeout: Timeout duration
+ 261:src/stm32f1xx_hal_rtc_ex.c ****   * @retval HAL status
+ 262:src/stm32f1xx_hal_rtc_ex.c ****   */
+ 263:src/stm32f1xx_hal_rtc_ex.c **** HAL_StatusTypeDef HAL_RTCEx_PollForTamper1Event(RTC_HandleTypeDef *hrtc, uint32_t Timeout)
+ 264:src/stm32f1xx_hal_rtc_ex.c **** {
+ 382              		.loc 1 264 0
+ 383              		.cfi_startproc
+ 384              		@ args = 0, pretend = 0, frame = 0
+ 385              		@ frame_needed = 0, uses_anonymous_args = 0
+ 386              	.LVL17:
+ 387 0108 F8B5     		push	{r3, r4, r5, r6, r7, lr}	@
+ 388              	.LCFI3:
+ 389              		.cfi_def_cfa_offset 24
+ 390              		.cfi_offset 3, -24
+ 391              		.cfi_offset 4, -20
+ 392              		.cfi_offset 5, -16
+ 393              		.cfi_offset 6, -12
+ 394              		.cfi_offset 7, -8
+ 395              		.cfi_offset 14, -4
+ 396              		.loc 1 264 0
+ 397 010a 0446     		mov	r4, r0	@ hrtc, hrtc
+ 398 010c 0E46     		mov	r6, r1	@ Timeout, Timeout
+ 265:src/stm32f1xx_hal_rtc_ex.c ****   uint32_t tickstart = HAL_GetTick();
+ 399              		.loc 1 265 0
+ 400 010e FFF7FEFF 		bl	HAL_GetTick	@
+ 401              	.LVL18:
+ 402 0112 0746     		mov	r7, r0	@ tickstart,
+ 403              	.LVL19:
+ 266:src/stm32f1xx_hal_rtc_ex.c **** 
+ 267:src/stm32f1xx_hal_rtc_ex.c ****   /* Check input parameters */
+ 268:src/stm32f1xx_hal_rtc_ex.c ****   if (hrtc == NULL)
+ 404              		.loc 1 268 0
+ 405 0114 BCB1     		cbz	r4, .L41	@ hrtc,
+ARM GAS  /tmp/ccvdMV8w.s 			page 13
+
+
+ 269:src/stm32f1xx_hal_rtc_ex.c ****   {
+ 270:src/stm32f1xx_hal_rtc_ex.c ****     return HAL_ERROR;
+ 271:src/stm32f1xx_hal_rtc_ex.c ****   }
+ 272:src/stm32f1xx_hal_rtc_ex.c **** 
+ 273:src/stm32f1xx_hal_rtc_ex.c ****   /* Get the status of the Interrupt */
+ 274:src/stm32f1xx_hal_rtc_ex.c ****   while (__HAL_RTC_TAMPER_GET_FLAG(hrtc, RTC_FLAG_TAMP1F) == RESET)
+ 406              		.loc 1 274 0
+ 407 0116 0D4D     		ldr	r5, .L44	@ tmp123,
+ 408              	.LVL20:
+ 409              	.L37:
+ 410 0118 6B6B     		ldr	r3, [r5, #52]	@ _11, MEM[(struct BKP_TypeDef *)1073769472B].CSR
+ 411 011a DB05     		lsls	r3, r3, #23	@, _11,
+ 412 011c 07D5     		bpl	.L40	@,
+ 275:src/stm32f1xx_hal_rtc_ex.c ****   {
+ 276:src/stm32f1xx_hal_rtc_ex.c ****     if (Timeout != HAL_MAX_DELAY)
+ 277:src/stm32f1xx_hal_rtc_ex.c ****     {
+ 278:src/stm32f1xx_hal_rtc_ex.c ****       if ((Timeout == 0U) || ((HAL_GetTick() - tickstart) > Timeout))
+ 279:src/stm32f1xx_hal_rtc_ex.c ****       {
+ 280:src/stm32f1xx_hal_rtc_ex.c ****         hrtc->State = HAL_RTC_STATE_TIMEOUT;
+ 281:src/stm32f1xx_hal_rtc_ex.c ****         return HAL_TIMEOUT;
+ 282:src/stm32f1xx_hal_rtc_ex.c ****       }
+ 283:src/stm32f1xx_hal_rtc_ex.c ****     }
+ 284:src/stm32f1xx_hal_rtc_ex.c ****   }
+ 285:src/stm32f1xx_hal_rtc_ex.c **** 
+ 286:src/stm32f1xx_hal_rtc_ex.c ****   /* Clear the Tamper Flag */
+ 287:src/stm32f1xx_hal_rtc_ex.c ****   __HAL_RTC_TAMPER_CLEAR_FLAG(hrtc, RTC_FLAG_TAMP1F);
+ 413              		.loc 1 287 0
+ 414 011e 6B6B     		ldr	r3, [r5, #52]	@ _18, MEM[(struct BKP_TypeDef *)1073769472B].CSR
+ 288:src/stm32f1xx_hal_rtc_ex.c **** 
+ 289:src/stm32f1xx_hal_rtc_ex.c ****   /* Change RTC state */
+ 290:src/stm32f1xx_hal_rtc_ex.c ****   hrtc->State = HAL_RTC_STATE_READY;
+ 291:src/stm32f1xx_hal_rtc_ex.c **** 
+ 292:src/stm32f1xx_hal_rtc_ex.c ****   return HAL_OK;
+ 415              		.loc 1 292 0
+ 416 0120 0020     		movs	r0, #0	@ <retval>,
+ 287:src/stm32f1xx_hal_rtc_ex.c **** 
+ 417              		.loc 1 287 0
+ 418 0122 43F00303 		orr	r3, r3, #3	@ _19, _18,
+ 419 0126 6B63     		str	r3, [r5, #52]	@ _19, MEM[(struct BKP_TypeDef *)1073769472B].CSR
+ 290:src/stm32f1xx_hal_rtc_ex.c **** 
+ 420              		.loc 1 290 0
+ 421 0128 0123     		movs	r3, #1	@ tmp127,
+ 422 012a 6374     		strb	r3, [r4, #17]	@ tmp127, hrtc_8(D)->State
+ 423              		.loc 1 292 0
+ 424 012c F8BD     		pop	{r3, r4, r5, r6, r7, pc}	@
+ 425              	.LVL21:
+ 426              	.L40:
+ 276:src/stm32f1xx_hal_rtc_ex.c ****     {
+ 427              		.loc 1 276 0
+ 428 012e 721C     		adds	r2, r6, #1	@, Timeout,
+ 429 0130 F2D0     		beq	.L37	@,
+ 278:src/stm32f1xx_hal_rtc_ex.c ****       {
+ 430              		.loc 1 278 0
+ 431 0132 16B9     		cbnz	r6, .L38	@ Timeout,
+ 432              	.L39:
+ 280:src/stm32f1xx_hal_rtc_ex.c ****         return HAL_TIMEOUT;
+ 433              		.loc 1 280 0
+ARM GAS  /tmp/ccvdMV8w.s 			page 14
+
+
+ 434 0134 0320     		movs	r0, #3	@ tmp120,
+ 435 0136 6074     		strb	r0, [r4, #17]	@ tmp120, hrtc_8(D)->State
+ 281:src/stm32f1xx_hal_rtc_ex.c ****       }
+ 436              		.loc 1 281 0
+ 437 0138 F8BD     		pop	{r3, r4, r5, r6, r7, pc}	@
+ 438              	.LVL22:
+ 439              	.L38:
+ 278:src/stm32f1xx_hal_rtc_ex.c ****       {
+ 440              		.loc 1 278 0 discriminator 1
+ 441 013a FFF7FEFF 		bl	HAL_GetTick	@
+ 442              	.LVL23:
+ 443 013e C01B     		subs	r0, r0, r7	@ tmp122,, tickstart
+ 444 0140 8642     		cmp	r6, r0	@ Timeout, tmp122
+ 445 0142 E9D2     		bcs	.L37	@,
+ 446 0144 F6E7     		b	.L39	@
+ 447              	.LVL24:
+ 448              	.L41:
+ 270:src/stm32f1xx_hal_rtc_ex.c ****   }
+ 449              		.loc 1 270 0
+ 450 0146 0120     		movs	r0, #1	@ <retval>,
+ 451              	.LVL25:
+ 293:src/stm32f1xx_hal_rtc_ex.c **** }
+ 452              		.loc 1 293 0
+ 453 0148 F8BD     		pop	{r3, r4, r5, r6, r7, pc}	@
+ 454              	.LVL26:
+ 455              	.L45:
+ 456 014a 00BF     		.align	2
+ 457              	.L44:
+ 458 014c 006C0040 		.word	1073769472
+ 459              		.cfi_endproc
+ 460              	.LFE70:
+ 461              		.size	HAL_RTCEx_PollForTamper1Event, .-HAL_RTCEx_PollForTamper1Event
+ 462              		.align	1
+ 463              		.global	HAL_RTCEx_SetSecond_IT
+ 464              		.syntax unified
+ 465              		.thumb
+ 466              		.thumb_func
+ 467              		.fpu softvfp
+ 468              		.type	HAL_RTCEx_SetSecond_IT, %function
+ 469              	HAL_RTCEx_SetSecond_IT:
+ 470              	.LFB71:
+ 294:src/stm32f1xx_hal_rtc_ex.c **** 
+ 295:src/stm32f1xx_hal_rtc_ex.c **** /**
+ 296:src/stm32f1xx_hal_rtc_ex.c ****   * @}
+ 297:src/stm32f1xx_hal_rtc_ex.c ****   */
+ 298:src/stm32f1xx_hal_rtc_ex.c **** 
+ 299:src/stm32f1xx_hal_rtc_ex.c **** /** @defgroup RTCEx_Exported_Functions_Group2 RTC Second functions
+ 300:src/stm32f1xx_hal_rtc_ex.c ****   * @brief    RTC Second functions
+ 301:src/stm32f1xx_hal_rtc_ex.c ****   *
+ 302:src/stm32f1xx_hal_rtc_ex.c **** @verbatim
+ 303:src/stm32f1xx_hal_rtc_ex.c ****  ===============================================================================
+ 304:src/stm32f1xx_hal_rtc_ex.c ****                  ##### RTC Second functions #####
+ 305:src/stm32f1xx_hal_rtc_ex.c ****  ===============================================================================
+ 306:src/stm32f1xx_hal_rtc_ex.c **** 
+ 307:src/stm32f1xx_hal_rtc_ex.c ****  [..] This section provides functions implementing second interupt handlers
+ 308:src/stm32f1xx_hal_rtc_ex.c **** 
+ 309:src/stm32f1xx_hal_rtc_ex.c **** @endverbatim
+ARM GAS  /tmp/ccvdMV8w.s 			page 15
+
+
+ 310:src/stm32f1xx_hal_rtc_ex.c ****   * @{
+ 311:src/stm32f1xx_hal_rtc_ex.c ****   */
+ 312:src/stm32f1xx_hal_rtc_ex.c **** 
+ 313:src/stm32f1xx_hal_rtc_ex.c **** /**
+ 314:src/stm32f1xx_hal_rtc_ex.c ****   * @brief  Sets Interrupt for second
+ 315:src/stm32f1xx_hal_rtc_ex.c ****   * @param  hrtc: pointer to a RTC_HandleTypeDef structure that contains
+ 316:src/stm32f1xx_hal_rtc_ex.c ****   *                the configuration information for RTC.
+ 317:src/stm32f1xx_hal_rtc_ex.c ****   * @retval HAL status
+ 318:src/stm32f1xx_hal_rtc_ex.c ****   */
+ 319:src/stm32f1xx_hal_rtc_ex.c **** HAL_StatusTypeDef HAL_RTCEx_SetSecond_IT(RTC_HandleTypeDef *hrtc)
+ 320:src/stm32f1xx_hal_rtc_ex.c **** {
+ 471              		.loc 1 320 0
+ 472              		.cfi_startproc
+ 473              		@ args = 0, pretend = 0, frame = 0
+ 474              		@ frame_needed = 0, uses_anonymous_args = 0
+ 475              		@ link register save eliminated.
+ 476              	.LVL27:
+ 321:src/stm32f1xx_hal_rtc_ex.c ****   /* Check input parameters */
+ 322:src/stm32f1xx_hal_rtc_ex.c ****   if (hrtc == NULL)
+ 477              		.loc 1 322 0
+ 478 0150 80B1     		cbz	r0, .L48	@ hrtc,
+ 323:src/stm32f1xx_hal_rtc_ex.c ****   {
+ 324:src/stm32f1xx_hal_rtc_ex.c ****     return HAL_ERROR;
+ 325:src/stm32f1xx_hal_rtc_ex.c ****   }
+ 326:src/stm32f1xx_hal_rtc_ex.c **** 
+ 327:src/stm32f1xx_hal_rtc_ex.c ****   /* Process Locked */
+ 328:src/stm32f1xx_hal_rtc_ex.c ****   __HAL_LOCK(hrtc);
+ 479              		.loc 1 328 0
+ 480 0152 037C     		ldrb	r3, [r0, #16]	@ zero_extendqisi2	@ hrtc_3(D)->Lock, hrtc_3(D)->Lock
+ 481 0154 012B     		cmp	r3, #1	@ hrtc_3(D)->Lock,
+ 482 0156 4FF00203 		mov	r3, #2	@ <retval>,
+ 483 015a 09D0     		beq	.L49	@,
+ 329:src/stm32f1xx_hal_rtc_ex.c **** 
+ 330:src/stm32f1xx_hal_rtc_ex.c ****   hrtc->State = HAL_RTC_STATE_BUSY;
+ 331:src/stm32f1xx_hal_rtc_ex.c **** 
+ 332:src/stm32f1xx_hal_rtc_ex.c ****   /* Enable Second interuption */
+ 333:src/stm32f1xx_hal_rtc_ex.c ****   __HAL_RTC_SECOND_ENABLE_IT(hrtc, RTC_IT_SEC);
+ 484              		.loc 1 333 0 discriminator 2
+ 485 015c 0268     		ldr	r2, [r0]	@ _7, hrtc_3(D)->Instance
+ 330:src/stm32f1xx_hal_rtc_ex.c **** 
+ 486              		.loc 1 330 0 discriminator 2
+ 487 015e 4374     		strb	r3, [r0, #17]	@ <retval>, hrtc_3(D)->State
+ 488              		.loc 1 333 0 discriminator 2
+ 489 0160 1368     		ldr	r3, [r2]	@ _8, _7->CRH
+ 490 0162 43F00103 		orr	r3, r3, #1	@ _9, _8,
+ 491 0166 1360     		str	r3, [r2]	@ _9, _7->CRH
+ 334:src/stm32f1xx_hal_rtc_ex.c **** 
+ 335:src/stm32f1xx_hal_rtc_ex.c ****   hrtc->State = HAL_RTC_STATE_READY;
+ 492              		.loc 1 335 0 discriminator 2
+ 493 0168 0123     		movs	r3, #1	@ tmp119,
+ 494 016a 4374     		strb	r3, [r0, #17]	@ tmp119, hrtc_3(D)->State
+ 336:src/stm32f1xx_hal_rtc_ex.c **** 
+ 337:src/stm32f1xx_hal_rtc_ex.c ****   /* Process Unlocked */
+ 338:src/stm32f1xx_hal_rtc_ex.c ****   __HAL_UNLOCK(hrtc);
+ 495              		.loc 1 338 0 discriminator 2
+ 496 016c 0023     		movs	r3, #0	@ tmp121,
+ 497 016e 0374     		strb	r3, [r0, #16]	@ tmp121, hrtc_3(D)->Lock
+ARM GAS  /tmp/ccvdMV8w.s 			page 16
+
+
+ 498              	.L49:
+ 328:src/stm32f1xx_hal_rtc_ex.c **** 
+ 499              		.loc 1 328 0
+ 500 0170 1846     		mov	r0, r3	@ <retval>, <retval>
+ 501              	.LVL28:
+ 339:src/stm32f1xx_hal_rtc_ex.c **** 
+ 340:src/stm32f1xx_hal_rtc_ex.c ****   return HAL_OK;
+ 341:src/stm32f1xx_hal_rtc_ex.c **** }
+ 502              		.loc 1 341 0
+ 503 0172 7047     		bx	lr	@
+ 504              	.LVL29:
+ 505              	.L48:
+ 324:src/stm32f1xx_hal_rtc_ex.c ****   }
+ 506              		.loc 1 324 0
+ 507 0174 0120     		movs	r0, #1	@ <retval>,
+ 508              	.LVL30:
+ 509 0176 7047     		bx	lr	@
+ 510              		.cfi_endproc
+ 511              	.LFE71:
+ 512              		.size	HAL_RTCEx_SetSecond_IT, .-HAL_RTCEx_SetSecond_IT
+ 513              		.align	1
+ 514              		.global	HAL_RTCEx_DeactivateSecond
+ 515              		.syntax unified
+ 516              		.thumb
+ 517              		.thumb_func
+ 518              		.fpu softvfp
+ 519              		.type	HAL_RTCEx_DeactivateSecond, %function
+ 520              	HAL_RTCEx_DeactivateSecond:
+ 521              	.LFB72:
+ 342:src/stm32f1xx_hal_rtc_ex.c **** 
+ 343:src/stm32f1xx_hal_rtc_ex.c **** /**
+ 344:src/stm32f1xx_hal_rtc_ex.c ****   * @brief  Deactivates Second.
+ 345:src/stm32f1xx_hal_rtc_ex.c ****   * @param  hrtc: pointer to a RTC_HandleTypeDef structure that contains
+ 346:src/stm32f1xx_hal_rtc_ex.c ****   *                the configuration information for RTC.
+ 347:src/stm32f1xx_hal_rtc_ex.c ****   * @retval HAL status
+ 348:src/stm32f1xx_hal_rtc_ex.c ****   */
+ 349:src/stm32f1xx_hal_rtc_ex.c **** HAL_StatusTypeDef HAL_RTCEx_DeactivateSecond(RTC_HandleTypeDef *hrtc)
+ 350:src/stm32f1xx_hal_rtc_ex.c **** {
+ 522              		.loc 1 350 0
+ 523              		.cfi_startproc
+ 524              		@ args = 0, pretend = 0, frame = 0
+ 525              		@ frame_needed = 0, uses_anonymous_args = 0
+ 526              		@ link register save eliminated.
+ 527              	.LVL31:
+ 351:src/stm32f1xx_hal_rtc_ex.c ****   /* Check input parameters */
+ 352:src/stm32f1xx_hal_rtc_ex.c ****   if (hrtc == NULL)
+ 528              		.loc 1 352 0
+ 529 0178 80B1     		cbz	r0, .L52	@ hrtc,
+ 353:src/stm32f1xx_hal_rtc_ex.c ****   {
+ 354:src/stm32f1xx_hal_rtc_ex.c ****     return HAL_ERROR;
+ 355:src/stm32f1xx_hal_rtc_ex.c ****   }
+ 356:src/stm32f1xx_hal_rtc_ex.c **** 
+ 357:src/stm32f1xx_hal_rtc_ex.c ****   /* Process Locked */
+ 358:src/stm32f1xx_hal_rtc_ex.c ****   __HAL_LOCK(hrtc);
+ 530              		.loc 1 358 0
+ 531 017a 037C     		ldrb	r3, [r0, #16]	@ zero_extendqisi2	@ hrtc_3(D)->Lock, hrtc_3(D)->Lock
+ 532 017c 012B     		cmp	r3, #1	@ hrtc_3(D)->Lock,
+ARM GAS  /tmp/ccvdMV8w.s 			page 17
+
+
+ 533 017e 4FF00203 		mov	r3, #2	@ <retval>,
+ 534 0182 09D0     		beq	.L53	@,
+ 359:src/stm32f1xx_hal_rtc_ex.c **** 
+ 360:src/stm32f1xx_hal_rtc_ex.c ****   hrtc->State = HAL_RTC_STATE_BUSY;
+ 361:src/stm32f1xx_hal_rtc_ex.c **** 
+ 362:src/stm32f1xx_hal_rtc_ex.c ****   /* Deactivate Second interuption*/
+ 363:src/stm32f1xx_hal_rtc_ex.c ****   __HAL_RTC_SECOND_DISABLE_IT(hrtc, RTC_IT_SEC);
+ 535              		.loc 1 363 0 discriminator 2
+ 536 0184 0268     		ldr	r2, [r0]	@ _7, hrtc_3(D)->Instance
+ 360:src/stm32f1xx_hal_rtc_ex.c **** 
+ 537              		.loc 1 360 0 discriminator 2
+ 538 0186 4374     		strb	r3, [r0, #17]	@ <retval>, hrtc_3(D)->State
+ 539              		.loc 1 363 0 discriminator 2
+ 540 0188 1368     		ldr	r3, [r2]	@ _8, _7->CRH
+ 541 018a 23F00103 		bic	r3, r3, #1	@ _9, _8,
+ 542 018e 1360     		str	r3, [r2]	@ _9, _7->CRH
+ 364:src/stm32f1xx_hal_rtc_ex.c **** 
+ 365:src/stm32f1xx_hal_rtc_ex.c ****   hrtc->State = HAL_RTC_STATE_READY;
+ 543              		.loc 1 365 0 discriminator 2
+ 544 0190 0123     		movs	r3, #1	@ tmp119,
+ 545 0192 4374     		strb	r3, [r0, #17]	@ tmp119, hrtc_3(D)->State
+ 366:src/stm32f1xx_hal_rtc_ex.c **** 
+ 367:src/stm32f1xx_hal_rtc_ex.c ****   /* Process Unlocked */
+ 368:src/stm32f1xx_hal_rtc_ex.c ****   __HAL_UNLOCK(hrtc);
+ 546              		.loc 1 368 0 discriminator 2
+ 547 0194 0023     		movs	r3, #0	@ tmp121,
+ 548 0196 0374     		strb	r3, [r0, #16]	@ tmp121, hrtc_3(D)->Lock
+ 549              	.L53:
+ 358:src/stm32f1xx_hal_rtc_ex.c **** 
+ 550              		.loc 1 358 0
+ 551 0198 1846     		mov	r0, r3	@ <retval>, <retval>
+ 552              	.LVL32:
+ 369:src/stm32f1xx_hal_rtc_ex.c **** 
+ 370:src/stm32f1xx_hal_rtc_ex.c ****   return HAL_OK;
+ 371:src/stm32f1xx_hal_rtc_ex.c **** }
+ 553              		.loc 1 371 0
+ 554 019a 7047     		bx	lr	@
+ 555              	.LVL33:
+ 556              	.L52:
+ 354:src/stm32f1xx_hal_rtc_ex.c ****   }
+ 557              		.loc 1 354 0
+ 558 019c 0120     		movs	r0, #1	@ <retval>,
+ 559              	.LVL34:
+ 560 019e 7047     		bx	lr	@
+ 561              		.cfi_endproc
+ 562              	.LFE72:
+ 563              		.size	HAL_RTCEx_DeactivateSecond, .-HAL_RTCEx_DeactivateSecond
+ 564              		.align	1
+ 565              		.weak	HAL_RTCEx_RTCEventCallback
+ 566              		.syntax unified
+ 567              		.thumb
+ 568              		.thumb_func
+ 569              		.fpu softvfp
+ 570              		.type	HAL_RTCEx_RTCEventCallback, %function
+ 571              	HAL_RTCEx_RTCEventCallback:
+ 572              	.LFB80:
+ 573              		.cfi_startproc
+ARM GAS  /tmp/ccvdMV8w.s 			page 18
+
+
+ 574              		@ args = 0, pretend = 0, frame = 0
+ 575              		@ frame_needed = 0, uses_anonymous_args = 0
+ 576              		@ link register save eliminated.
+ 577 01a0 7047     		bx	lr	@
+ 578              		.cfi_endproc
+ 579              	.LFE80:
+ 580              		.size	HAL_RTCEx_RTCEventCallback, .-HAL_RTCEx_RTCEventCallback
+ 581              		.align	1
+ 582              		.weak	HAL_RTCEx_RTCEventErrorCallback
+ 583              		.syntax unified
+ 584              		.thumb
+ 585              		.thumb_func
+ 586              		.fpu softvfp
+ 587              		.type	HAL_RTCEx_RTCEventErrorCallback, %function
+ 588              	HAL_RTCEx_RTCEventErrorCallback:
+ 589              	.LFB75:
+ 372:src/stm32f1xx_hal_rtc_ex.c **** 
+ 373:src/stm32f1xx_hal_rtc_ex.c **** /**
+ 374:src/stm32f1xx_hal_rtc_ex.c ****   * @brief  This function handles second interrupt request.
+ 375:src/stm32f1xx_hal_rtc_ex.c ****   * @param  hrtc: pointer to a RTC_HandleTypeDef structure that contains
+ 376:src/stm32f1xx_hal_rtc_ex.c ****   *                the configuration information for RTC.
+ 377:src/stm32f1xx_hal_rtc_ex.c ****   * @retval None
+ 378:src/stm32f1xx_hal_rtc_ex.c ****   */
+ 379:src/stm32f1xx_hal_rtc_ex.c **** void HAL_RTCEx_RTCIRQHandler(RTC_HandleTypeDef *hrtc)
+ 380:src/stm32f1xx_hal_rtc_ex.c **** {
+ 381:src/stm32f1xx_hal_rtc_ex.c ****   if (__HAL_RTC_SECOND_GET_IT_SOURCE(hrtc, RTC_IT_SEC))
+ 382:src/stm32f1xx_hal_rtc_ex.c ****   {
+ 383:src/stm32f1xx_hal_rtc_ex.c ****     /* Get the status of the Interrupt */
+ 384:src/stm32f1xx_hal_rtc_ex.c ****     if (__HAL_RTC_SECOND_GET_FLAG(hrtc, RTC_FLAG_SEC))
+ 385:src/stm32f1xx_hal_rtc_ex.c ****     {
+ 386:src/stm32f1xx_hal_rtc_ex.c ****       /* Check if Overrun occurred */
+ 387:src/stm32f1xx_hal_rtc_ex.c ****       if (__HAL_RTC_SECOND_GET_FLAG(hrtc, RTC_FLAG_OW))
+ 388:src/stm32f1xx_hal_rtc_ex.c ****       {
+ 389:src/stm32f1xx_hal_rtc_ex.c ****         /* Second error callback */
+ 390:src/stm32f1xx_hal_rtc_ex.c ****         HAL_RTCEx_RTCEventErrorCallback(hrtc);
+ 391:src/stm32f1xx_hal_rtc_ex.c **** 
+ 392:src/stm32f1xx_hal_rtc_ex.c ****         /* Clear flag Second */
+ 393:src/stm32f1xx_hal_rtc_ex.c ****         __HAL_RTC_OVERFLOW_CLEAR_FLAG(hrtc, RTC_FLAG_OW);
+ 394:src/stm32f1xx_hal_rtc_ex.c **** 
+ 395:src/stm32f1xx_hal_rtc_ex.c ****         /* Change RTC state */
+ 396:src/stm32f1xx_hal_rtc_ex.c ****         hrtc->State = HAL_RTC_STATE_ERROR;
+ 397:src/stm32f1xx_hal_rtc_ex.c ****       }
+ 398:src/stm32f1xx_hal_rtc_ex.c ****       else
+ 399:src/stm32f1xx_hal_rtc_ex.c ****       {
+ 400:src/stm32f1xx_hal_rtc_ex.c ****         /* Second callback */
+ 401:src/stm32f1xx_hal_rtc_ex.c ****         HAL_RTCEx_RTCEventCallback(hrtc);
+ 402:src/stm32f1xx_hal_rtc_ex.c **** 
+ 403:src/stm32f1xx_hal_rtc_ex.c ****         /* Change RTC state */
+ 404:src/stm32f1xx_hal_rtc_ex.c ****         hrtc->State = HAL_RTC_STATE_READY;
+ 405:src/stm32f1xx_hal_rtc_ex.c ****       }
+ 406:src/stm32f1xx_hal_rtc_ex.c **** 
+ 407:src/stm32f1xx_hal_rtc_ex.c ****       /* Clear flag Second */
+ 408:src/stm32f1xx_hal_rtc_ex.c ****       __HAL_RTC_SECOND_CLEAR_FLAG(hrtc, RTC_FLAG_SEC);
+ 409:src/stm32f1xx_hal_rtc_ex.c ****     }
+ 410:src/stm32f1xx_hal_rtc_ex.c ****   }
+ 411:src/stm32f1xx_hal_rtc_ex.c **** }
+ 412:src/stm32f1xx_hal_rtc_ex.c **** 
+ARM GAS  /tmp/ccvdMV8w.s 			page 19
+
+
+ 413:src/stm32f1xx_hal_rtc_ex.c **** /**
+ 414:src/stm32f1xx_hal_rtc_ex.c ****   * @brief  Second event callback.
+ 415:src/stm32f1xx_hal_rtc_ex.c ****   * @param  hrtc: pointer to a RTC_HandleTypeDef structure that contains
+ 416:src/stm32f1xx_hal_rtc_ex.c ****   *                the configuration information for RTC.
+ 417:src/stm32f1xx_hal_rtc_ex.c ****   * @retval None
+ 418:src/stm32f1xx_hal_rtc_ex.c ****   */
+ 419:src/stm32f1xx_hal_rtc_ex.c **** __weak void HAL_RTCEx_RTCEventCallback(RTC_HandleTypeDef *hrtc)
+ 420:src/stm32f1xx_hal_rtc_ex.c **** {
+ 421:src/stm32f1xx_hal_rtc_ex.c ****   /* Prevent unused argument(s) compilation warning */
+ 422:src/stm32f1xx_hal_rtc_ex.c ****   UNUSED(hrtc);
+ 423:src/stm32f1xx_hal_rtc_ex.c ****   /* NOTE : This function Should not be modified, when the callback is needed,
+ 424:src/stm32f1xx_hal_rtc_ex.c ****             the HAL_RTCEx_RTCEventCallback could be implemented in the user file
+ 425:src/stm32f1xx_hal_rtc_ex.c ****    */
+ 426:src/stm32f1xx_hal_rtc_ex.c **** }
+ 427:src/stm32f1xx_hal_rtc_ex.c **** 
+ 428:src/stm32f1xx_hal_rtc_ex.c **** /**
+ 429:src/stm32f1xx_hal_rtc_ex.c ****   * @brief  Second event error callback.
+ 430:src/stm32f1xx_hal_rtc_ex.c ****   * @param  hrtc: pointer to a RTC_HandleTypeDef structure that contains
+ 431:src/stm32f1xx_hal_rtc_ex.c ****   *                the configuration information for RTC.
+ 432:src/stm32f1xx_hal_rtc_ex.c ****   * @retval None
+ 433:src/stm32f1xx_hal_rtc_ex.c ****   */
+ 434:src/stm32f1xx_hal_rtc_ex.c **** __weak void HAL_RTCEx_RTCEventErrorCallback(RTC_HandleTypeDef *hrtc)
+ 435:src/stm32f1xx_hal_rtc_ex.c **** {
+ 590              		.loc 1 435 0
+ 591              		.cfi_startproc
+ 592              		@ args = 0, pretend = 0, frame = 0
+ 593              		@ frame_needed = 0, uses_anonymous_args = 0
+ 594              		@ link register save eliminated.
+ 595              	.LVL35:
+ 596 01a2 7047     		bx	lr	@
+ 597              		.cfi_endproc
+ 598              	.LFE75:
+ 599              		.size	HAL_RTCEx_RTCEventErrorCallback, .-HAL_RTCEx_RTCEventErrorCallback
+ 600              		.align	1
+ 601              		.global	HAL_RTCEx_RTCIRQHandler
+ 602              		.syntax unified
+ 603              		.thumb
+ 604              		.thumb_func
+ 605              		.fpu softvfp
+ 606              		.type	HAL_RTCEx_RTCIRQHandler, %function
+ 607              	HAL_RTCEx_RTCIRQHandler:
+ 608              	.LFB73:
+ 380:src/stm32f1xx_hal_rtc_ex.c ****   if (__HAL_RTC_SECOND_GET_IT_SOURCE(hrtc, RTC_IT_SEC))
+ 609              		.loc 1 380 0
+ 610              		.cfi_startproc
+ 611              		@ args = 0, pretend = 0, frame = 0
+ 612              		@ frame_needed = 0, uses_anonymous_args = 0
+ 613              	.LVL36:
+ 381:src/stm32f1xx_hal_rtc_ex.c ****   {
+ 614              		.loc 1 381 0
+ 615 01a4 0368     		ldr	r3, [r0]	@ _5, hrtc_4(D)->Instance
+ 380:src/stm32f1xx_hal_rtc_ex.c ****   if (__HAL_RTC_SECOND_GET_IT_SOURCE(hrtc, RTC_IT_SEC))
+ 616              		.loc 1 380 0
+ 617 01a6 10B5     		push	{r4, lr}	@
+ 618              	.LCFI4:
+ 619              		.cfi_def_cfa_offset 8
+ 620              		.cfi_offset 4, -8
+ARM GAS  /tmp/ccvdMV8w.s 			page 20
+
+
+ 621              		.cfi_offset 14, -4
+ 381:src/stm32f1xx_hal_rtc_ex.c ****   {
+ 622              		.loc 1 381 0
+ 623 01a8 1A68     		ldr	r2, [r3]	@ _6, _5->CRH
+ 380:src/stm32f1xx_hal_rtc_ex.c ****   if (__HAL_RTC_SECOND_GET_IT_SOURCE(hrtc, RTC_IT_SEC))
+ 624              		.loc 1 380 0
+ 625 01aa 0446     		mov	r4, r0	@ hrtc, hrtc
+ 381:src/stm32f1xx_hal_rtc_ex.c ****   {
+ 626              		.loc 1 381 0
+ 627 01ac D107     		lsls	r1, r2, #31	@, _6,
+ 628 01ae 11D5     		bpl	.L56	@,
+ 384:src/stm32f1xx_hal_rtc_ex.c ****     {
+ 629              		.loc 1 384 0
+ 630 01b0 5A68     		ldr	r2, [r3, #4]	@ _8, _5->CRL
+ 631 01b2 D207     		lsls	r2, r2, #31	@, _8,
+ 632 01b4 0ED5     		bpl	.L56	@,
+ 387:src/stm32f1xx_hal_rtc_ex.c ****       {
+ 633              		.loc 1 387 0
+ 634 01b6 5B68     		ldr	r3, [r3, #4]	@ _10, _5->CRL
+ 635 01b8 5B07     		lsls	r3, r3, #29	@, _10,
+ 636 01ba 0CD5     		bpl	.L58	@,
+ 390:src/stm32f1xx_hal_rtc_ex.c **** 
+ 637              		.loc 1 390 0
+ 638 01bc FFF7FEFF 		bl	HAL_RTCEx_RTCEventErrorCallback	@
+ 639              	.LVL37:
+ 393:src/stm32f1xx_hal_rtc_ex.c **** 
+ 640              		.loc 1 393 0
+ 641 01c0 6FF00402 		mvn	r2, #4	@ tmp123,
+ 642 01c4 2368     		ldr	r3, [r4]	@ _13, hrtc_4(D)->Instance
+ 643 01c6 5A60     		str	r2, [r3, #4]	@ tmp123, _13->CRL
+ 396:src/stm32f1xx_hal_rtc_ex.c ****       }
+ 644              		.loc 1 396 0
+ 645 01c8 0423     		movs	r3, #4	@ tmp124,
+ 646              	.L66:
+ 408:src/stm32f1xx_hal_rtc_ex.c ****     }
+ 647              		.loc 1 408 0
+ 648 01ca 6FF00102 		mvn	r2, #1	@ tmp128,
+ 404:src/stm32f1xx_hal_rtc_ex.c ****       }
+ 649              		.loc 1 404 0
+ 650 01ce 6374     		strb	r3, [r4, #17]	@ tmp126,
+ 408:src/stm32f1xx_hal_rtc_ex.c ****     }
+ 651              		.loc 1 408 0
+ 652 01d0 2368     		ldr	r3, [r4]	@ _18, hrtc_4(D)->Instance
+ 653 01d2 5A60     		str	r2, [r3, #4]	@ tmp128, _18->CRL
+ 654              	.L56:
+ 655 01d4 10BD     		pop	{r4, pc}	@
+ 656              	.LVL38:
+ 657              	.L58:
+ 401:src/stm32f1xx_hal_rtc_ex.c **** 
+ 658              		.loc 1 401 0
+ 659 01d6 FFF7FEFF 		bl	HAL_RTCEx_RTCEventCallback	@
+ 660              	.LVL39:
+ 404:src/stm32f1xx_hal_rtc_ex.c ****       }
+ 661              		.loc 1 404 0
+ 662 01da 0123     		movs	r3, #1	@ tmp126,
+ 663 01dc F5E7     		b	.L66	@
+ 664              		.cfi_endproc
+ARM GAS  /tmp/ccvdMV8w.s 			page 21
+
+
+ 665              	.LFE73:
+ 666              		.size	HAL_RTCEx_RTCIRQHandler, .-HAL_RTCEx_RTCIRQHandler
+ 667              		.align	1
+ 668              		.global	HAL_RTCEx_BKUPWrite
+ 669              		.syntax unified
+ 670              		.thumb
+ 671              		.thumb_func
+ 672              		.fpu softvfp
+ 673              		.type	HAL_RTCEx_BKUPWrite, %function
+ 674              	HAL_RTCEx_BKUPWrite:
+ 675              	.LFB76:
+ 436:src/stm32f1xx_hal_rtc_ex.c ****   /* Prevent unused argument(s) compilation warning */
+ 437:src/stm32f1xx_hal_rtc_ex.c ****   UNUSED(hrtc);
+ 438:src/stm32f1xx_hal_rtc_ex.c ****   /* NOTE : This function Should not be modified, when the callback is needed,
+ 439:src/stm32f1xx_hal_rtc_ex.c ****             the HAL_RTCEx_RTCEventErrorCallback could be implemented in the user file
+ 440:src/stm32f1xx_hal_rtc_ex.c ****    */
+ 441:src/stm32f1xx_hal_rtc_ex.c **** }
+ 442:src/stm32f1xx_hal_rtc_ex.c **** 
+ 443:src/stm32f1xx_hal_rtc_ex.c **** /**
+ 444:src/stm32f1xx_hal_rtc_ex.c ****   * @}
+ 445:src/stm32f1xx_hal_rtc_ex.c ****   */
+ 446:src/stm32f1xx_hal_rtc_ex.c **** 
+ 447:src/stm32f1xx_hal_rtc_ex.c **** /** @defgroup RTCEx_Exported_Functions_Group3 Extended Peripheral Control functions
+ 448:src/stm32f1xx_hal_rtc_ex.c ****   * @brief    Extended Peripheral Control functions
+ 449:src/stm32f1xx_hal_rtc_ex.c ****   *
+ 450:src/stm32f1xx_hal_rtc_ex.c **** @verbatim
+ 451:src/stm32f1xx_hal_rtc_ex.c ****  ===============================================================================
+ 452:src/stm32f1xx_hal_rtc_ex.c ****               ##### Extension Peripheral Control functions #####
+ 453:src/stm32f1xx_hal_rtc_ex.c ****  ===============================================================================
+ 454:src/stm32f1xx_hal_rtc_ex.c ****     [..]
+ 455:src/stm32f1xx_hal_rtc_ex.c ****     This subsection provides functions allowing to
+ 456:src/stm32f1xx_hal_rtc_ex.c ****       (+) Writes a data in a specified RTC Backup data register
+ 457:src/stm32f1xx_hal_rtc_ex.c ****       (+) Read a data in a specified RTC Backup data register
+ 458:src/stm32f1xx_hal_rtc_ex.c ****       (+) Sets the Smooth calibration parameters.
+ 459:src/stm32f1xx_hal_rtc_ex.c **** 
+ 460:src/stm32f1xx_hal_rtc_ex.c **** @endverbatim
+ 461:src/stm32f1xx_hal_rtc_ex.c ****   * @{
+ 462:src/stm32f1xx_hal_rtc_ex.c ****   */
+ 463:src/stm32f1xx_hal_rtc_ex.c **** 
+ 464:src/stm32f1xx_hal_rtc_ex.c **** /**
+ 465:src/stm32f1xx_hal_rtc_ex.c ****   * @brief  Writes a data in a specified RTC Backup data register.
+ 466:src/stm32f1xx_hal_rtc_ex.c ****   * @param  hrtc: pointer to a RTC_HandleTypeDef structure that contains
+ 467:src/stm32f1xx_hal_rtc_ex.c ****   *                the configuration information for RTC.
+ 468:src/stm32f1xx_hal_rtc_ex.c ****   * @param  BackupRegister: RTC Backup data Register number.
+ 469:src/stm32f1xx_hal_rtc_ex.c ****   *          This parameter can be: RTC_BKP_DRx where x can be from 1 to 10 (or 42) to
+ 470:src/stm32f1xx_hal_rtc_ex.c ****   *                                 specify the register (depending devices).
+ 471:src/stm32f1xx_hal_rtc_ex.c ****   * @param  Data: Data to be written in the specified RTC Backup data register.
+ 472:src/stm32f1xx_hal_rtc_ex.c ****   * @retval None
+ 473:src/stm32f1xx_hal_rtc_ex.c ****   */
+ 474:src/stm32f1xx_hal_rtc_ex.c **** void HAL_RTCEx_BKUPWrite(RTC_HandleTypeDef *hrtc, uint32_t BackupRegister, uint32_t Data)
+ 475:src/stm32f1xx_hal_rtc_ex.c **** {
+ 676              		.loc 1 475 0
+ 677              		.cfi_startproc
+ 678              		@ args = 0, pretend = 0, frame = 0
+ 679              		@ frame_needed = 0, uses_anonymous_args = 0
+ 680              		@ link register save eliminated.
+ 681              	.LVL40:
+ARM GAS  /tmp/ccvdMV8w.s 			page 22
+
+
+ 476:src/stm32f1xx_hal_rtc_ex.c ****   uint32_t tmp = 0U;
+ 477:src/stm32f1xx_hal_rtc_ex.c **** 
+ 478:src/stm32f1xx_hal_rtc_ex.c ****   /* Prevent unused argument(s) compilation warning */
+ 479:src/stm32f1xx_hal_rtc_ex.c ****   UNUSED(hrtc);
+ 480:src/stm32f1xx_hal_rtc_ex.c **** 
+ 481:src/stm32f1xx_hal_rtc_ex.c ****   /* Check the parameters */
+ 482:src/stm32f1xx_hal_rtc_ex.c ****   assert_param(IS_RTC_BKP(BackupRegister));
+ 483:src/stm32f1xx_hal_rtc_ex.c **** 
+ 484:src/stm32f1xx_hal_rtc_ex.c ****   tmp = (uint32_t)BKP_BASE;
+ 485:src/stm32f1xx_hal_rtc_ex.c ****   tmp += (BackupRegister * 4U);
+ 682              		.loc 1 485 0
+ 683 01de 8900     		lsls	r1, r1, #2	@ tmp117, BackupRegister,
+ 684              	.LVL41:
+ 685 01e0 01F18041 		add	r1, r1, #1073741824	@ tmp.0_4, tmp117,
+ 686 01e4 01F5D841 		add	r1, r1, #27648	@ tmp.0_4, tmp.0_4,
+ 486:src/stm32f1xx_hal_rtc_ex.c **** 
+ 487:src/stm32f1xx_hal_rtc_ex.c ****   *(__IO uint32_t *) tmp = (Data & BKP_DR1_D);
+ 687              		.loc 1 487 0
+ 688 01e8 92B2     		uxth	r2, r2	@ _6, Data
+ 689              	.LVL42:
+ 690 01ea 0A60     		str	r2, [r1]	@ _6, *tmp.0_4
+ 691 01ec 7047     		bx	lr	@
+ 692              		.cfi_endproc
+ 693              	.LFE76:
+ 694              		.size	HAL_RTCEx_BKUPWrite, .-HAL_RTCEx_BKUPWrite
+ 695              		.align	1
+ 696              		.global	HAL_RTCEx_BKUPRead
+ 697              		.syntax unified
+ 698              		.thumb
+ 699              		.thumb_func
+ 700              		.fpu softvfp
+ 701              		.type	HAL_RTCEx_BKUPRead, %function
+ 702              	HAL_RTCEx_BKUPRead:
+ 703              	.LFB77:
+ 488:src/stm32f1xx_hal_rtc_ex.c **** }
+ 489:src/stm32f1xx_hal_rtc_ex.c **** 
+ 490:src/stm32f1xx_hal_rtc_ex.c **** /**
+ 491:src/stm32f1xx_hal_rtc_ex.c ****   * @brief  Reads data from the specified RTC Backup data Register.
+ 492:src/stm32f1xx_hal_rtc_ex.c ****   * @param  hrtc: pointer to a RTC_HandleTypeDef structure that contains
+ 493:src/stm32f1xx_hal_rtc_ex.c ****   *                the configuration information for RTC.
+ 494:src/stm32f1xx_hal_rtc_ex.c ****   * @param  BackupRegister: RTC Backup data Register number.
+ 495:src/stm32f1xx_hal_rtc_ex.c ****   *          This parameter can be: RTC_BKP_DRx where x can be from 1 to 10 (or 42) to
+ 496:src/stm32f1xx_hal_rtc_ex.c ****   *                                 specify the register (depending devices).
+ 497:src/stm32f1xx_hal_rtc_ex.c ****   * @retval Read value
+ 498:src/stm32f1xx_hal_rtc_ex.c ****   */
+ 499:src/stm32f1xx_hal_rtc_ex.c **** uint32_t HAL_RTCEx_BKUPRead(RTC_HandleTypeDef *hrtc, uint32_t BackupRegister)
+ 500:src/stm32f1xx_hal_rtc_ex.c **** {
+ 704              		.loc 1 500 0
+ 705              		.cfi_startproc
+ 706              		@ args = 0, pretend = 0, frame = 0
+ 707              		@ frame_needed = 0, uses_anonymous_args = 0
+ 708              		@ link register save eliminated.
+ 709              	.LVL43:
+ 501:src/stm32f1xx_hal_rtc_ex.c ****   uint32_t backupregister = 0U;
+ 502:src/stm32f1xx_hal_rtc_ex.c ****   uint32_t pvalue = 0U;
+ 503:src/stm32f1xx_hal_rtc_ex.c **** 
+ 504:src/stm32f1xx_hal_rtc_ex.c ****   /* Prevent unused argument(s) compilation warning */
+ARM GAS  /tmp/ccvdMV8w.s 			page 23
+
+
+ 505:src/stm32f1xx_hal_rtc_ex.c ****   UNUSED(hrtc);
+ 506:src/stm32f1xx_hal_rtc_ex.c **** 
+ 507:src/stm32f1xx_hal_rtc_ex.c ****   /* Check the parameters */
+ 508:src/stm32f1xx_hal_rtc_ex.c ****   assert_param(IS_RTC_BKP(BackupRegister));
+ 509:src/stm32f1xx_hal_rtc_ex.c **** 
+ 510:src/stm32f1xx_hal_rtc_ex.c ****   backupregister = (uint32_t)BKP_BASE;
+ 511:src/stm32f1xx_hal_rtc_ex.c ****   backupregister += (BackupRegister * 4U);
+ 710              		.loc 1 511 0
+ 711 01ee 8900     		lsls	r1, r1, #2	@ tmp117, BackupRegister,
+ 712              	.LVL44:
+ 713 01f0 01F18041 		add	r1, r1, #1073741824	@ backupregister.1_4, tmp117,
+ 714 01f4 01F5D841 		add	r1, r1, #27648	@ backupregister.1_4, backupregister.1_4,
+ 512:src/stm32f1xx_hal_rtc_ex.c **** 
+ 513:src/stm32f1xx_hal_rtc_ex.c ****   pvalue = (*(__IO uint32_t *)(backupregister)) & BKP_DR1_D;
+ 715              		.loc 1 513 0
+ 716 01f8 0868     		ldr	r0, [r1]	@ _6, *backupregister.1_4
+ 717              	.LVL45:
+ 514:src/stm32f1xx_hal_rtc_ex.c **** 
+ 515:src/stm32f1xx_hal_rtc_ex.c ****   /* Read the specified register */
+ 516:src/stm32f1xx_hal_rtc_ex.c ****   return pvalue;
+ 517:src/stm32f1xx_hal_rtc_ex.c **** }
+ 718              		.loc 1 517 0
+ 719 01fa 80B2     		uxth	r0, r0	@, _6
+ 720              	.LVL46:
+ 721 01fc 7047     		bx	lr	@
+ 722              		.cfi_endproc
+ 723              	.LFE77:
+ 724              		.size	HAL_RTCEx_BKUPRead, .-HAL_RTCEx_BKUPRead
+ 725              		.align	1
+ 726              		.global	HAL_RTCEx_SetSmoothCalib
+ 727              		.syntax unified
+ 728              		.thumb
+ 729              		.thumb_func
+ 730              		.fpu softvfp
+ 731              		.type	HAL_RTCEx_SetSmoothCalib, %function
+ 732              	HAL_RTCEx_SetSmoothCalib:
+ 733              	.LFB78:
+ 518:src/stm32f1xx_hal_rtc_ex.c **** 
+ 519:src/stm32f1xx_hal_rtc_ex.c **** 
+ 520:src/stm32f1xx_hal_rtc_ex.c **** /**
+ 521:src/stm32f1xx_hal_rtc_ex.c ****   * @brief  Sets the Smooth calibration parameters.
+ 522:src/stm32f1xx_hal_rtc_ex.c ****   * @param  hrtc: RTC handle
+ 523:src/stm32f1xx_hal_rtc_ex.c ****   * @param  SmoothCalibPeriod: Not used (only present for compatibility with another families)
+ 524:src/stm32f1xx_hal_rtc_ex.c ****   * @param  SmoothCalibPlusPulses: Not used (only present for compatibility with another families)
+ 525:src/stm32f1xx_hal_rtc_ex.c ****   * @param  SmouthCalibMinusPulsesValue: specifies the RTC Clock Calibration value.
+ 526:src/stm32f1xx_hal_rtc_ex.c ****   *          This parameter must be a number between 0 and 0x7F.
+ 527:src/stm32f1xx_hal_rtc_ex.c ****   * @retval HAL status
+ 528:src/stm32f1xx_hal_rtc_ex.c ****   */
+ 529:src/stm32f1xx_hal_rtc_ex.c **** HAL_StatusTypeDef HAL_RTCEx_SetSmoothCalib(RTC_HandleTypeDef *hrtc, uint32_t SmoothCalibPeriod, uin
+ 530:src/stm32f1xx_hal_rtc_ex.c **** {
+ 734              		.loc 1 530 0
+ 735              		.cfi_startproc
+ 736              		@ args = 0, pretend = 0, frame = 0
+ 737              		@ frame_needed = 0, uses_anonymous_args = 0
+ 738              		@ link register save eliminated.
+ 739              	.LVL47:
+ 531:src/stm32f1xx_hal_rtc_ex.c ****   /* Check input parameters */
+ARM GAS  /tmp/ccvdMV8w.s 			page 24
+
+
+ 532:src/stm32f1xx_hal_rtc_ex.c ****   if (hrtc == NULL)
+ 740              		.loc 1 532 0
+ 741 01fe 88B1     		cbz	r0, .L71	@ hrtc,
+ 533:src/stm32f1xx_hal_rtc_ex.c ****   {
+ 534:src/stm32f1xx_hal_rtc_ex.c ****     return HAL_ERROR;
+ 535:src/stm32f1xx_hal_rtc_ex.c ****   }
+ 536:src/stm32f1xx_hal_rtc_ex.c ****   /* Prevent unused argument(s) compilation warning */
+ 537:src/stm32f1xx_hal_rtc_ex.c ****   UNUSED(SmoothCalibPeriod);
+ 538:src/stm32f1xx_hal_rtc_ex.c ****   UNUSED(SmoothCalibPlusPulses);
+ 539:src/stm32f1xx_hal_rtc_ex.c **** 
+ 540:src/stm32f1xx_hal_rtc_ex.c ****   /* Check the parameters */
+ 541:src/stm32f1xx_hal_rtc_ex.c ****   assert_param(IS_RTC_SMOOTH_CALIB_MINUS(SmouthCalibMinusPulsesValue));
+ 542:src/stm32f1xx_hal_rtc_ex.c **** 
+ 543:src/stm32f1xx_hal_rtc_ex.c ****   /* Process Locked */
+ 544:src/stm32f1xx_hal_rtc_ex.c ****   __HAL_LOCK(hrtc);
+ 742              		.loc 1 544 0
+ 743 0200 027C     		ldrb	r2, [r0, #16]	@ zero_extendqisi2	@ hrtc_3(D)->Lock, hrtc_3(D)->Lock
+ 744              	.LVL48:
+ 745 0202 012A     		cmp	r2, #1	@ hrtc_3(D)->Lock,
+ 746 0204 4FF00202 		mov	r2, #2	@ <retval>,
+ 747 0208 0ED0     		beq	.L72	@,
+ 545:src/stm32f1xx_hal_rtc_ex.c **** 
+ 546:src/stm32f1xx_hal_rtc_ex.c ****   hrtc->State = HAL_RTC_STATE_BUSY;
+ 547:src/stm32f1xx_hal_rtc_ex.c **** 
+ 548:src/stm32f1xx_hal_rtc_ex.c ****   /* Sets RTC Clock Calibration value.*/
+ 549:src/stm32f1xx_hal_rtc_ex.c ****   MODIFY_REG(BKP->RTCCR, BKP_RTCCR_CAL, SmouthCalibMinusPulsesValue);
+ 748              		.loc 1 549 0 discriminator 2
+ 749 020a 0849     		ldr	r1, .L73	@ tmp122,
+ 750              	.LVL49:
+ 546:src/stm32f1xx_hal_rtc_ex.c **** 
+ 751              		.loc 1 546 0 discriminator 2
+ 752 020c 4274     		strb	r2, [r0, #17]	@ <retval>, hrtc_3(D)->State
+ 753              		.loc 1 549 0 discriminator 2
+ 754 020e CA6A     		ldr	r2, [r1, #44]	@ _7, MEM[(struct BKP_TypeDef *)1073769472B].RTCCR
+ 755 0210 22F07F02 		bic	r2, r2, #127	@ tmp123, _7,
+ 756 0214 1343     		orrs	r3, r3, r2	@, _10, SmouthCalibMinusPulsesValue, tmp123
+ 757              	.LVL50:
+ 758 0216 CB62     		str	r3, [r1, #44]	@ _10, MEM[(struct BKP_TypeDef *)1073769472B].RTCCR
+ 550:src/stm32f1xx_hal_rtc_ex.c **** 
+ 551:src/stm32f1xx_hal_rtc_ex.c ****   /* Change RTC state */
+ 552:src/stm32f1xx_hal_rtc_ex.c ****   hrtc->State = HAL_RTC_STATE_READY;
+ 759              		.loc 1 552 0 discriminator 2
+ 760 0218 0123     		movs	r3, #1	@ tmp125,
+ 761 021a 4374     		strb	r3, [r0, #17]	@ tmp125, hrtc_3(D)->State
+ 553:src/stm32f1xx_hal_rtc_ex.c **** 
+ 554:src/stm32f1xx_hal_rtc_ex.c ****   /* Process Unlocked */
+ 555:src/stm32f1xx_hal_rtc_ex.c ****   __HAL_UNLOCK(hrtc);
+ 762              		.loc 1 555 0 discriminator 2
+ 763 021c 0023     		movs	r3, #0	@ tmp127,
+ 764 021e 0374     		strb	r3, [r0, #16]	@ tmp127, hrtc_3(D)->Lock
+ 556:src/stm32f1xx_hal_rtc_ex.c **** 
+ 557:src/stm32f1xx_hal_rtc_ex.c ****   return HAL_OK;
+ 765              		.loc 1 557 0 discriminator 2
+ 766 0220 1846     		mov	r0, r3	@ <retval>, tmp127
+ 767              	.LVL51:
+ 768 0222 7047     		bx	lr	@
+ 769              	.LVL52:
+ARM GAS  /tmp/ccvdMV8w.s 			page 25
+
+
+ 770              	.L71:
+ 534:src/stm32f1xx_hal_rtc_ex.c ****   }
+ 771              		.loc 1 534 0
+ 772 0224 0120     		movs	r0, #1	@ <retval>,
+ 773              	.LVL53:
+ 774 0226 7047     		bx	lr	@
+ 775              	.LVL54:
+ 776              	.L72:
+ 544:src/stm32f1xx_hal_rtc_ex.c **** 
+ 777              		.loc 1 544 0
+ 778 0228 1046     		mov	r0, r2	@ <retval>, <retval>
+ 779              	.LVL55:
+ 558:src/stm32f1xx_hal_rtc_ex.c **** }
+ 780              		.loc 1 558 0
+ 781 022a 7047     		bx	lr	@
+ 782              	.L74:
+ 783              		.align	2
+ 784              	.L73:
+ 785 022c 006C0040 		.word	1073769472
+ 786              		.cfi_endproc
+ 787              	.LFE78:
+ 788              		.size	HAL_RTCEx_SetSmoothCalib, .-HAL_RTCEx_SetSmoothCalib
+ 789              	.Letext0:
+ 790              		.file 2 "/usr/include/newlib/machine/_default_types.h"
+ 791              		.file 3 "/usr/include/newlib/sys/_stdint.h"
+ 792              		.file 4 "../cmsiscore/inc/core_cm3.h"
+ 793              		.file 5 "../cmsisstm32f1xx/inc/system_stm32f1xx.h"
+ 794              		.file 6 "../cmsisstm32f1xx/inc/stm32f103x6.h"
+ 795              		.file 7 "../cmsisstm32f1xx/inc/stm32f1xx.h"
+ 796              		.file 8 "./inc/stm32f1xx_hal_def.h"
+ 797              		.file 9 "./inc/stm32f1xx_hal_rtc.h"
+ 798              		.file 10 "./inc/stm32f1xx_hal_rtc_ex.h"
+ 799              		.file 11 "./inc/stm32f1xx_hal.h"
+ 800              		.section	.debug_info,"",%progbits
+ 801              	.Ldebug_info0:
+ 802 0000 3C080000 		.4byte	0x83c
+ 803 0004 0200     		.2byte	0x2
+ 804 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 805 000a 04       		.byte	0x4
+ 806 000b 01       		.uleb128 0x1
+ 807 000c F6000000 		.4byte	.LASF97
+ 808 0010 0C       		.byte	0xc
+ 809 0011 02020000 		.4byte	.LASF98
+ 810 0015 8F020000 		.4byte	.LASF99
+ 811 0019 00000000 		.4byte	.Ltext0
+ 812 001d 30020000 		.4byte	.Letext0
+ 813 0021 00000000 		.4byte	.Ldebug_line0
+ 814 0025 02       		.uleb128 0x2
+ 815 0026 01       		.byte	0x1
+ 816 0027 06       		.byte	0x6
+ 817 0028 E9020000 		.4byte	.LASF0
+ 818 002c 03       		.uleb128 0x3
+ 819 002d 22020000 		.4byte	.LASF4
+ 820 0031 02       		.byte	0x2
+ 821 0032 1D       		.byte	0x1d
+ 822 0033 37000000 		.4byte	0x37
+ 823 0037 02       		.uleb128 0x2
+ARM GAS  /tmp/ccvdMV8w.s 			page 26
+
+
+ 824 0038 01       		.byte	0x1
+ 825 0039 08       		.byte	0x8
+ 826 003a 81020000 		.4byte	.LASF1
+ 827 003e 02       		.uleb128 0x2
+ 828 003f 02       		.byte	0x2
+ 829 0040 05       		.byte	0x5
+ 830 0041 A5010000 		.4byte	.LASF2
+ 831 0045 02       		.uleb128 0x2
+ 832 0046 02       		.byte	0x2
+ 833 0047 07       		.byte	0x7
+ 834 0048 9E030000 		.4byte	.LASF3
+ 835 004c 03       		.uleb128 0x3
+ 836 004d 41050000 		.4byte	.LASF5
+ 837 0051 02       		.byte	0x2
+ 838 0052 3F       		.byte	0x3f
+ 839 0053 57000000 		.4byte	0x57
+ 840 0057 02       		.uleb128 0x2
+ 841 0058 04       		.byte	0x4
+ 842 0059 05       		.byte	0x5
+ 843 005a EC010000 		.4byte	.LASF6
+ 844 005e 03       		.uleb128 0x3
+ 845 005f 9F000000 		.4byte	.LASF7
+ 846 0063 02       		.byte	0x2
+ 847 0064 41       		.byte	0x41
+ 848 0065 69000000 		.4byte	0x69
+ 849 0069 02       		.uleb128 0x2
+ 850 006a 04       		.byte	0x4
+ 851 006b 07       		.byte	0x7
+ 852 006c AC040000 		.4byte	.LASF8
+ 853 0070 02       		.uleb128 0x2
+ 854 0071 08       		.byte	0x8
+ 855 0072 05       		.byte	0x5
+ 856 0073 D3010000 		.4byte	.LASF9
+ 857 0077 02       		.uleb128 0x2
+ 858 0078 08       		.byte	0x8
+ 859 0079 07       		.byte	0x7
+ 860 007a F5020000 		.4byte	.LASF10
+ 861 007e 04       		.uleb128 0x4
+ 862 007f 04       		.byte	0x4
+ 863 0080 05       		.byte	0x5
+ 864 0081 696E7400 		.ascii	"int\000"
+ 865 0085 02       		.uleb128 0x2
+ 866 0086 04       		.byte	0x4
+ 867 0087 07       		.byte	0x7
+ 868 0088 20030000 		.4byte	.LASF11
+ 869 008c 03       		.uleb128 0x3
+ 870 008d 6B010000 		.4byte	.LASF12
+ 871 0091 03       		.byte	0x3
+ 872 0092 18       		.byte	0x18
+ 873 0093 2C000000 		.4byte	0x2c
+ 874 0097 05       		.uleb128 0x5
+ 875 0098 8C000000 		.4byte	0x8c
+ 876 009c 03       		.uleb128 0x3
+ 877 009d 0A040000 		.4byte	.LASF13
+ 878 00a1 03       		.byte	0x3
+ 879 00a2 2C       		.byte	0x2c
+ 880 00a3 4C000000 		.4byte	0x4c
+ARM GAS  /tmp/ccvdMV8w.s 			page 27
+
+
+ 881 00a7 06       		.uleb128 0x6
+ 882 00a8 9C000000 		.4byte	0x9c
+ 883 00ac 03       		.uleb128 0x3
+ 884 00ad 0C030000 		.4byte	.LASF14
+ 885 00b1 03       		.byte	0x3
+ 886 00b2 30       		.byte	0x30
+ 887 00b3 5E000000 		.4byte	0x5e
+ 888 00b7 06       		.uleb128 0x6
+ 889 00b8 AC000000 		.4byte	0xac
+ 890 00bc 02       		.uleb128 0x2
+ 891 00bd 04       		.byte	0x4
+ 892 00be 07       		.byte	0x7
+ 893 00bf 78000000 		.4byte	.LASF15
+ 894 00c3 07       		.uleb128 0x7
+ 895 00c4 BB050000 		.4byte	.LASF16
+ 896 00c8 04       		.byte	0x4
+ 897 00c9 4807     		.2byte	0x748
+ 898 00cb A7000000 		.4byte	0xa7
+ 899 00cf 01       		.byte	0x1
+ 900 00d0 01       		.byte	0x1
+ 901 00d1 08       		.uleb128 0x8
+ 902 00d2 41040000 		.4byte	.LASF17
+ 903 00d6 05       		.byte	0x5
+ 904 00d7 33       		.byte	0x33
+ 905 00d8 AC000000 		.4byte	0xac
+ 906 00dc 01       		.byte	0x1
+ 907 00dd 01       		.byte	0x1
+ 908 00de 09       		.uleb128 0x9
+ 909 00df 97000000 		.4byte	0x97
+ 910 00e3 EE000000 		.4byte	0xee
+ 911 00e7 0A       		.uleb128 0xa
+ 912 00e8 BC000000 		.4byte	0xbc
+ 913 00ec 0F       		.byte	0xf
+ 914 00ed 00       		.byte	0
+ 915 00ee 05       		.uleb128 0x5
+ 916 00ef DE000000 		.4byte	0xde
+ 917 00f3 08       		.uleb128 0x8
+ 918 00f4 73010000 		.4byte	.LASF18
+ 919 00f8 05       		.byte	0x5
+ 920 00f9 34       		.byte	0x34
+ 921 00fa EE000000 		.4byte	0xee
+ 922 00fe 01       		.byte	0x1
+ 923 00ff 01       		.byte	0x1
+ 924 0100 09       		.uleb128 0x9
+ 925 0101 97000000 		.4byte	0x97
+ 926 0105 10010000 		.4byte	0x110
+ 927 0109 0A       		.uleb128 0xa
+ 928 010a BC000000 		.4byte	0xbc
+ 929 010e 07       		.byte	0x7
+ 930 010f 00       		.byte	0
+ 931 0110 05       		.uleb128 0x5
+ 932 0111 00010000 		.4byte	0x100
+ 933 0115 08       		.uleb128 0x8
+ 934 0116 DB020000 		.4byte	.LASF19
+ 935 011a 05       		.byte	0x5
+ 936 011b 35       		.byte	0x35
+ 937 011c 10010000 		.4byte	0x110
+ARM GAS  /tmp/ccvdMV8w.s 			page 28
+
+
+ 938 0120 01       		.byte	0x1
+ 939 0121 01       		.byte	0x1
+ 940 0122 0B       		.uleb128 0xb
+ 941 0123 38       		.byte	0x38
+ 942 0124 06       		.byte	0x6
+ 943 0125 B0       		.byte	0xb0
+ 944 0126 EE010000 		.4byte	0x1ee
+ 945 012a 0C       		.uleb128 0xc
+ 946 012b 9D040000 		.4byte	.LASF20
+ 947 012f 06       		.byte	0x6
+ 948 0130 B2       		.byte	0xb2
+ 949 0131 AC000000 		.4byte	0xac
+ 950 0135 02       		.byte	0x2
+ 951 0136 23       		.byte	0x23
+ 952 0137 00       		.uleb128 0
+ 953 0138 0D       		.uleb128 0xd
+ 954 0139 44523100 		.ascii	"DR1\000"
+ 955 013d 06       		.byte	0x6
+ 956 013e B3       		.byte	0xb3
+ 957 013f B7000000 		.4byte	0xb7
+ 958 0143 02       		.byte	0x2
+ 959 0144 23       		.byte	0x23
+ 960 0145 04       		.uleb128 0x4
+ 961 0146 0D       		.uleb128 0xd
+ 962 0147 44523200 		.ascii	"DR2\000"
+ 963 014b 06       		.byte	0x6
+ 964 014c B4       		.byte	0xb4
+ 965 014d B7000000 		.4byte	0xb7
+ 966 0151 02       		.byte	0x2
+ 967 0152 23       		.byte	0x23
+ 968 0153 08       		.uleb128 0x8
+ 969 0154 0D       		.uleb128 0xd
+ 970 0155 44523300 		.ascii	"DR3\000"
+ 971 0159 06       		.byte	0x6
+ 972 015a B5       		.byte	0xb5
+ 973 015b B7000000 		.4byte	0xb7
+ 974 015f 02       		.byte	0x2
+ 975 0160 23       		.byte	0x23
+ 976 0161 0C       		.uleb128 0xc
+ 977 0162 0D       		.uleb128 0xd
+ 978 0163 44523400 		.ascii	"DR4\000"
+ 979 0167 06       		.byte	0x6
+ 980 0168 B6       		.byte	0xb6
+ 981 0169 B7000000 		.4byte	0xb7
+ 982 016d 02       		.byte	0x2
+ 983 016e 23       		.byte	0x23
+ 984 016f 10       		.uleb128 0x10
+ 985 0170 0D       		.uleb128 0xd
+ 986 0171 44523500 		.ascii	"DR5\000"
+ 987 0175 06       		.byte	0x6
+ 988 0176 B7       		.byte	0xb7
+ 989 0177 B7000000 		.4byte	0xb7
+ 990 017b 02       		.byte	0x2
+ 991 017c 23       		.byte	0x23
+ 992 017d 14       		.uleb128 0x14
+ 993 017e 0D       		.uleb128 0xd
+ 994 017f 44523600 		.ascii	"DR6\000"
+ARM GAS  /tmp/ccvdMV8w.s 			page 29
+
+
+ 995 0183 06       		.byte	0x6
+ 996 0184 B8       		.byte	0xb8
+ 997 0185 B7000000 		.4byte	0xb7
+ 998 0189 02       		.byte	0x2
+ 999 018a 23       		.byte	0x23
+ 1000 018b 18       		.uleb128 0x18
+ 1001 018c 0D       		.uleb128 0xd
+ 1002 018d 44523700 		.ascii	"DR7\000"
+ 1003 0191 06       		.byte	0x6
+ 1004 0192 B9       		.byte	0xb9
+ 1005 0193 B7000000 		.4byte	0xb7
+ 1006 0197 02       		.byte	0x2
+ 1007 0198 23       		.byte	0x23
+ 1008 0199 1C       		.uleb128 0x1c
+ 1009 019a 0D       		.uleb128 0xd
+ 1010 019b 44523800 		.ascii	"DR8\000"
+ 1011 019f 06       		.byte	0x6
+ 1012 01a0 BA       		.byte	0xba
+ 1013 01a1 B7000000 		.4byte	0xb7
+ 1014 01a5 02       		.byte	0x2
+ 1015 01a6 23       		.byte	0x23
+ 1016 01a7 20       		.uleb128 0x20
+ 1017 01a8 0D       		.uleb128 0xd
+ 1018 01a9 44523900 		.ascii	"DR9\000"
+ 1019 01ad 06       		.byte	0x6
+ 1020 01ae BB       		.byte	0xbb
+ 1021 01af B7000000 		.4byte	0xb7
+ 1022 01b3 02       		.byte	0x2
+ 1023 01b4 23       		.byte	0x23
+ 1024 01b5 24       		.uleb128 0x24
+ 1025 01b6 0C       		.uleb128 0xc
+ 1026 01b7 57000000 		.4byte	.LASF21
+ 1027 01bb 06       		.byte	0x6
+ 1028 01bc BC       		.byte	0xbc
+ 1029 01bd B7000000 		.4byte	0xb7
+ 1030 01c1 02       		.byte	0x2
+ 1031 01c2 23       		.byte	0x23
+ 1032 01c3 28       		.uleb128 0x28
+ 1033 01c4 0C       		.uleb128 0xc
+ 1034 01c5 17000000 		.4byte	.LASF22
+ 1035 01c9 06       		.byte	0x6
+ 1036 01ca BD       		.byte	0xbd
+ 1037 01cb B7000000 		.4byte	0xb7
+ 1038 01cf 02       		.byte	0x2
+ 1039 01d0 23       		.byte	0x23
+ 1040 01d1 2C       		.uleb128 0x2c
+ 1041 01d2 0D       		.uleb128 0xd
+ 1042 01d3 435200   		.ascii	"CR\000"
+ 1043 01d6 06       		.byte	0x6
+ 1044 01d7 BE       		.byte	0xbe
+ 1045 01d8 B7000000 		.4byte	0xb7
+ 1046 01dc 02       		.byte	0x2
+ 1047 01dd 23       		.byte	0x23
+ 1048 01de 30       		.uleb128 0x30
+ 1049 01df 0D       		.uleb128 0xd
+ 1050 01e0 43535200 		.ascii	"CSR\000"
+ 1051 01e4 06       		.byte	0x6
+ARM GAS  /tmp/ccvdMV8w.s 			page 30
+
+
+ 1052 01e5 BF       		.byte	0xbf
+ 1053 01e6 B7000000 		.4byte	0xb7
+ 1054 01ea 02       		.byte	0x2
+ 1055 01eb 23       		.byte	0x23
+ 1056 01ec 34       		.uleb128 0x34
+ 1057 01ed 00       		.byte	0
+ 1058 01ee 03       		.uleb128 0x3
+ 1059 01ef DE040000 		.4byte	.LASF23
+ 1060 01f3 06       		.byte	0x6
+ 1061 01f4 C0       		.byte	0xc0
+ 1062 01f5 22010000 		.4byte	0x122
+ 1063 01f9 0E       		.uleb128 0xe
+ 1064 01fa 28       		.byte	0x28
+ 1065 01fb 06       		.byte	0x6
+ 1066 01fc B701     		.2byte	0x1b7
+ 1067 01fe 99020000 		.4byte	0x299
+ 1068 0202 0F       		.uleb128 0xf
+ 1069 0203 43524800 		.ascii	"CRH\000"
+ 1070 0207 06       		.byte	0x6
+ 1071 0208 B901     		.2byte	0x1b9
+ 1072 020a B7000000 		.4byte	0xb7
+ 1073 020e 02       		.byte	0x2
+ 1074 020f 23       		.byte	0x23
+ 1075 0210 00       		.uleb128 0
+ 1076 0211 0F       		.uleb128 0xf
+ 1077 0212 43524C00 		.ascii	"CRL\000"
+ 1078 0216 06       		.byte	0x6
+ 1079 0217 BA01     		.2byte	0x1ba
+ 1080 0219 B7000000 		.4byte	0xb7
+ 1081 021d 02       		.byte	0x2
+ 1082 021e 23       		.byte	0x23
+ 1083 021f 04       		.uleb128 0x4
+ 1084 0220 10       		.uleb128 0x10
+ 1085 0221 E7050000 		.4byte	.LASF24
+ 1086 0225 06       		.byte	0x6
+ 1087 0226 BB01     		.2byte	0x1bb
+ 1088 0228 B7000000 		.4byte	0xb7
+ 1089 022c 02       		.byte	0x2
+ 1090 022d 23       		.byte	0x23
+ 1091 022e 08       		.uleb128 0x8
+ 1092 022f 10       		.uleb128 0x10
+ 1093 0230 D6020000 		.4byte	.LASF25
+ 1094 0234 06       		.byte	0x6
+ 1095 0235 BC01     		.2byte	0x1bc
+ 1096 0237 B7000000 		.4byte	0xb7
+ 1097 023b 02       		.byte	0x2
+ 1098 023c 23       		.byte	0x23
+ 1099 023d 0C       		.uleb128 0xc
+ 1100 023e 10       		.uleb128 0x10
+ 1101 023f 36020000 		.4byte	.LASF26
+ 1102 0243 06       		.byte	0x6
+ 1103 0244 BD01     		.2byte	0x1bd
+ 1104 0246 B7000000 		.4byte	0xb7
+ 1105 024a 02       		.byte	0x2
+ 1106 024b 23       		.byte	0x23
+ 1107 024c 10       		.uleb128 0x10
+ 1108 024d 10       		.uleb128 0x10
+ARM GAS  /tmp/ccvdMV8w.s 			page 31
+
+
+ 1109 024e 73000000 		.4byte	.LASF27
+ 1110 0252 06       		.byte	0x6
+ 1111 0253 BE01     		.2byte	0x1be
+ 1112 0255 B7000000 		.4byte	0xb7
+ 1113 0259 02       		.byte	0x2
+ 1114 025a 23       		.byte	0x23
+ 1115 025b 14       		.uleb128 0x14
+ 1116 025c 10       		.uleb128 0x10
+ 1117 025d 84040000 		.4byte	.LASF28
+ 1118 0261 06       		.byte	0x6
+ 1119 0262 BF01     		.2byte	0x1bf
+ 1120 0264 B7000000 		.4byte	0xb7
+ 1121 0268 02       		.byte	0x2
+ 1122 0269 23       		.byte	0x23
+ 1123 026a 18       		.uleb128 0x18
+ 1124 026b 10       		.uleb128 0x10
+ 1125 026c A7040000 		.4byte	.LASF29
+ 1126 0270 06       		.byte	0x6
+ 1127 0271 C001     		.2byte	0x1c0
+ 1128 0273 B7000000 		.4byte	0xb7
+ 1129 0277 02       		.byte	0x2
+ 1130 0278 23       		.byte	0x23
+ 1131 0279 1C       		.uleb128 0x1c
+ 1132 027a 10       		.uleb128 0x10
+ 1133 027b 89050000 		.4byte	.LASF30
+ 1134 027f 06       		.byte	0x6
+ 1135 0280 C101     		.2byte	0x1c1
+ 1136 0282 B7000000 		.4byte	0xb7
+ 1137 0286 02       		.byte	0x2
+ 1138 0287 23       		.byte	0x23
+ 1139 0288 20       		.uleb128 0x20
+ 1140 0289 10       		.uleb128 0x10
+ 1141 028a B6050000 		.4byte	.LASF31
+ 1142 028e 06       		.byte	0x6
+ 1143 028f C201     		.2byte	0x1c2
+ 1144 0291 B7000000 		.4byte	0xb7
+ 1145 0295 02       		.byte	0x2
+ 1146 0296 23       		.byte	0x23
+ 1147 0297 24       		.uleb128 0x24
+ 1148 0298 00       		.byte	0
+ 1149 0299 11       		.uleb128 0x11
+ 1150 029a 78040000 		.4byte	.LASF32
+ 1151 029e 06       		.byte	0x6
+ 1152 029f C301     		.2byte	0x1c3
+ 1153 02a1 F9010000 		.4byte	0x1f9
+ 1154 02a5 12       		.uleb128 0x12
+ 1155 02a6 01       		.byte	0x1
+ 1156 02a7 37000000 		.4byte	0x37
+ 1157 02ab 07       		.byte	0x7
+ 1158 02ac 98       		.byte	0x98
+ 1159 02ad BE020000 		.4byte	0x2be
+ 1160 02b1 13       		.uleb128 0x13
+ 1161 02b2 4B050000 		.4byte	.LASF33
+ 1162 02b6 00       		.byte	0
+ 1163 02b7 14       		.uleb128 0x14
+ 1164 02b8 53455400 		.ascii	"SET\000"
+ 1165 02bc 01       		.byte	0x1
+ARM GAS  /tmp/ccvdMV8w.s 			page 32
+
+
+ 1166 02bd 00       		.byte	0
+ 1167 02be 02       		.uleb128 0x2
+ 1168 02bf 08       		.byte	0x8
+ 1169 02c0 04       		.byte	0x4
+ 1170 02c1 75020000 		.4byte	.LASF34
+ 1171 02c5 12       		.uleb128 0x12
+ 1172 02c6 01       		.byte	0x1
+ 1173 02c7 37000000 		.4byte	0x37
+ 1174 02cb 08       		.byte	0x8
+ 1175 02cc 2A       		.byte	0x2a
+ 1176 02cd EA020000 		.4byte	0x2ea
+ 1177 02d1 13       		.uleb128 0x13
+ 1178 02d2 52010000 		.4byte	.LASF35
+ 1179 02d6 00       		.byte	0
+ 1180 02d7 13       		.uleb128 0x13
+ 1181 02d8 00000000 		.4byte	.LASF36
+ 1182 02dc 01       		.byte	0x1
+ 1183 02dd 13       		.uleb128 0x13
+ 1184 02de 81010000 		.4byte	.LASF37
+ 1185 02e2 02       		.byte	0x2
+ 1186 02e3 13       		.uleb128 0x13
+ 1187 02e4 35040000 		.4byte	.LASF38
+ 1188 02e8 03       		.byte	0x3
+ 1189 02e9 00       		.byte	0
+ 1190 02ea 03       		.uleb128 0x3
+ 1191 02eb 40020000 		.4byte	.LASF39
+ 1192 02ef 08       		.byte	0x8
+ 1193 02f0 2F       		.byte	0x2f
+ 1194 02f1 C5020000 		.4byte	0x2c5
+ 1195 02f5 12       		.uleb128 0x12
+ 1196 02f6 01       		.byte	0x1
+ 1197 02f7 37000000 		.4byte	0x37
+ 1198 02fb 08       		.byte	0x8
+ 1199 02fc 35       		.byte	0x35
+ 1200 02fd 0E030000 		.4byte	0x30e
+ 1201 0301 13       		.uleb128 0x13
+ 1202 0302 0A000000 		.4byte	.LASF40
+ 1203 0306 00       		.byte	0
+ 1204 0307 13       		.uleb128 0x13
+ 1205 0308 64020000 		.4byte	.LASF41
+ 1206 030c 01       		.byte	0x1
+ 1207 030d 00       		.byte	0
+ 1208 030e 03       		.uleb128 0x3
+ 1209 030f D7050000 		.4byte	.LASF42
+ 1210 0313 08       		.byte	0x8
+ 1211 0314 38       		.byte	0x38
+ 1212 0315 F5020000 		.4byte	0x2f5
+ 1213 0319 12       		.uleb128 0x12
+ 1214 031a 01       		.byte	0x1
+ 1215 031b 37000000 		.4byte	0x37
+ 1216 031f 09       		.byte	0x9
+ 1217 0320 79       		.byte	0x79
+ 1218 0321 44030000 		.4byte	0x344
+ 1219 0325 13       		.uleb128 0x13
+ 1220 0326 89040000 		.4byte	.LASF43
+ 1221 032a 00       		.byte	0
+ 1222 032b 13       		.uleb128 0x13
+ARM GAS  /tmp/ccvdMV8w.s 			page 33
+
+
+ 1223 032c 2D030000 		.4byte	.LASF44
+ 1224 0330 01       		.byte	0x1
+ 1225 0331 13       		.uleb128 0x13
+ 1226 0332 B1030000 		.4byte	.LASF45
+ 1227 0336 02       		.byte	0x2
+ 1228 0337 13       		.uleb128 0x13
+ 1229 0338 5C030000 		.4byte	.LASF46
+ 1230 033c 03       		.byte	0x3
+ 1231 033d 13       		.uleb128 0x13
+ 1232 033e 51050000 		.4byte	.LASF47
+ 1233 0342 04       		.byte	0x4
+ 1234 0343 00       		.byte	0
+ 1235 0344 03       		.uleb128 0x3
+ 1236 0345 CC030000 		.4byte	.LASF48
+ 1237 0349 09       		.byte	0x9
+ 1238 034a 80       		.byte	0x80
+ 1239 034b 19030000 		.4byte	0x319
+ 1240 034f 06       		.uleb128 0x6
+ 1241 0350 44030000 		.4byte	0x344
+ 1242 0354 0B       		.uleb128 0xb
+ 1243 0355 08       		.byte	0x8
+ 1244 0356 09       		.byte	0x9
+ 1245 0357 85       		.byte	0x85
+ 1246 0358 79030000 		.4byte	0x379
+ 1247 035c 0C       		.uleb128 0xc
+ 1248 035d 57020000 		.4byte	.LASF49
+ 1249 0361 09       		.byte	0x9
+ 1250 0362 87       		.byte	0x87
+ 1251 0363 AC000000 		.4byte	0xac
+ 1252 0367 02       		.byte	0x2
+ 1253 0368 23       		.byte	0x23
+ 1254 0369 00       		.uleb128 0
+ 1255 036a 0C       		.uleb128 0xc
+ 1256 036b 1E050000 		.4byte	.LASF50
+ 1257 036f 09       		.byte	0x9
+ 1258 0370 8B       		.byte	0x8b
+ 1259 0371 AC000000 		.4byte	0xac
+ 1260 0375 02       		.byte	0x2
+ 1261 0376 23       		.byte	0x23
+ 1262 0377 04       		.uleb128 0x4
+ 1263 0378 00       		.byte	0
+ 1264 0379 03       		.uleb128 0x3
+ 1265 037a 47000000 		.4byte	.LASF51
+ 1266 037e 09       		.byte	0x9
+ 1267 037f 8E       		.byte	0x8e
+ 1268 0380 54030000 		.4byte	0x354
+ 1269 0384 0B       		.uleb128 0xb
+ 1270 0385 04       		.byte	0x4
+ 1271 0386 09       		.byte	0x9
+ 1272 0387 93       		.byte	0x93
+ 1273 0388 C5030000 		.4byte	0x3c5
+ 1274 038c 0C       		.uleb128 0xc
+ 1275 038d C4030000 		.4byte	.LASF52
+ 1276 0391 09       		.byte	0x9
+ 1277 0392 95       		.byte	0x95
+ 1278 0393 8C000000 		.4byte	0x8c
+ 1279 0397 02       		.byte	0x2
+ARM GAS  /tmp/ccvdMV8w.s 			page 34
+
+
+ 1280 0398 23       		.byte	0x23
+ 1281 0399 00       		.uleb128 0
+ 1282 039a 0C       		.uleb128 0xc
+ 1283 039b 6F020000 		.4byte	.LASF53
+ 1284 039f 09       		.byte	0x9
+ 1285 03a0 98       		.byte	0x98
+ 1286 03a1 8C000000 		.4byte	0x8c
+ 1287 03a5 02       		.byte	0x2
+ 1288 03a6 23       		.byte	0x23
+ 1289 03a7 01       		.uleb128 0x1
+ 1290 03a8 0C       		.uleb128 0xc
+ 1291 03a9 52020000 		.4byte	.LASF54
+ 1292 03ad 09       		.byte	0x9
+ 1293 03ae 9B       		.byte	0x9b
+ 1294 03af 8C000000 		.4byte	0x8c
+ 1295 03b3 02       		.byte	0x2
+ 1296 03b4 23       		.byte	0x23
+ 1297 03b5 02       		.uleb128 0x2
+ 1298 03b6 0C       		.uleb128 0xc
+ 1299 03b7 1D020000 		.4byte	.LASF55
+ 1300 03bb 09       		.byte	0x9
+ 1301 03bc 9E       		.byte	0x9e
+ 1302 03bd 8C000000 		.4byte	0x8c
+ 1303 03c1 02       		.byte	0x2
+ 1304 03c2 23       		.byte	0x23
+ 1305 03c3 03       		.uleb128 0x3
+ 1306 03c4 00       		.byte	0
+ 1307 03c5 03       		.uleb128 0x3
+ 1308 03c6 65050000 		.4byte	.LASF56
+ 1309 03ca 09       		.byte	0x9
+ 1310 03cb A1       		.byte	0xa1
+ 1311 03cc 84030000 		.4byte	0x384
+ 1312 03d0 0B       		.uleb128 0xb
+ 1313 03d1 14       		.byte	0x14
+ 1314 03d2 09       		.byte	0x9
+ 1315 03d3 A9       		.byte	0xa9
+ 1316 03d4 1F040000 		.4byte	0x41f
+ 1317 03d8 0C       		.uleb128 0xc
+ 1318 03d9 EC050000 		.4byte	.LASF57
+ 1319 03dd 09       		.byte	0x9
+ 1320 03de AC       		.byte	0xac
+ 1321 03df 1F040000 		.4byte	0x41f
+ 1322 03e3 02       		.byte	0x2
+ 1323 03e4 23       		.byte	0x23
+ 1324 03e5 00       		.uleb128 0
+ 1325 03e6 0C       		.uleb128 0xc
+ 1326 03e7 E7010000 		.4byte	.LASF58
+ 1327 03eb 09       		.byte	0x9
+ 1328 03ec AE       		.byte	0xae
+ 1329 03ed 79030000 		.4byte	0x379
+ 1330 03f1 02       		.byte	0x2
+ 1331 03f2 23       		.byte	0x23
+ 1332 03f3 04       		.uleb128 0x4
+ 1333 03f4 0C       		.uleb128 0xc
+ 1334 03f5 BE010000 		.4byte	.LASF59
+ 1335 03f9 09       		.byte	0x9
+ 1336 03fa B0       		.byte	0xb0
+ARM GAS  /tmp/ccvdMV8w.s 			page 35
+
+
+ 1337 03fb C5030000 		.4byte	0x3c5
+ 1338 03ff 02       		.byte	0x2
+ 1339 0400 23       		.byte	0x23
+ 1340 0401 0C       		.uleb128 0xc
+ 1341 0402 0C       		.uleb128 0xc
+ 1342 0403 FD010000 		.4byte	.LASF60
+ 1343 0407 09       		.byte	0x9
+ 1344 0408 B2       		.byte	0xb2
+ 1345 0409 0E030000 		.4byte	0x30e
+ 1346 040d 02       		.byte	0x2
+ 1347 040e 23       		.byte	0x23
+ 1348 040f 10       		.uleb128 0x10
+ 1349 0410 0C       		.uleb128 0xc
+ 1350 0411 E1010000 		.4byte	.LASF61
+ 1351 0415 09       		.byte	0x9
+ 1352 0416 B4       		.byte	0xb4
+ 1353 0417 4F030000 		.4byte	0x34f
+ 1354 041b 02       		.byte	0x2
+ 1355 041c 23       		.byte	0x23
+ 1356 041d 11       		.uleb128 0x11
+ 1357 041e 00       		.byte	0
+ 1358 041f 15       		.uleb128 0x15
+ 1359 0420 04       		.byte	0x4
+ 1360 0421 99020000 		.4byte	0x299
+ 1361 0425 03       		.uleb128 0x3
+ 1362 0426 A4050000 		.4byte	.LASF62
+ 1363 042a 09       		.byte	0x9
+ 1364 042b C1       		.byte	0xc1
+ 1365 042c D0030000 		.4byte	0x3d0
+ 1366 0430 0B       		.uleb128 0xb
+ 1367 0431 08       		.byte	0x8
+ 1368 0432 0A       		.byte	0xa
+ 1369 0433 52       		.byte	0x52
+ 1370 0434 55040000 		.4byte	0x455
+ 1371 0438 0C       		.uleb128 0xc
+ 1372 0439 D0050000 		.4byte	.LASF63
+ 1373 043d 0A       		.byte	0xa
+ 1374 043e 54       		.byte	0x54
+ 1375 043f AC000000 		.4byte	0xac
+ 1376 0443 02       		.byte	0x2
+ 1377 0444 23       		.byte	0x23
+ 1378 0445 00       		.uleb128 0
+ 1379 0446 0C       		.uleb128 0xc
+ 1380 0447 CB010000 		.4byte	.LASF64
+ 1381 044b 0A       		.byte	0xa
+ 1382 044c 57       		.byte	0x57
+ 1383 044d AC000000 		.4byte	0xac
+ 1384 0451 02       		.byte	0x2
+ 1385 0452 23       		.byte	0x23
+ 1386 0453 04       		.uleb128 0x4
+ 1387 0454 00       		.byte	0
+ 1388 0455 03       		.uleb128 0x3
+ 1389 0456 59010000 		.4byte	.LASF65
+ 1390 045a 0A       		.byte	0xa
+ 1391 045b 5A       		.byte	0x5a
+ 1392 045c 30040000 		.4byte	0x430
+ 1393 0460 12       		.uleb128 0x12
+ARM GAS  /tmp/ccvdMV8w.s 			page 36
+
+
+ 1394 0461 01       		.byte	0x1
+ 1395 0462 37000000 		.4byte	0x37
+ 1396 0466 0B       		.byte	0xb
+ 1397 0467 33       		.byte	0x33
+ 1398 0468 85040000 		.4byte	0x485
+ 1399 046c 13       		.uleb128 0x13
+ 1400 046d 65040000 		.4byte	.LASF66
+ 1401 0471 64       		.byte	0x64
+ 1402 0472 13       		.uleb128 0x13
+ 1403 0473 51040000 		.4byte	.LASF67
+ 1404 0477 0A       		.byte	0xa
+ 1405 0478 13       		.uleb128 0x13
+ 1406 0479 72030000 		.4byte	.LASF68
+ 1407 047d 01       		.byte	0x1
+ 1408 047e 13       		.uleb128 0x13
+ 1409 047f 8E050000 		.4byte	.LASF69
+ 1410 0483 01       		.byte	0x1
+ 1411 0484 00       		.byte	0
+ 1412 0485 03       		.uleb128 0x3
+ 1413 0486 0A050000 		.4byte	.LASF70
+ 1414 048a 0B       		.byte	0xb
+ 1415 048b 38       		.byte	0x38
+ 1416 048c 60040000 		.4byte	0x460
+ 1417 0490 08       		.uleb128 0x8
+ 1418 0491 EB000000 		.4byte	.LASF71
+ 1419 0495 0B       		.byte	0xb
+ 1420 0496 3D       		.byte	0x3d
+ 1421 0497 AC000000 		.4byte	0xac
+ 1422 049b 01       		.byte	0x1
+ 1423 049c 01       		.byte	0x1
+ 1424 049d 08       		.uleb128 0x8
+ 1425 049e 15030000 		.4byte	.LASF72
+ 1426 04a2 0B       		.byte	0xb
+ 1427 04a3 3E       		.byte	0x3e
+ 1428 04a4 85040000 		.4byte	0x485
+ 1429 04a8 01       		.byte	0x1
+ 1430 04a9 01       		.byte	0x1
+ 1431 04aa 16       		.uleb128 0x16
+ 1432 04ab 01       		.byte	0x1
+ 1433 04ac 85030000 		.4byte	.LASF77
+ 1434 04b0 01       		.byte	0x1
+ 1435 04b1 1102     		.2byte	0x211
+ 1436 04b3 01       		.byte	0x1
+ 1437 04b4 EA020000 		.4byte	0x2ea
+ 1438 04b8 FE010000 		.4byte	.LFB78
+ 1439 04bc 30020000 		.4byte	.LFE78
+ 1440 04c0 02       		.byte	0x2
+ 1441 04c1 7D       		.byte	0x7d
+ 1442 04c2 00       		.sleb128 0
+ 1443 04c3 01       		.byte	0x1
+ 1444 04c4 09050000 		.4byte	0x509
+ 1445 04c8 17       		.uleb128 0x17
+ 1446 04c9 05050000 		.4byte	.LASF73
+ 1447 04cd 01       		.byte	0x1
+ 1448 04ce 1102     		.2byte	0x211
+ 1449 04d0 09050000 		.4byte	0x509
+ 1450 04d4 00000000 		.4byte	.LLST24
+ARM GAS  /tmp/ccvdMV8w.s 			page 37
+
+
+ 1451 04d8 17       		.uleb128 0x17
+ 1452 04d9 F8030000 		.4byte	.LASF74
+ 1453 04dd 01       		.byte	0x1
+ 1454 04de 1102     		.2byte	0x211
+ 1455 04e0 AC000000 		.4byte	0xac
+ 1456 04e4 53000000 		.4byte	.LLST25
+ 1457 04e8 17       		.uleb128 0x17
+ 1458 04e9 B6000000 		.4byte	.LASF75
+ 1459 04ed 01       		.byte	0x1
+ 1460 04ee 1102     		.2byte	0x211
+ 1461 04f0 AC000000 		.4byte	0xac
+ 1462 04f4 7F000000 		.4byte	.LLST26
+ 1463 04f8 17       		.uleb128 0x17
+ 1464 04f9 25050000 		.4byte	.LASF76
+ 1465 04fd 01       		.byte	0x1
+ 1466 04fe 1102     		.2byte	0x211
+ 1467 0500 AC000000 		.4byte	0xac
+ 1468 0504 B9000000 		.4byte	.LLST27
+ 1469 0508 00       		.byte	0
+ 1470 0509 15       		.uleb128 0x15
+ 1471 050a 04       		.byte	0x4
+ 1472 050b 25040000 		.4byte	0x425
+ 1473 050f 16       		.uleb128 0x16
+ 1474 0510 01       		.byte	0x1
+ 1475 0511 34000000 		.4byte	.LASF78
+ 1476 0515 01       		.byte	0x1
+ 1477 0516 F301     		.2byte	0x1f3
+ 1478 0518 01       		.byte	0x1
+ 1479 0519 AC000000 		.4byte	0xac
+ 1480 051d EE010000 		.4byte	.LFB77
+ 1481 0521 FE010000 		.4byte	.LFE77
+ 1482 0525 02       		.byte	0x2
+ 1483 0526 7D       		.byte	0x7d
+ 1484 0527 00       		.sleb128 0
+ 1485 0528 01       		.byte	0x1
+ 1486 0529 6E050000 		.4byte	0x56e
+ 1487 052d 17       		.uleb128 0x17
+ 1488 052e 05050000 		.4byte	.LASF73
+ 1489 0532 01       		.byte	0x1
+ 1490 0533 F301     		.2byte	0x1f3
+ 1491 0535 09050000 		.4byte	0x509
+ 1492 0539 E5000000 		.4byte	.LLST20
+ 1493 053d 17       		.uleb128 0x17
+ 1494 053e AF010000 		.4byte	.LASF79
+ 1495 0542 01       		.byte	0x1
+ 1496 0543 F301     		.2byte	0x1f3
+ 1497 0545 AC000000 		.4byte	0xac
+ 1498 0549 06010000 		.4byte	.LLST21
+ 1499 054d 18       		.uleb128 0x18
+ 1500 054e 12040000 		.4byte	.LASF80
+ 1501 0552 01       		.byte	0x1
+ 1502 0553 F501     		.2byte	0x1f5
+ 1503 0555 AC000000 		.4byte	0xac
+ 1504 0559 27010000 		.4byte	.LLST22
+ 1505 055d 18       		.uleb128 0x18
+ 1506 055e 4B010000 		.4byte	.LASF81
+ 1507 0562 01       		.byte	0x1
+ARM GAS  /tmp/ccvdMV8w.s 			page 38
+
+
+ 1508 0563 F601     		.2byte	0x1f6
+ 1509 0565 AC000000 		.4byte	0xac
+ 1510 0569 5A010000 		.4byte	.LLST23
+ 1511 056d 00       		.byte	0
+ 1512 056e 19       		.uleb128 0x19
+ 1513 056f 01       		.byte	0x1
+ 1514 0570 75050000 		.4byte	.LASF83
+ 1515 0574 01       		.byte	0x1
+ 1516 0575 DA01     		.2byte	0x1da
+ 1517 0577 01       		.byte	0x1
+ 1518 0578 DE010000 		.4byte	.LFB76
+ 1519 057c EE010000 		.4byte	.LFE76
+ 1520 0580 02       		.byte	0x2
+ 1521 0581 7D       		.byte	0x7d
+ 1522 0582 00       		.sleb128 0
+ 1523 0583 01       		.byte	0x1
+ 1524 0584 C7050000 		.4byte	0x5c7
+ 1525 0588 1A       		.uleb128 0x1a
+ 1526 0589 05050000 		.4byte	.LASF73
+ 1527 058d 01       		.byte	0x1
+ 1528 058e DA01     		.2byte	0x1da
+ 1529 0590 09050000 		.4byte	0x509
+ 1530 0594 01       		.byte	0x1
+ 1531 0595 50       		.byte	0x50
+ 1532 0596 17       		.uleb128 0x17
+ 1533 0597 AF010000 		.4byte	.LASF79
+ 1534 059b 01       		.byte	0x1
+ 1535 059c DA01     		.2byte	0x1da
+ 1536 059e AC000000 		.4byte	0xac
+ 1537 05a2 7F010000 		.4byte	.LLST17
+ 1538 05a6 17       		.uleb128 0x17
+ 1539 05a7 3B020000 		.4byte	.LASF82
+ 1540 05ab 01       		.byte	0x1
+ 1541 05ac DA01     		.2byte	0x1da
+ 1542 05ae AC000000 		.4byte	0xac
+ 1543 05b2 A0010000 		.4byte	.LLST18
+ 1544 05b6 1B       		.uleb128 0x1b
+ 1545 05b7 746D7000 		.ascii	"tmp\000"
+ 1546 05bb 01       		.byte	0x1
+ 1547 05bc DC01     		.2byte	0x1dc
+ 1548 05be AC000000 		.4byte	0xac
+ 1549 05c2 C1010000 		.4byte	.LLST19
+ 1550 05c6 00       		.byte	0
+ 1551 05c7 1C       		.uleb128 0x1c
+ 1552 05c8 01       		.byte	0x1
+ 1553 05c9 BE040000 		.4byte	.LASF100
+ 1554 05cd 01       		.byte	0x1
+ 1555 05ce B201     		.2byte	0x1b2
+ 1556 05d0 01       		.byte	0x1
+ 1557 05d1 01       		.byte	0x1
+ 1558 05d2 E3050000 		.4byte	0x5e3
+ 1559 05d6 1D       		.uleb128 0x1d
+ 1560 05d7 05050000 		.4byte	.LASF73
+ 1561 05db 01       		.byte	0x1
+ 1562 05dc B201     		.2byte	0x1b2
+ 1563 05de 09050000 		.4byte	0x509
+ 1564 05e2 00       		.byte	0
+ARM GAS  /tmp/ccvdMV8w.s 			page 39
+
+
+ 1565 05e3 1E       		.uleb128 0x1e
+ 1566 05e4 01       		.byte	0x1
+ 1567 05e5 BB020000 		.4byte	.LASF90
+ 1568 05e9 01       		.byte	0x1
+ 1569 05ea A301     		.2byte	0x1a3
+ 1570 05ec 01       		.byte	0x1
+ 1571 05ed FE050000 		.4byte	0x5fe
+ 1572 05f1 1D       		.uleb128 0x1d
+ 1573 05f2 05050000 		.4byte	.LASF73
+ 1574 05f6 01       		.byte	0x1
+ 1575 05f7 A301     		.2byte	0x1a3
+ 1576 05f9 09050000 		.4byte	0x509
+ 1577 05fd 00       		.byte	0
+ 1578 05fe 1F       		.uleb128 0x1f
+ 1579 05ff 01       		.byte	0x1
+ 1580 0600 E0030000 		.4byte	.LASF84
+ 1581 0604 01       		.byte	0x1
+ 1582 0605 7B01     		.2byte	0x17b
+ 1583 0607 01       		.byte	0x1
+ 1584 0608 A4010000 		.4byte	.LFB73
+ 1585 060c DE010000 		.4byte	.LFE73
+ 1586 0610 F4010000 		.4byte	.LLST15
+ 1587 0614 01       		.byte	0x1
+ 1588 0615 47060000 		.4byte	0x647
+ 1589 0619 17       		.uleb128 0x17
+ 1590 061a 05050000 		.4byte	.LASF73
+ 1591 061e 01       		.byte	0x1
+ 1592 061f 7B01     		.2byte	0x17b
+ 1593 0621 09050000 		.4byte	0x509
+ 1594 0625 14020000 		.4byte	.LLST16
+ 1595 0629 20       		.uleb128 0x20
+ 1596 062a C0010000 		.4byte	.LVL37
+ 1597 062e C7050000 		.4byte	0x5c7
+ 1598 0632 3D060000 		.4byte	0x63d
+ 1599 0636 21       		.uleb128 0x21
+ 1600 0637 01       		.byte	0x1
+ 1601 0638 50       		.byte	0x50
+ 1602 0639 02       		.byte	0x2
+ 1603 063a 74       		.byte	0x74
+ 1604 063b 00       		.sleb128 0
+ 1605 063c 00       		.byte	0
+ 1606 063d 22       		.uleb128 0x22
+ 1607 063e DA010000 		.4byte	.LVL39
+ 1608 0642 E3050000 		.4byte	0x5e3
+ 1609 0646 00       		.byte	0
+ 1610 0647 16       		.uleb128 0x16
+ 1611 0648 01       		.byte	0x1
+ 1612 0649 41030000 		.4byte	.LASF85
+ 1613 064d 01       		.byte	0x1
+ 1614 064e 5D01     		.2byte	0x15d
+ 1615 0650 01       		.byte	0x1
+ 1616 0651 EA020000 		.4byte	0x2ea
+ 1617 0655 78010000 		.4byte	.LFB72
+ 1618 0659 A0010000 		.4byte	.LFE72
+ 1619 065d 02       		.byte	0x2
+ 1620 065e 7D       		.byte	0x7d
+ 1621 065f 00       		.sleb128 0
+ARM GAS  /tmp/ccvdMV8w.s 			page 40
+
+
+ 1622 0660 01       		.byte	0x1
+ 1623 0661 76060000 		.4byte	0x676
+ 1624 0665 17       		.uleb128 0x17
+ 1625 0666 05050000 		.4byte	.LASF73
+ 1626 066a 01       		.byte	0x1
+ 1627 066b 5D01     		.2byte	0x15d
+ 1628 066d 09050000 		.4byte	0x509
+ 1629 0671 48020000 		.4byte	.LLST14
+ 1630 0675 00       		.byte	0
+ 1631 0676 16       		.uleb128 0x16
+ 1632 0677 01       		.byte	0x1
+ 1633 0678 1D000000 		.4byte	.LASF86
+ 1634 067c 01       		.byte	0x1
+ 1635 067d 3F01     		.2byte	0x13f
+ 1636 067f 01       		.byte	0x1
+ 1637 0680 EA020000 		.4byte	0x2ea
+ 1638 0684 50010000 		.4byte	.LFB71
+ 1639 0688 78010000 		.4byte	.LFE71
+ 1640 068c 02       		.byte	0x2
+ 1641 068d 7D       		.byte	0x7d
+ 1642 068e 00       		.sleb128 0
+ 1643 068f 01       		.byte	0x1
+ 1644 0690 A5060000 		.4byte	0x6a5
+ 1645 0694 17       		.uleb128 0x17
+ 1646 0695 05050000 		.4byte	.LASF73
+ 1647 0699 01       		.byte	0x1
+ 1648 069a 3F01     		.2byte	0x13f
+ 1649 069c 09050000 		.4byte	0x509
+ 1650 06a0 82020000 		.4byte	.LLST13
+ 1651 06a4 00       		.byte	0
+ 1652 06a5 23       		.uleb128 0x23
+ 1653 06a6 01       		.byte	0x1
+ 1654 06a7 81000000 		.4byte	.LASF87
+ 1655 06ab 01       		.byte	0x1
+ 1656 06ac 0701     		.2byte	0x107
+ 1657 06ae 01       		.byte	0x1
+ 1658 06af EA020000 		.4byte	0x2ea
+ 1659 06b3 08010000 		.4byte	.LFB70
+ 1660 06b7 50010000 		.4byte	.LFE70
+ 1661 06bb BC020000 		.4byte	.LLST9
+ 1662 06bf 01       		.byte	0x1
+ 1663 06c0 07070000 		.4byte	0x707
+ 1664 06c4 17       		.uleb128 0x17
+ 1665 06c5 05050000 		.4byte	.LASF73
+ 1666 06c9 01       		.byte	0x1
+ 1667 06ca 0701     		.2byte	0x107
+ 1668 06cc 09050000 		.4byte	0x509
+ 1669 06d0 DC020000 		.4byte	.LLST10
+ 1670 06d4 17       		.uleb128 0x17
+ 1671 06d5 F5010000 		.4byte	.LASF88
+ 1672 06d9 01       		.byte	0x1
+ 1673 06da 0701     		.2byte	0x107
+ 1674 06dc AC000000 		.4byte	0xac
+ 1675 06e0 08030000 		.4byte	.LLST11
+ 1676 06e4 18       		.uleb128 0x18
+ 1677 06e5 2C020000 		.4byte	.LASF89
+ 1678 06e9 01       		.byte	0x1
+ARM GAS  /tmp/ccvdMV8w.s 			page 41
+
+
+ 1679 06ea 0901     		.2byte	0x109
+ 1680 06ec AC000000 		.4byte	0xac
+ 1681 06f0 34030000 		.4byte	.LLST12
+ 1682 06f4 22       		.uleb128 0x22
+ 1683 06f5 12010000 		.4byte	.LVL18
+ 1684 06f9 31080000 		.4byte	0x831
+ 1685 06fd 22       		.uleb128 0x22
+ 1686 06fe 3E010000 		.4byte	.LVL23
+ 1687 0702 31080000 		.4byte	0x831
+ 1688 0706 00       		.byte	0
+ 1689 0707 24       		.uleb128 0x24
+ 1690 0708 01       		.byte	0x1
+ 1691 0709 CC000000 		.4byte	.LASF91
+ 1692 070d 01       		.byte	0x1
+ 1693 070e F7       		.byte	0xf7
+ 1694 070f 01       		.byte	0x1
+ 1695 0710 20070000 		.4byte	0x720
+ 1696 0714 25       		.uleb128 0x25
+ 1697 0715 05050000 		.4byte	.LASF73
+ 1698 0719 01       		.byte	0x1
+ 1699 071a F7       		.byte	0xf7
+ 1700 071b 09050000 		.4byte	0x509
+ 1701 071f 00       		.byte	0
+ 1702 0720 26       		.uleb128 0x26
+ 1703 0721 01       		.byte	0x1
+ 1704 0722 8A010000 		.4byte	.LASF92
+ 1705 0726 01       		.byte	0x1
+ 1706 0727 D9       		.byte	0xd9
+ 1707 0728 01       		.byte	0x1
+ 1708 0729 DE000000 		.4byte	.LFB68
+ 1709 072d 08010000 		.4byte	.LFE68
+ 1710 0731 68030000 		.4byte	.LLST7
+ 1711 0735 01       		.byte	0x1
+ 1712 0736 5A070000 		.4byte	0x75a
+ 1713 073a 27       		.uleb128 0x27
+ 1714 073b 05050000 		.4byte	.LASF73
+ 1715 073f 01       		.byte	0x1
+ 1716 0740 D9       		.byte	0xd9
+ 1717 0741 09050000 		.4byte	0x509
+ 1718 0745 88030000 		.4byte	.LLST8
+ 1719 0749 28       		.uleb128 0x28
+ 1720 074a F4000000 		.4byte	.LVL15
+ 1721 074e 07070000 		.4byte	0x707
+ 1722 0752 21       		.uleb128 0x21
+ 1723 0753 01       		.byte	0x1
+ 1724 0754 50       		.byte	0x50
+ 1725 0755 02       		.byte	0x2
+ 1726 0756 75       		.byte	0x75
+ 1727 0757 00       		.sleb128 0
+ 1728 0758 00       		.byte	0
+ 1729 0759 00       		.byte	0
+ 1730 075a 29       		.uleb128 0x29
+ 1731 075b 01       		.byte	0x1
+ 1732 075c EA040000 		.4byte	.LASF93
+ 1733 0760 01       		.byte	0x1
+ 1734 0761 AF       		.byte	0xaf
+ 1735 0762 01       		.byte	0x1
+ARM GAS  /tmp/ccvdMV8w.s 			page 42
+
+
+ 1736 0763 EA020000 		.4byte	0x2ea
+ 1737 0767 98000000 		.4byte	.LFB67
+ 1738 076b DC000000 		.4byte	.LFE67
+ 1739 076f 02       		.byte	0x2
+ 1740 0770 7D       		.byte	0x7d
+ 1741 0771 00       		.sleb128 0
+ 1742 0772 01       		.byte	0x1
+ 1743 0773 94070000 		.4byte	0x794
+ 1744 0777 27       		.uleb128 0x27
+ 1745 0778 05050000 		.4byte	.LASF73
+ 1746 077c 01       		.byte	0x1
+ 1747 077d AF       		.byte	0xaf
+ 1748 077e 09050000 		.4byte	0x509
+ 1749 0782 B4030000 		.4byte	.LLST6
+ 1750 0786 2A       		.uleb128 0x2a
+ 1751 0787 D0050000 		.4byte	.LASF63
+ 1752 078b 01       		.byte	0x1
+ 1753 078c AF       		.byte	0xaf
+ 1754 078d AC000000 		.4byte	0xac
+ 1755 0791 01       		.byte	0x1
+ 1756 0792 51       		.byte	0x51
+ 1757 0793 00       		.byte	0
+ 1758 0794 2B       		.uleb128 0x2b
+ 1759 0795 01       		.byte	0x1
+ 1760 0796 5C000000 		.4byte	.LASF94
+ 1761 079a 01       		.byte	0x1
+ 1762 079b 7F       		.byte	0x7f
+ 1763 079c 01       		.byte	0x1
+ 1764 079d EA020000 		.4byte	0x2ea
+ 1765 07a1 48000000 		.4byte	.LFB66
+ 1766 07a5 98000000 		.4byte	.LFE66
+ 1767 07a9 EE030000 		.4byte	.LLST3
+ 1768 07ad 01       		.byte	0x1
+ 1769 07ae D1070000 		.4byte	0x7d1
+ 1770 07b2 27       		.uleb128 0x27
+ 1771 07b3 05050000 		.4byte	.LASF73
+ 1772 07b7 01       		.byte	0x1
+ 1773 07b8 7F       		.byte	0x7f
+ 1774 07b9 09050000 		.4byte	0x509
+ 1775 07bd 0E040000 		.4byte	.LLST4
+ 1776 07c1 27       		.uleb128 0x27
+ 1777 07c2 C8050000 		.4byte	.LASF95
+ 1778 07c6 01       		.byte	0x1
+ 1779 07c7 7F       		.byte	0x7f
+ 1780 07c8 D1070000 		.4byte	0x7d1
+ 1781 07cc 48040000 		.4byte	.LLST5
+ 1782 07d0 00       		.byte	0
+ 1783 07d1 15       		.uleb128 0x15
+ 1784 07d2 04       		.byte	0x4
+ 1785 07d3 55040000 		.4byte	0x455
+ 1786 07d7 2B       		.uleb128 0x2b
+ 1787 07d8 01       		.byte	0x1
+ 1788 07d9 21040000 		.4byte	.LASF96
+ 1789 07dd 01       		.byte	0x1
+ 1790 07de 51       		.byte	0x51
+ 1791 07df 01       		.byte	0x1
+ 1792 07e0 EA020000 		.4byte	0x2ea
+ARM GAS  /tmp/ccvdMV8w.s 			page 43
+
+
+ 1793 07e4 00000000 		.4byte	.LFB65
+ 1794 07e8 48000000 		.4byte	.LFE65
+ 1795 07ec 69040000 		.4byte	.LLST0
+ 1796 07f0 01       		.byte	0x1
+ 1797 07f1 14080000 		.4byte	0x814
+ 1798 07f5 27       		.uleb128 0x27
+ 1799 07f6 05050000 		.4byte	.LASF73
+ 1800 07fa 01       		.byte	0x1
+ 1801 07fb 51       		.byte	0x51
+ 1802 07fc 09050000 		.4byte	0x509
+ 1803 0800 89040000 		.4byte	.LLST1
+ 1804 0804 27       		.uleb128 0x27
+ 1805 0805 C8050000 		.4byte	.LASF95
+ 1806 0809 01       		.byte	0x1
+ 1807 080a 51       		.byte	0x51
+ 1808 080b D1070000 		.4byte	0x7d1
+ 1809 080f C3040000 		.4byte	.LLST2
+ 1810 0813 00       		.byte	0
+ 1811 0814 2C       		.uleb128 0x2c
+ 1812 0815 C7050000 		.4byte	0x5c7
+ 1813 0819 A2010000 		.4byte	.LFB75
+ 1814 081d A4010000 		.4byte	.LFE75
+ 1815 0821 02       		.byte	0x2
+ 1816 0822 7D       		.byte	0x7d
+ 1817 0823 00       		.sleb128 0
+ 1818 0824 01       		.byte	0x1
+ 1819 0825 31080000 		.4byte	0x831
+ 1820 0829 2D       		.uleb128 0x2d
+ 1821 082a D6050000 		.4byte	0x5d6
+ 1822 082e 01       		.byte	0x1
+ 1823 082f 50       		.byte	0x50
+ 1824 0830 00       		.byte	0
+ 1825 0831 2E       		.uleb128 0x2e
+ 1826 0832 01       		.byte	0x1
+ 1827 0833 01       		.byte	0x1
+ 1828 0834 AA000000 		.4byte	.LASF101
+ 1829 0838 AA000000 		.4byte	.LASF101
+ 1830 083c 0B       		.byte	0xb
+ 1831 083d 2A01     		.2byte	0x12a
+ 1832 083f 00       		.byte	0
+ 1833              		.section	.debug_abbrev,"",%progbits
+ 1834              	.Ldebug_abbrev0:
+ 1835 0000 01       		.uleb128 0x1
+ 1836 0001 11       		.uleb128 0x11
+ 1837 0002 01       		.byte	0x1
+ 1838 0003 25       		.uleb128 0x25
+ 1839 0004 0E       		.uleb128 0xe
+ 1840 0005 13       		.uleb128 0x13
+ 1841 0006 0B       		.uleb128 0xb
+ 1842 0007 03       		.uleb128 0x3
+ 1843 0008 0E       		.uleb128 0xe
+ 1844 0009 1B       		.uleb128 0x1b
+ 1845 000a 0E       		.uleb128 0xe
+ 1846 000b 11       		.uleb128 0x11
+ 1847 000c 01       		.uleb128 0x1
+ 1848 000d 12       		.uleb128 0x12
+ 1849 000e 01       		.uleb128 0x1
+ARM GAS  /tmp/ccvdMV8w.s 			page 44
+
+
+ 1850 000f 10       		.uleb128 0x10
+ 1851 0010 06       		.uleb128 0x6
+ 1852 0011 00       		.byte	0
+ 1853 0012 00       		.byte	0
+ 1854 0013 02       		.uleb128 0x2
+ 1855 0014 24       		.uleb128 0x24
+ 1856 0015 00       		.byte	0
+ 1857 0016 0B       		.uleb128 0xb
+ 1858 0017 0B       		.uleb128 0xb
+ 1859 0018 3E       		.uleb128 0x3e
+ 1860 0019 0B       		.uleb128 0xb
+ 1861 001a 03       		.uleb128 0x3
+ 1862 001b 0E       		.uleb128 0xe
+ 1863 001c 00       		.byte	0
+ 1864 001d 00       		.byte	0
+ 1865 001e 03       		.uleb128 0x3
+ 1866 001f 16       		.uleb128 0x16
+ 1867 0020 00       		.byte	0
+ 1868 0021 03       		.uleb128 0x3
+ 1869 0022 0E       		.uleb128 0xe
+ 1870 0023 3A       		.uleb128 0x3a
+ 1871 0024 0B       		.uleb128 0xb
+ 1872 0025 3B       		.uleb128 0x3b
+ 1873 0026 0B       		.uleb128 0xb
+ 1874 0027 49       		.uleb128 0x49
+ 1875 0028 13       		.uleb128 0x13
+ 1876 0029 00       		.byte	0
+ 1877 002a 00       		.byte	0
+ 1878 002b 04       		.uleb128 0x4
+ 1879 002c 24       		.uleb128 0x24
+ 1880 002d 00       		.byte	0
+ 1881 002e 0B       		.uleb128 0xb
+ 1882 002f 0B       		.uleb128 0xb
+ 1883 0030 3E       		.uleb128 0x3e
+ 1884 0031 0B       		.uleb128 0xb
+ 1885 0032 03       		.uleb128 0x3
+ 1886 0033 08       		.uleb128 0x8
+ 1887 0034 00       		.byte	0
+ 1888 0035 00       		.byte	0
+ 1889 0036 05       		.uleb128 0x5
+ 1890 0037 26       		.uleb128 0x26
+ 1891 0038 00       		.byte	0
+ 1892 0039 49       		.uleb128 0x49
+ 1893 003a 13       		.uleb128 0x13
+ 1894 003b 00       		.byte	0
+ 1895 003c 00       		.byte	0
+ 1896 003d 06       		.uleb128 0x6
+ 1897 003e 35       		.uleb128 0x35
+ 1898 003f 00       		.byte	0
+ 1899 0040 49       		.uleb128 0x49
+ 1900 0041 13       		.uleb128 0x13
+ 1901 0042 00       		.byte	0
+ 1902 0043 00       		.byte	0
+ 1903 0044 07       		.uleb128 0x7
+ 1904 0045 34       		.uleb128 0x34
+ 1905 0046 00       		.byte	0
+ 1906 0047 03       		.uleb128 0x3
+ARM GAS  /tmp/ccvdMV8w.s 			page 45
+
+
+ 1907 0048 0E       		.uleb128 0xe
+ 1908 0049 3A       		.uleb128 0x3a
+ 1909 004a 0B       		.uleb128 0xb
+ 1910 004b 3B       		.uleb128 0x3b
+ 1911 004c 05       		.uleb128 0x5
+ 1912 004d 49       		.uleb128 0x49
+ 1913 004e 13       		.uleb128 0x13
+ 1914 004f 3F       		.uleb128 0x3f
+ 1915 0050 0C       		.uleb128 0xc
+ 1916 0051 3C       		.uleb128 0x3c
+ 1917 0052 0C       		.uleb128 0xc
+ 1918 0053 00       		.byte	0
+ 1919 0054 00       		.byte	0
+ 1920 0055 08       		.uleb128 0x8
+ 1921 0056 34       		.uleb128 0x34
+ 1922 0057 00       		.byte	0
+ 1923 0058 03       		.uleb128 0x3
+ 1924 0059 0E       		.uleb128 0xe
+ 1925 005a 3A       		.uleb128 0x3a
+ 1926 005b 0B       		.uleb128 0xb
+ 1927 005c 3B       		.uleb128 0x3b
+ 1928 005d 0B       		.uleb128 0xb
+ 1929 005e 49       		.uleb128 0x49
+ 1930 005f 13       		.uleb128 0x13
+ 1931 0060 3F       		.uleb128 0x3f
+ 1932 0061 0C       		.uleb128 0xc
+ 1933 0062 3C       		.uleb128 0x3c
+ 1934 0063 0C       		.uleb128 0xc
+ 1935 0064 00       		.byte	0
+ 1936 0065 00       		.byte	0
+ 1937 0066 09       		.uleb128 0x9
+ 1938 0067 01       		.uleb128 0x1
+ 1939 0068 01       		.byte	0x1
+ 1940 0069 49       		.uleb128 0x49
+ 1941 006a 13       		.uleb128 0x13
+ 1942 006b 01       		.uleb128 0x1
+ 1943 006c 13       		.uleb128 0x13
+ 1944 006d 00       		.byte	0
+ 1945 006e 00       		.byte	0
+ 1946 006f 0A       		.uleb128 0xa
+ 1947 0070 21       		.uleb128 0x21
+ 1948 0071 00       		.byte	0
+ 1949 0072 49       		.uleb128 0x49
+ 1950 0073 13       		.uleb128 0x13
+ 1951 0074 2F       		.uleb128 0x2f
+ 1952 0075 0B       		.uleb128 0xb
+ 1953 0076 00       		.byte	0
+ 1954 0077 00       		.byte	0
+ 1955 0078 0B       		.uleb128 0xb
+ 1956 0079 13       		.uleb128 0x13
+ 1957 007a 01       		.byte	0x1
+ 1958 007b 0B       		.uleb128 0xb
+ 1959 007c 0B       		.uleb128 0xb
+ 1960 007d 3A       		.uleb128 0x3a
+ 1961 007e 0B       		.uleb128 0xb
+ 1962 007f 3B       		.uleb128 0x3b
+ 1963 0080 0B       		.uleb128 0xb
+ARM GAS  /tmp/ccvdMV8w.s 			page 46
+
+
+ 1964 0081 01       		.uleb128 0x1
+ 1965 0082 13       		.uleb128 0x13
+ 1966 0083 00       		.byte	0
+ 1967 0084 00       		.byte	0
+ 1968 0085 0C       		.uleb128 0xc
+ 1969 0086 0D       		.uleb128 0xd
+ 1970 0087 00       		.byte	0
+ 1971 0088 03       		.uleb128 0x3
+ 1972 0089 0E       		.uleb128 0xe
+ 1973 008a 3A       		.uleb128 0x3a
+ 1974 008b 0B       		.uleb128 0xb
+ 1975 008c 3B       		.uleb128 0x3b
+ 1976 008d 0B       		.uleb128 0xb
+ 1977 008e 49       		.uleb128 0x49
+ 1978 008f 13       		.uleb128 0x13
+ 1979 0090 38       		.uleb128 0x38
+ 1980 0091 0A       		.uleb128 0xa
+ 1981 0092 00       		.byte	0
+ 1982 0093 00       		.byte	0
+ 1983 0094 0D       		.uleb128 0xd
+ 1984 0095 0D       		.uleb128 0xd
+ 1985 0096 00       		.byte	0
+ 1986 0097 03       		.uleb128 0x3
+ 1987 0098 08       		.uleb128 0x8
+ 1988 0099 3A       		.uleb128 0x3a
+ 1989 009a 0B       		.uleb128 0xb
+ 1990 009b 3B       		.uleb128 0x3b
+ 1991 009c 0B       		.uleb128 0xb
+ 1992 009d 49       		.uleb128 0x49
+ 1993 009e 13       		.uleb128 0x13
+ 1994 009f 38       		.uleb128 0x38
+ 1995 00a0 0A       		.uleb128 0xa
+ 1996 00a1 00       		.byte	0
+ 1997 00a2 00       		.byte	0
+ 1998 00a3 0E       		.uleb128 0xe
+ 1999 00a4 13       		.uleb128 0x13
+ 2000 00a5 01       		.byte	0x1
+ 2001 00a6 0B       		.uleb128 0xb
+ 2002 00a7 0B       		.uleb128 0xb
+ 2003 00a8 3A       		.uleb128 0x3a
+ 2004 00a9 0B       		.uleb128 0xb
+ 2005 00aa 3B       		.uleb128 0x3b
+ 2006 00ab 05       		.uleb128 0x5
+ 2007 00ac 01       		.uleb128 0x1
+ 2008 00ad 13       		.uleb128 0x13
+ 2009 00ae 00       		.byte	0
+ 2010 00af 00       		.byte	0
+ 2011 00b0 0F       		.uleb128 0xf
+ 2012 00b1 0D       		.uleb128 0xd
+ 2013 00b2 00       		.byte	0
+ 2014 00b3 03       		.uleb128 0x3
+ 2015 00b4 08       		.uleb128 0x8
+ 2016 00b5 3A       		.uleb128 0x3a
+ 2017 00b6 0B       		.uleb128 0xb
+ 2018 00b7 3B       		.uleb128 0x3b
+ 2019 00b8 05       		.uleb128 0x5
+ 2020 00b9 49       		.uleb128 0x49
+ARM GAS  /tmp/ccvdMV8w.s 			page 47
+
+
+ 2021 00ba 13       		.uleb128 0x13
+ 2022 00bb 38       		.uleb128 0x38
+ 2023 00bc 0A       		.uleb128 0xa
+ 2024 00bd 00       		.byte	0
+ 2025 00be 00       		.byte	0
+ 2026 00bf 10       		.uleb128 0x10
+ 2027 00c0 0D       		.uleb128 0xd
+ 2028 00c1 00       		.byte	0
+ 2029 00c2 03       		.uleb128 0x3
+ 2030 00c3 0E       		.uleb128 0xe
+ 2031 00c4 3A       		.uleb128 0x3a
+ 2032 00c5 0B       		.uleb128 0xb
+ 2033 00c6 3B       		.uleb128 0x3b
+ 2034 00c7 05       		.uleb128 0x5
+ 2035 00c8 49       		.uleb128 0x49
+ 2036 00c9 13       		.uleb128 0x13
+ 2037 00ca 38       		.uleb128 0x38
+ 2038 00cb 0A       		.uleb128 0xa
+ 2039 00cc 00       		.byte	0
+ 2040 00cd 00       		.byte	0
+ 2041 00ce 11       		.uleb128 0x11
+ 2042 00cf 16       		.uleb128 0x16
+ 2043 00d0 00       		.byte	0
+ 2044 00d1 03       		.uleb128 0x3
+ 2045 00d2 0E       		.uleb128 0xe
+ 2046 00d3 3A       		.uleb128 0x3a
+ 2047 00d4 0B       		.uleb128 0xb
+ 2048 00d5 3B       		.uleb128 0x3b
+ 2049 00d6 05       		.uleb128 0x5
+ 2050 00d7 49       		.uleb128 0x49
+ 2051 00d8 13       		.uleb128 0x13
+ 2052 00d9 00       		.byte	0
+ 2053 00da 00       		.byte	0
+ 2054 00db 12       		.uleb128 0x12
+ 2055 00dc 04       		.uleb128 0x4
+ 2056 00dd 01       		.byte	0x1
+ 2057 00de 0B       		.uleb128 0xb
+ 2058 00df 0B       		.uleb128 0xb
+ 2059 00e0 49       		.uleb128 0x49
+ 2060 00e1 13       		.uleb128 0x13
+ 2061 00e2 3A       		.uleb128 0x3a
+ 2062 00e3 0B       		.uleb128 0xb
+ 2063 00e4 3B       		.uleb128 0x3b
+ 2064 00e5 0B       		.uleb128 0xb
+ 2065 00e6 01       		.uleb128 0x1
+ 2066 00e7 13       		.uleb128 0x13
+ 2067 00e8 00       		.byte	0
+ 2068 00e9 00       		.byte	0
+ 2069 00ea 13       		.uleb128 0x13
+ 2070 00eb 28       		.uleb128 0x28
+ 2071 00ec 00       		.byte	0
+ 2072 00ed 03       		.uleb128 0x3
+ 2073 00ee 0E       		.uleb128 0xe
+ 2074 00ef 1C       		.uleb128 0x1c
+ 2075 00f0 0B       		.uleb128 0xb
+ 2076 00f1 00       		.byte	0
+ 2077 00f2 00       		.byte	0
+ARM GAS  /tmp/ccvdMV8w.s 			page 48
+
+
+ 2078 00f3 14       		.uleb128 0x14
+ 2079 00f4 28       		.uleb128 0x28
+ 2080 00f5 00       		.byte	0
+ 2081 00f6 03       		.uleb128 0x3
+ 2082 00f7 08       		.uleb128 0x8
+ 2083 00f8 1C       		.uleb128 0x1c
+ 2084 00f9 0B       		.uleb128 0xb
+ 2085 00fa 00       		.byte	0
+ 2086 00fb 00       		.byte	0
+ 2087 00fc 15       		.uleb128 0x15
+ 2088 00fd 0F       		.uleb128 0xf
+ 2089 00fe 00       		.byte	0
+ 2090 00ff 0B       		.uleb128 0xb
+ 2091 0100 0B       		.uleb128 0xb
+ 2092 0101 49       		.uleb128 0x49
+ 2093 0102 13       		.uleb128 0x13
+ 2094 0103 00       		.byte	0
+ 2095 0104 00       		.byte	0
+ 2096 0105 16       		.uleb128 0x16
+ 2097 0106 2E       		.uleb128 0x2e
+ 2098 0107 01       		.byte	0x1
+ 2099 0108 3F       		.uleb128 0x3f
+ 2100 0109 0C       		.uleb128 0xc
+ 2101 010a 03       		.uleb128 0x3
+ 2102 010b 0E       		.uleb128 0xe
+ 2103 010c 3A       		.uleb128 0x3a
+ 2104 010d 0B       		.uleb128 0xb
+ 2105 010e 3B       		.uleb128 0x3b
+ 2106 010f 05       		.uleb128 0x5
+ 2107 0110 27       		.uleb128 0x27
+ 2108 0111 0C       		.uleb128 0xc
+ 2109 0112 49       		.uleb128 0x49
+ 2110 0113 13       		.uleb128 0x13
+ 2111 0114 11       		.uleb128 0x11
+ 2112 0115 01       		.uleb128 0x1
+ 2113 0116 12       		.uleb128 0x12
+ 2114 0117 01       		.uleb128 0x1
+ 2115 0118 40       		.uleb128 0x40
+ 2116 0119 0A       		.uleb128 0xa
+ 2117 011a 9742     		.uleb128 0x2117
+ 2118 011c 0C       		.uleb128 0xc
+ 2119 011d 01       		.uleb128 0x1
+ 2120 011e 13       		.uleb128 0x13
+ 2121 011f 00       		.byte	0
+ 2122 0120 00       		.byte	0
+ 2123 0121 17       		.uleb128 0x17
+ 2124 0122 05       		.uleb128 0x5
+ 2125 0123 00       		.byte	0
+ 2126 0124 03       		.uleb128 0x3
+ 2127 0125 0E       		.uleb128 0xe
+ 2128 0126 3A       		.uleb128 0x3a
+ 2129 0127 0B       		.uleb128 0xb
+ 2130 0128 3B       		.uleb128 0x3b
+ 2131 0129 05       		.uleb128 0x5
+ 2132 012a 49       		.uleb128 0x49
+ 2133 012b 13       		.uleb128 0x13
+ 2134 012c 02       		.uleb128 0x2
+ARM GAS  /tmp/ccvdMV8w.s 			page 49
+
+
+ 2135 012d 06       		.uleb128 0x6
+ 2136 012e 00       		.byte	0
+ 2137 012f 00       		.byte	0
+ 2138 0130 18       		.uleb128 0x18
+ 2139 0131 34       		.uleb128 0x34
+ 2140 0132 00       		.byte	0
+ 2141 0133 03       		.uleb128 0x3
+ 2142 0134 0E       		.uleb128 0xe
+ 2143 0135 3A       		.uleb128 0x3a
+ 2144 0136 0B       		.uleb128 0xb
+ 2145 0137 3B       		.uleb128 0x3b
+ 2146 0138 05       		.uleb128 0x5
+ 2147 0139 49       		.uleb128 0x49
+ 2148 013a 13       		.uleb128 0x13
+ 2149 013b 02       		.uleb128 0x2
+ 2150 013c 06       		.uleb128 0x6
+ 2151 013d 00       		.byte	0
+ 2152 013e 00       		.byte	0
+ 2153 013f 19       		.uleb128 0x19
+ 2154 0140 2E       		.uleb128 0x2e
+ 2155 0141 01       		.byte	0x1
+ 2156 0142 3F       		.uleb128 0x3f
+ 2157 0143 0C       		.uleb128 0xc
+ 2158 0144 03       		.uleb128 0x3
+ 2159 0145 0E       		.uleb128 0xe
+ 2160 0146 3A       		.uleb128 0x3a
+ 2161 0147 0B       		.uleb128 0xb
+ 2162 0148 3B       		.uleb128 0x3b
+ 2163 0149 05       		.uleb128 0x5
+ 2164 014a 27       		.uleb128 0x27
+ 2165 014b 0C       		.uleb128 0xc
+ 2166 014c 11       		.uleb128 0x11
+ 2167 014d 01       		.uleb128 0x1
+ 2168 014e 12       		.uleb128 0x12
+ 2169 014f 01       		.uleb128 0x1
+ 2170 0150 40       		.uleb128 0x40
+ 2171 0151 0A       		.uleb128 0xa
+ 2172 0152 9742     		.uleb128 0x2117
+ 2173 0154 0C       		.uleb128 0xc
+ 2174 0155 01       		.uleb128 0x1
+ 2175 0156 13       		.uleb128 0x13
+ 2176 0157 00       		.byte	0
+ 2177 0158 00       		.byte	0
+ 2178 0159 1A       		.uleb128 0x1a
+ 2179 015a 05       		.uleb128 0x5
+ 2180 015b 00       		.byte	0
+ 2181 015c 03       		.uleb128 0x3
+ 2182 015d 0E       		.uleb128 0xe
+ 2183 015e 3A       		.uleb128 0x3a
+ 2184 015f 0B       		.uleb128 0xb
+ 2185 0160 3B       		.uleb128 0x3b
+ 2186 0161 05       		.uleb128 0x5
+ 2187 0162 49       		.uleb128 0x49
+ 2188 0163 13       		.uleb128 0x13
+ 2189 0164 02       		.uleb128 0x2
+ 2190 0165 0A       		.uleb128 0xa
+ 2191 0166 00       		.byte	0
+ARM GAS  /tmp/ccvdMV8w.s 			page 50
+
+
+ 2192 0167 00       		.byte	0
+ 2193 0168 1B       		.uleb128 0x1b
+ 2194 0169 34       		.uleb128 0x34
+ 2195 016a 00       		.byte	0
+ 2196 016b 03       		.uleb128 0x3
+ 2197 016c 08       		.uleb128 0x8
+ 2198 016d 3A       		.uleb128 0x3a
+ 2199 016e 0B       		.uleb128 0xb
+ 2200 016f 3B       		.uleb128 0x3b
+ 2201 0170 05       		.uleb128 0x5
+ 2202 0171 49       		.uleb128 0x49
+ 2203 0172 13       		.uleb128 0x13
+ 2204 0173 02       		.uleb128 0x2
+ 2205 0174 06       		.uleb128 0x6
+ 2206 0175 00       		.byte	0
+ 2207 0176 00       		.byte	0
+ 2208 0177 1C       		.uleb128 0x1c
+ 2209 0178 2E       		.uleb128 0x2e
+ 2210 0179 01       		.byte	0x1
+ 2211 017a 3F       		.uleb128 0x3f
+ 2212 017b 0C       		.uleb128 0xc
+ 2213 017c 03       		.uleb128 0x3
+ 2214 017d 0E       		.uleb128 0xe
+ 2215 017e 3A       		.uleb128 0x3a
+ 2216 017f 0B       		.uleb128 0xb
+ 2217 0180 3B       		.uleb128 0x3b
+ 2218 0181 05       		.uleb128 0x5
+ 2219 0182 27       		.uleb128 0x27
+ 2220 0183 0C       		.uleb128 0xc
+ 2221 0184 20       		.uleb128 0x20
+ 2222 0185 0B       		.uleb128 0xb
+ 2223 0186 01       		.uleb128 0x1
+ 2224 0187 13       		.uleb128 0x13
+ 2225 0188 00       		.byte	0
+ 2226 0189 00       		.byte	0
+ 2227 018a 1D       		.uleb128 0x1d
+ 2228 018b 05       		.uleb128 0x5
+ 2229 018c 00       		.byte	0
+ 2230 018d 03       		.uleb128 0x3
+ 2231 018e 0E       		.uleb128 0xe
+ 2232 018f 3A       		.uleb128 0x3a
+ 2233 0190 0B       		.uleb128 0xb
+ 2234 0191 3B       		.uleb128 0x3b
+ 2235 0192 05       		.uleb128 0x5
+ 2236 0193 49       		.uleb128 0x49
+ 2237 0194 13       		.uleb128 0x13
+ 2238 0195 00       		.byte	0
+ 2239 0196 00       		.byte	0
+ 2240 0197 1E       		.uleb128 0x1e
+ 2241 0198 2E       		.uleb128 0x2e
+ 2242 0199 01       		.byte	0x1
+ 2243 019a 3F       		.uleb128 0x3f
+ 2244 019b 0C       		.uleb128 0xc
+ 2245 019c 03       		.uleb128 0x3
+ 2246 019d 0E       		.uleb128 0xe
+ 2247 019e 3A       		.uleb128 0x3a
+ 2248 019f 0B       		.uleb128 0xb
+ARM GAS  /tmp/ccvdMV8w.s 			page 51
+
+
+ 2249 01a0 3B       		.uleb128 0x3b
+ 2250 01a1 05       		.uleb128 0x5
+ 2251 01a2 27       		.uleb128 0x27
+ 2252 01a3 0C       		.uleb128 0xc
+ 2253 01a4 01       		.uleb128 0x1
+ 2254 01a5 13       		.uleb128 0x13
+ 2255 01a6 00       		.byte	0
+ 2256 01a7 00       		.byte	0
+ 2257 01a8 1F       		.uleb128 0x1f
+ 2258 01a9 2E       		.uleb128 0x2e
+ 2259 01aa 01       		.byte	0x1
+ 2260 01ab 3F       		.uleb128 0x3f
+ 2261 01ac 0C       		.uleb128 0xc
+ 2262 01ad 03       		.uleb128 0x3
+ 2263 01ae 0E       		.uleb128 0xe
+ 2264 01af 3A       		.uleb128 0x3a
+ 2265 01b0 0B       		.uleb128 0xb
+ 2266 01b1 3B       		.uleb128 0x3b
+ 2267 01b2 05       		.uleb128 0x5
+ 2268 01b3 27       		.uleb128 0x27
+ 2269 01b4 0C       		.uleb128 0xc
+ 2270 01b5 11       		.uleb128 0x11
+ 2271 01b6 01       		.uleb128 0x1
+ 2272 01b7 12       		.uleb128 0x12
+ 2273 01b8 01       		.uleb128 0x1
+ 2274 01b9 40       		.uleb128 0x40
+ 2275 01ba 06       		.uleb128 0x6
+ 2276 01bb 9742     		.uleb128 0x2117
+ 2277 01bd 0C       		.uleb128 0xc
+ 2278 01be 01       		.uleb128 0x1
+ 2279 01bf 13       		.uleb128 0x13
+ 2280 01c0 00       		.byte	0
+ 2281 01c1 00       		.byte	0
+ 2282 01c2 20       		.uleb128 0x20
+ 2283 01c3 898201   		.uleb128 0x4109
+ 2284 01c6 01       		.byte	0x1
+ 2285 01c7 11       		.uleb128 0x11
+ 2286 01c8 01       		.uleb128 0x1
+ 2287 01c9 31       		.uleb128 0x31
+ 2288 01ca 13       		.uleb128 0x13
+ 2289 01cb 01       		.uleb128 0x1
+ 2290 01cc 13       		.uleb128 0x13
+ 2291 01cd 00       		.byte	0
+ 2292 01ce 00       		.byte	0
+ 2293 01cf 21       		.uleb128 0x21
+ 2294 01d0 8A8201   		.uleb128 0x410a
+ 2295 01d3 00       		.byte	0
+ 2296 01d4 02       		.uleb128 0x2
+ 2297 01d5 0A       		.uleb128 0xa
+ 2298 01d6 9142     		.uleb128 0x2111
+ 2299 01d8 0A       		.uleb128 0xa
+ 2300 01d9 00       		.byte	0
+ 2301 01da 00       		.byte	0
+ 2302 01db 22       		.uleb128 0x22
+ 2303 01dc 898201   		.uleb128 0x4109
+ 2304 01df 00       		.byte	0
+ 2305 01e0 11       		.uleb128 0x11
+ARM GAS  /tmp/ccvdMV8w.s 			page 52
+
+
+ 2306 01e1 01       		.uleb128 0x1
+ 2307 01e2 31       		.uleb128 0x31
+ 2308 01e3 13       		.uleb128 0x13
+ 2309 01e4 00       		.byte	0
+ 2310 01e5 00       		.byte	0
+ 2311 01e6 23       		.uleb128 0x23
+ 2312 01e7 2E       		.uleb128 0x2e
+ 2313 01e8 01       		.byte	0x1
+ 2314 01e9 3F       		.uleb128 0x3f
+ 2315 01ea 0C       		.uleb128 0xc
+ 2316 01eb 03       		.uleb128 0x3
+ 2317 01ec 0E       		.uleb128 0xe
+ 2318 01ed 3A       		.uleb128 0x3a
+ 2319 01ee 0B       		.uleb128 0xb
+ 2320 01ef 3B       		.uleb128 0x3b
+ 2321 01f0 05       		.uleb128 0x5
+ 2322 01f1 27       		.uleb128 0x27
+ 2323 01f2 0C       		.uleb128 0xc
+ 2324 01f3 49       		.uleb128 0x49
+ 2325 01f4 13       		.uleb128 0x13
+ 2326 01f5 11       		.uleb128 0x11
+ 2327 01f6 01       		.uleb128 0x1
+ 2328 01f7 12       		.uleb128 0x12
+ 2329 01f8 01       		.uleb128 0x1
+ 2330 01f9 40       		.uleb128 0x40
+ 2331 01fa 06       		.uleb128 0x6
+ 2332 01fb 9742     		.uleb128 0x2117
+ 2333 01fd 0C       		.uleb128 0xc
+ 2334 01fe 01       		.uleb128 0x1
+ 2335 01ff 13       		.uleb128 0x13
+ 2336 0200 00       		.byte	0
+ 2337 0201 00       		.byte	0
+ 2338 0202 24       		.uleb128 0x24
+ 2339 0203 2E       		.uleb128 0x2e
+ 2340 0204 01       		.byte	0x1
+ 2341 0205 3F       		.uleb128 0x3f
+ 2342 0206 0C       		.uleb128 0xc
+ 2343 0207 03       		.uleb128 0x3
+ 2344 0208 0E       		.uleb128 0xe
+ 2345 0209 3A       		.uleb128 0x3a
+ 2346 020a 0B       		.uleb128 0xb
+ 2347 020b 3B       		.uleb128 0x3b
+ 2348 020c 0B       		.uleb128 0xb
+ 2349 020d 27       		.uleb128 0x27
+ 2350 020e 0C       		.uleb128 0xc
+ 2351 020f 01       		.uleb128 0x1
+ 2352 0210 13       		.uleb128 0x13
+ 2353 0211 00       		.byte	0
+ 2354 0212 00       		.byte	0
+ 2355 0213 25       		.uleb128 0x25
+ 2356 0214 05       		.uleb128 0x5
+ 2357 0215 00       		.byte	0
+ 2358 0216 03       		.uleb128 0x3
+ 2359 0217 0E       		.uleb128 0xe
+ 2360 0218 3A       		.uleb128 0x3a
+ 2361 0219 0B       		.uleb128 0xb
+ 2362 021a 3B       		.uleb128 0x3b
+ARM GAS  /tmp/ccvdMV8w.s 			page 53
+
+
+ 2363 021b 0B       		.uleb128 0xb
+ 2364 021c 49       		.uleb128 0x49
+ 2365 021d 13       		.uleb128 0x13
+ 2366 021e 00       		.byte	0
+ 2367 021f 00       		.byte	0
+ 2368 0220 26       		.uleb128 0x26
+ 2369 0221 2E       		.uleb128 0x2e
+ 2370 0222 01       		.byte	0x1
+ 2371 0223 3F       		.uleb128 0x3f
+ 2372 0224 0C       		.uleb128 0xc
+ 2373 0225 03       		.uleb128 0x3
+ 2374 0226 0E       		.uleb128 0xe
+ 2375 0227 3A       		.uleb128 0x3a
+ 2376 0228 0B       		.uleb128 0xb
+ 2377 0229 3B       		.uleb128 0x3b
+ 2378 022a 0B       		.uleb128 0xb
+ 2379 022b 27       		.uleb128 0x27
+ 2380 022c 0C       		.uleb128 0xc
+ 2381 022d 11       		.uleb128 0x11
+ 2382 022e 01       		.uleb128 0x1
+ 2383 022f 12       		.uleb128 0x12
+ 2384 0230 01       		.uleb128 0x1
+ 2385 0231 40       		.uleb128 0x40
+ 2386 0232 06       		.uleb128 0x6
+ 2387 0233 9742     		.uleb128 0x2117
+ 2388 0235 0C       		.uleb128 0xc
+ 2389 0236 01       		.uleb128 0x1
+ 2390 0237 13       		.uleb128 0x13
+ 2391 0238 00       		.byte	0
+ 2392 0239 00       		.byte	0
+ 2393 023a 27       		.uleb128 0x27
+ 2394 023b 05       		.uleb128 0x5
+ 2395 023c 00       		.byte	0
+ 2396 023d 03       		.uleb128 0x3
+ 2397 023e 0E       		.uleb128 0xe
+ 2398 023f 3A       		.uleb128 0x3a
+ 2399 0240 0B       		.uleb128 0xb
+ 2400 0241 3B       		.uleb128 0x3b
+ 2401 0242 0B       		.uleb128 0xb
+ 2402 0243 49       		.uleb128 0x49
+ 2403 0244 13       		.uleb128 0x13
+ 2404 0245 02       		.uleb128 0x2
+ 2405 0246 06       		.uleb128 0x6
+ 2406 0247 00       		.byte	0
+ 2407 0248 00       		.byte	0
+ 2408 0249 28       		.uleb128 0x28
+ 2409 024a 898201   		.uleb128 0x4109
+ 2410 024d 01       		.byte	0x1
+ 2411 024e 11       		.uleb128 0x11
+ 2412 024f 01       		.uleb128 0x1
+ 2413 0250 31       		.uleb128 0x31
+ 2414 0251 13       		.uleb128 0x13
+ 2415 0252 00       		.byte	0
+ 2416 0253 00       		.byte	0
+ 2417 0254 29       		.uleb128 0x29
+ 2418 0255 2E       		.uleb128 0x2e
+ 2419 0256 01       		.byte	0x1
+ARM GAS  /tmp/ccvdMV8w.s 			page 54
+
+
+ 2420 0257 3F       		.uleb128 0x3f
+ 2421 0258 0C       		.uleb128 0xc
+ 2422 0259 03       		.uleb128 0x3
+ 2423 025a 0E       		.uleb128 0xe
+ 2424 025b 3A       		.uleb128 0x3a
+ 2425 025c 0B       		.uleb128 0xb
+ 2426 025d 3B       		.uleb128 0x3b
+ 2427 025e 0B       		.uleb128 0xb
+ 2428 025f 27       		.uleb128 0x27
+ 2429 0260 0C       		.uleb128 0xc
+ 2430 0261 49       		.uleb128 0x49
+ 2431 0262 13       		.uleb128 0x13
+ 2432 0263 11       		.uleb128 0x11
+ 2433 0264 01       		.uleb128 0x1
+ 2434 0265 12       		.uleb128 0x12
+ 2435 0266 01       		.uleb128 0x1
+ 2436 0267 40       		.uleb128 0x40
+ 2437 0268 0A       		.uleb128 0xa
+ 2438 0269 9742     		.uleb128 0x2117
+ 2439 026b 0C       		.uleb128 0xc
+ 2440 026c 01       		.uleb128 0x1
+ 2441 026d 13       		.uleb128 0x13
+ 2442 026e 00       		.byte	0
+ 2443 026f 00       		.byte	0
+ 2444 0270 2A       		.uleb128 0x2a
+ 2445 0271 05       		.uleb128 0x5
+ 2446 0272 00       		.byte	0
+ 2447 0273 03       		.uleb128 0x3
+ 2448 0274 0E       		.uleb128 0xe
+ 2449 0275 3A       		.uleb128 0x3a
+ 2450 0276 0B       		.uleb128 0xb
+ 2451 0277 3B       		.uleb128 0x3b
+ 2452 0278 0B       		.uleb128 0xb
+ 2453 0279 49       		.uleb128 0x49
+ 2454 027a 13       		.uleb128 0x13
+ 2455 027b 02       		.uleb128 0x2
+ 2456 027c 0A       		.uleb128 0xa
+ 2457 027d 00       		.byte	0
+ 2458 027e 00       		.byte	0
+ 2459 027f 2B       		.uleb128 0x2b
+ 2460 0280 2E       		.uleb128 0x2e
+ 2461 0281 01       		.byte	0x1
+ 2462 0282 3F       		.uleb128 0x3f
+ 2463 0283 0C       		.uleb128 0xc
+ 2464 0284 03       		.uleb128 0x3
+ 2465 0285 0E       		.uleb128 0xe
+ 2466 0286 3A       		.uleb128 0x3a
+ 2467 0287 0B       		.uleb128 0xb
+ 2468 0288 3B       		.uleb128 0x3b
+ 2469 0289 0B       		.uleb128 0xb
+ 2470 028a 27       		.uleb128 0x27
+ 2471 028b 0C       		.uleb128 0xc
+ 2472 028c 49       		.uleb128 0x49
+ 2473 028d 13       		.uleb128 0x13
+ 2474 028e 11       		.uleb128 0x11
+ 2475 028f 01       		.uleb128 0x1
+ 2476 0290 12       		.uleb128 0x12
+ARM GAS  /tmp/ccvdMV8w.s 			page 55
+
+
+ 2477 0291 01       		.uleb128 0x1
+ 2478 0292 40       		.uleb128 0x40
+ 2479 0293 06       		.uleb128 0x6
+ 2480 0294 9742     		.uleb128 0x2117
+ 2481 0296 0C       		.uleb128 0xc
+ 2482 0297 01       		.uleb128 0x1
+ 2483 0298 13       		.uleb128 0x13
+ 2484 0299 00       		.byte	0
+ 2485 029a 00       		.byte	0
+ 2486 029b 2C       		.uleb128 0x2c
+ 2487 029c 2E       		.uleb128 0x2e
+ 2488 029d 01       		.byte	0x1
+ 2489 029e 31       		.uleb128 0x31
+ 2490 029f 13       		.uleb128 0x13
+ 2491 02a0 11       		.uleb128 0x11
+ 2492 02a1 01       		.uleb128 0x1
+ 2493 02a2 12       		.uleb128 0x12
+ 2494 02a3 01       		.uleb128 0x1
+ 2495 02a4 40       		.uleb128 0x40
+ 2496 02a5 0A       		.uleb128 0xa
+ 2497 02a6 9742     		.uleb128 0x2117
+ 2498 02a8 0C       		.uleb128 0xc
+ 2499 02a9 01       		.uleb128 0x1
+ 2500 02aa 13       		.uleb128 0x13
+ 2501 02ab 00       		.byte	0
+ 2502 02ac 00       		.byte	0
+ 2503 02ad 2D       		.uleb128 0x2d
+ 2504 02ae 05       		.uleb128 0x5
+ 2505 02af 00       		.byte	0
+ 2506 02b0 31       		.uleb128 0x31
+ 2507 02b1 13       		.uleb128 0x13
+ 2508 02b2 02       		.uleb128 0x2
+ 2509 02b3 0A       		.uleb128 0xa
+ 2510 02b4 00       		.byte	0
+ 2511 02b5 00       		.byte	0
+ 2512 02b6 2E       		.uleb128 0x2e
+ 2513 02b7 2E       		.uleb128 0x2e
+ 2514 02b8 00       		.byte	0
+ 2515 02b9 3F       		.uleb128 0x3f
+ 2516 02ba 0C       		.uleb128 0xc
+ 2517 02bb 3C       		.uleb128 0x3c
+ 2518 02bc 0C       		.uleb128 0xc
+ 2519 02bd 8740     		.uleb128 0x2007
+ 2520 02bf 0E       		.uleb128 0xe
+ 2521 02c0 03       		.uleb128 0x3
+ 2522 02c1 0E       		.uleb128 0xe
+ 2523 02c2 3A       		.uleb128 0x3a
+ 2524 02c3 0B       		.uleb128 0xb
+ 2525 02c4 3B       		.uleb128 0x3b
+ 2526 02c5 05       		.uleb128 0x5
+ 2527 02c6 00       		.byte	0
+ 2528 02c7 00       		.byte	0
+ 2529 02c8 00       		.byte	0
+ 2530              		.section	.debug_loc,"",%progbits
+ 2531              	.Ldebug_loc0:
+ 2532              	.LLST24:
+ 2533 0000 FE010000 		.4byte	.LVL47-.Ltext0
+ARM GAS  /tmp/ccvdMV8w.s 			page 56
+
+
+ 2534 0004 22020000 		.4byte	.LVL51-.Ltext0
+ 2535 0008 0100     		.2byte	0x1
+ 2536 000a 50       		.byte	0x50
+ 2537 000b 22020000 		.4byte	.LVL51-.Ltext0
+ 2538 000f 24020000 		.4byte	.LVL52-.Ltext0
+ 2539 0013 0400     		.2byte	0x4
+ 2540 0015 F3       		.byte	0xf3
+ 2541 0016 01       		.uleb128 0x1
+ 2542 0017 50       		.byte	0x50
+ 2543 0018 9F       		.byte	0x9f
+ 2544 0019 24020000 		.4byte	.LVL52-.Ltext0
+ 2545 001d 26020000 		.4byte	.LVL53-.Ltext0
+ 2546 0021 0100     		.2byte	0x1
+ 2547 0023 50       		.byte	0x50
+ 2548 0024 26020000 		.4byte	.LVL53-.Ltext0
+ 2549 0028 28020000 		.4byte	.LVL54-.Ltext0
+ 2550 002c 0400     		.2byte	0x4
+ 2551 002e F3       		.byte	0xf3
+ 2552 002f 01       		.uleb128 0x1
+ 2553 0030 50       		.byte	0x50
+ 2554 0031 9F       		.byte	0x9f
+ 2555 0032 28020000 		.4byte	.LVL54-.Ltext0
+ 2556 0036 2A020000 		.4byte	.LVL55-.Ltext0
+ 2557 003a 0100     		.2byte	0x1
+ 2558 003c 50       		.byte	0x50
+ 2559 003d 2A020000 		.4byte	.LVL55-.Ltext0
+ 2560 0041 30020000 		.4byte	.LFE78-.Ltext0
+ 2561 0045 0400     		.2byte	0x4
+ 2562 0047 F3       		.byte	0xf3
+ 2563 0048 01       		.uleb128 0x1
+ 2564 0049 50       		.byte	0x50
+ 2565 004a 9F       		.byte	0x9f
+ 2566 004b 00000000 		.4byte	0
+ 2567 004f 00000000 		.4byte	0
+ 2568              	.LLST25:
+ 2569 0053 FE010000 		.4byte	.LVL47-.Ltext0
+ 2570 0057 0C020000 		.4byte	.LVL49-.Ltext0
+ 2571 005b 0100     		.2byte	0x1
+ 2572 005d 51       		.byte	0x51
+ 2573 005e 0C020000 		.4byte	.LVL49-.Ltext0
+ 2574 0062 24020000 		.4byte	.LVL52-.Ltext0
+ 2575 0066 0400     		.2byte	0x4
+ 2576 0068 F3       		.byte	0xf3
+ 2577 0069 01       		.uleb128 0x1
+ 2578 006a 51       		.byte	0x51
+ 2579 006b 9F       		.byte	0x9f
+ 2580 006c 24020000 		.4byte	.LVL52-.Ltext0
+ 2581 0070 30020000 		.4byte	.LFE78-.Ltext0
+ 2582 0074 0100     		.2byte	0x1
+ 2583 0076 51       		.byte	0x51
+ 2584 0077 00000000 		.4byte	0
+ 2585 007b 00000000 		.4byte	0
+ 2586              	.LLST26:
+ 2587 007f FE010000 		.4byte	.LVL47-.Ltext0
+ 2588 0083 02020000 		.4byte	.LVL48-.Ltext0
+ 2589 0087 0100     		.2byte	0x1
+ 2590 0089 52       		.byte	0x52
+ARM GAS  /tmp/ccvdMV8w.s 			page 57
+
+
+ 2591 008a 02020000 		.4byte	.LVL48-.Ltext0
+ 2592 008e 24020000 		.4byte	.LVL52-.Ltext0
+ 2593 0092 0400     		.2byte	0x4
+ 2594 0094 F3       		.byte	0xf3
+ 2595 0095 01       		.uleb128 0x1
+ 2596 0096 52       		.byte	0x52
+ 2597 0097 9F       		.byte	0x9f
+ 2598 0098 24020000 		.4byte	.LVL52-.Ltext0
+ 2599 009c 28020000 		.4byte	.LVL54-.Ltext0
+ 2600 00a0 0100     		.2byte	0x1
+ 2601 00a2 52       		.byte	0x52
+ 2602 00a3 28020000 		.4byte	.LVL54-.Ltext0
+ 2603 00a7 30020000 		.4byte	.LFE78-.Ltext0
+ 2604 00ab 0400     		.2byte	0x4
+ 2605 00ad F3       		.byte	0xf3
+ 2606 00ae 01       		.uleb128 0x1
+ 2607 00af 52       		.byte	0x52
+ 2608 00b0 9F       		.byte	0x9f
+ 2609 00b1 00000000 		.4byte	0
+ 2610 00b5 00000000 		.4byte	0
+ 2611              	.LLST27:
+ 2612 00b9 FE010000 		.4byte	.LVL47-.Ltext0
+ 2613 00bd 16020000 		.4byte	.LVL50-.Ltext0
+ 2614 00c1 0100     		.2byte	0x1
+ 2615 00c3 53       		.byte	0x53
+ 2616 00c4 16020000 		.4byte	.LVL50-.Ltext0
+ 2617 00c8 24020000 		.4byte	.LVL52-.Ltext0
+ 2618 00cc 0400     		.2byte	0x4
+ 2619 00ce F3       		.byte	0xf3
+ 2620 00cf 01       		.uleb128 0x1
+ 2621 00d0 53       		.byte	0x53
+ 2622 00d1 9F       		.byte	0x9f
+ 2623 00d2 24020000 		.4byte	.LVL52-.Ltext0
+ 2624 00d6 30020000 		.4byte	.LFE78-.Ltext0
+ 2625 00da 0100     		.2byte	0x1
+ 2626 00dc 53       		.byte	0x53
+ 2627 00dd 00000000 		.4byte	0
+ 2628 00e1 00000000 		.4byte	0
+ 2629              	.LLST20:
+ 2630 00e5 EE010000 		.4byte	.LVL43-.Ltext0
+ 2631 00e9 FA010000 		.4byte	.LVL45-.Ltext0
+ 2632 00ed 0100     		.2byte	0x1
+ 2633 00ef 50       		.byte	0x50
+ 2634 00f0 FA010000 		.4byte	.LVL45-.Ltext0
+ 2635 00f4 FE010000 		.4byte	.LFE77-.Ltext0
+ 2636 00f8 0400     		.2byte	0x4
+ 2637 00fa F3       		.byte	0xf3
+ 2638 00fb 01       		.uleb128 0x1
+ 2639 00fc 50       		.byte	0x50
+ 2640 00fd 9F       		.byte	0x9f
+ 2641 00fe 00000000 		.4byte	0
+ 2642 0102 00000000 		.4byte	0
+ 2643              	.LLST21:
+ 2644 0106 EE010000 		.4byte	.LVL43-.Ltext0
+ 2645 010a F0010000 		.4byte	.LVL44-.Ltext0
+ 2646 010e 0100     		.2byte	0x1
+ 2647 0110 51       		.byte	0x51
+ARM GAS  /tmp/ccvdMV8w.s 			page 58
+
+
+ 2648 0111 F0010000 		.4byte	.LVL44-.Ltext0
+ 2649 0115 FE010000 		.4byte	.LFE77-.Ltext0
+ 2650 0119 0400     		.2byte	0x4
+ 2651 011b F3       		.byte	0xf3
+ 2652 011c 01       		.uleb128 0x1
+ 2653 011d 51       		.byte	0x51
+ 2654 011e 9F       		.byte	0x9f
+ 2655 011f 00000000 		.4byte	0
+ 2656 0123 00000000 		.4byte	0
+ 2657              	.LLST22:
+ 2658 0127 EE010000 		.4byte	.LVL43-.Ltext0
+ 2659 012b F0010000 		.4byte	.LVL44-.Ltext0
+ 2660 012f 0B00     		.2byte	0xb
+ 2661 0131 71       		.byte	0x71
+ 2662 0132 00       		.sleb128 0
+ 2663 0133 32       		.byte	0x32
+ 2664 0134 24       		.byte	0x24
+ 2665 0135 23       		.byte	0x23
+ 2666 0136 80D88180 		.uleb128 0x40006c00
+ 2666      04
+ 2667 013b 9F       		.byte	0x9f
+ 2668 013c F0010000 		.4byte	.LVL44-.Ltext0
+ 2669 0140 FE010000 		.4byte	.LFE77-.Ltext0
+ 2670 0144 0C00     		.2byte	0xc
+ 2671 0146 F3       		.byte	0xf3
+ 2672 0147 01       		.uleb128 0x1
+ 2673 0148 51       		.byte	0x51
+ 2674 0149 32       		.byte	0x32
+ 2675 014a 24       		.byte	0x24
+ 2676 014b 23       		.byte	0x23
+ 2677 014c 80D88180 		.uleb128 0x40006c00
+ 2677      04
+ 2678 0151 9F       		.byte	0x9f
+ 2679 0152 00000000 		.4byte	0
+ 2680 0156 00000000 		.4byte	0
+ 2681              	.LLST23:
+ 2682 015a EE010000 		.4byte	.LVL43-.Ltext0
+ 2683 015e FA010000 		.4byte	.LVL45-.Ltext0
+ 2684 0162 0200     		.2byte	0x2
+ 2685 0164 30       		.byte	0x30
+ 2686 0165 9F       		.byte	0x9f
+ 2687 0166 FA010000 		.4byte	.LVL45-.Ltext0
+ 2688 016a FC010000 		.4byte	.LVL46-.Ltext0
+ 2689 016e 0700     		.2byte	0x7
+ 2690 0170 70       		.byte	0x70
+ 2691 0171 00       		.sleb128 0
+ 2692 0172 0A       		.byte	0xa
+ 2693 0173 FFFF     		.2byte	0xffff
+ 2694 0175 1A       		.byte	0x1a
+ 2695 0176 9F       		.byte	0x9f
+ 2696 0177 00000000 		.4byte	0
+ 2697 017b 00000000 		.4byte	0
+ 2698              	.LLST17:
+ 2699 017f DE010000 		.4byte	.LVL40-.Ltext0
+ 2700 0183 E0010000 		.4byte	.LVL41-.Ltext0
+ 2701 0187 0100     		.2byte	0x1
+ 2702 0189 51       		.byte	0x51
+ARM GAS  /tmp/ccvdMV8w.s 			page 59
+
+
+ 2703 018a E0010000 		.4byte	.LVL41-.Ltext0
+ 2704 018e EE010000 		.4byte	.LFE76-.Ltext0
+ 2705 0192 0400     		.2byte	0x4
+ 2706 0194 F3       		.byte	0xf3
+ 2707 0195 01       		.uleb128 0x1
+ 2708 0196 51       		.byte	0x51
+ 2709 0197 9F       		.byte	0x9f
+ 2710 0198 00000000 		.4byte	0
+ 2711 019c 00000000 		.4byte	0
+ 2712              	.LLST18:
+ 2713 01a0 DE010000 		.4byte	.LVL40-.Ltext0
+ 2714 01a4 EA010000 		.4byte	.LVL42-.Ltext0
+ 2715 01a8 0100     		.2byte	0x1
+ 2716 01aa 52       		.byte	0x52
+ 2717 01ab EA010000 		.4byte	.LVL42-.Ltext0
+ 2718 01af EE010000 		.4byte	.LFE76-.Ltext0
+ 2719 01b3 0400     		.2byte	0x4
+ 2720 01b5 F3       		.byte	0xf3
+ 2721 01b6 01       		.uleb128 0x1
+ 2722 01b7 52       		.byte	0x52
+ 2723 01b8 9F       		.byte	0x9f
+ 2724 01b9 00000000 		.4byte	0
+ 2725 01bd 00000000 		.4byte	0
+ 2726              	.LLST19:
+ 2727 01c1 DE010000 		.4byte	.LVL40-.Ltext0
+ 2728 01c5 E0010000 		.4byte	.LVL41-.Ltext0
+ 2729 01c9 0B00     		.2byte	0xb
+ 2730 01cb 71       		.byte	0x71
+ 2731 01cc 00       		.sleb128 0
+ 2732 01cd 32       		.byte	0x32
+ 2733 01ce 24       		.byte	0x24
+ 2734 01cf 23       		.byte	0x23
+ 2735 01d0 80D88180 		.uleb128 0x40006c00
+ 2735      04
+ 2736 01d5 9F       		.byte	0x9f
+ 2737 01d6 E0010000 		.4byte	.LVL41-.Ltext0
+ 2738 01da EE010000 		.4byte	.LFE76-.Ltext0
+ 2739 01de 0C00     		.2byte	0xc
+ 2740 01e0 F3       		.byte	0xf3
+ 2741 01e1 01       		.uleb128 0x1
+ 2742 01e2 51       		.byte	0x51
+ 2743 01e3 32       		.byte	0x32
+ 2744 01e4 24       		.byte	0x24
+ 2745 01e5 23       		.byte	0x23
+ 2746 01e6 80D88180 		.uleb128 0x40006c00
+ 2746      04
+ 2747 01eb 9F       		.byte	0x9f
+ 2748 01ec 00000000 		.4byte	0
+ 2749 01f0 00000000 		.4byte	0
+ 2750              	.LLST15:
+ 2751 01f4 A4010000 		.4byte	.LFB73-.Ltext0
+ 2752 01f8 A8010000 		.4byte	.LCFI4-.Ltext0
+ 2753 01fc 0200     		.2byte	0x2
+ 2754 01fe 7D       		.byte	0x7d
+ 2755 01ff 00       		.sleb128 0
+ 2756 0200 A8010000 		.4byte	.LCFI4-.Ltext0
+ 2757 0204 DE010000 		.4byte	.LFE73-.Ltext0
+ARM GAS  /tmp/ccvdMV8w.s 			page 60
+
+
+ 2758 0208 0200     		.2byte	0x2
+ 2759 020a 7D       		.byte	0x7d
+ 2760 020b 08       		.sleb128 8
+ 2761 020c 00000000 		.4byte	0
+ 2762 0210 00000000 		.4byte	0
+ 2763              	.LLST16:
+ 2764 0214 A4010000 		.4byte	.LVL36-.Ltext0
+ 2765 0218 BF010000 		.4byte	.LVL37-1-.Ltext0
+ 2766 021c 0100     		.2byte	0x1
+ 2767 021e 50       		.byte	0x50
+ 2768 021f BF010000 		.4byte	.LVL37-1-.Ltext0
+ 2769 0223 D6010000 		.4byte	.LVL38-.Ltext0
+ 2770 0227 0100     		.2byte	0x1
+ 2771 0229 54       		.byte	0x54
+ 2772 022a D6010000 		.4byte	.LVL38-.Ltext0
+ 2773 022e D9010000 		.4byte	.LVL39-1-.Ltext0
+ 2774 0232 0100     		.2byte	0x1
+ 2775 0234 50       		.byte	0x50
+ 2776 0235 D9010000 		.4byte	.LVL39-1-.Ltext0
+ 2777 0239 DE010000 		.4byte	.LFE73-.Ltext0
+ 2778 023d 0100     		.2byte	0x1
+ 2779 023f 54       		.byte	0x54
+ 2780 0240 00000000 		.4byte	0
+ 2781 0244 00000000 		.4byte	0
+ 2782              	.LLST14:
+ 2783 0248 78010000 		.4byte	.LVL31-.Ltext0
+ 2784 024c 9A010000 		.4byte	.LVL32-.Ltext0
+ 2785 0250 0100     		.2byte	0x1
+ 2786 0252 50       		.byte	0x50
+ 2787 0253 9A010000 		.4byte	.LVL32-.Ltext0
+ 2788 0257 9C010000 		.4byte	.LVL33-.Ltext0
+ 2789 025b 0400     		.2byte	0x4
+ 2790 025d F3       		.byte	0xf3
+ 2791 025e 01       		.uleb128 0x1
+ 2792 025f 50       		.byte	0x50
+ 2793 0260 9F       		.byte	0x9f
+ 2794 0261 9C010000 		.4byte	.LVL33-.Ltext0
+ 2795 0265 9E010000 		.4byte	.LVL34-.Ltext0
+ 2796 0269 0100     		.2byte	0x1
+ 2797 026b 50       		.byte	0x50
+ 2798 026c 9E010000 		.4byte	.LVL34-.Ltext0
+ 2799 0270 A0010000 		.4byte	.LFE72-.Ltext0
+ 2800 0274 0400     		.2byte	0x4
+ 2801 0276 F3       		.byte	0xf3
+ 2802 0277 01       		.uleb128 0x1
+ 2803 0278 50       		.byte	0x50
+ 2804 0279 9F       		.byte	0x9f
+ 2805 027a 00000000 		.4byte	0
+ 2806 027e 00000000 		.4byte	0
+ 2807              	.LLST13:
+ 2808 0282 50010000 		.4byte	.LVL27-.Ltext0
+ 2809 0286 72010000 		.4byte	.LVL28-.Ltext0
+ 2810 028a 0100     		.2byte	0x1
+ 2811 028c 50       		.byte	0x50
+ 2812 028d 72010000 		.4byte	.LVL28-.Ltext0
+ 2813 0291 74010000 		.4byte	.LVL29-.Ltext0
+ 2814 0295 0400     		.2byte	0x4
+ARM GAS  /tmp/ccvdMV8w.s 			page 61
+
+
+ 2815 0297 F3       		.byte	0xf3
+ 2816 0298 01       		.uleb128 0x1
+ 2817 0299 50       		.byte	0x50
+ 2818 029a 9F       		.byte	0x9f
+ 2819 029b 74010000 		.4byte	.LVL29-.Ltext0
+ 2820 029f 76010000 		.4byte	.LVL30-.Ltext0
+ 2821 02a3 0100     		.2byte	0x1
+ 2822 02a5 50       		.byte	0x50
+ 2823 02a6 76010000 		.4byte	.LVL30-.Ltext0
+ 2824 02aa 78010000 		.4byte	.LFE71-.Ltext0
+ 2825 02ae 0400     		.2byte	0x4
+ 2826 02b0 F3       		.byte	0xf3
+ 2827 02b1 01       		.uleb128 0x1
+ 2828 02b2 50       		.byte	0x50
+ 2829 02b3 9F       		.byte	0x9f
+ 2830 02b4 00000000 		.4byte	0
+ 2831 02b8 00000000 		.4byte	0
+ 2832              	.LLST9:
+ 2833 02bc 08010000 		.4byte	.LFB70-.Ltext0
+ 2834 02c0 0A010000 		.4byte	.LCFI3-.Ltext0
+ 2835 02c4 0200     		.2byte	0x2
+ 2836 02c6 7D       		.byte	0x7d
+ 2837 02c7 00       		.sleb128 0
+ 2838 02c8 0A010000 		.4byte	.LCFI3-.Ltext0
+ 2839 02cc 50010000 		.4byte	.LFE70-.Ltext0
+ 2840 02d0 0200     		.2byte	0x2
+ 2841 02d2 7D       		.byte	0x7d
+ 2842 02d3 18       		.sleb128 24
+ 2843 02d4 00000000 		.4byte	0
+ 2844 02d8 00000000 		.4byte	0
+ 2845              	.LLST10:
+ 2846 02dc 08010000 		.4byte	.LVL17-.Ltext0
+ 2847 02e0 11010000 		.4byte	.LVL18-1-.Ltext0
+ 2848 02e4 0100     		.2byte	0x1
+ 2849 02e6 50       		.byte	0x50
+ 2850 02e7 11010000 		.4byte	.LVL18-1-.Ltext0
+ 2851 02eb 4A010000 		.4byte	.LVL26-.Ltext0
+ 2852 02ef 0100     		.2byte	0x1
+ 2853 02f1 54       		.byte	0x54
+ 2854 02f2 4A010000 		.4byte	.LVL26-.Ltext0
+ 2855 02f6 50010000 		.4byte	.LFE70-.Ltext0
+ 2856 02fa 0400     		.2byte	0x4
+ 2857 02fc F3       		.byte	0xf3
+ 2858 02fd 01       		.uleb128 0x1
+ 2859 02fe 50       		.byte	0x50
+ 2860 02ff 9F       		.byte	0x9f
+ 2861 0300 00000000 		.4byte	0
+ 2862 0304 00000000 		.4byte	0
+ 2863              	.LLST11:
+ 2864 0308 08010000 		.4byte	.LVL17-.Ltext0
+ 2865 030c 11010000 		.4byte	.LVL18-1-.Ltext0
+ 2866 0310 0100     		.2byte	0x1
+ 2867 0312 51       		.byte	0x51
+ 2868 0313 11010000 		.4byte	.LVL18-1-.Ltext0
+ 2869 0317 4A010000 		.4byte	.LVL26-.Ltext0
+ 2870 031b 0100     		.2byte	0x1
+ 2871 031d 56       		.byte	0x56
+ARM GAS  /tmp/ccvdMV8w.s 			page 62
+
+
+ 2872 031e 4A010000 		.4byte	.LVL26-.Ltext0
+ 2873 0322 50010000 		.4byte	.LFE70-.Ltext0
+ 2874 0326 0400     		.2byte	0x4
+ 2875 0328 F3       		.byte	0xf3
+ 2876 0329 01       		.uleb128 0x1
+ 2877 032a 51       		.byte	0x51
+ 2878 032b 9F       		.byte	0x9f
+ 2879 032c 00000000 		.4byte	0
+ 2880 0330 00000000 		.4byte	0
+ 2881              	.LLST12:
+ 2882 0334 14010000 		.4byte	.LVL19-.Ltext0
+ 2883 0338 18010000 		.4byte	.LVL20-.Ltext0
+ 2884 033c 0100     		.2byte	0x1
+ 2885 033e 50       		.byte	0x50
+ 2886 033f 18010000 		.4byte	.LVL20-.Ltext0
+ 2887 0343 46010000 		.4byte	.LVL24-.Ltext0
+ 2888 0347 0100     		.2byte	0x1
+ 2889 0349 57       		.byte	0x57
+ 2890 034a 46010000 		.4byte	.LVL24-.Ltext0
+ 2891 034e 48010000 		.4byte	.LVL25-.Ltext0
+ 2892 0352 0100     		.2byte	0x1
+ 2893 0354 50       		.byte	0x50
+ 2894 0355 48010000 		.4byte	.LVL25-.Ltext0
+ 2895 0359 4A010000 		.4byte	.LVL26-.Ltext0
+ 2896 035d 0100     		.2byte	0x1
+ 2897 035f 57       		.byte	0x57
+ 2898 0360 00000000 		.4byte	0
+ 2899 0364 00000000 		.4byte	0
+ 2900              	.LLST7:
+ 2901 0368 DE000000 		.4byte	.LFB68-.Ltext0
+ 2902 036c E0000000 		.4byte	.LCFI2-.Ltext0
+ 2903 0370 0200     		.2byte	0x2
+ 2904 0372 7D       		.byte	0x7d
+ 2905 0373 00       		.sleb128 0
+ 2906 0374 E0000000 		.4byte	.LCFI2-.Ltext0
+ 2907 0378 08010000 		.4byte	.LFE68-.Ltext0
+ 2908 037c 0200     		.2byte	0x2
+ 2909 037e 7D       		.byte	0x7d
+ 2910 037f 10       		.sleb128 16
+ 2911 0380 00000000 		.4byte	0
+ 2912 0384 00000000 		.4byte	0
+ 2913              	.LLST8:
+ 2914 0388 DE000000 		.4byte	.LVL14-.Ltext0
+ 2915 038c F3000000 		.4byte	.LVL15-1-.Ltext0
+ 2916 0390 0100     		.2byte	0x1
+ 2917 0392 50       		.byte	0x50
+ 2918 0393 F3000000 		.4byte	.LVL15-1-.Ltext0
+ 2919 0397 02010000 		.4byte	.LVL16-.Ltext0
+ 2920 039b 0100     		.2byte	0x1
+ 2921 039d 55       		.byte	0x55
+ 2922 039e 02010000 		.4byte	.LVL16-.Ltext0
+ 2923 03a2 08010000 		.4byte	.LFE68-.Ltext0
+ 2924 03a6 0400     		.2byte	0x4
+ 2925 03a8 F3       		.byte	0xf3
+ 2926 03a9 01       		.uleb128 0x1
+ 2927 03aa 50       		.byte	0x50
+ 2928 03ab 9F       		.byte	0x9f
+ARM GAS  /tmp/ccvdMV8w.s 			page 63
+
+
+ 2929 03ac 00000000 		.4byte	0
+ 2930 03b0 00000000 		.4byte	0
+ 2931              	.LLST6:
+ 2932 03b4 98000000 		.4byte	.LVL10-.Ltext0
+ 2933 03b8 D2000000 		.4byte	.LVL11-.Ltext0
+ 2934 03bc 0100     		.2byte	0x1
+ 2935 03be 50       		.byte	0x50
+ 2936 03bf D2000000 		.4byte	.LVL11-.Ltext0
+ 2937 03c3 D4000000 		.4byte	.LVL12-.Ltext0
+ 2938 03c7 0400     		.2byte	0x4
+ 2939 03c9 F3       		.byte	0xf3
+ 2940 03ca 01       		.uleb128 0x1
+ 2941 03cb 50       		.byte	0x50
+ 2942 03cc 9F       		.byte	0x9f
+ 2943 03cd D4000000 		.4byte	.LVL12-.Ltext0
+ 2944 03d1 D6000000 		.4byte	.LVL13-.Ltext0
+ 2945 03d5 0100     		.2byte	0x1
+ 2946 03d7 50       		.byte	0x50
+ 2947 03d8 D6000000 		.4byte	.LVL13-.Ltext0
+ 2948 03dc DC000000 		.4byte	.LFE67-.Ltext0
+ 2949 03e0 0400     		.2byte	0x4
+ 2950 03e2 F3       		.byte	0xf3
+ 2951 03e3 01       		.uleb128 0x1
+ 2952 03e4 50       		.byte	0x50
+ 2953 03e5 9F       		.byte	0x9f
+ 2954 03e6 00000000 		.4byte	0
+ 2955 03ea 00000000 		.4byte	0
+ 2956              	.LLST3:
+ 2957 03ee 48000000 		.4byte	.LFB66-.Ltext0
+ 2958 03f2 4A000000 		.4byte	.LCFI1-.Ltext0
+ 2959 03f6 0200     		.2byte	0x2
+ 2960 03f8 7D       		.byte	0x7d
+ 2961 03f9 00       		.sleb128 0
+ 2962 03fa 4A000000 		.4byte	.LCFI1-.Ltext0
+ 2963 03fe 98000000 		.4byte	.LFE66-.Ltext0
+ 2964 0402 0200     		.2byte	0x2
+ 2965 0404 7D       		.byte	0x7d
+ 2966 0405 10       		.sleb128 16
+ 2967 0406 00000000 		.4byte	0
+ 2968 040a 00000000 		.4byte	0
+ 2969              	.LLST4:
+ 2970 040e 48000000 		.4byte	.LVL5-.Ltext0
+ 2971 0412 72000000 		.4byte	.LVL6-.Ltext0
+ 2972 0416 0100     		.2byte	0x1
+ 2973 0418 50       		.byte	0x50
+ 2974 0419 72000000 		.4byte	.LVL6-.Ltext0
+ 2975 041d 74000000 		.4byte	.LVL7-.Ltext0
+ 2976 0421 0400     		.2byte	0x4
+ 2977 0423 F3       		.byte	0xf3
+ 2978 0424 01       		.uleb128 0x1
+ 2979 0425 50       		.byte	0x50
+ 2980 0426 9F       		.byte	0x9f
+ 2981 0427 74000000 		.4byte	.LVL7-.Ltext0
+ 2982 042b 90000000 		.4byte	.LVL9-.Ltext0
+ 2983 042f 0100     		.2byte	0x1
+ 2984 0431 50       		.byte	0x50
+ 2985 0432 90000000 		.4byte	.LVL9-.Ltext0
+ARM GAS  /tmp/ccvdMV8w.s 			page 64
+
+
+ 2986 0436 98000000 		.4byte	.LFE66-.Ltext0
+ 2987 043a 0400     		.2byte	0x4
+ 2988 043c F3       		.byte	0xf3
+ 2989 043d 01       		.uleb128 0x1
+ 2990 043e 50       		.byte	0x50
+ 2991 043f 9F       		.byte	0x9f
+ 2992 0440 00000000 		.4byte	0
+ 2993 0444 00000000 		.4byte	0
+ 2994              	.LLST5:
+ 2995 0448 48000000 		.4byte	.LVL5-.Ltext0
+ 2996 044c 78000000 		.4byte	.LVL8-.Ltext0
+ 2997 0450 0100     		.2byte	0x1
+ 2998 0452 51       		.byte	0x51
+ 2999 0453 78000000 		.4byte	.LVL8-.Ltext0
+ 3000 0457 98000000 		.4byte	.LFE66-.Ltext0
+ 3001 045b 0400     		.2byte	0x4
+ 3002 045d F3       		.byte	0xf3
+ 3003 045e 01       		.uleb128 0x1
+ 3004 045f 51       		.byte	0x51
+ 3005 0460 9F       		.byte	0x9f
+ 3006 0461 00000000 		.4byte	0
+ 3007 0465 00000000 		.4byte	0
+ 3008              	.LLST0:
+ 3009 0469 00000000 		.4byte	.LFB65-.Ltext0
+ 3010 046d 02000000 		.4byte	.LCFI0-.Ltext0
+ 3011 0471 0200     		.2byte	0x2
+ 3012 0473 7D       		.byte	0x7d
+ 3013 0474 00       		.sleb128 0
+ 3014 0475 02000000 		.4byte	.LCFI0-.Ltext0
+ 3015 0479 48000000 		.4byte	.LFE65-.Ltext0
+ 3016 047d 0200     		.2byte	0x2
+ 3017 047f 7D       		.byte	0x7d
+ 3018 0480 10       		.sleb128 16
+ 3019 0481 00000000 		.4byte	0
+ 3020 0485 00000000 		.4byte	0
+ 3021              	.LLST1:
+ 3022 0489 00000000 		.4byte	.LVL0-.Ltext0
+ 3023 048d 2A000000 		.4byte	.LVL1-.Ltext0
+ 3024 0491 0100     		.2byte	0x1
+ 3025 0493 50       		.byte	0x50
+ 3026 0494 2A000000 		.4byte	.LVL1-.Ltext0
+ 3027 0498 2C000000 		.4byte	.LVL2-.Ltext0
+ 3028 049c 0400     		.2byte	0x4
+ 3029 049e F3       		.byte	0xf3
+ 3030 049f 01       		.uleb128 0x1
+ 3031 04a0 50       		.byte	0x50
+ 3032 04a1 9F       		.byte	0x9f
+ 3033 04a2 2C000000 		.4byte	.LVL2-.Ltext0
+ 3034 04a6 40000000 		.4byte	.LVL4-.Ltext0
+ 3035 04aa 0100     		.2byte	0x1
+ 3036 04ac 50       		.byte	0x50
+ 3037 04ad 40000000 		.4byte	.LVL4-.Ltext0
+ 3038 04b1 48000000 		.4byte	.LFE65-.Ltext0
+ 3039 04b5 0400     		.2byte	0x4
+ 3040 04b7 F3       		.byte	0xf3
+ 3041 04b8 01       		.uleb128 0x1
+ 3042 04b9 50       		.byte	0x50
+ARM GAS  /tmp/ccvdMV8w.s 			page 65
+
+
+ 3043 04ba 9F       		.byte	0x9f
+ 3044 04bb 00000000 		.4byte	0
+ 3045 04bf 00000000 		.4byte	0
+ 3046              	.LLST2:
+ 3047 04c3 00000000 		.4byte	.LVL0-.Ltext0
+ 3048 04c7 30000000 		.4byte	.LVL3-.Ltext0
+ 3049 04cb 0100     		.2byte	0x1
+ 3050 04cd 51       		.byte	0x51
+ 3051 04ce 30000000 		.4byte	.LVL3-.Ltext0
+ 3052 04d2 48000000 		.4byte	.LFE65-.Ltext0
+ 3053 04d6 0400     		.2byte	0x4
+ 3054 04d8 F3       		.byte	0xf3
+ 3055 04d9 01       		.uleb128 0x1
+ 3056 04da 51       		.byte	0x51
+ 3057 04db 9F       		.byte	0x9f
+ 3058 04dc 00000000 		.4byte	0
+ 3059 04e0 00000000 		.4byte	0
+ 3060              		.section	.debug_aranges,"",%progbits
+ 3061 0000 1C000000 		.4byte	0x1c
+ 3062 0004 0200     		.2byte	0x2
+ 3063 0006 00000000 		.4byte	.Ldebug_info0
+ 3064 000a 04       		.byte	0x4
+ 3065 000b 00       		.byte	0
+ 3066 000c 0000     		.2byte	0
+ 3067 000e 0000     		.2byte	0
+ 3068 0010 00000000 		.4byte	.Ltext0
+ 3069 0014 30020000 		.4byte	.Letext0-.Ltext0
+ 3070 0018 00000000 		.4byte	0
+ 3071 001c 00000000 		.4byte	0
+ 3072              		.section	.debug_line,"",%progbits
+ 3073              	.Ldebug_line0:
+ 3074 0000 E5020000 		.section	.debug_str,"MS",%progbits,1
+ 3074      02005201 
+ 3074      00000201 
+ 3074      FB0E0D00 
+ 3074      01010101 
+ 3075              	.LASF36:
+ 3076 0000 48414C5F 		.ascii	"HAL_ERROR\000"
+ 3076      4552524F 
+ 3076      5200
+ 3077              	.LASF40:
+ 3078 000a 48414C5F 		.ascii	"HAL_UNLOCKED\000"
+ 3078      554E4C4F 
+ 3078      434B4544 
+ 3078      00
+ 3079              	.LASF22:
+ 3080 0017 52544343 		.ascii	"RTCCR\000"
+ 3080      5200
+ 3081              	.LASF86:
+ 3082 001d 48414C5F 		.ascii	"HAL_RTCEx_SetSecond_IT\000"
+ 3082      52544345 
+ 3082      785F5365 
+ 3082      74536563 
+ 3082      6F6E645F 
+ 3083              	.LASF78:
+ 3084 0034 48414C5F 		.ascii	"HAL_RTCEx_BKUPRead\000"
+ 3084      52544345 
+ARM GAS  /tmp/ccvdMV8w.s 			page 66
+
+
+ 3084      785F424B 
+ 3084      55505265 
+ 3084      616400
+ 3085              	.LASF51:
+ 3086 0047 5254435F 		.ascii	"RTC_InitTypeDef\000"
+ 3086      496E6974 
+ 3086      54797065 
+ 3086      44656600 
+ 3087              	.LASF21:
+ 3088 0057 44523130 		.ascii	"DR10\000"
+ 3088      00
+ 3089              	.LASF94:
+ 3090 005c 48414C5F 		.ascii	"HAL_RTCEx_SetTamper_IT\000"
+ 3090      52544345 
+ 3090      785F5365 
+ 3090      7454616D 
+ 3090      7065725F 
+ 3091              	.LASF27:
+ 3092 0073 4449564C 		.ascii	"DIVL\000"
+ 3092      00
+ 3093              	.LASF15:
+ 3094 0078 73697A65 		.ascii	"sizetype\000"
+ 3094      74797065 
+ 3094      00
+ 3095              	.LASF87:
+ 3096 0081 48414C5F 		.ascii	"HAL_RTCEx_PollForTamper1Event\000"
+ 3096      52544345 
+ 3096      785F506F 
+ 3096      6C6C466F 
+ 3096      7254616D 
+ 3097              	.LASF7:
+ 3098 009f 5F5F7569 		.ascii	"__uint32_t\000"
+ 3098      6E743332 
+ 3098      5F7400
+ 3099              	.LASF101:
+ 3100 00aa 48414C5F 		.ascii	"HAL_GetTick\000"
+ 3100      47657454 
+ 3100      69636B00 
+ 3101              	.LASF75:
+ 3102 00b6 536D6F6F 		.ascii	"SmoothCalibPlusPulses\000"
+ 3102      74684361 
+ 3102      6C696250 
+ 3102      6C757350 
+ 3102      756C7365 
+ 3103              	.LASF91:
+ 3104 00cc 48414C5F 		.ascii	"HAL_RTCEx_Tamper1EventCallback\000"
+ 3104      52544345 
+ 3104      785F5461 
+ 3104      6D706572 
+ 3104      31457665 
+ 3105              	.LASF71:
+ 3106 00eb 75775469 		.ascii	"uwTickPrio\000"
+ 3106      636B5072 
+ 3106      696F00
+ 3107              	.LASF97:
+ 3108 00f6 474E5520 		.ascii	"GNU C11 6.3.1 20170620 -mcpu=cortex-m3 -mthumb -g -"
+ 3108      43313120 
+ARM GAS  /tmp/ccvdMV8w.s 			page 67
+
+
+ 3108      362E332E 
+ 3108      31203230 
+ 3108      31373036 
+ 3109 0129 67647761 		.ascii	"gdwarf-2 -Os -fomit-frame-pointer\000"
+ 3109      72662D32 
+ 3109      202D4F73 
+ 3109      202D666F 
+ 3109      6D69742D 
+ 3110              	.LASF81:
+ 3111 014b 7076616C 		.ascii	"pvalue\000"
+ 3111      756500
+ 3112              	.LASF35:
+ 3113 0152 48414C5F 		.ascii	"HAL_OK\000"
+ 3113      4F4B00
+ 3114              	.LASF65:
+ 3115 0159 5254435F 		.ascii	"RTC_TamperTypeDef\000"
+ 3115      54616D70 
+ 3115      65725479 
+ 3115      70654465 
+ 3115      6600
+ 3116              	.LASF12:
+ 3117 016b 75696E74 		.ascii	"uint8_t\000"
+ 3117      385F7400 
+ 3118              	.LASF18:
+ 3119 0173 41484250 		.ascii	"AHBPrescTable\000"
+ 3119      72657363 
+ 3119      5461626C 
+ 3119      6500
+ 3120              	.LASF37:
+ 3121 0181 48414C5F 		.ascii	"HAL_BUSY\000"
+ 3121      42555359 
+ 3121      00
+ 3122              	.LASF92:
+ 3123 018a 48414C5F 		.ascii	"HAL_RTCEx_TamperIRQHandler\000"
+ 3123      52544345 
+ 3123      785F5461 
+ 3123      6D706572 
+ 3123      49525148 
+ 3124              	.LASF2:
+ 3125 01a5 73686F72 		.ascii	"short int\000"
+ 3125      7420696E 
+ 3125      7400
+ 3126              	.LASF79:
+ 3127 01af 4261636B 		.ascii	"BackupRegister\000"
+ 3127      75705265 
+ 3127      67697374 
+ 3127      657200
+ 3128              	.LASF59:
+ 3129 01be 44617465 		.ascii	"DateToUpdate\000"
+ 3129      546F5570 
+ 3129      64617465 
+ 3129      00
+ 3130              	.LASF64:
+ 3131 01cb 54726967 		.ascii	"Trigger\000"
+ 3131      67657200 
+ 3132              	.LASF9:
+ 3133 01d3 6C6F6E67 		.ascii	"long long int\000"
+ARM GAS  /tmp/ccvdMV8w.s 			page 68
+
+
+ 3133      206C6F6E 
+ 3133      6720696E 
+ 3133      7400
+ 3134              	.LASF61:
+ 3135 01e1 53746174 		.ascii	"State\000"
+ 3135      6500
+ 3136              	.LASF58:
+ 3137 01e7 496E6974 		.ascii	"Init\000"
+ 3137      00
+ 3138              	.LASF6:
+ 3139 01ec 6C6F6E67 		.ascii	"long int\000"
+ 3139      20696E74 
+ 3139      00
+ 3140              	.LASF88:
+ 3141 01f5 54696D65 		.ascii	"Timeout\000"
+ 3141      6F757400 
+ 3142              	.LASF60:
+ 3143 01fd 4C6F636B 		.ascii	"Lock\000"
+ 3143      00
+ 3144              	.LASF98:
+ 3145 0202 7372632F 		.ascii	"src/stm32f1xx_hal_rtc_ex.c\000"
+ 3145      73746D33 
+ 3145      32663178 
+ 3145      785F6861 
+ 3145      6C5F7274 
+ 3146              	.LASF55:
+ 3147 021d 59656172 		.ascii	"Year\000"
+ 3147      00
+ 3148              	.LASF4:
+ 3149 0222 5F5F7569 		.ascii	"__uint8_t\000"
+ 3149      6E74385F 
+ 3149      7400
+ 3150              	.LASF89:
+ 3151 022c 7469636B 		.ascii	"tickstart\000"
+ 3151      73746172 
+ 3151      7400
+ 3152              	.LASF26:
+ 3153 0236 44495648 		.ascii	"DIVH\000"
+ 3153      00
+ 3154              	.LASF82:
+ 3155 023b 44617461 		.ascii	"Data\000"
+ 3155      00
+ 3156              	.LASF39:
+ 3157 0240 48414C5F 		.ascii	"HAL_StatusTypeDef\000"
+ 3157      53746174 
+ 3157      75735479 
+ 3157      70654465 
+ 3157      6600
+ 3158              	.LASF54:
+ 3159 0252 44617465 		.ascii	"Date\000"
+ 3159      00
+ 3160              	.LASF49:
+ 3161 0257 4173796E 		.ascii	"AsynchPrediv\000"
+ 3161      63685072 
+ 3161      65646976 
+ 3161      00
+ 3162              	.LASF41:
+ARM GAS  /tmp/ccvdMV8w.s 			page 69
+
+
+ 3163 0264 48414C5F 		.ascii	"HAL_LOCKED\000"
+ 3163      4C4F434B 
+ 3163      454400
+ 3164              	.LASF53:
+ 3165 026f 4D6F6E74 		.ascii	"Month\000"
+ 3165      6800
+ 3166              	.LASF34:
+ 3167 0275 6C6F6E67 		.ascii	"long double\000"
+ 3167      20646F75 
+ 3167      626C6500 
+ 3168              	.LASF1:
+ 3169 0281 756E7369 		.ascii	"unsigned char\000"
+ 3169      676E6564 
+ 3169      20636861 
+ 3169      7200
+ 3170              	.LASF99:
+ 3171 028f 2F686F6D 		.ascii	"/home/berndoj/git/stm32tctst/lib/stm32f1hal\000"
+ 3171      652F6265 
+ 3171      726E646F 
+ 3171      6A2F6769 
+ 3171      742F7374 
+ 3172              	.LASF90:
+ 3173 02bb 48414C5F 		.ascii	"HAL_RTCEx_RTCEventCallback\000"
+ 3173      52544345 
+ 3173      785F5254 
+ 3173      43457665 
+ 3173      6E744361 
+ 3174              	.LASF25:
+ 3175 02d6 50524C4C 		.ascii	"PRLL\000"
+ 3175      00
+ 3176              	.LASF19:
+ 3177 02db 41504250 		.ascii	"APBPrescTable\000"
+ 3177      72657363 
+ 3177      5461626C 
+ 3177      6500
+ 3178              	.LASF0:
+ 3179 02e9 7369676E 		.ascii	"signed char\000"
+ 3179      65642063 
+ 3179      68617200 
+ 3180              	.LASF10:
+ 3181 02f5 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 3181      206C6F6E 
+ 3181      6720756E 
+ 3181      7369676E 
+ 3181      65642069 
+ 3182              	.LASF14:
+ 3183 030c 75696E74 		.ascii	"uint32_t\000"
+ 3183      33325F74 
+ 3183      00
+ 3184              	.LASF72:
+ 3185 0315 75775469 		.ascii	"uwTickFreq\000"
+ 3185      636B4672 
+ 3185      657100
+ 3186              	.LASF11:
+ 3187 0320 756E7369 		.ascii	"unsigned int\000"
+ 3187      676E6564 
+ 3187      20696E74 
+ARM GAS  /tmp/ccvdMV8w.s 			page 70
+
+
+ 3187      00
+ 3188              	.LASF44:
+ 3189 032d 48414C5F 		.ascii	"HAL_RTC_STATE_READY\000"
+ 3189      5254435F 
+ 3189      53544154 
+ 3189      455F5245 
+ 3189      41445900 
+ 3190              	.LASF85:
+ 3191 0341 48414C5F 		.ascii	"HAL_RTCEx_DeactivateSecond\000"
+ 3191      52544345 
+ 3191      785F4465 
+ 3191      61637469 
+ 3191      76617465 
+ 3192              	.LASF46:
+ 3193 035c 48414C5F 		.ascii	"HAL_RTC_STATE_TIMEOUT\000"
+ 3193      5254435F 
+ 3193      53544154 
+ 3193      455F5449 
+ 3193      4D454F55 
+ 3194              	.LASF68:
+ 3195 0372 48414C5F 		.ascii	"HAL_TICK_FREQ_1KHZ\000"
+ 3195      5449434B 
+ 3195      5F465245 
+ 3195      515F314B 
+ 3195      485A00
+ 3196              	.LASF77:
+ 3197 0385 48414C5F 		.ascii	"HAL_RTCEx_SetSmoothCalib\000"
+ 3197      52544345 
+ 3197      785F5365 
+ 3197      74536D6F 
+ 3197      6F746843 
+ 3198              	.LASF3:
+ 3199 039e 73686F72 		.ascii	"short unsigned int\000"
+ 3199      7420756E 
+ 3199      7369676E 
+ 3199      65642069 
+ 3199      6E7400
+ 3200              	.LASF45:
+ 3201 03b1 48414C5F 		.ascii	"HAL_RTC_STATE_BUSY\000"
+ 3201      5254435F 
+ 3201      53544154 
+ 3201      455F4255 
+ 3201      535900
+ 3202              	.LASF52:
+ 3203 03c4 5765656B 		.ascii	"WeekDay\000"
+ 3203      44617900 
+ 3204              	.LASF48:
+ 3205 03cc 48414C5F 		.ascii	"HAL_RTCStateTypeDef\000"
+ 3205      52544353 
+ 3205      74617465 
+ 3205      54797065 
+ 3205      44656600 
+ 3206              	.LASF84:
+ 3207 03e0 48414C5F 		.ascii	"HAL_RTCEx_RTCIRQHandler\000"
+ 3207      52544345 
+ 3207      785F5254 
+ 3207      43495251 
+ARM GAS  /tmp/ccvdMV8w.s 			page 71
+
+
+ 3207      48616E64 
+ 3208              	.LASF74:
+ 3209 03f8 536D6F6F 		.ascii	"SmoothCalibPeriod\000"
+ 3209      74684361 
+ 3209      6C696250 
+ 3209      6572696F 
+ 3209      6400
+ 3210              	.LASF13:
+ 3211 040a 696E7433 		.ascii	"int32_t\000"
+ 3211      325F7400 
+ 3212              	.LASF80:
+ 3213 0412 6261636B 		.ascii	"backupregister\000"
+ 3213      75707265 
+ 3213      67697374 
+ 3213      657200
+ 3214              	.LASF96:
+ 3215 0421 48414C5F 		.ascii	"HAL_RTCEx_SetTamper\000"
+ 3215      52544345 
+ 3215      785F5365 
+ 3215      7454616D 
+ 3215      70657200 
+ 3216              	.LASF38:
+ 3217 0435 48414C5F 		.ascii	"HAL_TIMEOUT\000"
+ 3217      54494D45 
+ 3217      4F555400 
+ 3218              	.LASF17:
+ 3219 0441 53797374 		.ascii	"SystemCoreClock\000"
+ 3219      656D436F 
+ 3219      7265436C 
+ 3219      6F636B00 
+ 3220              	.LASF67:
+ 3221 0451 48414C5F 		.ascii	"HAL_TICK_FREQ_100HZ\000"
+ 3221      5449434B 
+ 3221      5F465245 
+ 3221      515F3130 
+ 3221      30485A00 
+ 3222              	.LASF66:
+ 3223 0465 48414C5F 		.ascii	"HAL_TICK_FREQ_10HZ\000"
+ 3223      5449434B 
+ 3223      5F465245 
+ 3223      515F3130 
+ 3223      485A00
+ 3224              	.LASF32:
+ 3225 0478 5254435F 		.ascii	"RTC_TypeDef\000"
+ 3225      54797065 
+ 3225      44656600 
+ 3226              	.LASF28:
+ 3227 0484 434E5448 		.ascii	"CNTH\000"
+ 3227      00
+ 3228              	.LASF43:
+ 3229 0489 48414C5F 		.ascii	"HAL_RTC_STATE_RESET\000"
+ 3229      5254435F 
+ 3229      53544154 
+ 3229      455F5245 
+ 3229      53455400 
+ 3230              	.LASF20:
+ 3231 049d 52455345 		.ascii	"RESERVED0\000"
+ARM GAS  /tmp/ccvdMV8w.s 			page 72
+
+
+ 3231      52564544 
+ 3231      3000
+ 3232              	.LASF29:
+ 3233 04a7 434E544C 		.ascii	"CNTL\000"
+ 3233      00
+ 3234              	.LASF8:
+ 3235 04ac 6C6F6E67 		.ascii	"long unsigned int\000"
+ 3235      20756E73 
+ 3235      69676E65 
+ 3235      6420696E 
+ 3235      7400
+ 3236              	.LASF100:
+ 3237 04be 48414C5F 		.ascii	"HAL_RTCEx_RTCEventErrorCallback\000"
+ 3237      52544345 
+ 3237      785F5254 
+ 3237      43457665 
+ 3237      6E744572 
+ 3238              	.LASF23:
+ 3239 04de 424B505F 		.ascii	"BKP_TypeDef\000"
+ 3239      54797065 
+ 3239      44656600 
+ 3240              	.LASF93:
+ 3241 04ea 48414C5F 		.ascii	"HAL_RTCEx_DeactivateTamper\000"
+ 3241      52544345 
+ 3241      785F4465 
+ 3241      61637469 
+ 3241      76617465 
+ 3242              	.LASF73:
+ 3243 0505 68727463 		.ascii	"hrtc\000"
+ 3243      00
+ 3244              	.LASF70:
+ 3245 050a 48414C5F 		.ascii	"HAL_TickFreqTypeDef\000"
+ 3245      5469636B 
+ 3245      46726571 
+ 3245      54797065 
+ 3245      44656600 
+ 3246              	.LASF50:
+ 3247 051e 4F757450 		.ascii	"OutPut\000"
+ 3247      757400
+ 3248              	.LASF76:
+ 3249 0525 536D6F75 		.ascii	"SmouthCalibMinusPulsesValue\000"
+ 3249      74684361 
+ 3249      6C69624D 
+ 3249      696E7573 
+ 3249      50756C73 
+ 3250              	.LASF5:
+ 3251 0541 5F5F696E 		.ascii	"__int32_t\000"
+ 3251      7433325F 
+ 3251      7400
+ 3252              	.LASF33:
+ 3253 054b 52455345 		.ascii	"RESET\000"
+ 3253      5400
+ 3254              	.LASF47:
+ 3255 0551 48414C5F 		.ascii	"HAL_RTC_STATE_ERROR\000"
+ 3255      5254435F 
+ 3255      53544154 
+ 3255      455F4552 
+ARM GAS  /tmp/ccvdMV8w.s 			page 73
+
+
+ 3255      524F5200 
+ 3256              	.LASF56:
+ 3257 0565 5254435F 		.ascii	"RTC_DateTypeDef\000"
+ 3257      44617465 
+ 3257      54797065 
+ 3257      44656600 
+ 3258              	.LASF83:
+ 3259 0575 48414C5F 		.ascii	"HAL_RTCEx_BKUPWrite\000"
+ 3259      52544345 
+ 3259      785F424B 
+ 3259      55505772 
+ 3259      69746500 
+ 3260              	.LASF30:
+ 3261 0589 414C5248 		.ascii	"ALRH\000"
+ 3261      00
+ 3262              	.LASF69:
+ 3263 058e 48414C5F 		.ascii	"HAL_TICK_FREQ_DEFAULT\000"
+ 3263      5449434B 
+ 3263      5F465245 
+ 3263      515F4445 
+ 3263      4641554C 
+ 3264              	.LASF62:
+ 3265 05a4 5254435F 		.ascii	"RTC_HandleTypeDef\000"
+ 3265      48616E64 
+ 3265      6C655479 
+ 3265      70654465 
+ 3265      6600
+ 3266              	.LASF31:
+ 3267 05b6 414C524C 		.ascii	"ALRL\000"
+ 3267      00
+ 3268              	.LASF16:
+ 3269 05bb 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 3269      52784275 
+ 3269      66666572 
+ 3269      00
+ 3270              	.LASF95:
+ 3271 05c8 7354616D 		.ascii	"sTamper\000"
+ 3271      70657200 
+ 3272              	.LASF63:
+ 3273 05d0 54616D70 		.ascii	"Tamper\000"
+ 3273      657200
+ 3274              	.LASF42:
+ 3275 05d7 48414C5F 		.ascii	"HAL_LockTypeDef\000"
+ 3275      4C6F636B 
+ 3275      54797065 
+ 3275      44656600 
+ 3276              	.LASF24:
+ 3277 05e7 50524C48 		.ascii	"PRLH\000"
+ 3277      00
+ 3278              	.LASF57:
+ 3279 05ec 496E7374 		.ascii	"Instance\000"
+ 3279      616E6365 
+ 3279      00
+ 3280              		.ident	"GCC: (15:6.3.1+svn253039-1build1) 6.3.1 20170620"
+ARM GAS  /tmp/ccvdMV8w.s 			page 74
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 stm32f1xx_hal_rtc_ex.c
+     /tmp/ccvdMV8w.s:69     .text:0000000000000000 $t
+     /tmp/ccvdMV8w.s:76     .text:0000000000000000 HAL_RTCEx_SetTamper
+     /tmp/ccvdMV8w.s:147    .text:0000000000000044 $d
+     /tmp/ccvdMV8w.s:151    .text:0000000000000048 $t
+     /tmp/ccvdMV8w.s:158    .text:0000000000000048 HAL_RTCEx_SetTamper_IT
+     /tmp/ccvdMV8w.s:232    .text:0000000000000094 $d
+     /tmp/ccvdMV8w.s:236    .text:0000000000000098 $t
+     /tmp/ccvdMV8w.s:243    .text:0000000000000098 HAL_RTCEx_DeactivateTamper
+     /tmp/ccvdMV8w.s:298    .text:00000000000000d8 $d
+     /tmp/ccvdMV8w.s:302    .text:00000000000000dc $t
+     /tmp/ccvdMV8w.s:309    .text:00000000000000dc HAL_RTCEx_Tamper1EventCallback
+     /tmp/ccvdMV8w.s:326    .text:00000000000000de HAL_RTCEx_TamperIRQHandler
+     /tmp/ccvdMV8w.s:369    .text:0000000000000104 $d
+     /tmp/ccvdMV8w.s:373    .text:0000000000000108 $t
+     /tmp/ccvdMV8w.s:380    .text:0000000000000108 HAL_RTCEx_PollForTamper1Event
+     /tmp/ccvdMV8w.s:458    .text:000000000000014c $d
+     /tmp/ccvdMV8w.s:462    .text:0000000000000150 $t
+     /tmp/ccvdMV8w.s:469    .text:0000000000000150 HAL_RTCEx_SetSecond_IT
+     /tmp/ccvdMV8w.s:520    .text:0000000000000178 HAL_RTCEx_DeactivateSecond
+     /tmp/ccvdMV8w.s:571    .text:00000000000001a0 HAL_RTCEx_RTCEventCallback
+     /tmp/ccvdMV8w.s:588    .text:00000000000001a2 HAL_RTCEx_RTCEventErrorCallback
+     /tmp/ccvdMV8w.s:607    .text:00000000000001a4 HAL_RTCEx_RTCIRQHandler
+     /tmp/ccvdMV8w.s:674    .text:00000000000001de HAL_RTCEx_BKUPWrite
+     /tmp/ccvdMV8w.s:702    .text:00000000000001ee HAL_RTCEx_BKUPRead
+     /tmp/ccvdMV8w.s:732    .text:00000000000001fe HAL_RTCEx_SetSmoothCalib
+     /tmp/ccvdMV8w.s:785    .text:000000000000022c $d
+                     .debug_frame:0000000000000010 $d
+
+UNDEFINED SYMBOLS
+HAL_GetTick
