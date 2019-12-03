@@ -9,13 +9,12 @@
 include ./project.mk
 
 LIBDIR = ./lib
-
 FLASHDIR = ./flash
+
+LINKERSCRIPT = ./flash/STM32F103X6_FLASH.ld
 
 LIB_STM32F1HAL_DIR = $(LIBDIR)/stm32f1hal
 MODULE_CORE_DIR = ./core
-
-LINKERSCRIPT = ./flash/STM32F103X6_FLASH.ld
 
 SLIBDIRS  = -L $(LIB_STM32F1HAL_DIR)/bin
 SLIBDIRS += -L $(MODULE_CORE_DIR)/bin
