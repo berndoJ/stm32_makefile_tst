@@ -3,8 +3,10 @@
 
 # --- PROJECT INFOS ---
 PROJECTNAME = stm32tctst
-PLATFORM    = STM32F103
+PLATFORM    = STM32F103X6
 MCUTYPE     = cortex-m3
+DEBUG       = 0
+COPYRIGHT   = Copyright (c) 2019 by Johannes Berndorfer
 
 # --- VERSION ---
 VERSION_MAJOR = 1
@@ -22,23 +24,32 @@ CSIZE   = $(CPREFIX)size
 AR		= $(CPREFIC)ar
 
 # --- C/CPP COMMON DEFINES ---
-CDEFS = -DSTM32F103x6
+CDEFS  = -DSTM32F103x6
+CDEFS += -DUSE_HAL_DRIVER
+CDEFS += -DVERSION_MAJOR=$(VERSION_MAJOR)
+CDEFS += -DVERSION_MINOR=$(VERSION_MINOR)
+CDEFS += -DVERSION_STR="$(VERSION_MAJOR).$(VERSION_MINOR)"
 
 # --- COMPILER OPTIMISATION FLAGS ---
-OPTIM = -Os
+OPTIM = -Og
 
 # --- COMPILER FLAGS ---
-COMPDEFS = $(CDEFS) -DRUN_FROM_FLASH=1
+MCUFLAGS = -mcpu=$(MCUTYPE) -mthumb
+DEBUGFLAGS = -g -gdwarf-2
+CFLAGS = $(MCUFLAGS) $(OPTIM) $(CDEFS) -Wall -fdata-sections -ffunction-sections -MMD -MP -MF"$(@:%.o=%.d)"
+CPPFLAGS = $(CFLAGS) -Wa,-a,-ad,-ahlms=$(<:.cpp=.lst)
+CFLAGS += -Wa,-a,-ad,-ahlms=$(<:.c=.lst)
+#-g -gdwarf-2 -fomit-frame-pointer -Wall -fverbose-asm -Wa,-ahlms=$(<:.cpp=.lst) $(COMPDEFS)
+ASMFLAGS = $(MCUFLAGS) $(OPTIM) -Wall -fdata-sections -ffunction-sections
+#-g -gdwarf-2 -Wa,-amhls=$(<:.s=.lst)
 
-MCUFLAGS = -mcpu=$(MCUTYPE)
-CFLAGS = $(MCUFLAGS) $(OPTIM) -g -gdwarf-2 -mthumb -fomit-frame-pointer -Wall -fverbose-asm -Wa,-ahlms=$(<:.c=.lst) $(COMPDEFS)
-CPPFLAGS = $(MCUFLAGS) $(OPTIM) -g -gdwarf-2 -mthumb -fomit-frame-pointer -Wall -fverbose-asm -Wa,-ahlms=$(<:.cpp=.lst) $(COMPDEFS)
-ASMFLAGS = $(MCUFLAGS) -g -gdwarf-2 -mthumb -Wa,-amhls=$(<:.s=.lst)
+ifeq ($(DEBUG), 1)
+CFLAGS += $(DEBUGFLAGS)
+CPPFLAGS += $(DEBUGFLAGS)
+endif
 
 # --- LINKER SETTINGS ---
-LINKERSCRIPT = ./flash/STM32F103X6_FLASH.ld
-LDFLAGS = -T$(LINKERSCRIPT) -mthumb -nostdlib -mcpu=$(MCUTYPE)
-LIBRARIES = 
+LDFLAGS = -T$(LINKERSCRIPT) $(MCUFLAGS) -specs=nano.specs -Wl,--gc-sections
 
 
 
@@ -70,3 +81,4 @@ C_LPURPLE = \033[1;35m
 C_LCYAN = \033[1;36m
 C_WHITE = \033[1;37m
 C_CLR = \033[0m
+C_BOLD = \033[1m

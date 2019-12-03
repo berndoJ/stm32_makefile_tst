@@ -1,5 +1,5 @@
-#include "sys_isr.hpp"
-#include "main.hpp"
+#include "sys_isr.h"
+#include "main.h"
 
 void NMI_Handler(void)
 {

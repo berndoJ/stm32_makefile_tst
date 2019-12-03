@@ -1,110 +1,25 @@
-ARM GAS  /tmp/ccN9fWF1.s 			page 1
+ARM GAS  /tmp/ccyNjmRO.s 			page 1
 
 
-   1              		.cpu cortex-m3
-   2              		.eabi_attribute 20, 1	@ Tag_ABI_FP_denormal
-   3              		.eabi_attribute 21, 1	@ Tag_ABI_FP_exceptions
-   4              		.eabi_attribute 23, 3	@ Tag_ABI_FP_number_model
-   5              		.eabi_attribute 24, 1	@ Tag_ABI_align8_needed
-   6              		.eabi_attribute 25, 1	@ Tag_ABI_align8_preserved
-   7              		.eabi_attribute 26, 1	@ Tag_ABI_enum_size
-   8              		.eabi_attribute 30, 4	@ Tag_ABI_optimization_goals
-   9              		.eabi_attribute 34, 1	@ Tag_CPU_unaligned_access
-  10              		.eabi_attribute 18, 4	@ Tag_ABI_PCS_wchar_t
-  11              		.file	"sys_gpio.cpp"
-  12              	@ GNU C++14 (15:6.3.1+svn253039-1build1) version 6.3.1 20170620 (arm-none-eabi)
-  13              	@	compiled by GNU C version 7.2.0, GMP version 6.1.2, MPFR version 4.0.1-rc1, MPC version 1.1.0, is
-  14              	@ warning: MPFR header version 4.0.1-rc1 differs from library version 4.0.1.
-  15              	@ GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
-  16              	@ options passed:  -I ./inc -I ../lib/stm32f1hal/inc
-  17              	@ -I ../lib/cmsiscore/inc -I ../lib/cmsisstm32f1xx/inc
-  18              	@ -imultilib thumb/v7-m -D__USES_INITFINI__ -D STM32F103x6
-  19              	@ -D RUN_FROM_FLASH=1 src/sys_gpio.cpp -mcpu=cortex-m3 -mthumb
-  20              	@ -auxbase-strip bin/sys_gpio.o -g -gdwarf-2 -Os -Wall -fomit-frame-pointer
-  21              	@ -fverbose-asm
-  22              	@ options enabled:  -faggressive-loop-optimizations -falign-jumps
-  23              	@ -falign-labels -falign-loops -fauto-inc-dec -fbranch-count-reg
-  24              	@ -fcaller-saves -fchkp-check-incomplete-type -fchkp-check-read
-  25              	@ -fchkp-check-write -fchkp-instrument-calls -fchkp-narrow-bounds
-  26              	@ -fchkp-optimize -fchkp-store-bounds -fchkp-use-static-bounds
-  27              	@ -fchkp-use-static-const-bounds -fchkp-use-wrappers
-  28              	@ -fcombine-stack-adjustments -fcommon -fcompare-elim -fcprop-registers
-  29              	@ -fcrossjumping -fcse-follow-jumps -fdefer-pop
-  30              	@ -fdelete-null-pointer-checks -fdevirtualize -fdevirtualize-speculatively
-  31              	@ -fdwarf2-cfi-asm -fearly-inlining -feliminate-unused-debug-types
-  32              	@ -fexceptions -fexpensive-optimizations -fforward-propagate -ffunction-cse
-  33              	@ -fgcse -fgcse-lm -fgnu-runtime -fgnu-unique -fguess-branch-probability
-  34              	@ -fhoist-adjacent-loads -fident -fif-conversion -fif-conversion2
-  35              	@ -findirect-inlining -finline -finline-atomics -finline-functions
-  36              	@ -finline-functions-called-once -finline-small-functions -fipa-cp
-  37              	@ -fipa-cp-alignment -fipa-icf -fipa-icf-functions -fipa-icf-variables
-  38              	@ -fipa-profile -fipa-pure-const -fipa-ra -fipa-reference -fipa-sra
-  39              	@ -fira-hoist-pressure -fira-share-save-slots -fira-share-spill-slots
-  40              	@ -fisolate-erroneous-paths-dereference -fivopts -fkeep-static-consts
-  41              	@ -fleading-underscore -flifetime-dse -flra-remat -flto-odr-type-merging
-  42              	@ -fmath-errno -fmerge-constants -fmerge-debug-strings
-  43              	@ -fmove-loop-invariants -fomit-frame-pointer -foptimize-sibling-calls
-  44              	@ -fpartial-inlining -fpeephole -fpeephole2 -fplt -fprefetch-loop-arrays
-  45              	@ -freg-struct-return -freorder-blocks -freorder-functions
-  46              	@ -frerun-cse-after-loop -fsched-critical-path-heuristic
-  47              	@ -fsched-dep-count-heuristic -fsched-group-heuristic -fsched-interblock
-  48              	@ -fsched-last-insn-heuristic -fsched-pressure -fsched-rank-heuristic
-  49              	@ -fsched-spec -fsched-spec-insn-heuristic -fsched-stalled-insns-dep
-  50              	@ -fschedule-insns2 -fsection-anchors -fsemantic-interposition
-  51              	@ -fshow-column -fsigned-zeros -fsplit-ivs-in-unroller -fsplit-wide-types
-  52              	@ -fssa-backprop -fssa-phiopt -fstdarg-opt -fstrict-aliasing
-  53              	@ -fstrict-overflow -fstrict-volatile-bitfields -fsync-libcalls
-  54              	@ -fthread-jumps -ftoplevel-reorder -ftrapping-math -ftree-bit-ccp
-  55              	@ -ftree-builtin-call-dce -ftree-ccp -ftree-ch -ftree-coalesce-vars
-  56              	@ -ftree-copy-prop -ftree-cselim -ftree-dce -ftree-dominator-opts
-  57              	@ -ftree-dse -ftree-forwprop -ftree-fre -ftree-loop-if-convert
-ARM GAS  /tmp/ccN9fWF1.s 			page 2
-
-
-  58              	@ -ftree-loop-im -ftree-loop-ivcanon -ftree-loop-optimize
-  59              	@ -ftree-parallelize-loops= -ftree-phiprop -ftree-pre -ftree-pta
-  60              	@ -ftree-reassoc -ftree-scev-cprop -ftree-sink -ftree-slsr -ftree-sra
-  61              	@ -ftree-switch-conversion -ftree-tail-merge -ftree-ter -ftree-vrp
-  62              	@ -funit-at-a-time -fvar-tracking -fvar-tracking-assignments -fverbose-asm
-  63              	@ -fzero-initialized-in-bss -masm-syntax-unified -mfix-cortex-m3-ldrd
-  64              	@ -mlittle-endian -mpic-data-is-text-relative -msched-prolog -mthumb
-  65              	@ -munaligned-access -mvectorize-with-neon-quad
-  66              	
-  67              		.text
-  68              	.Ltext0:
-  69              		.cfi_sections	.debug_frame
-  70              	.Letext0:
-  71              		.section	.debug_line,"",%progbits
-  72              	.Ldebug_line0:
-  73              		.section	.debug_str,"MS",%progbits,1
-  74              	.LASF0:
-  75 0000 7372632F 		.ascii	"src/sys_gpio.cpp\000"
-  75      7379735F 
-  75      6770696F 
-  75      2E637070 
-  75      00
-  76              	.LASF1:
-  77 0011 2F686F6D 		.ascii	"/home/berndoj/git/stm32tctst/core\000"
-  77      652F6265 
-  77      726E646F 
-  77      6A2F6769 
-  77      742F7374 
-  78              	.LASF2:
-  79 0033 474E5520 		.ascii	"GNU C++14 6.3.1 20170620 -mcpu=cortex-m3 -mthumb -g"
-  79      432B2B31 
-  79      3420362E 
-  79      332E3120 
-  79      32303137 
-  80 0066 202D6764 		.ascii	" -gdwarf-2 -Os -fomit-frame-pointer\000"
-  80      77617266 
-  80      2D32202D 
-  80      4F73202D 
-  80      666F6D69 
-  81              		.ident	"GCC: (15:6.3.1+svn253039-1build1) 6.3.1 20170620"
-ARM GAS  /tmp/ccN9fWF1.s 			page 3
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"sys_gpio.c"
+  15              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/ccyNjmRO.s 			page 2
 
 
 DEFINED SYMBOLS
-                            *ABS*:0000000000000000 sys_gpio.cpp
+                            *ABS*:0000000000000000 sys_gpio.c
 
 NO UNDEFINED SYMBOLS

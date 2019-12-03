@@ -1,3486 +1,345 @@
-ARM GAS  /tmp/cc35Dpui.s 			page 1
-
-
-   1              		.cpu cortex-m3
-   2              		.eabi_attribute 20, 1	@ Tag_ABI_FP_denormal
-   3              		.eabi_attribute 21, 1	@ Tag_ABI_FP_exceptions
-   4              		.eabi_attribute 23, 3	@ Tag_ABI_FP_number_model
-   5              		.eabi_attribute 24, 1	@ Tag_ABI_align8_needed
-   6              		.eabi_attribute 25, 1	@ Tag_ABI_align8_preserved
-   7              		.eabi_attribute 26, 1	@ Tag_ABI_enum_size
-   8              		.eabi_attribute 30, 4	@ Tag_ABI_optimization_goals
-   9              		.eabi_attribute 34, 1	@ Tag_CPU_unaligned_access
-  10              		.eabi_attribute 18, 4	@ Tag_ABI_PCS_wchar_t
-  11              		.file	"stm32f1xx_hal_timebase_rtc_alarm_template.c"
-  12              	@ GNU C11 (15:6.3.1+svn253039-1build1) version 6.3.1 20170620 (arm-none-eabi)
-  13              	@	compiled by GNU C version 7.2.0, GMP version 6.1.2, MPFR version 4.0.1-rc1, MPC version 1.1.0, is
-  14              	@ warning: MPFR header version 4.0.1-rc1 differs from library version 4.0.1.
-  15              	@ GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
-  16              	@ options passed:  -I ./inc -I ./inc/Legacy -I ../cmsisstm32f1xx/inc
-  17              	@ -I ../cmsiscore/inc -imultilib thumb/v7-m -D__USES_INITFINI__
-  18              	@ -D STM32F103x6 -D RUN_FROM_FLASH=1
-  19              	@ src/stm32f1xx_hal_timebase_rtc_alarm_template.c -mcpu=cortex-m3 -mthumb
-  20              	@ -auxbase-strip bin/stm32f1xx_hal_timebase_rtc_alarm_template.o -g
-  21              	@ -gdwarf-2 -Os -Wall -fomit-frame-pointer -fverbose-asm
-  22              	@ options enabled:  -faggressive-loop-optimizations -falign-jumps
-  23              	@ -falign-labels -falign-loops -fauto-inc-dec -fbranch-count-reg
-  24              	@ -fcaller-saves -fchkp-check-incomplete-type -fchkp-check-read
-  25              	@ -fchkp-check-write -fchkp-instrument-calls -fchkp-narrow-bounds
-  26              	@ -fchkp-optimize -fchkp-store-bounds -fchkp-use-static-bounds
-  27              	@ -fchkp-use-static-const-bounds -fchkp-use-wrappers
-  28              	@ -fcombine-stack-adjustments -fcommon -fcompare-elim -fcprop-registers
-  29              	@ -fcrossjumping -fcse-follow-jumps -fdefer-pop
-  30              	@ -fdelete-null-pointer-checks -fdevirtualize -fdevirtualize-speculatively
-  31              	@ -fdwarf2-cfi-asm -fearly-inlining -feliminate-unused-debug-types
-  32              	@ -fexpensive-optimizations -fforward-propagate -ffunction-cse -fgcse
-  33              	@ -fgcse-lm -fgnu-runtime -fgnu-unique -fguess-branch-probability
-  34              	@ -fhoist-adjacent-loads -fident -fif-conversion -fif-conversion2
-  35              	@ -findirect-inlining -finline -finline-atomics -finline-functions
-  36              	@ -finline-functions-called-once -finline-small-functions -fipa-cp
-  37              	@ -fipa-cp-alignment -fipa-icf -fipa-icf-functions -fipa-icf-variables
-  38              	@ -fipa-profile -fipa-pure-const -fipa-ra -fipa-reference -fipa-sra
-  39              	@ -fira-hoist-pressure -fira-share-save-slots -fira-share-spill-slots
-  40              	@ -fisolate-erroneous-paths-dereference -fivopts -fkeep-static-consts
-  41              	@ -fleading-underscore -flifetime-dse -flra-remat -flto-odr-type-merging
-  42              	@ -fmath-errno -fmerge-constants -fmerge-debug-strings
-  43              	@ -fmove-loop-invariants -fomit-frame-pointer -foptimize-sibling-calls
-  44              	@ -fpartial-inlining -fpeephole -fpeephole2 -fplt -fprefetch-loop-arrays
-  45              	@ -freg-struct-return -freorder-blocks -freorder-functions
-  46              	@ -frerun-cse-after-loop -fsched-critical-path-heuristic
-  47              	@ -fsched-dep-count-heuristic -fsched-group-heuristic -fsched-interblock
-  48              	@ -fsched-last-insn-heuristic -fsched-pressure -fsched-rank-heuristic
-  49              	@ -fsched-spec -fsched-spec-insn-heuristic -fsched-stalled-insns-dep
-  50              	@ -fschedule-insns2 -fsection-anchors -fsemantic-interposition
-  51              	@ -fshow-column -fsigned-zeros -fsplit-ivs-in-unroller -fsplit-wide-types
-  52              	@ -fssa-backprop -fssa-phiopt -fstdarg-opt -fstrict-aliasing
-  53              	@ -fstrict-overflow -fstrict-volatile-bitfields -fsync-libcalls
-  54              	@ -fthread-jumps -ftoplevel-reorder -ftrapping-math -ftree-bit-ccp
-  55              	@ -ftree-builtin-call-dce -ftree-ccp -ftree-ch -ftree-coalesce-vars
-  56              	@ -ftree-copy-prop -ftree-cselim -ftree-dce -ftree-dominator-opts
-  57              	@ -ftree-dse -ftree-forwprop -ftree-fre -ftree-loop-if-convert
-ARM GAS  /tmp/cc35Dpui.s 			page 2
-
-
-  58              	@ -ftree-loop-im -ftree-loop-ivcanon -ftree-loop-optimize
-  59              	@ -ftree-parallelize-loops= -ftree-phiprop -ftree-pre -ftree-pta
-  60              	@ -ftree-reassoc -ftree-scev-cprop -ftree-sink -ftree-slsr -ftree-sra
-  61              	@ -ftree-switch-conversion -ftree-tail-merge -ftree-ter -ftree-vrp
-  62              	@ -funit-at-a-time -fvar-tracking -fvar-tracking-assignments -fverbose-asm
-  63              	@ -fzero-initialized-in-bss -masm-syntax-unified -mfix-cortex-m3-ldrd
-  64              	@ -mlittle-endian -mpic-data-is-text-relative -msched-prolog -mthumb
-  65              	@ -munaligned-access -mvectorize-with-neon-quad
-  66              	
-  67              		.text
-  68              	.Ltext0:
-  69              		.cfi_sections	.debug_frame
-  70              		.align	1
-  71              		.global	HAL_InitTick
-  72              		.syntax unified
-  73              		.thumb
-  74              		.thumb_func
-  75              		.fpu softvfp
-  76              		.type	HAL_InitTick, %function
-  77              	HAL_InitTick:
-  78              	.LFB65:
-  79              		.file 1 "src/stm32f1xx_hal_timebase_rtc_alarm_template.c"
-   1:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** /**
-   2:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   ******************************************************************************
-   3:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   * @file    stm32f1xx_hal_timebase_rtc_alarm_template.c
-   4:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   * @author  MCD Application Team
-   5:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   * @brief   HAL time base based on the hardware RTC_ALARM.
-   6:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   *
-   7:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   *          This file override the native HAL time base functions (defined as weak)
-   8:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   *          to use the RTC ALARM for time base generation:
-   9:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   *           + Intializes the RTC peripheral to increment the seconds registers each 1ms
-  10:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   *           + The alarm is configured to assert an interrupt when the RTC reaches 1ms
-  11:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   *           + HAL_IncTick is called at each Alarm event and the time is reset to 00:00:00
-  12:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   *           + HSE (default), LSE or LSI can be selected as RTC clock source
-  13:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****  @verbatim
-  14:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   ==============================================================================
-  15:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****                         ##### How to use this driver #####
-  16:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   ==============================================================================
-  17:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****     [..]
-  18:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****     This file must be copied to the application folder and modified as follows:
-  19:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****     (#) Rename it to 'stm32f1xx_hal_timebase_rtc_alarm.c'
-  20:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****     (#) Add this file and the RTC HAL drivers to your project and uncomment
-  21:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****        HAL_RTC_MODULE_ENABLED define in stm32f1xx_hal_conf.h
-  22:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
-  23:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****     [..]
-  24:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****     (@) HAL RTC alarm and HAL RTC wakeup drivers can’t be used with low power modes:
-  25:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****         The wake up capability of the RTC may be intrusive in case of prior low power mode
-  26:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****         configuration requiring different wake up sources.
-  27:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****         Application/Example behavior is no more guaranteed
-  28:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****     (@) The stm32f1xx_hal_timebase_tim use is recommended for the Applications/Examples
-  29:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****           requiring low power modes
-  30:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
-  31:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   @endverbatim
-  32:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   ******************************************************************************
-  33:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   * @attention
-  34:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   *
-  35:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   * <h2><center>&copy; Copyright (c) 2017 STMicroelectronics.
-ARM GAS  /tmp/cc35Dpui.s 			page 3
-
-
-  36:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   * All rights reserved.</center></h2>
-  37:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   *
-  38:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   * This software component is licensed by ST under BSD 3-Clause license,
-  39:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   * the "License"; You may not use this file except in compliance with the
-  40:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   * License. You may obtain a copy of the License at:
-  41:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   *                        opensource.org/licenses/BSD-3-Clause
-  42:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   *
-  43:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   ******************************************************************************
-  44:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   */
-  45:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
-  46:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** /* Includes ------------------------------------------------------------------*/
-  47:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** #include "stm32f1xx_hal.h"
-  48:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** /** @addtogroup STM32F1xx_HAL_Driver
-  49:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   * @{
-  50:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   */
-  51:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
-  52:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** /** @defgroup HAL_TimeBase_RTC_Alarm_Template  HAL TimeBase RTC Alarm Template
-  53:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   * @{
-  54:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   */
-  55:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
-  56:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** /* Private typedef -----------------------------------------------------------*/
-  57:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** /* Private define ------------------------------------------------------------*/
-  58:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
-  59:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** /* Uncomment the line below to select the appropriate RTC Clock source for your application:
-  60:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   + RTC_CLOCK_SOURCE_HSE: can be selected for applications requiring timing precision.
-  61:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   + RTC_CLOCK_SOURCE_LSE: can be selected for applications with low constraint on timing
-  62:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****                           precision.
-  63:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   + RTC_CLOCK_SOURCE_LSI: can be selected for applications with low constraint on timing
-  64:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****                           precision.
-  65:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   */
-  66:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** #define RTC_CLOCK_SOURCE_HSE
-  67:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** /* #define RTC_CLOCK_SOURCE_LSE */
-  68:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** /* #define RTC_CLOCK_SOURCE_LSI */
-  69:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
-  70:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** /* Private macro -------------------------------------------------------------*/
-  71:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** /* Private variables ---------------------------------------------------------*/
-  72:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** RTC_HandleTypeDef        hRTC_Handle;
-  73:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** /* Private function prototypes -----------------------------------------------*/
-  74:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** void RTC_Alarm_IRQHandler(void);
-  75:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** /* Private functions ---------------------------------------------------------*/
-  76:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
-  77:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** /**
-  78:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   * @brief  This function configures the RTC_ALARMA as a time base source.
-  79:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   *         The time source is configured  to have 1ms time base with a dedicated
-  80:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   *         Tick interrupt priority.
-  81:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   * @note   This function is called  automatically at the beginning of program after
-  82:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   *         reset by HAL_Init() or at any time when clock is configured, by HAL_RCC_ClockConfig().
-  83:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   * @param  TickPriority Tick interrupt priority.
-  84:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   * @retval HAL status
-  85:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   */
-  86:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority)
-  87:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** {
-  80              		.loc 1 87 0
-  81              		.cfi_startproc
-  82              		@ args = 0, pretend = 0, frame = 64
-  83              		@ frame_needed = 0, uses_anonymous_args = 0
-  84              	.LVL0:
-ARM GAS  /tmp/cc35Dpui.s 			page 4
-
-
-  88:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   __IO uint32_t counter = 0U;
-  85              		.loc 1 88 0
-  86 0000 0023     		movs	r3, #0	@ tmp139,
-  87:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   __IO uint32_t counter = 0U;
-  87              		.loc 1 87 0
-  88 0002 F0B5     		push	{r4, r5, r6, r7, lr}	@
-  89              	.LCFI0:
-  90              		.cfi_def_cfa_offset 20
-  91              		.cfi_offset 4, -20
-  92              		.cfi_offset 5, -16
-  93              		.cfi_offset 6, -12
-  94              		.cfi_offset 7, -8
-  95              		.cfi_offset 14, -4
-  96 0004 91B0     		sub	sp, sp, #68	@,,
-  97              	.LCFI1:
-  98              		.cfi_def_cfa_offset 88
-  99              		.loc 1 88 0
- 100 0006 0193     		str	r3, [sp, #4]	@ tmp139, counter
-  89:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
-  90:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   RCC_OscInitTypeDef        RCC_OscInitStruct;
-  91:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   RCC_PeriphCLKInitTypeDef  PeriphClkInitStruct;
-  92:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
-  93:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** #ifdef RTC_CLOCK_SOURCE_LSE
-  94:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   /* Configue LSE as RTC clock soucre */
-  95:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_LSE;
-  96:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
-  97:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   RCC_OscInitStruct.LSEState = RCC_LSE_ON;
-  98:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   PeriphClkInitStruct.RTCClockSelection = RCC_RTCCLKSOURCE_LSE;
-  99:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** #elif defined (RTC_CLOCK_SOURCE_LSI)
- 100:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   /* Configue LSI as RTC clock soucre */
- 101:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_LSI;
- 102:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
- 103:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   RCC_OscInitStruct.LSIState = RCC_LSI_ON;
- 104:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   PeriphClkInitStruct.RTCClockSelection = RCC_RTCCLKSOURCE_LSI;
- 105:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** #elif defined (RTC_CLOCK_SOURCE_HSE)
- 106:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   /* Configue HSE as RTC clock soucre */
- 107:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
- 108:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
- 101              		.loc 1 108 0
- 102 0008 0D93     		str	r3, [sp, #52]	@ tmp139, RCC_OscInitStruct.PLL.PLLState
- 109:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
- 103              		.loc 1 109 0
- 104 000a 4FF48033 		mov	r3, #65536	@ tmp142,
- 107:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
- 105              		.loc 1 107 0
- 106 000e 0127     		movs	r7, #1	@ tmp140,
- 107              		.loc 1 109 0
- 108 0010 0793     		str	r3, [sp, #28]	@ tmp142, RCC_OscInitStruct.HSEState
- 110:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   PeriphClkInitStruct.RTCClockSelection = RCC_RTCCLKSOURCE_HSE_DIV128;
- 109              		.loc 1 110 0
- 110 0012 4FF44073 		mov	r3, #768	@ tmp143,
-  87:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   __IO uint32_t counter = 0U;
- 111              		.loc 1 87 0
- 112 0016 0646     		mov	r6, r0	@ TickPriority, TickPriority
- 111:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** #else
- 112:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** #error Please select the RTC Clock source
- 113:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** #endif /* RTC_CLOCK_SOURCE_LSE */
-ARM GAS  /tmp/cc35Dpui.s 			page 5
-
-
- 114:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 115:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) == HAL_OK)
- 113              		.loc 1 115 0
- 114 0018 06A8     		add	r0, sp, #24	@,,
- 115              	.LVL1:
- 107:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
- 116              		.loc 1 107 0
- 117 001a 0697     		str	r7, [sp, #24]	@ tmp140, RCC_OscInitStruct.OscillatorType
- 110:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** #else
- 118              		.loc 1 110 0
- 119 001c 0393     		str	r3, [sp, #12]	@ tmp143, PeriphClkInitStruct.RTCClockSelection
- 120              		.loc 1 115 0
- 121 001e FFF7FEFF 		bl	HAL_RCC_OscConfig	@
- 122              	.LVL2:
- 123 0022 18B1     		cbz	r0, .L2	@,
- 124              	.L4:
- 116:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   {
- 117:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****     PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_RTC;
- 118:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****     if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) == HAL_OK)
- 119:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****     {
- 120:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       /* Enable RTC Clock */
- 121:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       __HAL_RCC_RTC_ENABLE();
- 122:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 123:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       hRTC_Handle.Instance = RTC;
- 124:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       /* Configure RTC time base to 10Khz */
- 125:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       hRTC_Handle.Init.AsynchPrediv = (HAL_RCCEx_GetPeriphCLKFreq(RCC_PERIPHCLK_RTC) / 10000) - 1;
- 126:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       hRTC_Handle.Init.OutPut = RTC_OUTPUTSOURCE_NONE;
- 127:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       HAL_RTC_Init(&hRTC_Handle);
- 128:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 129:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       /* Disable the write protection for RTC registers */
- 130:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       __HAL_RTC_WRITEPROTECTION_DISABLE(&hRTC_Handle);
- 131:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 132:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       /* Clear flag alarm A */
- 133:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       __HAL_RTC_ALARM_CLEAR_FLAG(&hRTC_Handle, RTC_FLAG_ALRAF);
- 134:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 135:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       counter = 0U;
- 136:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       /* Wait till RTC ALRAF flag is set and if Time out is reached exit */
- 137:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       while (__HAL_RTC_ALARM_GET_FLAG(&hRTC_Handle, RTC_FLAG_ALRAF) != RESET)
- 138:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       {
- 139:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****         if (counter++ == SystemCoreClock / 48U) /* Timeout = ~ 1s */
- 140:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****         {
- 141:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****           return HAL_ERROR;
- 142:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****         }
- 143:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       }
- 144:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 145:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       /* Set RTC COUNTER MSB word */
- 146:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       hRTC_Handle.Instance->ALRH = 0x00U;
- 147:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       /* Set RTC COUNTER LSB word */
- 148:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       hRTC_Handle.Instance->ALRL = 0x09U;
- 149:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 150:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       /* RTC Alarm Interrupt Configuration: EXTI configuration */
- 151:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       __HAL_RTC_ALARM_EXTI_ENABLE_IT();
- 152:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       __HAL_RTC_ALARM_EXTI_ENABLE_RISING_EDGE();
- 153:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 154:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       /* Clear Second and overflow flags */
- 155:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       CLEAR_BIT(hRTC_Handle.Instance->CRL, (RTC_FLAG_SEC | RTC_FLAG_OW));
- 156:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
-ARM GAS  /tmp/cc35Dpui.s 			page 6
-
-
- 157:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       /* Set RTC COUNTER MSB word */
- 158:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       hRTC_Handle.Instance->CNTH = 0x00U;
- 159:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       /* Set RTC COUNTER LSB word */
- 160:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       hRTC_Handle.Instance->CNTL = 0x00U;
- 161:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 162:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       /* Configure the Alarm interrupt */
- 163:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       __HAL_RTC_ALARM_ENABLE_IT(&hRTC_Handle, RTC_IT_ALRA);
- 164:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 165:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       /* Enable the write protection for RTC registers */
- 166:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       __HAL_RTC_WRITEPROTECTION_ENABLE(&hRTC_Handle);
- 167:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 168:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       /* Wait till RTC is in INIT state and if Time out is reached exit */
- 169:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       counter = 0U;
- 170:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       while ((hRTC_Handle.Instance->CRL & RTC_CRL_RTOFF) == (uint32_t)RESET)
- 171:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       {
- 172:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****         if (counter++ == SystemCoreClock / 48U) /* Timeout = ~ 1s */
- 173:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****         {
- 174:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****           return HAL_ERROR;
- 175:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****         }
- 176:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       }
- 177:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 178:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       HAL_NVIC_SetPriority(RTC_Alarm_IRQn, TickPriority, 0U);
- 179:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       HAL_NVIC_EnableIRQ(RTC_Alarm_IRQn);
- 180:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       return HAL_OK;
- 181:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****     }
- 182:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   }
- 183:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   return HAL_ERROR;
- 125              		.loc 1 183 0
- 126 0024 0124     		movs	r4, #1	@ <retval>,
- 127              	.L3:
- 184:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** }
- 128              		.loc 1 184 0
- 129 0026 2046     		mov	r0, r4	@, <retval>
- 130 0028 11B0     		add	sp, sp, #68	@,,
- 131              	.LCFI2:
- 132              		.cfi_remember_state
- 133              		.cfi_def_cfa_offset 20
- 134              		@ sp needed	@
- 135 002a F0BD     		pop	{r4, r5, r6, r7, pc}	@
- 136              	.LVL3:
- 137              	.L2:
- 138              	.LCFI3:
- 139              		.cfi_restore_state
- 117:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****     if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) == HAL_OK)
- 140              		.loc 1 117 0
- 141 002c 10A8     		add	r0, sp, #64	@ tmp147,,
- 142 002e 40F8387D 		str	r7, [r0, #-56]!	@ tmp140, PeriphClkInitStruct.PeriphClockSelection
- 118:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****     {
- 143              		.loc 1 118 0
- 144 0032 FFF7FEFF 		bl	HAL_RCCEx_PeriphCLKConfig	@
- 145              	.LVL4:
- 146 0036 0446     		mov	r4, r0	@ <retval>,
- 147 0038 0028     		cmp	r0, #0	@ <retval>
- 148 003a F3D1     		bne	.L4	@
- 121:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 149              		.loc 1 121 0
- 150 003c 2B4B     		ldr	r3, .L9	@ tmp149,
-ARM GAS  /tmp/cc35Dpui.s 			page 7
-
-
- 123:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       /* Configure RTC time base to 10Khz */
- 151              		.loc 1 123 0
- 152 003e 2C4D     		ldr	r5, .L9+4	@ tmp151,
- 121:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 153              		.loc 1 121 0
- 154 0040 1F60     		str	r7, [r3]	@ tmp140, MEM[(volatile uint32_t *)1111622716B]
- 123:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       /* Configure RTC time base to 10Khz */
- 155              		.loc 1 123 0
- 156 0042 2C4B     		ldr	r3, .L9+8	@ tmp152,
- 125:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       hRTC_Handle.Init.OutPut = RTC_OUTPUTSOURCE_NONE;
- 157              		.loc 1 125 0
- 158 0044 3846     		mov	r0, r7	@, tmp140
- 123:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       /* Configure RTC time base to 10Khz */
- 159              		.loc 1 123 0
- 160 0046 2B60     		str	r3, [r5]	@ tmp152, hRTC_Handle.Instance
- 125:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       hRTC_Handle.Init.OutPut = RTC_OUTPUTSOURCE_NONE;
- 161              		.loc 1 125 0
- 162 0048 FFF7FEFF 		bl	HAL_RCCEx_GetPeriphCLKFreq	@
- 163              	.LVL5:
- 164 004c 42F21073 		movw	r3, #10000	@ tmp156,
- 165 0050 B0FBF3F0 		udiv	r0, r0, r3	@ tmp155,, tmp156
- 166 0054 0138     		subs	r0, r0, #1	@ tmp157, tmp155,
- 167 0056 6860     		str	r0, [r5, #4]	@ tmp157, hRTC_Handle.Init.AsynchPrediv
- 127:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 168              		.loc 1 127 0
- 169 0058 2846     		mov	r0, r5	@, tmp151
- 126:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       HAL_RTC_Init(&hRTC_Handle);
- 170              		.loc 1 126 0
- 171 005a AC60     		str	r4, [r5, #8]	@ <retval>, hRTC_Handle.Init.OutPut
- 127:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 172              		.loc 1 127 0
- 173 005c FFF7FEFF 		bl	HAL_RTC_Init	@
- 174              	.LVL6:
- 130:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 175              		.loc 1 130 0
- 176 0060 2B68     		ldr	r3, [r5]	@ _25, hRTC_Handle.Instance
- 177 0062 5A68     		ldr	r2, [r3, #4]	@ _26, _25->CRL
- 178 0064 42F01002 		orr	r2, r2, #16	@ _27, _26,
- 179 0068 5A60     		str	r2, [r3, #4]	@ _27, _25->CRL
- 133:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 180              		.loc 1 133 0
- 181 006a 6FF00202 		mvn	r2, #2	@ tmp162,
- 182 006e 5A60     		str	r2, [r3, #4]	@ tmp162, _25->CRL
- 139:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****         {
- 183              		.loc 1 139 0
- 184 0070 214A     		ldr	r2, .L9+12	@ tmp164,
- 135:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       /* Wait till RTC ALRAF flag is set and if Time out is reached exit */
- 185              		.loc 1 135 0
- 186 0072 0194     		str	r4, [sp, #4]	@ <retval>, counter
- 139:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****         {
- 187              		.loc 1 139 0
- 188 0074 1168     		ldr	r1, [r2]	@ SystemCoreClock, SystemCoreClock
- 189 0076 3022     		movs	r2, #48	@ tmp166,
- 190 0078 B1FBF2F1 		udiv	r1, r1, r2	@ _37, SystemCoreClock, tmp166
- 191              	.L5:
- 137:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       {
- 192              		.loc 1 137 0
-ARM GAS  /tmp/cc35Dpui.s 			page 8
-
-
- 193 007c 5A68     		ldr	r2, [r3, #4]	@ _31, _25->CRL
- 194 007e 12F00202 		ands	r2, r2, #2	@ tmp167, _31,
- 195 0082 26D1     		bne	.L6	@,
- 148:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 196              		.loc 1 148 0
- 197 0084 0920     		movs	r0, #9	@ tmp169,
- 146:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       /* Set RTC COUNTER LSB word */
- 198              		.loc 1 146 0
- 199 0086 1A62     		str	r2, [r3, #32]	@ tmp167, _25->ALRH
- 148:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 200              		.loc 1 148 0
- 201 0088 5862     		str	r0, [r3, #36]	@ tmp169, _25->ALRL
- 151:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       __HAL_RTC_ALARM_EXTI_ENABLE_RISING_EDGE();
- 202              		.loc 1 151 0
- 203 008a 1C48     		ldr	r0, .L9+16	@ tmp170,
- 204 008c 0568     		ldr	r5, [r0]	@ _40, MEM[(struct EXTI_TypeDef *)1073808384B].IMR
- 205 008e 45F40035 		orr	r5, r5, #131072	@ _41, _40,
- 206 0092 0560     		str	r5, [r0]	@ _41, MEM[(struct EXTI_TypeDef *)1073808384B].IMR
- 152:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 207              		.loc 1 152 0
- 208 0094 8568     		ldr	r5, [r0, #8]	@ _43, MEM[(struct EXTI_TypeDef *)1073808384B].RTSR
- 209 0096 45F40035 		orr	r5, r5, #131072	@ _44, _43,
- 210 009a 8560     		str	r5, [r0, #8]	@ _44, MEM[(struct EXTI_TypeDef *)1073808384B].RTSR
- 155:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 211              		.loc 1 155 0
- 212 009c 5868     		ldr	r0, [r3, #4]	@ _46, _25->CRL
- 213 009e 20F00500 		bic	r0, r0, #5	@ _47, _46,
- 214 00a2 5860     		str	r0, [r3, #4]	@ _47, _25->CRL
- 158:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       /* Set RTC COUNTER LSB word */
- 215              		.loc 1 158 0
- 216 00a4 9A61     		str	r2, [r3, #24]	@ tmp167, _25->CNTH
- 160:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 217              		.loc 1 160 0
- 218 00a6 DA61     		str	r2, [r3, #28]	@ tmp167, _25->CNTL
- 163:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 219              		.loc 1 163 0
- 220 00a8 1868     		ldr	r0, [r3]	@ _51, _25->CRH
- 221 00aa 40F00200 		orr	r0, r0, #2	@ _52, _51,
- 222 00ae 1860     		str	r0, [r3]	@ _52, _25->CRH
- 166:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 223              		.loc 1 166 0
- 224 00b0 5868     		ldr	r0, [r3, #4]	@ _54, _25->CRL
- 225 00b2 20F01000 		bic	r0, r0, #16	@ _55, _54,
- 226 00b6 5860     		str	r0, [r3, #4]	@ _55, _25->CRL
- 169:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       while ((hRTC_Handle.Instance->CRL & RTC_CRL_RTOFF) == (uint32_t)RESET)
- 227              		.loc 1 169 0
- 228 00b8 0192     		str	r2, [sp, #4]	@ tmp167, counter
- 229              	.L7:
- 170:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       {
- 230              		.loc 1 170 0
- 231 00ba 5A68     		ldr	r2, [r3, #4]	@ _58, _25->CRL
- 232 00bc 9206     		lsls	r2, r2, #26	@, _58,
- 233 00be 0ED5     		bpl	.L8	@,
- 178:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       HAL_NVIC_EnableIRQ(RTC_Alarm_IRQn);
- 234              		.loc 1 178 0
- 235 00c0 0022     		movs	r2, #0	@,
- 236 00c2 3146     		mov	r1, r6	@, TickPriority
-ARM GAS  /tmp/cc35Dpui.s 			page 9
-
-
- 237 00c4 2920     		movs	r0, #41	@,
- 238 00c6 FFF7FEFF 		bl	HAL_NVIC_SetPriority	@
- 239              	.LVL7:
- 179:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       return HAL_OK;
- 240              		.loc 1 179 0
- 241 00ca 2920     		movs	r0, #41	@,
- 242 00cc FFF7FEFF 		bl	HAL_NVIC_EnableIRQ	@
- 243              	.LVL8:
- 180:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****     }
- 244              		.loc 1 180 0
- 245 00d0 A9E7     		b	.L3	@
- 246              	.L6:
- 139:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****         {
- 247              		.loc 1 139 0
- 248 00d2 019A     		ldr	r2, [sp, #4]	@ counter.0_33, counter
- 249 00d4 501C     		adds	r0, r2, #1	@ counter.2_34, counter.0_33,
- 250 00d6 8A42     		cmp	r2, r1	@ counter.0_33, _37
- 251 00d8 0190     		str	r0, [sp, #4]	@ counter.2_34, counter
- 252 00da CFD1     		bne	.L5	@,
- 253 00dc A2E7     		b	.L4	@
- 254              	.L8:
- 172:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****         {
- 255              		.loc 1 172 0
- 256 00de 019A     		ldr	r2, [sp, #4]	@ counter.4_60, counter
- 257 00e0 501C     		adds	r0, r2, #1	@ counter.6_61, counter.4_60,
- 258 00e2 9142     		cmp	r1, r2	@ _37, counter.4_60
- 259 00e4 0190     		str	r0, [sp, #4]	@ counter.6_61, counter
- 260 00e6 E8D1     		bne	.L7	@,
- 261 00e8 9CE7     		b	.L4	@
- 262              	.L10:
- 263 00ea 00BF     		.align	2
- 264              	.L9:
- 265 00ec 3C044242 		.word	1111622716
- 266 00f0 00000000 		.word	hRTC_Handle
- 267 00f4 00280040 		.word	1073752064
- 268 00f8 00000000 		.word	SystemCoreClock
- 269 00fc 00040140 		.word	1073808384
- 270              		.cfi_endproc
- 271              	.LFE65:
- 272              		.size	HAL_InitTick, .-HAL_InitTick
- 273              		.align	1
- 274              		.global	HAL_SuspendTick
- 275              		.syntax unified
- 276              		.thumb
- 277              		.thumb_func
- 278              		.fpu softvfp
- 279              		.type	HAL_SuspendTick, %function
- 280              	HAL_SuspendTick:
- 281              	.LFB66:
- 185:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 186:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** /**
- 187:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   * @brief  Suspend Tick increment.
- 188:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   * @note   Disable the tick increment by disabling RTC ALARM interrupt.
- 189:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   * @param  None
- 190:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   * @retval None
- 191:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   */
- 192:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** void HAL_SuspendTick(void)
-ARM GAS  /tmp/cc35Dpui.s 			page 10
-
-
- 193:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** {
- 282              		.loc 1 193 0
- 283              		.cfi_startproc
- 284              		@ args = 0, pretend = 0, frame = 0
- 285              		@ frame_needed = 0, uses_anonymous_args = 0
- 286              		@ link register save eliminated.
- 194:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   /* Disable RTC ALARM update Interrupt */
- 195:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   __HAL_RTC_ALARM_DISABLE_IT(&hRTC_Handle, RTC_IT_ALRA);
- 287              		.loc 1 195 0
- 288 0100 034B     		ldr	r3, .L12	@ tmp113,
- 289 0102 1A68     		ldr	r2, [r3]	@ _2, hRTC_Handle.Instance
- 290 0104 1368     		ldr	r3, [r2]	@ _3, _2->CRH
- 291 0106 23F00203 		bic	r3, r3, #2	@ _4, _3,
- 292 010a 1360     		str	r3, [r2]	@ _4, _2->CRH
- 293 010c 7047     		bx	lr	@
- 294              	.L13:
- 295 010e 00BF     		.align	2
- 296              	.L12:
- 297 0110 00000000 		.word	hRTC_Handle
- 298              		.cfi_endproc
- 299              	.LFE66:
- 300              		.size	HAL_SuspendTick, .-HAL_SuspendTick
- 301              		.align	1
- 302              		.global	HAL_ResumeTick
- 303              		.syntax unified
- 304              		.thumb
- 305              		.thumb_func
- 306              		.fpu softvfp
- 307              		.type	HAL_ResumeTick, %function
- 308              	HAL_ResumeTick:
- 309              	.LFB67:
- 196:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** }
- 197:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 198:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** /**
- 199:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   * @brief  Resume Tick increment.
- 200:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   * @note   Enable the tick increment by Enabling RTC ALARM interrupt.
- 201:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   * @param  None
- 202:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   * @retval None
- 203:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   */
- 204:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** void HAL_ResumeTick(void)
- 205:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** {
- 310              		.loc 1 205 0
- 311              		.cfi_startproc
- 312              		@ args = 0, pretend = 0, frame = 8
- 313              		@ frame_needed = 0, uses_anonymous_args = 0
- 314              		@ link register save eliminated.
- 206:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   __IO uint32_t counter = 0U;
- 315              		.loc 1 206 0
- 316 0114 0022     		movs	r2, #0	@ tmp125,
- 207:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 208:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   /* Disable the write protection for RTC registers */
- 209:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   __HAL_RTC_WRITEPROTECTION_DISABLE(&hRTC_Handle);
- 317              		.loc 1 209 0
- 318 0116 124B     		ldr	r3, .L19	@ tmp126,
- 205:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   __IO uint32_t counter = 0U;
- 319              		.loc 1 205 0
- 320 0118 82B0     		sub	sp, sp, #8	@,,
-ARM GAS  /tmp/cc35Dpui.s 			page 11
-
-
- 321              	.LCFI4:
- 322              		.cfi_def_cfa_offset 8
- 323              		.loc 1 209 0
- 324 011a 1B68     		ldr	r3, [r3]	@ _5, hRTC_Handle.Instance
- 206:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   __IO uint32_t counter = 0U;
- 325              		.loc 1 206 0
- 326 011c 0192     		str	r2, [sp, #4]	@ tmp125, counter
- 327              		.loc 1 209 0
- 328 011e 5968     		ldr	r1, [r3, #4]	@ _6, _5->CRL
- 329 0120 41F01001 		orr	r1, r1, #16	@ _7, _6,
- 330 0124 5960     		str	r1, [r3, #4]	@ _7, _5->CRL
- 210:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 211:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   /* Set RTC COUNTER MSB word */
- 212:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   hRTC_Handle.Instance->CNTH = 0x00U;
- 213:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   /* Set RTC COUNTER LSB word */
- 214:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   hRTC_Handle.Instance->CNTL = 0x00U;
- 215:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 216:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   /* Clear Second and overflow flags */
- 217:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   CLEAR_BIT(hRTC_Handle.Instance->CRL, (RTC_FLAG_SEC | RTC_FLAG_OW | RTC_FLAG_ALRAF));
- 218:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 219:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   /* Enable RTC ALARM Update interrupt */
- 220:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   __HAL_RTC_ALARM_ENABLE_IT(&hRTC_Handle, RTC_IT_ALRA);
- 221:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 222:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   /* Enable the write protection for RTC registers */
- 223:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   __HAL_RTC_WRITEPROTECTION_ENABLE(&hRTC_Handle);
- 224:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 225:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   /* Wait till RTC is in INIT state and if Time out is reached exit */
- 226:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   while ((hRTC_Handle.Instance->CRL & RTC_CRL_RTOFF) == (uint32_t)RESET)
- 227:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   {
- 228:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****     if (counter++ == SystemCoreClock / 48U) /* Timeout = ~ 1s */
- 331              		.loc 1 228 0
- 332 0126 3021     		movs	r1, #48	@ tmp131,
- 212:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   /* Set RTC COUNTER LSB word */
- 333              		.loc 1 212 0
- 334 0128 9A61     		str	r2, [r3, #24]	@ tmp125, _5->CNTH
- 214:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 335              		.loc 1 214 0
- 336 012a DA61     		str	r2, [r3, #28]	@ tmp125, _5->CNTL
- 217:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 337              		.loc 1 217 0
- 338 012c 5A68     		ldr	r2, [r3, #4]	@ _11, _5->CRL
- 339 012e 22F00702 		bic	r2, r2, #7	@ _12, _11,
- 340 0132 5A60     		str	r2, [r3, #4]	@ _12, _5->CRL
- 220:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 341              		.loc 1 220 0
- 342 0134 1A68     		ldr	r2, [r3]	@ _14, _5->CRH
- 343 0136 42F00202 		orr	r2, r2, #2	@ _15, _14,
- 344 013a 1A60     		str	r2, [r3]	@ _15, _5->CRH
- 223:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 345              		.loc 1 223 0
- 346 013c 5A68     		ldr	r2, [r3, #4]	@ _17, _5->CRL
- 347 013e 22F01002 		bic	r2, r2, #16	@ _18, _17,
- 348 0142 5A60     		str	r2, [r3, #4]	@ _18, _5->CRL
- 349              		.loc 1 228 0
- 350 0144 074A     		ldr	r2, .L19+4	@ tmp129,
- 351 0146 1268     		ldr	r2, [r2]	@ SystemCoreClock, SystemCoreClock
- 352 0148 B2FBF1F2 		udiv	r2, r2, r1	@ _26, SystemCoreClock, tmp131
-ARM GAS  /tmp/cc35Dpui.s 			page 12
-
-
- 353              	.L15:
- 226:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   {
- 354              		.loc 1 226 0
- 355 014c 5968     		ldr	r1, [r3, #4]	@ _20, _5->CRL
- 356 014e 8906     		lsls	r1, r1, #26	@, _20,
- 357 0150 04D4     		bmi	.L14	@,
- 358              		.loc 1 228 0
- 359 0152 0199     		ldr	r1, [sp, #4]	@ counter.7_22, counter
- 360 0154 481C     		adds	r0, r1, #1	@ counter.9_23, counter.7_22,
- 361 0156 9142     		cmp	r1, r2	@ counter.7_22, _26
- 362 0158 0190     		str	r0, [sp, #4]	@ counter.9_23, counter
- 363 015a F7D1     		bne	.L15	@,
- 364              	.L14:
- 229:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****     {
- 230:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       break;
- 231:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****     }
- 232:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   }
- 233:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** }
- 365              		.loc 1 233 0
- 366 015c 02B0     		add	sp, sp, #8	@,,
- 367              	.LCFI5:
- 368              		.cfi_def_cfa_offset 0
- 369              		@ sp needed	@
- 370 015e 7047     		bx	lr	@
- 371              	.L20:
- 372              		.align	2
- 373              	.L19:
- 374 0160 00000000 		.word	hRTC_Handle
- 375 0164 00000000 		.word	SystemCoreClock
- 376              		.cfi_endproc
- 377              	.LFE67:
- 378              		.size	HAL_ResumeTick, .-HAL_ResumeTick
- 379              		.align	1
- 380              		.global	HAL_RTC_AlarmAEventCallback
- 381              		.syntax unified
- 382              		.thumb
- 383              		.thumb_func
- 384              		.fpu softvfp
- 385              		.type	HAL_RTC_AlarmAEventCallback, %function
- 386              	HAL_RTC_AlarmAEventCallback:
- 387              	.LFB68:
- 234:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 235:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** /**
- 236:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   * @brief  ALARM A Event Callback in non blocking mode
- 237:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   * @note   This function is called  when RTC_ALARM interrupt took place, inside
- 238:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   * RTC_ALARM_IRQHandler(). It makes a direct call to HAL_IncTick() to increment
- 239:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   * a global variable "uwTick" used as application time base.
- 240:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   * @param  hrtc RTC handle
- 241:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   * @retval None
- 242:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   */
- 243:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** void HAL_RTC_AlarmAEventCallback(RTC_HandleTypeDef *hrtc)
- 244:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** {
- 388              		.loc 1 244 0
- 389              		.cfi_startproc
- 390              		@ args = 0, pretend = 0, frame = 8
- 391              		@ frame_needed = 0, uses_anonymous_args = 0
- 392              	.LVL9:
-ARM GAS  /tmp/cc35Dpui.s 			page 13
-
-
- 393 0168 37B5     		push	{r0, r1, r2, r4, r5, lr}	@
- 394              	.LCFI6:
- 395              		.cfi_def_cfa_offset 24
- 396              		.cfi_offset 4, -12
- 397              		.cfi_offset 5, -8
- 398              		.cfi_offset 14, -4
- 245:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   __IO uint32_t counter = 0U;
- 399              		.loc 1 245 0
- 400 016a 0024     		movs	r4, #0	@ tmp124,
- 244:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   __IO uint32_t counter = 0U;
- 401              		.loc 1 244 0
- 402 016c 0546     		mov	r5, r0	@ hrtc, hrtc
- 403              		.loc 1 245 0
- 404 016e 0194     		str	r4, [sp, #4]	@ tmp124, counter
- 246:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 247:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   HAL_IncTick();
- 405              		.loc 1 247 0
- 406 0170 FFF7FEFF 		bl	HAL_IncTick	@
- 407              	.LVL10:
- 248:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 249:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   __HAL_RTC_WRITEPROTECTION_DISABLE(hrtc);
- 250:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 251:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   /* Set RTC COUNTER MSB word */
- 252:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   WRITE_REG(hrtc->Instance->CNTH, 0x00U);
- 253:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   /* Set RTC COUNTER LSB word */
- 254:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   WRITE_REG(hrtc->Instance->CNTL, 0x00U);
- 255:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 256:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   /* Clear Second and overflow flags */
- 257:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   CLEAR_BIT(hrtc->Instance->CRL, (RTC_FLAG_SEC | RTC_FLAG_OW));
- 258:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 259:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   /* Enable the write protection for RTC registers */
- 260:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   __HAL_RTC_WRITEPROTECTION_ENABLE(hrtc);
- 261:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 262:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   /* Wait till RTC is in INIT state and if Time out is reached exit */
- 263:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   while ((hrtc->Instance->CRL & RTC_CRL_RTOFF) == (uint32_t)RESET)
- 264:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   {
- 265:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****     if (counter++ == SystemCoreClock / 48U) /* Timeout = ~ 1s */
- 408              		.loc 1 265 0
- 409 0174 3021     		movs	r1, #48	@ tmp129,
- 249:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 410              		.loc 1 249 0
- 411 0176 2B68     		ldr	r3, [r5]	@ _7, hrtc_6(D)->Instance
- 412 0178 5A68     		ldr	r2, [r3, #4]	@ _8, _7->CRL
- 413 017a 42F01002 		orr	r2, r2, #16	@ _9, _8,
- 414 017e 5A60     		str	r2, [r3, #4]	@ _9, _7->CRL
- 252:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   /* Set RTC COUNTER LSB word */
- 415              		.loc 1 252 0
- 416 0180 9C61     		str	r4, [r3, #24]	@ tmp124, _7->CNTH
- 254:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 417              		.loc 1 254 0
- 418 0182 DC61     		str	r4, [r3, #28]	@ tmp124, _7->CNTL
- 257:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 419              		.loc 1 257 0
- 420 0184 5A68     		ldr	r2, [r3, #4]	@ _13, _7->CRL
- 421 0186 22F00502 		bic	r2, r2, #5	@ _14, _13,
- 422 018a 5A60     		str	r2, [r3, #4]	@ _14, _7->CRL
- 260:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
-ARM GAS  /tmp/cc35Dpui.s 			page 14
-
-
- 423              		.loc 1 260 0
- 424 018c 5A68     		ldr	r2, [r3, #4]	@ _16, _7->CRL
- 425 018e 22F01002 		bic	r2, r2, #16	@ _17, _16,
- 426 0192 5A60     		str	r2, [r3, #4]	@ _17, _7->CRL
- 427              		.loc 1 265 0
- 428 0194 064A     		ldr	r2, .L26	@ tmp127,
- 429 0196 1268     		ldr	r2, [r2]	@ SystemCoreClock, SystemCoreClock
- 430 0198 B2FBF1F2 		udiv	r2, r2, r1	@ _25, SystemCoreClock, tmp129
- 431              	.L22:
- 263:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   {
- 432              		.loc 1 263 0
- 433 019c 5968     		ldr	r1, [r3, #4]	@ _19, _7->CRL
- 434 019e 8906     		lsls	r1, r1, #26	@, _19,
- 435 01a0 04D4     		bmi	.L21	@,
- 436              		.loc 1 265 0
- 437 01a2 0199     		ldr	r1, [sp, #4]	@ counter.11_21, counter
- 438 01a4 481C     		adds	r0, r1, #1	@ counter.13_22, counter.11_21,
- 439 01a6 9142     		cmp	r1, r2	@ counter.11_21, _25
- 440 01a8 0190     		str	r0, [sp, #4]	@ counter.13_22, counter
- 441 01aa F7D1     		bne	.L22	@,
- 442              	.L21:
- 266:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****     {
- 267:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****       break;
- 268:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****     }
- 269:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   }
- 270:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** }
- 443              		.loc 1 270 0
- 444 01ac 03B0     		add	sp, sp, #12	@,,
- 445              	.LCFI7:
- 446              		.cfi_def_cfa_offset 12
- 447              		@ sp needed	@
- 448 01ae 30BD     		pop	{r4, r5, pc}	@
- 449              	.LVL11:
- 450              	.L27:
- 451              		.align	2
- 452              	.L26:
- 453 01b0 00000000 		.word	SystemCoreClock
- 454              		.cfi_endproc
- 455              	.LFE68:
- 456              		.size	HAL_RTC_AlarmAEventCallback, .-HAL_RTC_AlarmAEventCallback
- 457              		.align	1
- 458              		.global	RTC_Alarm_IRQHandler
- 459              		.syntax unified
- 460              		.thumb
- 461              		.thumb_func
- 462              		.fpu softvfp
- 463              		.type	RTC_Alarm_IRQHandler, %function
- 464              	RTC_Alarm_IRQHandler:
- 465              	.LFB69:
- 271:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** 
- 272:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** /**
- 273:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   * @brief  This function handles RTC ALARM interrupt request.
- 274:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   * @retval None
- 275:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   */
- 276:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** void RTC_Alarm_IRQHandler(void)
- 277:src/stm32f1xx_hal_timebase_rtc_alarm_template.c **** {
- 466              		.loc 1 277 0
-ARM GAS  /tmp/cc35Dpui.s 			page 15
-
-
- 467              		.cfi_startproc
- 468              		@ args = 0, pretend = 0, frame = 0
- 469              		@ frame_needed = 0, uses_anonymous_args = 0
- 470              		@ link register save eliminated.
- 278:src/stm32f1xx_hal_timebase_rtc_alarm_template.c ****   HAL_RTC_AlarmIRQHandler(&hRTC_Handle);
- 471              		.loc 1 278 0
- 472 01b4 0148     		ldr	r0, .L29	@,
- 473 01b6 FFF7FEBF 		b	HAL_RTC_AlarmIRQHandler	@
- 474              	.LVL12:
- 475              	.L30:
- 476 01ba 00BF     		.align	2
- 477              	.L29:
- 478 01bc 00000000 		.word	hRTC_Handle
- 479              		.cfi_endproc
- 480              	.LFE69:
- 481              		.size	RTC_Alarm_IRQHandler, .-RTC_Alarm_IRQHandler
- 482              		.comm	hRTC_Handle,20,4
- 483              	.Letext0:
- 484              		.file 2 "/usr/include/newlib/machine/_default_types.h"
- 485              		.file 3 "/usr/include/newlib/sys/_stdint.h"
- 486              		.file 4 "../cmsiscore/inc/core_cm3.h"
- 487              		.file 5 "../cmsisstm32f1xx/inc/system_stm32f1xx.h"
- 488              		.file 6 "../cmsisstm32f1xx/inc/stm32f103x6.h"
- 489              		.file 7 "../cmsisstm32f1xx/inc/stm32f1xx.h"
- 490              		.file 8 "./inc/stm32f1xx_hal_def.h"
- 491              		.file 9 "./inc/stm32f1xx_hal_rcc.h"
- 492              		.file 10 "./inc/stm32f1xx_hal_rcc_ex.h"
- 493              		.file 11 "./inc/stm32f1xx_hal_rtc.h"
- 494              		.file 12 "./inc/stm32f1xx_hal.h"
- 495              		.file 13 "./inc/stm32f1xx_hal_cortex.h"
- 496              		.section	.debug_info,"",%progbits
- 497              	.Ldebug_info0:
- 498 0000 75080000 		.4byte	0x875
- 499 0004 0200     		.2byte	0x2
- 500 0006 00000000 		.4byte	.Ldebug_abbrev0
- 501 000a 04       		.byte	0x4
- 502 000b 01       		.uleb128 0x1
- 503 000c 39060000 		.4byte	.LASF153
- 504 0010 0C       		.byte	0xc
- 505 0011 E3040000 		.4byte	.LASF154
- 506 0015 8E060000 		.4byte	.LASF155
- 507 0019 00000000 		.4byte	.Ltext0
- 508 001d C0010000 		.4byte	.Letext0
- 509 0021 00000000 		.4byte	.Ldebug_line0
- 510 0025 02       		.uleb128 0x2
- 511 0026 01       		.byte	0x1
- 512 0027 4C010000 		.4byte	0x14c
- 513 002b 06       		.byte	0x6
- 514 002c 46       		.byte	0x46
- 515 002d 4C010000 		.4byte	0x14c
- 516 0031 03       		.uleb128 0x3
- 517 0032 8F070000 		.4byte	.LASF0
- 518 0036 72       		.sleb128 -14
- 519 0037 03       		.uleb128 0x3
- 520 0038 D5030000 		.4byte	.LASF1
- 521 003c 73       		.sleb128 -13
- 522 003d 03       		.uleb128 0x3
-ARM GAS  /tmp/cc35Dpui.s 			page 16
-
-
- 523 003e 23030000 		.4byte	.LASF2
- 524 0042 74       		.sleb128 -12
- 525 0043 03       		.uleb128 0x3
- 526 0044 81020000 		.4byte	.LASF3
- 527 0048 75       		.sleb128 -11
- 528 0049 03       		.uleb128 0x3
- 529 004a 17070000 		.4byte	.LASF4
- 530 004e 76       		.sleb128 -10
- 531 004f 03       		.uleb128 0x3
- 532 0050 97040000 		.4byte	.LASF5
- 533 0054 7B       		.sleb128 -5
- 534 0055 03       		.uleb128 0x3
- 535 0056 6B080000 		.4byte	.LASF6
- 536 005a 7C       		.sleb128 -4
- 537 005b 03       		.uleb128 0x3
- 538 005c 45020000 		.4byte	.LASF7
- 539 0060 7E       		.sleb128 -2
- 540 0061 03       		.uleb128 0x3
- 541 0062 2C040000 		.4byte	.LASF8
- 542 0066 7F       		.sleb128 -1
- 543 0067 04       		.uleb128 0x4
- 544 0068 40010000 		.4byte	.LASF9
- 545 006c 00       		.byte	0
- 546 006d 04       		.uleb128 0x4
- 547 006e 37000000 		.4byte	.LASF10
- 548 0072 01       		.byte	0x1
- 549 0073 04       		.uleb128 0x4
- 550 0074 C0070000 		.4byte	.LASF11
- 551 0078 02       		.byte	0x2
- 552 0079 04       		.uleb128 0x4
- 553 007a 97080000 		.4byte	.LASF12
- 554 007e 03       		.byte	0x3
- 555 007f 04       		.uleb128 0x4
- 556 0080 DE060000 		.4byte	.LASF13
- 557 0084 04       		.byte	0x4
- 558 0085 04       		.uleb128 0x4
- 559 0086 B3080000 		.4byte	.LASF14
- 560 008a 05       		.byte	0x5
- 561 008b 04       		.uleb128 0x4
- 562 008c 18080000 		.4byte	.LASF15
- 563 0090 06       		.byte	0x6
- 564 0091 04       		.uleb128 0x4
- 565 0092 CB080000 		.4byte	.LASF16
- 566 0096 07       		.byte	0x7
- 567 0097 04       		.uleb128 0x4
- 568 0098 35010000 		.4byte	.LASF17
- 569 009c 08       		.byte	0x8
- 570 009d 04       		.uleb128 0x4
- 571 009e C2040000 		.4byte	.LASF18
- 572 00a2 09       		.byte	0x9
- 573 00a3 04       		.uleb128 0x4
- 574 00a4 E4050000 		.4byte	.LASF19
- 575 00a8 0A       		.byte	0xa
- 576 00a9 04       		.uleb128 0x4
- 577 00aa 34050000 		.4byte	.LASF20
- 578 00ae 0B       		.byte	0xb
- 579 00af 04       		.uleb128 0x4
-ARM GAS  /tmp/cc35Dpui.s 			page 17
-
-
- 580 00b0 6E040000 		.4byte	.LASF21
- 581 00b4 0C       		.byte	0xc
- 582 00b5 04       		.uleb128 0x4
- 583 00b6 13060000 		.4byte	.LASF22
- 584 00ba 0D       		.byte	0xd
- 585 00bb 04       		.uleb128 0x4
- 586 00bc 51020000 		.4byte	.LASF23
- 587 00c0 0E       		.byte	0xe
- 588 00c1 04       		.uleb128 0x4
- 589 00c2 AA030000 		.4byte	.LASF24
- 590 00c6 0F       		.byte	0xf
- 591 00c7 04       		.uleb128 0x4
- 592 00c8 AD070000 		.4byte	.LASF25
- 593 00cc 10       		.byte	0x10
- 594 00cd 04       		.uleb128 0x4
- 595 00ce 58080000 		.4byte	.LASF26
- 596 00d2 11       		.byte	0x11
- 597 00d3 04       		.uleb128 0x4
- 598 00d4 22020000 		.4byte	.LASF27
- 599 00d8 12       		.byte	0x12
- 600 00d9 04       		.uleb128 0x4
- 601 00da B5050000 		.4byte	.LASF28
- 602 00de 13       		.byte	0x13
- 603 00df 04       		.uleb128 0x4
- 604 00e0 A0050000 		.4byte	.LASF29
- 605 00e4 14       		.byte	0x14
- 606 00e5 04       		.uleb128 0x4
- 607 00e6 E4000000 		.4byte	.LASF30
- 608 00ea 15       		.byte	0x15
- 609 00eb 04       		.uleb128 0x4
- 610 00ec A0080000 		.4byte	.LASF31
- 611 00f0 16       		.byte	0x16
- 612 00f1 04       		.uleb128 0x4
- 613 00f2 DC010000 		.4byte	.LASF32
- 614 00f6 17       		.byte	0x17
- 615 00f7 04       		.uleb128 0x4
- 616 00f8 6F070000 		.4byte	.LASF33
- 617 00fc 18       		.byte	0x18
- 618 00fd 04       		.uleb128 0x4
- 619 00fe D9070000 		.4byte	.LASF34
- 620 0102 19       		.byte	0x19
- 621 0103 04       		.uleb128 0x4
- 622 0104 40000000 		.4byte	.LASF35
- 623 0108 1A       		.byte	0x1a
- 624 0109 04       		.uleb128 0x4
- 625 010a 39040000 		.4byte	.LASF36
- 626 010e 1B       		.byte	0x1b
- 627 010f 04       		.uleb128 0x4
- 628 0110 01080000 		.4byte	.LASF37
- 629 0114 1C       		.byte	0x1c
- 630 0115 04       		.uleb128 0x4
- 631 0116 C1080000 		.4byte	.LASF38
- 632 011a 1D       		.byte	0x1d
- 633 011b 04       		.uleb128 0x4
- 634 011c 6F000000 		.4byte	.LASF39
- 635 0120 1F       		.byte	0x1f
- 636 0121 04       		.uleb128 0x4
-ARM GAS  /tmp/cc35Dpui.s 			page 18
-
-
- 637 0122 CC070000 		.4byte	.LASF40
- 638 0126 20       		.byte	0x20
- 639 0127 04       		.uleb128 0x4
- 640 0128 02040000 		.4byte	.LASF41
- 641 012c 23       		.byte	0x23
- 642 012d 04       		.uleb128 0x4
- 643 012e 72050000 		.4byte	.LASF42
- 644 0132 25       		.byte	0x25
- 645 0133 04       		.uleb128 0x4
- 646 0134 0B070000 		.4byte	.LASF43
- 647 0138 26       		.byte	0x26
- 648 0139 04       		.uleb128 0x4
- 649 013a E4030000 		.4byte	.LASF44
- 650 013e 28       		.byte	0x28
- 651 013f 04       		.uleb128 0x4
- 652 0140 09010000 		.4byte	.LASF45
- 653 0144 29       		.byte	0x29
- 654 0145 04       		.uleb128 0x4
- 655 0146 E6070000 		.4byte	.LASF46
- 656 014a 2A       		.byte	0x2a
- 657 014b 00       		.byte	0
- 658 014c 05       		.uleb128 0x5
- 659 014d 01       		.byte	0x1
- 660 014e 06       		.byte	0x6
- 661 014f 6E010000 		.4byte	.LASF47
- 662 0153 06       		.uleb128 0x6
- 663 0154 7C000000 		.4byte	.LASF51
- 664 0158 02       		.byte	0x2
- 665 0159 1D       		.byte	0x1d
- 666 015a 5E010000 		.4byte	0x15e
- 667 015e 05       		.uleb128 0x5
- 668 015f 01       		.byte	0x1
- 669 0160 08       		.byte	0x8
- 670 0161 92050000 		.4byte	.LASF48
- 671 0165 05       		.uleb128 0x5
- 672 0166 02       		.byte	0x2
- 673 0167 05       		.byte	0x5
- 674 0168 00000000 		.4byte	.LASF49
- 675 016c 05       		.uleb128 0x5
- 676 016d 02       		.byte	0x2
- 677 016e 07       		.byte	0x7
- 678 016f BD030000 		.4byte	.LASF50
- 679 0173 06       		.uleb128 0x6
- 680 0174 A3070000 		.4byte	.LASF52
- 681 0178 02       		.byte	0x2
- 682 0179 3F       		.byte	0x3f
- 683 017a 7E010000 		.4byte	0x17e
- 684 017e 05       		.uleb128 0x5
- 685 017f 04       		.byte	0x4
- 686 0180 05       		.byte	0x5
- 687 0181 BC010000 		.4byte	.LASF53
- 688 0185 06       		.uleb128 0x6
- 689 0186 76020000 		.4byte	.LASF54
- 690 018a 02       		.byte	0x2
- 691 018b 41       		.byte	0x41
- 692 018c 90010000 		.4byte	0x190
- 693 0190 05       		.uleb128 0x5
-ARM GAS  /tmp/cc35Dpui.s 			page 19
-
-
- 694 0191 04       		.byte	0x4
- 695 0192 07       		.byte	0x7
- 696 0193 39030000 		.4byte	.LASF55
- 697 0197 05       		.uleb128 0x5
- 698 0198 08       		.byte	0x8
- 699 0199 05       		.byte	0x5
- 700 019a B0020000 		.4byte	.LASF56
- 701 019e 05       		.uleb128 0x5
- 702 019f 08       		.byte	0x8
- 703 01a0 07       		.byte	0x7
- 704 01a1 F2000000 		.4byte	.LASF57
- 705 01a5 07       		.uleb128 0x7
- 706 01a6 04       		.byte	0x4
- 707 01a7 05       		.byte	0x5
- 708 01a8 696E7400 		.ascii	"int\000"
- 709 01ac 05       		.uleb128 0x5
- 710 01ad 04       		.byte	0x4
- 711 01ae 07       		.byte	0x7
- 712 01af EA020000 		.4byte	.LASF58
- 713 01b3 06       		.uleb128 0x6
- 714 01b4 28080000 		.4byte	.LASF59
- 715 01b8 03       		.byte	0x3
- 716 01b9 18       		.byte	0x18
- 717 01ba 53010000 		.4byte	0x153
- 718 01be 08       		.uleb128 0x8
- 719 01bf B3010000 		.4byte	0x1b3
- 720 01c3 06       		.uleb128 0x6
- 721 01c4 8A050000 		.4byte	.LASF60
- 722 01c8 03       		.byte	0x3
- 723 01c9 2C       		.byte	0x2c
- 724 01ca 73010000 		.4byte	0x173
- 725 01ce 09       		.uleb128 0x9
- 726 01cf C3010000 		.4byte	0x1c3
- 727 01d3 06       		.uleb128 0x6
- 728 01d4 E9060000 		.4byte	.LASF61
- 729 01d8 03       		.byte	0x3
- 730 01d9 30       		.byte	0x30
- 731 01da 85010000 		.4byte	0x185
- 732 01de 09       		.uleb128 0x9
- 733 01df D3010000 		.4byte	0x1d3
- 734 01e3 05       		.uleb128 0x5
- 735 01e4 04       		.byte	0x4
- 736 01e5 07       		.byte	0x7
- 737 01e6 89040000 		.4byte	.LASF62
- 738 01ea 0A       		.uleb128 0xa
- 739 01eb C9050000 		.4byte	.LASF63
- 740 01ef 04       		.byte	0x4
- 741 01f0 4807     		.2byte	0x748
- 742 01f2 CE010000 		.4byte	0x1ce
- 743 01f6 01       		.byte	0x1
- 744 01f7 01       		.byte	0x1
- 745 01f8 0B       		.uleb128 0xb
- 746 01f9 03030000 		.4byte	.LASF64
- 747 01fd 05       		.byte	0x5
- 748 01fe 33       		.byte	0x33
- 749 01ff D3010000 		.4byte	0x1d3
- 750 0203 01       		.byte	0x1
-ARM GAS  /tmp/cc35Dpui.s 			page 20
-
-
- 751 0204 01       		.byte	0x1
- 752 0205 0C       		.uleb128 0xc
- 753 0206 BE010000 		.4byte	0x1be
- 754 020a 15020000 		.4byte	0x215
- 755 020e 0D       		.uleb128 0xd
- 756 020f E3010000 		.4byte	0x1e3
- 757 0213 0F       		.byte	0xf
- 758 0214 00       		.byte	0
- 759 0215 08       		.uleb128 0x8
- 760 0216 05020000 		.4byte	0x205
- 761 021a 0B       		.uleb128 0xb
- 762 021b 1E040000 		.4byte	.LASF65
- 763 021f 05       		.byte	0x5
- 764 0220 34       		.byte	0x34
- 765 0221 15020000 		.4byte	0x215
- 766 0225 01       		.byte	0x1
- 767 0226 01       		.byte	0x1
- 768 0227 0C       		.uleb128 0xc
- 769 0228 BE010000 		.4byte	0x1be
- 770 022c 37020000 		.4byte	0x237
- 771 0230 0D       		.uleb128 0xd
- 772 0231 E3010000 		.4byte	0x1e3
- 773 0235 07       		.byte	0x7
- 774 0236 00       		.byte	0
- 775 0237 08       		.uleb128 0x8
- 776 0238 27020000 		.4byte	0x227
- 777 023c 0B       		.uleb128 0xb
- 778 023d 9B000000 		.4byte	.LASF66
- 779 0241 05       		.byte	0x5
- 780 0242 35       		.byte	0x35
- 781 0243 37020000 		.4byte	0x237
- 782 0247 01       		.byte	0x1
- 783 0248 01       		.byte	0x1
- 784 0249 0E       		.uleb128 0xe
- 785 024a 18       		.byte	0x18
- 786 024b 06       		.byte	0x6
- 787 024c 3201     		.2byte	0x132
- 788 024e AC020000 		.4byte	0x2ac
- 789 0252 0F       		.uleb128 0xf
- 790 0253 494D5200 		.ascii	"IMR\000"
- 791 0257 06       		.byte	0x6
- 792 0258 3401     		.2byte	0x134
- 793 025a DE010000 		.4byte	0x1de
- 794 025e 02       		.byte	0x2
- 795 025f 23       		.byte	0x23
- 796 0260 00       		.uleb128 0
- 797 0261 0F       		.uleb128 0xf
- 798 0262 454D5200 		.ascii	"EMR\000"
- 799 0266 06       		.byte	0x6
- 800 0267 3501     		.2byte	0x135
- 801 0269 DE010000 		.4byte	0x1de
- 802 026d 02       		.byte	0x2
- 803 026e 23       		.byte	0x23
- 804 026f 04       		.uleb128 0x4
- 805 0270 10       		.uleb128 0x10
- 806 0271 1E030000 		.4byte	.LASF67
- 807 0275 06       		.byte	0x6
-ARM GAS  /tmp/cc35Dpui.s 			page 21
-
-
- 808 0276 3601     		.2byte	0x136
- 809 0278 DE010000 		.4byte	0x1de
- 810 027c 02       		.byte	0x2
- 811 027d 23       		.byte	0x23
- 812 027e 08       		.uleb128 0x8
- 813 027f 10       		.uleb128 0x10
- 814 0280 DF050000 		.4byte	.LASF68
- 815 0284 06       		.byte	0x6
- 816 0285 3701     		.2byte	0x137
- 817 0287 DE010000 		.4byte	0x1de
- 818 028b 02       		.byte	0x2
- 819 028c 23       		.byte	0x23
- 820 028d 0C       		.uleb128 0xc
- 821 028e 10       		.uleb128 0x10
- 822 028f A9000000 		.4byte	.LASF69
- 823 0293 06       		.byte	0x6
- 824 0294 3801     		.2byte	0x138
- 825 0296 DE010000 		.4byte	0x1de
- 826 029a 02       		.byte	0x2
- 827 029b 23       		.byte	0x23
- 828 029c 10       		.uleb128 0x10
- 829 029d 0F       		.uleb128 0xf
- 830 029e 505200   		.ascii	"PR\000"
- 831 02a1 06       		.byte	0x6
- 832 02a2 3901     		.2byte	0x139
- 833 02a4 DE010000 		.4byte	0x1de
- 834 02a8 02       		.byte	0x2
- 835 02a9 23       		.byte	0x23
- 836 02aa 14       		.uleb128 0x14
- 837 02ab 00       		.byte	0
- 838 02ac 11       		.uleb128 0x11
- 839 02ad 8A080000 		.4byte	.LASF70
- 840 02b1 06       		.byte	0x6
- 841 02b2 3A01     		.2byte	0x13a
- 842 02b4 49020000 		.4byte	0x249
- 843 02b8 0E       		.uleb128 0xe
- 844 02b9 28       		.byte	0x28
- 845 02ba 06       		.byte	0x6
- 846 02bb B701     		.2byte	0x1b7
- 847 02bd 58030000 		.4byte	0x358
- 848 02c1 0F       		.uleb128 0xf
- 849 02c2 43524800 		.ascii	"CRH\000"
- 850 02c6 06       		.byte	0x6
- 851 02c7 B901     		.2byte	0x1b9
- 852 02c9 DE010000 		.4byte	0x1de
- 853 02cd 02       		.byte	0x2
- 854 02ce 23       		.byte	0x23
- 855 02cf 00       		.uleb128 0
- 856 02d0 0F       		.uleb128 0xf
- 857 02d1 43524C00 		.ascii	"CRL\000"
- 858 02d5 06       		.byte	0x6
- 859 02d6 BA01     		.2byte	0x1ba
- 860 02d8 DE010000 		.4byte	0x1de
- 861 02dc 02       		.byte	0x2
- 862 02dd 23       		.byte	0x23
- 863 02de 04       		.uleb128 0x4
- 864 02df 10       		.uleb128 0x10
-ARM GAS  /tmp/cc35Dpui.s 			page 22
-
-
- 865 02e0 56010000 		.4byte	.LASF71
- 866 02e4 06       		.byte	0x6
- 867 02e5 BB01     		.2byte	0x1bb
- 868 02e7 DE010000 		.4byte	0x1de
- 869 02eb 02       		.byte	0x2
- 870 02ec 23       		.byte	0x23
- 871 02ed 08       		.uleb128 0x8
- 872 02ee 10       		.uleb128 0x10
- 873 02ef BC080000 		.4byte	.LASF72
- 874 02f3 06       		.byte	0x6
- 875 02f4 BC01     		.2byte	0x1bc
- 876 02f6 DE010000 		.4byte	0x1de
- 877 02fa 02       		.byte	0x2
- 878 02fb 23       		.byte	0x23
- 879 02fc 0C       		.uleb128 0xc
- 880 02fd 10       		.uleb128 0x10
- 881 02fe 1D020000 		.4byte	.LASF73
- 882 0302 06       		.byte	0x6
- 883 0303 BD01     		.2byte	0x1bd
- 884 0305 DE010000 		.4byte	0x1de
- 885 0309 02       		.byte	0x2
- 886 030a 23       		.byte	0x23
- 887 030b 10       		.uleb128 0x10
- 888 030c 10       		.uleb128 0x10
- 889 030d 2E020000 		.4byte	.LASF74
- 890 0311 06       		.byte	0x6
- 891 0312 BE01     		.2byte	0x1be
- 892 0314 DE010000 		.4byte	0x1de
- 893 0318 02       		.byte	0x2
- 894 0319 23       		.byte	0x23
- 895 031a 14       		.uleb128 0x14
- 896 031b 10       		.uleb128 0x10
- 897 031c B7010000 		.4byte	.LASF75
- 898 0320 06       		.byte	0x6
- 899 0321 BF01     		.2byte	0x1bf
- 900 0323 DE010000 		.4byte	0x1de
- 901 0327 02       		.byte	0x2
- 902 0328 23       		.byte	0x23
- 903 0329 18       		.uleb128 0x18
- 904 032a 10       		.uleb128 0x10
- 905 032b AE080000 		.4byte	.LASF76
- 906 032f 06       		.byte	0x6
- 907 0330 C001     		.2byte	0x1c0
- 908 0332 DE010000 		.4byte	0x1de
- 909 0336 02       		.byte	0x2
- 910 0337 23       		.byte	0x23
- 911 0338 1C       		.uleb128 0x1c
- 912 0339 10       		.uleb128 0x10
- 913 033a 92040000 		.4byte	.LASF77
- 914 033e 06       		.byte	0x6
- 915 033f C101     		.2byte	0x1c1
- 916 0341 DE010000 		.4byte	0x1de
- 917 0345 02       		.byte	0x2
- 918 0346 23       		.byte	0x23
- 919 0347 20       		.uleb128 0x20
- 920 0348 10       		.uleb128 0x10
- 921 0349 52000000 		.4byte	.LASF78
-ARM GAS  /tmp/cc35Dpui.s 			page 23
-
-
- 922 034d 06       		.byte	0x6
- 923 034e C201     		.2byte	0x1c2
- 924 0350 DE010000 		.4byte	0x1de
- 925 0354 02       		.byte	0x2
- 926 0355 23       		.byte	0x23
- 927 0356 24       		.uleb128 0x24
- 928 0357 00       		.byte	0
- 929 0358 11       		.uleb128 0x11
- 930 0359 4A010000 		.4byte	.LASF79
- 931 035d 06       		.byte	0x6
- 932 035e C301     		.2byte	0x1c3
- 933 0360 B8020000 		.4byte	0x2b8
- 934 0364 02       		.uleb128 0x2
- 935 0365 01       		.byte	0x1
- 936 0366 5E010000 		.4byte	0x15e
- 937 036a 07       		.byte	0x7
- 938 036b 98       		.byte	0x98
- 939 036c 7D030000 		.4byte	0x37d
- 940 0370 04       		.uleb128 0x4
- 941 0371 7E050000 		.4byte	.LASF80
- 942 0375 00       		.byte	0
- 943 0376 12       		.uleb128 0x12
- 944 0377 53455400 		.ascii	"SET\000"
- 945 037b 01       		.byte	0x1
- 946 037c 00       		.byte	0
- 947 037d 02       		.uleb128 0x2
- 948 037e 01       		.byte	0x1
- 949 037f 5E010000 		.4byte	0x15e
- 950 0383 07       		.byte	0x7
- 951 0384 9E       		.byte	0x9e
- 952 0385 96030000 		.4byte	0x396
- 953 0389 04       		.uleb128 0x4
- 954 038a DC000000 		.4byte	.LASF81
- 955 038e 00       		.byte	0
- 956 038f 04       		.uleb128 0x4
- 957 0390 F9010000 		.4byte	.LASF82
- 958 0394 01       		.byte	0x1
- 959 0395 00       		.byte	0
- 960 0396 05       		.uleb128 0x5
- 961 0397 08       		.byte	0x8
- 962 0398 04       		.byte	0x4
- 963 0399 31070000 		.4byte	.LASF83
- 964 039d 02       		.uleb128 0x2
- 965 039e 01       		.byte	0x1
- 966 039f 5E010000 		.4byte	0x15e
- 967 03a3 08       		.byte	0x8
- 968 03a4 2A       		.byte	0x2a
- 969 03a5 C2030000 		.4byte	0x3c2
- 970 03a9 04       		.uleb128 0x4
- 971 03aa 8E030000 		.4byte	.LASF84
- 972 03ae 00       		.byte	0
- 973 03af 04       		.uleb128 0x4
- 974 03b0 27070000 		.4byte	.LASF85
- 975 03b4 01       		.byte	0x1
- 976 03b5 04       		.uleb128 0x4
- 977 03b6 D6050000 		.4byte	.LASF86
- 978 03ba 02       		.byte	0x2
-ARM GAS  /tmp/cc35Dpui.s 			page 24
-
-
- 979 03bb 04       		.uleb128 0x4
- 980 03bc F7020000 		.4byte	.LASF87
- 981 03c0 03       		.byte	0x3
- 982 03c1 00       		.byte	0
- 983 03c2 06       		.uleb128 0x6
- 984 03c3 0C040000 		.4byte	.LASF88
- 985 03c7 08       		.byte	0x8
- 986 03c8 2F       		.byte	0x2f
- 987 03c9 9D030000 		.4byte	0x39d
- 988 03cd 02       		.uleb128 0x2
- 989 03ce 01       		.byte	0x1
- 990 03cf 5E010000 		.4byte	0x15e
- 991 03d3 08       		.byte	0x8
- 992 03d4 35       		.byte	0x35
- 993 03d5 E6030000 		.4byte	0x3e6
- 994 03d9 04       		.uleb128 0x4
- 995 03da 7D080000 		.4byte	.LASF89
- 996 03de 00       		.byte	0
- 997 03df 04       		.uleb128 0x4
- 998 03e0 B7040000 		.4byte	.LASF90
- 999 03e4 01       		.byte	0x1
- 1000 03e5 00       		.byte	0
- 1001 03e6 06       		.uleb128 0x6
- 1002 03e7 A7010000 		.4byte	.LASF91
- 1003 03eb 08       		.byte	0x8
- 1004 03ec 38       		.byte	0x38
- 1005 03ed CD030000 		.4byte	0x3cd
- 1006 03f1 13       		.uleb128 0x13
- 1007 03f2 0C       		.byte	0xc
- 1008 03f3 09       		.byte	0x9
- 1009 03f4 31       		.byte	0x31
- 1010 03f5 24040000 		.4byte	0x424
- 1011 03f9 14       		.uleb128 0x14
- 1012 03fa 86000000 		.4byte	.LASF92
- 1013 03fe 09       		.byte	0x9
- 1014 03ff 33       		.byte	0x33
- 1015 0400 D3010000 		.4byte	0x1d3
- 1016 0404 02       		.byte	0x2
- 1017 0405 23       		.byte	0x23
- 1018 0406 00       		.uleb128 0
- 1019 0407 14       		.uleb128 0x14
- 1020 0408 09060000 		.4byte	.LASF93
- 1021 040c 09       		.byte	0x9
- 1022 040d 36       		.byte	0x36
- 1023 040e D3010000 		.4byte	0x1d3
- 1024 0412 02       		.byte	0x2
- 1025 0413 23       		.byte	0x23
- 1026 0414 04       		.uleb128 0x4
- 1027 0415 14       		.uleb128 0x14
- 1028 0416 CE010000 		.4byte	.LASF94
- 1029 041a 09       		.byte	0x9
- 1030 041b 39       		.byte	0x39
- 1031 041c D3010000 		.4byte	0x1d3
- 1032 0420 02       		.byte	0x2
- 1033 0421 23       		.byte	0x23
- 1034 0422 08       		.uleb128 0x8
- 1035 0423 00       		.byte	0
-ARM GAS  /tmp/cc35Dpui.s 			page 25
-
-
- 1036 0424 06       		.uleb128 0x6
- 1037 0425 30080000 		.4byte	.LASF95
- 1038 0429 09       		.byte	0x9
- 1039 042a 3B       		.byte	0x3b
- 1040 042b F1030000 		.4byte	0x3f1
- 1041 042f 13       		.uleb128 0x13
- 1042 0430 28       		.byte	0x28
- 1043 0431 0A       		.byte	0xa
- 1044 0432 E4       		.byte	0xe4
- 1045 0433 A9040000 		.4byte	0x4a9
- 1046 0437 14       		.uleb128 0x14
- 1047 0438 F3030000 		.4byte	.LASF96
- 1048 043c 0A       		.byte	0xa
- 1049 043d E6       		.byte	0xe6
- 1050 043e D3010000 		.4byte	0x1d3
- 1051 0442 02       		.byte	0x2
- 1052 0443 23       		.byte	0x23
- 1053 0444 00       		.uleb128 0
- 1054 0445 14       		.uleb128 0x14
- 1055 0446 E1020000 		.4byte	.LASF97
- 1056 044a 0A       		.byte	0xa
- 1057 044b EE       		.byte	0xee
- 1058 044c D3010000 		.4byte	0x1d3
- 1059 0450 02       		.byte	0x2
- 1060 0451 23       		.byte	0x23
- 1061 0452 04       		.uleb128 0x4
- 1062 0453 14       		.uleb128 0x14
- 1063 0454 D2020000 		.4byte	.LASF98
- 1064 0458 0A       		.byte	0xa
- 1065 0459 F1       		.byte	0xf1
- 1066 045a D3010000 		.4byte	0x1d3
- 1067 045e 02       		.byte	0x2
- 1068 045f 23       		.byte	0x23
- 1069 0460 08       		.uleb128 0x8
- 1070 0461 14       		.uleb128 0x14
- 1071 0462 18010000 		.4byte	.LASF99
- 1072 0466 0A       		.byte	0xa
- 1073 0467 F4       		.byte	0xf4
- 1074 0468 D3010000 		.4byte	0x1d3
- 1075 046c 02       		.byte	0x2
- 1076 046d 23       		.byte	0x23
- 1077 046e 0C       		.uleb128 0xc
- 1078 046f 14       		.uleb128 0x14
- 1079 0470 14020000 		.4byte	.LASF100
- 1080 0474 0A       		.byte	0xa
- 1081 0475 F7       		.byte	0xf7
- 1082 0476 D3010000 		.4byte	0x1d3
- 1083 047a 02       		.byte	0x2
- 1084 047b 23       		.byte	0x23
- 1085 047c 10       		.uleb128 0x10
- 1086 047d 14       		.uleb128 0x14
- 1087 047e BA060000 		.4byte	.LASF101
- 1088 0482 0A       		.byte	0xa
- 1089 0483 FA       		.byte	0xfa
- 1090 0484 D3010000 		.4byte	0x1d3
- 1091 0488 02       		.byte	0x2
- 1092 0489 23       		.byte	0x23
-ARM GAS  /tmp/cc35Dpui.s 			page 26
-
-
- 1093 048a 14       		.uleb128 0x14
- 1094 048b 14       		.uleb128 0x14
- 1095 048c C5010000 		.4byte	.LASF102
- 1096 0490 0A       		.byte	0xa
- 1097 0491 FD       		.byte	0xfd
- 1098 0492 D3010000 		.4byte	0x1d3
- 1099 0496 02       		.byte	0x2
- 1100 0497 23       		.byte	0x23
- 1101 0498 18       		.uleb128 0x18
- 1102 0499 0F       		.uleb128 0xf
- 1103 049a 504C4C00 		.ascii	"PLL\000"
- 1104 049e 0A       		.byte	0xa
- 1105 049f 0001     		.2byte	0x100
- 1106 04a1 24040000 		.4byte	0x424
- 1107 04a5 02       		.byte	0x2
- 1108 04a6 23       		.byte	0x23
- 1109 04a7 1C       		.uleb128 0x1c
- 1110 04a8 00       		.byte	0
- 1111 04a9 11       		.uleb128 0x11
- 1112 04aa 5B010000 		.4byte	.LASF103
- 1113 04ae 0A       		.byte	0xa
- 1114 04af 0501     		.2byte	0x105
- 1115 04b1 2F040000 		.4byte	0x42f
- 1116 04b5 0E       		.uleb128 0xe
- 1117 04b6 10       		.byte	0x10
- 1118 04b7 0A       		.byte	0xa
- 1119 04b8 1B01     		.2byte	0x11b
- 1120 04ba FB040000 		.4byte	0x4fb
- 1121 04be 10       		.uleb128 0x10
- 1122 04bf 95030000 		.4byte	.LASF104
- 1123 04c3 0A       		.byte	0xa
- 1124 04c4 1D01     		.2byte	0x11d
- 1125 04c6 D3010000 		.4byte	0x1d3
- 1126 04ca 02       		.byte	0x2
- 1127 04cb 23       		.byte	0x23
- 1128 04cc 00       		.uleb128 0
- 1129 04cd 10       		.uleb128 0x10
- 1130 04ce EF050000 		.4byte	.LASF105
- 1131 04d2 0A       		.byte	0xa
- 1132 04d3 2001     		.2byte	0x120
- 1133 04d5 D3010000 		.4byte	0x1d3
- 1134 04d9 02       		.byte	0x2
- 1135 04da 23       		.byte	0x23
- 1136 04db 04       		.uleb128 0x4
- 1137 04dc 10       		.uleb128 0x10
- 1138 04dd 7D070000 		.4byte	.LASF106
- 1139 04e1 0A       		.byte	0xa
- 1140 04e2 2301     		.2byte	0x123
- 1141 04e4 D3010000 		.4byte	0x1d3
- 1142 04e8 02       		.byte	0x2
- 1143 04e9 23       		.byte	0x23
- 1144 04ea 08       		.uleb128 0x8
- 1145 04eb 10       		.uleb128 0x10
- 1146 04ec 46040000 		.4byte	.LASF107
- 1147 04f0 0A       		.byte	0xa
- 1148 04f1 3801     		.2byte	0x138
- 1149 04f3 D3010000 		.4byte	0x1d3
-ARM GAS  /tmp/cc35Dpui.s 			page 27
-
-
- 1150 04f7 02       		.byte	0x2
- 1151 04f8 23       		.byte	0x23
- 1152 04f9 0C       		.uleb128 0xc
- 1153 04fa 00       		.byte	0
- 1154 04fb 11       		.uleb128 0x11
- 1155 04fc F2060000 		.4byte	.LASF108
- 1156 0500 0A       		.byte	0xa
- 1157 0501 3C01     		.2byte	0x13c
- 1158 0503 B5040000 		.4byte	0x4b5
- 1159 0507 02       		.uleb128 0x2
- 1160 0508 01       		.byte	0x1
- 1161 0509 5E010000 		.4byte	0x15e
- 1162 050d 0B       		.byte	0xb
- 1163 050e 79       		.byte	0x79
- 1164 050f 32050000 		.4byte	0x532
- 1165 0513 04       		.uleb128 0x4
- 1166 0514 00020000 		.4byte	.LASF109
- 1167 0518 00       		.byte	0
- 1168 0519 04       		.uleb128 0x4
- 1169 051a 67030000 		.4byte	.LASF110
- 1170 051e 01       		.byte	0x1
- 1171 051f 04       		.uleb128 0x4
- 1172 0520 26060000 		.4byte	.LASF111
- 1173 0524 02       		.byte	0x2
- 1174 0525 04       		.uleb128 0x4
- 1175 0526 58040000 		.4byte	.LASF112
- 1176 052a 03       		.byte	0x3
- 1177 052b 04       		.uleb128 0x4
- 1178 052c 21010000 		.4byte	.LASF113
- 1179 0530 04       		.byte	0x4
- 1180 0531 00       		.byte	0
- 1181 0532 06       		.uleb128 0x6
- 1182 0533 9C020000 		.4byte	.LASF114
- 1183 0537 0B       		.byte	0xb
- 1184 0538 80       		.byte	0x80
- 1185 0539 07050000 		.4byte	0x507
- 1186 053d 09       		.uleb128 0x9
- 1187 053e 32050000 		.4byte	0x532
- 1188 0542 13       		.uleb128 0x13
- 1189 0543 08       		.byte	0x8
- 1190 0544 0B       		.byte	0xb
- 1191 0545 85       		.byte	0x85
- 1192 0546 67050000 		.4byte	0x567
- 1193 054a 14       		.uleb128 0x14
- 1194 054b 0B080000 		.4byte	.LASF115
- 1195 054f 0B       		.byte	0xb
- 1196 0550 87       		.byte	0x87
- 1197 0551 D3010000 		.4byte	0x1d3
- 1198 0555 02       		.byte	0x2
- 1199 0556 23       		.byte	0x23
- 1200 0557 00       		.uleb128 0
- 1201 0558 14       		.uleb128 0x14
- 1202 0559 D5010000 		.4byte	.LASF116
- 1203 055d 0B       		.byte	0xb
- 1204 055e 8B       		.byte	0x8b
- 1205 055f D3010000 		.4byte	0x1d3
- 1206 0563 02       		.byte	0x2
-ARM GAS  /tmp/cc35Dpui.s 			page 28
-
-
- 1207 0564 23       		.byte	0x23
- 1208 0565 04       		.uleb128 0x4
- 1209 0566 00       		.byte	0
- 1210 0567 06       		.uleb128 0x6
- 1211 0568 48080000 		.4byte	.LASF117
- 1212 056c 0B       		.byte	0xb
- 1213 056d 8E       		.byte	0x8e
- 1214 056e 42050000 		.4byte	0x542
- 1215 0572 13       		.uleb128 0x13
- 1216 0573 04       		.byte	0x4
- 1217 0574 0B       		.byte	0xb
- 1218 0575 93       		.byte	0x93
- 1219 0576 B3050000 		.4byte	0x5b3
- 1220 057a 14       		.uleb128 0x14
- 1221 057b 81040000 		.4byte	.LASF118
- 1222 057f 0B       		.byte	0xb
- 1223 0580 95       		.byte	0x95
- 1224 0581 B3010000 		.4byte	0x1b3
- 1225 0585 02       		.byte	0x2
- 1226 0586 23       		.byte	0x23
- 1227 0587 00       		.uleb128 0
- 1228 0588 14       		.uleb128 0x14
- 1229 0589 84050000 		.4byte	.LASF119
- 1230 058d 0B       		.byte	0xb
- 1231 058e 98       		.byte	0x98
- 1232 058f B3010000 		.4byte	0x1b3
- 1233 0593 02       		.byte	0x2
- 1234 0594 23       		.byte	0x23
- 1235 0595 01       		.uleb128 0x1
- 1236 0596 14       		.uleb128 0x14
- 1237 0597 43080000 		.4byte	.LASF120
- 1238 059b 0B       		.byte	0xb
- 1239 059c 9B       		.byte	0x9b
- 1240 059d B3010000 		.4byte	0x1b3
- 1241 05a1 02       		.byte	0x2
- 1242 05a2 23       		.byte	0x23
- 1243 05a3 02       		.uleb128 0x2
- 1244 05a4 14       		.uleb128 0x14
- 1245 05a5 D0030000 		.4byte	.LASF121
- 1246 05a9 0B       		.byte	0xb
- 1247 05aa 9E       		.byte	0x9e
- 1248 05ab B3010000 		.4byte	0x1b3
- 1249 05af 02       		.byte	0x2
- 1250 05b0 23       		.byte	0x23
- 1251 05b1 03       		.uleb128 0x3
- 1252 05b2 00       		.byte	0
- 1253 05b3 06       		.uleb128 0x6
- 1254 05b4 E9010000 		.4byte	.LASF122
- 1255 05b8 0B       		.byte	0xb
- 1256 05b9 A1       		.byte	0xa1
- 1257 05ba 72050000 		.4byte	0x572
- 1258 05be 13       		.uleb128 0x13
- 1259 05bf 14       		.byte	0x14
- 1260 05c0 0B       		.byte	0xb
- 1261 05c1 A9       		.byte	0xa9
- 1262 05c2 0D060000 		.4byte	0x60d
- 1263 05c6 14       		.uleb128 0x14
-ARM GAS  /tmp/cc35Dpui.s 			page 29
-
-
- 1264 05c7 69050000 		.4byte	.LASF123
- 1265 05cb 0B       		.byte	0xb
- 1266 05cc AC       		.byte	0xac
- 1267 05cd 0D060000 		.4byte	0x60d
- 1268 05d1 02       		.byte	0x2
- 1269 05d2 23       		.byte	0x23
- 1270 05d3 00       		.uleb128 0
- 1271 05d4 14       		.uleb128 0x14
- 1272 05d5 20050000 		.4byte	.LASF124
- 1273 05d9 0B       		.byte	0xb
- 1274 05da AE       		.byte	0xae
- 1275 05db 67050000 		.4byte	0x567
- 1276 05df 02       		.byte	0x2
- 1277 05e0 23       		.byte	0x23
- 1278 05e1 04       		.uleb128 0x4
- 1279 05e2 14       		.uleb128 0x14
- 1280 05e3 8F020000 		.4byte	.LASF125
- 1281 05e7 0B       		.byte	0xb
- 1282 05e8 B0       		.byte	0xb0
- 1283 05e9 B3050000 		.4byte	0x5b3
- 1284 05ed 02       		.byte	0x2
- 1285 05ee 23       		.byte	0x23
- 1286 05ef 0C       		.uleb128 0xc
- 1287 05f0 14       		.uleb128 0x14
- 1288 05f1 64020000 		.4byte	.LASF126
- 1289 05f5 0B       		.byte	0xb
- 1290 05f6 B2       		.byte	0xb2
- 1291 05f7 E6030000 		.4byte	0x3e6
- 1292 05fb 02       		.byte	0x2
- 1293 05fc 23       		.byte	0x23
- 1294 05fd 10       		.uleb128 0x10
- 1295 05fe 14       		.uleb128 0x14
- 1296 05ff 0A000000 		.4byte	.LASF127
- 1297 0603 0B       		.byte	0xb
- 1298 0604 B4       		.byte	0xb4
- 1299 0605 3D050000 		.4byte	0x53d
- 1300 0609 02       		.byte	0x2
- 1301 060a 23       		.byte	0x23
- 1302 060b 11       		.uleb128 0x11
- 1303 060c 00       		.byte	0
- 1304 060d 15       		.uleb128 0x15
- 1305 060e 04       		.byte	0x4
- 1306 060f 58030000 		.4byte	0x358
- 1307 0613 06       		.uleb128 0x6
- 1308 0614 7A010000 		.4byte	.LASF128
- 1309 0618 0B       		.byte	0xb
- 1310 0619 C1       		.byte	0xc1
- 1311 061a BE050000 		.4byte	0x5be
- 1312 061e 02       		.uleb128 0x2
- 1313 061f 01       		.byte	0x1
- 1314 0620 5E010000 		.4byte	0x15e
- 1315 0624 0C       		.byte	0xc
- 1316 0625 33       		.byte	0x33
- 1317 0626 43060000 		.4byte	0x643
- 1318 062a 04       		.uleb128 0x4
- 1319 062b C9000000 		.4byte	.LASF129
- 1320 062f 64       		.byte	0x64
-ARM GAS  /tmp/cc35Dpui.s 			page 30
-
-
- 1321 0630 04       		.uleb128 0x4
- 1322 0631 BE020000 		.4byte	.LASF130
- 1323 0635 0A       		.byte	0xa
- 1324 0636 04       		.uleb128 0x4
- 1325 0637 7B030000 		.4byte	.LASF131
- 1326 063b 01       		.byte	0x1
- 1327 063c 04       		.uleb128 0x4
- 1328 063d CD040000 		.4byte	.LASF132
- 1329 0641 01       		.byte	0x1
- 1330 0642 00       		.byte	0
- 1331 0643 06       		.uleb128 0x6
- 1332 0644 23000000 		.4byte	.LASF133
- 1333 0648 0C       		.byte	0xc
- 1334 0649 38       		.byte	0x38
- 1335 064a 1E060000 		.4byte	0x61e
- 1336 064e 0B       		.uleb128 0xb
- 1337 064f 4F070000 		.4byte	.LASF134
- 1338 0653 0C       		.byte	0xc
- 1339 0654 3D       		.byte	0x3d
- 1340 0655 D3010000 		.4byte	0x1d3
- 1341 0659 01       		.byte	0x1
- 1342 065a 01       		.byte	0x1
- 1343 065b 0B       		.uleb128 0xb
- 1344 065c 13030000 		.4byte	.LASF135
- 1345 0660 0C       		.byte	0xc
- 1346 0661 3E       		.byte	0x3e
- 1347 0662 43060000 		.4byte	0x643
- 1348 0666 01       		.byte	0x1
- 1349 0667 01       		.byte	0x1
- 1350 0668 16       		.uleb128 0x16
- 1351 0669 8F000000 		.4byte	.LASF136
- 1352 066d 01       		.byte	0x1
- 1353 066e 48       		.byte	0x48
- 1354 066f 13060000 		.4byte	0x613
- 1355 0673 01       		.byte	0x1
- 1356 0674 05       		.byte	0x5
- 1357 0675 03       		.byte	0x3
- 1358 0676 00000000 		.4byte	hRTC_Handle
- 1359 067a 17       		.uleb128 0x17
- 1360 067b 01       		.byte	0x1
- 1361 067c 47050000 		.4byte	.LASF137
- 1362 0680 01       		.byte	0x1
- 1363 0681 1401     		.2byte	0x114
- 1364 0683 01       		.byte	0x1
- 1365 0684 B4010000 		.4byte	.LFB69
- 1366 0688 C0010000 		.4byte	.LFE69
- 1367 068c 02       		.byte	0x2
- 1368 068d 7D       		.byte	0x7d
- 1369 068e 00       		.sleb128 0
- 1370 068f 01       		.byte	0x1
- 1371 0690 A9060000 		.4byte	0x6a9
- 1372 0694 18       		.uleb128 0x18
- 1373 0695 BA010000 		.4byte	.LVL12
- 1374 0699 01       		.byte	0x1
- 1375 069a 08080000 		.4byte	0x808
- 1376 069e 19       		.uleb128 0x19
- 1377 069f 01       		.byte	0x1
-ARM GAS  /tmp/cc35Dpui.s 			page 31
-
-
- 1378 06a0 50       		.byte	0x50
- 1379 06a1 05       		.byte	0x5
- 1380 06a2 03       		.byte	0x3
- 1381 06a3 00000000 		.4byte	hRTC_Handle
- 1382 06a7 00       		.byte	0
- 1383 06a8 00       		.byte	0
- 1384 06a9 1A       		.uleb128 0x1a
- 1385 06aa 01       		.byte	0x1
- 1386 06ab 4B030000 		.4byte	.LASF138
- 1387 06af 01       		.byte	0x1
- 1388 06b0 F3       		.byte	0xf3
- 1389 06b1 01       		.byte	0x1
- 1390 06b2 68010000 		.4byte	.LFB68
- 1391 06b6 B4010000 		.4byte	.LFE68
- 1392 06ba 00000000 		.4byte	.LLST3
- 1393 06be 01       		.byte	0x1
- 1394 06bf EA060000 		.4byte	0x6ea
- 1395 06c3 1B       		.uleb128 0x1b
- 1396 06c4 23080000 		.4byte	.LASF141
- 1397 06c8 01       		.byte	0x1
- 1398 06c9 F3       		.byte	0xf3
- 1399 06ca EA060000 		.4byte	0x6ea
- 1400 06ce 2C000000 		.4byte	.LLST4
- 1401 06d2 1C       		.uleb128 0x1c
- 1402 06d3 01060000 		.4byte	.LASF140
- 1403 06d7 01       		.byte	0x1
- 1404 06d8 F5       		.byte	0xf5
- 1405 06d9 DE010000 		.4byte	0x1de
- 1406 06dd 02       		.byte	0x2
- 1407 06de 91       		.byte	0x91
- 1408 06df 6C       		.sleb128 -20
- 1409 06e0 1D       		.uleb128 0x1d
- 1410 06e1 74010000 		.4byte	.LVL10
- 1411 06e5 16080000 		.4byte	0x816
- 1412 06e9 00       		.byte	0
- 1413 06ea 15       		.uleb128 0x15
- 1414 06eb 04       		.byte	0x4
- 1415 06ec 13060000 		.4byte	0x613
- 1416 06f0 1A       		.uleb128 0x1a
- 1417 06f1 01       		.byte	0x1
- 1418 06f2 25050000 		.4byte	.LASF139
- 1419 06f6 01       		.byte	0x1
- 1420 06f7 CC       		.byte	0xcc
- 1421 06f8 01       		.byte	0x1
- 1422 06f9 14010000 		.4byte	.LFB67
- 1423 06fd 68010000 		.4byte	.LFE67
- 1424 0701 58000000 		.4byte	.LLST2
- 1425 0705 01       		.byte	0x1
- 1426 0706 19070000 		.4byte	0x719
- 1427 070a 1C       		.uleb128 0x1c
- 1428 070b 01060000 		.4byte	.LASF140
- 1429 070f 01       		.byte	0x1
- 1430 0710 CE       		.byte	0xce
- 1431 0711 DE010000 		.4byte	0x1de
- 1432 0715 02       		.byte	0x2
- 1433 0716 91       		.byte	0x91
- 1434 0717 7C       		.sleb128 -4
-ARM GAS  /tmp/cc35Dpui.s 			page 32
-
-
- 1435 0718 00       		.byte	0
- 1436 0719 1E       		.uleb128 0x1e
- 1437 071a 01       		.byte	0x1
- 1438 071b CE060000 		.4byte	.LASF156
- 1439 071f 01       		.byte	0x1
- 1440 0720 C0       		.byte	0xc0
- 1441 0721 01       		.byte	0x1
- 1442 0722 00010000 		.4byte	.LFB66
- 1443 0726 14010000 		.4byte	.LFE66
- 1444 072a 02       		.byte	0x2
- 1445 072b 7D       		.byte	0x7d
- 1446 072c 00       		.sleb128 0
- 1447 072d 01       		.byte	0x1
- 1448 072e 1F       		.uleb128 0x1f
- 1449 072f 01       		.byte	0x1
- 1450 0730 5C050000 		.4byte	.LASF157
- 1451 0734 01       		.byte	0x1
- 1452 0735 56       		.byte	0x56
- 1453 0736 01       		.byte	0x1
- 1454 0737 C2030000 		.4byte	0x3c2
- 1455 073b 00000000 		.4byte	.LFB65
- 1456 073f 00010000 		.4byte	.LFE65
- 1457 0743 84000000 		.4byte	.LLST0
- 1458 0747 01       		.byte	0x1
- 1459 0748 08080000 		.4byte	0x808
- 1460 074c 1B       		.uleb128 0x1b
- 1461 074d 69020000 		.4byte	.LASF142
- 1462 0751 01       		.byte	0x1
- 1463 0752 56       		.byte	0x56
- 1464 0753 D3010000 		.4byte	0x1d3
- 1465 0757 CA000000 		.4byte	.LLST1
- 1466 075b 1C       		.uleb128 0x1c
- 1467 075c 01060000 		.4byte	.LASF140
- 1468 0760 01       		.byte	0x1
- 1469 0761 58       		.byte	0x58
- 1470 0762 DE010000 		.4byte	0x1de
- 1471 0766 03       		.byte	0x3
- 1472 0767 91       		.byte	0x91
- 1473 0768 AC7F     		.sleb128 -84
- 1474 076a 1C       		.uleb128 0x1c
- 1475 076b 33020000 		.4byte	.LASF143
- 1476 076f 01       		.byte	0x1
- 1477 0770 5A       		.byte	0x5a
- 1478 0771 A9040000 		.4byte	0x4a9
- 1479 0775 02       		.byte	0x2
- 1480 0776 91       		.byte	0x91
- 1481 0777 40       		.sleb128 -64
- 1482 0778 1C       		.uleb128 0x1c
- 1483 0779 A3040000 		.4byte	.LASF144
- 1484 077d 01       		.byte	0x1
- 1485 077e 5B       		.byte	0x5b
- 1486 077f FB040000 		.4byte	0x4fb
- 1487 0783 03       		.byte	0x3
- 1488 0784 91       		.byte	0x91
- 1489 0785 B07F     		.sleb128 -80
- 1490 0787 20       		.uleb128 0x20
- 1491 0788 22000000 		.4byte	.LVL2
-ARM GAS  /tmp/cc35Dpui.s 			page 33
-
-
- 1492 078c 24080000 		.4byte	0x824
- 1493 0790 9B070000 		.4byte	0x79b
- 1494 0794 19       		.uleb128 0x19
- 1495 0795 01       		.byte	0x1
- 1496 0796 50       		.byte	0x50
- 1497 0797 02       		.byte	0x2
- 1498 0798 91       		.byte	0x91
- 1499 0799 40       		.sleb128 -64
- 1500 079a 00       		.byte	0
- 1501 079b 20       		.uleb128 0x20
- 1502 079c 36000000 		.4byte	.LVL4
- 1503 07a0 32080000 		.4byte	0x832
- 1504 07a4 B0070000 		.4byte	0x7b0
- 1505 07a8 19       		.uleb128 0x19
- 1506 07a9 01       		.byte	0x1
- 1507 07aa 50       		.byte	0x50
- 1508 07ab 03       		.byte	0x3
- 1509 07ac 91       		.byte	0x91
- 1510 07ad B07F     		.sleb128 -80
- 1511 07af 00       		.byte	0
- 1512 07b0 20       		.uleb128 0x20
- 1513 07b1 4C000000 		.4byte	.LVL5
- 1514 07b5 40080000 		.4byte	0x840
- 1515 07b9 C4070000 		.4byte	0x7c4
- 1516 07bd 19       		.uleb128 0x19
- 1517 07be 01       		.byte	0x1
- 1518 07bf 50       		.byte	0x50
- 1519 07c0 02       		.byte	0x2
- 1520 07c1 77       		.byte	0x77
- 1521 07c2 00       		.sleb128 0
- 1522 07c3 00       		.byte	0
- 1523 07c4 20       		.uleb128 0x20
- 1524 07c5 60000000 		.4byte	.LVL6
- 1525 07c9 4E080000 		.4byte	0x84e
- 1526 07cd D8070000 		.4byte	0x7d8
- 1527 07d1 19       		.uleb128 0x19
- 1528 07d2 01       		.byte	0x1
- 1529 07d3 50       		.byte	0x50
- 1530 07d4 02       		.byte	0x2
- 1531 07d5 75       		.byte	0x75
- 1532 07d6 00       		.sleb128 0
- 1533 07d7 00       		.byte	0
- 1534 07d8 20       		.uleb128 0x20
- 1535 07d9 CA000000 		.4byte	.LVL7
- 1536 07dd 5C080000 		.4byte	0x85c
- 1537 07e1 F7070000 		.4byte	0x7f7
- 1538 07e5 19       		.uleb128 0x19
- 1539 07e6 01       		.byte	0x1
- 1540 07e7 50       		.byte	0x50
- 1541 07e8 02       		.byte	0x2
- 1542 07e9 08       		.byte	0x8
- 1543 07ea 29       		.byte	0x29
- 1544 07eb 19       		.uleb128 0x19
- 1545 07ec 01       		.byte	0x1
- 1546 07ed 51       		.byte	0x51
- 1547 07ee 02       		.byte	0x2
- 1548 07ef 76       		.byte	0x76
-ARM GAS  /tmp/cc35Dpui.s 			page 34
-
-
- 1549 07f0 00       		.sleb128 0
- 1550 07f1 19       		.uleb128 0x19
- 1551 07f2 01       		.byte	0x1
- 1552 07f3 52       		.byte	0x52
- 1553 07f4 01       		.byte	0x1
- 1554 07f5 30       		.byte	0x30
- 1555 07f6 00       		.byte	0
- 1556 07f7 21       		.uleb128 0x21
- 1557 07f8 D0000000 		.4byte	.LVL8
- 1558 07fc 6A080000 		.4byte	0x86a
- 1559 0800 19       		.uleb128 0x19
- 1560 0801 01       		.byte	0x1
- 1561 0802 50       		.byte	0x50
- 1562 0803 02       		.byte	0x2
- 1563 0804 08       		.byte	0x8
- 1564 0805 29       		.byte	0x29
- 1565 0806 00       		.byte	0
- 1566 0807 00       		.byte	0
- 1567 0808 22       		.uleb128 0x22
- 1568 0809 01       		.byte	0x1
- 1569 080a 01       		.byte	0x1
- 1570 080b 57000000 		.4byte	.LASF145
- 1571 080f 57000000 		.4byte	.LASF145
- 1572 0813 0B       		.byte	0xb
- 1573 0814 3402     		.2byte	0x234
- 1574 0816 22       		.uleb128 0x22
- 1575 0817 01       		.byte	0x1
- 1576 0818 01       		.byte	0x1
- 1577 0819 F5070000 		.4byte	.LASF146
- 1578 081d F5070000 		.4byte	.LASF146
- 1579 0821 0C       		.byte	0xc
- 1580 0822 2801     		.2byte	0x128
- 1581 0824 22       		.uleb128 0x22
- 1582 0825 01       		.byte	0x1
- 1583 0826 01       		.byte	0x1
- 1584 0827 3D070000 		.4byte	.LASF147
- 1585 082b 3D070000 		.4byte	.LASF147
- 1586 082f 09       		.byte	0x9
- 1587 0830 8504     		.2byte	0x485
- 1588 0832 22       		.uleb128 0x22
- 1589 0833 01       		.byte	0x1
- 1590 0834 01       		.byte	0x1
- 1591 0835 AF000000 		.4byte	.LASF148
- 1592 0839 AF000000 		.4byte	.LASF148
- 1593 083d 0A       		.byte	0xa
- 1594 083e 4307     		.2byte	0x743
- 1595 0840 22       		.uleb128 0x22
- 1596 0841 01       		.byte	0x1
- 1597 0842 01       		.byte	0x1
- 1598 0843 8C010000 		.4byte	.LASF149
- 1599 0847 8C010000 		.4byte	.LASF149
- 1600 084b 0A       		.byte	0xa
- 1601 084c 4507     		.2byte	0x745
- 1602 084e 22       		.uleb128 0x22
- 1603 084f 01       		.byte	0x1
- 1604 0850 01       		.byte	0x1
- 1605 0851 13050000 		.4byte	.LASF150
-ARM GAS  /tmp/cc35Dpui.s 			page 35
-
-
- 1606 0855 13050000 		.4byte	.LASF150
- 1607 0859 0B       		.byte	0xb
- 1608 085a 1202     		.2byte	0x212
- 1609 085c 22       		.uleb128 0x22
- 1610 085d 01       		.byte	0x1
- 1611 085e 01       		.byte	0x1
- 1612 085f 5A070000 		.4byte	.LASF151
- 1613 0863 5A070000 		.4byte	.LASF151
- 1614 0867 0D       		.byte	0xd
- 1615 0868 0701     		.2byte	0x107
- 1616 086a 22       		.uleb128 0x22
- 1617 086b 01       		.byte	0x1
- 1618 086c 01       		.byte	0x1
- 1619 086d 10000000 		.4byte	.LASF152
- 1620 0871 10000000 		.4byte	.LASF152
- 1621 0875 0D       		.byte	0xd
- 1622 0876 0801     		.2byte	0x108
- 1623 0878 00       		.byte	0
- 1624              		.section	.debug_abbrev,"",%progbits
- 1625              	.Ldebug_abbrev0:
- 1626 0000 01       		.uleb128 0x1
- 1627 0001 11       		.uleb128 0x11
- 1628 0002 01       		.byte	0x1
- 1629 0003 25       		.uleb128 0x25
- 1630 0004 0E       		.uleb128 0xe
- 1631 0005 13       		.uleb128 0x13
- 1632 0006 0B       		.uleb128 0xb
- 1633 0007 03       		.uleb128 0x3
- 1634 0008 0E       		.uleb128 0xe
- 1635 0009 1B       		.uleb128 0x1b
- 1636 000a 0E       		.uleb128 0xe
- 1637 000b 11       		.uleb128 0x11
- 1638 000c 01       		.uleb128 0x1
- 1639 000d 12       		.uleb128 0x12
- 1640 000e 01       		.uleb128 0x1
- 1641 000f 10       		.uleb128 0x10
- 1642 0010 06       		.uleb128 0x6
- 1643 0011 00       		.byte	0
- 1644 0012 00       		.byte	0
- 1645 0013 02       		.uleb128 0x2
- 1646 0014 04       		.uleb128 0x4
- 1647 0015 01       		.byte	0x1
- 1648 0016 0B       		.uleb128 0xb
- 1649 0017 0B       		.uleb128 0xb
- 1650 0018 49       		.uleb128 0x49
- 1651 0019 13       		.uleb128 0x13
- 1652 001a 3A       		.uleb128 0x3a
- 1653 001b 0B       		.uleb128 0xb
- 1654 001c 3B       		.uleb128 0x3b
- 1655 001d 0B       		.uleb128 0xb
- 1656 001e 01       		.uleb128 0x1
- 1657 001f 13       		.uleb128 0x13
- 1658 0020 00       		.byte	0
- 1659 0021 00       		.byte	0
- 1660 0022 03       		.uleb128 0x3
- 1661 0023 28       		.uleb128 0x28
- 1662 0024 00       		.byte	0
-ARM GAS  /tmp/cc35Dpui.s 			page 36
-
-
- 1663 0025 03       		.uleb128 0x3
- 1664 0026 0E       		.uleb128 0xe
- 1665 0027 1C       		.uleb128 0x1c
- 1666 0028 0D       		.uleb128 0xd
- 1667 0029 00       		.byte	0
- 1668 002a 00       		.byte	0
- 1669 002b 04       		.uleb128 0x4
- 1670 002c 28       		.uleb128 0x28
- 1671 002d 00       		.byte	0
- 1672 002e 03       		.uleb128 0x3
- 1673 002f 0E       		.uleb128 0xe
- 1674 0030 1C       		.uleb128 0x1c
- 1675 0031 0B       		.uleb128 0xb
- 1676 0032 00       		.byte	0
- 1677 0033 00       		.byte	0
- 1678 0034 05       		.uleb128 0x5
- 1679 0035 24       		.uleb128 0x24
- 1680 0036 00       		.byte	0
- 1681 0037 0B       		.uleb128 0xb
- 1682 0038 0B       		.uleb128 0xb
- 1683 0039 3E       		.uleb128 0x3e
- 1684 003a 0B       		.uleb128 0xb
- 1685 003b 03       		.uleb128 0x3
- 1686 003c 0E       		.uleb128 0xe
- 1687 003d 00       		.byte	0
- 1688 003e 00       		.byte	0
- 1689 003f 06       		.uleb128 0x6
- 1690 0040 16       		.uleb128 0x16
- 1691 0041 00       		.byte	0
- 1692 0042 03       		.uleb128 0x3
- 1693 0043 0E       		.uleb128 0xe
- 1694 0044 3A       		.uleb128 0x3a
- 1695 0045 0B       		.uleb128 0xb
- 1696 0046 3B       		.uleb128 0x3b
- 1697 0047 0B       		.uleb128 0xb
- 1698 0048 49       		.uleb128 0x49
- 1699 0049 13       		.uleb128 0x13
- 1700 004a 00       		.byte	0
- 1701 004b 00       		.byte	0
- 1702 004c 07       		.uleb128 0x7
- 1703 004d 24       		.uleb128 0x24
- 1704 004e 00       		.byte	0
- 1705 004f 0B       		.uleb128 0xb
- 1706 0050 0B       		.uleb128 0xb
- 1707 0051 3E       		.uleb128 0x3e
- 1708 0052 0B       		.uleb128 0xb
- 1709 0053 03       		.uleb128 0x3
- 1710 0054 08       		.uleb128 0x8
- 1711 0055 00       		.byte	0
- 1712 0056 00       		.byte	0
- 1713 0057 08       		.uleb128 0x8
- 1714 0058 26       		.uleb128 0x26
- 1715 0059 00       		.byte	0
- 1716 005a 49       		.uleb128 0x49
- 1717 005b 13       		.uleb128 0x13
- 1718 005c 00       		.byte	0
- 1719 005d 00       		.byte	0
-ARM GAS  /tmp/cc35Dpui.s 			page 37
-
-
- 1720 005e 09       		.uleb128 0x9
- 1721 005f 35       		.uleb128 0x35
- 1722 0060 00       		.byte	0
- 1723 0061 49       		.uleb128 0x49
- 1724 0062 13       		.uleb128 0x13
- 1725 0063 00       		.byte	0
- 1726 0064 00       		.byte	0
- 1727 0065 0A       		.uleb128 0xa
- 1728 0066 34       		.uleb128 0x34
- 1729 0067 00       		.byte	0
- 1730 0068 03       		.uleb128 0x3
- 1731 0069 0E       		.uleb128 0xe
- 1732 006a 3A       		.uleb128 0x3a
- 1733 006b 0B       		.uleb128 0xb
- 1734 006c 3B       		.uleb128 0x3b
- 1735 006d 05       		.uleb128 0x5
- 1736 006e 49       		.uleb128 0x49
- 1737 006f 13       		.uleb128 0x13
- 1738 0070 3F       		.uleb128 0x3f
- 1739 0071 0C       		.uleb128 0xc
- 1740 0072 3C       		.uleb128 0x3c
- 1741 0073 0C       		.uleb128 0xc
- 1742 0074 00       		.byte	0
- 1743 0075 00       		.byte	0
- 1744 0076 0B       		.uleb128 0xb
- 1745 0077 34       		.uleb128 0x34
- 1746 0078 00       		.byte	0
- 1747 0079 03       		.uleb128 0x3
- 1748 007a 0E       		.uleb128 0xe
- 1749 007b 3A       		.uleb128 0x3a
- 1750 007c 0B       		.uleb128 0xb
- 1751 007d 3B       		.uleb128 0x3b
- 1752 007e 0B       		.uleb128 0xb
- 1753 007f 49       		.uleb128 0x49
- 1754 0080 13       		.uleb128 0x13
- 1755 0081 3F       		.uleb128 0x3f
- 1756 0082 0C       		.uleb128 0xc
- 1757 0083 3C       		.uleb128 0x3c
- 1758 0084 0C       		.uleb128 0xc
- 1759 0085 00       		.byte	0
- 1760 0086 00       		.byte	0
- 1761 0087 0C       		.uleb128 0xc
- 1762 0088 01       		.uleb128 0x1
- 1763 0089 01       		.byte	0x1
- 1764 008a 49       		.uleb128 0x49
- 1765 008b 13       		.uleb128 0x13
- 1766 008c 01       		.uleb128 0x1
- 1767 008d 13       		.uleb128 0x13
- 1768 008e 00       		.byte	0
- 1769 008f 00       		.byte	0
- 1770 0090 0D       		.uleb128 0xd
- 1771 0091 21       		.uleb128 0x21
- 1772 0092 00       		.byte	0
- 1773 0093 49       		.uleb128 0x49
- 1774 0094 13       		.uleb128 0x13
- 1775 0095 2F       		.uleb128 0x2f
- 1776 0096 0B       		.uleb128 0xb
-ARM GAS  /tmp/cc35Dpui.s 			page 38
-
-
- 1777 0097 00       		.byte	0
- 1778 0098 00       		.byte	0
- 1779 0099 0E       		.uleb128 0xe
- 1780 009a 13       		.uleb128 0x13
- 1781 009b 01       		.byte	0x1
- 1782 009c 0B       		.uleb128 0xb
- 1783 009d 0B       		.uleb128 0xb
- 1784 009e 3A       		.uleb128 0x3a
- 1785 009f 0B       		.uleb128 0xb
- 1786 00a0 3B       		.uleb128 0x3b
- 1787 00a1 05       		.uleb128 0x5
- 1788 00a2 01       		.uleb128 0x1
- 1789 00a3 13       		.uleb128 0x13
- 1790 00a4 00       		.byte	0
- 1791 00a5 00       		.byte	0
- 1792 00a6 0F       		.uleb128 0xf
- 1793 00a7 0D       		.uleb128 0xd
- 1794 00a8 00       		.byte	0
- 1795 00a9 03       		.uleb128 0x3
- 1796 00aa 08       		.uleb128 0x8
- 1797 00ab 3A       		.uleb128 0x3a
- 1798 00ac 0B       		.uleb128 0xb
- 1799 00ad 3B       		.uleb128 0x3b
- 1800 00ae 05       		.uleb128 0x5
- 1801 00af 49       		.uleb128 0x49
- 1802 00b0 13       		.uleb128 0x13
- 1803 00b1 38       		.uleb128 0x38
- 1804 00b2 0A       		.uleb128 0xa
- 1805 00b3 00       		.byte	0
- 1806 00b4 00       		.byte	0
- 1807 00b5 10       		.uleb128 0x10
- 1808 00b6 0D       		.uleb128 0xd
- 1809 00b7 00       		.byte	0
- 1810 00b8 03       		.uleb128 0x3
- 1811 00b9 0E       		.uleb128 0xe
- 1812 00ba 3A       		.uleb128 0x3a
- 1813 00bb 0B       		.uleb128 0xb
- 1814 00bc 3B       		.uleb128 0x3b
- 1815 00bd 05       		.uleb128 0x5
- 1816 00be 49       		.uleb128 0x49
- 1817 00bf 13       		.uleb128 0x13
- 1818 00c0 38       		.uleb128 0x38
- 1819 00c1 0A       		.uleb128 0xa
- 1820 00c2 00       		.byte	0
- 1821 00c3 00       		.byte	0
- 1822 00c4 11       		.uleb128 0x11
- 1823 00c5 16       		.uleb128 0x16
- 1824 00c6 00       		.byte	0
- 1825 00c7 03       		.uleb128 0x3
- 1826 00c8 0E       		.uleb128 0xe
- 1827 00c9 3A       		.uleb128 0x3a
- 1828 00ca 0B       		.uleb128 0xb
- 1829 00cb 3B       		.uleb128 0x3b
- 1830 00cc 05       		.uleb128 0x5
- 1831 00cd 49       		.uleb128 0x49
- 1832 00ce 13       		.uleb128 0x13
- 1833 00cf 00       		.byte	0
-ARM GAS  /tmp/cc35Dpui.s 			page 39
-
-
- 1834 00d0 00       		.byte	0
- 1835 00d1 12       		.uleb128 0x12
- 1836 00d2 28       		.uleb128 0x28
- 1837 00d3 00       		.byte	0
- 1838 00d4 03       		.uleb128 0x3
- 1839 00d5 08       		.uleb128 0x8
- 1840 00d6 1C       		.uleb128 0x1c
- 1841 00d7 0B       		.uleb128 0xb
- 1842 00d8 00       		.byte	0
- 1843 00d9 00       		.byte	0
- 1844 00da 13       		.uleb128 0x13
- 1845 00db 13       		.uleb128 0x13
- 1846 00dc 01       		.byte	0x1
- 1847 00dd 0B       		.uleb128 0xb
- 1848 00de 0B       		.uleb128 0xb
- 1849 00df 3A       		.uleb128 0x3a
- 1850 00e0 0B       		.uleb128 0xb
- 1851 00e1 3B       		.uleb128 0x3b
- 1852 00e2 0B       		.uleb128 0xb
- 1853 00e3 01       		.uleb128 0x1
- 1854 00e4 13       		.uleb128 0x13
- 1855 00e5 00       		.byte	0
- 1856 00e6 00       		.byte	0
- 1857 00e7 14       		.uleb128 0x14
- 1858 00e8 0D       		.uleb128 0xd
- 1859 00e9 00       		.byte	0
- 1860 00ea 03       		.uleb128 0x3
- 1861 00eb 0E       		.uleb128 0xe
- 1862 00ec 3A       		.uleb128 0x3a
- 1863 00ed 0B       		.uleb128 0xb
- 1864 00ee 3B       		.uleb128 0x3b
- 1865 00ef 0B       		.uleb128 0xb
- 1866 00f0 49       		.uleb128 0x49
- 1867 00f1 13       		.uleb128 0x13
- 1868 00f2 38       		.uleb128 0x38
- 1869 00f3 0A       		.uleb128 0xa
- 1870 00f4 00       		.byte	0
- 1871 00f5 00       		.byte	0
- 1872 00f6 15       		.uleb128 0x15
- 1873 00f7 0F       		.uleb128 0xf
- 1874 00f8 00       		.byte	0
- 1875 00f9 0B       		.uleb128 0xb
- 1876 00fa 0B       		.uleb128 0xb
- 1877 00fb 49       		.uleb128 0x49
- 1878 00fc 13       		.uleb128 0x13
- 1879 00fd 00       		.byte	0
- 1880 00fe 00       		.byte	0
- 1881 00ff 16       		.uleb128 0x16
- 1882 0100 34       		.uleb128 0x34
- 1883 0101 00       		.byte	0
- 1884 0102 03       		.uleb128 0x3
- 1885 0103 0E       		.uleb128 0xe
- 1886 0104 3A       		.uleb128 0x3a
- 1887 0105 0B       		.uleb128 0xb
- 1888 0106 3B       		.uleb128 0x3b
- 1889 0107 0B       		.uleb128 0xb
- 1890 0108 49       		.uleb128 0x49
-ARM GAS  /tmp/cc35Dpui.s 			page 40
-
-
- 1891 0109 13       		.uleb128 0x13
- 1892 010a 3F       		.uleb128 0x3f
- 1893 010b 0C       		.uleb128 0xc
- 1894 010c 02       		.uleb128 0x2
- 1895 010d 0A       		.uleb128 0xa
- 1896 010e 00       		.byte	0
- 1897 010f 00       		.byte	0
- 1898 0110 17       		.uleb128 0x17
- 1899 0111 2E       		.uleb128 0x2e
- 1900 0112 01       		.byte	0x1
- 1901 0113 3F       		.uleb128 0x3f
- 1902 0114 0C       		.uleb128 0xc
- 1903 0115 03       		.uleb128 0x3
- 1904 0116 0E       		.uleb128 0xe
- 1905 0117 3A       		.uleb128 0x3a
- 1906 0118 0B       		.uleb128 0xb
- 1907 0119 3B       		.uleb128 0x3b
- 1908 011a 05       		.uleb128 0x5
- 1909 011b 27       		.uleb128 0x27
- 1910 011c 0C       		.uleb128 0xc
- 1911 011d 11       		.uleb128 0x11
- 1912 011e 01       		.uleb128 0x1
- 1913 011f 12       		.uleb128 0x12
- 1914 0120 01       		.uleb128 0x1
- 1915 0121 40       		.uleb128 0x40
- 1916 0122 0A       		.uleb128 0xa
- 1917 0123 9742     		.uleb128 0x2117
- 1918 0125 0C       		.uleb128 0xc
- 1919 0126 01       		.uleb128 0x1
- 1920 0127 13       		.uleb128 0x13
- 1921 0128 00       		.byte	0
- 1922 0129 00       		.byte	0
- 1923 012a 18       		.uleb128 0x18
- 1924 012b 898201   		.uleb128 0x4109
- 1925 012e 01       		.byte	0x1
- 1926 012f 11       		.uleb128 0x11
- 1927 0130 01       		.uleb128 0x1
- 1928 0131 9542     		.uleb128 0x2115
- 1929 0133 0C       		.uleb128 0xc
- 1930 0134 31       		.uleb128 0x31
- 1931 0135 13       		.uleb128 0x13
- 1932 0136 00       		.byte	0
- 1933 0137 00       		.byte	0
- 1934 0138 19       		.uleb128 0x19
- 1935 0139 8A8201   		.uleb128 0x410a
- 1936 013c 00       		.byte	0
- 1937 013d 02       		.uleb128 0x2
- 1938 013e 0A       		.uleb128 0xa
- 1939 013f 9142     		.uleb128 0x2111
- 1940 0141 0A       		.uleb128 0xa
- 1941 0142 00       		.byte	0
- 1942 0143 00       		.byte	0
- 1943 0144 1A       		.uleb128 0x1a
- 1944 0145 2E       		.uleb128 0x2e
- 1945 0146 01       		.byte	0x1
- 1946 0147 3F       		.uleb128 0x3f
- 1947 0148 0C       		.uleb128 0xc
-ARM GAS  /tmp/cc35Dpui.s 			page 41
-
-
- 1948 0149 03       		.uleb128 0x3
- 1949 014a 0E       		.uleb128 0xe
- 1950 014b 3A       		.uleb128 0x3a
- 1951 014c 0B       		.uleb128 0xb
- 1952 014d 3B       		.uleb128 0x3b
- 1953 014e 0B       		.uleb128 0xb
- 1954 014f 27       		.uleb128 0x27
- 1955 0150 0C       		.uleb128 0xc
- 1956 0151 11       		.uleb128 0x11
- 1957 0152 01       		.uleb128 0x1
- 1958 0153 12       		.uleb128 0x12
- 1959 0154 01       		.uleb128 0x1
- 1960 0155 40       		.uleb128 0x40
- 1961 0156 06       		.uleb128 0x6
- 1962 0157 9742     		.uleb128 0x2117
- 1963 0159 0C       		.uleb128 0xc
- 1964 015a 01       		.uleb128 0x1
- 1965 015b 13       		.uleb128 0x13
- 1966 015c 00       		.byte	0
- 1967 015d 00       		.byte	0
- 1968 015e 1B       		.uleb128 0x1b
- 1969 015f 05       		.uleb128 0x5
- 1970 0160 00       		.byte	0
- 1971 0161 03       		.uleb128 0x3
- 1972 0162 0E       		.uleb128 0xe
- 1973 0163 3A       		.uleb128 0x3a
- 1974 0164 0B       		.uleb128 0xb
- 1975 0165 3B       		.uleb128 0x3b
- 1976 0166 0B       		.uleb128 0xb
- 1977 0167 49       		.uleb128 0x49
- 1978 0168 13       		.uleb128 0x13
- 1979 0169 02       		.uleb128 0x2
- 1980 016a 06       		.uleb128 0x6
- 1981 016b 00       		.byte	0
- 1982 016c 00       		.byte	0
- 1983 016d 1C       		.uleb128 0x1c
- 1984 016e 34       		.uleb128 0x34
- 1985 016f 00       		.byte	0
- 1986 0170 03       		.uleb128 0x3
- 1987 0171 0E       		.uleb128 0xe
- 1988 0172 3A       		.uleb128 0x3a
- 1989 0173 0B       		.uleb128 0xb
- 1990 0174 3B       		.uleb128 0x3b
- 1991 0175 0B       		.uleb128 0xb
- 1992 0176 49       		.uleb128 0x49
- 1993 0177 13       		.uleb128 0x13
- 1994 0178 02       		.uleb128 0x2
- 1995 0179 0A       		.uleb128 0xa
- 1996 017a 00       		.byte	0
- 1997 017b 00       		.byte	0
- 1998 017c 1D       		.uleb128 0x1d
- 1999 017d 898201   		.uleb128 0x4109
- 2000 0180 00       		.byte	0
- 2001 0181 11       		.uleb128 0x11
- 2002 0182 01       		.uleb128 0x1
- 2003 0183 31       		.uleb128 0x31
- 2004 0184 13       		.uleb128 0x13
-ARM GAS  /tmp/cc35Dpui.s 			page 42
-
-
- 2005 0185 00       		.byte	0
- 2006 0186 00       		.byte	0
- 2007 0187 1E       		.uleb128 0x1e
- 2008 0188 2E       		.uleb128 0x2e
- 2009 0189 00       		.byte	0
- 2010 018a 3F       		.uleb128 0x3f
- 2011 018b 0C       		.uleb128 0xc
- 2012 018c 03       		.uleb128 0x3
- 2013 018d 0E       		.uleb128 0xe
- 2014 018e 3A       		.uleb128 0x3a
- 2015 018f 0B       		.uleb128 0xb
- 2016 0190 3B       		.uleb128 0x3b
- 2017 0191 0B       		.uleb128 0xb
- 2018 0192 27       		.uleb128 0x27
- 2019 0193 0C       		.uleb128 0xc
- 2020 0194 11       		.uleb128 0x11
- 2021 0195 01       		.uleb128 0x1
- 2022 0196 12       		.uleb128 0x12
- 2023 0197 01       		.uleb128 0x1
- 2024 0198 40       		.uleb128 0x40
- 2025 0199 0A       		.uleb128 0xa
- 2026 019a 9742     		.uleb128 0x2117
- 2027 019c 0C       		.uleb128 0xc
- 2028 019d 00       		.byte	0
- 2029 019e 00       		.byte	0
- 2030 019f 1F       		.uleb128 0x1f
- 2031 01a0 2E       		.uleb128 0x2e
- 2032 01a1 01       		.byte	0x1
- 2033 01a2 3F       		.uleb128 0x3f
- 2034 01a3 0C       		.uleb128 0xc
- 2035 01a4 03       		.uleb128 0x3
- 2036 01a5 0E       		.uleb128 0xe
- 2037 01a6 3A       		.uleb128 0x3a
- 2038 01a7 0B       		.uleb128 0xb
- 2039 01a8 3B       		.uleb128 0x3b
- 2040 01a9 0B       		.uleb128 0xb
- 2041 01aa 27       		.uleb128 0x27
- 2042 01ab 0C       		.uleb128 0xc
- 2043 01ac 49       		.uleb128 0x49
- 2044 01ad 13       		.uleb128 0x13
- 2045 01ae 11       		.uleb128 0x11
- 2046 01af 01       		.uleb128 0x1
- 2047 01b0 12       		.uleb128 0x12
- 2048 01b1 01       		.uleb128 0x1
- 2049 01b2 40       		.uleb128 0x40
- 2050 01b3 06       		.uleb128 0x6
- 2051 01b4 9742     		.uleb128 0x2117
- 2052 01b6 0C       		.uleb128 0xc
- 2053 01b7 01       		.uleb128 0x1
- 2054 01b8 13       		.uleb128 0x13
- 2055 01b9 00       		.byte	0
- 2056 01ba 00       		.byte	0
- 2057 01bb 20       		.uleb128 0x20
- 2058 01bc 898201   		.uleb128 0x4109
- 2059 01bf 01       		.byte	0x1
- 2060 01c0 11       		.uleb128 0x11
- 2061 01c1 01       		.uleb128 0x1
-ARM GAS  /tmp/cc35Dpui.s 			page 43
-
-
- 2062 01c2 31       		.uleb128 0x31
- 2063 01c3 13       		.uleb128 0x13
- 2064 01c4 01       		.uleb128 0x1
- 2065 01c5 13       		.uleb128 0x13
- 2066 01c6 00       		.byte	0
- 2067 01c7 00       		.byte	0
- 2068 01c8 21       		.uleb128 0x21
- 2069 01c9 898201   		.uleb128 0x4109
- 2070 01cc 01       		.byte	0x1
- 2071 01cd 11       		.uleb128 0x11
- 2072 01ce 01       		.uleb128 0x1
- 2073 01cf 31       		.uleb128 0x31
- 2074 01d0 13       		.uleb128 0x13
- 2075 01d1 00       		.byte	0
- 2076 01d2 00       		.byte	0
- 2077 01d3 22       		.uleb128 0x22
- 2078 01d4 2E       		.uleb128 0x2e
- 2079 01d5 00       		.byte	0
- 2080 01d6 3F       		.uleb128 0x3f
- 2081 01d7 0C       		.uleb128 0xc
- 2082 01d8 3C       		.uleb128 0x3c
- 2083 01d9 0C       		.uleb128 0xc
- 2084 01da 8740     		.uleb128 0x2007
- 2085 01dc 0E       		.uleb128 0xe
- 2086 01dd 03       		.uleb128 0x3
- 2087 01de 0E       		.uleb128 0xe
- 2088 01df 3A       		.uleb128 0x3a
- 2089 01e0 0B       		.uleb128 0xb
- 2090 01e1 3B       		.uleb128 0x3b
- 2091 01e2 05       		.uleb128 0x5
- 2092 01e3 00       		.byte	0
- 2093 01e4 00       		.byte	0
- 2094 01e5 00       		.byte	0
- 2095              		.section	.debug_loc,"",%progbits
- 2096              	.Ldebug_loc0:
- 2097              	.LLST3:
- 2098 0000 68010000 		.4byte	.LFB68-.Ltext0
- 2099 0004 6A010000 		.4byte	.LCFI6-.Ltext0
- 2100 0008 0200     		.2byte	0x2
- 2101 000a 7D       		.byte	0x7d
- 2102 000b 00       		.sleb128 0
- 2103 000c 6A010000 		.4byte	.LCFI6-.Ltext0
- 2104 0010 AE010000 		.4byte	.LCFI7-.Ltext0
- 2105 0014 0200     		.2byte	0x2
- 2106 0016 7D       		.byte	0x7d
- 2107 0017 18       		.sleb128 24
- 2108 0018 AE010000 		.4byte	.LCFI7-.Ltext0
- 2109 001c B4010000 		.4byte	.LFE68-.Ltext0
- 2110 0020 0200     		.2byte	0x2
- 2111 0022 7D       		.byte	0x7d
- 2112 0023 0C       		.sleb128 12
- 2113 0024 00000000 		.4byte	0
- 2114 0028 00000000 		.4byte	0
- 2115              	.LLST4:
- 2116 002c 68010000 		.4byte	.LVL9-.Ltext0
- 2117 0030 73010000 		.4byte	.LVL10-1-.Ltext0
- 2118 0034 0100     		.2byte	0x1
-ARM GAS  /tmp/cc35Dpui.s 			page 44
-
-
- 2119 0036 50       		.byte	0x50
- 2120 0037 73010000 		.4byte	.LVL10-1-.Ltext0
- 2121 003b B0010000 		.4byte	.LVL11-.Ltext0
- 2122 003f 0100     		.2byte	0x1
- 2123 0041 55       		.byte	0x55
- 2124 0042 B0010000 		.4byte	.LVL11-.Ltext0
- 2125 0046 B4010000 		.4byte	.LFE68-.Ltext0
- 2126 004a 0400     		.2byte	0x4
- 2127 004c F3       		.byte	0xf3
- 2128 004d 01       		.uleb128 0x1
- 2129 004e 50       		.byte	0x50
- 2130 004f 9F       		.byte	0x9f
- 2131 0050 00000000 		.4byte	0
- 2132 0054 00000000 		.4byte	0
- 2133              	.LLST2:
- 2134 0058 14010000 		.4byte	.LFB67-.Ltext0
- 2135 005c 1A010000 		.4byte	.LCFI4-.Ltext0
- 2136 0060 0200     		.2byte	0x2
- 2137 0062 7D       		.byte	0x7d
- 2138 0063 00       		.sleb128 0
- 2139 0064 1A010000 		.4byte	.LCFI4-.Ltext0
- 2140 0068 5E010000 		.4byte	.LCFI5-.Ltext0
- 2141 006c 0200     		.2byte	0x2
- 2142 006e 7D       		.byte	0x7d
- 2143 006f 08       		.sleb128 8
- 2144 0070 5E010000 		.4byte	.LCFI5-.Ltext0
- 2145 0074 68010000 		.4byte	.LFE67-.Ltext0
- 2146 0078 0200     		.2byte	0x2
- 2147 007a 7D       		.byte	0x7d
- 2148 007b 00       		.sleb128 0
- 2149 007c 00000000 		.4byte	0
- 2150 0080 00000000 		.4byte	0
- 2151              	.LLST0:
- 2152 0084 00000000 		.4byte	.LFB65-.Ltext0
- 2153 0088 04000000 		.4byte	.LCFI0-.Ltext0
- 2154 008c 0200     		.2byte	0x2
- 2155 008e 7D       		.byte	0x7d
- 2156 008f 00       		.sleb128 0
- 2157 0090 04000000 		.4byte	.LCFI0-.Ltext0
- 2158 0094 06000000 		.4byte	.LCFI1-.Ltext0
- 2159 0098 0200     		.2byte	0x2
- 2160 009a 7D       		.byte	0x7d
- 2161 009b 14       		.sleb128 20
- 2162 009c 06000000 		.4byte	.LCFI1-.Ltext0
- 2163 00a0 2A000000 		.4byte	.LCFI2-.Ltext0
- 2164 00a4 0300     		.2byte	0x3
- 2165 00a6 7D       		.byte	0x7d
- 2166 00a7 D800     		.sleb128 88
- 2167 00a9 2A000000 		.4byte	.LCFI2-.Ltext0
- 2168 00ad 2C000000 		.4byte	.LCFI3-.Ltext0
- 2169 00b1 0200     		.2byte	0x2
- 2170 00b3 7D       		.byte	0x7d
- 2171 00b4 14       		.sleb128 20
- 2172 00b5 2C000000 		.4byte	.LCFI3-.Ltext0
- 2173 00b9 00010000 		.4byte	.LFE65-.Ltext0
- 2174 00bd 0300     		.2byte	0x3
- 2175 00bf 7D       		.byte	0x7d
-ARM GAS  /tmp/cc35Dpui.s 			page 45
-
-
- 2176 00c0 D800     		.sleb128 88
- 2177 00c2 00000000 		.4byte	0
- 2178 00c6 00000000 		.4byte	0
- 2179              	.LLST1:
- 2180 00ca 00000000 		.4byte	.LVL0-.Ltext0
- 2181 00ce 1A000000 		.4byte	.LVL1-.Ltext0
- 2182 00d2 0100     		.2byte	0x1
- 2183 00d4 50       		.byte	0x50
- 2184 00d5 1A000000 		.4byte	.LVL1-.Ltext0
- 2185 00d9 00010000 		.4byte	.LFE65-.Ltext0
- 2186 00dd 0100     		.2byte	0x1
- 2187 00df 56       		.byte	0x56
- 2188 00e0 00000000 		.4byte	0
- 2189 00e4 00000000 		.4byte	0
- 2190              		.section	.debug_aranges,"",%progbits
- 2191 0000 1C000000 		.4byte	0x1c
- 2192 0004 0200     		.2byte	0x2
- 2193 0006 00000000 		.4byte	.Ldebug_info0
- 2194 000a 04       		.byte	0x4
- 2195 000b 00       		.byte	0
- 2196 000c 0000     		.2byte	0
- 2197 000e 0000     		.2byte	0
- 2198 0010 00000000 		.4byte	.Ltext0
- 2199 0014 C0010000 		.4byte	.Letext0-.Ltext0
- 2200 0018 00000000 		.4byte	0
- 2201 001c 00000000 		.4byte	0
- 2202              		.section	.debug_line,"",%progbits
- 2203              	.Ldebug_line0:
- 2204 0000 27020000 		.section	.debug_str,"MS",%progbits,1
- 2204      02009801 
- 2204      00000201 
- 2204      FB0E0D00 
- 2204      01010101 
- 2205              	.LASF49:
- 2206 0000 73686F72 		.ascii	"short int\000"
- 2206      7420696E 
- 2206      7400
- 2207              	.LASF127:
- 2208 000a 53746174 		.ascii	"State\000"
- 2208      6500
- 2209              	.LASF152:
- 2210 0010 48414C5F 		.ascii	"HAL_NVIC_EnableIRQ\000"
- 2210      4E564943 
- 2210      5F456E61 
- 2210      626C6549 
- 2210      525100
- 2211              	.LASF133:
- 2212 0023 48414C5F 		.ascii	"HAL_TickFreqTypeDef\000"
- 2212      5469636B 
- 2212      46726571 
- 2212      54797065 
- 2212      44656600 
- 2213              	.LASF10:
- 2214 0037 5056445F 		.ascii	"PVD_IRQn\000"
- 2214      4952516E 
- 2214      00
- 2215              	.LASF35:
-ARM GAS  /tmp/cc35Dpui.s 			page 46
-
-
- 2216 0040 54494D31 		.ascii	"TIM1_TRG_COM_IRQn\000"
- 2216      5F545247 
- 2216      5F434F4D 
- 2216      5F495251 
- 2216      6E00
- 2217              	.LASF78:
- 2218 0052 414C524C 		.ascii	"ALRL\000"
- 2218      00
- 2219              	.LASF145:
- 2220 0057 48414C5F 		.ascii	"HAL_RTC_AlarmIRQHandler\000"
- 2220      5254435F 
- 2220      416C6172 
- 2220      6D495251 
- 2220      48616E64 
- 2221              	.LASF39:
- 2222 006f 49324331 		.ascii	"I2C1_EV_IRQn\000"
- 2222      5F45565F 
- 2222      4952516E 
- 2222      00
- 2223              	.LASF51:
- 2224 007c 5F5F7569 		.ascii	"__uint8_t\000"
- 2224      6E74385F 
- 2224      7400
- 2225              	.LASF92:
- 2226 0086 504C4C53 		.ascii	"PLLState\000"
- 2226      74617465 
- 2226      00
- 2227              	.LASF136:
- 2228 008f 68525443 		.ascii	"hRTC_Handle\000"
- 2228      5F48616E 
- 2228      646C6500 
- 2229              	.LASF66:
- 2230 009b 41504250 		.ascii	"APBPrescTable\000"
- 2230      72657363 
- 2230      5461626C 
- 2230      6500
- 2231              	.LASF69:
- 2232 00a9 53574945 		.ascii	"SWIER\000"
- 2232      5200
- 2233              	.LASF148:
- 2234 00af 48414C5F 		.ascii	"HAL_RCCEx_PeriphCLKConfig\000"
- 2234      52434345 
- 2234      785F5065 
- 2234      72697068 
- 2234      434C4B43 
- 2235              	.LASF129:
- 2236 00c9 48414C5F 		.ascii	"HAL_TICK_FREQ_10HZ\000"
- 2236      5449434B 
- 2236      5F465245 
- 2236      515F3130 
- 2236      485A00
- 2237              	.LASF81:
- 2238 00dc 44495341 		.ascii	"DISABLE\000"
- 2238      424C4500 
- 2239              	.LASF30:
- 2240 00e4 43414E31 		.ascii	"CAN1_RX1_IRQn\000"
- 2240      5F525831 
-ARM GAS  /tmp/cc35Dpui.s 			page 47
-
-
- 2240      5F495251 
- 2240      6E00
- 2241              	.LASF57:
- 2242 00f2 6C6F6E67 		.ascii	"long long unsigned int\000"
- 2242      206C6F6E 
- 2242      6720756E 
- 2242      7369676E 
- 2242      65642069 
- 2243              	.LASF45:
- 2244 0109 5254435F 		.ascii	"RTC_Alarm_IRQn\000"
- 2244      416C6172 
- 2244      6D5F4952 
- 2244      516E00
- 2245              	.LASF99:
- 2246 0118 4C534553 		.ascii	"LSEState\000"
- 2246      74617465 
- 2246      00
- 2247              	.LASF113:
- 2248 0121 48414C5F 		.ascii	"HAL_RTC_STATE_ERROR\000"
- 2248      5254435F 
- 2248      53544154 
- 2248      455F4552 
- 2248      524F5200 
- 2249              	.LASF17:
- 2250 0135 45585449 		.ascii	"EXTI2_IRQn\000"
- 2250      325F4952 
- 2250      516E00
- 2251              	.LASF9:
- 2252 0140 57574447 		.ascii	"WWDG_IRQn\000"
- 2252      5F495251 
- 2252      6E00
- 2253              	.LASF79:
- 2254 014a 5254435F 		.ascii	"RTC_TypeDef\000"
- 2254      54797065 
- 2254      44656600 
- 2255              	.LASF71:
- 2256 0156 50524C48 		.ascii	"PRLH\000"
- 2256      00
- 2257              	.LASF103:
- 2258 015b 5243435F 		.ascii	"RCC_OscInitTypeDef\000"
- 2258      4F736349 
- 2258      6E697454 
- 2258      79706544 
- 2258      656600
- 2259              	.LASF47:
- 2260 016e 7369676E 		.ascii	"signed char\000"
- 2260      65642063 
- 2260      68617200 
- 2261              	.LASF128:
- 2262 017a 5254435F 		.ascii	"RTC_HandleTypeDef\000"
- 2262      48616E64 
- 2262      6C655479 
- 2262      70654465 
- 2262      6600
- 2263              	.LASF149:
- 2264 018c 48414C5F 		.ascii	"HAL_RCCEx_GetPeriphCLKFreq\000"
- 2264      52434345 
-ARM GAS  /tmp/cc35Dpui.s 			page 48
-
-
- 2264      785F4765 
- 2264      74506572 
- 2264      69706843 
- 2265              	.LASF91:
- 2266 01a7 48414C5F 		.ascii	"HAL_LockTypeDef\000"
- 2266      4C6F636B 
- 2266      54797065 
- 2266      44656600 
- 2267              	.LASF75:
- 2268 01b7 434E5448 		.ascii	"CNTH\000"
- 2268      00
- 2269              	.LASF53:
- 2270 01bc 6C6F6E67 		.ascii	"long int\000"
- 2270      20696E74 
- 2270      00
- 2271              	.LASF102:
- 2272 01c5 4C534953 		.ascii	"LSIState\000"
- 2272      74617465 
- 2272      00
- 2273              	.LASF94:
- 2274 01ce 504C4C4D 		.ascii	"PLLMUL\000"
- 2274      554C00
- 2275              	.LASF116:
- 2276 01d5 4F757450 		.ascii	"OutPut\000"
- 2276      757400
- 2277              	.LASF32:
- 2278 01dc 45585449 		.ascii	"EXTI9_5_IRQn\000"
- 2278      395F355F 
- 2278      4952516E 
- 2278      00
- 2279              	.LASF122:
- 2280 01e9 5254435F 		.ascii	"RTC_DateTypeDef\000"
- 2280      44617465 
- 2280      54797065 
- 2280      44656600 
- 2281              	.LASF82:
- 2282 01f9 454E4142 		.ascii	"ENABLE\000"
- 2282      4C4500
- 2283              	.LASF109:
- 2284 0200 48414C5F 		.ascii	"HAL_RTC_STATE_RESET\000"
- 2284      5254435F 
- 2284      53544154 
- 2284      455F5245 
- 2284      53455400 
- 2285              	.LASF100:
- 2286 0214 48534953 		.ascii	"HSIState\000"
- 2286      74617465 
- 2286      00
- 2287              	.LASF73:
- 2288 021d 44495648 		.ascii	"DIVH\000"
- 2288      00
- 2289              	.LASF27:
- 2290 0222 41444331 		.ascii	"ADC1_2_IRQn\000"
- 2290      5F325F49 
- 2290      52516E00 
- 2291              	.LASF74:
- 2292 022e 4449564C 		.ascii	"DIVL\000"
-ARM GAS  /tmp/cc35Dpui.s 			page 49
-
-
- 2292      00
- 2293              	.LASF143:
- 2294 0233 5243435F 		.ascii	"RCC_OscInitStruct\000"
- 2294      4F736349 
- 2294      6E697453 
- 2294      74727563 
- 2294      7400
- 2295              	.LASF7:
- 2296 0245 50656E64 		.ascii	"PendSV_IRQn\000"
- 2296      53565F49 
- 2296      52516E00 
- 2297              	.LASF23:
- 2298 0251 444D4131 		.ascii	"DMA1_Channel4_IRQn\000"
- 2298      5F436861 
- 2298      6E6E656C 
- 2298      345F4952 
- 2298      516E00
- 2299              	.LASF126:
- 2300 0264 4C6F636B 		.ascii	"Lock\000"
- 2300      00
- 2301              	.LASF142:
- 2302 0269 5469636B 		.ascii	"TickPriority\000"
- 2302      5072696F 
- 2302      72697479 
- 2302      00
- 2303              	.LASF54:
- 2304 0276 5F5F7569 		.ascii	"__uint32_t\000"
- 2304      6E743332 
- 2304      5F7400
- 2305              	.LASF3:
- 2306 0281 42757346 		.ascii	"BusFault_IRQn\000"
- 2306      61756C74 
- 2306      5F495251 
- 2306      6E00
- 2307              	.LASF125:
- 2308 028f 44617465 		.ascii	"DateToUpdate\000"
- 2308      546F5570 
- 2308      64617465 
- 2308      00
- 2309              	.LASF114:
- 2310 029c 48414C5F 		.ascii	"HAL_RTCStateTypeDef\000"
- 2310      52544353 
- 2310      74617465 
- 2310      54797065 
- 2310      44656600 
- 2311              	.LASF56:
- 2312 02b0 6C6F6E67 		.ascii	"long long int\000"
- 2312      206C6F6E 
- 2312      6720696E 
- 2312      7400
- 2313              	.LASF130:
- 2314 02be 48414C5F 		.ascii	"HAL_TICK_FREQ_100HZ\000"
- 2314      5449434B 
- 2314      5F465245 
- 2314      515F3130 
- 2314      30485A00 
- 2315              	.LASF98:
-ARM GAS  /tmp/cc35Dpui.s 			page 50
-
-
- 2316 02d2 48534550 		.ascii	"HSEPredivValue\000"
- 2316      72656469 
- 2316      7656616C 
- 2316      756500
- 2317              	.LASF97:
- 2318 02e1 48534553 		.ascii	"HSEState\000"
- 2318      74617465 
- 2318      00
- 2319              	.LASF58:
- 2320 02ea 756E7369 		.ascii	"unsigned int\000"
- 2320      676E6564 
- 2320      20696E74 
- 2320      00
- 2321              	.LASF87:
- 2322 02f7 48414C5F 		.ascii	"HAL_TIMEOUT\000"
- 2322      54494D45 
- 2322      4F555400 
- 2323              	.LASF64:
- 2324 0303 53797374 		.ascii	"SystemCoreClock\000"
- 2324      656D436F 
- 2324      7265436C 
- 2324      6F636B00 
- 2325              	.LASF135:
- 2326 0313 75775469 		.ascii	"uwTickFreq\000"
- 2326      636B4672 
- 2326      657100
- 2327              	.LASF67:
- 2328 031e 52545352 		.ascii	"RTSR\000"
- 2328      00
- 2329              	.LASF2:
- 2330 0323 4D656D6F 		.ascii	"MemoryManagement_IRQn\000"
- 2330      72794D61 
- 2330      6E616765 
- 2330      6D656E74 
- 2330      5F495251 
- 2331              	.LASF55:
- 2332 0339 6C6F6E67 		.ascii	"long unsigned int\000"
- 2332      20756E73 
- 2332      69676E65 
- 2332      6420696E 
- 2332      7400
- 2333              	.LASF138:
- 2334 034b 48414C5F 		.ascii	"HAL_RTC_AlarmAEventCallback\000"
- 2334      5254435F 
- 2334      416C6172 
- 2334      6D414576 
- 2334      656E7443 
- 2335              	.LASF110:
- 2336 0367 48414C5F 		.ascii	"HAL_RTC_STATE_READY\000"
- 2336      5254435F 
- 2336      53544154 
- 2336      455F5245 
- 2336      41445900 
- 2337              	.LASF131:
- 2338 037b 48414C5F 		.ascii	"HAL_TICK_FREQ_1KHZ\000"
- 2338      5449434B 
- 2338      5F465245 
-ARM GAS  /tmp/cc35Dpui.s 			page 51
-
-
- 2338      515F314B 
- 2338      485A00
- 2339              	.LASF84:
- 2340 038e 48414C5F 		.ascii	"HAL_OK\000"
- 2340      4F4B00
- 2341              	.LASF104:
- 2342 0395 50657269 		.ascii	"PeriphClockSelection\000"
- 2342      7068436C 
- 2342      6F636B53 
- 2342      656C6563 
- 2342      74696F6E 
- 2343              	.LASF24:
- 2344 03aa 444D4131 		.ascii	"DMA1_Channel5_IRQn\000"
- 2344      5F436861 
- 2344      6E6E656C 
- 2344      355F4952 
- 2344      516E00
- 2345              	.LASF50:
- 2346 03bd 73686F72 		.ascii	"short unsigned int\000"
- 2346      7420756E 
- 2346      7369676E 
- 2346      65642069 
- 2346      6E7400
- 2347              	.LASF121:
- 2348 03d0 59656172 		.ascii	"Year\000"
- 2348      00
- 2349              	.LASF1:
- 2350 03d5 48617264 		.ascii	"HardFault_IRQn\000"
- 2350      4661756C 
- 2350      745F4952 
- 2350      516E00
- 2351              	.LASF44:
- 2352 03e4 45585449 		.ascii	"EXTI15_10_IRQn\000"
- 2352      31355F31 
- 2352      305F4952 
- 2352      516E00
- 2353              	.LASF96:
- 2354 03f3 4F736369 		.ascii	"OscillatorType\000"
- 2354      6C6C6174 
- 2354      6F725479 
- 2354      706500
- 2355              	.LASF41:
- 2356 0402 53504931 		.ascii	"SPI1_IRQn\000"
- 2356      5F495251 
- 2356      6E00
- 2357              	.LASF88:
- 2358 040c 48414C5F 		.ascii	"HAL_StatusTypeDef\000"
- 2358      53746174 
- 2358      75735479 
- 2358      70654465 
- 2358      6600
- 2359              	.LASF65:
- 2360 041e 41484250 		.ascii	"AHBPrescTable\000"
- 2360      72657363 
- 2360      5461626C 
- 2360      6500
- 2361              	.LASF8:
-ARM GAS  /tmp/cc35Dpui.s 			page 52
-
-
- 2362 042c 53797354 		.ascii	"SysTick_IRQn\000"
- 2362      69636B5F 
- 2362      4952516E 
- 2362      00
- 2363              	.LASF36:
- 2364 0439 54494D31 		.ascii	"TIM1_CC_IRQn\000"
- 2364      5F43435F 
- 2364      4952516E 
- 2364      00
- 2365              	.LASF107:
- 2366 0446 55736243 		.ascii	"UsbClockSelection\000"
- 2366      6C6F636B 
- 2366      53656C65 
- 2366      6374696F 
- 2366      6E00
- 2367              	.LASF112:
- 2368 0458 48414C5F 		.ascii	"HAL_RTC_STATE_TIMEOUT\000"
- 2368      5254435F 
- 2368      53544154 
- 2368      455F5449 
- 2368      4D454F55 
- 2369              	.LASF21:
- 2370 046e 444D4131 		.ascii	"DMA1_Channel2_IRQn\000"
- 2370      5F436861 
- 2370      6E6E656C 
- 2370      325F4952 
- 2370      516E00
- 2371              	.LASF118:
- 2372 0481 5765656B 		.ascii	"WeekDay\000"
- 2372      44617900 
- 2373              	.LASF62:
- 2374 0489 73697A65 		.ascii	"sizetype\000"
- 2374      74797065 
- 2374      00
- 2375              	.LASF77:
- 2376 0492 414C5248 		.ascii	"ALRH\000"
- 2376      00
- 2377              	.LASF5:
- 2378 0497 53564361 		.ascii	"SVCall_IRQn\000"
- 2378      6C6C5F49 
- 2378      52516E00 
- 2379              	.LASF144:
- 2380 04a3 50657269 		.ascii	"PeriphClkInitStruct\000"
- 2380      7068436C 
- 2380      6B496E69 
- 2380      74537472 
- 2380      75637400 
- 2381              	.LASF90:
- 2382 04b7 48414C5F 		.ascii	"HAL_LOCKED\000"
- 2382      4C4F434B 
- 2382      454400
- 2383              	.LASF18:
- 2384 04c2 45585449 		.ascii	"EXTI3_IRQn\000"
- 2384      335F4952 
- 2384      516E00
- 2385              	.LASF132:
- 2386 04cd 48414C5F 		.ascii	"HAL_TICK_FREQ_DEFAULT\000"
-ARM GAS  /tmp/cc35Dpui.s 			page 53
-
-
- 2386      5449434B 
- 2386      5F465245 
- 2386      515F4445 
- 2386      4641554C 
- 2387              	.LASF154:
- 2388 04e3 7372632F 		.ascii	"src/stm32f1xx_hal_timebase_rtc_alarm_template.c\000"
- 2388      73746D33 
- 2388      32663178 
- 2388      785F6861 
- 2388      6C5F7469 
- 2389              	.LASF150:
- 2390 0513 48414C5F 		.ascii	"HAL_RTC_Init\000"
- 2390      5254435F 
- 2390      496E6974 
- 2390      00
- 2391              	.LASF124:
- 2392 0520 496E6974 		.ascii	"Init\000"
- 2392      00
- 2393              	.LASF139:
- 2394 0525 48414C5F 		.ascii	"HAL_ResumeTick\000"
- 2394      52657375 
- 2394      6D655469 
- 2394      636B00
- 2395              	.LASF20:
- 2396 0534 444D4131 		.ascii	"DMA1_Channel1_IRQn\000"
- 2396      5F436861 
- 2396      6E6E656C 
- 2396      315F4952 
- 2396      516E00
- 2397              	.LASF137:
- 2398 0547 5254435F 		.ascii	"RTC_Alarm_IRQHandler\000"
- 2398      416C6172 
- 2398      6D5F4952 
- 2398      5148616E 
- 2398      646C6572 
- 2399              	.LASF157:
- 2400 055c 48414C5F 		.ascii	"HAL_InitTick\000"
- 2400      496E6974 
- 2400      5469636B 
- 2400      00
- 2401              	.LASF123:
- 2402 0569 496E7374 		.ascii	"Instance\000"
- 2402      616E6365 
- 2402      00
- 2403              	.LASF42:
- 2404 0572 55534152 		.ascii	"USART1_IRQn\000"
- 2404      54315F49 
- 2404      52516E00 
- 2405              	.LASF80:
- 2406 057e 52455345 		.ascii	"RESET\000"
- 2406      5400
- 2407              	.LASF119:
- 2408 0584 4D6F6E74 		.ascii	"Month\000"
- 2408      6800
- 2409              	.LASF60:
- 2410 058a 696E7433 		.ascii	"int32_t\000"
- 2410      325F7400 
-ARM GAS  /tmp/cc35Dpui.s 			page 54
-
-
- 2411              	.LASF48:
- 2412 0592 756E7369 		.ascii	"unsigned char\000"
- 2412      676E6564 
- 2412      20636861 
- 2412      7200
- 2413              	.LASF29:
- 2414 05a0 5553425F 		.ascii	"USB_LP_CAN1_RX0_IRQn\000"
- 2414      4C505F43 
- 2414      414E315F 
- 2414      5258305F 
- 2414      4952516E 
- 2415              	.LASF28:
- 2416 05b5 5553425F 		.ascii	"USB_HP_CAN1_TX_IRQn\000"
- 2416      48505F43 
- 2416      414E315F 
- 2416      54585F49 
- 2416      52516E00 
- 2417              	.LASF63:
- 2418 05c9 49544D5F 		.ascii	"ITM_RxBuffer\000"
- 2418      52784275 
- 2418      66666572 
- 2418      00
- 2419              	.LASF86:
- 2420 05d6 48414C5F 		.ascii	"HAL_BUSY\000"
- 2420      42555359 
- 2420      00
- 2421              	.LASF68:
- 2422 05df 46545352 		.ascii	"FTSR\000"
- 2422      00
- 2423              	.LASF19:
- 2424 05e4 45585449 		.ascii	"EXTI4_IRQn\000"
- 2424      345F4952 
- 2424      516E00
- 2425              	.LASF105:
- 2426 05ef 52544343 		.ascii	"RTCClockSelection\000"
- 2426      6C6F636B 
- 2426      53656C65 
- 2426      6374696F 
- 2426      6E00
- 2427              	.LASF140:
- 2428 0601 636F756E 		.ascii	"counter\000"
- 2428      74657200 
- 2429              	.LASF93:
- 2430 0609 504C4C53 		.ascii	"PLLSource\000"
- 2430      6F757263 
- 2430      6500
- 2431              	.LASF22:
- 2432 0613 444D4131 		.ascii	"DMA1_Channel3_IRQn\000"
- 2432      5F436861 
- 2432      6E6E656C 
- 2432      335F4952 
- 2432      516E00
- 2433              	.LASF111:
- 2434 0626 48414C5F 		.ascii	"HAL_RTC_STATE_BUSY\000"
- 2434      5254435F 
- 2434      53544154 
- 2434      455F4255 
-ARM GAS  /tmp/cc35Dpui.s 			page 55
-
-
- 2434      535900
- 2435              	.LASF153:
- 2436 0639 474E5520 		.ascii	"GNU C11 6.3.1 20170620 -mcpu=cortex-m3 -mthumb -g -"
- 2436      43313120 
- 2436      362E332E 
- 2436      31203230 
- 2436      31373036 
- 2437 066c 67647761 		.ascii	"gdwarf-2 -Os -fomit-frame-pointer\000"
- 2437      72662D32 
- 2437      202D4F73 
- 2437      202D666F 
- 2437      6D69742D 
- 2438              	.LASF155:
- 2439 068e 2F686F6D 		.ascii	"/home/berndoj/git/stm32tctst/lib/stm32f1hal\000"
- 2439      652F6265 
- 2439      726E646F 
- 2439      6A2F6769 
- 2439      742F7374 
- 2440              	.LASF101:
- 2441 06ba 48534943 		.ascii	"HSICalibrationValue\000"
- 2441      616C6962 
- 2441      72617469 
- 2441      6F6E5661 
- 2441      6C756500 
- 2442              	.LASF156:
- 2443 06ce 48414C5F 		.ascii	"HAL_SuspendTick\000"
- 2443      53757370 
- 2443      656E6454 
- 2443      69636B00 
- 2444              	.LASF13:
- 2445 06de 464C4153 		.ascii	"FLASH_IRQn\000"
- 2445      485F4952 
- 2445      516E00
- 2446              	.LASF61:
- 2447 06e9 75696E74 		.ascii	"uint32_t\000"
- 2447      33325F74 
- 2447      00
- 2448              	.LASF108:
- 2449 06f2 5243435F 		.ascii	"RCC_PeriphCLKInitTypeDef\000"
- 2449      50657269 
- 2449      7068434C 
- 2449      4B496E69 
- 2449      74547970 
- 2450              	.LASF43:
- 2451 070b 55534152 		.ascii	"USART2_IRQn\000"
- 2451      54325F49 
- 2451      52516E00 
- 2452              	.LASF4:
- 2453 0717 55736167 		.ascii	"UsageFault_IRQn\000"
- 2453      65466175 
- 2453      6C745F49 
- 2453      52516E00 
- 2454              	.LASF85:
- 2455 0727 48414C5F 		.ascii	"HAL_ERROR\000"
- 2455      4552524F 
- 2455      5200
- 2456              	.LASF83:
-ARM GAS  /tmp/cc35Dpui.s 			page 56
-
-
- 2457 0731 6C6F6E67 		.ascii	"long double\000"
- 2457      20646F75 
- 2457      626C6500 
- 2458              	.LASF147:
- 2459 073d 48414C5F 		.ascii	"HAL_RCC_OscConfig\000"
- 2459      5243435F 
- 2459      4F736343 
- 2459      6F6E6669 
- 2459      6700
- 2460              	.LASF134:
- 2461 074f 75775469 		.ascii	"uwTickPrio\000"
- 2461      636B5072 
- 2461      696F00
- 2462              	.LASF151:
- 2463 075a 48414C5F 		.ascii	"HAL_NVIC_SetPriority\000"
- 2463      4E564943 
- 2463      5F536574 
- 2463      5072696F 
- 2463      72697479 
- 2464              	.LASF33:
- 2465 076f 54494D31 		.ascii	"TIM1_BRK_IRQn\000"
- 2465      5F42524B 
- 2465      5F495251 
- 2465      6E00
- 2466              	.LASF106:
- 2467 077d 41646343 		.ascii	"AdcClockSelection\000"
- 2467      6C6F636B 
- 2467      53656C65 
- 2467      6374696F 
- 2467      6E00
- 2468              	.LASF0:
- 2469 078f 4E6F6E4D 		.ascii	"NonMaskableInt_IRQn\000"
- 2469      61736B61 
- 2469      626C6549 
- 2469      6E745F49 
- 2469      52516E00 
- 2470              	.LASF52:
- 2471 07a3 5F5F696E 		.ascii	"__int32_t\000"
- 2471      7433325F 
- 2471      7400
- 2472              	.LASF25:
- 2473 07ad 444D4131 		.ascii	"DMA1_Channel6_IRQn\000"
- 2473      5F436861 
- 2473      6E6E656C 
- 2473      365F4952 
- 2473      516E00
- 2474              	.LASF11:
- 2475 07c0 54414D50 		.ascii	"TAMPER_IRQn\000"
- 2475      45525F49 
- 2475      52516E00 
- 2476              	.LASF40:
- 2477 07cc 49324331 		.ascii	"I2C1_ER_IRQn\000"
- 2477      5F45525F 
- 2477      4952516E 
- 2477      00
- 2478              	.LASF34:
- 2479 07d9 54494D31 		.ascii	"TIM1_UP_IRQn\000"
-ARM GAS  /tmp/cc35Dpui.s 			page 57
-
-
- 2479      5F55505F 
- 2479      4952516E 
- 2479      00
- 2480              	.LASF46:
- 2481 07e6 55534257 		.ascii	"USBWakeUp_IRQn\000"
- 2481      616B6555 
- 2481      705F4952 
- 2481      516E00
- 2482              	.LASF146:
- 2483 07f5 48414C5F 		.ascii	"HAL_IncTick\000"
- 2483      496E6354 
- 2483      69636B00 
- 2484              	.LASF37:
- 2485 0801 54494D32 		.ascii	"TIM2_IRQn\000"
- 2485      5F495251 
- 2485      6E00
- 2486              	.LASF115:
- 2487 080b 4173796E 		.ascii	"AsynchPrediv\000"
- 2487      63685072 
- 2487      65646976 
- 2487      00
- 2488              	.LASF15:
- 2489 0818 45585449 		.ascii	"EXTI0_IRQn\000"
- 2489      305F4952 
- 2489      516E00
- 2490              	.LASF141:
- 2491 0823 68727463 		.ascii	"hrtc\000"
- 2491      00
- 2492              	.LASF59:
- 2493 0828 75696E74 		.ascii	"uint8_t\000"
- 2493      385F7400 
- 2494              	.LASF95:
- 2495 0830 5243435F 		.ascii	"RCC_PLLInitTypeDef\000"
- 2495      504C4C49 
- 2495      6E697454 
- 2495      79706544 
- 2495      656600
- 2496              	.LASF120:
- 2497 0843 44617465 		.ascii	"Date\000"
- 2497      00
- 2498              	.LASF117:
- 2499 0848 5254435F 		.ascii	"RTC_InitTypeDef\000"
- 2499      496E6974 
- 2499      54797065 
- 2499      44656600 
- 2500              	.LASF26:
- 2501 0858 444D4131 		.ascii	"DMA1_Channel7_IRQn\000"
- 2501      5F436861 
- 2501      6E6E656C 
- 2501      375F4952 
- 2501      516E00
- 2502              	.LASF6:
- 2503 086b 44656275 		.ascii	"DebugMonitor_IRQn\000"
- 2503      674D6F6E 
- 2503      69746F72 
- 2503      5F495251 
- 2503      6E00
-ARM GAS  /tmp/cc35Dpui.s 			page 58
-
-
- 2504              	.LASF89:
- 2505 087d 48414C5F 		.ascii	"HAL_UNLOCKED\000"
- 2505      554E4C4F 
- 2505      434B4544 
- 2505      00
- 2506              	.LASF70:
- 2507 088a 45585449 		.ascii	"EXTI_TypeDef\000"
- 2507      5F547970 
- 2507      65446566 
- 2507      00
- 2508              	.LASF12:
- 2509 0897 5254435F 		.ascii	"RTC_IRQn\000"
- 2509      4952516E 
- 2509      00
- 2510              	.LASF31:
- 2511 08a0 43414E31 		.ascii	"CAN1_SCE_IRQn\000"
- 2511      5F534345 
- 2511      5F495251 
- 2511      6E00
- 2512              	.LASF76:
- 2513 08ae 434E544C 		.ascii	"CNTL\000"
- 2513      00
- 2514              	.LASF14:
- 2515 08b3 5243435F 		.ascii	"RCC_IRQn\000"
- 2515      4952516E 
- 2515      00
- 2516              	.LASF72:
- 2517 08bc 50524C4C 		.ascii	"PRLL\000"
- 2517      00
- 2518              	.LASF38:
- 2519 08c1 54494D33 		.ascii	"TIM3_IRQn\000"
- 2519      5F495251 
- 2519      6E00
- 2520              	.LASF16:
- 2521 08cb 45585449 		.ascii	"EXTI1_IRQn\000"
- 2521      315F4952 
- 2521      516E00
- 2522              		.ident	"GCC: (15:6.3.1+svn253039-1build1) 6.3.1 20170620"
-ARM GAS  /tmp/cc35Dpui.s 			page 59
+ARM GAS  /tmp/ccV36zQ4.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"stm32f1xx_hal_timebase_rtc_alarm_template.c"
+  15              		.section	.text.HAL_InitTick,"ax",%progbits
+  16              		.align	2
+  17              		.global	HAL_InitTick
+  18              		.thumb
+  19              		.thumb_func
+  21              	HAL_InitTick:
+  22              		@ args = 0, pretend = 0, frame = 64
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+  25 0002 91B0     		sub	sp, sp, #68
+  26 0004 0546     		mov	r5, r0
+  27 0006 0023     		movs	r3, #0
+  28 0008 0F93     		str	r3, [sp, #60]
+  29 000a 0122     		movs	r2, #1
+  30 000c 0592     		str	r2, [sp, #20]
+  31 000e 0C93     		str	r3, [sp, #48]
+  32 0010 4FF48033 		mov	r3, #65536
+  33 0014 0693     		str	r3, [sp, #24]
+  34 0016 4FF44073 		mov	r3, #768
+  35 001a 0293     		str	r3, [sp, #8]
+  36 001c 05A8     		add	r0, sp, #20
+  37 001e FFF7FEFF 		bl	HAL_RCC_OscConfig
+  38 0022 0028     		cmp	r0, #0
+  39 0024 6CD1     		bne	.L7
+  40 0026 10A8     		add	r0, sp, #64
+  41 0028 0123     		movs	r3, #1
+  42 002a 40F83C3D 		str	r3, [r0, #-60]!
+  43 002e FFF7FEFF 		bl	HAL_RCCEx_PeriphCLKConfig
+  44 0032 0446     		mov	r4, r0
+  45 0034 0028     		cmp	r0, #0
+  46 0036 65D1     		bne	.L8
+  47 0038 0120     		movs	r0, #1
+  48 003a 364B     		ldr	r3, .L12
+  49 003c 1860     		str	r0, [r3]
+  50 003e 364E     		ldr	r6, .L12+4
+  51 0040 364B     		ldr	r3, .L12+8
+  52 0042 3360     		str	r3, [r6]
+  53 0044 FFF7FEFF 		bl	HAL_RCCEx_GetPeriphCLKFreq
+  54 0048 354B     		ldr	r3, .L12+12
+  55 004a A3FB0023 		umull	r2, r3, r3, r0
+  56 004e 5B0B     		lsrs	r3, r3, #13
+  57 0050 013B     		subs	r3, r3, #1
+  58 0052 7360     		str	r3, [r6, #4]
+ARM GAS  /tmp/ccV36zQ4.s 			page 2
+
+
+  59 0054 0027     		movs	r7, #0
+  60 0056 B760     		str	r7, [r6, #8]
+  61 0058 3046     		mov	r0, r6
+  62 005a FFF7FEFF 		bl	HAL_RTC_Init
+  63 005e 3068     		ldr	r0, [r6]
+  64 0060 4368     		ldr	r3, [r0, #4]
+  65 0062 43F01003 		orr	r3, r3, #16
+  66 0066 4360     		str	r3, [r0, #4]
+  67 0068 6FF00203 		mvn	r3, #2
+  68 006c 4360     		str	r3, [r0, #4]
+  69 006e 0F97     		str	r7, [sp, #60]
+  70 0070 0AE0     		b	.L3
+  71              	.L4:
+  72 0072 0F9A     		ldr	r2, [sp, #60]
+  73 0074 531C     		adds	r3, r2, #1
+  74 0076 0F93     		str	r3, [sp, #60]
+  75 0078 2A4B     		ldr	r3, .L12+16
+  76 007a 1B68     		ldr	r3, [r3]
+  77 007c 2A49     		ldr	r1, .L12+20
+  78 007e A1FB0313 		umull	r1, r3, r1, r3
+  79 0082 B2EB531F 		cmp	r2, r3, lsr #5
+  80 0086 3FD0     		beq	.L9
+  81              	.L3:
+  82 0088 4368     		ldr	r3, [r0, #4]
+  83 008a 13F0020F 		tst	r3, #2
+  84 008e F0D1     		bne	.L4
+  85 0090 0022     		movs	r2, #0
+  86 0092 0262     		str	r2, [r0, #32]
+  87 0094 0923     		movs	r3, #9
+  88 0096 4362     		str	r3, [r0, #36]
+  89 0098 244B     		ldr	r3, .L12+24
+  90 009a 1968     		ldr	r1, [r3]
+  91 009c 41F40031 		orr	r1, r1, #131072
+  92 00a0 1960     		str	r1, [r3]
+  93 00a2 9968     		ldr	r1, [r3, #8]
+  94 00a4 41F40031 		orr	r1, r1, #131072
+  95 00a8 9960     		str	r1, [r3, #8]
+  96 00aa 1B48     		ldr	r0, .L12+4
+  97 00ac 0368     		ldr	r3, [r0]
+  98 00ae 5968     		ldr	r1, [r3, #4]
+  99 00b0 21F00501 		bic	r1, r1, #5
+ 100 00b4 5960     		str	r1, [r3, #4]
+ 101 00b6 9A61     		str	r2, [r3, #24]
+ 102 00b8 DA61     		str	r2, [r3, #28]
+ 103 00ba 1968     		ldr	r1, [r3]
+ 104 00bc 41F00201 		orr	r1, r1, #2
+ 105 00c0 1960     		str	r1, [r3]
+ 106 00c2 0068     		ldr	r0, [r0]
+ 107 00c4 4368     		ldr	r3, [r0, #4]
+ 108 00c6 23F01003 		bic	r3, r3, #16
+ 109 00ca 4360     		str	r3, [r0, #4]
+ 110 00cc 0F92     		str	r2, [sp, #60]
+ 111 00ce 0AE0     		b	.L5
+ 112              	.L6:
+ 113 00d0 0F9A     		ldr	r2, [sp, #60]
+ 114 00d2 531C     		adds	r3, r2, #1
+ 115 00d4 0F93     		str	r3, [sp, #60]
+ARM GAS  /tmp/ccV36zQ4.s 			page 3
+
+
+ 116 00d6 134B     		ldr	r3, .L12+16
+ 117 00d8 1B68     		ldr	r3, [r3]
+ 118 00da 1349     		ldr	r1, .L12+20
+ 119 00dc A1FB0313 		umull	r1, r3, r1, r3
+ 120 00e0 B2EB531F 		cmp	r2, r3, lsr #5
+ 121 00e4 12D0     		beq	.L10
+ 122              	.L5:
+ 123 00e6 4368     		ldr	r3, [r0, #4]
+ 124 00e8 13F0200F 		tst	r3, #32
+ 125 00ec F0D0     		beq	.L6
+ 126 00ee 2920     		movs	r0, #41
+ 127 00f0 2946     		mov	r1, r5
+ 128 00f2 0022     		movs	r2, #0
+ 129 00f4 FFF7FEFF 		bl	HAL_NVIC_SetPriority
+ 130 00f8 2920     		movs	r0, #41
+ 131 00fa FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+ 132 00fe 06E0     		b	.L2
+ 133              	.L7:
+ 134 0100 0124     		movs	r4, #1
+ 135 0102 04E0     		b	.L2
+ 136              	.L8:
+ 137 0104 0124     		movs	r4, #1
+ 138 0106 02E0     		b	.L2
+ 139              	.L9:
+ 140 0108 0124     		movs	r4, #1
+ 141 010a 00E0     		b	.L2
+ 142              	.L10:
+ 143 010c 0124     		movs	r4, #1
+ 144              	.L2:
+ 145 010e 2046     		mov	r0, r4
+ 146 0110 11B0     		add	sp, sp, #68
+ 147              		@ sp needed
+ 148 0112 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 149              	.L13:
+ 150              		.align	2
+ 151              	.L12:
+ 152 0114 3C044242 		.word	1111622716
+ 153 0118 00000000 		.word	hRTC_Handle
+ 154 011c 00280040 		.word	1073752064
+ 155 0120 5917B7D1 		.word	-776530087
+ 156 0124 00000000 		.word	SystemCoreClock
+ 157 0128 ABAAAAAA 		.word	-1431655765
+ 158 012c 00040140 		.word	1073808384
+ 160              		.section	.text.HAL_SuspendTick,"ax",%progbits
+ 161              		.align	2
+ 162              		.global	HAL_SuspendTick
+ 163              		.thumb
+ 164              		.thumb_func
+ 166              	HAL_SuspendTick:
+ 167              		@ args = 0, pretend = 0, frame = 0
+ 168              		@ frame_needed = 0, uses_anonymous_args = 0
+ 169              		@ link register save eliminated.
+ 170 0000 034B     		ldr	r3, .L15
+ 171 0002 1A68     		ldr	r2, [r3]
+ 172 0004 1368     		ldr	r3, [r2]
+ 173 0006 23F00203 		bic	r3, r3, #2
+ 174 000a 1360     		str	r3, [r2]
+ARM GAS  /tmp/ccV36zQ4.s 			page 4
+
+
+ 175 000c 7047     		bx	lr
+ 176              	.L16:
+ 177 000e 00BF     		.align	2
+ 178              	.L15:
+ 179 0010 00000000 		.word	hRTC_Handle
+ 181              		.section	.text.HAL_ResumeTick,"ax",%progbits
+ 182              		.align	2
+ 183              		.global	HAL_ResumeTick
+ 184              		.thumb
+ 185              		.thumb_func
+ 187              	HAL_ResumeTick:
+ 188              		@ args = 0, pretend = 0, frame = 8
+ 189              		@ frame_needed = 0, uses_anonymous_args = 0
+ 190              		@ link register save eliminated.
+ 191 0000 82B0     		sub	sp, sp, #8
+ 192 0002 0022     		movs	r2, #0
+ 193 0004 0192     		str	r2, [sp, #4]
+ 194 0006 1348     		ldr	r0, .L22
+ 195 0008 0368     		ldr	r3, [r0]
+ 196 000a 5968     		ldr	r1, [r3, #4]
+ 197 000c 41F01001 		orr	r1, r1, #16
+ 198 0010 5960     		str	r1, [r3, #4]
+ 199 0012 9A61     		str	r2, [r3, #24]
+ 200 0014 DA61     		str	r2, [r3, #28]
+ 201 0016 5A68     		ldr	r2, [r3, #4]
+ 202 0018 22F00702 		bic	r2, r2, #7
+ 203 001c 5A60     		str	r2, [r3, #4]
+ 204 001e 1A68     		ldr	r2, [r3]
+ 205 0020 42F00202 		orr	r2, r2, #2
+ 206 0024 1A60     		str	r2, [r3]
+ 207 0026 0068     		ldr	r0, [r0]
+ 208 0028 4368     		ldr	r3, [r0, #4]
+ 209 002a 23F01003 		bic	r3, r3, #16
+ 210 002e 4360     		str	r3, [r0, #4]
+ 211 0030 0AE0     		b	.L18
+ 212              	.L20:
+ 213 0032 019A     		ldr	r2, [sp, #4]
+ 214 0034 531C     		adds	r3, r2, #1
+ 215 0036 0193     		str	r3, [sp, #4]
+ 216 0038 074B     		ldr	r3, .L22+4
+ 217 003a 1B68     		ldr	r3, [r3]
+ 218 003c 0749     		ldr	r1, .L22+8
+ 219 003e A1FB0313 		umull	r1, r3, r1, r3
+ 220 0042 B2EB531F 		cmp	r2, r3, lsr #5
+ 221 0046 03D0     		beq	.L17
+ 222              	.L18:
+ 223 0048 4368     		ldr	r3, [r0, #4]
+ 224 004a 13F0200F 		tst	r3, #32
+ 225 004e F0D0     		beq	.L20
+ 226              	.L17:
+ 227 0050 02B0     		add	sp, sp, #8
+ 228              		@ sp needed
+ 229 0052 7047     		bx	lr
+ 230              	.L23:
+ 231              		.align	2
+ 232              	.L22:
+ 233 0054 00000000 		.word	hRTC_Handle
+ARM GAS  /tmp/ccV36zQ4.s 			page 5
+
+
+ 234 0058 00000000 		.word	SystemCoreClock
+ 235 005c ABAAAAAA 		.word	-1431655765
+ 237              		.section	.text.HAL_RTC_AlarmAEventCallback,"ax",%progbits
+ 238              		.align	2
+ 239              		.global	HAL_RTC_AlarmAEventCallback
+ 240              		.thumb
+ 241              		.thumb_func
+ 243              	HAL_RTC_AlarmAEventCallback:
+ 244              		@ args = 0, pretend = 0, frame = 8
+ 245              		@ frame_needed = 0, uses_anonymous_args = 0
+ 246 0000 30B5     		push	{r4, r5, lr}
+ 247 0002 83B0     		sub	sp, sp, #12
+ 248 0004 0446     		mov	r4, r0
+ 249 0006 0025     		movs	r5, #0
+ 250 0008 0195     		str	r5, [sp, #4]
+ 251 000a FFF7FEFF 		bl	HAL_IncTick
+ 252 000e 2268     		ldr	r2, [r4]
+ 253 0010 5368     		ldr	r3, [r2, #4]
+ 254 0012 43F01003 		orr	r3, r3, #16
+ 255 0016 5360     		str	r3, [r2, #4]
+ 256 0018 2368     		ldr	r3, [r4]
+ 257 001a 9D61     		str	r5, [r3, #24]
+ 258 001c 2368     		ldr	r3, [r4]
+ 259 001e DD61     		str	r5, [r3, #28]
+ 260 0020 2268     		ldr	r2, [r4]
+ 261 0022 5368     		ldr	r3, [r2, #4]
+ 262 0024 23F00503 		bic	r3, r3, #5
+ 263 0028 5360     		str	r3, [r2, #4]
+ 264 002a 2268     		ldr	r2, [r4]
+ 265 002c 5368     		ldr	r3, [r2, #4]
+ 266 002e 23F01003 		bic	r3, r3, #16
+ 267 0032 5360     		str	r3, [r2, #4]
+ 268 0034 0AE0     		b	.L25
+ 269              	.L27:
+ 270 0036 019A     		ldr	r2, [sp, #4]
+ 271 0038 531C     		adds	r3, r2, #1
+ 272 003a 0193     		str	r3, [sp, #4]
+ 273 003c 074B     		ldr	r3, .L29
+ 274 003e 1B68     		ldr	r3, [r3]
+ 275 0040 0749     		ldr	r1, .L29+4
+ 276 0042 A1FB0313 		umull	r1, r3, r1, r3
+ 277 0046 B2EB531F 		cmp	r2, r3, lsr #5
+ 278 004a 04D0     		beq	.L24
+ 279              	.L25:
+ 280 004c 2368     		ldr	r3, [r4]
+ 281 004e 5B68     		ldr	r3, [r3, #4]
+ 282 0050 13F0200F 		tst	r3, #32
+ 283 0054 EFD0     		beq	.L27
+ 284              	.L24:
+ 285 0056 03B0     		add	sp, sp, #12
+ 286              		@ sp needed
+ 287 0058 30BD     		pop	{r4, r5, pc}
+ 288              	.L30:
+ 289 005a 00BF     		.align	2
+ 290              	.L29:
+ 291 005c 00000000 		.word	SystemCoreClock
+ 292 0060 ABAAAAAA 		.word	-1431655765
+ARM GAS  /tmp/ccV36zQ4.s 			page 6
+
+
+ 294              		.section	.text.RTC_Alarm_IRQHandler,"ax",%progbits
+ 295              		.align	2
+ 296              		.global	RTC_Alarm_IRQHandler
+ 297              		.thumb
+ 298              		.thumb_func
+ 300              	RTC_Alarm_IRQHandler:
+ 301              		@ args = 0, pretend = 0, frame = 0
+ 302              		@ frame_needed = 0, uses_anonymous_args = 0
+ 303 0000 08B5     		push	{r3, lr}
+ 304 0002 0248     		ldr	r0, .L33
+ 305 0004 FFF7FEFF 		bl	HAL_RTC_AlarmIRQHandler
+ 306 0008 08BD     		pop	{r3, pc}
+ 307              	.L34:
+ 308 000a 00BF     		.align	2
+ 309              	.L33:
+ 310 000c 00000000 		.word	hRTC_Handle
+ 312              		.comm	hRTC_Handle,20,4
+ 313              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/ccV36zQ4.s 			page 7
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32f1xx_hal_timebase_rtc_alarm_template.c
-     /tmp/cc35Dpui.s:70     .text:0000000000000000 $t
-     /tmp/cc35Dpui.s:77     .text:0000000000000000 HAL_InitTick
-     /tmp/cc35Dpui.s:265    .text:00000000000000ec $d
+     /tmp/ccV36zQ4.s:16     .text.HAL_InitTick:0000000000000000 $t
+     /tmp/ccV36zQ4.s:21     .text.HAL_InitTick:0000000000000000 HAL_InitTick
+     /tmp/ccV36zQ4.s:152    .text.HAL_InitTick:0000000000000114 $d
                             *COM*:0000000000000014 hRTC_Handle
-     /tmp/cc35Dpui.s:273    .text:0000000000000100 $t
-     /tmp/cc35Dpui.s:280    .text:0000000000000100 HAL_SuspendTick
-     /tmp/cc35Dpui.s:297    .text:0000000000000110 $d
-     /tmp/cc35Dpui.s:301    .text:0000000000000114 $t
-     /tmp/cc35Dpui.s:308    .text:0000000000000114 HAL_ResumeTick
-     /tmp/cc35Dpui.s:374    .text:0000000000000160 $d
-     /tmp/cc35Dpui.s:379    .text:0000000000000168 $t
-     /tmp/cc35Dpui.s:386    .text:0000000000000168 HAL_RTC_AlarmAEventCallback
-     /tmp/cc35Dpui.s:453    .text:00000000000001b0 $d
-     /tmp/cc35Dpui.s:457    .text:00000000000001b4 $t
-     /tmp/cc35Dpui.s:464    .text:00000000000001b4 RTC_Alarm_IRQHandler
-     /tmp/cc35Dpui.s:478    .text:00000000000001bc $d
-                     .debug_frame:0000000000000010 $d
+     /tmp/ccV36zQ4.s:161    .text.HAL_SuspendTick:0000000000000000 $t
+     /tmp/ccV36zQ4.s:166    .text.HAL_SuspendTick:0000000000000000 HAL_SuspendTick
+     /tmp/ccV36zQ4.s:179    .text.HAL_SuspendTick:0000000000000010 $d
+     /tmp/ccV36zQ4.s:182    .text.HAL_ResumeTick:0000000000000000 $t
+     /tmp/ccV36zQ4.s:187    .text.HAL_ResumeTick:0000000000000000 HAL_ResumeTick
+     /tmp/ccV36zQ4.s:233    .text.HAL_ResumeTick:0000000000000054 $d
+     /tmp/ccV36zQ4.s:238    .text.HAL_RTC_AlarmAEventCallback:0000000000000000 $t
+     /tmp/ccV36zQ4.s:243    .text.HAL_RTC_AlarmAEventCallback:0000000000000000 HAL_RTC_AlarmAEventCallback
+     /tmp/ccV36zQ4.s:291    .text.HAL_RTC_AlarmAEventCallback:000000000000005c $d
+     /tmp/ccV36zQ4.s:295    .text.RTC_Alarm_IRQHandler:0000000000000000 $t
+     /tmp/ccV36zQ4.s:300    .text.RTC_Alarm_IRQHandler:0000000000000000 RTC_Alarm_IRQHandler
+     /tmp/ccV36zQ4.s:310    .text.RTC_Alarm_IRQHandler:000000000000000c $d
 
 UNDEFINED SYMBOLS
 HAL_RCC_OscConfig

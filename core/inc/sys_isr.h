@@ -1,9 +1,5 @@
-#if !defined(__SYS_ISR_HPP__)
-#define __SYS_ISR_HPP__
-
-#ifdef __cplusplus
-extern "C" {
-#endif
+#if !defined(__SYS_ISR_H__)
+#define __SYS_ISR_H__
 
 void NMI_Handler(void);
 void HardFault_Handler(void);
@@ -14,9 +10,5 @@ void SVC_Handler(void);
 void DebugMon_Handler(void);
 void PendSV_Handler(void);
 void SysTick_Handler(void);
-
-#ifdef __cplusplus
-}
-#endif
 
 #endif
