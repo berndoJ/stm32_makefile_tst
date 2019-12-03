@@ -14,6 +14,7 @@ VERSION_MINOR = 0
 CPREFIX = arm-none-eabi-
 CC      = $(CPREFIX)gcc
 CPPC    = $(CC)
+LD      = $(CC)
 OBJCP   = $(CPREFIX)objcopy
 ASM     = $(CPREFIX)gcc -x assembler-with-cpp
 GDBTUI  = $(CPREFIX)gdbtui
@@ -34,6 +35,10 @@ CFLAGS = $(MCUFLAGS) $(OPTIM) -g -gdwarf-2 -mthumb -fomit-frame-pointer -Wall -f
 CPPFLAGS = $(MCUFLAGS) $(OPTIM) -g -gdwarf-2 -mthumb -fomit-frame-pointer -Wall -fverbose-asm -Wa,-ahlms=$(<:.cpp=.lst) $(COMPDEFS)
 ASMFLAGS = $(MCUFLAGS) -g -gdwarf-2 -mthumb -Wa,-amhls=$(<:.s=.lst)
 
+# --- LINKER SETTINGS ---
+LINKERSCRIPT = ./flash/STM32F103X6_FLASH.ld
+LDFLAGS = -T$(LINKERSCRIPT) -mthumb -nostdlib -mcpu=$(MCUTYPE)
+LIBRARIES = 
 
 
 
