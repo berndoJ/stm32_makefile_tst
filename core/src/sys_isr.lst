@@ -1,211 +1,193 @@
-ARM GAS  /tmp/cc674Egv.s 			page 1
+ARM GAS  /tmp/cc995iXs.s 			page 1
 
 
-   1              		.cpu cortex-m3
-   2              		.eabi_attribute 20, 1
-   3              		.eabi_attribute 21, 1
-   4              		.eabi_attribute 23, 3
-   5              		.eabi_attribute 24, 1
-   6              		.eabi_attribute 25, 1
-   7              		.eabi_attribute 26, 1
-   8              		.eabi_attribute 30, 1
-   9              		.eabi_attribute 34, 1
-  10              		.eabi_attribute 18, 4
-  11              		.file	"sys_isr.cpp"
-  12              		.section	.text.NMI_Handler,"ax",%progbits
-  13              		.align	1
-  14              		.global	NMI_Handler
-  15              		.syntax unified
-  16              		.thumb
-  17              		.thumb_func
-  18              		.fpu softvfp
-  20              	NMI_Handler:
-  21              		.fnstart
-  22              	.LFB65:
-  23              		@ args = 0, pretend = 0, frame = 0
-  24              		@ frame_needed = 0, uses_anonymous_args = 0
-  25              		@ link register save eliminated.
-  26 0000 7047     		bx	lr
-  27              		.cantunwind
-  28              		.fnend
-  30              		.section	.text.HardFault_Handler,"ax",%progbits
-  31              		.align	1
-  32              		.global	HardFault_Handler
-  33              		.syntax unified
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"sys_isr.cpp"
+  15              		.section	.text.NMI_Handler,"ax",%progbits
+  16              		.align	1
+  17              		.global	NMI_Handler
+  18              		.thumb
+  19              		.thumb_func
+  21              	NMI_Handler:
+  22              		.fnstart
+  23              	.LFB65:
+  24              		@ args = 0, pretend = 0, frame = 0
+  25              		@ frame_needed = 0, uses_anonymous_args = 0
+  26              		@ link register save eliminated.
+  27 0000 7047     		bx	lr
+  28              		.cantunwind
+  29              		.fnend
+  31              		.section	.text.HardFault_Handler,"ax",%progbits
+  32              		.align	1
+  33              		.global	HardFault_Handler
   34              		.thumb
   35              		.thumb_func
-  36              		.fpu softvfp
-  38              	HardFault_Handler:
-  39              		.fnstart
-  40              	.LFB66:
-  41              		@ Volatile: function does not return.
-  42              		@ args = 0, pretend = 0, frame = 0
-  43              		@ frame_needed = 0, uses_anonymous_args = 0
-  44              		@ link register save eliminated.
-  45              	.L3:
-  46 0000 FEE7     		b	.L3
-  47              		.cantunwind
-  48              		.fnend
-  50              		.section	.text.MemManage_Handler,"ax",%progbits
-  51              		.align	1
-  52              		.global	MemManage_Handler
-  53              		.syntax unified
-  54              		.thumb
-  55              		.thumb_func
-  56              		.fpu softvfp
-  58              	MemManage_Handler:
-  59              		.fnstart
-  60              	.LFB67:
-  61              		@ Volatile: function does not return.
-  62              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  /tmp/cc674Egv.s 			page 2
+  37              	HardFault_Handler:
+  38              		.fnstart
+  39              	.LFB66:
+  40              		@ Volatile: function does not return.
+  41              		@ args = 0, pretend = 0, frame = 0
+  42              		@ frame_needed = 0, uses_anonymous_args = 0
+  43              		@ link register save eliminated.
+  44              	.L3:
+  45 0000 FEE7     		b	.L3
+  46              		.cantunwind
+  47              		.fnend
+  49              		.section	.text.MemManage_Handler,"ax",%progbits
+  50              		.align	1
+  51              		.global	MemManage_Handler
+  52              		.thumb
+  53              		.thumb_func
+  55              	MemManage_Handler:
+  56              		.fnstart
+  57              	.LFB67:
+  58              		@ Volatile: function does not return.
+  59              		@ args = 0, pretend = 0, frame = 0
+  60              		@ frame_needed = 0, uses_anonymous_args = 0
+  61              		@ link register save eliminated.
+  62              	.L5:
+ARM GAS  /tmp/cc995iXs.s 			page 2
 
 
-  63              		@ frame_needed = 0, uses_anonymous_args = 0
-  64              		@ link register save eliminated.
-  65              	.L5:
-  66 0000 FEE7     		b	.L5
-  67              		.cantunwind
-  68              		.fnend
-  70              		.section	.text.BusFault_Handler,"ax",%progbits
-  71              		.align	1
-  72              		.global	BusFault_Handler
-  73              		.syntax unified
-  74              		.thumb
-  75              		.thumb_func
-  76              		.fpu softvfp
-  78              	BusFault_Handler:
-  79              		.fnstart
-  80              	.LFB68:
-  81              		@ Volatile: function does not return.
-  82              		@ args = 0, pretend = 0, frame = 0
-  83              		@ frame_needed = 0, uses_anonymous_args = 0
-  84              		@ link register save eliminated.
-  85              	.L7:
-  86 0000 FEE7     		b	.L7
-  87              		.cantunwind
-  88              		.fnend
-  90              		.section	.text.UsageFault_Handler,"ax",%progbits
-  91              		.align	1
-  92              		.global	UsageFault_Handler
-  93              		.syntax unified
-  94              		.thumb
-  95              		.thumb_func
-  96              		.fpu softvfp
-  98              	UsageFault_Handler:
-  99              		.fnstart
- 100              	.LFB69:
- 101              		@ Volatile: function does not return.
- 102              		@ args = 0, pretend = 0, frame = 0
- 103              		@ frame_needed = 0, uses_anonymous_args = 0
- 104              		@ link register save eliminated.
- 105              	.L9:
- 106 0000 FEE7     		b	.L9
- 107              		.cantunwind
- 108              		.fnend
- 110              		.section	.text.SVC_Handler,"ax",%progbits
- 111              		.align	1
- 112              		.global	SVC_Handler
- 113              		.syntax unified
- 114              		.thumb
- 115              		.thumb_func
- 116              		.fpu softvfp
- 118              	SVC_Handler:
- 119              		.fnstart
- 120              	.LFB70:
- 121              		@ args = 0, pretend = 0, frame = 0
- 122              		@ frame_needed = 0, uses_anonymous_args = 0
- 123              		@ link register save eliminated.
- 124 0000 7047     		bx	lr
- 125              		.cantunwind
-ARM GAS  /tmp/cc674Egv.s 			page 3
+  63 0000 FEE7     		b	.L5
+  64              		.cantunwind
+  65              		.fnend
+  67              		.section	.text.BusFault_Handler,"ax",%progbits
+  68              		.align	1
+  69              		.global	BusFault_Handler
+  70              		.thumb
+  71              		.thumb_func
+  73              	BusFault_Handler:
+  74              		.fnstart
+  75              	.LFB68:
+  76              		@ Volatile: function does not return.
+  77              		@ args = 0, pretend = 0, frame = 0
+  78              		@ frame_needed = 0, uses_anonymous_args = 0
+  79              		@ link register save eliminated.
+  80              	.L7:
+  81 0000 FEE7     		b	.L7
+  82              		.cantunwind
+  83              		.fnend
+  85              		.section	.text.UsageFault_Handler,"ax",%progbits
+  86              		.align	1
+  87              		.global	UsageFault_Handler
+  88              		.thumb
+  89              		.thumb_func
+  91              	UsageFault_Handler:
+  92              		.fnstart
+  93              	.LFB69:
+  94              		@ Volatile: function does not return.
+  95              		@ args = 0, pretend = 0, frame = 0
+  96              		@ frame_needed = 0, uses_anonymous_args = 0
+  97              		@ link register save eliminated.
+  98              	.L9:
+  99 0000 FEE7     		b	.L9
+ 100              		.cantunwind
+ 101              		.fnend
+ 103              		.section	.text.SVC_Handler,"ax",%progbits
+ 104              		.align	1
+ 105              		.global	SVC_Handler
+ 106              		.thumb
+ 107              		.thumb_func
+ 109              	SVC_Handler:
+ 110              		.fnstart
+ 111              	.LFB70:
+ 112              		@ args = 0, pretend = 0, frame = 0
+ 113              		@ frame_needed = 0, uses_anonymous_args = 0
+ 114              		@ link register save eliminated.
+ 115 0000 7047     		bx	lr
+ 116              		.cantunwind
+ 117              		.fnend
+ 119              		.section	.text.DebugMon_Handler,"ax",%progbits
+ 120              		.align	1
+ 121              		.global	DebugMon_Handler
+ 122              		.thumb
+ 123              		.thumb_func
+ 125              	DebugMon_Handler:
+ 126              		.fnstart
+ 127              	.LFB71:
+ARM GAS  /tmp/cc995iXs.s 			page 3
 
 
- 126              		.fnend
- 128              		.section	.text.DebugMon_Handler,"ax",%progbits
- 129              		.align	1
- 130              		.global	DebugMon_Handler
- 131              		.syntax unified
- 132              		.thumb
- 133              		.thumb_func
- 134              		.fpu softvfp
- 136              	DebugMon_Handler:
- 137              		.fnstart
- 138              	.LFB71:
- 139              		@ args = 0, pretend = 0, frame = 0
- 140              		@ frame_needed = 0, uses_anonymous_args = 0
- 141              		@ link register save eliminated.
- 142 0000 7047     		bx	lr
- 143              		.cantunwind
- 144              		.fnend
- 146              		.section	.text.PendSV_Handler,"ax",%progbits
- 147              		.align	1
- 148              		.global	PendSV_Handler
- 149              		.syntax unified
- 150              		.thumb
- 151              		.thumb_func
- 152              		.fpu softvfp
- 154              	PendSV_Handler:
- 155              		.fnstart
- 156              	.LFB72:
- 157              		@ args = 0, pretend = 0, frame = 0
- 158              		@ frame_needed = 0, uses_anonymous_args = 0
- 159              		@ link register save eliminated.
- 160 0000 7047     		bx	lr
- 161              		.cantunwind
- 162              		.fnend
- 164              		.section	.text.SysTick_Handler,"ax",%progbits
- 165              		.align	1
- 166              		.global	SysTick_Handler
- 167              		.syntax unified
- 168              		.thumb
- 169              		.thumb_func
- 170              		.fpu softvfp
- 172              	SysTick_Handler:
- 173              		.fnstart
- 174              	.LFB73:
- 175              		@ args = 0, pretend = 0, frame = 0
- 176              		@ frame_needed = 0, uses_anonymous_args = 0
- 177 0000 08B5     		push	{r3, lr}
- 178              		.save {r3, lr}
- 179 0002 FFF7FEFF 		bl	HAL_IncTick
- 180 0006 08BD     		pop	{r3, pc}
- 181              		.fnend
- 183              		.ident	"GCC: (15:6.3.1+svn253039-1build1) 6.3.1 20170620"
-ARM GAS  /tmp/cc674Egv.s 			page 4
+ 128              		@ args = 0, pretend = 0, frame = 0
+ 129              		@ frame_needed = 0, uses_anonymous_args = 0
+ 130              		@ link register save eliminated.
+ 131 0000 7047     		bx	lr
+ 132              		.cantunwind
+ 133              		.fnend
+ 135              		.section	.text.PendSV_Handler,"ax",%progbits
+ 136              		.align	1
+ 137              		.global	PendSV_Handler
+ 138              		.thumb
+ 139              		.thumb_func
+ 141              	PendSV_Handler:
+ 142              		.fnstart
+ 143              	.LFB72:
+ 144              		@ args = 0, pretend = 0, frame = 0
+ 145              		@ frame_needed = 0, uses_anonymous_args = 0
+ 146              		@ link register save eliminated.
+ 147 0000 7047     		bx	lr
+ 148              		.cantunwind
+ 149              		.fnend
+ 151              		.section	.text.SysTick_Handler,"ax",%progbits
+ 152              		.align	1
+ 153              		.global	SysTick_Handler
+ 154              		.thumb
+ 155              		.thumb_func
+ 157              	SysTick_Handler:
+ 158              		.fnstart
+ 159              	.LFB73:
+ 160              		@ args = 0, pretend = 0, frame = 0
+ 161              		@ frame_needed = 0, uses_anonymous_args = 0
+ 162              		@ link register save eliminated.
+ 163 0000 FFF7FEBF 		b	HAL_IncTick
+ 164              		.cantunwind
+ 165              		.fnend
+ 167              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/cc995iXs.s 			page 4
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 sys_isr.cpp
-     /tmp/cc674Egv.s:13     .text.NMI_Handler:0000000000000000 $t
-     /tmp/cc674Egv.s:20     .text.NMI_Handler:0000000000000000 NMI_Handler
+     /tmp/cc995iXs.s:16     .text.NMI_Handler:0000000000000000 $t
+     /tmp/cc995iXs.s:21     .text.NMI_Handler:0000000000000000 NMI_Handler
       .ARM.exidx.text.NMI_Handler:0000000000000000 $d
-     /tmp/cc674Egv.s:31     .text.HardFault_Handler:0000000000000000 $t
-     /tmp/cc674Egv.s:38     .text.HardFault_Handler:0000000000000000 HardFault_Handler
+     /tmp/cc995iXs.s:32     .text.HardFault_Handler:0000000000000000 $t
+     /tmp/cc995iXs.s:37     .text.HardFault_Handler:0000000000000000 HardFault_Handler
 .ARM.exidx.text.HardFault_Handler:0000000000000000 $d
-     /tmp/cc674Egv.s:51     .text.MemManage_Handler:0000000000000000 $t
-     /tmp/cc674Egv.s:58     .text.MemManage_Handler:0000000000000000 MemManage_Handler
+     /tmp/cc995iXs.s:50     .text.MemManage_Handler:0000000000000000 $t
+     /tmp/cc995iXs.s:55     .text.MemManage_Handler:0000000000000000 MemManage_Handler
 .ARM.exidx.text.MemManage_Handler:0000000000000000 $d
-     /tmp/cc674Egv.s:71     .text.BusFault_Handler:0000000000000000 $t
-     /tmp/cc674Egv.s:78     .text.BusFault_Handler:0000000000000000 BusFault_Handler
+     /tmp/cc995iXs.s:68     .text.BusFault_Handler:0000000000000000 $t
+     /tmp/cc995iXs.s:73     .text.BusFault_Handler:0000000000000000 BusFault_Handler
  .ARM.exidx.text.BusFault_Handler:0000000000000000 $d
-     /tmp/cc674Egv.s:91     .text.UsageFault_Handler:0000000000000000 $t
-     /tmp/cc674Egv.s:98     .text.UsageFault_Handler:0000000000000000 UsageFault_Handler
+     /tmp/cc995iXs.s:86     .text.UsageFault_Handler:0000000000000000 $t
+     /tmp/cc995iXs.s:91     .text.UsageFault_Handler:0000000000000000 UsageFault_Handler
 .ARM.exidx.text.UsageFault_Handler:0000000000000000 $d
-     /tmp/cc674Egv.s:111    .text.SVC_Handler:0000000000000000 $t
-     /tmp/cc674Egv.s:118    .text.SVC_Handler:0000000000000000 SVC_Handler
+     /tmp/cc995iXs.s:104    .text.SVC_Handler:0000000000000000 $t
+     /tmp/cc995iXs.s:109    .text.SVC_Handler:0000000000000000 SVC_Handler
       .ARM.exidx.text.SVC_Handler:0000000000000000 $d
-     /tmp/cc674Egv.s:129    .text.DebugMon_Handler:0000000000000000 $t
-     /tmp/cc674Egv.s:136    .text.DebugMon_Handler:0000000000000000 DebugMon_Handler
+     /tmp/cc995iXs.s:120    .text.DebugMon_Handler:0000000000000000 $t
+     /tmp/cc995iXs.s:125    .text.DebugMon_Handler:0000000000000000 DebugMon_Handler
  .ARM.exidx.text.DebugMon_Handler:0000000000000000 $d
-     /tmp/cc674Egv.s:147    .text.PendSV_Handler:0000000000000000 $t
-     /tmp/cc674Egv.s:154    .text.PendSV_Handler:0000000000000000 PendSV_Handler
+     /tmp/cc995iXs.s:136    .text.PendSV_Handler:0000000000000000 $t
+     /tmp/cc995iXs.s:141    .text.PendSV_Handler:0000000000000000 PendSV_Handler
    .ARM.exidx.text.PendSV_Handler:0000000000000000 $d
-     /tmp/cc674Egv.s:165    .text.SysTick_Handler:0000000000000000 $t
-     /tmp/cc674Egv.s:172    .text.SysTick_Handler:0000000000000000 SysTick_Handler
-  .ARM.extab.text.SysTick_Handler:0000000000000000 $d
+     /tmp/cc995iXs.s:152    .text.SysTick_Handler:0000000000000000 $t
+     /tmp/cc995iXs.s:157    .text.SysTick_Handler:0000000000000000 SysTick_Handler
   .ARM.exidx.text.SysTick_Handler:0000000000000000 $d
 
 UNDEFINED SYMBOLS
 HAL_IncTick
-__aeabi_unwind_cpp_pr1

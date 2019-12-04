@@ -1,46 +1,47 @@
-ARM GAS  /tmp/ccllRnBb.s 			page 1
+ARM GAS  /tmp/ccVRs0nl.s 			page 1
 
 
-   1              		.cpu cortex-m3
-   2              		.eabi_attribute 20, 1
-   3              		.eabi_attribute 21, 1
-   4              		.eabi_attribute 23, 3
-   5              		.eabi_attribute 24, 1
-   6              		.eabi_attribute 25, 1
-   7              		.eabi_attribute 26, 1
-   8              		.eabi_attribute 30, 1
-   9              		.eabi_attribute 34, 1
-  10              		.eabi_attribute 18, 4
-  11              		.file	"main.cpp"
-  12              		.section	.text.main,"ax",%progbits
-  13              		.align	1
-  14              		.global	main
-  15              		.syntax unified
-  16              		.thumb
-  17              		.thumb_func
-  18              		.fpu softvfp
-  20              	main:
-  21              		.fnstart
-  22              	.LFB65:
-  23              		@ args = 0, pretend = 0, frame = 0
-  24              		@ frame_needed = 0, uses_anonymous_args = 0
-  25 0000 08B5     		push	{r3, lr}
-  26              		.save {r3, lr}
-  27 0002 FFF7FEFF 		bl	HAL_Init
-  28 0006 FFF7FEFF 		bl	_Z14SYS_Clock_Initv
-  29              	.L2:
-  30 000a FEE7     		b	.L2
-  31              		.fnend
-  33              		.ident	"GCC: (15:6.3.1+svn253039-1build1) 6.3.1 20170620"
-ARM GAS  /tmp/ccllRnBb.s 			page 2
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"main.cpp"
+  15              		.section	.text.startup.main,"ax",%progbits
+  16              		.align	1
+  17              		.global	main
+  18              		.thumb
+  19              		.thumb_func
+  21              	main:
+  22              		.fnstart
+  23              	.LFB65:
+  24              		@ args = 0, pretend = 0, frame = 0
+  25              		@ frame_needed = 0, uses_anonymous_args = 0
+  26 0000 08B5     		push	{r3, lr}
+  27              		.save {r3, lr}
+  28 0002 FFF7FEFF 		bl	HAL_Init
+  29 0006 FFF7FEFF 		bl	_Z14SYS_Clock_Initv
+  30              	.L2:
+  31 000a FEE7     		b	.L2
+  32              		.fnend
+  34              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/ccVRs0nl.s 			page 2
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 main.cpp
-     /tmp/ccllRnBb.s:13     .text.main:0000000000000000 $t
-     /tmp/ccllRnBb.s:20     .text.main:0000000000000000 main
-             .ARM.extab.text.main:0000000000000000 $d
-             .ARM.exidx.text.main:0000000000000000 $d
+     /tmp/ccVRs0nl.s:16     .text.startup.main:0000000000000000 $t
+     /tmp/ccVRs0nl.s:21     .text.startup.main:0000000000000000 main
+     .ARM.extab.text.startup.main:0000000000000000 $d
+     .ARM.exidx.text.startup.main:0000000000000000 $d
 
 UNDEFINED SYMBOLS
 HAL_Init

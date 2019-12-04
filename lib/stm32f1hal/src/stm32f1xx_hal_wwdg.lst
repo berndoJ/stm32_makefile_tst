@@ -1,130 +1,120 @@
-ARM GAS  /tmp/ccX58Gwp.s 			page 1
+ARM GAS  /tmp/ccdBjira.s 			page 1
 
 
-   1              		.cpu cortex-m3
-   2              		.eabi_attribute 20, 1
-   3              		.eabi_attribute 21, 1
-   4              		.eabi_attribute 23, 3
-   5              		.eabi_attribute 24, 1
-   6              		.eabi_attribute 25, 1
-   7              		.eabi_attribute 26, 1
-   8              		.eabi_attribute 30, 1
-   9              		.eabi_attribute 34, 1
-  10              		.eabi_attribute 18, 4
-  11              		.file	"stm32f1xx_hal_wwdg.c"
-  12              		.section	.text.HAL_WWDG_MspInit,"ax",%progbits
-  13              		.align	1
-  14              		.weak	HAL_WWDG_MspInit
-  15              		.syntax unified
-  16              		.thumb
-  17              		.thumb_func
-  18              		.fpu softvfp
-  20              	HAL_WWDG_MspInit:
-  21              		@ args = 0, pretend = 0, frame = 0
-  22              		@ frame_needed = 0, uses_anonymous_args = 0
-  23              		@ link register save eliminated.
-  24 0000 7047     		bx	lr
-  26              		.section	.text.HAL_WWDG_Init,"ax",%progbits
-  27              		.align	1
-  28              		.global	HAL_WWDG_Init
-  29              		.syntax unified
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"stm32f1xx_hal_wwdg.c"
+  15              		.section	.text.HAL_WWDG_MspInit,"ax",%progbits
+  16              		.align	1
+  17              		.weak	HAL_WWDG_MspInit
+  18              		.thumb
+  19              		.thumb_func
+  21              	HAL_WWDG_MspInit:
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24              		@ link register save eliminated.
+  25 0000 7047     		bx	lr
+  27              		.section	.text.HAL_WWDG_Init,"ax",%progbits
+  28              		.align	1
+  29              		.global	HAL_WWDG_Init
   30              		.thumb
   31              		.thumb_func
-  32              		.fpu softvfp
-  34              	HAL_WWDG_Init:
-  35              		@ args = 0, pretend = 0, frame = 0
-  36              		@ frame_needed = 0, uses_anonymous_args = 0
-  37 0000 88B1     		cbz	r0, .L4
-  38 0002 10B5     		push	{r4, lr}
-  39 0004 0446     		mov	r4, r0
-  40 0006 FFF7FEFF 		bl	HAL_WWDG_MspInit
-  41 000a 2268     		ldr	r2, [r4]
-  42 000c E368     		ldr	r3, [r4, #12]
-  43 000e 43F08003 		orr	r3, r3, #128
-  44 0012 1360     		str	r3, [r2]
-  45 0014 2268     		ldr	r2, [r4]
-  46 0016 2369     		ldr	r3, [r4, #16]
-  47 0018 6168     		ldr	r1, [r4, #4]
-  48 001a 0B43     		orrs	r3, r3, r1
-  49 001c A168     		ldr	r1, [r4, #8]
-  50 001e 0B43     		orrs	r3, r3, r1
-  51 0020 5360     		str	r3, [r2, #4]
-  52 0022 0020     		movs	r0, #0
-  53 0024 10BD     		pop	{r4, pc}
-  54              	.L4:
-  55 0026 0120     		movs	r0, #1
-  56 0028 7047     		bx	lr
-  58              		.section	.text.HAL_WWDG_Refresh,"ax",%progbits
-  59              		.align	1
-  60              		.global	HAL_WWDG_Refresh
-  61              		.syntax unified
-ARM GAS  /tmp/ccX58Gwp.s 			page 2
+  33              	HAL_WWDG_Init:
+  34              		@ args = 0, pretend = 0, frame = 0
+  35              		@ frame_needed = 0, uses_anonymous_args = 0
+  36 0000 10B5     		push	{r4, lr}
+  37 0002 0446     		mov	r4, r0
+  38 0004 70B1     		cbz	r0, .L4
+  39 0006 FFF7FEFF 		bl	HAL_WWDG_MspInit
+  40 000a E368     		ldr	r3, [r4, #12]
+  41 000c 2168     		ldr	r1, [r4]
+  42 000e 43F08003 		orr	r3, r3, #128
+  43 0012 0B60     		str	r3, [r1]
+  44 0014 6268     		ldr	r2, [r4, #4]
+  45 0016 2369     		ldr	r3, [r4, #16]
+  46 0018 0020     		movs	r0, #0
+  47 001a 1A43     		orrs	r2, r2, r3
+  48 001c A368     		ldr	r3, [r4, #8]
+  49 001e 1343     		orrs	r3, r3, r2
+  50 0020 4B60     		str	r3, [r1, #4]
+  51 0022 10BD     		pop	{r4, pc}
+  52              	.L4:
+  53 0024 0120     		movs	r0, #1
+  54 0026 10BD     		pop	{r4, pc}
+  56              		.section	.text.HAL_WWDG_Refresh,"ax",%progbits
+  57              		.align	1
+  58              		.global	HAL_WWDG_Refresh
+  59              		.thumb
+  60              		.thumb_func
+  62              	HAL_WWDG_Refresh:
+ARM GAS  /tmp/ccdBjira.s 			page 2
 
 
-  62              		.thumb
-  63              		.thumb_func
-  64              		.fpu softvfp
-  66              	HAL_WWDG_Refresh:
-  67              		@ args = 0, pretend = 0, frame = 0
-  68              		@ frame_needed = 0, uses_anonymous_args = 0
-  69              		@ link register save eliminated.
-  70 0000 0368     		ldr	r3, [r0]
-  71 0002 C268     		ldr	r2, [r0, #12]
-  72 0004 1A60     		str	r2, [r3]
-  73 0006 0020     		movs	r0, #0
-  74 0008 7047     		bx	lr
-  76              		.section	.text.HAL_WWDG_EarlyWakeupCallback,"ax",%progbits
-  77              		.align	1
-  78              		.weak	HAL_WWDG_EarlyWakeupCallback
-  79              		.syntax unified
-  80              		.thumb
-  81              		.thumb_func
-  82              		.fpu softvfp
-  84              	HAL_WWDG_EarlyWakeupCallback:
-  85              		@ args = 0, pretend = 0, frame = 0
-  86              		@ frame_needed = 0, uses_anonymous_args = 0
-  87              		@ link register save eliminated.
-  88 0000 7047     		bx	lr
-  90              		.section	.text.HAL_WWDG_IRQHandler,"ax",%progbits
-  91              		.align	1
-  92              		.global	HAL_WWDG_IRQHandler
-  93              		.syntax unified
-  94              		.thumb
-  95              		.thumb_func
-  96              		.fpu softvfp
-  98              	HAL_WWDG_IRQHandler:
-  99              		@ args = 0, pretend = 0, frame = 0
- 100              		@ frame_needed = 0, uses_anonymous_args = 0
- 101 0000 08B5     		push	{r3, lr}
- 102 0002 0368     		ldr	r3, [r0]
- 103 0004 5A68     		ldr	r2, [r3, #4]
- 104 0006 12F4007F 		tst	r2, #512
- 105 000a 03D0     		beq	.L11
- 106 000c 9A68     		ldr	r2, [r3, #8]
- 107 000e 12F0010F 		tst	r2, #1
- 108 0012 00D1     		bne	.L14
- 109              	.L11:
- 110 0014 08BD     		pop	{r3, pc}
- 111              	.L14:
- 112 0016 6FF00102 		mvn	r2, #1
- 113 001a 9A60     		str	r2, [r3, #8]
- 114 001c FFF7FEFF 		bl	HAL_WWDG_EarlyWakeupCallback
- 115 0020 F8E7     		b	.L11
- 117              		.ident	"GCC: (15:6.3.1+svn253039-1build1) 6.3.1 20170620"
-ARM GAS  /tmp/ccX58Gwp.s 			page 3
+  63              		@ args = 0, pretend = 0, frame = 0
+  64              		@ frame_needed = 0, uses_anonymous_args = 0
+  65              		@ link register save eliminated.
+  66 0000 0368     		ldr	r3, [r0]
+  67 0002 C268     		ldr	r2, [r0, #12]
+  68 0004 0020     		movs	r0, #0
+  69 0006 1A60     		str	r2, [r3]
+  70 0008 7047     		bx	lr
+  72              		.section	.text.HAL_WWDG_EarlyWakeupCallback,"ax",%progbits
+  73              		.align	1
+  74              		.weak	HAL_WWDG_EarlyWakeupCallback
+  75              		.thumb
+  76              		.thumb_func
+  78              	HAL_WWDG_EarlyWakeupCallback:
+  79              		@ args = 0, pretend = 0, frame = 0
+  80              		@ frame_needed = 0, uses_anonymous_args = 0
+  81              		@ link register save eliminated.
+  82 0000 7047     		bx	lr
+  84              		.section	.text.HAL_WWDG_IRQHandler,"ax",%progbits
+  85              		.align	1
+  86              		.global	HAL_WWDG_IRQHandler
+  87              		.thumb
+  88              		.thumb_func
+  90              	HAL_WWDG_IRQHandler:
+  91              		@ args = 0, pretend = 0, frame = 0
+  92              		@ frame_needed = 0, uses_anonymous_args = 0
+  93 0000 08B5     		push	{r3, lr}
+  94 0002 0368     		ldr	r3, [r0]
+  95 0004 5A68     		ldr	r2, [r3, #4]
+  96 0006 9105     		lsls	r1, r2, #22
+  97 0008 07D5     		bpl	.L8
+  98 000a 9A68     		ldr	r2, [r3, #8]
+  99 000c D207     		lsls	r2, r2, #31
+ 100 000e 04D5     		bpl	.L8
+ 101 0010 6FF00102 		mvn	r2, #1
+ 102 0014 9A60     		str	r2, [r3, #8]
+ 103 0016 FFF7FEFF 		bl	HAL_WWDG_EarlyWakeupCallback
+ 104              	.L8:
+ 105 001a 08BD     		pop	{r3, pc}
+ 107              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/ccdBjira.s 			page 3
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32f1xx_hal_wwdg.c
-     /tmp/ccX58Gwp.s:13     .text.HAL_WWDG_MspInit:0000000000000000 $t
-     /tmp/ccX58Gwp.s:20     .text.HAL_WWDG_MspInit:0000000000000000 HAL_WWDG_MspInit
-     /tmp/ccX58Gwp.s:27     .text.HAL_WWDG_Init:0000000000000000 $t
-     /tmp/ccX58Gwp.s:34     .text.HAL_WWDG_Init:0000000000000000 HAL_WWDG_Init
-     /tmp/ccX58Gwp.s:59     .text.HAL_WWDG_Refresh:0000000000000000 $t
-     /tmp/ccX58Gwp.s:66     .text.HAL_WWDG_Refresh:0000000000000000 HAL_WWDG_Refresh
-     /tmp/ccX58Gwp.s:77     .text.HAL_WWDG_EarlyWakeupCallback:0000000000000000 $t
-     /tmp/ccX58Gwp.s:84     .text.HAL_WWDG_EarlyWakeupCallback:0000000000000000 HAL_WWDG_EarlyWakeupCallback
-     /tmp/ccX58Gwp.s:91     .text.HAL_WWDG_IRQHandler:0000000000000000 $t
-     /tmp/ccX58Gwp.s:98     .text.HAL_WWDG_IRQHandler:0000000000000000 HAL_WWDG_IRQHandler
+     /tmp/ccdBjira.s:16     .text.HAL_WWDG_MspInit:0000000000000000 $t
+     /tmp/ccdBjira.s:21     .text.HAL_WWDG_MspInit:0000000000000000 HAL_WWDG_MspInit
+     /tmp/ccdBjira.s:28     .text.HAL_WWDG_Init:0000000000000000 $t
+     /tmp/ccdBjira.s:33     .text.HAL_WWDG_Init:0000000000000000 HAL_WWDG_Init
+     /tmp/ccdBjira.s:57     .text.HAL_WWDG_Refresh:0000000000000000 $t
+     /tmp/ccdBjira.s:62     .text.HAL_WWDG_Refresh:0000000000000000 HAL_WWDG_Refresh
+     /tmp/ccdBjira.s:73     .text.HAL_WWDG_EarlyWakeupCallback:0000000000000000 $t
+     /tmp/ccdBjira.s:78     .text.HAL_WWDG_EarlyWakeupCallback:0000000000000000 HAL_WWDG_EarlyWakeupCallback
+     /tmp/ccdBjira.s:85     .text.HAL_WWDG_IRQHandler:0000000000000000 $t
+     /tmp/ccdBjira.s:90     .text.HAL_WWDG_IRQHandler:0000000000000000 HAL_WWDG_IRQHandler
 
 NO UNDEFINED SYMBOLS

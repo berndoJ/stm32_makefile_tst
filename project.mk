@@ -15,7 +15,7 @@ VERSION_MINOR = 0
 # --- COMPILER DEFINITIONS ---
 CPREFIX = arm-none-eabi-
 CC      = $(CPREFIX)gcc
-CPPC    = $(CC)
+CPPC    = $(CPREFIX)g++
 LD      = $(CC)
 OBJCP   = $(CPREFIX)objcopy
 ASM     = $(CPREFIX)gcc -x assembler-with-cpp
@@ -31,7 +31,7 @@ CDEFS += -DVERSION_MINOR=$(VERSION_MINOR)
 CDEFS += -DVERSION_STR="$(VERSION_MAJOR).$(VERSION_MINOR)"
 
 # --- COMPILER OPTIMISATION FLAGS ---
-OPTIM = -Og
+OPTIM = -Os
 
 # --- COMPILER FLAGS ---
 MCUFLAGS = -mcpu=$(MCUTYPE) -mthumb

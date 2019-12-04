@@ -1,81 +1,73 @@
-ARM GAS  /tmp/ccu5JwSD.s 			page 1
+ARM GAS  /tmp/ccmT8WjT.s 			page 1
 
 
-   1              		.cpu cortex-m3
-   2              		.eabi_attribute 20, 1
-   3              		.eabi_attribute 21, 1
-   4              		.eabi_attribute 23, 3
-   5              		.eabi_attribute 24, 1
-   6              		.eabi_attribute 25, 1
-   7              		.eabi_attribute 26, 1
-   8              		.eabi_attribute 30, 1
-   9              		.eabi_attribute 34, 1
-  10              		.eabi_attribute 18, 4
-  11              		.file	"stm32f1xx_hal_msp_template.c"
-  12              		.section	.text.HAL_MspInit,"ax",%progbits
-  13              		.align	1
-  14              		.global	HAL_MspInit
-  15              		.syntax unified
-  16              		.thumb
-  17              		.thumb_func
-  18              		.fpu softvfp
-  20              	HAL_MspInit:
-  21              		@ args = 0, pretend = 0, frame = 0
-  22              		@ frame_needed = 0, uses_anonymous_args = 0
-  23              		@ link register save eliminated.
-  24 0000 7047     		bx	lr
-  26              		.section	.text.HAL_MspDeInit,"ax",%progbits
-  27              		.align	1
-  28              		.global	HAL_MspDeInit
-  29              		.syntax unified
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"stm32f1xx_hal_msp_template.c"
+  15              		.section	.text.HAL_MspInit,"ax",%progbits
+  16              		.align	1
+  17              		.global	HAL_MspInit
+  18              		.thumb
+  19              		.thumb_func
+  21              	HAL_MspInit:
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24              		@ link register save eliminated.
+  25 0000 7047     		bx	lr
+  27              		.section	.text.HAL_MspDeInit,"ax",%progbits
+  28              		.align	1
+  29              		.global	HAL_MspDeInit
   30              		.thumb
   31              		.thumb_func
-  32              		.fpu softvfp
-  34              	HAL_MspDeInit:
-  35              		@ args = 0, pretend = 0, frame = 0
-  36              		@ frame_needed = 0, uses_anonymous_args = 0
-  37              		@ link register save eliminated.
-  38 0000 7047     		bx	lr
-  40              		.section	.text.HAL_PPP_MspInit,"ax",%progbits
-  41              		.align	1
-  42              		.global	HAL_PPP_MspInit
-  43              		.syntax unified
-  44              		.thumb
-  45              		.thumb_func
-  46              		.fpu softvfp
-  48              	HAL_PPP_MspInit:
-  49              		@ args = 0, pretend = 0, frame = 0
-  50              		@ frame_needed = 0, uses_anonymous_args = 0
-  51              		@ link register save eliminated.
-  52 0000 7047     		bx	lr
-  54              		.section	.text.HAL_PPP_MspDeInit,"ax",%progbits
-  55              		.align	1
-  56              		.global	HAL_PPP_MspDeInit
-  57              		.syntax unified
-  58              		.thumb
-  59              		.thumb_func
-  60              		.fpu softvfp
-  62              	HAL_PPP_MspDeInit:
-  63              		@ args = 0, pretend = 0, frame = 0
-  64              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/ccu5JwSD.s 			page 2
-
-
-  65              		@ link register save eliminated.
-  66 0000 7047     		bx	lr
-  68              		.ident	"GCC: (15:6.3.1+svn253039-1build1) 6.3.1 20170620"
-ARM GAS  /tmp/ccu5JwSD.s 			page 3
+  33              	HAL_MspDeInit:
+  34              		@ args = 0, pretend = 0, frame = 0
+  35              		@ frame_needed = 0, uses_anonymous_args = 0
+  36              		@ link register save eliminated.
+  37 0000 7047     		bx	lr
+  39              		.section	.text.HAL_PPP_MspInit,"ax",%progbits
+  40              		.align	1
+  41              		.global	HAL_PPP_MspInit
+  42              		.thumb
+  43              		.thumb_func
+  45              	HAL_PPP_MspInit:
+  46              		@ args = 0, pretend = 0, frame = 0
+  47              		@ frame_needed = 0, uses_anonymous_args = 0
+  48              		@ link register save eliminated.
+  49 0000 7047     		bx	lr
+  51              		.section	.text.HAL_PPP_MspDeInit,"ax",%progbits
+  52              		.align	1
+  53              		.global	HAL_PPP_MspDeInit
+  54              		.thumb
+  55              		.thumb_func
+  57              	HAL_PPP_MspDeInit:
+  58              		@ args = 0, pretend = 0, frame = 0
+  59              		@ frame_needed = 0, uses_anonymous_args = 0
+  60              		@ link register save eliminated.
+  61 0000 7047     		bx	lr
+  63              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/ccmT8WjT.s 			page 2
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32f1xx_hal_msp_template.c
-     /tmp/ccu5JwSD.s:13     .text.HAL_MspInit:0000000000000000 $t
-     /tmp/ccu5JwSD.s:20     .text.HAL_MspInit:0000000000000000 HAL_MspInit
-     /tmp/ccu5JwSD.s:27     .text.HAL_MspDeInit:0000000000000000 $t
-     /tmp/ccu5JwSD.s:34     .text.HAL_MspDeInit:0000000000000000 HAL_MspDeInit
-     /tmp/ccu5JwSD.s:41     .text.HAL_PPP_MspInit:0000000000000000 $t
-     /tmp/ccu5JwSD.s:48     .text.HAL_PPP_MspInit:0000000000000000 HAL_PPP_MspInit
-     /tmp/ccu5JwSD.s:55     .text.HAL_PPP_MspDeInit:0000000000000000 $t
-     /tmp/ccu5JwSD.s:62     .text.HAL_PPP_MspDeInit:0000000000000000 HAL_PPP_MspDeInit
+     /tmp/ccmT8WjT.s:16     .text.HAL_MspInit:0000000000000000 $t
+     /tmp/ccmT8WjT.s:21     .text.HAL_MspInit:0000000000000000 HAL_MspInit
+     /tmp/ccmT8WjT.s:28     .text.HAL_MspDeInit:0000000000000000 $t
+     /tmp/ccmT8WjT.s:33     .text.HAL_MspDeInit:0000000000000000 HAL_MspDeInit
+     /tmp/ccmT8WjT.s:40     .text.HAL_PPP_MspInit:0000000000000000 $t
+     /tmp/ccmT8WjT.s:45     .text.HAL_PPP_MspInit:0000000000000000 HAL_PPP_MspInit
+     /tmp/ccmT8WjT.s:52     .text.HAL_PPP_MspDeInit:0000000000000000 $t
+     /tmp/ccmT8WjT.s:57     .text.HAL_PPP_MspDeInit:0000000000000000 HAL_PPP_MspDeInit
 
 NO UNDEFINED SYMBOLS

@@ -19,7 +19,8 @@ MODULE_CORE_DIR = ./core
 SLIBDIRS  = -L $(LIB_STM32F1HAL_DIR)/bin
 SLIBDIRS += -L $(MODULE_CORE_DIR)/bin
 
-SLIBS  = -lmodcore
+SLIBS  = -lc
+SLIBS += -lmodcore
 SLIBS += -lstm32f1hal
 SLIBS += -lc
 SLIBS += -lm
