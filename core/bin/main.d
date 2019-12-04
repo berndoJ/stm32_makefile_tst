@@ -1,4 +1,4 @@
-bin/main.o: src/main.c inc/main.h inc/com.h \
+bin/main.o: src/main.cpp inc/main.hpp inc/com.hpp \
  ../lib/stm32f1hal/inc/stm32f1xx_hal.h \
  ../lib/stm32f1hal/inc/stm32f1xx_hal_conf.h \
  ../lib/stm32f1hal/inc/stm32f1xx_hal_rcc.h \
@@ -47,11 +47,11 @@ bin/main.o: src/main.c inc/main.h inc/com.h \
  ../lib/stm32f1hal/inc/stm32f1xx_ll_usb.h \
  ../lib/stm32f1hal/inc/stm32f1xx_hal_pcd_ex.h \
  ../lib/stm32f1hal/inc/stm32f1xx_hal_hcd.h \
- ../lib/stm32f1hal/inc/stm32f1xx_hal_conf.h inc/sys_clock.h
+ ../lib/stm32f1hal/inc/stm32f1xx_hal_conf.h inc/sys_clock.hpp
 
-inc/main.h:
+inc/main.hpp:
 
-inc/com.h:
+inc/com.hpp:
 
 ../lib/stm32f1hal/inc/stm32f1xx_hal.h:
 
@@ -155,4 +155,4 @@ inc/com.h:
 
 ../lib/stm32f1hal/inc/stm32f1xx_hal_conf.h:
 
-inc/sys_clock.h:
+inc/sys_clock.hpp:

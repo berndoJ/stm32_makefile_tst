@@ -1,179 +1,186 @@
-ARM GAS  /tmp/ccFI1Ohb.s 			page 1
+ARM GAS  /tmp/cc62zp56.s 			page 1
 
 
-   1              		.syntax unified
-   2              		.cpu cortex-m3
-   3              		.fpu softvfp
-   4              		.eabi_attribute 20, 1
-   5              		.eabi_attribute 21, 1
-   6              		.eabi_attribute 23, 3
-   7              		.eabi_attribute 24, 1
-   8              		.eabi_attribute 25, 1
-   9              		.eabi_attribute 26, 1
-  10              		.eabi_attribute 30, 1
-  11              		.eabi_attribute 34, 1
-  12              		.eabi_attribute 18, 4
-  13              		.thumb
-  14              		.file	"stm32f1xx_hal_timebase_tim_template.c"
-  15              		.section	.text.HAL_InitTick,"ax",%progbits
-  16              		.align	2
-  17              		.global	HAL_InitTick
-  18              		.thumb
-  19              		.thumb_func
-  21              	HAL_InitTick:
-  22              		@ args = 0, pretend = 0, frame = 32
-  23              		@ frame_needed = 0, uses_anonymous_args = 0
-  24 0000 00B5     		push	{lr}
-  25 0002 89B0     		sub	sp, sp, #36
-  26 0004 0146     		mov	r1, r0
-  27 0006 1C20     		movs	r0, #28
-  28 0008 0022     		movs	r2, #0
-  29 000a FFF7FEFF 		bl	HAL_NVIC_SetPriority
-  30 000e 1C20     		movs	r0, #28
-  31 0010 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
-  32 0014 184B     		ldr	r3, .L7
-  33 0016 DA69     		ldr	r2, [r3, #28]
-  34 0018 42F00102 		orr	r2, r2, #1
-  35 001c DA61     		str	r2, [r3, #28]
-  36 001e DB69     		ldr	r3, [r3, #28]
-  37 0020 03F00103 		and	r3, r3, #1
-  38 0024 0193     		str	r3, [sp, #4]
-  39 0026 019B     		ldr	r3, [sp, #4]
-  40 0028 03A8     		add	r0, sp, #12
-  41 002a 02A9     		add	r1, sp, #8
-  42 002c FFF7FEFF 		bl	HAL_RCC_GetClockConfig
-  43 0030 069B     		ldr	r3, [sp, #24]
-  44 0032 13B9     		cbnz	r3, .L2
-  45 0034 FFF7FEFF 		bl	HAL_RCC_GetPCLK1Freq
-  46 0038 02E0     		b	.L3
-  47              	.L2:
-  48 003a FFF7FEFF 		bl	HAL_RCC_GetPCLK1Freq
-  49 003e 4000     		lsls	r0, r0, #1
-  50              	.L3:
-  51 0040 0E4B     		ldr	r3, .L7+4
-  52 0042 A3FB0023 		umull	r2, r3, r3, r0
-  53 0046 9B0C     		lsrs	r3, r3, #18
-  54 0048 013B     		subs	r3, r3, #1
-  55 004a 0D48     		ldr	r0, .L7+8
-  56 004c 4FF08042 		mov	r2, #1073741824
-  57 0050 0260     		str	r2, [r0]
-  58 0052 40F2E732 		movw	r2, #999
-ARM GAS  /tmp/ccFI1Ohb.s 			page 2
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"stm32f1xx_hal_timebase_tim_template.c"
+  12              		.section	.text.HAL_InitTick,"ax",%progbits
+  13              		.align	1
+  14              		.global	HAL_InitTick
+  15              		.syntax unified
+  16              		.thumb
+  17              		.thumb_func
+  18              		.fpu softvfp
+  20              	HAL_InitTick:
+  21              		@ args = 0, pretend = 0, frame = 32
+  22              		@ frame_needed = 0, uses_anonymous_args = 0
+  23 0000 00B5     		push	{lr}
+  24 0002 89B0     		sub	sp, sp, #36
+  25 0004 0022     		movs	r2, #0
+  26 0006 0146     		mov	r1, r0
+  27 0008 1C20     		movs	r0, #28
+  28 000a FFF7FEFF 		bl	HAL_NVIC_SetPriority
+  29 000e 1C20     		movs	r0, #28
+  30 0010 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+  31 0014 184B     		ldr	r3, .L8
+  32 0016 DA69     		ldr	r2, [r3, #28]
+  33 0018 42F00102 		orr	r2, r2, #1
+  34 001c DA61     		str	r2, [r3, #28]
+  35 001e DB69     		ldr	r3, [r3, #28]
+  36 0020 03F00103 		and	r3, r3, #1
+  37 0024 0193     		str	r3, [sp, #4]
+  38 0026 019B     		ldr	r3, [sp, #4]
+  39 0028 02A9     		add	r1, sp, #8
+  40 002a 03A8     		add	r0, sp, #12
+  41 002c FFF7FEFF 		bl	HAL_RCC_GetClockConfig
+  42 0030 069B     		ldr	r3, [sp, #24]
+  43 0032 CBB9     		cbnz	r3, .L2
+  44 0034 FFF7FEFF 		bl	HAL_RCC_GetPCLK1Freq
+  45              	.L3:
+  46 0038 104B     		ldr	r3, .L8+4
+  47 003a A3FB0023 		umull	r2, r3, r3, r0
+  48 003e 9B0C     		lsrs	r3, r3, #18
+  49 0040 013B     		subs	r3, r3, #1
+  50 0042 0F48     		ldr	r0, .L8+8
+  51 0044 4FF08042 		mov	r2, #1073741824
+  52 0048 0260     		str	r2, [r0]
+  53 004a 40F2E732 		movw	r2, #999
+  54 004e C260     		str	r2, [r0, #12]
+  55 0050 4360     		str	r3, [r0, #4]
+  56 0052 0023     		movs	r3, #0
+  57 0054 0361     		str	r3, [r0, #16]
+  58 0056 8360     		str	r3, [r0, #8]
+ARM GAS  /tmp/cc62zp56.s 			page 2
 
 
-  59 0056 C260     		str	r2, [r0, #12]
-  60 0058 4360     		str	r3, [r0, #4]
-  61 005a 0023     		movs	r3, #0
-  62 005c 0361     		str	r3, [r0, #16]
-  63 005e 8360     		str	r3, [r0, #8]
-  64 0060 8361     		str	r3, [r0, #24]
-  65 0062 FFF7FEFF 		bl	HAL_TIM_Base_Init
-  66 0066 18B9     		cbnz	r0, .L5
-  67 0068 0548     		ldr	r0, .L7+8
-  68 006a FFF7FEFF 		bl	HAL_TIM_Base_Start_IT
-  69 006e 00E0     		b	.L4
-  70              	.L5:
-  71 0070 0120     		movs	r0, #1
-  72              	.L4:
-  73 0072 09B0     		add	sp, sp, #36
-  74              		@ sp needed
-  75 0074 5DF804FB 		ldr	pc, [sp], #4
-  76              	.L8:
-  77              		.align	2
-  78              	.L7:
-  79 0078 00100240 		.word	1073876992
-  80 007c 83DE1B43 		.word	1125899907
-  81 0080 00000000 		.word	TimHandle
-  83              		.section	.text.HAL_SuspendTick,"ax",%progbits
-  84              		.align	2
-  85              		.global	HAL_SuspendTick
+  59 0058 8361     		str	r3, [r0, #24]
+  60 005a FFF7FEFF 		bl	HAL_TIM_Base_Init
+  61 005e 38B1     		cbz	r0, .L7
+  62 0060 0120     		movs	r0, #1
+  63              	.L4:
+  64 0062 09B0     		add	sp, sp, #36
+  65              		@ sp needed
+  66 0064 5DF804FB 		ldr	pc, [sp], #4
+  67              	.L2:
+  68 0068 FFF7FEFF 		bl	HAL_RCC_GetPCLK1Freq
+  69 006c 4000     		lsls	r0, r0, #1
+  70 006e E3E7     		b	.L3
+  71              	.L7:
+  72 0070 0348     		ldr	r0, .L8+8
+  73 0072 FFF7FEFF 		bl	HAL_TIM_Base_Start_IT
+  74 0076 F4E7     		b	.L4
+  75              	.L9:
+  76              		.align	2
+  77              	.L8:
+  78 0078 00100240 		.word	1073876992
+  79 007c 83DE1B43 		.word	1125899907
+  80 0080 00000000 		.word	TimHandle
+  82              		.section	.text.HAL_SuspendTick,"ax",%progbits
+  83              		.align	1
+  84              		.global	HAL_SuspendTick
+  85              		.syntax unified
   86              		.thumb
   87              		.thumb_func
-  89              	HAL_SuspendTick:
-  90              		@ args = 0, pretend = 0, frame = 0
-  91              		@ frame_needed = 0, uses_anonymous_args = 0
-  92              		@ link register save eliminated.
-  93 0000 034B     		ldr	r3, .L10
-  94 0002 1A68     		ldr	r2, [r3]
-  95 0004 D368     		ldr	r3, [r2, #12]
-  96 0006 23F00103 		bic	r3, r3, #1
-  97 000a D360     		str	r3, [r2, #12]
-  98 000c 7047     		bx	lr
-  99              	.L11:
- 100 000e 00BF     		.align	2
- 101              	.L10:
- 102 0010 00000000 		.word	TimHandle
- 104              		.section	.text.HAL_ResumeTick,"ax",%progbits
- 105              		.align	2
- 106              		.global	HAL_ResumeTick
- 107              		.thumb
- 108              		.thumb_func
- 110              	HAL_ResumeTick:
- 111              		@ args = 0, pretend = 0, frame = 0
- 112              		@ frame_needed = 0, uses_anonymous_args = 0
- 113              		@ link register save eliminated.
- 114 0000 034B     		ldr	r3, .L13
- 115 0002 1A68     		ldr	r2, [r3]
- 116 0004 D368     		ldr	r3, [r2, #12]
- 117 0006 43F00103 		orr	r3, r3, #1
- 118 000a D360     		str	r3, [r2, #12]
- 119 000c 7047     		bx	lr
-ARM GAS  /tmp/ccFI1Ohb.s 			page 3
+  88              		.fpu softvfp
+  90              	HAL_SuspendTick:
+  91              		@ args = 0, pretend = 0, frame = 0
+  92              		@ frame_needed = 0, uses_anonymous_args = 0
+  93              		@ link register save eliminated.
+  94 0000 034B     		ldr	r3, .L11
+  95 0002 1A68     		ldr	r2, [r3]
+  96 0004 D368     		ldr	r3, [r2, #12]
+  97 0006 23F00103 		bic	r3, r3, #1
+  98 000a D360     		str	r3, [r2, #12]
+  99 000c 7047     		bx	lr
+ 100              	.L12:
+ 101 000e 00BF     		.align	2
+ 102              	.L11:
+ 103 0010 00000000 		.word	TimHandle
+ 105              		.section	.text.HAL_ResumeTick,"ax",%progbits
+ 106              		.align	1
+ 107              		.global	HAL_ResumeTick
+ 108              		.syntax unified
+ 109              		.thumb
+ 110              		.thumb_func
+ 111              		.fpu softvfp
+ 113              	HAL_ResumeTick:
+ 114              		@ args = 0, pretend = 0, frame = 0
+ 115              		@ frame_needed = 0, uses_anonymous_args = 0
+ 116              		@ link register save eliminated.
+ 117 0000 034B     		ldr	r3, .L14
+ 118 0002 1A68     		ldr	r2, [r3]
+ 119 0004 D368     		ldr	r3, [r2, #12]
+ARM GAS  /tmp/cc62zp56.s 			page 3
 
 
- 120              	.L14:
- 121 000e 00BF     		.align	2
- 122              	.L13:
- 123 0010 00000000 		.word	TimHandle
- 125              		.section	.text.HAL_TIM_PeriodElapsedCallback,"ax",%progbits
- 126              		.align	2
- 127              		.global	HAL_TIM_PeriodElapsedCallback
- 128              		.thumb
- 129              		.thumb_func
- 131              	HAL_TIM_PeriodElapsedCallback:
- 132              		@ args = 0, pretend = 0, frame = 0
- 133              		@ frame_needed = 0, uses_anonymous_args = 0
- 134 0000 08B5     		push	{r3, lr}
- 135 0002 FFF7FEFF 		bl	HAL_IncTick
- 136 0006 08BD     		pop	{r3, pc}
- 138              		.section	.text.TIM2_IRQHandler,"ax",%progbits
- 139              		.align	2
- 140              		.global	TIM2_IRQHandler
- 141              		.thumb
- 142              		.thumb_func
- 144              	TIM2_IRQHandler:
- 145              		@ args = 0, pretend = 0, frame = 0
- 146              		@ frame_needed = 0, uses_anonymous_args = 0
- 147 0000 08B5     		push	{r3, lr}
- 148 0002 0248     		ldr	r0, .L19
- 149 0004 FFF7FEFF 		bl	HAL_TIM_IRQHandler
- 150 0008 08BD     		pop	{r3, pc}
- 151              	.L20:
- 152 000a 00BF     		.align	2
- 153              	.L19:
- 154 000c 00000000 		.word	TimHandle
- 156              		.comm	TimHandle,64,4
- 157              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
-ARM GAS  /tmp/ccFI1Ohb.s 			page 4
+ 120 0006 43F00103 		orr	r3, r3, #1
+ 121 000a D360     		str	r3, [r2, #12]
+ 122 000c 7047     		bx	lr
+ 123              	.L15:
+ 124 000e 00BF     		.align	2
+ 125              	.L14:
+ 126 0010 00000000 		.word	TimHandle
+ 128              		.section	.text.HAL_TIM_PeriodElapsedCallback,"ax",%progbits
+ 129              		.align	1
+ 130              		.global	HAL_TIM_PeriodElapsedCallback
+ 131              		.syntax unified
+ 132              		.thumb
+ 133              		.thumb_func
+ 134              		.fpu softvfp
+ 136              	HAL_TIM_PeriodElapsedCallback:
+ 137              		@ args = 0, pretend = 0, frame = 0
+ 138              		@ frame_needed = 0, uses_anonymous_args = 0
+ 139 0000 08B5     		push	{r3, lr}
+ 140 0002 FFF7FEFF 		bl	HAL_IncTick
+ 141 0006 08BD     		pop	{r3, pc}
+ 143              		.section	.text.TIM2_IRQHandler,"ax",%progbits
+ 144              		.align	1
+ 145              		.global	TIM2_IRQHandler
+ 146              		.syntax unified
+ 147              		.thumb
+ 148              		.thumb_func
+ 149              		.fpu softvfp
+ 151              	TIM2_IRQHandler:
+ 152              		@ args = 0, pretend = 0, frame = 0
+ 153              		@ frame_needed = 0, uses_anonymous_args = 0
+ 154 0000 08B5     		push	{r3, lr}
+ 155 0002 0248     		ldr	r0, .L20
+ 156 0004 FFF7FEFF 		bl	HAL_TIM_IRQHandler
+ 157 0008 08BD     		pop	{r3, pc}
+ 158              	.L21:
+ 159 000a 00BF     		.align	2
+ 160              	.L20:
+ 161 000c 00000000 		.word	TimHandle
+ 163              		.comm	TimHandle,64,4
+ 164              		.ident	"GCC: (15:6.3.1+svn253039-1build1) 6.3.1 20170620"
+ARM GAS  /tmp/cc62zp56.s 			page 4
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32f1xx_hal_timebase_tim_template.c
-     /tmp/ccFI1Ohb.s:16     .text.HAL_InitTick:0000000000000000 $t
-     /tmp/ccFI1Ohb.s:21     .text.HAL_InitTick:0000000000000000 HAL_InitTick
-     /tmp/ccFI1Ohb.s:79     .text.HAL_InitTick:0000000000000078 $d
+     /tmp/cc62zp56.s:13     .text.HAL_InitTick:0000000000000000 $t
+     /tmp/cc62zp56.s:20     .text.HAL_InitTick:0000000000000000 HAL_InitTick
+     /tmp/cc62zp56.s:78     .text.HAL_InitTick:0000000000000078 $d
                             *COM*:0000000000000040 TimHandle
-     /tmp/ccFI1Ohb.s:84     .text.HAL_SuspendTick:0000000000000000 $t
-     /tmp/ccFI1Ohb.s:89     .text.HAL_SuspendTick:0000000000000000 HAL_SuspendTick
-     /tmp/ccFI1Ohb.s:102    .text.HAL_SuspendTick:0000000000000010 $d
-     /tmp/ccFI1Ohb.s:105    .text.HAL_ResumeTick:0000000000000000 $t
-     /tmp/ccFI1Ohb.s:110    .text.HAL_ResumeTick:0000000000000000 HAL_ResumeTick
-     /tmp/ccFI1Ohb.s:123    .text.HAL_ResumeTick:0000000000000010 $d
-     /tmp/ccFI1Ohb.s:126    .text.HAL_TIM_PeriodElapsedCallback:0000000000000000 $t
-     /tmp/ccFI1Ohb.s:131    .text.HAL_TIM_PeriodElapsedCallback:0000000000000000 HAL_TIM_PeriodElapsedCallback
-     /tmp/ccFI1Ohb.s:139    .text.TIM2_IRQHandler:0000000000000000 $t
-     /tmp/ccFI1Ohb.s:144    .text.TIM2_IRQHandler:0000000000000000 TIM2_IRQHandler
-     /tmp/ccFI1Ohb.s:154    .text.TIM2_IRQHandler:000000000000000c $d
+     /tmp/cc62zp56.s:83     .text.HAL_SuspendTick:0000000000000000 $t
+     /tmp/cc62zp56.s:90     .text.HAL_SuspendTick:0000000000000000 HAL_SuspendTick
+     /tmp/cc62zp56.s:103    .text.HAL_SuspendTick:0000000000000010 $d
+     /tmp/cc62zp56.s:106    .text.HAL_ResumeTick:0000000000000000 $t
+     /tmp/cc62zp56.s:113    .text.HAL_ResumeTick:0000000000000000 HAL_ResumeTick
+     /tmp/cc62zp56.s:126    .text.HAL_ResumeTick:0000000000000010 $d
+     /tmp/cc62zp56.s:129    .text.HAL_TIM_PeriodElapsedCallback:0000000000000000 $t
+     /tmp/cc62zp56.s:136    .text.HAL_TIM_PeriodElapsedCallback:0000000000000000 HAL_TIM_PeriodElapsedCallback
+     /tmp/cc62zp56.s:144    .text.TIM2_IRQHandler:0000000000000000 $t
+     /tmp/cc62zp56.s:151    .text.TIM2_IRQHandler:0000000000000000 TIM2_IRQHandler
+     /tmp/cc62zp56.s:161    .text.TIM2_IRQHandler:000000000000000c $d
 
 UNDEFINED SYMBOLS
 HAL_NVIC_SetPriority

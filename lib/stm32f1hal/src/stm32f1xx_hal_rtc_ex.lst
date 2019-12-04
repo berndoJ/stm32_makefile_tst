@@ -1,533 +1,553 @@
-ARM GAS  /tmp/ccINJrv0.s 			page 1
+ARM GAS  /tmp/ccJDpv5s.s 			page 1
 
 
-   1              		.syntax unified
-   2              		.cpu cortex-m3
-   3              		.fpu softvfp
-   4              		.eabi_attribute 20, 1
-   5              		.eabi_attribute 21, 1
-   6              		.eabi_attribute 23, 3
-   7              		.eabi_attribute 24, 1
-   8              		.eabi_attribute 25, 1
-   9              		.eabi_attribute 26, 1
-  10              		.eabi_attribute 30, 1
-  11              		.eabi_attribute 34, 1
-  12              		.eabi_attribute 18, 4
-  13              		.thumb
-  14              		.file	"stm32f1xx_hal_rtc_ex.c"
-  15              		.section	.text.HAL_RTCEx_SetTamper,"ax",%progbits
-  16              		.align	2
-  17              		.global	HAL_RTCEx_SetTamper
-  18              		.thumb
-  19              		.thumb_func
-  21              	HAL_RTCEx_SetTamper:
-  22              		@ args = 0, pretend = 0, frame = 0
-  23              		@ frame_needed = 0, uses_anonymous_args = 0
-  24              		@ link register save eliminated.
-  25 0000 10B3     		cbz	r0, .L4
-  26 0002 0346     		mov	r3, r0
-  27 0004 11B3     		cbz	r1, .L5
-  28 0006 027C     		ldrb	r2, [r0, #16]	@ zero_extendqisi2
-  29 0008 012A     		cmp	r2, #1
-  30 000a 21D0     		beq	.L6
-  31 000c 0122     		movs	r2, #1
-  32 000e 0274     		strb	r2, [r0, #16]
-  33 0010 0222     		movs	r2, #2
-  34 0012 4274     		strb	r2, [r0, #17]
-  35 0014 114A     		ldr	r2, .L9
-  36 0016 D26A     		ldr	r2, [r2, #44]
-  37 0018 12F4C07F 		tst	r2, #384
-  38 001c 05D0     		beq	.L3
-  39 001e 0422     		movs	r2, #4
-  40 0020 4274     		strb	r2, [r0, #17]
-  41 0022 0022     		movs	r2, #0
-  42 0024 0274     		strb	r2, [r0, #16]
-  43 0026 0120     		movs	r0, #1
-  44 0028 7047     		bx	lr
-  45              	.L3:
-  46 002a 10B4     		push	{r4}
-  47 002c 0B4C     		ldr	r4, .L9
-  48 002e 226B     		ldr	r2, [r4, #48]
-  49 0030 22F00300 		bic	r0, r2, #3
-  50 0034 0A68     		ldr	r2, [r1]
-  51 0036 4968     		ldr	r1, [r1, #4]
-  52 0038 0A43     		orrs	r2, r2, r1
-  53 003a 0243     		orrs	r2, r2, r0
-  54 003c 2263     		str	r2, [r4, #48]
-  55 003e 0122     		movs	r2, #1
-  56 0040 5A74     		strb	r2, [r3, #17]
-  57 0042 0020     		movs	r0, #0
-  58 0044 1874     		strb	r0, [r3, #16]
-ARM GAS  /tmp/ccINJrv0.s 			page 2
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"stm32f1xx_hal_rtc_ex.c"
+  12              		.section	.text.HAL_RTCEx_SetTamper,"ax",%progbits
+  13              		.align	1
+  14              		.global	HAL_RTCEx_SetTamper
+  15              		.syntax unified
+  16              		.thumb
+  17              		.thumb_func
+  18              		.fpu softvfp
+  20              	HAL_RTCEx_SetTamper:
+  21              		@ args = 0, pretend = 0, frame = 0
+  22              		@ frame_needed = 0, uses_anonymous_args = 0
+  23              		@ link register save eliminated.
+  24 0000 18B3     		cbz	r0, .L4
+  25 0002 0346     		mov	r3, r0
+  26 0004 19B3     		cbz	r1, .L5
+  27 0006 027C     		ldrb	r2, [r0, #16]	@ zero_extendqisi2
+  28 0008 012A     		cmp	r2, #1
+  29 000a 22D0     		beq	.L6
+  30 000c 0122     		movs	r2, #1
+  31 000e 0274     		strb	r2, [r0, #16]
+  32 0010 0222     		movs	r2, #2
+  33 0012 4274     		strb	r2, [r0, #17]
+  34 0014 104A     		ldr	r2, .L11
+  35 0016 D26A     		ldr	r2, [r2, #44]
+  36 0018 12F4C07F 		tst	r2, #384
+  37 001c 0FD1     		bne	.L10
+  38 001e 10B4     		push	{r4}
+  39 0020 0D4C     		ldr	r4, .L11
+  40 0022 226B     		ldr	r2, [r4, #48]
+  41 0024 22F00302 		bic	r2, r2, #3
+  42 0028 0868     		ldr	r0, [r1]
+  43 002a 4968     		ldr	r1, [r1, #4]
+  44 002c 0143     		orrs	r1, r1, r0
+  45 002e 0A43     		orrs	r2, r2, r1
+  46 0030 2263     		str	r2, [r4, #48]
+  47 0032 0122     		movs	r2, #1
+  48 0034 5A74     		strb	r2, [r3, #17]
+  49 0036 0020     		movs	r0, #0
+  50 0038 1874     		strb	r0, [r3, #16]
+  51 003a 10BC     		pop	{r4}
+  52 003c 7047     		bx	lr
+  53              	.L10:
+  54 003e 0422     		movs	r2, #4
+  55 0040 4274     		strb	r2, [r0, #17]
+  56 0042 0022     		movs	r2, #0
+  57 0044 0274     		strb	r2, [r0, #16]
+  58 0046 0120     		movs	r0, #1
+ARM GAS  /tmp/ccJDpv5s.s 			page 2
 
 
-  59 0046 05E0     		b	.L2
+  59 0048 7047     		bx	lr
   60              	.L4:
-  61 0048 0120     		movs	r0, #1
-  62 004a 7047     		bx	lr
+  61 004a 0120     		movs	r0, #1
+  62 004c 7047     		bx	lr
   63              	.L5:
-  64 004c 0120     		movs	r0, #1
-  65 004e 7047     		bx	lr
+  64 004e 0120     		movs	r0, #1
+  65 0050 7047     		bx	lr
   66              	.L6:
-  67 0050 0220     		movs	r0, #2
-  68 0052 7047     		bx	lr
-  69              	.L2:
-  70 0054 5DF8044B 		ldr	r4, [sp], #4
-  71 0058 7047     		bx	lr
-  72              	.L10:
-  73 005a 00BF     		.align	2
-  74              	.L9:
-  75 005c 006C0040 		.word	1073769472
-  77              		.section	.text.HAL_RTCEx_SetTamper_IT,"ax",%progbits
-  78              		.align	2
-  79              		.global	HAL_RTCEx_SetTamper_IT
-  80              		.thumb
-  81              		.thumb_func
-  83              	HAL_RTCEx_SetTamper_IT:
-  84              		@ args = 0, pretend = 0, frame = 0
-  85              		@ frame_needed = 0, uses_anonymous_args = 0
-  86              		@ link register save eliminated.
-  87 0000 30B3     		cbz	r0, .L14
-  88 0002 0346     		mov	r3, r0
-  89 0004 31B3     		cbz	r1, .L15
-  90 0006 027C     		ldrb	r2, [r0, #16]	@ zero_extendqisi2
-  91 0008 012A     		cmp	r2, #1
-  92 000a 25D0     		beq	.L16
-  93 000c 0122     		movs	r2, #1
-  94 000e 0274     		strb	r2, [r0, #16]
-  95 0010 0222     		movs	r2, #2
-  96 0012 4274     		strb	r2, [r0, #17]
-  97 0014 134A     		ldr	r2, .L19
-  98 0016 D26A     		ldr	r2, [r2, #44]
-  99 0018 12F4C07F 		tst	r2, #384
- 100 001c 05D0     		beq	.L13
- 101 001e 0422     		movs	r2, #4
- 102 0020 4274     		strb	r2, [r0, #17]
- 103 0022 0022     		movs	r2, #0
- 104 0024 0274     		strb	r2, [r0, #16]
- 105 0026 0120     		movs	r0, #1
- 106 0028 7047     		bx	lr
- 107              	.L13:
- 108 002a 10B4     		push	{r4}
- 109 002c 0D48     		ldr	r0, .L19
- 110 002e 026B     		ldr	r2, [r0, #48]
- 111 0030 22F00304 		bic	r4, r2, #3
- 112 0034 0A68     		ldr	r2, [r1]
- 113 0036 4968     		ldr	r1, [r1, #4]
- 114 0038 0A43     		orrs	r2, r2, r1
- 115 003a 2243     		orrs	r2, r2, r4
- 116 003c 0263     		str	r2, [r0, #48]
- 117 003e 426B     		ldr	r2, [r0, #52]
-ARM GAS  /tmp/ccINJrv0.s 			page 3
+  67 0052 0220     		movs	r0, #2
+  68 0054 7047     		bx	lr
+  69              	.L12:
+  70 0056 00BF     		.align	2
+  71              	.L11:
+  72 0058 006C0040 		.word	1073769472
+  74              		.section	.text.HAL_RTCEx_SetTamper_IT,"ax",%progbits
+  75              		.align	1
+  76              		.global	HAL_RTCEx_SetTamper_IT
+  77              		.syntax unified
+  78              		.thumb
+  79              		.thumb_func
+  80              		.fpu softvfp
+  82              	HAL_RTCEx_SetTamper_IT:
+  83              		@ args = 0, pretend = 0, frame = 0
+  84              		@ frame_needed = 0, uses_anonymous_args = 0
+  85              		@ link register save eliminated.
+  86 0000 38B3     		cbz	r0, .L16
+  87 0002 0346     		mov	r3, r0
+  88 0004 39B3     		cbz	r1, .L17
+  89 0006 027C     		ldrb	r2, [r0, #16]	@ zero_extendqisi2
+  90 0008 012A     		cmp	r2, #1
+  91 000a 26D0     		beq	.L18
+  92 000c 0122     		movs	r2, #1
+  93 000e 0274     		strb	r2, [r0, #16]
+  94 0010 0222     		movs	r2, #2
+  95 0012 4274     		strb	r2, [r0, #17]
+  96 0014 124A     		ldr	r2, .L23
+  97 0016 D26A     		ldr	r2, [r2, #44]
+  98 0018 12F4C07F 		tst	r2, #384
+  99 001c 13D1     		bne	.L22
+ 100 001e 10B4     		push	{r4}
+ 101 0020 0F48     		ldr	r0, .L23
+ 102 0022 026B     		ldr	r2, [r0, #48]
+ 103 0024 22F00302 		bic	r2, r2, #3
+ 104 0028 0C68     		ldr	r4, [r1]
+ 105 002a 4968     		ldr	r1, [r1, #4]
+ 106 002c 2143     		orrs	r1, r1, r4
+ 107 002e 0A43     		orrs	r2, r2, r1
+ 108 0030 0263     		str	r2, [r0, #48]
+ 109 0032 426B     		ldr	r2, [r0, #52]
+ 110 0034 42F00402 		orr	r2, r2, #4
+ 111 0038 4263     		str	r2, [r0, #52]
+ 112 003a 0122     		movs	r2, #1
+ 113 003c 5A74     		strb	r2, [r3, #17]
+ 114 003e 0020     		movs	r0, #0
+ 115 0040 1874     		strb	r0, [r3, #16]
+ 116 0042 10BC     		pop	{r4}
+ 117 0044 7047     		bx	lr
+ARM GAS  /tmp/ccJDpv5s.s 			page 3
 
 
- 118 0040 42F00402 		orr	r2, r2, #4
- 119 0044 4263     		str	r2, [r0, #52]
- 120 0046 0122     		movs	r2, #1
- 121 0048 5A74     		strb	r2, [r3, #17]
- 122 004a 0020     		movs	r0, #0
- 123 004c 1874     		strb	r0, [r3, #16]
- 124 004e 05E0     		b	.L12
- 125              	.L14:
- 126 0050 0120     		movs	r0, #1
- 127 0052 7047     		bx	lr
- 128              	.L15:
- 129 0054 0120     		movs	r0, #1
- 130 0056 7047     		bx	lr
- 131              	.L16:
- 132 0058 0220     		movs	r0, #2
- 133 005a 7047     		bx	lr
- 134              	.L12:
- 135 005c 5DF8044B 		ldr	r4, [sp], #4
- 136 0060 7047     		bx	lr
- 137              	.L20:
- 138 0062 00BF     		.align	2
- 139              	.L19:
- 140 0064 006C0040 		.word	1073769472
- 142              		.section	.text.HAL_RTCEx_DeactivateTamper,"ax",%progbits
- 143              		.align	2
- 144              		.global	HAL_RTCEx_DeactivateTamper
- 145              		.thumb
- 146              		.thumb_func
- 148              	HAL_RTCEx_DeactivateTamper:
- 149              		@ args = 0, pretend = 0, frame = 0
- 150              		@ frame_needed = 0, uses_anonymous_args = 0
- 151              		@ link register save eliminated.
- 152 0000 0246     		mov	r2, r0
- 153 0002 D0B1     		cbz	r0, .L23
- 154 0004 037C     		ldrb	r3, [r0, #16]	@ zero_extendqisi2
- 155 0006 012B     		cmp	r3, #1
- 156 0008 19D0     		beq	.L24
- 157 000a 0120     		movs	r0, #1
- 158 000c 1074     		strb	r0, [r2, #16]
- 159 000e 0223     		movs	r3, #2
- 160 0010 5374     		strb	r3, [r2, #17]
- 161 0012 0C4B     		ldr	r3, .L25
- 162 0014 196B     		ldr	r1, [r3, #48]
- 163 0016 21F00101 		bic	r1, r1, #1
- 164 001a 1963     		str	r1, [r3, #48]
- 165 001c 596B     		ldr	r1, [r3, #52]
- 166 001e 21F00401 		bic	r1, r1, #4
- 167 0022 5963     		str	r1, [r3, #52]
- 168 0024 596B     		ldr	r1, [r3, #52]
- 169 0026 41F00301 		orr	r1, r1, #3
- 170 002a 5963     		str	r1, [r3, #52]
- 171 002c 596B     		ldr	r1, [r3, #52]
- 172 002e 0143     		orrs	r1, r1, r0
- 173 0030 5963     		str	r1, [r3, #52]
- 174 0032 5074     		strb	r0, [r2, #17]
- 175 0034 0020     		movs	r0, #0
- 176 0036 1074     		strb	r0, [r2, #16]
-ARM GAS  /tmp/ccINJrv0.s 			page 4
+ 118              	.L22:
+ 119 0046 0422     		movs	r2, #4
+ 120 0048 4274     		strb	r2, [r0, #17]
+ 121 004a 0022     		movs	r2, #0
+ 122 004c 0274     		strb	r2, [r0, #16]
+ 123 004e 0120     		movs	r0, #1
+ 124 0050 7047     		bx	lr
+ 125              	.L16:
+ 126 0052 0120     		movs	r0, #1
+ 127 0054 7047     		bx	lr
+ 128              	.L17:
+ 129 0056 0120     		movs	r0, #1
+ 130 0058 7047     		bx	lr
+ 131              	.L18:
+ 132 005a 0220     		movs	r0, #2
+ 133 005c 7047     		bx	lr
+ 134              	.L24:
+ 135 005e 00BF     		.align	2
+ 136              	.L23:
+ 137 0060 006C0040 		.word	1073769472
+ 139              		.section	.text.HAL_RTCEx_DeactivateTamper,"ax",%progbits
+ 140              		.align	1
+ 141              		.global	HAL_RTCEx_DeactivateTamper
+ 142              		.syntax unified
+ 143              		.thumb
+ 144              		.thumb_func
+ 145              		.fpu softvfp
+ 147              	HAL_RTCEx_DeactivateTamper:
+ 148              		@ args = 0, pretend = 0, frame = 0
+ 149              		@ frame_needed = 0, uses_anonymous_args = 0
+ 150              		@ link register save eliminated.
+ 151 0000 0246     		mov	r2, r0
+ 152 0002 D0B1     		cbz	r0, .L27
+ 153 0004 037C     		ldrb	r3, [r0, #16]	@ zero_extendqisi2
+ 154 0006 012B     		cmp	r3, #1
+ 155 0008 19D0     		beq	.L28
+ 156 000a 0120     		movs	r0, #1
+ 157 000c 1074     		strb	r0, [r2, #16]
+ 158 000e 0223     		movs	r3, #2
+ 159 0010 5374     		strb	r3, [r2, #17]
+ 160 0012 0C4B     		ldr	r3, .L29
+ 161 0014 196B     		ldr	r1, [r3, #48]
+ 162 0016 21F00101 		bic	r1, r1, #1
+ 163 001a 1963     		str	r1, [r3, #48]
+ 164 001c 596B     		ldr	r1, [r3, #52]
+ 165 001e 21F00401 		bic	r1, r1, #4
+ 166 0022 5963     		str	r1, [r3, #52]
+ 167 0024 596B     		ldr	r1, [r3, #52]
+ 168 0026 41F00301 		orr	r1, r1, #3
+ 169 002a 5963     		str	r1, [r3, #52]
+ 170 002c 596B     		ldr	r1, [r3, #52]
+ 171 002e 0143     		orrs	r1, r1, r0
+ 172 0030 5963     		str	r1, [r3, #52]
+ 173 0032 5074     		strb	r0, [r2, #17]
+ 174 0034 0020     		movs	r0, #0
+ 175 0036 1074     		strb	r0, [r2, #16]
+ 176 0038 7047     		bx	lr
+ARM GAS  /tmp/ccJDpv5s.s 			page 4
 
 
- 177 0038 7047     		bx	lr
- 178              	.L23:
- 179 003a 0120     		movs	r0, #1
- 180 003c 7047     		bx	lr
- 181              	.L24:
- 182 003e 0220     		movs	r0, #2
- 183 0040 7047     		bx	lr
- 184              	.L26:
- 185 0042 00BF     		.align	2
- 186              	.L25:
- 187 0044 006C0040 		.word	1073769472
- 189              		.section	.text.HAL_RTCEx_Tamper1EventCallback,"ax",%progbits
- 190              		.align	2
- 191              		.weak	HAL_RTCEx_Tamper1EventCallback
+ 177              	.L27:
+ 178 003a 0120     		movs	r0, #1
+ 179 003c 7047     		bx	lr
+ 180              	.L28:
+ 181 003e 0220     		movs	r0, #2
+ 182 0040 7047     		bx	lr
+ 183              	.L30:
+ 184 0042 00BF     		.align	2
+ 185              	.L29:
+ 186 0044 006C0040 		.word	1073769472
+ 188              		.section	.text.HAL_RTCEx_Tamper1EventCallback,"ax",%progbits
+ 189              		.align	1
+ 190              		.weak	HAL_RTCEx_Tamper1EventCallback
+ 191              		.syntax unified
  192              		.thumb
  193              		.thumb_func
- 195              	HAL_RTCEx_Tamper1EventCallback:
- 196              		@ args = 0, pretend = 0, frame = 0
- 197              		@ frame_needed = 0, uses_anonymous_args = 0
- 198              		@ link register save eliminated.
- 199 0000 7047     		bx	lr
- 201 0002 00BF     		.section	.text.HAL_RTCEx_TamperIRQHandler,"ax",%progbits
- 202              		.align	2
- 203              		.global	HAL_RTCEx_TamperIRQHandler
- 204              		.thumb
- 205              		.thumb_func
- 207              	HAL_RTCEx_TamperIRQHandler:
- 208              		@ args = 0, pretend = 0, frame = 0
- 209              		@ frame_needed = 0, uses_anonymous_args = 0
- 210 0000 10B5     		push	{r4, lr}
- 211 0002 0446     		mov	r4, r0
- 212 0004 094B     		ldr	r3, .L31
- 213 0006 5B6B     		ldr	r3, [r3, #52]
- 214 0008 13F0040F 		tst	r3, #4
- 215 000c 0BD0     		beq	.L29
- 216 000e 074B     		ldr	r3, .L31
- 217 0010 5B6B     		ldr	r3, [r3, #52]
- 218 0012 13F4807F 		tst	r3, #256
- 219 0016 06D0     		beq	.L29
- 220 0018 FFF7FEFF 		bl	HAL_RTCEx_Tamper1EventCallback
- 221 001c 034A     		ldr	r2, .L31
- 222 001e 536B     		ldr	r3, [r2, #52]
- 223 0020 43F00303 		orr	r3, r3, #3
- 224 0024 5363     		str	r3, [r2, #52]
- 225              	.L29:
- 226 0026 0123     		movs	r3, #1
- 227 0028 6374     		strb	r3, [r4, #17]
- 228 002a 10BD     		pop	{r4, pc}
- 229              	.L32:
- 230              		.align	2
- 231              	.L31:
- 232 002c 006C0040 		.word	1073769472
- 234              		.section	.text.HAL_RTCEx_PollForTamper1Event,"ax",%progbits
- 235              		.align	2
- 236              		.global	HAL_RTCEx_PollForTamper1Event
- 237              		.thumb
- 238              		.thumb_func
-ARM GAS  /tmp/ccINJrv0.s 			page 5
+ 194              		.fpu softvfp
+ 196              	HAL_RTCEx_Tamper1EventCallback:
+ 197              		@ args = 0, pretend = 0, frame = 0
+ 198              		@ frame_needed = 0, uses_anonymous_args = 0
+ 199              		@ link register save eliminated.
+ 200 0000 7047     		bx	lr
+ 202              		.section	.text.HAL_RTCEx_TamperIRQHandler,"ax",%progbits
+ 203              		.align	1
+ 204              		.global	HAL_RTCEx_TamperIRQHandler
+ 205              		.syntax unified
+ 206              		.thumb
+ 207              		.thumb_func
+ 208              		.fpu softvfp
+ 210              	HAL_RTCEx_TamperIRQHandler:
+ 211              		@ args = 0, pretend = 0, frame = 0
+ 212              		@ frame_needed = 0, uses_anonymous_args = 0
+ 213 0000 10B5     		push	{r4, lr}
+ 214 0002 0446     		mov	r4, r0
+ 215 0004 0A4B     		ldr	r3, .L36
+ 216 0006 5B6B     		ldr	r3, [r3, #52]
+ 217 0008 13F0040F 		tst	r3, #4
+ 218 000c 04D0     		beq	.L33
+ 219 000e 084B     		ldr	r3, .L36
+ 220 0010 5B6B     		ldr	r3, [r3, #52]
+ 221 0012 13F4807F 		tst	r3, #256
+ 222 0016 02D1     		bne	.L35
+ 223              	.L33:
+ 224 0018 0123     		movs	r3, #1
+ 225 001a 6374     		strb	r3, [r4, #17]
+ 226 001c 10BD     		pop	{r4, pc}
+ 227              	.L35:
+ 228 001e FFF7FEFF 		bl	HAL_RTCEx_Tamper1EventCallback
+ 229 0022 034A     		ldr	r2, .L36
+ 230 0024 536B     		ldr	r3, [r2, #52]
+ 231 0026 43F00303 		orr	r3, r3, #3
+ 232 002a 5363     		str	r3, [r2, #52]
+ 233 002c F4E7     		b	.L33
+ 234              	.L37:
+ 235 002e 00BF     		.align	2
+ 236              	.L36:
+ 237 0030 006C0040 		.word	1073769472
+ARM GAS  /tmp/ccJDpv5s.s 			page 5
 
 
- 240              	HAL_RTCEx_PollForTamper1Event:
- 241              		@ args = 0, pretend = 0, frame = 0
- 242              		@ frame_needed = 0, uses_anonymous_args = 0
- 243 0000 70B5     		push	{r4, r5, r6, lr}
- 244 0002 0546     		mov	r5, r0
- 245 0004 0C46     		mov	r4, r1
- 246 0006 FFF7FEFF 		bl	HAL_GetTick
- 247 000a 0646     		mov	r6, r0
- 248 000c 65B9     		cbnz	r5, .L36
- 249 000e 19E0     		b	.L39
- 250              	.L38:
- 251 0010 B4F1FF3F 		cmp	r4, #-1
- 252 0014 08D0     		beq	.L36
- 253 0016 24B1     		cbz	r4, .L37
- 254 0018 FFF7FEFF 		bl	HAL_GetTick
- 255 001c 801B     		subs	r0, r0, r6
- 256 001e A042     		cmp	r0, r4
- 257 0020 02D9     		bls	.L36
- 258              	.L37:
- 259 0022 0320     		movs	r0, #3
- 260 0024 6874     		strb	r0, [r5, #17]
- 261 0026 70BD     		pop	{r4, r5, r6, pc}
- 262              	.L36:
- 263 0028 074B     		ldr	r3, .L41
- 264 002a 5B6B     		ldr	r3, [r3, #52]
- 265 002c 13F4807F 		tst	r3, #256
- 266 0030 EED0     		beq	.L38
- 267 0032 054A     		ldr	r2, .L41
- 268 0034 536B     		ldr	r3, [r2, #52]
- 269 0036 43F00303 		orr	r3, r3, #3
- 270 003a 5363     		str	r3, [r2, #52]
- 271 003c 0123     		movs	r3, #1
- 272 003e 6B74     		strb	r3, [r5, #17]
- 273 0040 0020     		movs	r0, #0
- 274 0042 70BD     		pop	{r4, r5, r6, pc}
- 275              	.L39:
- 276 0044 0120     		movs	r0, #1
- 277 0046 70BD     		pop	{r4, r5, r6, pc}
- 278              	.L42:
- 279              		.align	2
- 280              	.L41:
- 281 0048 006C0040 		.word	1073769472
- 283              		.section	.text.HAL_RTCEx_SetSecond_IT,"ax",%progbits
- 284              		.align	2
- 285              		.global	HAL_RTCEx_SetSecond_IT
- 286              		.thumb
- 287              		.thumb_func
- 289              	HAL_RTCEx_SetSecond_IT:
- 290              		@ args = 0, pretend = 0, frame = 0
- 291              		@ frame_needed = 0, uses_anonymous_args = 0
- 292              		@ link register save eliminated.
- 293 0000 0346     		mov	r3, r0
- 294 0002 70B1     		cbz	r0, .L45
- 295 0004 027C     		ldrb	r2, [r0, #16]	@ zero_extendqisi2
- 296 0006 012A     		cmp	r2, #1
- 297 0008 0DD0     		beq	.L46
- 298 000a 0121     		movs	r1, #1
-ARM GAS  /tmp/ccINJrv0.s 			page 6
+ 239              		.section	.text.HAL_RTCEx_PollForTamper1Event,"ax",%progbits
+ 240              		.align	1
+ 241              		.global	HAL_RTCEx_PollForTamper1Event
+ 242              		.syntax unified
+ 243              		.thumb
+ 244              		.thumb_func
+ 245              		.fpu softvfp
+ 247              	HAL_RTCEx_PollForTamper1Event:
+ 248              		@ args = 0, pretend = 0, frame = 0
+ 249              		@ frame_needed = 0, uses_anonymous_args = 0
+ 250 0000 70B5     		push	{r4, r5, r6, lr}
+ 251 0002 0546     		mov	r5, r0
+ 252 0004 0C46     		mov	r4, r1
+ 253 0006 FFF7FEFF 		bl	HAL_GetTick
+ 254 000a 0646     		mov	r6, r0
+ 255 000c CDB1     		cbz	r5, .L46
+ 256              	.L41:
+ 257 000e 0E4B     		ldr	r3, .L48
+ 258 0010 5B6B     		ldr	r3, [r3, #52]
+ 259 0012 13F4807F 		tst	r3, #256
+ 260 0016 0BD1     		bne	.L47
+ 261 0018 B4F1FF3F 		cmp	r4, #-1
+ 262 001c F7D0     		beq	.L41
+ 263 001e 24B1     		cbz	r4, .L42
+ 264 0020 FFF7FEFF 		bl	HAL_GetTick
+ 265 0024 801B     		subs	r0, r0, r6
+ 266 0026 8442     		cmp	r4, r0
+ 267 0028 F1D2     		bcs	.L41
+ 268              	.L42:
+ 269 002a 0320     		movs	r0, #3
+ 270 002c 6874     		strb	r0, [r5, #17]
+ 271 002e 70BD     		pop	{r4, r5, r6, pc}
+ 272              	.L47:
+ 273 0030 054A     		ldr	r2, .L48
+ 274 0032 536B     		ldr	r3, [r2, #52]
+ 275 0034 43F00303 		orr	r3, r3, #3
+ 276 0038 5363     		str	r3, [r2, #52]
+ 277 003a 0123     		movs	r3, #1
+ 278 003c 6B74     		strb	r3, [r5, #17]
+ 279 003e 0020     		movs	r0, #0
+ 280 0040 70BD     		pop	{r4, r5, r6, pc}
+ 281              	.L46:
+ 282 0042 0120     		movs	r0, #1
+ 283 0044 70BD     		pop	{r4, r5, r6, pc}
+ 284              	.L49:
+ 285 0046 00BF     		.align	2
+ 286              	.L48:
+ 287 0048 006C0040 		.word	1073769472
+ 289              		.section	.text.HAL_RTCEx_SetSecond_IT,"ax",%progbits
+ 290              		.align	1
+ 291              		.global	HAL_RTCEx_SetSecond_IT
+ 292              		.syntax unified
+ 293              		.thumb
+ 294              		.thumb_func
+ 295              		.fpu softvfp
+ 297              	HAL_RTCEx_SetSecond_IT:
+ 298              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  /tmp/ccJDpv5s.s 			page 6
 
 
- 299 000c 0174     		strb	r1, [r0, #16]
- 300 000e 0222     		movs	r2, #2
- 301 0010 4274     		strb	r2, [r0, #17]
- 302 0012 0068     		ldr	r0, [r0]
- 303 0014 0268     		ldr	r2, [r0]
- 304 0016 0A43     		orrs	r2, r2, r1
- 305 0018 0260     		str	r2, [r0]
- 306 001a 5974     		strb	r1, [r3, #17]
- 307 001c 0020     		movs	r0, #0
- 308 001e 1874     		strb	r0, [r3, #16]
- 309 0020 7047     		bx	lr
- 310              	.L45:
- 311 0022 0120     		movs	r0, #1
- 312 0024 7047     		bx	lr
- 313              	.L46:
- 314 0026 0220     		movs	r0, #2
- 315 0028 7047     		bx	lr
- 317 002a 00BF     		.section	.text.HAL_RTCEx_DeactivateSecond,"ax",%progbits
- 318              		.align	2
- 319              		.global	HAL_RTCEx_DeactivateSecond
- 320              		.thumb
- 321              		.thumb_func
- 323              	HAL_RTCEx_DeactivateSecond:
- 324              		@ args = 0, pretend = 0, frame = 0
- 325              		@ frame_needed = 0, uses_anonymous_args = 0
- 326              		@ link register save eliminated.
- 327 0000 0346     		mov	r3, r0
- 328 0002 78B1     		cbz	r0, .L49
- 329 0004 027C     		ldrb	r2, [r0, #16]	@ zero_extendqisi2
- 330 0006 012A     		cmp	r2, #1
- 331 0008 0ED0     		beq	.L50
- 332 000a 0121     		movs	r1, #1
- 333 000c 0174     		strb	r1, [r0, #16]
- 334 000e 0222     		movs	r2, #2
- 335 0010 4274     		strb	r2, [r0, #17]
- 336 0012 0068     		ldr	r0, [r0]
- 337 0014 0268     		ldr	r2, [r0]
- 338 0016 22F00102 		bic	r2, r2, #1
- 339 001a 0260     		str	r2, [r0]
- 340 001c 5974     		strb	r1, [r3, #17]
- 341 001e 0020     		movs	r0, #0
- 342 0020 1874     		strb	r0, [r3, #16]
- 343 0022 7047     		bx	lr
- 344              	.L49:
- 345 0024 0120     		movs	r0, #1
- 346 0026 7047     		bx	lr
- 347              	.L50:
- 348 0028 0220     		movs	r0, #2
- 349 002a 7047     		bx	lr
- 351              		.section	.text.HAL_RTCEx_RTCEventCallback,"ax",%progbits
- 352              		.align	2
- 353              		.weak	HAL_RTCEx_RTCEventCallback
- 354              		.thumb
- 355              		.thumb_func
- 357              	HAL_RTCEx_RTCEventCallback:
- 358              		@ args = 0, pretend = 0, frame = 0
- 359              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/ccINJrv0.s 			page 7
+ 299              		@ frame_needed = 0, uses_anonymous_args = 0
+ 300              		@ link register save eliminated.
+ 301 0000 0346     		mov	r3, r0
+ 302 0002 70B1     		cbz	r0, .L52
+ 303 0004 027C     		ldrb	r2, [r0, #16]	@ zero_extendqisi2
+ 304 0006 012A     		cmp	r2, #1
+ 305 0008 0DD0     		beq	.L53
+ 306 000a 0121     		movs	r1, #1
+ 307 000c 0174     		strb	r1, [r0, #16]
+ 308 000e 0222     		movs	r2, #2
+ 309 0010 4274     		strb	r2, [r0, #17]
+ 310 0012 0068     		ldr	r0, [r0]
+ 311 0014 0268     		ldr	r2, [r0]
+ 312 0016 0A43     		orrs	r2, r2, r1
+ 313 0018 0260     		str	r2, [r0]
+ 314 001a 5974     		strb	r1, [r3, #17]
+ 315 001c 0020     		movs	r0, #0
+ 316 001e 1874     		strb	r0, [r3, #16]
+ 317 0020 7047     		bx	lr
+ 318              	.L52:
+ 319 0022 0120     		movs	r0, #1
+ 320 0024 7047     		bx	lr
+ 321              	.L53:
+ 322 0026 0220     		movs	r0, #2
+ 323 0028 7047     		bx	lr
+ 325              		.section	.text.HAL_RTCEx_DeactivateSecond,"ax",%progbits
+ 326              		.align	1
+ 327              		.global	HAL_RTCEx_DeactivateSecond
+ 328              		.syntax unified
+ 329              		.thumb
+ 330              		.thumb_func
+ 331              		.fpu softvfp
+ 333              	HAL_RTCEx_DeactivateSecond:
+ 334              		@ args = 0, pretend = 0, frame = 0
+ 335              		@ frame_needed = 0, uses_anonymous_args = 0
+ 336              		@ link register save eliminated.
+ 337 0000 0346     		mov	r3, r0
+ 338 0002 78B1     		cbz	r0, .L56
+ 339 0004 027C     		ldrb	r2, [r0, #16]	@ zero_extendqisi2
+ 340 0006 012A     		cmp	r2, #1
+ 341 0008 0ED0     		beq	.L57
+ 342 000a 0121     		movs	r1, #1
+ 343 000c 0174     		strb	r1, [r0, #16]
+ 344 000e 0222     		movs	r2, #2
+ 345 0010 4274     		strb	r2, [r0, #17]
+ 346 0012 0068     		ldr	r0, [r0]
+ 347 0014 0268     		ldr	r2, [r0]
+ 348 0016 22F00102 		bic	r2, r2, #1
+ 349 001a 0260     		str	r2, [r0]
+ 350 001c 5974     		strb	r1, [r3, #17]
+ 351 001e 0020     		movs	r0, #0
+ 352 0020 1874     		strb	r0, [r3, #16]
+ 353 0022 7047     		bx	lr
+ 354              	.L56:
+ 355 0024 0120     		movs	r0, #1
+ 356 0026 7047     		bx	lr
+ 357              	.L57:
+ARM GAS  /tmp/ccJDpv5s.s 			page 7
 
 
- 360              		@ link register save eliminated.
- 361 0000 7047     		bx	lr
- 363 0002 00BF     		.section	.text.HAL_RTCEx_RTCEventErrorCallback,"ax",%progbits
- 364              		.align	2
- 365              		.weak	HAL_RTCEx_RTCEventErrorCallback
- 366              		.thumb
- 367              		.thumb_func
- 369              	HAL_RTCEx_RTCEventErrorCallback:
+ 358 0028 0220     		movs	r0, #2
+ 359 002a 7047     		bx	lr
+ 361              		.section	.text.HAL_RTCEx_RTCEventCallback,"ax",%progbits
+ 362              		.align	1
+ 363              		.weak	HAL_RTCEx_RTCEventCallback
+ 364              		.syntax unified
+ 365              		.thumb
+ 366              		.thumb_func
+ 367              		.fpu softvfp
+ 369              	HAL_RTCEx_RTCEventCallback:
  370              		@ args = 0, pretend = 0, frame = 0
  371              		@ frame_needed = 0, uses_anonymous_args = 0
  372              		@ link register save eliminated.
  373 0000 7047     		bx	lr
- 375 0002 00BF     		.section	.text.HAL_RTCEx_RTCIRQHandler,"ax",%progbits
- 376              		.align	2
- 377              		.global	HAL_RTCEx_RTCIRQHandler
- 378              		.thumb
- 379              		.thumb_func
- 381              	HAL_RTCEx_RTCIRQHandler:
- 382              		@ args = 0, pretend = 0, frame = 0
- 383              		@ frame_needed = 0, uses_anonymous_args = 0
- 384 0000 0368     		ldr	r3, [r0]
- 385 0002 1A68     		ldr	r2, [r3]
- 386 0004 12F0010F 		tst	r2, #1
- 387 0008 1BD0     		beq	.L58
- 388 000a 5A68     		ldr	r2, [r3, #4]
- 389 000c 12F0010F 		tst	r2, #1
- 390 0010 17D0     		beq	.L58
- 391 0012 10B5     		push	{r4, lr}
- 392 0014 0446     		mov	r4, r0
- 393 0016 5B68     		ldr	r3, [r3, #4]
- 394 0018 13F0040F 		tst	r3, #4
- 395 001c 08D0     		beq	.L55
- 396 001e FFF7FEFF 		bl	HAL_RTCEx_RTCEventErrorCallback
- 397 0022 2368     		ldr	r3, [r4]
- 398 0024 6FF00402 		mvn	r2, #4
- 399 0028 5A60     		str	r2, [r3, #4]
- 400 002a 0423     		movs	r3, #4
- 401 002c 6374     		strb	r3, [r4, #17]
- 402 002e 03E0     		b	.L56
- 403              	.L55:
- 404 0030 FFF7FEFF 		bl	HAL_RTCEx_RTCEventCallback
- 405 0034 0123     		movs	r3, #1
- 406 0036 6374     		strb	r3, [r4, #17]
- 407              	.L56:
- 408 0038 2368     		ldr	r3, [r4]
- 409 003a 6FF00102 		mvn	r2, #1
- 410 003e 5A60     		str	r2, [r3, #4]
- 411 0040 10BD     		pop	{r4, pc}
- 412              	.L58:
- 413 0042 7047     		bx	lr
- 415              		.section	.text.HAL_RTCEx_BKUPWrite,"ax",%progbits
- 416              		.align	2
- 417              		.global	HAL_RTCEx_BKUPWrite
- 418              		.thumb
- 419              		.thumb_func
- 421              	HAL_RTCEx_BKUPWrite:
- 422              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  /tmp/ccINJrv0.s 			page 8
+ 375              		.section	.text.HAL_RTCEx_RTCEventErrorCallback,"ax",%progbits
+ 376              		.align	1
+ 377              		.weak	HAL_RTCEx_RTCEventErrorCallback
+ 378              		.syntax unified
+ 379              		.thumb
+ 380              		.thumb_func
+ 381              		.fpu softvfp
+ 383              	HAL_RTCEx_RTCEventErrorCallback:
+ 384              		@ args = 0, pretend = 0, frame = 0
+ 385              		@ frame_needed = 0, uses_anonymous_args = 0
+ 386              		@ link register save eliminated.
+ 387 0000 7047     		bx	lr
+ 389              		.section	.text.HAL_RTCEx_RTCIRQHandler,"ax",%progbits
+ 390              		.align	1
+ 391              		.global	HAL_RTCEx_RTCIRQHandler
+ 392              		.syntax unified
+ 393              		.thumb
+ 394              		.thumb_func
+ 395              		.fpu softvfp
+ 397              	HAL_RTCEx_RTCIRQHandler:
+ 398              		@ args = 0, pretend = 0, frame = 0
+ 399              		@ frame_needed = 0, uses_anonymous_args = 0
+ 400 0000 0368     		ldr	r3, [r0]
+ 401 0002 1A68     		ldr	r2, [r3]
+ 402 0004 12F0010F 		tst	r2, #1
+ 403 0008 1BD0     		beq	.L65
+ 404 000a 5A68     		ldr	r2, [r3, #4]
+ 405 000c 12F0010F 		tst	r2, #1
+ 406 0010 17D0     		beq	.L65
+ 407 0012 10B5     		push	{r4, lr}
+ 408 0014 0446     		mov	r4, r0
+ 409 0016 5B68     		ldr	r3, [r3, #4]
+ 410 0018 13F0040F 		tst	r3, #4
+ 411 001c 0CD0     		beq	.L62
+ 412 001e FFF7FEFF 		bl	HAL_RTCEx_RTCEventErrorCallback
+ 413 0022 2368     		ldr	r3, [r4]
+ 414 0024 6FF00402 		mvn	r2, #4
+ 415 0028 5A60     		str	r2, [r3, #4]
+ 416 002a 0423     		movs	r3, #4
+ 417 002c 6374     		strb	r3, [r4, #17]
+ 418              	.L63:
+ 419 002e 2368     		ldr	r3, [r4]
+ 420 0030 6FF00102 		mvn	r2, #1
+ARM GAS  /tmp/ccJDpv5s.s 			page 8
 
 
- 423              		@ frame_needed = 0, uses_anonymous_args = 0
- 424              		@ link register save eliminated.
- 425 0000 8900     		lsls	r1, r1, #2
- 426 0002 01F18041 		add	r1, r1, #1073741824
- 427 0006 01F5D841 		add	r1, r1, #27648
- 428 000a 92B2     		uxth	r2, r2
- 429 000c 0A60     		str	r2, [r1]
- 430 000e 7047     		bx	lr
- 432              		.section	.text.HAL_RTCEx_BKUPRead,"ax",%progbits
- 433              		.align	2
- 434              		.global	HAL_RTCEx_BKUPRead
+ 421 0034 5A60     		str	r2, [r3, #4]
+ 422 0036 10BD     		pop	{r4, pc}
+ 423              	.L62:
+ 424 0038 FFF7FEFF 		bl	HAL_RTCEx_RTCEventCallback
+ 425 003c 0123     		movs	r3, #1
+ 426 003e 6374     		strb	r3, [r4, #17]
+ 427 0040 F5E7     		b	.L63
+ 428              	.L65:
+ 429 0042 7047     		bx	lr
+ 431              		.section	.text.HAL_RTCEx_BKUPWrite,"ax",%progbits
+ 432              		.align	1
+ 433              		.global	HAL_RTCEx_BKUPWrite
+ 434              		.syntax unified
  435              		.thumb
  436              		.thumb_func
- 438              	HAL_RTCEx_BKUPRead:
- 439              		@ args = 0, pretend = 0, frame = 0
- 440              		@ frame_needed = 0, uses_anonymous_args = 0
- 441              		@ link register save eliminated.
- 442 0000 8900     		lsls	r1, r1, #2
- 443 0002 01F18041 		add	r1, r1, #1073741824
- 444 0006 01F5D841 		add	r1, r1, #27648
- 445 000a 0868     		ldr	r0, [r1]
- 446 000c 80B2     		uxth	r0, r0
- 447 000e 7047     		bx	lr
- 449              		.section	.text.HAL_RTCEx_SetSmoothCalib,"ax",%progbits
- 450              		.align	2
- 451              		.global	HAL_RTCEx_SetSmoothCalib
- 452              		.thumb
- 453              		.thumb_func
- 455              	HAL_RTCEx_SetSmoothCalib:
- 456              		@ args = 0, pretend = 0, frame = 0
- 457              		@ frame_needed = 0, uses_anonymous_args = 0
- 458              		@ link register save eliminated.
- 459 0000 90B1     		cbz	r0, .L63
- 460 0002 0246     		mov	r2, r0
- 461 0004 017C     		ldrb	r1, [r0, #16]	@ zero_extendqisi2
- 462 0006 0129     		cmp	r1, #1
- 463 0008 10D0     		beq	.L64
- 464 000a 10B4     		push	{r4}
- 465 000c 0120     		movs	r0, #1
- 466 000e 1074     		strb	r0, [r2, #16]
- 467 0010 0221     		movs	r1, #2
- 468 0012 5174     		strb	r1, [r2, #17]
- 469 0014 084C     		ldr	r4, .L67
- 470 0016 E16A     		ldr	r1, [r4, #44]
- 471 0018 21F07F01 		bic	r1, r1, #127
- 472 001c 0B43     		orrs	r3, r3, r1
- 473 001e E362     		str	r3, [r4, #44]
- 474 0020 5074     		strb	r0, [r2, #17]
- 475 0022 0020     		movs	r0, #0
- 476 0024 1074     		strb	r0, [r2, #16]
- 477 0026 03E0     		b	.L62
- 478              	.L63:
- 479 0028 0120     		movs	r0, #1
- 480 002a 7047     		bx	lr
- 481              	.L64:
- 482 002c 0220     		movs	r0, #2
- 483 002e 7047     		bx	lr
-ARM GAS  /tmp/ccINJrv0.s 			page 9
+ 437              		.fpu softvfp
+ 439              	HAL_RTCEx_BKUPWrite:
+ 440              		@ args = 0, pretend = 0, frame = 0
+ 441              		@ frame_needed = 0, uses_anonymous_args = 0
+ 442              		@ link register save eliminated.
+ 443 0000 8900     		lsls	r1, r1, #2
+ 444 0002 01F18041 		add	r1, r1, #1073741824
+ 445 0006 01F5D841 		add	r1, r1, #27648
+ 446 000a 92B2     		uxth	r2, r2
+ 447 000c 0A60     		str	r2, [r1]
+ 448 000e 7047     		bx	lr
+ 450              		.section	.text.HAL_RTCEx_BKUPRead,"ax",%progbits
+ 451              		.align	1
+ 452              		.global	HAL_RTCEx_BKUPRead
+ 453              		.syntax unified
+ 454              		.thumb
+ 455              		.thumb_func
+ 456              		.fpu softvfp
+ 458              	HAL_RTCEx_BKUPRead:
+ 459              		@ args = 0, pretend = 0, frame = 0
+ 460              		@ frame_needed = 0, uses_anonymous_args = 0
+ 461              		@ link register save eliminated.
+ 462 0000 8900     		lsls	r1, r1, #2
+ 463 0002 01F18041 		add	r1, r1, #1073741824
+ 464 0006 01F5D841 		add	r1, r1, #27648
+ 465 000a 0868     		ldr	r0, [r1]
+ 466 000c 80B2     		uxth	r0, r0
+ 467 000e 7047     		bx	lr
+ 469              		.section	.text.HAL_RTCEx_SetSmoothCalib,"ax",%progbits
+ 470              		.align	1
+ 471              		.global	HAL_RTCEx_SetSmoothCalib
+ 472              		.syntax unified
+ 473              		.thumb
+ 474              		.thumb_func
+ 475              		.fpu softvfp
+ 477              	HAL_RTCEx_SetSmoothCalib:
+ 478              		@ args = 0, pretend = 0, frame = 0
+ 479              		@ frame_needed = 0, uses_anonymous_args = 0
+ 480              		@ link register save eliminated.
+ 481 0000 98B1     		cbz	r0, .L72
+ 482 0002 0246     		mov	r2, r0
+ 483 0004 017C     		ldrb	r1, [r0, #16]	@ zero_extendqisi2
+ARM GAS  /tmp/ccJDpv5s.s 			page 9
 
 
- 484              	.L62:
- 485 0030 5DF8044B 		ldr	r4, [sp], #4
- 486 0034 7047     		bx	lr
- 487              	.L68:
- 488 0036 00BF     		.align	2
- 489              	.L67:
- 490 0038 006C0040 		.word	1073769472
- 492              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
-ARM GAS  /tmp/ccINJrv0.s 			page 10
+ 484 0006 0129     		cmp	r1, #1
+ 485 0008 11D0     		beq	.L73
+ 486 000a 10B4     		push	{r4}
+ 487 000c 0120     		movs	r0, #1
+ 488 000e 1074     		strb	r0, [r2, #16]
+ 489 0010 0221     		movs	r1, #2
+ 490 0012 5174     		strb	r1, [r2, #17]
+ 491 0014 074C     		ldr	r4, .L78
+ 492 0016 E16A     		ldr	r1, [r4, #44]
+ 493 0018 21F07F01 		bic	r1, r1, #127
+ 494 001c 0B43     		orrs	r3, r3, r1
+ 495 001e E362     		str	r3, [r4, #44]
+ 496 0020 5074     		strb	r0, [r2, #17]
+ 497 0022 0020     		movs	r0, #0
+ 498 0024 1074     		strb	r0, [r2, #16]
+ 499 0026 10BC     		pop	{r4}
+ 500 0028 7047     		bx	lr
+ 501              	.L72:
+ 502 002a 0120     		movs	r0, #1
+ 503 002c 7047     		bx	lr
+ 504              	.L73:
+ 505 002e 0220     		movs	r0, #2
+ 506 0030 7047     		bx	lr
+ 507              	.L79:
+ 508 0032 00BF     		.align	2
+ 509              	.L78:
+ 510 0034 006C0040 		.word	1073769472
+ 512              		.ident	"GCC: (15:6.3.1+svn253039-1build1) 6.3.1 20170620"
+ARM GAS  /tmp/ccJDpv5s.s 			page 10
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32f1xx_hal_rtc_ex.c
-     /tmp/ccINJrv0.s:16     .text.HAL_RTCEx_SetTamper:0000000000000000 $t
-     /tmp/ccINJrv0.s:21     .text.HAL_RTCEx_SetTamper:0000000000000000 HAL_RTCEx_SetTamper
-     /tmp/ccINJrv0.s:75     .text.HAL_RTCEx_SetTamper:000000000000005c $d
-     /tmp/ccINJrv0.s:78     .text.HAL_RTCEx_SetTamper_IT:0000000000000000 $t
-     /tmp/ccINJrv0.s:83     .text.HAL_RTCEx_SetTamper_IT:0000000000000000 HAL_RTCEx_SetTamper_IT
-     /tmp/ccINJrv0.s:140    .text.HAL_RTCEx_SetTamper_IT:0000000000000064 $d
-     /tmp/ccINJrv0.s:143    .text.HAL_RTCEx_DeactivateTamper:0000000000000000 $t
-     /tmp/ccINJrv0.s:148    .text.HAL_RTCEx_DeactivateTamper:0000000000000000 HAL_RTCEx_DeactivateTamper
-     /tmp/ccINJrv0.s:187    .text.HAL_RTCEx_DeactivateTamper:0000000000000044 $d
-     /tmp/ccINJrv0.s:190    .text.HAL_RTCEx_Tamper1EventCallback:0000000000000000 $t
-     /tmp/ccINJrv0.s:195    .text.HAL_RTCEx_Tamper1EventCallback:0000000000000000 HAL_RTCEx_Tamper1EventCallback
-     /tmp/ccINJrv0.s:202    .text.HAL_RTCEx_TamperIRQHandler:0000000000000000 $t
-     /tmp/ccINJrv0.s:207    .text.HAL_RTCEx_TamperIRQHandler:0000000000000000 HAL_RTCEx_TamperIRQHandler
-     /tmp/ccINJrv0.s:232    .text.HAL_RTCEx_TamperIRQHandler:000000000000002c $d
-     /tmp/ccINJrv0.s:235    .text.HAL_RTCEx_PollForTamper1Event:0000000000000000 $t
-     /tmp/ccINJrv0.s:240    .text.HAL_RTCEx_PollForTamper1Event:0000000000000000 HAL_RTCEx_PollForTamper1Event
-     /tmp/ccINJrv0.s:281    .text.HAL_RTCEx_PollForTamper1Event:0000000000000048 $d
-     /tmp/ccINJrv0.s:284    .text.HAL_RTCEx_SetSecond_IT:0000000000000000 $t
-     /tmp/ccINJrv0.s:289    .text.HAL_RTCEx_SetSecond_IT:0000000000000000 HAL_RTCEx_SetSecond_IT
-     /tmp/ccINJrv0.s:318    .text.HAL_RTCEx_DeactivateSecond:0000000000000000 $t
-     /tmp/ccINJrv0.s:323    .text.HAL_RTCEx_DeactivateSecond:0000000000000000 HAL_RTCEx_DeactivateSecond
-     /tmp/ccINJrv0.s:352    .text.HAL_RTCEx_RTCEventCallback:0000000000000000 $t
-     /tmp/ccINJrv0.s:357    .text.HAL_RTCEx_RTCEventCallback:0000000000000000 HAL_RTCEx_RTCEventCallback
-     /tmp/ccINJrv0.s:364    .text.HAL_RTCEx_RTCEventErrorCallback:0000000000000000 $t
-     /tmp/ccINJrv0.s:369    .text.HAL_RTCEx_RTCEventErrorCallback:0000000000000000 HAL_RTCEx_RTCEventErrorCallback
-     /tmp/ccINJrv0.s:376    .text.HAL_RTCEx_RTCIRQHandler:0000000000000000 $t
-     /tmp/ccINJrv0.s:381    .text.HAL_RTCEx_RTCIRQHandler:0000000000000000 HAL_RTCEx_RTCIRQHandler
-     /tmp/ccINJrv0.s:416    .text.HAL_RTCEx_BKUPWrite:0000000000000000 $t
-     /tmp/ccINJrv0.s:421    .text.HAL_RTCEx_BKUPWrite:0000000000000000 HAL_RTCEx_BKUPWrite
-     /tmp/ccINJrv0.s:433    .text.HAL_RTCEx_BKUPRead:0000000000000000 $t
-     /tmp/ccINJrv0.s:438    .text.HAL_RTCEx_BKUPRead:0000000000000000 HAL_RTCEx_BKUPRead
-     /tmp/ccINJrv0.s:450    .text.HAL_RTCEx_SetSmoothCalib:0000000000000000 $t
-     /tmp/ccINJrv0.s:455    .text.HAL_RTCEx_SetSmoothCalib:0000000000000000 HAL_RTCEx_SetSmoothCalib
-     /tmp/ccINJrv0.s:490    .text.HAL_RTCEx_SetSmoothCalib:0000000000000038 $d
+     /tmp/ccJDpv5s.s:13     .text.HAL_RTCEx_SetTamper:0000000000000000 $t
+     /tmp/ccJDpv5s.s:20     .text.HAL_RTCEx_SetTamper:0000000000000000 HAL_RTCEx_SetTamper
+     /tmp/ccJDpv5s.s:72     .text.HAL_RTCEx_SetTamper:0000000000000058 $d
+     /tmp/ccJDpv5s.s:75     .text.HAL_RTCEx_SetTamper_IT:0000000000000000 $t
+     /tmp/ccJDpv5s.s:82     .text.HAL_RTCEx_SetTamper_IT:0000000000000000 HAL_RTCEx_SetTamper_IT
+     /tmp/ccJDpv5s.s:137    .text.HAL_RTCEx_SetTamper_IT:0000000000000060 $d
+     /tmp/ccJDpv5s.s:140    .text.HAL_RTCEx_DeactivateTamper:0000000000000000 $t
+     /tmp/ccJDpv5s.s:147    .text.HAL_RTCEx_DeactivateTamper:0000000000000000 HAL_RTCEx_DeactivateTamper
+     /tmp/ccJDpv5s.s:186    .text.HAL_RTCEx_DeactivateTamper:0000000000000044 $d
+     /tmp/ccJDpv5s.s:189    .text.HAL_RTCEx_Tamper1EventCallback:0000000000000000 $t
+     /tmp/ccJDpv5s.s:196    .text.HAL_RTCEx_Tamper1EventCallback:0000000000000000 HAL_RTCEx_Tamper1EventCallback
+     /tmp/ccJDpv5s.s:203    .text.HAL_RTCEx_TamperIRQHandler:0000000000000000 $t
+     /tmp/ccJDpv5s.s:210    .text.HAL_RTCEx_TamperIRQHandler:0000000000000000 HAL_RTCEx_TamperIRQHandler
+     /tmp/ccJDpv5s.s:237    .text.HAL_RTCEx_TamperIRQHandler:0000000000000030 $d
+     /tmp/ccJDpv5s.s:240    .text.HAL_RTCEx_PollForTamper1Event:0000000000000000 $t
+     /tmp/ccJDpv5s.s:247    .text.HAL_RTCEx_PollForTamper1Event:0000000000000000 HAL_RTCEx_PollForTamper1Event
+     /tmp/ccJDpv5s.s:287    .text.HAL_RTCEx_PollForTamper1Event:0000000000000048 $d
+     /tmp/ccJDpv5s.s:290    .text.HAL_RTCEx_SetSecond_IT:0000000000000000 $t
+     /tmp/ccJDpv5s.s:297    .text.HAL_RTCEx_SetSecond_IT:0000000000000000 HAL_RTCEx_SetSecond_IT
+     /tmp/ccJDpv5s.s:326    .text.HAL_RTCEx_DeactivateSecond:0000000000000000 $t
+     /tmp/ccJDpv5s.s:333    .text.HAL_RTCEx_DeactivateSecond:0000000000000000 HAL_RTCEx_DeactivateSecond
+     /tmp/ccJDpv5s.s:362    .text.HAL_RTCEx_RTCEventCallback:0000000000000000 $t
+     /tmp/ccJDpv5s.s:369    .text.HAL_RTCEx_RTCEventCallback:0000000000000000 HAL_RTCEx_RTCEventCallback
+     /tmp/ccJDpv5s.s:376    .text.HAL_RTCEx_RTCEventErrorCallback:0000000000000000 $t
+     /tmp/ccJDpv5s.s:383    .text.HAL_RTCEx_RTCEventErrorCallback:0000000000000000 HAL_RTCEx_RTCEventErrorCallback
+     /tmp/ccJDpv5s.s:390    .text.HAL_RTCEx_RTCIRQHandler:0000000000000000 $t
+     /tmp/ccJDpv5s.s:397    .text.HAL_RTCEx_RTCIRQHandler:0000000000000000 HAL_RTCEx_RTCIRQHandler
+     /tmp/ccJDpv5s.s:432    .text.HAL_RTCEx_BKUPWrite:0000000000000000 $t
+     /tmp/ccJDpv5s.s:439    .text.HAL_RTCEx_BKUPWrite:0000000000000000 HAL_RTCEx_BKUPWrite
+     /tmp/ccJDpv5s.s:451    .text.HAL_RTCEx_BKUPRead:0000000000000000 $t
+     /tmp/ccJDpv5s.s:458    .text.HAL_RTCEx_BKUPRead:0000000000000000 HAL_RTCEx_BKUPRead
+     /tmp/ccJDpv5s.s:470    .text.HAL_RTCEx_SetSmoothCalib:0000000000000000 $t
+     /tmp/ccJDpv5s.s:477    .text.HAL_RTCEx_SetSmoothCalib:0000000000000000 HAL_RTCEx_SetSmoothCalib
+     /tmp/ccJDpv5s.s:510    .text.HAL_RTCEx_SetSmoothCalib:0000000000000034 $d
 
 UNDEFINED SYMBOLS
 HAL_GetTick

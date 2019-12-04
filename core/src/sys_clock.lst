@@ -1,111 +1,123 @@
-ARM GAS  /tmp/ccBPvkpZ.s 			page 1
+ARM GAS  /tmp/cc3adx6i.s 			page 1
 
 
-   1              		.syntax unified
-   2              		.cpu cortex-m3
-   3              		.fpu softvfp
-   4              		.eabi_attribute 20, 1
-   5              		.eabi_attribute 21, 1
-   6              		.eabi_attribute 23, 3
-   7              		.eabi_attribute 24, 1
-   8              		.eabi_attribute 25, 1
-   9              		.eabi_attribute 26, 1
-  10              		.eabi_attribute 30, 1
-  11              		.eabi_attribute 34, 1
-  12              		.eabi_attribute 18, 4
-  13              		.thumb
-  14              		.file	"sys_clock.c"
-  15              		.section	.text.SYS_Clock_Init,"ax",%progbits
-  16              		.align	2
-  17              		.global	SYS_Clock_Init
-  18              		.thumb
-  19              		.thumb_func
-  21              	SYS_Clock_Init:
-  22              		@ args = 0, pretend = 0, frame = 64
-  23              		@ frame_needed = 0, uses_anonymous_args = 0
-  24 0000 00B5     		push	{lr}
-  25 0002 91B0     		sub	sp, sp, #68
-  26 0004 0122     		movs	r2, #1
-  27 0006 0692     		str	r2, [sp, #24]
-  28 0008 4FF48033 		mov	r3, #65536
-  29 000c 0793     		str	r3, [sp, #28]
-  30 000e 4FF40031 		mov	r1, #131072
-  31 0012 0891     		str	r1, [sp, #32]
-  32 0014 0A92     		str	r2, [sp, #40]
-  33 0016 0222     		movs	r2, #2
-  34 0018 0D92     		str	r2, [sp, #52]
-  35 001a 0E93     		str	r3, [sp, #56]
-  36 001c 4FF4E013 		mov	r3, #1835008
-  37 0020 0F93     		str	r3, [sp, #60]
-  38 0022 06A8     		add	r0, sp, #24
-  39 0024 FFF7FEFF 		bl	HAL_RCC_OscConfig
-  40 0028 28B1     		cbz	r0, .L2
-  41 002a 0220     		movs	r0, #2
-  42 002c 1321     		movs	r1, #19
-  43 002e 0D4A     		ldr	r2, .L5
-  44 0030 0D4B     		ldr	r3, .L5+4
-  45 0032 FFF7FEFF 		bl	SYS_ThrowError
-  46              	.L2:
-  47 0036 0F23     		movs	r3, #15
-  48 0038 0193     		str	r3, [sp, #4]
-  49 003a 0221     		movs	r1, #2
-  50 003c 0291     		str	r1, [sp, #8]
-  51 003e 0023     		movs	r3, #0
-  52 0040 0393     		str	r3, [sp, #12]
-  53 0042 4FF48062 		mov	r2, #1024
-  54 0046 0492     		str	r2, [sp, #16]
-  55 0048 0593     		str	r3, [sp, #20]
-  56 004a 01A8     		add	r0, sp, #4
-  57 004c FFF7FEFF 		bl	HAL_RCC_ClockConfig
-  58 0050 28B1     		cbz	r0, .L1
-ARM GAS  /tmp/ccBPvkpZ.s 			page 2
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"sys_clock.cpp"
+  12              		.section	.text._Z14SYS_Clock_Initv,"ax",%progbits
+  13              		.align	1
+  14              		.global	_Z14SYS_Clock_Initv
+  15              		.syntax unified
+  16              		.thumb
+  17              		.thumb_func
+  18              		.fpu softvfp
+  20              	_Z14SYS_Clock_Initv:
+  21              		.fnstart
+  22              	.LFB65:
+  23              		@ args = 0, pretend = 0, frame = 64
+  24              		@ frame_needed = 0, uses_anonymous_args = 0
+  25 0000 00B5     		push	{lr}
+  26              		.save {lr}
+  27              		.pad #68
+  28 0002 91B0     		sub	sp, sp, #68
+  29 0004 0122     		movs	r2, #1
+  30 0006 0692     		str	r2, [sp, #24]
+  31 0008 4FF48033 		mov	r3, #65536
+  32 000c 0793     		str	r3, [sp, #28]
+  33 000e 4FF40031 		mov	r1, #131072
+  34 0012 0891     		str	r1, [sp, #32]
+  35 0014 0A92     		str	r2, [sp, #40]
+  36 0016 0222     		movs	r2, #2
+  37 0018 0D92     		str	r2, [sp, #52]
+  38 001a 0E93     		str	r3, [sp, #56]
+  39 001c 4FF4E013 		mov	r3, #1835008
+  40 0020 0F93     		str	r3, [sp, #60]
+  41 0022 06A8     		add	r0, sp, #24
+  42 0024 FFF7FEFF 		bl	HAL_RCC_OscConfig
+  43 0028 80B9     		cbnz	r0, .L5
+  44              	.L2:
+  45 002a 0F23     		movs	r3, #15
+  46 002c 0193     		str	r3, [sp, #4]
+  47 002e 0221     		movs	r1, #2
+  48 0030 0291     		str	r1, [sp, #8]
+  49 0032 0023     		movs	r3, #0
+  50 0034 0393     		str	r3, [sp, #12]
+  51 0036 4FF48062 		mov	r2, #1024
+  52 003a 0492     		str	r2, [sp, #16]
+  53 003c 0593     		str	r3, [sp, #20]
+  54 003e 01A8     		add	r0, sp, #4
+  55 0040 FFF7FEFF 		bl	HAL_RCC_ClockConfig
+  56 0044 48B9     		cbnz	r0, .L6
+  57              	.L1:
+  58 0046 11B0     		add	sp, sp, #68
+ARM GAS  /tmp/cc3adx6i.s 			page 2
 
 
-  59 0052 0220     		movs	r0, #2
-  60 0054 1C21     		movs	r1, #28
-  61 0056 034A     		ldr	r2, .L5
-  62 0058 044B     		ldr	r3, .L5+8
-  63 005a FFF7FEFF 		bl	SYS_ThrowError
-  64              	.L1:
-  65 005e 11B0     		add	sp, sp, #68
-  66              		@ sp needed
-  67 0060 5DF804FB 		ldr	pc, [sp], #4
+  59              		@ sp needed
+  60 0048 5DF804FB 		ldr	pc, [sp], #4
+  61              	.L5:
+  62 004c 064B     		ldr	r3, .L7
+  63 004e 074A     		ldr	r2, .L7+4
+  64 0050 1321     		movs	r1, #19
+  65 0052 0220     		movs	r0, #2
+  66 0054 FFF7FEFF 		bl	_Z14SYS_ThrowError15SYS_ErrorType_tmPKcS1_
+  67 0058 E7E7     		b	.L2
   68              	.L6:
-  69              		.align	2
-  70              	.L5:
-  71 0064 00000000 		.word	.LC0
-  72 0068 10000000 		.word	.LC1
-  73 006c 20000000 		.word	.LC2
-  75              		.section	.rodata.str1.4,"aMS",%progbits,1
+  69 005a 054B     		ldr	r3, .L7+8
+  70 005c 034A     		ldr	r2, .L7+4
+  71 005e 1C21     		movs	r1, #28
+  72 0060 0220     		movs	r0, #2
+  73 0062 FFF7FEFF 		bl	_Z14SYS_ThrowError15SYS_ErrorType_tmPKcS1_
+  74 0066 EEE7     		b	.L1
+  75              	.L8:
   76              		.align	2
-  77              	.LC0:
-  78 0000 7372632F 		.ascii	"src/sys_clock.c\000"
-  78      7379735F 
-  78      636C6F63 
-  78      6B2E6300 
-  79              	.LC1:
-  80 0010 5243434F 		.ascii	"RCCOSC HAL ERR\000"
-  80      53432048 
-  80      414C2045 
-  80      525200
-  81 001f 00       		.space	1
-  82              	.LC2:
-  83 0020 52434343 		.ascii	"RCCCLK HAL ERR\000"
-  83      4C4B2048 
-  83      414C2045 
-  83      525200
-  84              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
-ARM GAS  /tmp/ccBPvkpZ.s 			page 3
+  77              	.L7:
+  78 0068 00000000 		.word	.LC0
+  79 006c 10000000 		.word	.LC1
+  80 0070 24000000 		.word	.LC2
+  81              		.fnend
+  83              		.section	.rodata._Z14SYS_Clock_Initv.str1.4,"aMS",%progbits,1
+  84              		.align	2
+  85              	.LC0:
+  86 0000 5243434F 		.ascii	"RCCOSC HAL ERR\000"
+  86      53432048 
+  86      414C2045 
+  86      525200
+  87 000f 00       		.space	1
+  88              	.LC1:
+  89 0010 7372632F 		.ascii	"src/sys_clock.cpp\000"
+  89      7379735F 
+  89      636C6F63 
+  89      6B2E6370 
+  89      7000
+  90 0022 0000     		.space	2
+  91              	.LC2:
+  92 0024 52434343 		.ascii	"RCCCLK HAL ERR\000"
+  92      4C4B2048 
+  92      414C2045 
+  92      525200
+  93              		.ident	"GCC: (15:6.3.1+svn253039-1build1) 6.3.1 20170620"
+ARM GAS  /tmp/cc3adx6i.s 			page 3
 
 
 DEFINED SYMBOLS
-                            *ABS*:0000000000000000 sys_clock.c
-     /tmp/ccBPvkpZ.s:16     .text.SYS_Clock_Init:0000000000000000 $t
-     /tmp/ccBPvkpZ.s:21     .text.SYS_Clock_Init:0000000000000000 SYS_Clock_Init
-     /tmp/ccBPvkpZ.s:71     .text.SYS_Clock_Init:0000000000000064 $d
-     /tmp/ccBPvkpZ.s:76     .rodata.str1.4:0000000000000000 $d
+                            *ABS*:0000000000000000 sys_clock.cpp
+     /tmp/cc3adx6i.s:13     .text._Z14SYS_Clock_Initv:0000000000000000 $t
+     /tmp/cc3adx6i.s:20     .text._Z14SYS_Clock_Initv:0000000000000000 _Z14SYS_Clock_Initv
+     /tmp/cc3adx6i.s:78     .text._Z14SYS_Clock_Initv:0000000000000068 $d
+.ARM.exidx.text._Z14SYS_Clock_Initv:0000000000000000 $d
+     /tmp/cc3adx6i.s:84     .rodata._Z14SYS_Clock_Initv.str1.4:0000000000000000 $d
 
 UNDEFINED SYMBOLS
 HAL_RCC_OscConfig
-SYS_ThrowError
 HAL_RCC_ClockConfig
+_Z14SYS_ThrowError15SYS_ErrorType_tmPKcS1_
+__aeabi_unwind_cpp_pr0

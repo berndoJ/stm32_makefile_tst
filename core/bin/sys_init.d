@@ -1,4 +1,4 @@
-bin/sys_init.o: src/sys_init.c inc/sys_init.h \
+bin/sys_init.o: src/sys_init.cpp inc/sys_init.hpp \
  ../lib/cmsisstm32f1xx/inc/stm32f1xx.h \
  ../lib/cmsisstm32f1xx/inc/stm32f103x6.h ../lib/cmsiscore/inc/core_cm3.h \
  ../lib/cmsiscore/inc/cmsis_version.h \
@@ -48,7 +48,7 @@ bin/sys_init.o: src/sys_init.c inc/sys_init.h \
  ../lib/stm32f1hal/inc/stm32f1xx_hal_pcd_ex.h \
  ../lib/stm32f1hal/inc/stm32f1xx_hal_hcd.h
 
-inc/sys_init.h:
+inc/sys_init.hpp:
 
 ../lib/cmsisstm32f1xx/inc/stm32f1xx.h:
 

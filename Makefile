@@ -39,7 +39,7 @@ buildinfo:
 .PHONY: flashimg_elf
 flashimg_elf: lib_stm32f1hal module_core | $(FLASHDIR)
 	@echo "$(C_LBLUE)[Make] Linking source code...$(C_CLR)"
-	@$(LD) $(LDFLAGS) $(SLIBDIRS) $(SLIBS) -static -Wl,-Map=$(FLASHDIR)/$(PROJECTNAME).map,--cref -o $(FLASHDIR)/$(PROJECTNAME).elf
+	@$(LD) $(LDFLAGS) $(SLIBDIRS) -static -Wl,--start-group $(SLIBS) -Wl,--end-group -Wl,-Map=$(FLASHDIR)/$(PROJECTNAME).map,--cref -o $(FLASHDIR)/$(PROJECTNAME).elf
 	@echo "$(C_LBLUE)[Make] Source code linked successfully.$(C_CLR)"
 	@echo "$(C_LGREEN)[Make] Created ELF flash image.$(C_CLR)"
 

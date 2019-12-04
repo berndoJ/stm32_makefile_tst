@@ -1,4 +1,4 @@
-bin/sys_isr.o: src/sys_isr.c inc/sys_isr.h inc/main.h inc/com.h \
+bin/sys_isr.o: src/sys_isr.cpp inc/sys_isr.hpp inc/main.hpp inc/com.hpp \
  ../lib/stm32f1hal/inc/stm32f1xx_hal.h \
  ../lib/stm32f1hal/inc/stm32f1xx_hal_conf.h \
  ../lib/stm32f1hal/inc/stm32f1xx_hal_rcc.h \
@@ -49,11 +49,11 @@ bin/sys_isr.o: src/sys_isr.c inc/sys_isr.h inc/main.h inc/com.h \
  ../lib/stm32f1hal/inc/stm32f1xx_hal_hcd.h \
  ../lib/stm32f1hal/inc/stm32f1xx_hal_conf.h
 
-inc/sys_isr.h:
+inc/sys_isr.hpp:
 
-inc/main.h:
+inc/main.hpp:
 
-inc/com.h:
+inc/com.hpp:
 
 ../lib/stm32f1hal/inc/stm32f1xx_hal.h:
 

@@ -1,1380 +1,1360 @@
-ARM GAS  /tmp/ccpccbuu.s 			page 1
+ARM GAS  /tmp/ccLsKvdf.s 			page 1
 
 
-   1              		.syntax unified
-   2              		.cpu cortex-m3
-   3              		.fpu softvfp
-   4              		.eabi_attribute 20, 1
-   5              		.eabi_attribute 21, 1
-   6              		.eabi_attribute 23, 3
-   7              		.eabi_attribute 24, 1
-   8              		.eabi_attribute 25, 1
-   9              		.eabi_attribute 26, 1
-  10              		.eabi_attribute 30, 1
-  11              		.eabi_attribute 34, 1
-  12              		.eabi_attribute 18, 4
-  13              		.thumb
-  14              		.file	"stm32f1xx_hal_rcc.c"
-  15              		.section	.text.RCC_Delay,"ax",%progbits
-  16              		.align	2
-  17              		.thumb
-  18              		.thumb_func
-  20              	RCC_Delay:
-  21              		@ args = 0, pretend = 0, frame = 8
-  22              		@ frame_needed = 0, uses_anonymous_args = 0
-  23              		@ link register save eliminated.
-  24 0000 82B0     		sub	sp, sp, #8
-  25 0002 084B     		ldr	r3, .L4
-  26 0004 1B68     		ldr	r3, [r3]
-  27 0006 084A     		ldr	r2, .L4+4
-  28 0008 A2FB0323 		umull	r2, r3, r2, r3
-  29 000c 5B0A     		lsrs	r3, r3, #9
-  30 000e 00FB03F0 		mul	r0, r0, r3
-  31 0012 0190     		str	r0, [sp, #4]
-  32              	.L2:
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"stm32f1xx_hal_rcc.c"
+  12              		.section	.text.RCC_Delay,"ax",%progbits
+  13              		.align	1
+  14              		.syntax unified
+  15              		.thumb
+  16              		.thumb_func
+  17              		.fpu softvfp
+  19              	RCC_Delay:
+  20              		@ args = 0, pretend = 0, frame = 8
+  21              		@ frame_needed = 0, uses_anonymous_args = 0
+  22              		@ link register save eliminated.
+  23 0000 82B0     		sub	sp, sp, #8
+  24 0002 084B     		ldr	r3, .L4
+  25 0004 1B68     		ldr	r3, [r3]
+  26 0006 084A     		ldr	r2, .L4+4
+  27 0008 A2FB0323 		umull	r2, r3, r2, r3
+  28 000c 5B0A     		lsrs	r3, r3, #9
+  29 000e 00FB03F0 		mul	r0, r0, r3
+  30 0012 0190     		str	r0, [sp, #4]
+  31              	.L2:
+  32              		.syntax unified
   33              	@ 1370 "src/stm32f1xx_hal_rcc.c" 1
   34 0014 00BF     		nop
   35              	@ 0 "" 2
   36              		.thumb
-  37 0016 019B     		ldr	r3, [sp, #4]
-  38 0018 5A1E     		subs	r2, r3, #1
-  39 001a 0192     		str	r2, [sp, #4]
-  40 001c 002B     		cmp	r3, #0
-  41 001e F9D1     		bne	.L2
-  42 0020 02B0     		add	sp, sp, #8
-  43              		@ sp needed
-  44 0022 7047     		bx	lr
-  45              	.L5:
-  46              		.align	2
-  47              	.L4:
-  48 0024 00000000 		.word	SystemCoreClock
-  49 0028 D34D6210 		.word	274877907
-  51              		.section	.text.HAL_RCC_DeInit,"ax",%progbits
-  52              		.align	2
-  53              		.global	HAL_RCC_DeInit
-  54              		.thumb
-  55              		.thumb_func
-  57              	HAL_RCC_DeInit:
-  58              		@ args = 0, pretend = 0, frame = 0
-  59              		@ frame_needed = 0, uses_anonymous_args = 0
-  60 0000 70B5     		push	{r4, r5, r6, lr}
-ARM GAS  /tmp/ccpccbuu.s 			page 2
+  37              		.syntax unified
+  38 0016 019B     		ldr	r3, [sp, #4]
+  39 0018 5A1E     		subs	r2, r3, #1
+  40 001a 0192     		str	r2, [sp, #4]
+  41 001c 002B     		cmp	r3, #0
+  42 001e F9D1     		bne	.L2
+  43 0020 02B0     		add	sp, sp, #8
+  44              		@ sp needed
+  45 0022 7047     		bx	lr
+  46              	.L5:
+  47              		.align	2
+  48              	.L4:
+  49 0024 00000000 		.word	SystemCoreClock
+  50 0028 D34D6210 		.word	274877907
+  52              		.section	.text.HAL_RCC_DeInit,"ax",%progbits
+  53              		.align	1
+  54              		.global	HAL_RCC_DeInit
+  55              		.syntax unified
+  56              		.thumb
+  57              		.thumb_func
+  58              		.fpu softvfp
+  60              	HAL_RCC_DeInit:
+ARM GAS  /tmp/ccLsKvdf.s 			page 2
 
 
-  61 0002 FFF7FEFF 		bl	HAL_GetTick
-  62 0006 0446     		mov	r4, r0
-  63 0008 384A     		ldr	r2, .L22
-  64 000a 1368     		ldr	r3, [r2]
-  65 000c 43F00103 		orr	r3, r3, #1
-  66 0010 1360     		str	r3, [r2]
-  67 0012 04E0     		b	.L7
-  68              	.L9:
-  69 0014 FFF7FEFF 		bl	HAL_GetTick
-  70 0018 001B     		subs	r0, r0, r4
-  71 001a 0228     		cmp	r0, #2
-  72 001c 5BD8     		bhi	.L16
-  73              	.L7:
-  74 001e 334B     		ldr	r3, .L22
-  75 0020 1B68     		ldr	r3, [r3]
-  76 0022 13F0020F 		tst	r3, #2
-  77 0026 F5D0     		beq	.L9
-  78 0028 304D     		ldr	r5, .L22
-  79 002a 2B68     		ldr	r3, [r5]
-  80 002c 23F0F803 		bic	r3, r3, #248
-  81 0030 43F08003 		orr	r3, r3, #128
-  82 0034 2B60     		str	r3, [r5]
-  83 0036 FFF7FEFF 		bl	HAL_GetTick
-  84 003a 0446     		mov	r4, r0
-  85 003c 0023     		movs	r3, #0
-  86 003e 6B60     		str	r3, [r5, #4]
-  87 0040 06E0     		b	.L10
-  88              	.L11:
-  89 0042 FFF7FEFF 		bl	HAL_GetTick
-  90 0046 001B     		subs	r0, r0, r4
-  91 0048 41F28833 		movw	r3, #5000
-  92 004c 9842     		cmp	r0, r3
-  93 004e 44D8     		bhi	.L17
-  94              	.L10:
-  95 0050 264B     		ldr	r3, .L22
-  96 0052 5B68     		ldr	r3, [r3, #4]
-  97 0054 13F00C0F 		tst	r3, #12
-  98 0058 F3D1     		bne	.L11
-  99 005a 254A     		ldr	r2, .L22+4
- 100 005c 254B     		ldr	r3, .L22+8
- 101 005e 1A60     		str	r2, [r3]
- 102 0060 254B     		ldr	r3, .L22+12
- 103 0062 1868     		ldr	r0, [r3]
- 104 0064 FFF7FEFF 		bl	HAL_InitTick
- 105 0068 0446     		mov	r4, r0
- 106 006a 0028     		cmp	r0, #0
- 107 006c 37D1     		bne	.L18
- 108 006e FFF7FEFF 		bl	HAL_GetTick
- 109 0072 0546     		mov	r5, r0
- 110 0074 1D4A     		ldr	r2, .L22
- 111 0076 1368     		ldr	r3, [r2]
- 112 0078 23F08073 		bic	r3, r3, #16777216
- 113 007c 1360     		str	r3, [r2]
- 114 007e 04E0     		b	.L12
- 115              	.L13:
- 116 0080 FFF7FEFF 		bl	HAL_GetTick
- 117 0084 401B     		subs	r0, r0, r5
-ARM GAS  /tmp/ccpccbuu.s 			page 3
+  61              		@ args = 0, pretend = 0, frame = 0
+  62              		@ frame_needed = 0, uses_anonymous_args = 0
+  63 0000 70B5     		push	{r4, r5, r6, lr}
+  64 0002 FFF7FEFF 		bl	HAL_GetTick
+  65 0006 0446     		mov	r4, r0
+  66 0008 364A     		ldr	r2, .L27
+  67 000a 1368     		ldr	r3, [r2]
+  68 000c 43F00103 		orr	r3, r3, #1
+  69 0010 1360     		str	r3, [r2]
+  70              	.L7:
+  71 0012 344B     		ldr	r3, .L27
+  72 0014 1B68     		ldr	r3, [r3]
+  73 0016 13F0020F 		tst	r3, #2
+  74 001a 07D1     		bne	.L22
+  75 001c FFF7FEFF 		bl	HAL_GetTick
+  76 0020 001B     		subs	r0, r0, r4
+  77 0022 0228     		cmp	r0, #2
+  78 0024 F5D9     		bls	.L7
+  79 0026 0324     		movs	r4, #3
+  80              	.L8:
+  81 0028 2046     		mov	r0, r4
+  82 002a 70BD     		pop	{r4, r5, r6, pc}
+  83              	.L22:
+  84 002c 2D4D     		ldr	r5, .L27
+  85 002e 2B68     		ldr	r3, [r5]
+  86 0030 23F0F803 		bic	r3, r3, #248
+  87 0034 43F08003 		orr	r3, r3, #128
+  88 0038 2B60     		str	r3, [r5]
+  89 003a FFF7FEFF 		bl	HAL_GetTick
+  90 003e 0446     		mov	r4, r0
+  91 0040 0023     		movs	r3, #0
+  92 0042 6B60     		str	r3, [r5, #4]
+  93              	.L10:
+  94 0044 274B     		ldr	r3, .L27
+  95 0046 5B68     		ldr	r3, [r3, #4]
+  96 0048 13F00C0F 		tst	r3, #12
+  97 004c 08D0     		beq	.L23
+  98 004e FFF7FEFF 		bl	HAL_GetTick
+  99 0052 001B     		subs	r0, r0, r4
+ 100 0054 41F28833 		movw	r3, #5000
+ 101 0058 9842     		cmp	r0, r3
+ 102 005a F3D9     		bls	.L10
+ 103 005c 0324     		movs	r4, #3
+ 104 005e E3E7     		b	.L8
+ 105              	.L23:
+ 106 0060 214A     		ldr	r2, .L27+4
+ 107 0062 224B     		ldr	r3, .L27+8
+ 108 0064 1A60     		str	r2, [r3]
+ 109 0066 224B     		ldr	r3, .L27+12
+ 110 0068 1868     		ldr	r0, [r3]
+ 111 006a FFF7FEFF 		bl	HAL_InitTick
+ 112 006e 0446     		mov	r4, r0
+ 113 0070 08B1     		cbz	r0, .L24
+ 114 0072 0124     		movs	r4, #1
+ 115 0074 D8E7     		b	.L8
+ 116              	.L24:
+ 117 0076 FFF7FEFF 		bl	HAL_GetTick
+ARM GAS  /tmp/ccLsKvdf.s 			page 3
 
 
- 118 0086 0228     		cmp	r0, #2
- 119 0088 2BD8     		bhi	.L19
- 120              	.L12:
- 121 008a 184B     		ldr	r3, .L22
- 122 008c 1B68     		ldr	r3, [r3]
- 123 008e 13F0007F 		tst	r3, #33554432
- 124 0092 F5D1     		bne	.L13
- 125 0094 154E     		ldr	r6, .L22
- 126 0096 0023     		movs	r3, #0
- 127 0098 7360     		str	r3, [r6, #4]
- 128 009a FFF7FEFF 		bl	HAL_GetTick
- 129 009e 0546     		mov	r5, r0
- 130 00a0 3368     		ldr	r3, [r6]
- 131 00a2 23F41023 		bic	r3, r3, #589824
- 132 00a6 3360     		str	r3, [r6]
- 133 00a8 04E0     		b	.L14
- 134              	.L15:
- 135 00aa FFF7FEFF 		bl	HAL_GetTick
- 136 00ae 401B     		subs	r0, r0, r5
- 137 00b0 6428     		cmp	r0, #100
- 138 00b2 18D8     		bhi	.L20
- 139              	.L14:
- 140 00b4 0D4B     		ldr	r3, .L22
- 141 00b6 1B68     		ldr	r3, [r3]
- 142 00b8 13F4003F 		tst	r3, #131072
- 143 00bc F5D1     		bne	.L15
- 144 00be 0B4B     		ldr	r3, .L22
- 145 00c0 1A68     		ldr	r2, [r3]
- 146 00c2 22F48022 		bic	r2, r2, #262144
- 147 00c6 1A60     		str	r2, [r3]
- 148 00c8 5A6A     		ldr	r2, [r3, #36]
- 149 00ca 42F08072 		orr	r2, r2, #16777216
- 150 00ce 5A62     		str	r2, [r3, #36]
- 151 00d0 0022     		movs	r2, #0
- 152 00d2 9A60     		str	r2, [r3, #8]
- 153 00d4 08E0     		b	.L8
- 154              	.L16:
- 155 00d6 0324     		movs	r4, #3
- 156 00d8 06E0     		b	.L8
- 157              	.L17:
- 158 00da 0324     		movs	r4, #3
- 159 00dc 04E0     		b	.L8
- 160              	.L18:
- 161 00de 0124     		movs	r4, #1
- 162 00e0 02E0     		b	.L8
- 163              	.L19:
- 164 00e2 0324     		movs	r4, #3
- 165 00e4 00E0     		b	.L8
- 166              	.L20:
- 167 00e6 0324     		movs	r4, #3
- 168              	.L8:
- 169 00e8 2046     		mov	r0, r4
- 170 00ea 70BD     		pop	{r4, r5, r6, pc}
- 171              	.L23:
- 172              		.align	2
- 173              	.L22:
- 174 00ec 00100240 		.word	1073876992
-ARM GAS  /tmp/ccpccbuu.s 			page 4
+ 118 007a 0546     		mov	r5, r0
+ 119 007c 194A     		ldr	r2, .L27
+ 120 007e 1368     		ldr	r3, [r2]
+ 121 0080 23F08073 		bic	r3, r3, #16777216
+ 122 0084 1360     		str	r3, [r2]
+ 123              	.L12:
+ 124 0086 174B     		ldr	r3, .L27
+ 125 0088 1B68     		ldr	r3, [r3]
+ 126 008a 13F0007F 		tst	r3, #33554432
+ 127 008e 06D0     		beq	.L25
+ 128 0090 FFF7FEFF 		bl	HAL_GetTick
+ 129 0094 401B     		subs	r0, r0, r5
+ 130 0096 0228     		cmp	r0, #2
+ 131 0098 F5D9     		bls	.L12
+ 132 009a 0324     		movs	r4, #3
+ 133 009c C4E7     		b	.L8
+ 134              	.L25:
+ 135 009e 114E     		ldr	r6, .L27
+ 136 00a0 0023     		movs	r3, #0
+ 137 00a2 7360     		str	r3, [r6, #4]
+ 138 00a4 FFF7FEFF 		bl	HAL_GetTick
+ 139 00a8 0546     		mov	r5, r0
+ 140 00aa 3368     		ldr	r3, [r6]
+ 141 00ac 23F41023 		bic	r3, r3, #589824
+ 142 00b0 3360     		str	r3, [r6]
+ 143              	.L14:
+ 144 00b2 0C4B     		ldr	r3, .L27
+ 145 00b4 1B68     		ldr	r3, [r3]
+ 146 00b6 13F4003F 		tst	r3, #131072
+ 147 00ba 06D0     		beq	.L26
+ 148 00bc FFF7FEFF 		bl	HAL_GetTick
+ 149 00c0 401B     		subs	r0, r0, r5
+ 150 00c2 6428     		cmp	r0, #100
+ 151 00c4 F5D9     		bls	.L14
+ 152 00c6 0324     		movs	r4, #3
+ 153 00c8 AEE7     		b	.L8
+ 154              	.L26:
+ 155 00ca 064B     		ldr	r3, .L27
+ 156 00cc 1A68     		ldr	r2, [r3]
+ 157 00ce 22F48022 		bic	r2, r2, #262144
+ 158 00d2 1A60     		str	r2, [r3]
+ 159 00d4 5A6A     		ldr	r2, [r3, #36]
+ 160 00d6 42F08072 		orr	r2, r2, #16777216
+ 161 00da 5A62     		str	r2, [r3, #36]
+ 162 00dc 0022     		movs	r2, #0
+ 163 00de 9A60     		str	r2, [r3, #8]
+ 164 00e0 A2E7     		b	.L8
+ 165              	.L28:
+ 166 00e2 00BF     		.align	2
+ 167              	.L27:
+ 168 00e4 00100240 		.word	1073876992
+ 169 00e8 00127A00 		.word	8000000
+ 170 00ec 00000000 		.word	SystemCoreClock
+ 171 00f0 00000000 		.word	uwTickPrio
+ 173              		.section	.text.HAL_RCC_OscConfig,"ax",%progbits
+ 174              		.align	1
+ 175              		.global	HAL_RCC_OscConfig
+ARM GAS  /tmp/ccLsKvdf.s 			page 4
 
 
- 175 00f0 00127A00 		.word	8000000
- 176 00f4 00000000 		.word	SystemCoreClock
- 177 00f8 00000000 		.word	uwTickPrio
- 179              		.section	.text.HAL_RCC_OscConfig,"ax",%progbits
- 180              		.align	2
- 181              		.global	HAL_RCC_OscConfig
- 182              		.thumb
- 183              		.thumb_func
- 185              	HAL_RCC_OscConfig:
- 186              		@ args = 0, pretend = 0, frame = 8
- 187              		@ frame_needed = 0, uses_anonymous_args = 0
- 188 0000 0028     		cmp	r0, #0
- 189 0002 00F0EC81 		beq	.L77
- 190 0006 70B5     		push	{r4, r5, r6, lr}
- 191 0008 82B0     		sub	sp, sp, #8
- 192 000a 0446     		mov	r4, r0
- 193 000c 0368     		ldr	r3, [r0]
- 194 000e 13F0010F 		tst	r3, #1
- 195 0012 6BD0     		beq	.L26
- 196 0014 A84B     		ldr	r3, .L98
- 197 0016 5B68     		ldr	r3, [r3, #4]
- 198 0018 03F00C03 		and	r3, r3, #12
- 199 001c 042B     		cmp	r3, #4
- 200 001e 0AD0     		beq	.L27
- 201 0020 A54B     		ldr	r3, .L98
- 202 0022 5B68     		ldr	r3, [r3, #4]
- 203 0024 03F00C03 		and	r3, r3, #12
- 204 0028 082B     		cmp	r3, #8
- 205 002a 0DD1     		bne	.L28
- 206 002c A24B     		ldr	r3, .L98
- 207 002e 5B68     		ldr	r3, [r3, #4]
- 208 0030 13F4803F 		tst	r3, #65536
- 209 0034 08D0     		beq	.L28
- 210              	.L27:
- 211 0036 A04B     		ldr	r3, .L98
- 212 0038 1B68     		ldr	r3, [r3]
- 213 003a 13F4003F 		tst	r3, #131072
- 214 003e 55D0     		beq	.L26
- 215 0040 6368     		ldr	r3, [r4, #4]
- 216 0042 002B     		cmp	r3, #0
- 217 0044 52D1     		bne	.L26
- 218 0046 CCE1     		b	.L78
- 219              	.L28:
- 220 0048 6368     		ldr	r3, [r4, #4]
- 221 004a B3F5803F 		cmp	r3, #65536
- 222 004e 05D1     		bne	.L29
- 223 0050 994A     		ldr	r2, .L98
- 224 0052 1368     		ldr	r3, [r2]
- 225 0054 43F48033 		orr	r3, r3, #65536
- 226 0058 1360     		str	r3, [r2]
- 227 005a 26E0     		b	.L30
- 228              	.L29:
- 229 005c 63B9     		cbnz	r3, .L31
- 230 005e 03F18043 		add	r3, r3, #1073741824
- 231 0062 03F50433 		add	r3, r3, #135168
- 232 0066 1A68     		ldr	r2, [r3]
- 233 0068 22F48032 		bic	r2, r2, #65536
-ARM GAS  /tmp/ccpccbuu.s 			page 5
+ 176              		.syntax unified
+ 177              		.thumb
+ 178              		.thumb_func
+ 179              		.fpu softvfp
+ 181              	HAL_RCC_OscConfig:
+ 182              		@ args = 0, pretend = 0, frame = 8
+ 183              		@ frame_needed = 0, uses_anonymous_args = 0
+ 184 0000 0028     		cmp	r0, #0
+ 185 0002 00F0F581 		beq	.L82
+ 186 0006 70B5     		push	{r4, r5, r6, lr}
+ 187 0008 82B0     		sub	sp, sp, #8
+ 188 000a 0446     		mov	r4, r0
+ 189 000c 0368     		ldr	r3, [r0]
+ 190 000e 13F0010F 		tst	r3, #1
+ 191 0012 3DD0     		beq	.L31
+ 192 0014 AB4B     		ldr	r3, .L123
+ 193 0016 5B68     		ldr	r3, [r3, #4]
+ 194 0018 03F00C03 		and	r3, r3, #12
+ 195 001c 042B     		cmp	r3, #4
+ 196 001e 2ED0     		beq	.L32
+ 197 0020 A84B     		ldr	r3, .L123
+ 198 0022 5B68     		ldr	r3, [r3, #4]
+ 199 0024 03F00C03 		and	r3, r3, #12
+ 200 0028 082B     		cmp	r3, #8
+ 201 002a 23D0     		beq	.L106
+ 202              	.L33:
+ 203 002c 6368     		ldr	r3, [r4, #4]
+ 204 002e B3F5803F 		cmp	r3, #65536
+ 205 0032 51D0     		beq	.L107
+ 206 0034 002B     		cmp	r3, #0
+ 207 0036 55D1     		bne	.L36
+ 208 0038 03F18043 		add	r3, r3, #1073741824
+ 209 003c 03F50433 		add	r3, r3, #135168
+ 210 0040 1A68     		ldr	r2, [r3]
+ 211 0042 22F48032 		bic	r2, r2, #65536
+ 212 0046 1A60     		str	r2, [r3]
+ 213 0048 1A68     		ldr	r2, [r3]
+ 214 004a 22F48022 		bic	r2, r2, #262144
+ 215 004e 1A60     		str	r2, [r3]
+ 216              	.L35:
+ 217 0050 6368     		ldr	r3, [r4, #4]
+ 218 0052 002B     		cmp	r3, #0
+ 219 0054 60D0     		beq	.L38
+ 220 0056 FFF7FEFF 		bl	HAL_GetTick
+ 221 005a 0546     		mov	r5, r0
+ 222              	.L39:
+ 223 005c 994B     		ldr	r3, .L123
+ 224 005e 1B68     		ldr	r3, [r3]
+ 225 0060 13F4003F 		tst	r3, #131072
+ 226 0064 14D1     		bne	.L31
+ 227 0066 FFF7FEFF 		bl	HAL_GetTick
+ 228 006a 401B     		subs	r0, r0, r5
+ 229 006c 6428     		cmp	r0, #100
+ 230 006e F5D9     		bls	.L39
+ 231 0070 0320     		movs	r0, #3
+ 232 0072 C2E1     		b	.L30
+ 233              	.L106:
+ARM GAS  /tmp/ccLsKvdf.s 			page 5
 
 
- 234 006c 1A60     		str	r2, [r3]
- 235 006e 1A68     		ldr	r2, [r3]
- 236 0070 22F48022 		bic	r2, r2, #262144
- 237 0074 1A60     		str	r2, [r3]
- 238 0076 18E0     		b	.L30
- 239              	.L31:
- 240 0078 B3F5A02F 		cmp	r3, #327680
- 241 007c 0CD1     		bne	.L32
- 242 007e 03F18043 		add	r3, r3, #1073741824
- 243 0082 A3F53C33 		sub	r3, r3, #192512
- 244 0086 1A68     		ldr	r2, [r3]
- 245 0088 42F48022 		orr	r2, r2, #262144
- 246 008c 1A60     		str	r2, [r3]
- 247 008e 1A68     		ldr	r2, [r3]
- 248 0090 42F48032 		orr	r2, r2, #65536
- 249 0094 1A60     		str	r2, [r3]
- 250 0096 08E0     		b	.L30
- 251              	.L32:
- 252 0098 874B     		ldr	r3, .L98
- 253 009a 1A68     		ldr	r2, [r3]
- 254 009c 22F48032 		bic	r2, r2, #65536
- 255 00a0 1A60     		str	r2, [r3]
- 256 00a2 1A68     		ldr	r2, [r3]
- 257 00a4 22F48022 		bic	r2, r2, #262144
- 258 00a8 1A60     		str	r2, [r3]
- 259              	.L30:
- 260 00aa 6368     		ldr	r3, [r4, #4]
- 261 00ac 7BB1     		cbz	r3, .L33
- 262 00ae FFF7FEFF 		bl	HAL_GetTick
- 263 00b2 0546     		mov	r5, r0
- 264 00b4 05E0     		b	.L34
- 265              	.L35:
- 266 00b6 FFF7FEFF 		bl	HAL_GetTick
- 267 00ba 401B     		subs	r0, r0, r5
- 268 00bc 6428     		cmp	r0, #100
- 269 00be 00F29281 		bhi	.L79
- 270              	.L34:
- 271 00c2 7D4B     		ldr	r3, .L98
- 272 00c4 1B68     		ldr	r3, [r3]
- 273 00c6 13F4003F 		tst	r3, #131072
- 274 00ca F4D0     		beq	.L35
- 275 00cc 0EE0     		b	.L26
- 276              	.L33:
- 277 00ce FFF7FEFF 		bl	HAL_GetTick
- 278 00d2 0546     		mov	r5, r0
- 279 00d4 05E0     		b	.L36
- 280              	.L37:
- 281 00d6 FFF7FEFF 		bl	HAL_GetTick
- 282 00da 401B     		subs	r0, r0, r5
- 283 00dc 6428     		cmp	r0, #100
- 284 00de 00F28481 		bhi	.L80
+ 234 0074 934B     		ldr	r3, .L123
+ 235 0076 5B68     		ldr	r3, [r3, #4]
+ 236 0078 13F4803F 		tst	r3, #65536
+ 237 007c D6D0     		beq	.L33
+ 238              	.L32:
+ 239 007e 914B     		ldr	r3, .L123
+ 240 0080 1B68     		ldr	r3, [r3]
+ 241 0082 13F4003F 		tst	r3, #131072
+ 242 0086 03D0     		beq	.L31
+ 243 0088 6368     		ldr	r3, [r4, #4]
+ 244 008a 002B     		cmp	r3, #0
+ 245 008c 00F0B281 		beq	.L108
+ 246              	.L31:
+ 247 0090 2368     		ldr	r3, [r4]
+ 248 0092 13F0020F 		tst	r3, #2
+ 249 0096 65D0     		beq	.L43
+ 250 0098 8A4B     		ldr	r3, .L123
+ 251 009a 5B68     		ldr	r3, [r3, #4]
+ 252 009c 13F00C0F 		tst	r3, #12
+ 253 00a0 4ED0     		beq	.L44
+ 254 00a2 884B     		ldr	r3, .L123
+ 255 00a4 5B68     		ldr	r3, [r3, #4]
+ 256 00a6 03F00C03 		and	r3, r3, #12
+ 257 00aa 082B     		cmp	r3, #8
+ 258 00ac 43D0     		beq	.L109
+ 259              	.L45:
+ 260 00ae 2369     		ldr	r3, [r4, #16]
+ 261 00b0 002B     		cmp	r3, #0
+ 262 00b2 79D0     		beq	.L47
+ 263 00b4 0122     		movs	r2, #1
+ 264 00b6 844B     		ldr	r3, .L123+4
+ 265 00b8 1A60     		str	r2, [r3]
+ 266 00ba FFF7FEFF 		bl	HAL_GetTick
+ 267 00be 0546     		mov	r5, r0
+ 268              	.L48:
+ 269 00c0 804B     		ldr	r3, .L123
+ 270 00c2 1B68     		ldr	r3, [r3]
+ 271 00c4 13F0020F 		tst	r3, #2
+ 272 00c8 65D1     		bne	.L110
+ 273 00ca FFF7FEFF 		bl	HAL_GetTick
+ 274 00ce 401B     		subs	r0, r0, r5
+ 275 00d0 0228     		cmp	r0, #2
+ 276 00d2 F5D9     		bls	.L48
+ 277 00d4 0320     		movs	r0, #3
+ 278 00d6 90E1     		b	.L30
+ 279              	.L107:
+ 280 00d8 7A4A     		ldr	r2, .L123
+ 281 00da 1368     		ldr	r3, [r2]
+ 282 00dc 43F48033 		orr	r3, r3, #65536
+ 283 00e0 1360     		str	r3, [r2]
+ 284 00e2 B5E7     		b	.L35
  285              	.L36:
- 286 00e2 754B     		ldr	r3, .L98
- 287 00e4 1B68     		ldr	r3, [r3]
- 288 00e6 13F4003F 		tst	r3, #131072
- 289 00ea F4D1     		bne	.L37
- 290              	.L26:
-ARM GAS  /tmp/ccpccbuu.s 			page 6
+ 286 00e4 B3F5A02F 		cmp	r3, #327680
+ 287 00e8 09D0     		beq	.L111
+ 288 00ea 764B     		ldr	r3, .L123
+ 289 00ec 1A68     		ldr	r2, [r3]
+ 290 00ee 22F48032 		bic	r2, r2, #65536
+ARM GAS  /tmp/ccLsKvdf.s 			page 6
 
 
- 291 00ec 2368     		ldr	r3, [r4]
- 292 00ee 13F0020F 		tst	r3, #2
- 293 00f2 50D0     		beq	.L38
- 294 00f4 704B     		ldr	r3, .L98
- 295 00f6 5B68     		ldr	r3, [r3, #4]
- 296 00f8 13F00C0F 		tst	r3, #12
- 297 00fc 0AD0     		beq	.L39
- 298 00fe 6E4B     		ldr	r3, .L98
- 299 0100 5B68     		ldr	r3, [r3, #4]
- 300 0102 03F00C03 		and	r3, r3, #12
- 301 0106 082B     		cmp	r3, #8
- 302 0108 16D1     		bne	.L40
- 303 010a 6B4B     		ldr	r3, .L98
- 304 010c 5B68     		ldr	r3, [r3, #4]
- 305 010e 13F4803F 		tst	r3, #65536
- 306 0112 11D1     		bne	.L40
- 307              	.L39:
- 308 0114 684B     		ldr	r3, .L98
- 309 0116 1B68     		ldr	r3, [r3]
- 310 0118 13F0020F 		tst	r3, #2
- 311 011c 03D0     		beq	.L41
- 312 011e 2369     		ldr	r3, [r4, #16]
- 313 0120 012B     		cmp	r3, #1
- 314 0122 40F06481 		bne	.L81
- 315              	.L41:
- 316 0126 644A     		ldr	r2, .L98
- 317 0128 1368     		ldr	r3, [r2]
- 318 012a 23F0F803 		bic	r3, r3, #248
- 319 012e 6169     		ldr	r1, [r4, #20]
- 320 0130 43EAC103 		orr	r3, r3, r1, lsl #3
- 321 0134 1360     		str	r3, [r2]
- 322 0136 2EE0     		b	.L38
- 323              	.L40:
- 324 0138 2369     		ldr	r3, [r4, #16]
- 325 013a D3B1     		cbz	r3, .L42
- 326 013c 0122     		movs	r2, #1
- 327 013e 5F4B     		ldr	r3, .L98+4
- 328 0140 1A60     		str	r2, [r3]
- 329 0142 FFF7FEFF 		bl	HAL_GetTick
- 330 0146 0546     		mov	r5, r0
- 331 0148 05E0     		b	.L43
- 332              	.L44:
- 333 014a FFF7FEFF 		bl	HAL_GetTick
- 334 014e 401B     		subs	r0, r0, r5
- 335 0150 0228     		cmp	r0, #2
- 336 0152 00F24E81 		bhi	.L82
- 337              	.L43:
- 338 0156 584B     		ldr	r3, .L98
- 339 0158 1B68     		ldr	r3, [r3]
- 340 015a 13F0020F 		tst	r3, #2
- 341 015e F4D0     		beq	.L44
- 342 0160 554A     		ldr	r2, .L98
- 343 0162 1368     		ldr	r3, [r2]
- 344 0164 23F0F803 		bic	r3, r3, #248
- 345 0168 6169     		ldr	r1, [r4, #20]
- 346 016a 43EAC103 		orr	r3, r3, r1, lsl #3
- 347 016e 1360     		str	r3, [r2]
-ARM GAS  /tmp/ccpccbuu.s 			page 7
+ 291 00f2 1A60     		str	r2, [r3]
+ 292 00f4 1A68     		ldr	r2, [r3]
+ 293 00f6 22F48022 		bic	r2, r2, #262144
+ 294 00fa 1A60     		str	r2, [r3]
+ 295 00fc A8E7     		b	.L35
+ 296              	.L111:
+ 297 00fe 03F18043 		add	r3, r3, #1073741824
+ 298 0102 A3F53C33 		sub	r3, r3, #192512
+ 299 0106 1A68     		ldr	r2, [r3]
+ 300 0108 42F48022 		orr	r2, r2, #262144
+ 301 010c 1A60     		str	r2, [r3]
+ 302 010e 1A68     		ldr	r2, [r3]
+ 303 0110 42F48032 		orr	r2, r2, #65536
+ 304 0114 1A60     		str	r2, [r3]
+ 305 0116 9BE7     		b	.L35
+ 306              	.L38:
+ 307 0118 FFF7FEFF 		bl	HAL_GetTick
+ 308 011c 0546     		mov	r5, r0
+ 309              	.L41:
+ 310 011e 694B     		ldr	r3, .L123
+ 311 0120 1B68     		ldr	r3, [r3]
+ 312 0122 13F4003F 		tst	r3, #131072
+ 313 0126 B3D0     		beq	.L31
+ 314 0128 FFF7FEFF 		bl	HAL_GetTick
+ 315 012c 401B     		subs	r0, r0, r5
+ 316 012e 6428     		cmp	r0, #100
+ 317 0130 F5D9     		bls	.L41
+ 318 0132 0320     		movs	r0, #3
+ 319 0134 61E1     		b	.L30
+ 320              	.L109:
+ 321 0136 634B     		ldr	r3, .L123
+ 322 0138 5B68     		ldr	r3, [r3, #4]
+ 323 013a 13F4803F 		tst	r3, #65536
+ 324 013e B6D1     		bne	.L45
+ 325              	.L44:
+ 326 0140 604B     		ldr	r3, .L123
+ 327 0142 1B68     		ldr	r3, [r3]
+ 328 0144 13F0020F 		tst	r3, #2
+ 329 0148 04D0     		beq	.L46
+ 330 014a 2369     		ldr	r3, [r4, #16]
+ 331 014c 012B     		cmp	r3, #1
+ 332 014e 01D0     		beq	.L46
+ 333 0150 0120     		movs	r0, #1
+ 334 0152 52E1     		b	.L30
+ 335              	.L46:
+ 336 0154 5B4A     		ldr	r2, .L123
+ 337 0156 1368     		ldr	r3, [r2]
+ 338 0158 23F0F803 		bic	r3, r3, #248
+ 339 015c 6169     		ldr	r1, [r4, #20]
+ 340 015e 43EAC103 		orr	r3, r3, r1, lsl #3
+ 341 0162 1360     		str	r3, [r2]
+ 342              	.L43:
+ 343 0164 2368     		ldr	r3, [r4]
+ 344 0166 13F0080F 		tst	r3, #8
+ 345 016a 32D0     		beq	.L52
+ 346 016c A369     		ldr	r3, [r4, #24]
+ 347 016e 002B     		cmp	r3, #0
+ARM GAS  /tmp/ccLsKvdf.s 			page 7
 
 
- 348 0170 11E0     		b	.L38
- 349              	.L42:
- 350 0172 0022     		movs	r2, #0
- 351 0174 514B     		ldr	r3, .L98+4
- 352 0176 1A60     		str	r2, [r3]
- 353 0178 FFF7FEFF 		bl	HAL_GetTick
- 354 017c 0546     		mov	r5, r0
- 355 017e 05E0     		b	.L45
- 356              	.L46:
- 357 0180 FFF7FEFF 		bl	HAL_GetTick
- 358 0184 401B     		subs	r0, r0, r5
- 359 0186 0228     		cmp	r0, #2
- 360 0188 00F23581 		bhi	.L83
- 361              	.L45:
- 362 018c 4A4B     		ldr	r3, .L98
- 363 018e 1B68     		ldr	r3, [r3]
- 364 0190 13F0020F 		tst	r3, #2
- 365 0194 F4D1     		bne	.L46
- 366              	.L38:
- 367 0196 2368     		ldr	r3, [r4]
- 368 0198 13F0080F 		tst	r3, #8
- 369 019c 29D0     		beq	.L47
- 370 019e A369     		ldr	r3, [r4, #24]
- 371 01a0 ABB1     		cbz	r3, .L48
- 372 01a2 0122     		movs	r2, #1
- 373 01a4 464B     		ldr	r3, .L98+8
- 374 01a6 1A60     		str	r2, [r3]
- 375 01a8 FFF7FEFF 		bl	HAL_GetTick
- 376 01ac 0546     		mov	r5, r0
- 377 01ae 05E0     		b	.L49
- 378              	.L50:
- 379 01b0 FFF7FEFF 		bl	HAL_GetTick
- 380 01b4 401B     		subs	r0, r0, r5
- 381 01b6 0228     		cmp	r0, #2
- 382 01b8 00F21F81 		bhi	.L84
- 383              	.L49:
- 384 01bc 3E4B     		ldr	r3, .L98
- 385 01be 5B6A     		ldr	r3, [r3, #36]
- 386 01c0 13F0020F 		tst	r3, #2
- 387 01c4 F4D0     		beq	.L50
- 388 01c6 0120     		movs	r0, #1
- 389 01c8 FFF7FEFF 		bl	RCC_Delay
- 390 01cc 11E0     		b	.L47
- 391              	.L48:
- 392 01ce 0022     		movs	r2, #0
- 393 01d0 3B4B     		ldr	r3, .L98+8
- 394 01d2 1A60     		str	r2, [r3]
- 395 01d4 FFF7FEFF 		bl	HAL_GetTick
- 396 01d8 0546     		mov	r5, r0
- 397 01da 05E0     		b	.L51
- 398              	.L52:
- 399 01dc FFF7FEFF 		bl	HAL_GetTick
- 400 01e0 401B     		subs	r0, r0, r5
- 401 01e2 0228     		cmp	r0, #2
- 402 01e4 00F20B81 		bhi	.L85
- 403              	.L51:
- 404 01e8 334B     		ldr	r3, .L98
-ARM GAS  /tmp/ccpccbuu.s 			page 8
+ 348 0170 6ED0     		beq	.L53
+ 349 0172 0122     		movs	r2, #1
+ 350 0174 554B     		ldr	r3, .L123+8
+ 351 0176 1A60     		str	r2, [r3]
+ 352 0178 FFF7FEFF 		bl	HAL_GetTick
+ 353 017c 0546     		mov	r5, r0
+ 354              	.L54:
+ 355 017e 514B     		ldr	r3, .L123
+ 356 0180 5B6A     		ldr	r3, [r3, #36]
+ 357 0182 13F0020F 		tst	r3, #2
+ 358 0186 21D1     		bne	.L112
+ 359 0188 FFF7FEFF 		bl	HAL_GetTick
+ 360 018c 401B     		subs	r0, r0, r5
+ 361 018e 0228     		cmp	r0, #2
+ 362 0190 F5D9     		bls	.L54
+ 363 0192 0320     		movs	r0, #3
+ 364 0194 31E1     		b	.L30
+ 365              	.L110:
+ 366 0196 4B4A     		ldr	r2, .L123
+ 367 0198 1368     		ldr	r3, [r2]
+ 368 019a 23F0F803 		bic	r3, r3, #248
+ 369 019e 6169     		ldr	r1, [r4, #20]
+ 370 01a0 43EAC103 		orr	r3, r3, r1, lsl #3
+ 371 01a4 1360     		str	r3, [r2]
+ 372 01a6 DDE7     		b	.L43
+ 373              	.L47:
+ 374 01a8 0022     		movs	r2, #0
+ 375 01aa 474B     		ldr	r3, .L123+4
+ 376 01ac 1A60     		str	r2, [r3]
+ 377 01ae FFF7FEFF 		bl	HAL_GetTick
+ 378 01b2 0546     		mov	r5, r0
+ 379              	.L50:
+ 380 01b4 434B     		ldr	r3, .L123
+ 381 01b6 1B68     		ldr	r3, [r3]
+ 382 01b8 13F0020F 		tst	r3, #2
+ 383 01bc D2D0     		beq	.L43
+ 384 01be FFF7FEFF 		bl	HAL_GetTick
+ 385 01c2 401B     		subs	r0, r0, r5
+ 386 01c4 0228     		cmp	r0, #2
+ 387 01c6 F5D9     		bls	.L50
+ 388 01c8 0320     		movs	r0, #3
+ 389 01ca 16E1     		b	.L30
+ 390              	.L112:
+ 391 01cc 0120     		movs	r0, #1
+ 392 01ce FFF7FEFF 		bl	RCC_Delay
+ 393              	.L52:
+ 394 01d2 2368     		ldr	r3, [r4]
+ 395 01d4 13F0040F 		tst	r3, #4
+ 396 01d8 00F09880 		beq	.L58
+ 397 01dc 394B     		ldr	r3, .L123
+ 398 01de DB69     		ldr	r3, [r3, #28]
+ 399 01e0 13F0805F 		tst	r3, #268435456
+ 400 01e4 46D1     		bne	.L91
+ 401 01e6 374B     		ldr	r3, .L123
+ 402 01e8 DA69     		ldr	r2, [r3, #28]
+ 403 01ea 42F08052 		orr	r2, r2, #268435456
+ 404 01ee DA61     		str	r2, [r3, #28]
+ARM GAS  /tmp/ccLsKvdf.s 			page 8
 
 
- 405 01ea 5B6A     		ldr	r3, [r3, #36]
- 406 01ec 13F0020F 		tst	r3, #2
- 407 01f0 F4D1     		bne	.L52
- 408              	.L47:
- 409 01f2 2368     		ldr	r3, [r4]
- 410 01f4 13F0040F 		tst	r3, #4
- 411 01f8 00F08B80 		beq	.L53
- 412 01fc 2E4B     		ldr	r3, .L98
- 413 01fe DB69     		ldr	r3, [r3, #28]
- 414 0200 13F0805F 		tst	r3, #268435456
- 415 0204 0BD1     		bne	.L86
- 416 0206 2C4B     		ldr	r3, .L98
- 417 0208 DA69     		ldr	r2, [r3, #28]
- 418 020a 42F08052 		orr	r2, r2, #268435456
- 419 020e DA61     		str	r2, [r3, #28]
- 420 0210 DB69     		ldr	r3, [r3, #28]
- 421 0212 03F08053 		and	r3, r3, #268435456
- 422 0216 0193     		str	r3, [sp, #4]
- 423 0218 019B     		ldr	r3, [sp, #4]
- 424 021a 0125     		movs	r5, #1
- 425 021c 00E0     		b	.L54
- 426              	.L86:
- 427 021e 0025     		movs	r5, #0
- 428              	.L54:
- 429 0220 284B     		ldr	r3, .L98+12
- 430 0222 1B68     		ldr	r3, [r3]
- 431 0224 13F4807F 		tst	r3, #256
- 432 0228 13D1     		bne	.L55
- 433 022a 264A     		ldr	r2, .L98+12
- 434 022c 1368     		ldr	r3, [r2]
- 435 022e 43F48073 		orr	r3, r3, #256
- 436 0232 1360     		str	r3, [r2]
- 437 0234 FFF7FEFF 		bl	HAL_GetTick
- 438 0238 0646     		mov	r6, r0
- 439 023a 05E0     		b	.L56
- 440              	.L57:
- 441 023c FFF7FEFF 		bl	HAL_GetTick
- 442 0240 801B     		subs	r0, r0, r6
- 443 0242 6428     		cmp	r0, #100
- 444 0244 00F2DD80 		bhi	.L87
- 445              	.L56:
- 446 0248 1E4B     		ldr	r3, .L98+12
- 447 024a 1B68     		ldr	r3, [r3]
- 448 024c 13F4807F 		tst	r3, #256
- 449 0250 F4D0     		beq	.L57
- 450              	.L55:
- 451 0252 E368     		ldr	r3, [r4, #12]
- 452 0254 012B     		cmp	r3, #1
- 453 0256 05D1     		bne	.L58
- 454 0258 174A     		ldr	r2, .L98
- 455 025a 136A     		ldr	r3, [r2, #32]
- 456 025c 43F00103 		orr	r3, r3, #1
- 457 0260 1362     		str	r3, [r2, #32]
- 458 0262 22E0     		b	.L59
- 459              	.L58:
- 460 0264 63B9     		cbnz	r3, .L60
- 461 0266 03F18043 		add	r3, r3, #1073741824
-ARM GAS  /tmp/ccpccbuu.s 			page 9
+ 405 01f0 DB69     		ldr	r3, [r3, #28]
+ 406 01f2 03F08053 		and	r3, r3, #268435456
+ 407 01f6 0193     		str	r3, [sp, #4]
+ 408 01f8 019B     		ldr	r3, [sp, #4]
+ 409 01fa 0125     		movs	r5, #1
+ 410              	.L59:
+ 411 01fc 344B     		ldr	r3, .L123+12
+ 412 01fe 1B68     		ldr	r3, [r3]
+ 413 0200 13F4807F 		tst	r3, #256
+ 414 0204 38D0     		beq	.L113
+ 415              	.L60:
+ 416 0206 E368     		ldr	r3, [r4, #12]
+ 417 0208 012B     		cmp	r3, #1
+ 418 020a 49D0     		beq	.L114
+ 419 020c 002B     		cmp	r3, #0
+ 420 020e 4DD1     		bne	.L65
+ 421 0210 03F18043 		add	r3, r3, #1073741824
+ 422 0214 03F50433 		add	r3, r3, #135168
+ 423 0218 1A6A     		ldr	r2, [r3, #32]
+ 424 021a 22F00102 		bic	r2, r2, #1
+ 425 021e 1A62     		str	r2, [r3, #32]
+ 426 0220 1A6A     		ldr	r2, [r3, #32]
+ 427 0222 22F00402 		bic	r2, r2, #4
+ 428 0226 1A62     		str	r2, [r3, #32]
+ 429              	.L64:
+ 430 0228 E368     		ldr	r3, [r4, #12]
+ 431 022a 002B     		cmp	r3, #0
+ 432 022c 5CD0     		beq	.L67
+ 433 022e FFF7FEFF 		bl	HAL_GetTick
+ 434 0232 0646     		mov	r6, r0
+ 435              	.L68:
+ 436 0234 234B     		ldr	r3, .L123
+ 437 0236 1B6A     		ldr	r3, [r3, #32]
+ 438 0238 13F0020F 		tst	r3, #2
+ 439 023c 65D1     		bne	.L70
+ 440 023e FFF7FEFF 		bl	HAL_GetTick
+ 441 0242 801B     		subs	r0, r0, r6
+ 442 0244 41F28833 		movw	r3, #5000
+ 443 0248 9842     		cmp	r0, r3
+ 444 024a F3D9     		bls	.L68
+ 445 024c 0320     		movs	r0, #3
+ 446 024e D4E0     		b	.L30
+ 447              	.L53:
+ 448 0250 0022     		movs	r2, #0
+ 449 0252 1E4B     		ldr	r3, .L123+8
+ 450 0254 1A60     		str	r2, [r3]
+ 451 0256 FFF7FEFF 		bl	HAL_GetTick
+ 452 025a 0546     		mov	r5, r0
+ 453              	.L56:
+ 454 025c 194B     		ldr	r3, .L123
+ 455 025e 5B6A     		ldr	r3, [r3, #36]
+ 456 0260 13F0020F 		tst	r3, #2
+ 457 0264 B5D0     		beq	.L52
+ 458 0266 FFF7FEFF 		bl	HAL_GetTick
+ 459 026a 401B     		subs	r0, r0, r5
+ 460 026c 0228     		cmp	r0, #2
+ 461 026e F5D9     		bls	.L56
+ARM GAS  /tmp/ccLsKvdf.s 			page 9
 
 
- 462 026a 03F50433 		add	r3, r3, #135168
- 463 026e 1A6A     		ldr	r2, [r3, #32]
- 464 0270 22F00102 		bic	r2, r2, #1
- 465 0274 1A62     		str	r2, [r3, #32]
- 466 0276 1A6A     		ldr	r2, [r3, #32]
- 467 0278 22F00402 		bic	r2, r2, #4
- 468 027c 1A62     		str	r2, [r3, #32]
- 469 027e 14E0     		b	.L59
- 470              	.L60:
- 471 0280 052B     		cmp	r3, #5
- 472 0282 09D1     		bne	.L61
- 473 0284 0C4B     		ldr	r3, .L98
- 474 0286 1A6A     		ldr	r2, [r3, #32]
- 475 0288 42F00402 		orr	r2, r2, #4
- 476 028c 1A62     		str	r2, [r3, #32]
- 477 028e 1A6A     		ldr	r2, [r3, #32]
- 478 0290 42F00102 		orr	r2, r2, #1
- 479 0294 1A62     		str	r2, [r3, #32]
- 480 0296 08E0     		b	.L59
- 481              	.L61:
- 482 0298 074B     		ldr	r3, .L98
- 483 029a 1A6A     		ldr	r2, [r3, #32]
- 484 029c 22F00102 		bic	r2, r2, #1
- 485 02a0 1A62     		str	r2, [r3, #32]
- 486 02a2 1A6A     		ldr	r2, [r3, #32]
- 487 02a4 22F00402 		bic	r2, r2, #4
- 488 02a8 1A62     		str	r2, [r3, #32]
- 489              	.L59:
- 490 02aa E368     		ldr	r3, [r4, #12]
- 491 02ac D3B1     		cbz	r3, .L62
- 492 02ae FFF7FEFF 		bl	HAL_GetTick
- 493 02b2 0646     		mov	r6, r0
- 494 02b4 10E0     		b	.L63
- 495              	.L99:
- 496 02b6 00BF     		.align	2
- 497              	.L98:
- 498 02b8 00100240 		.word	1073876992
- 499 02bc 00004242 		.word	1111621632
- 500 02c0 80044242 		.word	1111622784
- 501 02c4 00700040 		.word	1073770496
- 502              	.L64:
- 503 02c8 FFF7FEFF 		bl	HAL_GetTick
- 504 02cc 801B     		subs	r0, r0, r6
- 505 02ce 41F28833 		movw	r3, #5000
- 506 02d2 9842     		cmp	r0, r3
- 507 02d4 00F29780 		bhi	.L88
- 508              	.L63:
- 509 02d8 544B     		ldr	r3, .L100
- 510 02da 1B6A     		ldr	r3, [r3, #32]
- 511 02dc 13F0020F 		tst	r3, #2
- 512 02e0 F2D0     		beq	.L64
- 513 02e2 10E0     		b	.L65
- 514              	.L62:
- 515 02e4 FFF7FEFF 		bl	HAL_GetTick
- 516 02e8 0646     		mov	r6, r0
- 517 02ea 07E0     		b	.L66
+ 462 0270 0320     		movs	r0, #3
+ 463 0272 C2E0     		b	.L30
+ 464              	.L91:
+ 465 0274 0025     		movs	r5, #0
+ 466 0276 C1E7     		b	.L59
+ 467              	.L113:
+ 468 0278 154A     		ldr	r2, .L123+12
+ 469 027a 1368     		ldr	r3, [r2]
+ 470 027c 43F48073 		orr	r3, r3, #256
+ 471 0280 1360     		str	r3, [r2]
+ 472 0282 FFF7FEFF 		bl	HAL_GetTick
+ 473 0286 0646     		mov	r6, r0
+ 474              	.L61:
+ 475 0288 114B     		ldr	r3, .L123+12
+ 476 028a 1B68     		ldr	r3, [r3]
+ 477 028c 13F4807F 		tst	r3, #256
+ 478 0290 B9D1     		bne	.L60
+ 479 0292 FFF7FEFF 		bl	HAL_GetTick
+ 480 0296 801B     		subs	r0, r0, r6
+ 481 0298 6428     		cmp	r0, #100
+ 482 029a F5D9     		bls	.L61
+ 483 029c 0320     		movs	r0, #3
+ 484 029e ACE0     		b	.L30
+ 485              	.L114:
+ 486 02a0 084A     		ldr	r2, .L123
+ 487 02a2 136A     		ldr	r3, [r2, #32]
+ 488 02a4 43F00103 		orr	r3, r3, #1
+ 489 02a8 1362     		str	r3, [r2, #32]
+ 490 02aa BDE7     		b	.L64
+ 491              	.L65:
+ 492 02ac 052B     		cmp	r3, #5
+ 493 02ae 11D0     		beq	.L115
+ 494 02b0 044B     		ldr	r3, .L123
+ 495 02b2 1A6A     		ldr	r2, [r3, #32]
+ 496 02b4 22F00102 		bic	r2, r2, #1
+ 497 02b8 1A62     		str	r2, [r3, #32]
+ 498 02ba 1A6A     		ldr	r2, [r3, #32]
+ 499 02bc 22F00402 		bic	r2, r2, #4
+ 500 02c0 1A62     		str	r2, [r3, #32]
+ 501 02c2 B1E7     		b	.L64
+ 502              	.L124:
+ 503              		.align	2
+ 504              	.L123:
+ 505 02c4 00100240 		.word	1073876992
+ 506 02c8 00004242 		.word	1111621632
+ 507 02cc 80044242 		.word	1111622784
+ 508 02d0 00700040 		.word	1073770496
+ 509              	.L115:
+ 510 02d4 4C4B     		ldr	r3, .L125
+ 511 02d6 1A6A     		ldr	r2, [r3, #32]
+ 512 02d8 42F00402 		orr	r2, r2, #4
+ 513 02dc 1A62     		str	r2, [r3, #32]
+ 514 02de 1A6A     		ldr	r2, [r3, #32]
+ 515 02e0 42F00102 		orr	r2, r2, #1
+ 516 02e4 1A62     		str	r2, [r3, #32]
+ 517 02e6 9FE7     		b	.L64
  518              	.L67:
-ARM GAS  /tmp/ccpccbuu.s 			page 10
+ARM GAS  /tmp/ccLsKvdf.s 			page 10
 
 
- 519 02ec FFF7FEFF 		bl	HAL_GetTick
- 520 02f0 801B     		subs	r0, r0, r6
- 521 02f2 41F28833 		movw	r3, #5000
- 522 02f6 9842     		cmp	r0, r3
- 523 02f8 00F28780 		bhi	.L89
- 524              	.L66:
- 525 02fc 4B4B     		ldr	r3, .L100
- 526 02fe 1B6A     		ldr	r3, [r3, #32]
- 527 0300 13F0020F 		tst	r3, #2
- 528 0304 F2D1     		bne	.L67
- 529              	.L65:
- 530 0306 25B1     		cbz	r5, .L53
- 531 0308 484A     		ldr	r2, .L100
- 532 030a D369     		ldr	r3, [r2, #28]
- 533 030c 23F08053 		bic	r3, r3, #268435456
- 534 0310 D361     		str	r3, [r2, #28]
- 535              	.L53:
- 536 0312 E369     		ldr	r3, [r4, #28]
- 537 0314 002B     		cmp	r3, #0
- 538 0316 7AD0     		beq	.L90
- 539 0318 444A     		ldr	r2, .L100
- 540 031a 5268     		ldr	r2, [r2, #4]
- 541 031c 02F00C02 		and	r2, r2, #12
- 542 0320 082A     		cmp	r2, #8
- 543 0322 4CD0     		beq	.L68
- 544 0324 022B     		cmp	r3, #2
- 545 0326 37D1     		bne	.L69
- 546 0328 0022     		movs	r2, #0
- 547 032a 414B     		ldr	r3, .L100+4
- 548 032c 1A60     		str	r2, [r3]
- 549 032e FFF7FEFF 		bl	HAL_GetTick
- 550 0332 0546     		mov	r5, r0
- 551 0334 04E0     		b	.L70
- 552              	.L71:
- 553 0336 FFF7FEFF 		bl	HAL_GetTick
- 554 033a 401B     		subs	r0, r0, r5
- 555 033c 0228     		cmp	r0, #2
- 556 033e 68D8     		bhi	.L91
- 557              	.L70:
- 558 0340 3A4B     		ldr	r3, .L100
- 559 0342 1B68     		ldr	r3, [r3]
- 560 0344 13F0007F 		tst	r3, #33554432
- 561 0348 F5D1     		bne	.L71
- 562 034a 236A     		ldr	r3, [r4, #32]
- 563 034c B3F5803F 		cmp	r3, #65536
- 564 0350 06D1     		bne	.L72
- 565 0352 3649     		ldr	r1, .L100
- 566 0354 4B68     		ldr	r3, [r1, #4]
- 567 0356 23F40032 		bic	r2, r3, #131072
- 568 035a A368     		ldr	r3, [r4, #8]
- 569 035c 1343     		orrs	r3, r3, r2
- 570 035e 4B60     		str	r3, [r1, #4]
- 571              	.L72:
- 572 0360 3248     		ldr	r0, .L100
- 573 0362 4368     		ldr	r3, [r0, #4]
- 574 0364 23F47411 		bic	r1, r3, #3997696
- 575 0368 236A     		ldr	r3, [r4, #32]
-ARM GAS  /tmp/ccpccbuu.s 			page 11
+ 519 02e8 FFF7FEFF 		bl	HAL_GetTick
+ 520 02ec 0646     		mov	r6, r0
+ 521              	.L71:
+ 522 02ee 464B     		ldr	r3, .L125
+ 523 02f0 1B6A     		ldr	r3, [r3, #32]
+ 524 02f2 13F0020F 		tst	r3, #2
+ 525 02f6 08D0     		beq	.L70
+ 526 02f8 FFF7FEFF 		bl	HAL_GetTick
+ 527 02fc 801B     		subs	r0, r0, r6
+ 528 02fe 41F28833 		movw	r3, #5000
+ 529 0302 9842     		cmp	r0, r3
+ 530 0304 F3D9     		bls	.L71
+ 531 0306 0320     		movs	r0, #3
+ 532 0308 77E0     		b	.L30
+ 533              	.L70:
+ 534 030a E5B9     		cbnz	r5, .L116
+ 535              	.L58:
+ 536 030c E369     		ldr	r3, [r4, #28]
+ 537 030e 002B     		cmp	r3, #0
+ 538 0310 72D0     		beq	.L95
+ 539 0312 3D4A     		ldr	r2, .L125
+ 540 0314 5268     		ldr	r2, [r2, #4]
+ 541 0316 02F00C02 		and	r2, r2, #12
+ 542 031a 082A     		cmp	r2, #8
+ 543 031c 56D0     		beq	.L73
+ 544 031e 022B     		cmp	r3, #2
+ 545 0320 17D0     		beq	.L117
+ 546 0322 0022     		movs	r2, #0
+ 547 0324 394B     		ldr	r3, .L125+4
+ 548 0326 1A60     		str	r2, [r3]
+ 549 0328 FFF7FEFF 		bl	HAL_GetTick
+ 550 032c 0446     		mov	r4, r0
+ 551              	.L80:
+ 552 032e 364B     		ldr	r3, .L125
+ 553 0330 1B68     		ldr	r3, [r3]
+ 554 0332 13F0007F 		tst	r3, #33554432
+ 555 0336 47D0     		beq	.L118
+ 556 0338 FFF7FEFF 		bl	HAL_GetTick
+ 557 033c 001B     		subs	r0, r0, r4
+ 558 033e 0228     		cmp	r0, #2
+ 559 0340 F5D9     		bls	.L80
+ 560 0342 0320     		movs	r0, #3
+ 561 0344 59E0     		b	.L30
+ 562              	.L116:
+ 563 0346 304A     		ldr	r2, .L125
+ 564 0348 D369     		ldr	r3, [r2, #28]
+ 565 034a 23F08053 		bic	r3, r3, #268435456
+ 566 034e D361     		str	r3, [r2, #28]
+ 567 0350 DCE7     		b	.L58
+ 568              	.L117:
+ 569 0352 0022     		movs	r2, #0
+ 570 0354 2D4B     		ldr	r3, .L125+4
+ 571 0356 1A60     		str	r2, [r3]
+ 572 0358 FFF7FEFF 		bl	HAL_GetTick
+ 573 035c 0546     		mov	r5, r0
+ 574              	.L75:
+ 575 035e 2A4B     		ldr	r3, .L125
+ARM GAS  /tmp/ccLsKvdf.s 			page 11
 
 
- 576 036a 626A     		ldr	r2, [r4, #36]
- 577 036c 1343     		orrs	r3, r3, r2
- 578 036e 0B43     		orrs	r3, r3, r1
- 579 0370 4360     		str	r3, [r0, #4]
- 580 0372 0122     		movs	r2, #1
- 581 0374 2E4B     		ldr	r3, .L100+4
- 582 0376 1A60     		str	r2, [r3]
- 583 0378 FFF7FEFF 		bl	HAL_GetTick
- 584 037c 0446     		mov	r4, r0
- 585 037e 04E0     		b	.L73
- 586              	.L74:
- 587 0380 FFF7FEFF 		bl	HAL_GetTick
- 588 0384 001B     		subs	r0, r0, r4
- 589 0386 0228     		cmp	r0, #2
- 590 0388 45D8     		bhi	.L92
- 591              	.L73:
- 592 038a 284B     		ldr	r3, .L100
- 593 038c 1B68     		ldr	r3, [r3]
- 594 038e 13F0007F 		tst	r3, #33554432
- 595 0392 F5D0     		beq	.L74
- 596 0394 0020     		movs	r0, #0
- 597 0396 47E0     		b	.L25
- 598              	.L69:
- 599 0398 0022     		movs	r2, #0
- 600 039a 254B     		ldr	r3, .L100+4
- 601 039c 1A60     		str	r2, [r3]
- 602 039e FFF7FEFF 		bl	HAL_GetTick
- 603 03a2 0446     		mov	r4, r0
- 604 03a4 04E0     		b	.L75
- 605              	.L76:
- 606 03a6 FFF7FEFF 		bl	HAL_GetTick
- 607 03aa 001B     		subs	r0, r0, r4
- 608 03ac 0228     		cmp	r0, #2
- 609 03ae 34D8     		bhi	.L93
- 610              	.L75:
- 611 03b0 1E4B     		ldr	r3, .L100
- 612 03b2 1B68     		ldr	r3, [r3]
- 613 03b4 13F0007F 		tst	r3, #33554432
- 614 03b8 F5D1     		bne	.L76
- 615 03ba 0020     		movs	r0, #0
- 616 03bc 34E0     		b	.L25
- 617              	.L68:
- 618 03be 012B     		cmp	r3, #1
- 619 03c0 2DD0     		beq	.L94
- 620 03c2 1A4B     		ldr	r3, .L100
- 621 03c4 5B68     		ldr	r3, [r3, #4]
- 622 03c6 03F48031 		and	r1, r3, #65536
- 623 03ca 226A     		ldr	r2, [r4, #32]
- 624 03cc 9142     		cmp	r1, r2
- 625 03ce 28D1     		bne	.L95
- 626 03d0 03F47013 		and	r3, r3, #3932160
- 627 03d4 626A     		ldr	r2, [r4, #36]
- 628 03d6 9342     		cmp	r3, r2
- 629 03d8 25D0     		beq	.L96
- 630 03da 0120     		movs	r0, #1
- 631 03dc 24E0     		b	.L25
- 632              	.L77:
-ARM GAS  /tmp/ccpccbuu.s 			page 12
+ 576 0360 1B68     		ldr	r3, [r3]
+ 577 0362 13F0007F 		tst	r3, #33554432
+ 578 0366 06D0     		beq	.L119
+ 579 0368 FFF7FEFF 		bl	HAL_GetTick
+ 580 036c 401B     		subs	r0, r0, r5
+ 581 036e 0228     		cmp	r0, #2
+ 582 0370 F5D9     		bls	.L75
+ 583 0372 0320     		movs	r0, #3
+ 584 0374 41E0     		b	.L30
+ 585              	.L119:
+ 586 0376 236A     		ldr	r3, [r4, #32]
+ 587 0378 B3F5803F 		cmp	r3, #65536
+ 588 037c 1AD0     		beq	.L120
+ 589              	.L77:
+ 590 037e 2249     		ldr	r1, .L125
+ 591 0380 4B68     		ldr	r3, [r1, #4]
+ 592 0382 23F47413 		bic	r3, r3, #3997696
+ 593 0386 226A     		ldr	r2, [r4, #32]
+ 594 0388 606A     		ldr	r0, [r4, #36]
+ 595 038a 0243     		orrs	r2, r2, r0
+ 596 038c 1343     		orrs	r3, r3, r2
+ 597 038e 4B60     		str	r3, [r1, #4]
+ 598 0390 0122     		movs	r2, #1
+ 599 0392 1E4B     		ldr	r3, .L125+4
+ 600 0394 1A60     		str	r2, [r3]
+ 601 0396 FFF7FEFF 		bl	HAL_GetTick
+ 602 039a 0446     		mov	r4, r0
+ 603              	.L78:
+ 604 039c 1A4B     		ldr	r3, .L125
+ 605 039e 1B68     		ldr	r3, [r3]
+ 606 03a0 13F0007F 		tst	r3, #33554432
+ 607 03a4 0ED1     		bne	.L121
+ 608 03a6 FFF7FEFF 		bl	HAL_GetTick
+ 609 03aa 001B     		subs	r0, r0, r4
+ 610 03ac 0228     		cmp	r0, #2
+ 611 03ae F5D9     		bls	.L78
+ 612 03b0 0320     		movs	r0, #3
+ 613 03b2 22E0     		b	.L30
+ 614              	.L120:
+ 615 03b4 144A     		ldr	r2, .L125
+ 616 03b6 5368     		ldr	r3, [r2, #4]
+ 617 03b8 23F40033 		bic	r3, r3, #131072
+ 618 03bc A168     		ldr	r1, [r4, #8]
+ 619 03be 0B43     		orrs	r3, r3, r1
+ 620 03c0 5360     		str	r3, [r2, #4]
+ 621 03c2 DCE7     		b	.L77
+ 622              	.L121:
+ 623 03c4 0020     		movs	r0, #0
+ 624 03c6 18E0     		b	.L30
+ 625              	.L118:
+ 626 03c8 0020     		movs	r0, #0
+ 627 03ca 16E0     		b	.L30
+ 628              	.L73:
+ 629 03cc 012B     		cmp	r3, #1
+ 630 03ce 16D0     		beq	.L99
+ 631 03d0 0D4B     		ldr	r3, .L125
+ 632 03d2 5B68     		ldr	r3, [r3, #4]
+ARM GAS  /tmp/ccLsKvdf.s 			page 12
 
 
- 633 03de 0120     		movs	r0, #1
- 634 03e0 7047     		bx	lr
- 635              	.L78:
- 636 03e2 0120     		movs	r0, #1
- 637 03e4 20E0     		b	.L25
- 638              	.L79:
- 639 03e6 0320     		movs	r0, #3
- 640 03e8 1EE0     		b	.L25
- 641              	.L80:
- 642 03ea 0320     		movs	r0, #3
- 643 03ec 1CE0     		b	.L25
- 644              	.L81:
- 645 03ee 0120     		movs	r0, #1
- 646 03f0 1AE0     		b	.L25
- 647              	.L82:
- 648 03f2 0320     		movs	r0, #3
- 649 03f4 18E0     		b	.L25
- 650              	.L83:
- 651 03f6 0320     		movs	r0, #3
- 652 03f8 16E0     		b	.L25
- 653              	.L84:
- 654 03fa 0320     		movs	r0, #3
- 655 03fc 14E0     		b	.L25
- 656              	.L85:
- 657 03fe 0320     		movs	r0, #3
- 658 0400 12E0     		b	.L25
- 659              	.L87:
- 660 0402 0320     		movs	r0, #3
- 661 0404 10E0     		b	.L25
- 662              	.L88:
- 663 0406 0320     		movs	r0, #3
- 664 0408 0EE0     		b	.L25
- 665              	.L89:
- 666 040a 0320     		movs	r0, #3
- 667 040c 0CE0     		b	.L25
- 668              	.L90:
- 669 040e 0020     		movs	r0, #0
- 670 0410 0AE0     		b	.L25
- 671              	.L91:
- 672 0412 0320     		movs	r0, #3
- 673 0414 08E0     		b	.L25
- 674              	.L92:
- 675 0416 0320     		movs	r0, #3
- 676 0418 06E0     		b	.L25
- 677              	.L93:
- 678 041a 0320     		movs	r0, #3
- 679 041c 04E0     		b	.L25
- 680              	.L94:
- 681 041e 0120     		movs	r0, #1
- 682 0420 02E0     		b	.L25
- 683              	.L95:
- 684 0422 0120     		movs	r0, #1
- 685 0424 00E0     		b	.L25
- 686              	.L96:
- 687 0426 0020     		movs	r0, #0
- 688              	.L25:
- 689 0428 02B0     		add	sp, sp, #8
-ARM GAS  /tmp/ccpccbuu.s 			page 13
+ 633 03d4 03F48031 		and	r1, r3, #65536
+ 634 03d8 226A     		ldr	r2, [r4, #32]
+ 635 03da 9142     		cmp	r1, r2
+ 636 03dc 01D0     		beq	.L122
+ 637 03de 0120     		movs	r0, #1
+ 638 03e0 0BE0     		b	.L30
+ 639              	.L122:
+ 640 03e2 03F47013 		and	r3, r3, #3932160
+ 641 03e6 626A     		ldr	r2, [r4, #36]
+ 642 03e8 9342     		cmp	r3, r2
+ 643 03ea 0AD0     		beq	.L101
+ 644 03ec 0120     		movs	r0, #1
+ 645 03ee 04E0     		b	.L30
+ 646              	.L82:
+ 647 03f0 0120     		movs	r0, #1
+ 648 03f2 7047     		bx	lr
+ 649              	.L108:
+ 650 03f4 0120     		movs	r0, #1
+ 651 03f6 00E0     		b	.L30
+ 652              	.L95:
+ 653 03f8 0020     		movs	r0, #0
+ 654              	.L30:
+ 655 03fa 02B0     		add	sp, sp, #8
+ 656              		@ sp needed
+ 657 03fc 70BD     		pop	{r4, r5, r6, pc}
+ 658              	.L99:
+ 659 03fe 0120     		movs	r0, #1
+ 660 0400 FBE7     		b	.L30
+ 661              	.L101:
+ 662 0402 0020     		movs	r0, #0
+ 663 0404 F9E7     		b	.L30
+ 664              	.L126:
+ 665 0406 00BF     		.align	2
+ 666              	.L125:
+ 667 0408 00100240 		.word	1073876992
+ 668 040c 60004242 		.word	1111621728
+ 670              		.section	.text.HAL_RCC_MCOConfig,"ax",%progbits
+ 671              		.align	1
+ 672              		.global	HAL_RCC_MCOConfig
+ 673              		.syntax unified
+ 674              		.thumb
+ 675              		.thumb_func
+ 676              		.fpu softvfp
+ 678              	HAL_RCC_MCOConfig:
+ 679              		@ args = 0, pretend = 0, frame = 24
+ 680              		@ frame_needed = 0, uses_anonymous_args = 0
+ 681 0000 30B5     		push	{r4, r5, lr}
+ 682 0002 87B0     		sub	sp, sp, #28
+ 683 0004 0D46     		mov	r5, r1
+ 684 0006 0023     		movs	r3, #0
+ 685 0008 0493     		str	r3, [sp, #16]
+ 686 000a 0223     		movs	r3, #2
+ 687 000c 0393     		str	r3, [sp, #12]
+ 688 000e 0323     		movs	r3, #3
+ 689 0010 0593     		str	r3, [sp, #20]
+ 690 0012 4FF48073 		mov	r3, #256
+ 691 0016 0293     		str	r3, [sp, #8]
+ARM GAS  /tmp/ccLsKvdf.s 			page 13
 
 
- 690              		@ sp needed
- 691 042a 70BD     		pop	{r4, r5, r6, pc}
- 692              	.L101:
- 693              		.align	2
- 694              	.L100:
- 695 042c 00100240 		.word	1073876992
- 696 0430 60004242 		.word	1111621728
- 698              		.section	.text.HAL_RCC_MCOConfig,"ax",%progbits
- 699              		.align	2
- 700              		.global	HAL_RCC_MCOConfig
- 701              		.thumb
- 702              		.thumb_func
- 704              	HAL_RCC_MCOConfig:
- 705              		@ args = 0, pretend = 0, frame = 24
- 706              		@ frame_needed = 0, uses_anonymous_args = 0
- 707 0000 30B5     		push	{r4, r5, lr}
- 708 0002 87B0     		sub	sp, sp, #28
- 709 0004 0D46     		mov	r5, r1
- 710 0006 0023     		movs	r3, #0
- 711 0008 0493     		str	r3, [sp, #16]
- 712 000a 0223     		movs	r3, #2
- 713 000c 0393     		str	r3, [sp, #12]
- 714 000e 0323     		movs	r3, #3
- 715 0010 0593     		str	r3, [sp, #20]
- 716 0012 4FF48073 		mov	r3, #256
- 717 0016 0293     		str	r3, [sp, #8]
- 718 0018 0A4C     		ldr	r4, .L104
- 719 001a A369     		ldr	r3, [r4, #24]
- 720 001c 43F00403 		orr	r3, r3, #4
- 721 0020 A361     		str	r3, [r4, #24]
- 722 0022 A369     		ldr	r3, [r4, #24]
- 723 0024 03F00403 		and	r3, r3, #4
- 724 0028 0193     		str	r3, [sp, #4]
- 725 002a 019B     		ldr	r3, [sp, #4]
- 726 002c 0648     		ldr	r0, .L104+4
- 727 002e 02A9     		add	r1, sp, #8
- 728 0030 FFF7FEFF 		bl	HAL_GPIO_Init
- 729 0034 6368     		ldr	r3, [r4, #4]
- 730 0036 23F0E063 		bic	r3, r3, #117440512
- 731 003a 1D43     		orrs	r5, r5, r3
- 732 003c 6560     		str	r5, [r4, #4]
- 733 003e 07B0     		add	sp, sp, #28
- 734              		@ sp needed
- 735 0040 30BD     		pop	{r4, r5, pc}
- 736              	.L105:
- 737 0042 00BF     		.align	2
- 738              	.L104:
- 739 0044 00100240 		.word	1073876992
- 740 0048 00080140 		.word	1073809408
- 742              		.section	.text.HAL_RCC_EnableCSS,"ax",%progbits
- 743              		.align	2
- 744              		.global	HAL_RCC_EnableCSS
- 745              		.thumb
- 746              		.thumb_func
- 748              	HAL_RCC_EnableCSS:
- 749              		@ args = 0, pretend = 0, frame = 0
- 750              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/ccpccbuu.s 			page 14
+ 692 0018 0A4C     		ldr	r4, .L129
+ 693 001a A369     		ldr	r3, [r4, #24]
+ 694 001c 43F00403 		orr	r3, r3, #4
+ 695 0020 A361     		str	r3, [r4, #24]
+ 696 0022 A369     		ldr	r3, [r4, #24]
+ 697 0024 03F00403 		and	r3, r3, #4
+ 698 0028 0193     		str	r3, [sp, #4]
+ 699 002a 019B     		ldr	r3, [sp, #4]
+ 700 002c 02A9     		add	r1, sp, #8
+ 701 002e 0648     		ldr	r0, .L129+4
+ 702 0030 FFF7FEFF 		bl	HAL_GPIO_Init
+ 703 0034 6168     		ldr	r1, [r4, #4]
+ 704 0036 21F0E061 		bic	r1, r1, #117440512
+ 705 003a 2943     		orrs	r1, r1, r5
+ 706 003c 6160     		str	r1, [r4, #4]
+ 707 003e 07B0     		add	sp, sp, #28
+ 708              		@ sp needed
+ 709 0040 30BD     		pop	{r4, r5, pc}
+ 710              	.L130:
+ 711 0042 00BF     		.align	2
+ 712              	.L129:
+ 713 0044 00100240 		.word	1073876992
+ 714 0048 00080140 		.word	1073809408
+ 716              		.section	.text.HAL_RCC_EnableCSS,"ax",%progbits
+ 717              		.align	1
+ 718              		.global	HAL_RCC_EnableCSS
+ 719              		.syntax unified
+ 720              		.thumb
+ 721              		.thumb_func
+ 722              		.fpu softvfp
+ 724              	HAL_RCC_EnableCSS:
+ 725              		@ args = 0, pretend = 0, frame = 0
+ 726              		@ frame_needed = 0, uses_anonymous_args = 0
+ 727              		@ link register save eliminated.
+ 728 0000 0122     		movs	r2, #1
+ 729 0002 014B     		ldr	r3, .L132
+ 730 0004 1A60     		str	r2, [r3]
+ 731 0006 7047     		bx	lr
+ 732              	.L133:
+ 733              		.align	2
+ 734              	.L132:
+ 735 0008 4C004242 		.word	1111621708
+ 737              		.section	.text.HAL_RCC_DisableCSS,"ax",%progbits
+ 738              		.align	1
+ 739              		.global	HAL_RCC_DisableCSS
+ 740              		.syntax unified
+ 741              		.thumb
+ 742              		.thumb_func
+ 743              		.fpu softvfp
+ 745              	HAL_RCC_DisableCSS:
+ 746              		@ args = 0, pretend = 0, frame = 0
+ 747              		@ frame_needed = 0, uses_anonymous_args = 0
+ 748              		@ link register save eliminated.
+ 749 0000 0022     		movs	r2, #0
+ 750 0002 014B     		ldr	r3, .L135
+ 751 0004 1A60     		str	r2, [r3]
+ 752 0006 7047     		bx	lr
+ARM GAS  /tmp/ccLsKvdf.s 			page 14
 
 
- 751              		@ link register save eliminated.
- 752 0000 0122     		movs	r2, #1
- 753 0002 014B     		ldr	r3, .L107
- 754 0004 1A60     		str	r2, [r3]
- 755 0006 7047     		bx	lr
- 756              	.L108:
- 757              		.align	2
- 758              	.L107:
- 759 0008 4C004242 		.word	1111621708
- 761              		.section	.text.HAL_RCC_DisableCSS,"ax",%progbits
- 762              		.align	2
- 763              		.global	HAL_RCC_DisableCSS
- 764              		.thumb
- 765              		.thumb_func
- 767              	HAL_RCC_DisableCSS:
- 768              		@ args = 0, pretend = 0, frame = 0
- 769              		@ frame_needed = 0, uses_anonymous_args = 0
- 770              		@ link register save eliminated.
- 771 0000 0022     		movs	r2, #0
- 772 0002 014B     		ldr	r3, .L110
- 773 0004 1A60     		str	r2, [r3]
- 774 0006 7047     		bx	lr
- 775              	.L111:
- 776              		.align	2
- 777              	.L110:
- 778 0008 4C004242 		.word	1111621708
- 780              		.section	.text.HAL_RCC_GetSysClockFreq,"ax",%progbits
- 781              		.align	2
- 782              		.global	HAL_RCC_GetSysClockFreq
- 783              		.thumb
- 784              		.thumb_func
- 786              	HAL_RCC_GetSysClockFreq:
- 787              		@ args = 0, pretend = 0, frame = 24
- 788              		@ frame_needed = 0, uses_anonymous_args = 0
- 789              		@ link register save eliminated.
- 790 0000 30B4     		push	{r4, r5}
- 791 0002 86B0     		sub	sp, sp, #24
- 792 0004 164D     		ldr	r5, .L120
- 793 0006 02AC     		add	r4, sp, #8
- 794 0008 2868     		ldr	r0, [r5]	@ unaligned
- 795 000a 6968     		ldr	r1, [r5, #4]	@ unaligned
- 796 000c AA68     		ldr	r2, [r5, #8]	@ unaligned
- 797 000e EB68     		ldr	r3, [r5, #12]	@ unaligned
- 798 0010 0FC4     		stmia	r4!, {r0, r1, r2, r3}
- 799 0012 2B8A     		ldrh	r3, [r5, #16]	@ unaligned
- 800 0014 ADF80430 		strh	r3, [sp, #4]	@ unaligned
- 801 0018 124B     		ldr	r3, .L120+4
- 802 001a 5B68     		ldr	r3, [r3, #4]
- 803 001c 03F00C02 		and	r2, r3, #12
- 804 0020 082A     		cmp	r2, #8
- 805 0022 19D1     		bne	.L118
- 806 0024 C3F38342 		ubfx	r2, r3, #18, #4
- 807 0028 06A9     		add	r1, sp, #24
- 808 002a 0A44     		add	r2, r2, r1
- 809 002c 12F8100C 		ldrb	r0, [r2, #-16]	@ zero_extendqisi2
- 810 0030 13F4803F 		tst	r3, #65536
- 811 0034 0CD0     		beq	.L115
-ARM GAS  /tmp/ccpccbuu.s 			page 15
+ 753              	.L136:
+ 754              		.align	2
+ 755              	.L135:
+ 756 0008 4C004242 		.word	1111621708
+ 758              		.section	.text.HAL_RCC_GetSysClockFreq,"ax",%progbits
+ 759              		.align	1
+ 760              		.global	HAL_RCC_GetSysClockFreq
+ 761              		.syntax unified
+ 762              		.thumb
+ 763              		.thumb_func
+ 764              		.fpu softvfp
+ 766              	HAL_RCC_GetSysClockFreq:
+ 767              		@ args = 0, pretend = 0, frame = 24
+ 768              		@ frame_needed = 0, uses_anonymous_args = 0
+ 769 0000 10B5     		push	{r4, lr}
+ 770 0002 86B0     		sub	sp, sp, #24
+ 771 0004 154C     		ldr	r4, .L145
+ 772 0006 94E80F00 		ldm	r4, {r0, r1, r2, r3}
+ 773 000a 0DF1180E 		add	lr, sp, #24
+ 774 000e 0EE90F00 		stmdb	lr, {r0, r1, r2, r3}
+ 775 0012 238A     		ldrh	r3, [r4, #16]
+ 776 0014 ADF80430 		strh	r3, [sp, #4]	@ movhi
+ 777 0018 114B     		ldr	r3, .L145+4
+ 778 001a 5B68     		ldr	r3, [r3, #4]
+ 779 001c 03F00C02 		and	r2, r3, #12
+ 780 0020 082A     		cmp	r2, #8
+ 781 0022 18D1     		bne	.L142
+ 782 0024 C3F38342 		ubfx	r2, r3, #18, #4
+ 783 0028 7244     		add	r2, r2, lr
+ 784 002a 12F8102C 		ldrb	r2, [r2, #-16]	@ zero_extendqisi2
+ 785 002e 13F4803F 		tst	r3, #65536
+ 786 0032 03D1     		bne	.L144
+ 787 0034 0B48     		ldr	r0, .L145+8
+ 788 0036 00FB02F0 		mul	r0, r0, r2
+ 789 003a 0DE0     		b	.L137
+ 790              	.L144:
+ 791 003c 084B     		ldr	r3, .L145+4
+ 792 003e 5B68     		ldr	r3, [r3, #4]
+ 793 0040 C3F34043 		ubfx	r3, r3, #17, #1
+ 794 0044 7344     		add	r3, r3, lr
+ 795 0046 13F8143C 		ldrb	r3, [r3, #-20]	@ zero_extendqisi2
+ 796 004a 0748     		ldr	r0, .L145+12
+ 797 004c 00FB02F0 		mul	r0, r0, r2
+ 798 0050 B0FBF3F0 		udiv	r0, r0, r3
+ 799 0054 00E0     		b	.L137
+ 800              	.L142:
+ 801 0056 0448     		ldr	r0, .L145+12
+ 802              	.L137:
+ 803 0058 06B0     		add	sp, sp, #24
+ 804              		@ sp needed
+ 805 005a 10BD     		pop	{r4, pc}
+ 806              	.L146:
+ 807              		.align	2
+ 808              	.L145:
+ 809 005c 00000000 		.word	.LANCHOR0
+ 810 0060 00100240 		.word	1073876992
+ 811 0064 00093D00 		.word	4000000
+ARM GAS  /tmp/ccLsKvdf.s 			page 15
 
 
- 812 0036 0B4B     		ldr	r3, .L120+4
- 813 0038 5B68     		ldr	r3, [r3, #4]
- 814 003a C3F34043 		ubfx	r3, r3, #17, #1
- 815 003e 0B44     		add	r3, r3, r1
- 816 0040 13F8142C 		ldrb	r2, [r3, #-20]	@ zero_extendqisi2
- 817 0044 084B     		ldr	r3, .L120+8
- 818 0046 03FB00F0 		mul	r0, r3, r0
- 819 004a B0FBF2F0 		udiv	r0, r0, r2
- 820 004e 04E0     		b	.L113
- 821              	.L115:
- 822 0050 064B     		ldr	r3, .L120+12
- 823 0052 03FB00F0 		mul	r0, r3, r0
- 824 0056 00E0     		b	.L113
- 825              	.L118:
- 826 0058 0348     		ldr	r0, .L120+8
- 827              	.L113:
- 828 005a 06B0     		add	sp, sp, #24
- 829              		@ sp needed
- 830 005c 30BC     		pop	{r4, r5}
- 831 005e 7047     		bx	lr
- 832              	.L121:
- 833              		.align	2
- 834              	.L120:
- 835 0060 00000000 		.word	.LANCHOR0
- 836 0064 00100240 		.word	1073876992
- 837 0068 00127A00 		.word	8000000
- 838 006c 00093D00 		.word	4000000
- 840              		.section	.text.HAL_RCC_ClockConfig,"ax",%progbits
- 841              		.align	2
- 842              		.global	HAL_RCC_ClockConfig
- 843              		.thumb
- 844              		.thumb_func
- 846              	HAL_RCC_ClockConfig:
- 847              		@ args = 0, pretend = 0, frame = 0
- 848              		@ frame_needed = 0, uses_anonymous_args = 0
- 849 0000 0028     		cmp	r0, #0
- 850 0002 00F09D80 		beq	.L137
- 851 0006 70B5     		push	{r4, r5, r6, lr}
- 852 0008 0446     		mov	r4, r0
- 853 000a 544B     		ldr	r3, .L145
- 854 000c 1B68     		ldr	r3, [r3]
- 855 000e 03F00703 		and	r3, r3, #7
- 856 0012 8B42     		cmp	r3, r1
- 857 0014 0BD2     		bcs	.L124
- 858 0016 514A     		ldr	r2, .L145
- 859 0018 1368     		ldr	r3, [r2]
- 860 001a 23F00703 		bic	r3, r3, #7
- 861 001e 0B43     		orrs	r3, r3, r1
- 862 0020 1360     		str	r3, [r2]
- 863 0022 1368     		ldr	r3, [r2]
- 864 0024 03F00703 		and	r3, r3, #7
- 865 0028 8B42     		cmp	r3, r1
- 866 002a 40F08B80 		bne	.L138
- 867              	.L124:
- 868 002e 2368     		ldr	r3, [r4]
- 869 0030 13F0020F 		tst	r3, #2
- 870 0034 17D0     		beq	.L125
-ARM GAS  /tmp/ccpccbuu.s 			page 16
+ 812 0068 00127A00 		.word	8000000
+ 814              		.section	.text.HAL_RCC_ClockConfig,"ax",%progbits
+ 815              		.align	1
+ 816              		.global	HAL_RCC_ClockConfig
+ 817              		.syntax unified
+ 818              		.thumb
+ 819              		.thumb_func
+ 820              		.fpu softvfp
+ 822              	HAL_RCC_ClockConfig:
+ 823              		@ args = 0, pretend = 0, frame = 0
+ 824              		@ frame_needed = 0, uses_anonymous_args = 0
+ 825 0000 0028     		cmp	r0, #0
+ 826 0002 00F0A380 		beq	.L162
+ 827 0006 70B5     		push	{r4, r5, r6, lr}
+ 828 0008 0446     		mov	r4, r0
+ 829 000a 524B     		ldr	r3, .L175
+ 830 000c 1B68     		ldr	r3, [r3]
+ 831 000e 03F00703 		and	r3, r3, #7
+ 832 0012 8B42     		cmp	r3, r1
+ 833 0014 0CD2     		bcs	.L149
+ 834 0016 4F4A     		ldr	r2, .L175
+ 835 0018 1368     		ldr	r3, [r2]
+ 836 001a 23F00703 		bic	r3, r3, #7
+ 837 001e 0B43     		orrs	r3, r3, r1
+ 838 0020 1360     		str	r3, [r2]
+ 839 0022 1368     		ldr	r3, [r2]
+ 840 0024 03F00703 		and	r3, r3, #7
+ 841 0028 9942     		cmp	r1, r3
+ 842 002a 01D0     		beq	.L149
+ 843 002c 0120     		movs	r0, #1
+ 844 002e 70BD     		pop	{r4, r5, r6, pc}
+ 845              	.L149:
+ 846 0030 2368     		ldr	r3, [r4]
+ 847 0032 13F0020F 		tst	r3, #2
+ 848 0036 17D0     		beq	.L150
+ 849 0038 13F0040F 		tst	r3, #4
+ 850 003c 04D0     		beq	.L151
+ 851 003e 464A     		ldr	r2, .L175+4
+ 852 0040 5368     		ldr	r3, [r2, #4]
+ 853 0042 43F4E063 		orr	r3, r3, #1792
+ 854 0046 5360     		str	r3, [r2, #4]
+ 855              	.L151:
+ 856 0048 2368     		ldr	r3, [r4]
+ 857 004a 13F0080F 		tst	r3, #8
+ 858 004e 04D0     		beq	.L152
+ 859 0050 414A     		ldr	r2, .L175+4
+ 860 0052 5368     		ldr	r3, [r2, #4]
+ 861 0054 43F46053 		orr	r3, r3, #14336
+ 862 0058 5360     		str	r3, [r2, #4]
+ 863              	.L152:
+ 864 005a 3F4A     		ldr	r2, .L175+4
+ 865 005c 5368     		ldr	r3, [r2, #4]
+ 866 005e 23F0F003 		bic	r3, r3, #240
+ 867 0062 A068     		ldr	r0, [r4, #8]
+ 868 0064 0343     		orrs	r3, r3, r0
+ 869 0066 5360     		str	r3, [r2, #4]
+ 870              	.L150:
+ARM GAS  /tmp/ccLsKvdf.s 			page 16
 
 
- 871 0036 13F0040F 		tst	r3, #4
- 872 003a 04D0     		beq	.L126
- 873 003c 484A     		ldr	r2, .L145+4
- 874 003e 5368     		ldr	r3, [r2, #4]
- 875 0040 43F4E063 		orr	r3, r3, #1792
- 876 0044 5360     		str	r3, [r2, #4]
- 877              	.L126:
- 878 0046 2368     		ldr	r3, [r4]
- 879 0048 13F0080F 		tst	r3, #8
- 880 004c 04D0     		beq	.L127
- 881 004e 444A     		ldr	r2, .L145+4
- 882 0050 5368     		ldr	r3, [r2, #4]
- 883 0052 43F46053 		orr	r3, r3, #14336
- 884 0056 5360     		str	r3, [r2, #4]
- 885              	.L127:
- 886 0058 4148     		ldr	r0, .L145+4
- 887 005a 4368     		ldr	r3, [r0, #4]
- 888 005c 23F0F002 		bic	r2, r3, #240
- 889 0060 A368     		ldr	r3, [r4, #8]
- 890 0062 1343     		orrs	r3, r3, r2
- 891 0064 4360     		str	r3, [r0, #4]
- 892              	.L125:
- 893 0066 0D46     		mov	r5, r1
- 894 0068 2368     		ldr	r3, [r4]
- 895 006a 13F0010F 		tst	r3, #1
- 896 006e 2ED0     		beq	.L128
- 897 0070 6268     		ldr	r2, [r4, #4]
- 898 0072 012A     		cmp	r2, #1
- 899 0074 05D1     		bne	.L129
- 900 0076 3A4B     		ldr	r3, .L145+4
- 901 0078 1B68     		ldr	r3, [r3]
- 902 007a 13F4003F 		tst	r3, #131072
- 903 007e 0DD1     		bne	.L130
- 904 0080 62E0     		b	.L139
- 905              	.L129:
- 906 0082 022A     		cmp	r2, #2
- 907 0084 05D1     		bne	.L131
- 908 0086 364B     		ldr	r3, .L145+4
- 909 0088 1B68     		ldr	r3, [r3]
- 910 008a 13F0007F 		tst	r3, #33554432
- 911 008e 05D1     		bne	.L130
- 912 0090 5CE0     		b	.L140
- 913              	.L131:
- 914 0092 334B     		ldr	r3, .L145+4
- 915 0094 1B68     		ldr	r3, [r3]
- 916 0096 13F0020F 		tst	r3, #2
- 917 009a 59D0     		beq	.L141
- 918              	.L130:
- 919 009c 3049     		ldr	r1, .L145+4
- 920 009e 4B68     		ldr	r3, [r1, #4]
- 921 00a0 23F00303 		bic	r3, r3, #3
- 922 00a4 1343     		orrs	r3, r3, r2
- 923 00a6 4B60     		str	r3, [r1, #4]
- 924 00a8 FFF7FEFF 		bl	HAL_GetTick
- 925 00ac 0646     		mov	r6, r0
- 926 00ae 06E0     		b	.L132
- 927              	.L133:
-ARM GAS  /tmp/ccpccbuu.s 			page 17
+ 871 0068 0D46     		mov	r5, r1
+ 872 006a 2368     		ldr	r3, [r4]
+ 873 006c 13F0010F 		tst	r3, #1
+ 874 0070 31D0     		beq	.L153
+ 875 0072 6368     		ldr	r3, [r4, #4]
+ 876 0074 012B     		cmp	r3, #1
+ 877 0076 20D0     		beq	.L173
+ 878 0078 022B     		cmp	r3, #2
+ 879 007a 25D0     		beq	.L174
+ 880 007c 364A     		ldr	r2, .L175+4
+ 881 007e 1268     		ldr	r2, [r2]
+ 882 0080 12F0020F 		tst	r2, #2
+ 883 0084 64D0     		beq	.L166
+ 884              	.L155:
+ 885 0086 3449     		ldr	r1, .L175+4
+ 886 0088 4A68     		ldr	r2, [r1, #4]
+ 887 008a 22F00302 		bic	r2, r2, #3
+ 888 008e 1343     		orrs	r3, r3, r2
+ 889 0090 4B60     		str	r3, [r1, #4]
+ 890 0092 FFF7FEFF 		bl	HAL_GetTick
+ 891 0096 0646     		mov	r6, r0
+ 892              	.L157:
+ 893 0098 2F4B     		ldr	r3, .L175+4
+ 894 009a 5B68     		ldr	r3, [r3, #4]
+ 895 009c 03F00C03 		and	r3, r3, #12
+ 896 00a0 6268     		ldr	r2, [r4, #4]
+ 897 00a2 B3EB820F 		cmp	r3, r2, lsl #2
+ 898 00a6 16D0     		beq	.L153
+ 899 00a8 FFF7FEFF 		bl	HAL_GetTick
+ 900 00ac 801B     		subs	r0, r0, r6
+ 901 00ae 41F28833 		movw	r3, #5000
+ 902 00b2 9842     		cmp	r0, r3
+ 903 00b4 F0D9     		bls	.L157
+ 904 00b6 0320     		movs	r0, #3
+ 905 00b8 70BD     		pop	{r4, r5, r6, pc}
+ 906              	.L173:
+ 907 00ba 274A     		ldr	r2, .L175+4
+ 908 00bc 1268     		ldr	r2, [r2]
+ 909 00be 12F4003F 		tst	r2, #131072
+ 910 00c2 E0D1     		bne	.L155
+ 911 00c4 0120     		movs	r0, #1
+ 912 00c6 70BD     		pop	{r4, r5, r6, pc}
+ 913              	.L174:
+ 914 00c8 234A     		ldr	r2, .L175+4
+ 915 00ca 1268     		ldr	r2, [r2]
+ 916 00cc 12F0007F 		tst	r2, #33554432
+ 917 00d0 D9D1     		bne	.L155
+ 918 00d2 0120     		movs	r0, #1
+ 919 00d4 70BD     		pop	{r4, r5, r6, pc}
+ 920              	.L153:
+ 921 00d6 1F4B     		ldr	r3, .L175
+ 922 00d8 1B68     		ldr	r3, [r3]
+ 923 00da 03F00703 		and	r3, r3, #7
+ 924 00de 9D42     		cmp	r5, r3
+ 925 00e0 0CD2     		bcs	.L159
+ 926 00e2 1C4A     		ldr	r2, .L175
+ 927 00e4 1368     		ldr	r3, [r2]
+ARM GAS  /tmp/ccLsKvdf.s 			page 17
 
 
- 928 00b0 FFF7FEFF 		bl	HAL_GetTick
- 929 00b4 801B     		subs	r0, r0, r6
- 930 00b6 41F28833 		movw	r3, #5000
- 931 00ba 9842     		cmp	r0, r3
- 932 00bc 4AD8     		bhi	.L142
- 933              	.L132:
- 934 00be 284B     		ldr	r3, .L145+4
- 935 00c0 5B68     		ldr	r3, [r3, #4]
- 936 00c2 03F00C03 		and	r3, r3, #12
- 937 00c6 6268     		ldr	r2, [r4, #4]
- 938 00c8 B3EB820F 		cmp	r3, r2, lsl #2
- 939 00cc F0D1     		bne	.L133
- 940              	.L128:
- 941 00ce 234B     		ldr	r3, .L145
- 942 00d0 1B68     		ldr	r3, [r3]
- 943 00d2 03F00703 		and	r3, r3, #7
- 944 00d6 AB42     		cmp	r3, r5
- 945 00d8 0AD9     		bls	.L134
- 946 00da 204A     		ldr	r2, .L145
- 947 00dc 1368     		ldr	r3, [r2]
- 948 00de 23F00703 		bic	r3, r3, #7
- 949 00e2 2B43     		orrs	r3, r3, r5
- 950 00e4 1360     		str	r3, [r2]
- 951 00e6 1368     		ldr	r3, [r2]
- 952 00e8 03F00703 		and	r3, r3, #7
- 953 00ec AB42     		cmp	r3, r5
- 954 00ee 33D1     		bne	.L143
- 955              	.L134:
- 956 00f0 2368     		ldr	r3, [r4]
- 957 00f2 13F0040F 		tst	r3, #4
- 958 00f6 06D0     		beq	.L135
- 959 00f8 1949     		ldr	r1, .L145+4
- 960 00fa 4B68     		ldr	r3, [r1, #4]
- 961 00fc 23F4E062 		bic	r2, r3, #1792
- 962 0100 E368     		ldr	r3, [r4, #12]
- 963 0102 1343     		orrs	r3, r3, r2
- 964 0104 4B60     		str	r3, [r1, #4]
- 965              	.L135:
- 966 0106 2368     		ldr	r3, [r4]
- 967 0108 13F0080F 		tst	r3, #8
- 968 010c 07D0     		beq	.L136
- 969 010e 144A     		ldr	r2, .L145+4
- 970 0110 5368     		ldr	r3, [r2, #4]
- 971 0112 23F46053 		bic	r3, r3, #14336
- 972 0116 2169     		ldr	r1, [r4, #16]
- 973 0118 43EAC103 		orr	r3, r3, r1, lsl #3
- 974 011c 5360     		str	r3, [r2, #4]
- 975              	.L136:
- 976 011e FFF7FEFF 		bl	HAL_RCC_GetSysClockFreq
- 977 0122 0F4B     		ldr	r3, .L145+4
- 978 0124 5B68     		ldr	r3, [r3, #4]
- 979 0126 C3F30313 		ubfx	r3, r3, #4, #4
- 980 012a 0E4A     		ldr	r2, .L145+8
- 981 012c D35C     		ldrb	r3, [r2, r3]	@ zero_extendqisi2
- 982 012e D840     		lsrs	r0, r0, r3
- 983 0130 0D4B     		ldr	r3, .L145+12
- 984 0132 1860     		str	r0, [r3]
-ARM GAS  /tmp/ccpccbuu.s 			page 18
+ 928 00e6 23F00703 		bic	r3, r3, #7
+ 929 00ea 2B43     		orrs	r3, r3, r5
+ 930 00ec 1360     		str	r3, [r2]
+ 931 00ee 1368     		ldr	r3, [r2]
+ 932 00f0 03F00703 		and	r3, r3, #7
+ 933 00f4 9D42     		cmp	r5, r3
+ 934 00f6 01D0     		beq	.L159
+ 935 00f8 0120     		movs	r0, #1
+ 936 00fa 70BD     		pop	{r4, r5, r6, pc}
+ 937              	.L159:
+ 938 00fc 2368     		ldr	r3, [r4]
+ 939 00fe 13F0040F 		tst	r3, #4
+ 940 0102 06D0     		beq	.L160
+ 941 0104 144A     		ldr	r2, .L175+4
+ 942 0106 5368     		ldr	r3, [r2, #4]
+ 943 0108 23F4E063 		bic	r3, r3, #1792
+ 944 010c E168     		ldr	r1, [r4, #12]
+ 945 010e 0B43     		orrs	r3, r3, r1
+ 946 0110 5360     		str	r3, [r2, #4]
+ 947              	.L160:
+ 948 0112 2368     		ldr	r3, [r4]
+ 949 0114 13F0080F 		tst	r3, #8
+ 950 0118 07D0     		beq	.L161
+ 951 011a 0F4A     		ldr	r2, .L175+4
+ 952 011c 5368     		ldr	r3, [r2, #4]
+ 953 011e 23F46053 		bic	r3, r3, #14336
+ 954 0122 2169     		ldr	r1, [r4, #16]
+ 955 0124 43EAC103 		orr	r3, r3, r1, lsl #3
+ 956 0128 5360     		str	r3, [r2, #4]
+ 957              	.L161:
+ 958 012a FFF7FEFF 		bl	HAL_RCC_GetSysClockFreq
+ 959 012e 0A4B     		ldr	r3, .L175+4
+ 960 0130 5B68     		ldr	r3, [r3, #4]
+ 961 0132 C3F30313 		ubfx	r3, r3, #4, #4
+ 962 0136 094A     		ldr	r2, .L175+8
+ 963 0138 D35C     		ldrb	r3, [r2, r3]	@ zero_extendqisi2
+ 964 013a D840     		lsrs	r0, r0, r3
+ 965 013c 084B     		ldr	r3, .L175+12
+ 966 013e 1860     		str	r0, [r3]
+ 967 0140 084B     		ldr	r3, .L175+16
+ 968 0142 1868     		ldr	r0, [r3]
+ 969 0144 FFF7FEFF 		bl	HAL_InitTick
+ 970 0148 0020     		movs	r0, #0
+ 971 014a 70BD     		pop	{r4, r5, r6, pc}
+ 972              	.L162:
+ 973 014c 0120     		movs	r0, #1
+ 974 014e 7047     		bx	lr
+ 975              	.L166:
+ 976 0150 0120     		movs	r0, #1
+ 977 0152 70BD     		pop	{r4, r5, r6, pc}
+ 978              	.L176:
+ 979              		.align	2
+ 980              	.L175:
+ 981 0154 00200240 		.word	1073881088
+ 982 0158 00100240 		.word	1073876992
+ 983 015c 00000000 		.word	AHBPrescTable
+ 984 0160 00000000 		.word	SystemCoreClock
+ARM GAS  /tmp/ccLsKvdf.s 			page 18
 
 
- 985 0134 0D4B     		ldr	r3, .L145+16
- 986 0136 1868     		ldr	r0, [r3]
- 987 0138 FFF7FEFF 		bl	HAL_InitTick
- 988 013c 0020     		movs	r0, #0
- 989 013e 70BD     		pop	{r4, r5, r6, pc}
- 990              	.L137:
- 991 0140 0120     		movs	r0, #1
- 992 0142 7047     		bx	lr
- 993              	.L138:
- 994 0144 0120     		movs	r0, #1
- 995 0146 70BD     		pop	{r4, r5, r6, pc}
- 996              	.L139:
- 997 0148 0120     		movs	r0, #1
- 998 014a 70BD     		pop	{r4, r5, r6, pc}
- 999              	.L140:
- 1000 014c 0120     		movs	r0, #1
- 1001 014e 70BD     		pop	{r4, r5, r6, pc}
- 1002              	.L141:
- 1003 0150 0120     		movs	r0, #1
- 1004 0152 70BD     		pop	{r4, r5, r6, pc}
- 1005              	.L142:
- 1006 0154 0320     		movs	r0, #3
- 1007 0156 70BD     		pop	{r4, r5, r6, pc}
- 1008              	.L143:
- 1009 0158 0120     		movs	r0, #1
- 1010 015a 70BD     		pop	{r4, r5, r6, pc}
- 1011              	.L146:
- 1012              		.align	2
- 1013              	.L145:
- 1014 015c 00200240 		.word	1073881088
- 1015 0160 00100240 		.word	1073876992
- 1016 0164 00000000 		.word	AHBPrescTable
- 1017 0168 00000000 		.word	SystemCoreClock
- 1018 016c 00000000 		.word	uwTickPrio
- 1020              		.section	.text.HAL_RCC_GetHCLKFreq,"ax",%progbits
- 1021              		.align	2
- 1022              		.global	HAL_RCC_GetHCLKFreq
- 1023              		.thumb
- 1024              		.thumb_func
- 1026              	HAL_RCC_GetHCLKFreq:
- 1027              		@ args = 0, pretend = 0, frame = 0
- 1028              		@ frame_needed = 0, uses_anonymous_args = 0
- 1029              		@ link register save eliminated.
- 1030 0000 014B     		ldr	r3, .L148
- 1031 0002 1868     		ldr	r0, [r3]
- 1032 0004 7047     		bx	lr
- 1033              	.L149:
- 1034 0006 00BF     		.align	2
- 1035              	.L148:
- 1036 0008 00000000 		.word	SystemCoreClock
- 1038              		.section	.text.HAL_RCC_GetPCLK1Freq,"ax",%progbits
- 1039              		.align	2
- 1040              		.global	HAL_RCC_GetPCLK1Freq
- 1041              		.thumb
- 1042              		.thumb_func
- 1044              	HAL_RCC_GetPCLK1Freq:
- 1045              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  /tmp/ccpccbuu.s 			page 19
+ 985 0164 00000000 		.word	uwTickPrio
+ 987              		.section	.text.HAL_RCC_GetHCLKFreq,"ax",%progbits
+ 988              		.align	1
+ 989              		.global	HAL_RCC_GetHCLKFreq
+ 990              		.syntax unified
+ 991              		.thumb
+ 992              		.thumb_func
+ 993              		.fpu softvfp
+ 995              	HAL_RCC_GetHCLKFreq:
+ 996              		@ args = 0, pretend = 0, frame = 0
+ 997              		@ frame_needed = 0, uses_anonymous_args = 0
+ 998              		@ link register save eliminated.
+ 999 0000 014B     		ldr	r3, .L178
+ 1000 0002 1868     		ldr	r0, [r3]
+ 1001 0004 7047     		bx	lr
+ 1002              	.L179:
+ 1003 0006 00BF     		.align	2
+ 1004              	.L178:
+ 1005 0008 00000000 		.word	SystemCoreClock
+ 1007              		.section	.text.HAL_RCC_GetPCLK1Freq,"ax",%progbits
+ 1008              		.align	1
+ 1009              		.global	HAL_RCC_GetPCLK1Freq
+ 1010              		.syntax unified
+ 1011              		.thumb
+ 1012              		.thumb_func
+ 1013              		.fpu softvfp
+ 1015              	HAL_RCC_GetPCLK1Freq:
+ 1016              		@ args = 0, pretend = 0, frame = 0
+ 1017              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1018 0000 08B5     		push	{r3, lr}
+ 1019 0002 FFF7FEFF 		bl	HAL_RCC_GetHCLKFreq
+ 1020 0006 044B     		ldr	r3, .L182
+ 1021 0008 5B68     		ldr	r3, [r3, #4]
+ 1022 000a C3F30223 		ubfx	r3, r3, #8, #3
+ 1023 000e 034A     		ldr	r2, .L182+4
+ 1024 0010 D35C     		ldrb	r3, [r2, r3]	@ zero_extendqisi2
+ 1025 0012 D840     		lsrs	r0, r0, r3
+ 1026 0014 08BD     		pop	{r3, pc}
+ 1027              	.L183:
+ 1028 0016 00BF     		.align	2
+ 1029              	.L182:
+ 1030 0018 00100240 		.word	1073876992
+ 1031 001c 00000000 		.word	APBPrescTable
+ 1033              		.section	.text.HAL_RCC_GetPCLK2Freq,"ax",%progbits
+ 1034              		.align	1
+ 1035              		.global	HAL_RCC_GetPCLK2Freq
+ 1036              		.syntax unified
+ 1037              		.thumb
+ 1038              		.thumb_func
+ 1039              		.fpu softvfp
+ 1041              	HAL_RCC_GetPCLK2Freq:
+ 1042              		@ args = 0, pretend = 0, frame = 0
+ 1043              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1044 0000 08B5     		push	{r3, lr}
+ 1045 0002 FFF7FEFF 		bl	HAL_RCC_GetHCLKFreq
+ 1046 0006 044B     		ldr	r3, .L186
+ 1047 0008 5B68     		ldr	r3, [r3, #4]
+ARM GAS  /tmp/ccLsKvdf.s 			page 19
 
 
- 1046              		@ frame_needed = 0, uses_anonymous_args = 0
- 1047 0000 08B5     		push	{r3, lr}
- 1048 0002 FFF7FEFF 		bl	HAL_RCC_GetHCLKFreq
- 1049 0006 044B     		ldr	r3, .L152
- 1050 0008 5B68     		ldr	r3, [r3, #4]
- 1051 000a C3F30223 		ubfx	r3, r3, #8, #3
- 1052 000e 034A     		ldr	r2, .L152+4
- 1053 0010 D35C     		ldrb	r3, [r2, r3]	@ zero_extendqisi2
- 1054 0012 D840     		lsrs	r0, r0, r3
- 1055 0014 08BD     		pop	{r3, pc}
- 1056              	.L153:
- 1057 0016 00BF     		.align	2
- 1058              	.L152:
- 1059 0018 00100240 		.word	1073876992
- 1060 001c 00000000 		.word	APBPrescTable
- 1062              		.section	.text.HAL_RCC_GetPCLK2Freq,"ax",%progbits
- 1063              		.align	2
- 1064              		.global	HAL_RCC_GetPCLK2Freq
- 1065              		.thumb
- 1066              		.thumb_func
- 1068              	HAL_RCC_GetPCLK2Freq:
- 1069              		@ args = 0, pretend = 0, frame = 0
- 1070              		@ frame_needed = 0, uses_anonymous_args = 0
- 1071 0000 08B5     		push	{r3, lr}
- 1072 0002 FFF7FEFF 		bl	HAL_RCC_GetHCLKFreq
- 1073 0006 044B     		ldr	r3, .L156
- 1074 0008 5B68     		ldr	r3, [r3, #4]
- 1075 000a C3F3C223 		ubfx	r3, r3, #11, #3
- 1076 000e 034A     		ldr	r2, .L156+4
- 1077 0010 D35C     		ldrb	r3, [r2, r3]	@ zero_extendqisi2
- 1078 0012 D840     		lsrs	r0, r0, r3
- 1079 0014 08BD     		pop	{r3, pc}
- 1080              	.L157:
- 1081 0016 00BF     		.align	2
- 1082              	.L156:
- 1083 0018 00100240 		.word	1073876992
- 1084 001c 00000000 		.word	APBPrescTable
- 1086              		.section	.text.HAL_RCC_GetOscConfig,"ax",%progbits
- 1087              		.align	2
- 1088              		.global	HAL_RCC_GetOscConfig
- 1089              		.thumb
- 1090              		.thumb_func
- 1092              	HAL_RCC_GetOscConfig:
- 1093              		@ args = 0, pretend = 0, frame = 0
- 1094              		@ frame_needed = 0, uses_anonymous_args = 0
- 1095              		@ link register save eliminated.
- 1096 0000 0F23     		movs	r3, #15
- 1097 0002 0360     		str	r3, [r0]
- 1098 0004 2A4B     		ldr	r3, .L171
- 1099 0006 1B68     		ldr	r3, [r3]
- 1100 0008 13F4802F 		tst	r3, #262144
- 1101 000c 03D0     		beq	.L159
- 1102 000e 4FF4A023 		mov	r3, #327680
- 1103 0012 4360     		str	r3, [r0, #4]
- 1104 0014 0AE0     		b	.L160
- 1105              	.L159:
- 1106 0016 264B     		ldr	r3, .L171
-ARM GAS  /tmp/ccpccbuu.s 			page 20
+ 1048 000a C3F3C223 		ubfx	r3, r3, #11, #3
+ 1049 000e 034A     		ldr	r2, .L186+4
+ 1050 0010 D35C     		ldrb	r3, [r2, r3]	@ zero_extendqisi2
+ 1051 0012 D840     		lsrs	r0, r0, r3
+ 1052 0014 08BD     		pop	{r3, pc}
+ 1053              	.L187:
+ 1054 0016 00BF     		.align	2
+ 1055              	.L186:
+ 1056 0018 00100240 		.word	1073876992
+ 1057 001c 00000000 		.word	APBPrescTable
+ 1059              		.section	.text.HAL_RCC_GetOscConfig,"ax",%progbits
+ 1060              		.align	1
+ 1061              		.global	HAL_RCC_GetOscConfig
+ 1062              		.syntax unified
+ 1063              		.thumb
+ 1064              		.thumb_func
+ 1065              		.fpu softvfp
+ 1067              	HAL_RCC_GetOscConfig:
+ 1068              		@ args = 0, pretend = 0, frame = 0
+ 1069              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1070              		@ link register save eliminated.
+ 1071 0000 0F23     		movs	r3, #15
+ 1072 0002 0360     		str	r3, [r0]
+ 1073 0004 2A4B     		ldr	r3, .L202
+ 1074 0006 1B68     		ldr	r3, [r3]
+ 1075 0008 13F4802F 		tst	r3, #262144
+ 1076 000c 30D0     		beq	.L189
+ 1077 000e 4FF4A023 		mov	r3, #327680
+ 1078 0012 4360     		str	r3, [r0, #4]
+ 1079              	.L190:
+ 1080 0014 264A     		ldr	r2, .L202
+ 1081 0016 5368     		ldr	r3, [r2, #4]
+ 1082 0018 03F40033 		and	r3, r3, #131072
+ 1083 001c 8360     		str	r3, [r0, #8]
+ 1084 001e 1368     		ldr	r3, [r2]
+ 1085 0020 13F0010F 		tst	r3, #1
+ 1086 0024 30D0     		beq	.L192
+ 1087 0026 0123     		movs	r3, #1
+ 1088 0028 0361     		str	r3, [r0, #16]
+ 1089              	.L193:
+ 1090 002a 214A     		ldr	r2, .L202
+ 1091 002c 1368     		ldr	r3, [r2]
+ 1092 002e C3F3C403 		ubfx	r3, r3, #3, #5
+ 1093 0032 4361     		str	r3, [r0, #20]
+ 1094 0034 136A     		ldr	r3, [r2, #32]
+ 1095 0036 13F0040F 		tst	r3, #4
+ 1096 003a 28D0     		beq	.L194
+ 1097 003c 0523     		movs	r3, #5
+ 1098 003e C360     		str	r3, [r0, #12]
+ 1099              	.L195:
+ 1100 0040 1B4B     		ldr	r3, .L202
+ 1101 0042 5B6A     		ldr	r3, [r3, #36]
+ 1102 0044 13F0010F 		tst	r3, #1
+ 1103 0048 2CD0     		beq	.L197
+ 1104 004a 0123     		movs	r3, #1
+ 1105 004c 8361     		str	r3, [r0, #24]
+ 1106              	.L198:
+ARM GAS  /tmp/ccLsKvdf.s 			page 20
 
 
- 1107 0018 1B68     		ldr	r3, [r3]
- 1108 001a 13F4803F 		tst	r3, #65536
- 1109 001e 03D0     		beq	.L161
- 1110 0020 4FF48033 		mov	r3, #65536
- 1111 0024 4360     		str	r3, [r0, #4]
- 1112 0026 01E0     		b	.L160
- 1113              	.L161:
- 1114 0028 0023     		movs	r3, #0
- 1115 002a 4360     		str	r3, [r0, #4]
- 1116              	.L160:
- 1117 002c 204A     		ldr	r2, .L171
- 1118 002e 5368     		ldr	r3, [r2, #4]
- 1119 0030 03F40033 		and	r3, r3, #131072
- 1120 0034 8360     		str	r3, [r0, #8]
- 1121 0036 1368     		ldr	r3, [r2]
- 1122 0038 13F0010F 		tst	r3, #1
- 1123 003c 02D0     		beq	.L162
- 1124 003e 0123     		movs	r3, #1
- 1125 0040 0361     		str	r3, [r0, #16]
- 1126 0042 01E0     		b	.L163
- 1127              	.L162:
- 1128 0044 0023     		movs	r3, #0
- 1129 0046 0361     		str	r3, [r0, #16]
- 1130              	.L163:
- 1131 0048 194A     		ldr	r2, .L171
- 1132 004a 1368     		ldr	r3, [r2]
- 1133 004c C3F3C403 		ubfx	r3, r3, #3, #5
- 1134 0050 4361     		str	r3, [r0, #20]
- 1135 0052 136A     		ldr	r3, [r2, #32]
- 1136 0054 13F0040F 		tst	r3, #4
- 1137 0058 02D0     		beq	.L164
- 1138 005a 0523     		movs	r3, #5
- 1139 005c C360     		str	r3, [r0, #12]
- 1140 005e 09E0     		b	.L165
- 1141              	.L164:
- 1142 0060 134B     		ldr	r3, .L171
- 1143 0062 1B6A     		ldr	r3, [r3, #32]
- 1144 0064 13F0010F 		tst	r3, #1
- 1145 0068 02D0     		beq	.L166
- 1146 006a 0123     		movs	r3, #1
- 1147 006c C360     		str	r3, [r0, #12]
- 1148 006e 01E0     		b	.L165
- 1149              	.L166:
- 1150 0070 0023     		movs	r3, #0
- 1151 0072 C360     		str	r3, [r0, #12]
- 1152              	.L165:
- 1153 0074 0E4B     		ldr	r3, .L171
- 1154 0076 5B6A     		ldr	r3, [r3, #36]
- 1155 0078 13F0010F 		tst	r3, #1
- 1156 007c 02D0     		beq	.L167
- 1157 007e 0123     		movs	r3, #1
- 1158 0080 8361     		str	r3, [r0, #24]
- 1159 0082 01E0     		b	.L168
- 1160              	.L167:
- 1161 0084 0023     		movs	r3, #0
- 1162 0086 8361     		str	r3, [r0, #24]
- 1163              	.L168:
-ARM GAS  /tmp/ccpccbuu.s 			page 21
+ 1107 004e 184B     		ldr	r3, .L202
+ 1108 0050 1B68     		ldr	r3, [r3]
+ 1109 0052 13F0807F 		tst	r3, #16777216
+ 1110 0056 28D1     		bne	.L201
+ 1111 0058 0123     		movs	r3, #1
+ 1112 005a C361     		str	r3, [r0, #28]
+ 1113              	.L200:
+ 1114 005c 144A     		ldr	r2, .L202
+ 1115 005e 5368     		ldr	r3, [r2, #4]
+ 1116 0060 03F48033 		and	r3, r3, #65536
+ 1117 0064 0362     		str	r3, [r0, #32]
+ 1118 0066 5368     		ldr	r3, [r2, #4]
+ 1119 0068 03F47013 		and	r3, r3, #3932160
+ 1120 006c 4362     		str	r3, [r0, #36]
+ 1121 006e 7047     		bx	lr
+ 1122              	.L189:
+ 1123 0070 0F4B     		ldr	r3, .L202
+ 1124 0072 1B68     		ldr	r3, [r3]
+ 1125 0074 13F4803F 		tst	r3, #65536
+ 1126 0078 03D0     		beq	.L191
+ 1127 007a 4FF48033 		mov	r3, #65536
+ 1128 007e 4360     		str	r3, [r0, #4]
+ 1129 0080 C8E7     		b	.L190
+ 1130              	.L191:
+ 1131 0082 0023     		movs	r3, #0
+ 1132 0084 4360     		str	r3, [r0, #4]
+ 1133 0086 C5E7     		b	.L190
+ 1134              	.L192:
+ 1135 0088 0023     		movs	r3, #0
+ 1136 008a 0361     		str	r3, [r0, #16]
+ 1137 008c CDE7     		b	.L193
+ 1138              	.L194:
+ 1139 008e 084B     		ldr	r3, .L202
+ 1140 0090 1B6A     		ldr	r3, [r3, #32]
+ 1141 0092 13F0010F 		tst	r3, #1
+ 1142 0096 02D0     		beq	.L196
+ 1143 0098 0123     		movs	r3, #1
+ 1144 009a C360     		str	r3, [r0, #12]
+ 1145 009c D0E7     		b	.L195
+ 1146              	.L196:
+ 1147 009e 0023     		movs	r3, #0
+ 1148 00a0 C360     		str	r3, [r0, #12]
+ 1149 00a2 CDE7     		b	.L195
+ 1150              	.L197:
+ 1151 00a4 0023     		movs	r3, #0
+ 1152 00a6 8361     		str	r3, [r0, #24]
+ 1153 00a8 D1E7     		b	.L198
+ 1154              	.L201:
+ 1155 00aa 0223     		movs	r3, #2
+ 1156 00ac C361     		str	r3, [r0, #28]
+ 1157 00ae D5E7     		b	.L200
+ 1158              	.L203:
+ 1159              		.align	2
+ 1160              	.L202:
+ 1161 00b0 00100240 		.word	1073876992
+ 1163              		.section	.text.HAL_RCC_GetClockConfig,"ax",%progbits
+ 1164              		.align	1
+ARM GAS  /tmp/ccLsKvdf.s 			page 21
 
 
- 1164 0088 094B     		ldr	r3, .L171
- 1165 008a 1B68     		ldr	r3, [r3]
- 1166 008c 13F0807F 		tst	r3, #16777216
- 1167 0090 02D0     		beq	.L169
- 1168 0092 0223     		movs	r3, #2
- 1169 0094 C361     		str	r3, [r0, #28]
- 1170 0096 01E0     		b	.L170
- 1171              	.L169:
- 1172 0098 0123     		movs	r3, #1
- 1173 009a C361     		str	r3, [r0, #28]
- 1174              	.L170:
- 1175 009c 044A     		ldr	r2, .L171
- 1176 009e 5368     		ldr	r3, [r2, #4]
- 1177 00a0 03F48033 		and	r3, r3, #65536
- 1178 00a4 0362     		str	r3, [r0, #32]
- 1179 00a6 5368     		ldr	r3, [r2, #4]
- 1180 00a8 03F47013 		and	r3, r3, #3932160
- 1181 00ac 4362     		str	r3, [r0, #36]
- 1182 00ae 7047     		bx	lr
- 1183              	.L172:
- 1184              		.align	2
- 1185              	.L171:
- 1186 00b0 00100240 		.word	1073876992
- 1188              		.section	.text.HAL_RCC_GetClockConfig,"ax",%progbits
- 1189              		.align	2
- 1190              		.global	HAL_RCC_GetClockConfig
- 1191              		.thumb
- 1192              		.thumb_func
- 1194              	HAL_RCC_GetClockConfig:
- 1195              		@ args = 0, pretend = 0, frame = 0
- 1196              		@ frame_needed = 0, uses_anonymous_args = 0
- 1197              		@ link register save eliminated.
- 1198 0000 0F23     		movs	r3, #15
- 1199 0002 0360     		str	r3, [r0]
- 1200 0004 0B4B     		ldr	r3, .L174
- 1201 0006 5A68     		ldr	r2, [r3, #4]
- 1202 0008 02F00302 		and	r2, r2, #3
- 1203 000c 4260     		str	r2, [r0, #4]
- 1204 000e 5A68     		ldr	r2, [r3, #4]
- 1205 0010 02F0F002 		and	r2, r2, #240
- 1206 0014 8260     		str	r2, [r0, #8]
- 1207 0016 5A68     		ldr	r2, [r3, #4]
- 1208 0018 02F4E062 		and	r2, r2, #1792
- 1209 001c C260     		str	r2, [r0, #12]
- 1210 001e 5B68     		ldr	r3, [r3, #4]
- 1211 0020 03F46053 		and	r3, r3, #14336
- 1212 0024 DB08     		lsrs	r3, r3, #3
- 1213 0026 0361     		str	r3, [r0, #16]
- 1214 0028 034B     		ldr	r3, .L174+4
- 1215 002a 1B68     		ldr	r3, [r3]
- 1216 002c 03F00703 		and	r3, r3, #7
- 1217 0030 0B60     		str	r3, [r1]
- 1218 0032 7047     		bx	lr
- 1219              	.L175:
- 1220              		.align	2
- 1221              	.L174:
- 1222 0034 00100240 		.word	1073876992
-ARM GAS  /tmp/ccpccbuu.s 			page 22
+ 1165              		.global	HAL_RCC_GetClockConfig
+ 1166              		.syntax unified
+ 1167              		.thumb
+ 1168              		.thumb_func
+ 1169              		.fpu softvfp
+ 1171              	HAL_RCC_GetClockConfig:
+ 1172              		@ args = 0, pretend = 0, frame = 0
+ 1173              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1174              		@ link register save eliminated.
+ 1175 0000 0F23     		movs	r3, #15
+ 1176 0002 0360     		str	r3, [r0]
+ 1177 0004 0B4B     		ldr	r3, .L205
+ 1178 0006 5A68     		ldr	r2, [r3, #4]
+ 1179 0008 02F00302 		and	r2, r2, #3
+ 1180 000c 4260     		str	r2, [r0, #4]
+ 1181 000e 5A68     		ldr	r2, [r3, #4]
+ 1182 0010 02F0F002 		and	r2, r2, #240
+ 1183 0014 8260     		str	r2, [r0, #8]
+ 1184 0016 5A68     		ldr	r2, [r3, #4]
+ 1185 0018 02F4E062 		and	r2, r2, #1792
+ 1186 001c C260     		str	r2, [r0, #12]
+ 1187 001e 5B68     		ldr	r3, [r3, #4]
+ 1188 0020 DB08     		lsrs	r3, r3, #3
+ 1189 0022 03F4E063 		and	r3, r3, #1792
+ 1190 0026 0361     		str	r3, [r0, #16]
+ 1191 0028 034B     		ldr	r3, .L205+4
+ 1192 002a 1B68     		ldr	r3, [r3]
+ 1193 002c 03F00703 		and	r3, r3, #7
+ 1194 0030 0B60     		str	r3, [r1]
+ 1195 0032 7047     		bx	lr
+ 1196              	.L206:
+ 1197              		.align	2
+ 1198              	.L205:
+ 1199 0034 00100240 		.word	1073876992
+ 1200 0038 00200240 		.word	1073881088
+ 1202              		.section	.text.HAL_RCC_CSSCallback,"ax",%progbits
+ 1203              		.align	1
+ 1204              		.weak	HAL_RCC_CSSCallback
+ 1205              		.syntax unified
+ 1206              		.thumb
+ 1207              		.thumb_func
+ 1208              		.fpu softvfp
+ 1210              	HAL_RCC_CSSCallback:
+ 1211              		@ args = 0, pretend = 0, frame = 0
+ 1212              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1213              		@ link register save eliminated.
+ 1214 0000 7047     		bx	lr
+ 1216              		.section	.text.HAL_RCC_NMI_IRQHandler,"ax",%progbits
+ 1217              		.align	1
+ 1218              		.global	HAL_RCC_NMI_IRQHandler
+ 1219              		.syntax unified
+ 1220              		.thumb
+ 1221              		.thumb_func
+ 1222              		.fpu softvfp
+ 1224              	HAL_RCC_NMI_IRQHandler:
+ 1225              		@ args = 0, pretend = 0, frame = 0
+ 1226              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  /tmp/ccLsKvdf.s 			page 22
 
 
- 1223 0038 00200240 		.word	1073881088
- 1225              		.section	.text.HAL_RCC_CSSCallback,"ax",%progbits
- 1226              		.align	2
- 1227              		.weak	HAL_RCC_CSSCallback
- 1228              		.thumb
- 1229              		.thumb_func
- 1231              	HAL_RCC_CSSCallback:
- 1232              		@ args = 0, pretend = 0, frame = 0
- 1233              		@ frame_needed = 0, uses_anonymous_args = 0
- 1234              		@ link register save eliminated.
- 1235 0000 7047     		bx	lr
- 1237 0002 00BF     		.section	.text.HAL_RCC_NMI_IRQHandler,"ax",%progbits
- 1238              		.align	2
- 1239              		.global	HAL_RCC_NMI_IRQHandler
- 1240              		.thumb
- 1241              		.thumb_func
- 1243              	HAL_RCC_NMI_IRQHandler:
- 1244              		@ args = 0, pretend = 0, frame = 0
- 1245              		@ frame_needed = 0, uses_anonymous_args = 0
- 1246 0000 08B5     		push	{r3, lr}
- 1247 0002 054B     		ldr	r3, .L180
- 1248 0004 9B68     		ldr	r3, [r3, #8]
- 1249 0006 13F0800F 		tst	r3, #128
- 1250 000a 04D0     		beq	.L177
- 1251 000c FFF7FEFF 		bl	HAL_RCC_CSSCallback
- 1252 0010 8022     		movs	r2, #128
- 1253 0012 024B     		ldr	r3, .L180+4
- 1254 0014 1A70     		strb	r2, [r3]
- 1255              	.L177:
- 1256 0016 08BD     		pop	{r3, pc}
- 1257              	.L181:
- 1258              		.align	2
- 1259              	.L180:
- 1260 0018 00100240 		.word	1073876992
- 1261 001c 0A100240 		.word	1073877002
- 1263              		.section	.rodata
- 1264              		.align	2
- 1265              		.set	.LANCHOR0,. + 0
- 1266              	.LC0:
- 1267 0000 02       		.byte	2
- 1268 0001 03       		.byte	3
- 1269 0002 04       		.byte	4
- 1270 0003 05       		.byte	5
- 1271 0004 06       		.byte	6
- 1272 0005 07       		.byte	7
- 1273 0006 08       		.byte	8
- 1274 0007 09       		.byte	9
- 1275 0008 0A       		.byte	10
- 1276 0009 0B       		.byte	11
- 1277 000a 0C       		.byte	12
- 1278 000b 0D       		.byte	13
- 1279 000c 0E       		.byte	14
- 1280 000d 0F       		.byte	15
- 1281 000e 10       		.byte	16
- 1282 000f 10       		.byte	16
- 1283              	.LC1:
- 1284 0010 01       		.byte	1
-ARM GAS  /tmp/ccpccbuu.s 			page 23
-
-
- 1285 0011 02       		.byte	2
- 1286              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
-ARM GAS  /tmp/ccpccbuu.s 			page 24
+ 1227 0000 08B5     		push	{r3, lr}
+ 1228 0002 064B     		ldr	r3, .L212
+ 1229 0004 9B68     		ldr	r3, [r3, #8]
+ 1230 0006 13F0800F 		tst	r3, #128
+ 1231 000a 00D1     		bne	.L211
+ 1232              	.L208:
+ 1233 000c 08BD     		pop	{r3, pc}
+ 1234              	.L211:
+ 1235 000e FFF7FEFF 		bl	HAL_RCC_CSSCallback
+ 1236 0012 8022     		movs	r2, #128
+ 1237 0014 024B     		ldr	r3, .L212+4
+ 1238 0016 1A70     		strb	r2, [r3]
+ 1239 0018 F8E7     		b	.L208
+ 1240              	.L213:
+ 1241 001a 00BF     		.align	2
+ 1242              	.L212:
+ 1243 001c 00100240 		.word	1073876992
+ 1244 0020 0A100240 		.word	1073877002
+ 1246              		.section	.rodata
+ 1247              		.align	2
+ 1248              		.set	.LANCHOR0,. + 0
+ 1249              	.LC0:
+ 1250 0000 02       		.byte	2
+ 1251 0001 03       		.byte	3
+ 1252 0002 04       		.byte	4
+ 1253 0003 05       		.byte	5
+ 1254 0004 06       		.byte	6
+ 1255 0005 07       		.byte	7
+ 1256 0006 08       		.byte	8
+ 1257 0007 09       		.byte	9
+ 1258 0008 0A       		.byte	10
+ 1259 0009 0B       		.byte	11
+ 1260 000a 0C       		.byte	12
+ 1261 000b 0D       		.byte	13
+ 1262 000c 0E       		.byte	14
+ 1263 000d 0F       		.byte	15
+ 1264 000e 10       		.byte	16
+ 1265 000f 10       		.byte	16
+ 1266              	.LC1:
+ 1267 0010 01       		.byte	1
+ 1268 0011 02       		.byte	2
+ 1269              		.ident	"GCC: (15:6.3.1+svn253039-1build1) 6.3.1 20170620"
+ARM GAS  /tmp/ccLsKvdf.s 			page 23
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32f1xx_hal_rcc.c
-     /tmp/ccpccbuu.s:16     .text.RCC_Delay:0000000000000000 $t
-     /tmp/ccpccbuu.s:20     .text.RCC_Delay:0000000000000000 RCC_Delay
-     /tmp/ccpccbuu.s:48     .text.RCC_Delay:0000000000000024 $d
-     /tmp/ccpccbuu.s:52     .text.HAL_RCC_DeInit:0000000000000000 $t
-     /tmp/ccpccbuu.s:57     .text.HAL_RCC_DeInit:0000000000000000 HAL_RCC_DeInit
-     /tmp/ccpccbuu.s:174    .text.HAL_RCC_DeInit:00000000000000ec $d
-     /tmp/ccpccbuu.s:180    .text.HAL_RCC_OscConfig:0000000000000000 $t
-     /tmp/ccpccbuu.s:185    .text.HAL_RCC_OscConfig:0000000000000000 HAL_RCC_OscConfig
-     /tmp/ccpccbuu.s:498    .text.HAL_RCC_OscConfig:00000000000002b8 $d
-     /tmp/ccpccbuu.s:503    .text.HAL_RCC_OscConfig:00000000000002c8 $t
-     /tmp/ccpccbuu.s:695    .text.HAL_RCC_OscConfig:000000000000042c $d
-     /tmp/ccpccbuu.s:699    .text.HAL_RCC_MCOConfig:0000000000000000 $t
-     /tmp/ccpccbuu.s:704    .text.HAL_RCC_MCOConfig:0000000000000000 HAL_RCC_MCOConfig
-     /tmp/ccpccbuu.s:739    .text.HAL_RCC_MCOConfig:0000000000000044 $d
-     /tmp/ccpccbuu.s:743    .text.HAL_RCC_EnableCSS:0000000000000000 $t
-     /tmp/ccpccbuu.s:748    .text.HAL_RCC_EnableCSS:0000000000000000 HAL_RCC_EnableCSS
-     /tmp/ccpccbuu.s:759    .text.HAL_RCC_EnableCSS:0000000000000008 $d
-     /tmp/ccpccbuu.s:762    .text.HAL_RCC_DisableCSS:0000000000000000 $t
-     /tmp/ccpccbuu.s:767    .text.HAL_RCC_DisableCSS:0000000000000000 HAL_RCC_DisableCSS
-     /tmp/ccpccbuu.s:778    .text.HAL_RCC_DisableCSS:0000000000000008 $d
-     /tmp/ccpccbuu.s:781    .text.HAL_RCC_GetSysClockFreq:0000000000000000 $t
-     /tmp/ccpccbuu.s:786    .text.HAL_RCC_GetSysClockFreq:0000000000000000 HAL_RCC_GetSysClockFreq
-     /tmp/ccpccbuu.s:835    .text.HAL_RCC_GetSysClockFreq:0000000000000060 $d
-     /tmp/ccpccbuu.s:841    .text.HAL_RCC_ClockConfig:0000000000000000 $t
-     /tmp/ccpccbuu.s:846    .text.HAL_RCC_ClockConfig:0000000000000000 HAL_RCC_ClockConfig
-     /tmp/ccpccbuu.s:1014   .text.HAL_RCC_ClockConfig:000000000000015c $d
-     /tmp/ccpccbuu.s:1021   .text.HAL_RCC_GetHCLKFreq:0000000000000000 $t
-     /tmp/ccpccbuu.s:1026   .text.HAL_RCC_GetHCLKFreq:0000000000000000 HAL_RCC_GetHCLKFreq
-     /tmp/ccpccbuu.s:1036   .text.HAL_RCC_GetHCLKFreq:0000000000000008 $d
-     /tmp/ccpccbuu.s:1039   .text.HAL_RCC_GetPCLK1Freq:0000000000000000 $t
-     /tmp/ccpccbuu.s:1044   .text.HAL_RCC_GetPCLK1Freq:0000000000000000 HAL_RCC_GetPCLK1Freq
-     /tmp/ccpccbuu.s:1059   .text.HAL_RCC_GetPCLK1Freq:0000000000000018 $d
-     /tmp/ccpccbuu.s:1063   .text.HAL_RCC_GetPCLK2Freq:0000000000000000 $t
-     /tmp/ccpccbuu.s:1068   .text.HAL_RCC_GetPCLK2Freq:0000000000000000 HAL_RCC_GetPCLK2Freq
-     /tmp/ccpccbuu.s:1083   .text.HAL_RCC_GetPCLK2Freq:0000000000000018 $d
-     /tmp/ccpccbuu.s:1087   .text.HAL_RCC_GetOscConfig:0000000000000000 $t
-     /tmp/ccpccbuu.s:1092   .text.HAL_RCC_GetOscConfig:0000000000000000 HAL_RCC_GetOscConfig
-     /tmp/ccpccbuu.s:1186   .text.HAL_RCC_GetOscConfig:00000000000000b0 $d
-     /tmp/ccpccbuu.s:1189   .text.HAL_RCC_GetClockConfig:0000000000000000 $t
-     /tmp/ccpccbuu.s:1194   .text.HAL_RCC_GetClockConfig:0000000000000000 HAL_RCC_GetClockConfig
-     /tmp/ccpccbuu.s:1222   .text.HAL_RCC_GetClockConfig:0000000000000034 $d
-     /tmp/ccpccbuu.s:1226   .text.HAL_RCC_CSSCallback:0000000000000000 $t
-     /tmp/ccpccbuu.s:1231   .text.HAL_RCC_CSSCallback:0000000000000000 HAL_RCC_CSSCallback
-     /tmp/ccpccbuu.s:1238   .text.HAL_RCC_NMI_IRQHandler:0000000000000000 $t
-     /tmp/ccpccbuu.s:1243   .text.HAL_RCC_NMI_IRQHandler:0000000000000000 HAL_RCC_NMI_IRQHandler
-     /tmp/ccpccbuu.s:1260   .text.HAL_RCC_NMI_IRQHandler:0000000000000018 $d
-     /tmp/ccpccbuu.s:1264   .rodata:0000000000000000 $d
+     /tmp/ccLsKvdf.s:13     .text.RCC_Delay:0000000000000000 $t
+     /tmp/ccLsKvdf.s:19     .text.RCC_Delay:0000000000000000 RCC_Delay
+     /tmp/ccLsKvdf.s:49     .text.RCC_Delay:0000000000000024 $d
+     /tmp/ccLsKvdf.s:53     .text.HAL_RCC_DeInit:0000000000000000 $t
+     /tmp/ccLsKvdf.s:60     .text.HAL_RCC_DeInit:0000000000000000 HAL_RCC_DeInit
+     /tmp/ccLsKvdf.s:168    .text.HAL_RCC_DeInit:00000000000000e4 $d
+     /tmp/ccLsKvdf.s:174    .text.HAL_RCC_OscConfig:0000000000000000 $t
+     /tmp/ccLsKvdf.s:181    .text.HAL_RCC_OscConfig:0000000000000000 HAL_RCC_OscConfig
+     /tmp/ccLsKvdf.s:505    .text.HAL_RCC_OscConfig:00000000000002c4 $d
+     /tmp/ccLsKvdf.s:510    .text.HAL_RCC_OscConfig:00000000000002d4 $t
+     /tmp/ccLsKvdf.s:667    .text.HAL_RCC_OscConfig:0000000000000408 $d
+     /tmp/ccLsKvdf.s:671    .text.HAL_RCC_MCOConfig:0000000000000000 $t
+     /tmp/ccLsKvdf.s:678    .text.HAL_RCC_MCOConfig:0000000000000000 HAL_RCC_MCOConfig
+     /tmp/ccLsKvdf.s:713    .text.HAL_RCC_MCOConfig:0000000000000044 $d
+     /tmp/ccLsKvdf.s:717    .text.HAL_RCC_EnableCSS:0000000000000000 $t
+     /tmp/ccLsKvdf.s:724    .text.HAL_RCC_EnableCSS:0000000000000000 HAL_RCC_EnableCSS
+     /tmp/ccLsKvdf.s:735    .text.HAL_RCC_EnableCSS:0000000000000008 $d
+     /tmp/ccLsKvdf.s:738    .text.HAL_RCC_DisableCSS:0000000000000000 $t
+     /tmp/ccLsKvdf.s:745    .text.HAL_RCC_DisableCSS:0000000000000000 HAL_RCC_DisableCSS
+     /tmp/ccLsKvdf.s:756    .text.HAL_RCC_DisableCSS:0000000000000008 $d
+     /tmp/ccLsKvdf.s:759    .text.HAL_RCC_GetSysClockFreq:0000000000000000 $t
+     /tmp/ccLsKvdf.s:766    .text.HAL_RCC_GetSysClockFreq:0000000000000000 HAL_RCC_GetSysClockFreq
+     /tmp/ccLsKvdf.s:809    .text.HAL_RCC_GetSysClockFreq:000000000000005c $d
+     /tmp/ccLsKvdf.s:815    .text.HAL_RCC_ClockConfig:0000000000000000 $t
+     /tmp/ccLsKvdf.s:822    .text.HAL_RCC_ClockConfig:0000000000000000 HAL_RCC_ClockConfig
+     /tmp/ccLsKvdf.s:981    .text.HAL_RCC_ClockConfig:0000000000000154 $d
+     /tmp/ccLsKvdf.s:988    .text.HAL_RCC_GetHCLKFreq:0000000000000000 $t
+     /tmp/ccLsKvdf.s:995    .text.HAL_RCC_GetHCLKFreq:0000000000000000 HAL_RCC_GetHCLKFreq
+     /tmp/ccLsKvdf.s:1005   .text.HAL_RCC_GetHCLKFreq:0000000000000008 $d
+     /tmp/ccLsKvdf.s:1008   .text.HAL_RCC_GetPCLK1Freq:0000000000000000 $t
+     /tmp/ccLsKvdf.s:1015   .text.HAL_RCC_GetPCLK1Freq:0000000000000000 HAL_RCC_GetPCLK1Freq
+     /tmp/ccLsKvdf.s:1030   .text.HAL_RCC_GetPCLK1Freq:0000000000000018 $d
+     /tmp/ccLsKvdf.s:1034   .text.HAL_RCC_GetPCLK2Freq:0000000000000000 $t
+     /tmp/ccLsKvdf.s:1041   .text.HAL_RCC_GetPCLK2Freq:0000000000000000 HAL_RCC_GetPCLK2Freq
+     /tmp/ccLsKvdf.s:1056   .text.HAL_RCC_GetPCLK2Freq:0000000000000018 $d
+     /tmp/ccLsKvdf.s:1060   .text.HAL_RCC_GetOscConfig:0000000000000000 $t
+     /tmp/ccLsKvdf.s:1067   .text.HAL_RCC_GetOscConfig:0000000000000000 HAL_RCC_GetOscConfig
+     /tmp/ccLsKvdf.s:1161   .text.HAL_RCC_GetOscConfig:00000000000000b0 $d
+     /tmp/ccLsKvdf.s:1164   .text.HAL_RCC_GetClockConfig:0000000000000000 $t
+     /tmp/ccLsKvdf.s:1171   .text.HAL_RCC_GetClockConfig:0000000000000000 HAL_RCC_GetClockConfig
+     /tmp/ccLsKvdf.s:1199   .text.HAL_RCC_GetClockConfig:0000000000000034 $d
+     /tmp/ccLsKvdf.s:1203   .text.HAL_RCC_CSSCallback:0000000000000000 $t
+     /tmp/ccLsKvdf.s:1210   .text.HAL_RCC_CSSCallback:0000000000000000 HAL_RCC_CSSCallback
+     /tmp/ccLsKvdf.s:1217   .text.HAL_RCC_NMI_IRQHandler:0000000000000000 $t
+     /tmp/ccLsKvdf.s:1224   .text.HAL_RCC_NMI_IRQHandler:0000000000000000 HAL_RCC_NMI_IRQHandler
+     /tmp/ccLsKvdf.s:1243   .text.HAL_RCC_NMI_IRQHandler:000000000000001c $d
+     /tmp/ccLsKvdf.s:1247   .rodata:0000000000000000 $d
 
 UNDEFINED SYMBOLS
 SystemCoreClock
@@ -1383,7 +1363,7 @@ HAL_InitTick
 uwTickPrio
 HAL_GPIO_Init
 AHBPrescTable
-ARM GAS  /tmp/ccpccbuu.s 			page 25
+ARM GAS  /tmp/ccLsKvdf.s 			page 24
 
 
 APBPrescTable

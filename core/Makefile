@@ -9,12 +9,13 @@ BINDIR = ./bin
 SRCDIR = ./src
 LIBDIR = ../lib
 
-CSRC  = main.c
-CSRC += sys_gpio.c
-CSRC += sys_isr.c
-CSRC += sys_clock.c
-CSRC += sys_init.c
-CSRC += sys_error.c
+CPPSRC  = main.cpp
+CPPSRC += sys_gpio.cpp
+CPPSRC += sys_isr.cpp
+CPPSRC += sys_clock.cpp
+CPPSRC += sys_init.cpp
+CPPSRC += sys_error.cpp
+CPPSRC += syscalls.cpp
 
 ASMSRC  = startup_stm32f103x6.s
 
@@ -23,18 +24,18 @@ INC += -I $(LIBDIR)/stm32f1hal/inc
 INC += -I $(LIBDIR)/cmsiscore/inc
 INC += -I $(LIBDIR)/cmsisstm32f1xx/inc
 
-OBJ = $(CSRC:.c=.o) $(ASMSRC:.s=.o)
+OBJ = $(CPPSRC:.cpp=.o) $(ASMSRC:.s=.o)
 
 .PRECIOUS: $(BINDIR)/%.o
-.PRECIOUS: $(SRCDIR)/%.c
+.PRECIOUS: $(SRCDIR)/%.cpp
 
 module_core: $(BINDIR)/$(LIBOUTFILE)
 	@echo "[Make][$(LIBNAME)] Finished."
 
-$(BINDIR)/%.o: $(SRCDIR)/%.c | $(BINDIR)
+$(BINDIR)/%.o: $(SRCDIR)/%.cpp | $(BINDIR)
 	@if ! test -d $(dir $@); then mkdir $(dir $@); echo "[Make][$(LIBNAME)] Creating subdirectory for output binaries: $(dir $@)"; fi
 	@echo "[ARM-GCC][$(LIBNAME)] Compiling $< -> $@"
-	@$(CC) -c $(CFLAGS) $(INC) $< -o $@
+	@$(CPPC) -c $(CPPFLAGS) $(INC) $< -o $@
 
 $(BINDIR)/%.o: $(SRCDIR)/%.s | $(BINDIR)
 	@if ! test -d $(dir $@); then mkdir $(dir $@); echo "[Make][$(LIBNAME)] Creating subdirectory for output binaries: $(dir $@)"; fi
